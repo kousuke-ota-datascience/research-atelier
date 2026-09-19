@@ -1,0 +1,84 @@
+{
+  "schema_version": "1.0.0",
+  "artifact_type": "30_analysis",
+  "investigation_id": "RQ-0003-v001",
+  "rq_id": "RQ-0003",
+  "analyzed_at": "2026-09-19T13:34:15+09:00",
+  "question_type": "Methodological",
+  "profile": {
+    "method_or_procedure": "JSON Schema Draft 2020-12のconditional applicatorとadditionalProperties:falseを組み合わせた単一30_analysis schema",
+    "intended_use": "question_typeごとに許可するprofile fieldを構造的に分離し、別Question Typeのfield混入をdeterministically拒否する。",
+    "assumptions": [
+      "JSON Schema implementationがDraft 2020-12のCore semanticsに準拠している。"
+    ],
+    "evaluation_criteria": [
+      "正しいQuestion Type profileを選択できること",
+      "別profile専用fieldを構造validationで拒否できること",
+      "semantic scientific judgmentをSchemaへ持ち込まないこと"
+    ],
+    "comparators": [
+      "Question Typeごとに別artifact / 別top-level schemaを持つ設計"
+    ],
+    "tradeoffs": [
+      "単一schemaでartifact chainを単純に保てる一方、conditional branch数はQuestion Type数に比例して増える。"
+    ],
+    "applicability_limits": [
+      "構造的なfield分離のみを扱い、causal validityやpredictive leakage等のsemantic validityは保証しない。"
+    ]
+  },
+  "working_answer": {
+    "text": "仕様上は可能である。Draft 2020-12のif/thenによるconditional subschema適用と、各profile内のadditionalProperties:falseを組み合わせれば、単一の30_analysis schema内でQuestion Type別profileを構造的に分離できる。ただし、実validatorでnegative fixtureが期待どおりFAILすることを確認してからpilot上の最終acceptとする。",
+    "knowledge_unit_refs": [
+      "K0001",
+      "K0002",
+      "K0003",
+      "K0004"
+    ]
+  },
+  "judgments": [
+    {
+      "judgment_id": "J0001",
+      "statement": "conditional branchでquestion_typeに対応するprofile schemaを選ぶ設計はDraft 2020-12の仕様と整合する。",
+      "knowledge_unit_refs": [
+        "K0001",
+        "K0003"
+      ]
+    },
+    {
+      "judgment_id": "J0002",
+      "statement": "各profileでadditionalProperties:falseを用いる設計は、別profile専用fieldの混入を構造上拒否する目的に適合する。",
+      "knowledge_unit_refs": [
+        "K0002",
+        "K0003",
+        "K0004"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "text": "現時点のEvidence snapshotにはprofile-mismatch fixtureの実validator FAIL結果をまだ含めていない。",
+      "knowledge_unit_refs": [
+        "K0004"
+      ]
+    },
+    {
+      "text": "Schema validationはfield構造を検査するだけで、Question Type固有の科学的妥当性までは保証しない。",
+      "knowledge_unit_refs": [
+        "K0001",
+        "K0002",
+        "K0003"
+      ]
+    }
+  ],
+  "unresolved_questions": [
+    "current validatorでprofile-mismatch fixtureが期待どおりFAILするか。"
+  ],
+  "alternative_interpretations": [
+    {
+      "text": "Question Typeごとに別schemaへ分割する設計でも意味論分離は可能だが、4-artifact chainを維持するという現設計要件ではconditional profile方式の方が構造を増やさない。",
+      "knowledge_unit_refs": [
+        "K0003"
+      ]
+    }
+  ]
+}
