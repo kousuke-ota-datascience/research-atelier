@@ -1,0 +1,105 @@
+{
+  "schema_version": "1.0.0",
+  "artifact_type": "10_evidence",
+  "investigation_id": "RQ-0009-v001",
+  "rq_id": "RQ-0009",
+  "snapshot_at": "2026-09-19T15:31:54+09:00",
+  "evidence_items": [
+    {
+      "evidence_id": "E0001",
+      "content": "Predictive Qualityは、製造process / sensor dataとproduct quality measurementを対応付けてML/DLモデルを学習し、process dataから製品品質を推定する問題として整理できる。",
+      "source_locator": "Abstract; Introduction, predictive quality approach (Fig. 1)",
+      "selection_reason": "RQ-0009をpredictive qualityとして位置付け、必要なdata linkageを定義する上位Evidence。",
+      "note_type": "Definition",
+      "direct_quote": null,
+      "provenance": {
+        "source": {"notion_url": "https://app.notion.com/p/3e0e5855be3981fa82cedafb255c324e", "title": "Machine learning and deep learning based predictive quality in manufacturing: a systematic review"},
+        "evidence_note": {"notion_url": "https://app.notion.com/p/3e0e5855be39811f9eeec6979c83f623", "title": "Predictive Qualityは、製造process / sensor dataとproduct quality measurementを対応付けてML/DLモデルを学習し、process dataから製品品質を推定する問題として整理できる。"}
+      }
+    },
+    {
+      "evidence_id": "E0002",
+      "content": "Predictive Qualityの既存研究には少量の実験データでfeasibilityを示すものが多く、代表性・データ量・benchmark不足がgeneralization / reproducibility上の課題として報告されている。",
+      "source_locator": "Key insights and challenges — Data amount / Benchmark data",
+      "selection_reason": "reported predictive performanceを実運用へ一般化する際の主要limitationを保持するため。",
+      "note_type": "Limitation",
+      "direct_quote": null,
+      "provenance": {
+        "source": {"notion_url": "https://app.notion.com/p/3e0e5855be3981fa82cedafb255c324e", "title": "Machine learning and deep learning based predictive quality in manufacturing: a systematic review"},
+        "evidence_note": {"notion_url": "https://app.notion.com/p/3e0e5855be3981d7839fd0b01793afa0", "title": "Predictive Qualityの既存研究には少量の実験データでfeasibilityを示すものが多く、代表性・データ量・benchmark不足がgeneralization / reproducibility上の課題として報告されている。"}
+      }
+    },
+    {
+      "evidence_id": "E0003",
+      "content": "end millingの独立machining testで、3つのcutting parametersにmachining vibrationを加えたANNはsurface roughnessの平均prediction accuracy 93.14%を示し、cutting parametersのみのANNより高い予測性能だった。",
+      "source_locator": "Abstract; final validation / Conclusions",
+      "selection_reason": "process vibrationが製品quality targetのpredictionへ追加情報を与えた直接的な比較Evidence。",
+      "note_type": "Result",
+      "direct_quote": null,
+      "provenance": {
+        "source": {"notion_url": "https://app.notion.com/p/3e0e5855be3981c89179e529c617bee8", "title": "Prediction of Surface Roughness Based on Cutting Parameters and Machining Vibration in End Milling Using Regression Method and Artificial Neural Network"},
+        "evidence_note": {"notion_url": "https://app.notion.com/p/3e0e5855be3981e585cee9fdb48ac530", "title": "end millingの独立machining testで、3つのcutting parametersにmachining vibrationを加えたANNはsurface roughnessの平均prediction accuracy 93.14%を示し、cutting parametersのみのANNより高い予測性能だった。"}
+      }
+    },
+    {
+      "evidence_id": "E0004",
+      "content": "CNC machiningでX/Y/Z vibration、sound、spindle currentを同時収集し、対応するtool wearとsurface roughnessを測定した。信号は100 kHzで1秒間samplingされ、raw signal入力の1D-CNNとsensor fusionで推定モデルを構築した。",
+      "source_locator": "Section 3 Estimation Model Development; Abstract",
+      "selection_reason": "quality predictionに必要なsynchronized sensor acquisitionとraw-signal modelingの具体例。",
+      "note_type": "Method",
+      "direct_quote": null,
+      "provenance": {
+        "source": {"notion_url": "https://app.notion.com/p/3e0e5855be398184aecbca518e6561d9", "title": "Estimation of Tool Wear and Surface Roughness Development Using Deep Learning and Sensors Fusion"},
+        "evidence_note": {"notion_url": "https://app.notion.com/p/3e0e5855be3981fe9afde59b3cdbce6f", "title": "CNC machiningでX/Y/Z vibration、sound、spindle currentを同時収集し、対応するtool wearとsurface roughnessを測定した。信号は100 kHzで1秒間samplingされ、raw signal入力の1D-CNNとsensor fusionで推定モデルを構築した。"}
+      }
+    },
+    {
+      "evidence_id": "E0005",
+      "content": "vibrationとsound等のsensor fusionによる1D-CNNでtool wear / surface roughnessを推定し、5-sensor構成ではsurface roughness RMSE 0.0368 µm、tool wear RMSE 0.0286 mmが報告された。",
+      "source_locator": "Section 5 Conclusions",
+      "selection_reason": "multi-modal sensor dataから製品品質・process conditionを同時推定できるperformance Evidence。",
+      "note_type": "Result",
+      "direct_quote": null,
+      "provenance": {
+        "source": {"notion_url": "https://app.notion.com/p/3e0e5855be398184aecbca518e6561d9", "title": "Estimation of Tool Wear and Surface Roughness Development Using Deep Learning and Sensors Fusion"},
+        "evidence_note": {"notion_url": "https://app.notion.com/p/3e0e5855be398130b01edc522467b456", "title": "vibrationとsound等のsensor fusionによる1D-CNNでtool wear / surface roughnessを推定し、5-sensor構成ではsurface roughness RMSE 0.0368 µm、tool wear RMSE 0.0286 mmが報告された。"}
+      }
+    },
+    {
+      "evidence_id": "E0006",
+      "content": "gear continuous generating grindingのprocess vibrationを7つのgear quality categoryに対応付け、Wavelet Packet Decompositionでtime-frequency representationを作りDCNN分類した結果、平均accuracy 95.83%が報告された。",
+      "source_locator": "Abstract; Introduction contributions",
+      "selection_reason": "continuous quality valueだけでなく、振動から製品quality categoryをclassificationできる直接Evidence。",
+      "note_type": "Result",
+      "direct_quote": null,
+      "provenance": {
+        "source": {"notion_url": "https://app.notion.com/p/3e0e5855be3981edba52cac7705e29c7", "title": "Vibration-based gear continuous generating grinding fault classification and interpretation with deep convolutional neural network"},
+        "evidence_note": {"notion_url": "https://app.notion.com/p/3e0e5855be3981889883e6f9cf50e293", "title": "gear continuous generating grindingのprocess vibrationを7つのgear quality categoryに対応付け、Wavelet Packet Decompositionでtime-frequency representationを作りDCNN分類した結果、平均accuracy 95.83%が報告された。"}
+      }
+    },
+    {
+      "evidence_id": "E0007",
+      "content": "injection molding中のmachine vibrationとcavity temperature / pressureから統計特徴量を作り、各製品のvision inspectionから得たhousing flection・pinhole alignmentに基づくquality gradeをtargetとしてneural-network quality predictionを構築した。",
+      "source_locator": "Abstract",
+      "selection_reason": "machining以外でも、machine vibrationをproduct-level quality labelへ接続する設計が成立することを示すEvidence。",
+      "note_type": "Method",
+      "direct_quote": null,
+      "provenance": {
+        "source": {"notion_url": "https://app.notion.com/p/3e0e5855be39815bbc59c1fdf59bb524", "title": "Development of a Quality Prediction Algorithm for an Injection Molding Process Considering Cavity Sensor and Vibration Data"},
+        "evidence_note": {"notion_url": "https://app.notion.com/p/3e0e5855be39817aab4bed6b2d8fe94f", "title": "injection molding中のmachine vibrationとcavity temperature / pressureから統計特徴量を作り、各製品のvision inspectionから得たhousing flection・pinhole alignmentに基づくquality gradeをtargetとしてneural-network quality predictionを構築した。"}
+      }
+    },
+    {
+      "evidence_id": "E0008",
+      "content": "thin-walled part millingでspindle vibrationとreal-time CNC positional dataを同期して製品表面位置へ対応付け、position-varying surface roughnessを予測した。全表面でRMSE 0.091 µm、R² 0.8302が報告された。",
+      "source_locator": "Abstract; Highlights",
+      "selection_reason": "振動を製品のどの位置・加工状態に対応付けるかというtraceability / synchronization条件の直接Evidence。",
+      "note_type": "Result",
+      "direct_quote": null,
+      "provenance": {
+        "source": {"notion_url": "https://app.notion.com/p/3e0e5855be3981b594c5f24330c4d590", "title": "Position-matched surface roughness prediction of thin-walled parts in milling using the spatial transformer to spindle vibration signals"},
+        "evidence_note": {"notion_url": "https://app.notion.com/p/3e0e5855be3981c3b874cf2c1d1924f3", "title": "thin-walled part millingでspindle vibrationとreal-time CNC positional dataを同期して製品表面位置へ対応付け、position-varying surface roughnessを予測した。全表面でRMSE 0.091 µm、R² 0.8302が報告された。"}
+      }
+    }
+  ]
+}
