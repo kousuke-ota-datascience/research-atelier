@@ -1,0 +1,175 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/kousuke-ota-datascience/research-atelier/schemas/v1/00_context.schema.json",
+  "title": "Research Atelier 00 Context v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "artifact_type",
+    "investigation_id",
+    "rq_id",
+    "context_state",
+    "question"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "artifact_type": {
+      "const": "00_context"
+    },
+    "investigation_id": {
+      "type": "string",
+      "pattern": "^RQ-[0-9]{4}-v(?!000)[0-9]{3}$",
+      "description": "Investigation identity. Prefix consistency with rq_id is enforced deterministically by Python."
+    },
+    "rq_id": {
+      "type": "string",
+      "pattern": "^RQ-[0-9]{4}$"
+    },
+    "context_state": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "frozen"
+      ]
+    },
+    "question": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "text"
+      ],
+      "properties": {
+        "text": {
+          "type": "string",
+          "minLength": 1
+        },
+        "notion_url": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "uri"
+        }
+      }
+    },
+    "question_type": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "Exploratory",
+        "Descriptive",
+        "Comparative",
+        "Causal",
+        "Mechanistic",
+        "Predictive",
+        "Methodological",
+        "Conceptual",
+        null
+      ]
+    },
+    "scope": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "significance": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "investigation_boundary": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "include": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "exclude": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "evidence_cutoff": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        }
+      }
+    },
+    "assumptions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "frozen_at": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "context_state": {
+            "const": "frozen"
+          }
+        },
+        "required": [
+          "context_state"
+        ]
+      },
+      "then": {
+        "required": [
+          "frozen_at"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "context_state": {
+            "const": "draft"
+          }
+        },
+        "required": [
+          "context_state"
+        ]
+      },
+      "then": {
+        "properties": {
+          "frozen_at": {
+            "type": "null"
+          }
+        }
+      }
+    }
+  ]
+}
