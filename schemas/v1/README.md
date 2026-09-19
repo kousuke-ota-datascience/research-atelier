@@ -42,9 +42,8 @@ Cross-unit agreement and conflict are represented by `relations[].relation_type`
 
 `30_analysis.schema.json` is the first schema that contains RQ-specific analytical judgment.
 
-The common v1 schema contains:
+Common fields include:
 
-- the Question Type discriminator;
 - Working Answer;
 - analytical judgments;
 - limitations;
@@ -56,13 +55,22 @@ It intentionally does **not** contain raw `evidence_refs` on analytical judgment
 
 `30_analysis -> knowledge_unit_ref -> 20_synthesis.evidence_refs -> 10_evidence`
 
-This prevents analysis from bypassing the synthesis layer.
+### Question Type-specific profile
 
-### Question Type-specific fields
+`question_type` selects a required `profile` object using conditional JSON Schema branches.
 
-The common v1 schema contains only the `question_type` discriminator. Question Type-specific payload fields are intentionally out of scope for this core schema.
+The eight profiles are defined in `docs/00_management/0009_analysis_profiles.md` and cover:
 
-Task 09 will define Analysis Profiles and decide whether they are composed as companion schemas, conditional schema fragments, or a later schema revision. Until then, no ad-hoc Question Type-specific fields are allowed in canonical `30_analysis`.
+- Exploratory
+- Descriptive
+- Comparative
+- Causal
+- Mechanistic
+- Predictive
+- Methodological
+- Conceptual
+
+Profile fields are structurally type-specific, but optional/nullable where appropriate so unknown values do not require fabricated defaults. `additionalProperties: false` prevents fields from one semantic profile from leaking into another.
 
 ## Fixtures
 
@@ -71,4 +79,4 @@ Fixtures live under `tests/fixtures/v1`.
 - `*.valid.min.json` must pass its schema.
 - `*.invalid.*.json` must fail for the named reason.
 
-Task 08 will turn these contracts into repository-level deterministic validation, including cross-artifact reference existence and identity invariants.
+The deterministic validator under `src/research_atelier/validation` checks cross-artifact identity, duplicate IDs, lineage references, and staged validation in addition to JSON Schema.
