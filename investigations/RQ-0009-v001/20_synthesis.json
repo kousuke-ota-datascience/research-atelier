@@ -1,0 +1,118 @@
+{
+  "schema_version": "1.0.0",
+  "artifact_type": "20_synthesis",
+  "investigation_id": "RQ-0009-v001",
+  "rq_id": "RQ-0009",
+  "synthesized_at": "2026-09-19T15:33:10+09:00",
+  "knowledge_units": [
+    {
+      "knowledge_unit_id": "K0001",
+      "statement": "Predictive Qualityでは、製造中のprocess / sensor dataと、対応する製品quality measurementを同じ分析単位で結び付け、その対応データから品質推定モデルを学習する。",
+      "evidence_refs": ["E0001"]
+    },
+    {
+      "knowledge_unit_id": "K0002",
+      "statement": "end millingでは、cutting parametersにmachining vibrationを加えたANNがsurface roughnessを予測し、独立machining testでvibrationを使わないcutting-parameter-onlyモデルより高いprediction performanceを示した。",
+      "evidence_refs": ["E0003"],
+      "qualifiers": ["報告値は対象設備・cutting condition内でのexperimental resultであり、他設備へのgeneralizationを直接保証しない。"]
+    },
+    {
+      "knowledge_unit_id": "K0003",
+      "statement": "CNC machiningでは、100 kHzで取得したraw vibrationをsoundやspindle currentと組み合わせ、1D-CNN / sensor fusionでtool wearとsurface roughnessを推定した事例がある。",
+      "evidence_refs": ["E0004", "E0005"]
+    },
+    {
+      "knowledge_unit_id": "K0004",
+      "statement": "gear continuous generating grindingでは、process vibrationのtime-frequency representationを用いて7つのgear quality categoryをDCNNで分類し、平均accuracy 95.83%が報告されている。",
+      "evidence_refs": ["E0006"]
+    },
+    {
+      "knowledge_unit_id": "K0005",
+      "statement": "injection moldingでは、machine vibrationとcavity temperature / pressureを製品ごとのvision-derived quality gradeへ対応付け、neural networkでquality predictionを行う設計が報告されている。",
+      "evidence_refs": ["E0007"]
+    },
+    {
+      "knowledge_unit_id": "K0006",
+      "statement": "thin-walled millingでは、spindle vibrationとreal-time CNC positionを同期して製品表面位置へ対応付けることで、position-varying surface roughnessを予測し、RMSE 0.091 µm、R² 0.8302が報告されている。",
+      "evidence_refs": ["E0008"]
+    },
+    {
+      "knowledge_unit_id": "K0007",
+      "statement": "振動から製品品質を推定する分析手法には、process parameterと振動特徴量を入力するANN、raw vibrationを直接扱う1D-CNNとsensor fusion、Wavelet Packet Decomposition等のtime-frequency変換 + DCNN、位置同期を加えたattention / transformer系モデルなど複数の構成が実証されている。",
+      "evidence_refs": ["E0003", "E0004", "E0005", "E0006", "E0008"]
+    },
+    {
+      "knowledge_unit_id": "K0008",
+      "statement": "直接Evidenceで共通する成立条件は、振動が製品形成process中に取得され、振動sample / cycle / positionを対応するquality labelへtraceできることである。",
+      "evidence_refs": ["E0001", "E0003", "E0004", "E0006", "E0007", "E0008"],
+      "qualifiers": ["必要なtraceability粒度はprocessによってproduct単位、cycle単位、surface position単位など異なる。"]
+    },
+    {
+      "knowledge_unit_id": "K0009",
+      "statement": "振動単独で常に十分とは限らず、process parameter、sound、current、temperature、pressure、CNC position等を併用する研究が複数あり、operating / process contextを入力へ含める設計が一般的に見られる。",
+      "evidence_refs": ["E0003", "E0004", "E0005", "E0007", "E0008"]
+    },
+    {
+      "knowledge_unit_id": "K0010",
+      "statement": "Predictive Quality研究全体では、小規模な実験データやbenchmark不足が多く、報告された精度を別設備・別材料・別運転条件へ一般化することは主要な未解決課題である。",
+      "evidence_refs": ["E0002"]
+    }
+  ],
+  "relations": [
+    {
+      "relation_id": "R0001",
+      "relation_type": "agreement",
+      "knowledge_unit_refs": ["K0002", "K0003", "K0004", "K0005", "K0006"],
+      "description": "複数の製造processで、製造中の振動を製品quality targetへ接続して予測・分類する実証例が一致して存在する。",
+      "evidence_refs": ["E0003", "E0004", "E0005", "E0006", "E0007", "E0008"]
+    },
+    {
+      "relation_id": "R0002",
+      "relation_type": "dependency",
+      "knowledge_unit_refs": ["K0001", "K0008"],
+      "description": "Predictive Qualityとして学習するには、process/sensor dataとquality measurementの対応付けが必要であり、振動利用ではそのtraceabilityが具体的実装条件になる。",
+      "evidence_refs": ["E0001", "E0008"]
+    },
+    {
+      "relation_id": "R0003",
+      "relation_type": "association",
+      "knowledge_unit_refs": ["K0007", "K0009"],
+      "description": "分析手法の選択はdata representationだけでなく、process contextや他sensor modalityをどこまで入力へ含めるかと関連する。",
+      "evidence_refs": ["E0003", "E0004", "E0005", "E0006", "E0007", "E0008"]
+    },
+    {
+      "relation_id": "R0004",
+      "relation_type": "qualification",
+      "knowledge_unit_refs": ["K0002", "K0010"],
+      "description": "個別研究で高いprediction performanceが報告されても、Predictive Quality研究全体のdata representation / generalization課題により、別設備・別条件へ同じ性能を期待することはできない。",
+      "evidence_refs": ["E0002", "E0003"]
+    },
+    {
+      "relation_id": "R0005",
+      "relation_type": "dependency",
+      "knowledge_unit_refs": ["K0006", "K0008"],
+      "description": "製品内の局所品質まで予測する場合、単なる時刻同期ではなくCNC position等を使ったspatiotemporal mappingが必要になり得る。",
+      "evidence_refs": ["E0008"]
+    }
+  ],
+  "uncertainties": [
+    {
+      "uncertainty_id": "U0001",
+      "description": "bearing劣化などのmachine-health vibrationが、process vibrationを介して将来の製品不良へどの程度先行してつながるかを直接検証したEvidenceは、今回のselected setでは不足している。",
+      "knowledge_unit_refs": ["K0002", "K0003", "K0004", "K0005", "K0006"],
+      "evidence_refs": ["E0003", "E0004", "E0006", "E0007", "E0008"]
+    },
+    {
+      "uncertainty_id": "U0002",
+      "description": "vibrationのincremental valueをprocess parametersのみのbaselineと比較した直接Evidenceはend millingで確認できるが、他processでは同種のablationが十分に確認できていない。",
+      "knowledge_unit_refs": ["K0002", "K0005", "K0009"],
+      "evidence_refs": ["E0003", "E0007"]
+    },
+    {
+      "uncertainty_id": "U0003",
+      "description": "sensor placement、sampling rate、window length、normalization、operating-condition coverageなどの最適acquisition specificationはprocess / targetごとに異なり、今回のEvidenceから共通閾値は導けない。",
+      "knowledge_unit_refs": ["K0003", "K0004", "K0006", "K0007"],
+      "evidence_refs": ["E0004", "E0006", "E0008"]
+    }
+  ]
+}
