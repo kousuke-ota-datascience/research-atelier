@@ -71,6 +71,32 @@
           ],
           "minLength": 1
         },
+        "note_type": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "Claim",
+            "Result",
+            "Method",
+            "Definition",
+            "Theory",
+            "Data",
+            "Limitation",
+            "Counterargument",
+            "Open Question",
+            "Other",
+            null
+          ]
+        },
+        "direct_quote": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
         "provenance": {
           "type": "object",
           "additionalProperties": false,
