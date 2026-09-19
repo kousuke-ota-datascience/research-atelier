@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0.0",
+  "artifact_type": "10_evidence",
+  "investigation_id": "RQ-0007-v001",
+  "rq_id": "RQ-0007",
+  "snapshot_at": "2026-09-19T13:00:00+09:00",
+  "evidence_items": [
+    {
+      "evidence_id": "E0001",
+      "content": "Source-faithful content.",
+      "provenance": {
+        "source": {
+          "notion_url": "https://www.notion.so/11111111111111111111111111111111"
+        },
+        "evidence_note": null
+      },
+      "analysis_judgment": "Therefore the hypothesis is true."
+    }
+  ]
+}
