@@ -2,40 +2,40 @@
 
 ## Canonical Research namespace
 
-一般Research用validationのcanonical implementationは次とする。
+general Research validationのcanonical implementationは次に置く。
 
 `src/research_atelier/validation/`
 
-generic coreは現在、以下を提供する。
+現在のgeneric coreは以下を提供する。
 
 - deterministic JSON parsing
 - Draft 2020-12 JSON Schema validation
 - stableなvalidation issue / result data structure
-- deterministic issue sorting
+- deterministicなissue sorting
 
-generic artifact label以外のResearch-domain identifierや、都市伝説固有前提を含めない。
+generic artifact label以外のResearch-domain identifierを持たず、urban-legend固有前提も含めない。
 
 ## Legacy reference namespace
 
-`src/validation/` は旧・都市伝説projectのreference implementationとして保持する。
+`src/validation/` はurban-legend project由来のreference implementationとして保持する。
 
-以下のimplementation provenanceを残すため、削除しない。
+削除しない理由は、以下の有用なimplementation provenanceを残すためである。
 
-- cross-file reference check
+- cross-file reference checking
 - staged PASS / FAIL / ERROR handling
 - CLI orchestration
 - taxonomy validation pattern
 
-ただしlore固有前提を含むため、新Research behaviorの正本ではない。
+ただしlore-specificな前提を含むため、新Research behaviorのauthorityにはしない。
 
 ## Extraction rule
 
-legacy algorithmを新Research codeへcopy / adaptしてよいのは、public contractが以下へ依存しなくなった場合だけとする。
+新Research codeがlegacy algorithmをcopy / adaptしてよいのは、public contractから以下の依存を除去した場合のみである。
 
 - `Entry_ID`
 - 4桁lore entry path
-- lore-specific artifact suffix
+- lore artifact suffix
 - D01-D21 taxonomy
 - lore content / variant identifier
 
-Research-specific lineage validationはgeneric core上へ実装し、legacy validatorをin-place変換しない。
+Task 08ではlegacy validatorをin-placeで改造せず、このgeneric core上にResearch-specific lineage validationを構築する。
