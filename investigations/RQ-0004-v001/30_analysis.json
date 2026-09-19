@@ -1,0 +1,119 @@
+{
+  "schema_version": "1.0.0",
+  "artifact_type": "30_analysis",
+  "investigation_id": "RQ-0004-v001",
+  "rq_id": "RQ-0004",
+  "analyzed_at": "2026-09-19T13:53:50+09:00",
+  "question_type": "Exploratory",
+  "profile": {
+    "patterns": [
+      "sensor modalityよりも、raw waveform access・sampling bandwidth・RPM同期・取付条件が分析上限を規定する。",
+      "vibrationは最も汎用的だが、current・AE・thermal・wear debrisは異なる物理現象を観測し、相補的なfault informationを持つ。",
+      "summary KPI→trend/anomaly、raw waveform→signal diagnosis、RPM同期→order analysis、multi-modal同期→sensor fusionという段階構造が見える。"
+    ],
+    "candidate_hypotheses": [
+      "故障モードから逆算してsensorとacquisition specificationを決める方が、『取得できるデータからモデルを選ぶ』より再利用可能な設計原則になる。",
+      "実運用での精度向上には、単一の高性能sensorよりもoperating contextを含む少数modalitiesの同期取得が有効なケースが多い可能性がある。",
+      "RUL predictionのボトルネックはsensor種類よりfailure/degradation ground truthと運転条件履歴の不足になりやすい可能性がある。"
+    ],
+    "anomalies": [
+      "同じ『wireless vibration sensor』でもsummary metricsのみの製品とraw waveformまで取得できる製品があり、名称だけでは分析可能性を判断できない。"
+    ],
+    "evidence_gaps": [
+      "asset type × fault mode × sensor × required sampling specificationの詳細matrix",
+      "圧力・流量・strain・ultrasound等のretrofit modalitiesの追加調査",
+      "RUL predictionに必要なlabel/history条件と、anomaly detection・fault diagnosisとの差",
+      "sensor fusionの同期精度・sampling rate・edge/cloud transfer要件",
+      "取付工数、危険場所認証、battery life、通信方式を含むdeployment tradeoff"
+    ]
+  },
+  "working_answer": {
+    "text": "既設回転機械への後付けでは、振動、表面温度／熱画像、音響・Acoustic Emission、motor current、magnetic field、RPM、潤滑油中wear debrisなどを追加観測できる。そこから可能な分析はsensor名称だけでは決まらず、取得データの粒度で段階化される。summary KPIのみならtrend・threshold・anomaly detection、raw waveformがあればFFT・envelope・time-frequency等によるfault diagnosis、さらにRPM同期があればvariable-speed向けorder analysis、複数modalitiesを同期取得できればsensor fusionへ進める。振動はimbalance・misalignment・looseness・bearing fault等、currentはmotorのelectrical/electromechanical fault、AEは高周波の接触・損傷event、thermalは摩擦・過熱、oil debrisはwear particleをそれぞれ異なる物理経路から捉える。したがって実務上は『使いたい分析手法からsensorを選ぶ』より、対象fault mode→必要な物理観測→必要bandwidth/raw access/RPM同期→分析手法の順で設計するのが適切である。一方、RULや故障時刻予測はsensorを付けるだけでは成立せず、degradation history、failure/maintenance labels、operating contextの設計が別途必要である。",
+    "knowledge_unit_refs": [
+      "K0001",
+      "K0002",
+      "K0003",
+      "K0004",
+      "K0005",
+      "K0006",
+      "K0007",
+      "K0008",
+      "K0009",
+      "K0010"
+    ]
+  },
+  "judgments": [
+    {
+      "judgment_id": "J0001",
+      "statement": "後付け故障予測の設計単位はsensor categoryではなく『fault mode × physical observable × acquisition specification × analysis method』とするのが妥当である。",
+      "knowledge_unit_refs": [
+        "K0001",
+        "K0002",
+        "K0010"
+      ]
+    },
+    {
+      "judgment_id": "J0002",
+      "statement": "初期導入ではsummary KPIでcondition trendを作り、重要assetまたは異常検出時にraw waveform/RPM同期へ拡張する階層構成が、データ量と診断力のtradeoffを扱いやすい。",
+      "knowledge_unit_refs": [
+        "K0002",
+        "K0003",
+        "K0004"
+      ]
+    },
+    {
+      "judgment_id": "J0003",
+      "statement": "multi-modal化の価値はsensor数そのものではなく、mechanical/electrical/thermal/wear等の異なる故障物理を相補的に観測できる点にある。",
+      "knowledge_unit_refs": [
+        "K0005",
+        "K0006",
+        "K0007",
+        "K0008",
+        "K0009"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "text": "今回の調査はresearch map作成を目的とする探索であり、特定asset・faultに対する検出感度やprediction accuracyを比較していない。",
+      "knowledge_unit_refs": [
+        "K0001",
+        "K0003",
+        "K0005",
+        "K0006",
+        "K0007",
+        "K0008"
+      ]
+    },
+    {
+      "text": "RUL / failure-time predictionに必要な長期degradation dataとground truth条件は未評価であり、condition monitoringやfault diagnosisの可否からRUL可否を直接推論してはならない。",
+      "knowledge_unit_refs": [
+        "K0002",
+        "K0009",
+        "K0010"
+      ]
+    },
+    {
+      "text": "製品例はretrofit可能性とdata access差の確認に用いたもので、特定製品の優位性を示す比較ではない。",
+      "knowledge_unit_refs": [
+        "K0002",
+        "K0010"
+      ]
+    }
+  ],
+  "unresolved_questions": [
+    "asset type × fault mode × sensor modality × required sampling specificationをどうmatrix化するか？",
+    "RUL predictionまで進むために最低限必要なfailure/degradation labelsとoperating contextは何か？",
+    "wireless retrofit sensorでraw waveformを保持する場合のedge processing・通信・battery tradeoffはどの程度か？"
+  ],
+  "alternative_interpretations": [
+    {
+      "text": "設備によっては既存PLC/drive/controller内部信号の利用が後付けsensorより低コストで高品質な場合があるため、『後付けsensor優先』は常に最適とは限らない。",
+      "knowledge_unit_refs": [
+        "K0002",
+        "K0005",
+        "K0010"
+      ]
+    }
+  ]
+}
