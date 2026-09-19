@@ -1,0 +1,99 @@
+{
+  "schema_version": "1.0.0",
+  "artifact_type": "10_evidence",
+  "investigation_id": "RQ-0003-v002",
+  "rq_id": "RQ-0003",
+  "snapshot_at": "2026-09-19T13:38:11+09:00",
+  "evidence_items": [
+    {
+      "evidence_id": "E0001",
+      "content": "Draft 2020-12のif/then/elseはsubschemaを条件付き適用する",
+      "source_locator": "JSON Schema Core Draft 2020-12 §10.2.2–10.2.2.3",
+      "selection_reason": "pilot RQの構造分離可否を直接判定するために必要な仕様または実装事実。",
+      "note_type": "Definition",
+      "direct_quote": null,
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e0e5855be3981c3a61bed54efb0bd6d",
+          "title": "JSON Schema Core Draft 2020-12"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e0e5855be39810fb459c88d6385636f",
+          "title": "Draft 2020-12のif/then/elseはsubschemaを条件付き適用する"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0002",
+      "content": "additionalPropertiesは同一schema objectでproperties / patternPropertiesに評価されなかったpropertyへ適用される",
+      "source_locator": "JSON Schema Core Draft 2020-12 §10.3.2.3",
+      "selection_reason": "pilot RQの構造分離可否を直接判定するために必要な仕様または実装事実。",
+      "note_type": "Definition",
+      "direct_quote": null,
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e0e5855be3981c3a61bed54efb0bd6d",
+          "title": "JSON Schema Core Draft 2020-12"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e0e5855be3981efa467f7a28aa361ae",
+          "title": "additionalPropertiesは同一schema objectでproperties / patternPropertiesに評価されなかったpropertyへ適用される"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0003",
+      "content": "30_analysis schema v1はquestion_typeごとのif/then branchでprofile schemaを選択し、各profile内部をadditionalProperties:falseで閉じている",
+      "source_locator": "schemas/v1/30_analysis.schema.json: $defs/*_profile, allOf",
+      "selection_reason": "pilot RQの構造分離可否を直接判定するために必要な仕様または実装事実。",
+      "note_type": "Method",
+      "direct_quote": null,
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e0e5855be3981cc89d7e0a4cdc5e75b",
+          "title": "Research Atelier 30_analysis schema v1"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e0e5855be39814abc62c62b9d1ff2f5",
+          "title": "30_analysis schema v1はquestion_typeごとのif/then branchでprofile schemaを選択し、各profile内部をadditionalProperties:falseで閉じている"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0004",
+      "content": "profile-mismatch fixtureはquestion_type=CausalのprofileにPredictive専用field prediction_targetを入れるnegative caseを定義している",
+      "source_locator": "tests/fixtures/v1/30_analysis.invalid.profile-mismatch.json",
+      "selection_reason": "pilot RQの構造分離可否を直接判定するために必要な仕様または実装事実。",
+      "note_type": "Method",
+      "direct_quote": null,
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e0e5855be3981cc89d7e0a4cdc5e75b",
+          "title": "Research Atelier 30_analysis schema v1"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e0e5855be39818b8addea56aaa63ed0",
+          "title": "profile-mismatch fixtureはquestion_type=CausalのprofileにPredictive専用field prediction_targetを入れるnegative caseを定義している"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0005",
+      "content": "RQ-0003-v001はthrough 30でPASSし、Causal profileにprediction_targetを混入したnegative caseはadditionalProperties違反でFAILした",
+      "source_locator": "investigations/RQ-0003-v001/validation_report.json",
+      "selection_reason": "schema designがcurrent validatorで期待どおり動作するかを確認する直接的なimplementation result。",
+      "note_type": "Result",
+      "direct_quote": null,
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e0e5855be398168acd5e6c169571fe0",
+          "title": "RQ-0003-v001 validation report"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e0e5855be3981b8b70de843e83d3a9a",
+          "title": "RQ-0003-v001はthrough 30でPASSし、Causal profileにprediction_targetを混入したnegative caseはadditionalProperties違反でFAILした"
+        }
+      }
+    }
+  ]
+}
