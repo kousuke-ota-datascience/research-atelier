@@ -11,7 +11,7 @@ This directory contains the canonical JSON Schema Draft 2020-12 contracts for Re
 - `additionalProperties: false` is the default for canonical artifact objects so accidental fields do not silently become part of the contract.
 - `required` contains only fields needed to identify the artifact and preserve its minimum semantics.
 - Unknown values are represented by omission or explicit `null` only where the schema allows it. Empty strings, `TBD`, and invented defaults are not canonical unknown values.
-- `enum` is used only for closed vocabularies already defined by the architecture, such as Question Type, context state, and synthesis relation type.
+- `enum` is used only for closed vocabularies already defined by the architecture, such as Question Type, context state, Evidence Note type, and synthesis relation type.
 - Schema validation establishes structural validity, not semantic truth. Evidence-faithfulness and analytical correctness require deterministic lineage checks and semantic review.
 
 ## 00_context
@@ -25,6 +25,8 @@ A frozen context requires `frozen_at`.
 `10_evidence.schema.json` stores the Investigation-specific evidence snapshot.
 
 Each evidence item preserves Source provenance and an Evidence Note reference when one exists. `evidence_note` may be null for a directly snapshotted Source record.
+
+For Evidence Notes, v1 can freeze the source-faithful note text, `Note Type`, `Location`, and `Direct Quote`. Source bibliographic metadata remains Notion-authoritative and is not copied wholesale into the Investigation artifact.
 
 The schema intentionally contains no Working Answer or analysis-judgment field.
 
