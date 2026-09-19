@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0.0",
+  "artifact_type": "20_synthesis",
+  "investigation_id": "RQ-0007-v001",
+  "rq_id": "RQ-0007",
+  "synthesized_at": "2026-09-19T13:10:00+09:00",
+  "knowledge_units": [
+    {
+      "knowledge_unit_id": "K0001",
+      "statement": "Evidence-faithful statement.",
+      "evidence_refs": [
+        "E0001"
+      ]
+    }
+  ],
+  "relations": [],
+  "uncertainties": [],
+  "working_answer": "This belongs in 30_analysis."
+}
