@@ -1,20 +1,20 @@
 # Canonical Research Artifact Chain
 
-## Purpose
+## 目的
 
-This document defines the canonical artifact architecture for one Investigation.
+本書は、1 Investigationに対するcanonical artifact architectureを定義する。
 
-The chain is:
+chainは次のとおり。
 
 `00_context -> 10_evidence -> 20_synthesis -> 30_analysis`
 
-The central design constraint is that evidence-faithful representation and RQ-specific judgment are separate artifacts.
+中心的な設計制約は、**evidence-faithful representation** と **RQ-specific judgment** を別artifactに分離することである。
 
-This generalizes the earlier urban-legend workflow, where source/content reconstruction was separated from analytical coding, while adding an explicit frozen Research Context layer.
+これは、都市伝説workflowでSource / Content再構成とAnalysis codingを分離していた考え方を一般Researchへ拡張し、その前段に明示的なfrozen Research Contextを追加したものである。
 
 ## 1. Canonical directory layout
 
-For Investigation `RQ-0007-v001`:
+Investigation `RQ-0007-v001` の例:
 
 ```text
 investigations/
@@ -25,181 +25,182 @@ investigations/
     30_analysis.json
 ```
 
-These four JSON files are the canonical research artifacts for that Investigation version.
+この4 JSON fileが、そのInvestigation versionのcanonical research artifactである。
 
-Derived Markdown, HTML, reports, dashboards, or Notion projections are not canonical unless a later contract explicitly says otherwise.
+Markdown / HTML / report / dashboard / Notion projectionなどのderived outputは、別契約で明示されない限りcanonicalではない。
 
 ## 2. Global invariants
 
-All four artifacts MUST identify the same `investigation_id`.
+4 artifactはすべて同じ `investigation_id` を持たなければならない。
 
-No downstream artifact may introduce source evidence that is absent from its upstream canonical artifact.
+downstream artifactは、upstream canonical artifactに存在しないSource Evidenceを新規導入してはならない。
 
-Every substantive analytical statement must be traceable through the chain:
+実質的なanalysis statementは次のchainでtraceできなければならない。
 
 `30_analysis judgment -> 20_synthesis knowledge unit -> 10_evidence evidence item -> Notion Source / Evidence Note provenance`
 
-The chain is directional. Downstream artifacts may interpret upstream artifacts, but upstream artifacts must not be rewritten to fit downstream conclusions.
+dependencyは一方向である。downstreamはupstreamを解釈してよいが、downstream conclusionへ合わせるためにupstreamを書き換えてはならない。
 
 ## 3. 00_context
 
-### Responsibility
+### 責務
 
-`00_context` freezes what is being investigated and under what conditions.
+`00_context` は、何をどの条件でinvestigateするかをfreezeする。
 
-It is the Research Context baseline for the Investigation version.
+そのInvestigation versionにおけるResearch Context baselineである。
 
-### Write here
+### 記載する
 
 - `investigation_id`
 - `rq_id`
 - frozen question wording snapshot
 - Question Type
 - Scope
-- Significance when known
+- 判明している場合のSignificance
 - investigation boundary
-- inclusion / exclusion constraints that define the investigation
-- temporal boundary / evidence cutoff when applicable
-- explicit assumptions that define the research setup
-- context freeze state / provenance required by the schema
+- inclusion / exclusion constraint
+- 必要な場合のtemporal boundary / evidence cutoff
+- research setupを規定する明示的assumption
+- Schemaが要求するcontext freeze state / provenance
 
-### Do not write here
+### 記載しない
 
-- source excerpts or Evidence Notes
-- evidence-derived claims
-- synthesis conclusions
-- agreement / conflict judgments across evidence
+- Source excerpt / Evidence Note本体
+- Evidence由来claim
+- Synthesis conclusion
+- Evidence間のagreement / conflict判断
 - Working Answer
-- RQ-specific conclusion strength
-- post-hoc interpretation invented during analysis
+- RQ-specificなconclusion strength
+- Analysis段階で後付けした解釈
 
 ### Authority
 
-This file is canonical for the frozen Research Context of this Investigation version.
+このInvestigation versionのfrozen Research Contextについて、本fileを正本とする。
 
-It snapshots relevant Notion RQ state; later Notion edits do not mutate this historical context.
+Notion RQの関連状態をsnapshotするが、後続のNotion編集はhistorical contextを変更しない。
 
 ## 4. 10_evidence
 
-### Responsibility
+### 責務
 
-`10_evidence` is the exact Evidence snapshot used by this Investigation.
+`10_evidence` は、そのInvestigationで実際に用いるEvidenceの正確なsnapshotである。
 
-It is not a copy of all Notion Sources or all Evidence Notes. It is the selected, frozen evidence set that downstream artifacts are allowed to use.
+Notion Sources / Evidence Notes全件のcopyではない。downstream artifactが使用を許される、選択済みfrozen Evidence setである。
 
-### Write here
+### 記載する
 
-For each selected evidence item:
+各selected evidence itemについて:
 
-- stable evidence item ID within the Investigation
-- Notion Evidence Note identifier / URL when available
-- Source identifier / URL
-- source-faithful extracted content or structured note
-- source location / page / section / timestamp / other locator when available
-- provenance needed to recover the original source record
-- evidence status such as available / unavailable / superseded only when operationally necessary
-- optional selection metadata that explains why the item is in this Investigation, without changing the evidence content
+- Investigation内で安定な `evidence_id`
+- 利用可能な場合のNotion Evidence Note URL
+- Source URL
+- source-faithfulな抽出内容 / structured note
+- page / section / timestamp等のsource locator
+- original source recordへ戻れるprovenance
+- 必要な場合のみ、Evidence contentを変えないselection metadata
 
-### Do not write here
+### 記載しない
 
-- facts not present in the referenced source/evidence note
-- cross-source synthesis
-- adjudication of which source is ultimately correct
+- referenced Source / Evidence Noteに存在しないfact
+- cross-source Synthesis
+- どのSourceが最終的に正しいかというadjudication
 - Working Answer
-- RQ-specific causal or explanatory conclusion
-- unsupported paraphrases added to make evidence fit the hypothesis
+- RQ-specific causal / explanatory conclusion
+- hypothesisへ合わせるためのunsupported paraphrase
 
-### Selection is contextual; content is evidence-faithful
+### Selectionはcontextual、contentはevidence-faithful
 
-The decision to include an evidence item is Investigation-specific.
+Evidence itemを採用する判断はInvestigation-specificである。
 
-The content of the item must remain faithful to the source / Evidence Note. Selection does not authorize reinterpretation.
+ただしitem contentはSource / Evidence Noteへ忠実でなければならない。選択したことは再解釈の許可を意味しない。
 
 ### Authority
 
-Notion remains authoritative for reusable Source and Evidence Note catalog records.
+reusable Source / Evidence Note catalog recordはNotionが正本である。
 
-`10_evidence` is authoritative for the frozen set and frozen representation actually used in this Investigation.
+`10_evidence` は、このInvestigationで実際に使うfrozen setとそのfrozen representationの正本である。
 
 ## 5. 20_synthesis
 
-### Responsibility
+### 責務
 
-`20_synthesis` converts the evidence snapshot into an evidence-faithful knowledge structure.
+`20_synthesis` はEvidence snapshotをevidence-faithfulなknowledge structureへ変換する。
 
-This is the general Research analogue of the urban-legend `contents` layer.
+都市伝説workflowにおける `contents` layerを一般Researchへ拡張した位置付けである。
 
-Its purpose is to make the evidence reusable and inspectable without collapsing immediately into the final RQ answer.
+最終RQ answerへ直ちに潰さず、Evidenceを再利用・監査可能な形へ構造化する。
 
-### Write here
+### 記載する
 
-- knowledge units supported by one or more `10_evidence` items
-- normalized propositions or observations
-- explicit relations among knowledge units
-- agreement across evidence
-- conflict / contradiction across evidence
-- uncertainty and missing information
-- source-reported causal claims, mechanisms, estimates, or interpretations, clearly represented as source-reported claims
-- evidence boundaries and conditions
-- lineage from every knowledge unit to supporting `evidence_id` values
+- 1件以上の `10_evidence` itemに支持されるknowledge unit
+- normalizeしたproposition / observation
+- knowledge unit間の明示的relation
+- Evidence間agreement
+- conflict / contradiction
+- uncertainty / missing information
+- Sourceが報告するcausal claim、mechanism、estimate、interpretation（Source claimであることを保持）
+- Evidence boundary / condition
+- 各knowledge unitからsupporting `evidence_id` へのlineage
 
-### Do not write here
+### 記載しない
 
-- the final Working Answer
-- a decision about what the user should believe
-- an RQ-specific overall causal conclusion unless that exact conclusion is itself a faithful representation of the source claim
-- evidence not present in `10_evidence`
-- hidden resolution of conflicts without retaining the conflicting evidence
-- confidence values invented without a defined method
+- final Working Answer
+- ユーザーが何を信じるべきかという判断
+- Source claimのfaithful representationではないRQ-specificなoverall causal conclusion
+- `10_evidence` に存在しないEvidence
+- conflictを消してしまう暗黙のadjudication
+- 定義済みmethodなしに生成したconfidence値
 
-### Evidence-faithful means
+### Evidence-faithfulの意味
 
-A knowledge unit may normalize wording, merge redundant evidence, and expose relationships, but it must not add a proposition that cannot be reconstructed from its linked evidence.
+knowledge unitは表現のnormalization、重複Evidenceの統合、relationの明示をしてよい。
 
-When sources disagree, `20_synthesis` records the disagreement; it does not silently choose a winner.
+ただしlinked Evidenceから再構成できないpropositionを追加してはならない。
 
-When evidence is insufficient, uncertainty remains explicit.
+Source間で不一致がある場合、`20_synthesis` は不一致を保持する。暗黙にwinnerを選ばない。
+
+Evidence不足はuncertaintyとして残す。
 
 ## 6. 30_analysis
 
-### Responsibility
+### 責務
 
-`30_analysis` is the first artifact where RQ-specific analytical judgment is canonical.
+`30_analysis` は、RQ-specificなanalysis judgmentが初めてcanonicalになるartifactである。
 
-It interprets the evidence-faithful synthesis in light of the frozen Research Context.
+frozen Research Contextの下で、evidence-faithful Synthesisを解釈する。
 
-### Direct inputs
+### Direct input
 
 - `00_context`
 - `20_synthesis`
 
-`10_evidence` is available for traceability and audit, but a substantive claim in `30_analysis` must be mediated by a `20_synthesis` knowledge unit rather than bypassing the synthesis layer.
+`10_evidence` はaudit / traceabilityのため参照可能だが、`30_analysis` のsubstantive claimは `20_synthesis` knowledge unitを介さなければならない。
 
-### Write here
+### 記載する
 
 - Working Answer
 - RQ-specific interpretation
-- analysis profile / Question Type-specific judgments
-- strength and limits of the answer, when a defined method exists
-- alternative explanations or competing interpretations
-- limitations
-- unresolved questions
-- implications that are explicitly marked as analytical inference
-- references to the `knowledge_unit_id` values that support each substantive judgment
+- Question Type-specific profile / judgment
+- methodが定義される場合のanswer strength / limit
+- alternative explanation / interpretation
+- limitation
+- unresolved question
+- analytical inferenceとして明示したimplication
+- 各substantive judgmentを支持する `knowledge_unit_id`
 
-### Do not write here
+### 記載しない
 
-- new evidence absent from `10_evidence`
-- new factual claims absent from `20_synthesis`
-- source-faithful facts without lineage
-- fabricated certainty
-- hidden assumptions not represented in the analysis
+- `10_evidence` にない新Evidence
+- `20_synthesis` にない新fact
+- lineageのないsource-faithful fact
+- 架空のcertainty
+- Analysisに埋め込んだhidden assumption
 
 ### Boundary rule
 
-If a statement answers "what does the evidence directly say or jointly establish as an evidence representation?", it belongs in `20_synthesis`.
+「Evidenceが直接・共同で何を述べていると表現できるか」に答えるものは `20_synthesis` に置く。
 
-If a statement answers "given this RQ and context, what conclusion should we draw from that evidence representation?", it belongs in `30_analysis`.
+「このRQ / contextの下で、そのEvidence representationから何を結論するか」に答えるものは `30_analysis` に置く。
 
 ## 7. Dependency graph
 
@@ -219,49 +220,47 @@ Notion RQ / Source / Evidence Note catalog
         30_analysis
 ```
 
-For analytical reasoning, `30_analysis` also reads `00_context` directly so that Question Type, Scope, and investigation assumptions are explicit.
+AnalysisではQuestion Type、Scope、assumptionを明示するため、`30_analysis` は `00_context` も直接読む。
 
-Thus the logical dependencies are:
+logical dependency:
 
 - `10_evidence <- 00_context`
 - `20_synthesis <- 10_evidence`
 - `30_analysis <- 20_synthesis + 00_context`
 
-## 8. Invalidation rules
+## 8. Invalidation rule
 
-Invalidation means that a downstream artifact can no longer be treated as validated/current until it is re-generated or re-reviewed against the changed upstream artifact.
+invalidationとは、変更されたupstreamに対して再生成または再評価されるまで、downstream artifactをvalidated / currentとして扱えない状態をいう。
 
-### 00_context changes
+### 00_context変更
 
-If a context-defining field changes before freeze:
+freeze前にcontext-defining fieldを変更した場合:
 
-- update the same draft Investigation;
-- any already-created `10_evidence`, `20_synthesis`, and `30_analysis` are invalidated.
+- 同一draft Investigationを更新してよい
+- 既作成の `10_evidence`、`20_synthesis`、`30_analysis` はinvalid
 
-After freeze, a context-defining change requires a new Investigation version under `0002_investigation_versioning.md`.
+freeze後のcontext-defining changeは `0002_investigation_versioning.md` に従い新Investigation versionを作る。
 
-### 10_evidence changes
+### 10_evidence変更
 
-Any substantive addition, deletion, replacement, or content change in the evidence snapshot invalidates:
+Evidence snapshotの実質的な追加・削除・置換・content変更は以下をinvalidateする。
 
 - `20_synthesis`
 - `30_analysis`
 
-Formatting-only or provenance-format changes that do not alter evidence identity/content do not require semantic invalidation, though deterministic validation must still pass.
+Evidence identity / contentを変えないformat / provenance表記変更はsemantic invalidationを要求しないが、deterministic validationは再度PASSさせる。
 
-### 20_synthesis changes
+### 20_synthesis変更
 
-Any substantive knowledge-unit or relation change invalidates:
+knowledge unitまたはrelationの実質的変更は `30_analysis` をinvalidateする。
 
-- `30_analysis`
+serializationのみの非意味的変更はsemantic re-analysisを要求しない。
 
-A non-semantic serialization-only change does not require semantic re-analysis.
+### 30_analysis変更
 
-### 30_analysis changes
+`30_analysis` 変更はupstreamをinvalidateしない。
 
-A change to `30_analysis` does not invalidate upstream artifacts.
-
-It does require revalidation/review of `30_analysis` itself.
+ただし `30_analysis` 自身は再validation / reviewする。
 
 ## 9. Invalidation matrix
 
@@ -272,39 +271,39 @@ It does require revalidation/review of `30_analysis` itself.
 | 20_synthesis | unchanged | unchanged | self | INVALID |
 | 30_analysis | unchanged | unchanged | unchanged | self |
 
-"INVALID" means "must not be treated as current/accepted until rebuilt or revalidated."
+`INVALID` は「rebuildまたはrevalidationされるまでcurrent / acceptedとして扱わない」を意味する。
 
-## 10. No bypass rule
+## 10. No-bypass rule
 
-The following shortcuts are prohibited in canonical processing:
+canonical processingでは以下を禁止する。
 
-- Notion Evidence Note -> `30_analysis` without representation in `10_evidence` and `20_synthesis`
-- external source -> `20_synthesis` without inclusion in `10_evidence`
-- external source -> `30_analysis` directly
-- Working Answer written back into `20_synthesis`
-- analytical judgments inserted into `10_evidence` to justify downstream conclusions
+- Notion Evidence Noteから `10_evidence` / `20_synthesis` を経由せず `30_analysis` へ入れる
+- external Sourceを `10_evidence` に含めず `20_synthesis` へ入れる
+- external Sourceから直接 `30_analysis` を作る
+- Working Answerを `20_synthesis` へ書く
+- downstream conclusionを正当化するためanalytical judgmentを `10_evidence` へ混入する
 
-This rule is what preserves auditability.
+このruleによりauditabilityを保つ。
 
-## 11. Minimal lineage identifiers
+## 11. 最小lineage identifiers
 
-The v1 schemas should support at least the following references:
+v1 Schemaは少なくとも以下を扱う。
 
-- `investigation_id` on every artifact
-- `evidence_id` for each `10_evidence` item
-- `knowledge_unit_id` for each `20_synthesis` unit
-- `evidence_refs` from knowledge units to evidence items
-- `knowledge_unit_refs` from analytical judgments to synthesis units
+- 全artifactの `investigation_id`
+- 各 `10_evidence` itemの `evidence_id`
+- 各 `20_synthesis` unitの `knowledge_unit_id`
+- knowledge unitからEvidenceへの `evidence_refs`
+- analytical judgmentからSynthesis unitへの `knowledge_unit_refs`
 
-The exact schema is defined in Tasks 04 and 05.
+正確なfield contractは `schemas/v1` を正とする。
 
-## 12. Architectural consequence
+## 12. 設計上の帰結
 
-The chain deliberately separates four questions:
+4 artifactは次の4つの問いを意図的に分離する。
 
-1. `00_context`: What exactly are we investigating?
-2. `10_evidence`: What evidence are we using?
-3. `20_synthesis`: What can that evidence be represented as saying, including agreement, conflict, and uncertainty?
-4. `30_analysis`: What do we conclude for this RQ under this context?
+1. `00_context`: 何を調査しているのか。
+2. `10_evidence`: どのEvidenceを使うのか。
+3. `20_synthesis`: agreement / conflict / uncertaintyを含め、そのEvidenceを何と言っているものとして表現できるか。
+4. `30_analysis`: このRQ / contextの下で何を結論するか。
 
-The Working Answer exists only at stage 30.
+Working Answerはstage 30のみに存在する。
