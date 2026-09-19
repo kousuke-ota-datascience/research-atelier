@@ -1,0 +1,194 @@
+{
+  "schema_version": "1.0.0",
+  "artifact_type": "20_synthesis",
+  "investigation_id": "RQ-0004-v001",
+  "rq_id": "RQ-0004",
+  "synthesized_at": "2026-09-19T13:53:50+09:00",
+  "knowledge_units": [
+    {
+      "knowledge_unit_id": "K0001",
+      "statement": "既設回転機械へ後付け可能な観測modalitiesとして、少なくとも振動、表面温度／熱画像、音響・Acoustic Emission、motor current、magnetic field、回転数、潤滑油中wear debrisが実務・研究上利用されている。",
+      "evidence_refs": [
+        "E0001",
+        "E0002",
+        "E0003",
+        "E0004",
+        "E0006",
+        "E0011"
+      ],
+      "qualifiers": [
+        "圧力・流量等のprocess variableもcondition monitoringで重要だが、本Investigationでは個別faultとの対応を十分に収集していない。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0002",
+      "statement": "同じsensor modalityでも、summary KPIしか取得できないか、raw waveformまで取得できるかによって可能な分析の粒度が大きく変わる。",
+      "evidence_refs": [
+        "E0005",
+        "E0007",
+        "E0008"
+      ],
+      "qualifiers": [
+        "summary KPIはtrend・threshold・anomaly detectionに向き、raw waveformはspectrumやtime-frequency等のfault signature解析を可能にする。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0003",
+      "statement": "raw vibration waveformが取得できれば、FFT/spectrumやbearing-frequency pattern等を用いてimbalance、misalignment、looseness、rolling bearing faultなどのmechanical fault diagnosisへ進める。",
+      "evidence_refs": [
+        "E0007",
+        "E0009"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0004",
+      "statement": "variable-speed equipmentではvibration/noiseとRPMを同期取得することでorder analysisが可能になり、回転数変動に追従する成分を固定周波数FFTより適切に追跡できる。",
+      "evidence_refs": [
+        "E0010"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0005",
+      "statement": "motor currentは外付け・非侵襲計測からelectrical/electromechanical faultを扱える有力modalitiyであり、MCSAではspectrum、demodulation、time-frequency、parameter estimation、AIが利用される。",
+      "evidence_refs": [
+        "E0002"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0006",
+      "statement": "Acoustic Emissionは通常の可聴音・低周波振動より高い周波数帯のtransient eventを扱い、bearing・gearbox等の早期fault indicationやhealth indicator構築に利用できる。",
+      "evidence_refs": [
+        "E0003"
+      ],
+      "qualifiers": [
+        "高周波データ取得・データ量・取付条件が実装上の制約になる。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0007",
+      "statement": "Infrared Thermographyは非接触で温度分布を取得し、摩擦・過熱等によるthermal anomalyを画像前処理・feature extraction・fault diagnosisへ利用できる。",
+      "evidence_refs": [
+        "E0011"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0008",
+      "statement": "oil debris monitoringはwear particleそのものを観測するため、振動や温度とは異なるdirect wear evidenceを提供できる。",
+      "evidence_refs": [
+        "E0004"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0009",
+      "statement": "単一sensorは取付位置、外乱、運転条件に影響されるため、複数modalitiesのsensor fusionは相補的なfault informationを利用してdiagnosis robustnessを高める方向性を持つ。",
+      "evidence_refs": [
+        "E0001"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0010",
+      "statement": "後付けcondition monitoringではsensor typeの選択だけでなく、取付位置・固定方法・sampling/data collection・operating condition・continuous/periodic acquisitionまでをmeasurement designとして扱う必要がある。",
+      "evidence_refs": [
+        "E0005"
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "relation_id": "R0001",
+      "relation_type": "dependency",
+      "knowledge_unit_refs": [
+        "K0002",
+        "K0003"
+      ],
+      "description": "vibration fault diagnosisの深さはraw waveform accessに依存する。",
+      "evidence_refs": [
+        "E0007",
+        "E0009"
+      ]
+    },
+    {
+      "relation_id": "R0002",
+      "relation_type": "dependency",
+      "knowledge_unit_refs": [
+        "K0003",
+        "K0004"
+      ],
+      "description": "variable-speedでfault frequencyを追跡するにはvibrationにRPM同期を加えることが重要になる。",
+      "evidence_refs": [
+        "E0009",
+        "E0010"
+      ]
+    },
+    {
+      "relation_id": "R0003",
+      "relation_type": "qualification",
+      "knowledge_unit_refs": [
+        "K0001",
+        "K0010"
+      ],
+      "description": "同じsensor categoryでもmeasurement designが不適切なら期待するdiagnosis情報を得られない。",
+      "evidence_refs": [
+        "E0005",
+        "E0006",
+        "E0007",
+        "E0008"
+      ]
+    },
+    {
+      "relation_id": "R0004",
+      "relation_type": "association",
+      "knowledge_unit_refs": [
+        "K0003",
+        "K0005",
+        "K0006",
+        "K0007",
+        "K0008",
+        "K0009"
+      ],
+      "description": "mechanical/electrical/thermal/wearの異なる物理現象を組み合わせることがmulti-modal monitoringの基本構造になる。",
+      "evidence_refs": [
+        "E0001",
+        "E0002",
+        "E0003",
+        "E0004",
+        "E0009",
+        "E0011"
+      ]
+    }
+  ],
+  "uncertainties": [
+    {
+      "uncertainty_id": "U0001",
+      "description": "asset type × fault mode × sensor modalityの網羅的対応表はまだ完成していない。pump cavitation、gear tooth fault、lubrication defect等はfollow-upで個別に詰める必要がある。",
+      "knowledge_unit_refs": [
+        "K0001",
+        "K0003",
+        "K0006",
+        "K0008"
+      ]
+    },
+    {
+      "uncertainty_id": "U0002",
+      "description": "RUL / failure-time predictionに必要なdegradation history、failure labels、maintenance records、operating-context量は本Investigationでは十分に評価していない。",
+      "knowledge_unit_refs": [
+        "K0002",
+        "K0009",
+        "K0010"
+      ]
+    },
+    {
+      "uncertainty_id": "U0003",
+      "description": "wireless/battery sensorではbandwidth、duty cycle、raw-data transfer、battery lifeのtradeoffがあるが、製品横断の定量比較は未実施。",
+      "knowledge_unit_refs": [
+        "K0002",
+        "K0010"
+      ],
+      "evidence_refs": [
+        "E0006",
+        "E0007",
+        "E0008"
+      ]
+    }
+  ]
+}
