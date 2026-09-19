@@ -1,0 +1,207 @@
+{
+  "schema_version": "1.0.0",
+  "artifact_type": "10_evidence",
+  "investigation_id": "RQ-0004-v001",
+  "rq_id": "RQ-0004",
+  "snapshot_at": "2026-09-19T13:53:50+09:00",
+  "evidence_items": [
+    {
+      "evidence_id": "E0001",
+      "content": "回転機械のfault diagnosisでは振動・温度・音響・電流・wear debris等が相補的で、single-sensorは取付位置・外乱・運転条件の影響を受けやすいためmulti-sensor fusionが診断信頼性を補う",
+      "source_locator": "Abstract / introduction summary",
+      "selection_reason": "後付けsensor modality、取得可能データ、分析可能性または取得条件を直接規定・整理するEvidenceとして採用。",
+      "note_type": "Claim",
+      "direct_quote": null,
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e0e5855be3981afa1ecff2813bbc8ba",
+          "title": "Multi-Sensor data fusion in intelligent fault diagnosis of rotating machines: A comprehensive review"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e0e5855be39816e8583e7baedeeb1c9",
+          "title": "回転機械のfault diagnosisでは振動・温度・音響・電流・wear debris等が相補的で、single-sensorは取付位置・外乱・運転条件の影響を受けやすいためmulti-sensor fusionが診断信頼性を補う"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0002",
+      "content": "Motor Current Signature Analysisは非侵襲なmotor fault diagnosis手段で、bearing fault・stator winding fault・broken rotor bar等を対象に、spectrum・demodulation・time-frequency・parameter estimation・AIが用いられる",
+      "source_locator": "Abstract",
+      "selection_reason": "後付けsensor modality、取得可能データ、分析可能性または取得条件を直接規定・整理するEvidenceとして採用。",
+      "note_type": "Method",
+      "direct_quote": null,
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e0e5855be39813a829ecea42a13ab1e",
+          "title": "Motor Fault Diagnostics Based on Current Signatures: A Review"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e0e5855be3981a3ad4afbd45b00cfb1",
+          "title": "Motor Current Signature Analysisは非侵襲なmotor fault diagnosis手段で、bearing fault・stator winding fault・broken rotor bar等を対象に、spectrum・demodulation・time-frequency・parameter estimation・AIが用いられる"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0003",
+      "content": "Acoustic Emissionはおおむね20 kHz–1 MHzの高周波transient elastic waveを扱い、bearing・gearbox等のfault diagnosis/prognosisでwaveform/parameter analysisからhealth indicatorを構成できる",
+      "source_locator": "Abstract / Introduction",
+      "selection_reason": "後付けsensor modality、取得可能データ、分析可能性または取得条件を直接規定・整理するEvidenceとして採用。",
+      "note_type": "Method",
+      "direct_quote": null,
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e0e5855be39819f8eb4f579ebc2a406",
+          "title": "Review of rotating machinery elements condition monitoring using acoustic emission signal"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e0e5855be398140990dd12f54611f23",
+          "title": "Acoustic Emissionはおおむね20 kHz–1 MHzの高周波transient elastic waveを扱い、bearing・gearbox等のfault diagnosis/prognosisでwaveform/parameter analysisからhealth indicatorを構成できる"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0004",
+      "content": "online/inline oil debris monitoringではoptical・imaging・acoustic・electrostatic・capacitive・inductive・magnetic plug等により摩耗粉を検出し、wear conditionを反映できる",
+      "source_locator": "Introduction / review scope",
+      "selection_reason": "後付けsensor modality、取得可能データ、分析可能性または取得条件を直接規定・整理するEvidenceとして採用。",
+      "note_type": "Method",
+      "direct_quote": null,
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e0e5855be39811c8c4ae57ca7ae25ac",
+          "title": "Oil debris sensors for wear condition monitoring of rotating and reciprocating machinery — a comprehensive review"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e0e5855be398168aa58f97ab55052b7",
+          "title": "online/inline oil debris monitoringではoptical・imaging・acoustic・electrostatic・capacitive・inductive・magnetic plug等により摩耗粉を検出し、wear conditionを反映できる"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0005",
+      "content": "vibration condition monitoringではmeasurement methodだけでなく、measurement parameter、transducer selection/location/attachment、data collection、operating condition、continuous/periodic monitoringを設計対象として扱う必要がある",
+      "source_locator": "ISO 13373-1:2002 Abstract",
+      "selection_reason": "後付けsensor modality、取得可能データ、分析可能性または取得条件を直接規定・整理するEvidenceとして採用。",
+      "note_type": "Definition",
+      "direct_quote": null,
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e0e5855be39811c992ac58e4c3b6809",
+          "title": "ISO 13373-1:2002 Condition monitoring and diagnostics of machines — Vibration condition monitoring — Part 1"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e0e5855be3981edba9ac65dd5d6fdbb",
+          "title": "vibration condition monitoringではmeasurement methodだけでなく、measurement parameter、transducer selection/location/attachment、data collection、operating condition、continuous/periodic monitoringを設計対象として扱う必要がある"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0006",
+      "content": "brownfield retrofit用の市販multisensorで3軸vibration・temperature・magnetic field strengthとraw dataを追加計測できる例が存在する",
+      "source_locator": "SITRANS condition monitoring — Key details / MS200",
+      "selection_reason": "後付けsensor modality、取得可能データ、分析可能性または取得条件を直接規定・整理するEvidenceとして採用。",
+      "note_type": "Data",
+      "direct_quote": null,
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e0e5855be39815fa499cc8d69a9d33c",
+          "title": "SITRANS Condition Monitoring for Predictive Maintenance"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e0e5855be3981c09747d15535bf68f1",
+          "title": "brownfield retrofit用の市販multisensorで3軸vibration・temperature・magnetic field strengthとraw dataを追加計測できる例が存在する"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0007",
+      "content": "同じvibration sensorでもa-Peak・v-RMS・a-RMS・temperature・crest factor等のsummary KPIに加えraw vibration BLOBを取得できる構成があり、raw accessの有無が可能な分析を分ける",
+      "source_locator": "Available cyclic data / Independent data collection system",
+      "selection_reason": "後付けsensor modality、取得可能データ、分析可能性または取得条件を直接規定・整理するEvidenceとして採用。",
+      "note_type": "Data",
+      "direct_quote": null,
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e0e5855be3981188217c932c20cdf2f",
+          "title": "VVB vibration sensor — Device configuration"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e0e5855be39812e9225fc8e9670b56d",
+          "title": "同じvibration sensorでもa-Peak・v-RMS・a-RMS・temperature・crest factor等のsummary KPIに加えraw vibration BLOBを取得できる構成があり、raw accessの有無が可能な分析を分ける"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0008",
+      "content": "wireless retrofit vibration sensorにはacceleration peak・velocity RMS・temperatureを定期送信するタイプがあり、XS770Aのvibration frequency rangeは10–1000 Hzである",
+      "source_locator": "Performance specifications",
+      "selection_reason": "後付けsensor modality、取得可能データ、分析可能性または取得条件を直接規定・整理するEvidenceとして採用。",
+      "note_type": "Data",
+      "direct_quote": null,
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e0e5855be3981bdaeafefa2ba0135ed",
+          "title": "XS770A Wireless Vibration Sensor"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e0e5855be398196b9cdcec5ee695ccc",
+          "title": "wireless retrofit vibration sensorにはacceleration peak・velocity RMS・temperatureを定期送信するタイプがあり、XS770Aのvibration frequency rangeは10–1000 Hzである"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0009",
+      "content": "vibration spectrumではimbalanceは主に1X radial、misalignmentは1X axialや2X radial、loosenessは1X harmonics、rolling bearing wearはnon-integer bearing-frequency componentsとして現れる代表パターンがある",
+      "source_locator": "The Four Most Common Machine Faults / progression sections",
+      "selection_reason": "後付けsensor modality、取得可能データ、分析可能性または取得条件を直接規定・整理するEvidenceとして採用。",
+      "note_type": "Method",
+      "direct_quote": null,
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e0e5855be39815ea411c3d7a2d5a555",
+          "title": "Demystifying Vibration Monitoring Part 4: Diagnosing Imbalance, Misalignment, Looseness, and Bearing Wear"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e0e5855be398154a0fef4da7143837f",
+          "title": "vibration spectrumではimbalanceは主に1X radial、misalignmentは1X axialや2X radial、loosenessは1X harmonics、rolling bearing wearはnon-integer bearing-frequency componentsとして現れる代表パターンがある"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0010",
+      "content": "variable-speed rotating machineryのorder analysisにはvibration/noise signalだけでなくrotational speed signalが必要で、回転数に比例して変化する成分をorderとして追跡する",
+      "source_locator": "Overview of Order Analysis and Signals Used",
+      "selection_reason": "後付けsensor modality、取得可能データ、分析可能性または取得条件を直接規定・整理するEvidenceとして採用。",
+      "note_type": "Method",
+      "direct_quote": null,
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e0e5855be3981b39743cc4231db5c76",
+          "title": "Perform Order Analysis to Quantify Vibration or Noise Generated by Rotating Machinery in LabVIEW/DIAdem"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e0e5855be39812789dcf6cc671cc735",
+          "title": "variable-speed rotating machineryのorder analysisにはvibration/noise signalだけでなくrotational speed signalが必要で、回転数に比例して変化する成分をorderとして追跡する"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0011",
+      "content": "Infrared Thermographyは非接触・非侵襲で温度分布を取得し、rotating machineryの劣化に伴う摩擦等の発熱をthermal image acquisition→preprocessing→feature extraction→fault diagnosisの流れで利用できる",
+      "source_locator": "Abstract / Section 3",
+      "selection_reason": "後付けsensor modality、取得可能データ、分析可能性または取得条件を直接規定・整理するEvidenceとして採用。",
+      "note_type": "Method",
+      "direct_quote": null,
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e0e5855be3981d8a79eeceafd11afc6",
+          "title": "A Review of Fault Diagnosis Methods for Rotating Machinery Using Infrared Thermography"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e0e5855be39813ca8ace0278fa4a910",
+          "title": "Infrared Thermographyは非接触・非侵襲で温度分布を取得し、rotating machineryの劣化に伴う摩擦等の発熱をthermal image acquisition→preprocessing→feature extraction→fault diagnosisの流れで利用できる"
+        }
+      }
+    }
+  ]
+}
