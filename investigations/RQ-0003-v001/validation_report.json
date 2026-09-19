@@ -1,0 +1,18 @@
+{
+  "report_type": "validation_report",
+  "investigation_id": "RQ-0003-v001",
+  "executed_at": "2026-09-19T13:34:15+09:00",
+  "validator_entrypoint": "python -m research_atelier.validation.validate_investigation RQ-0003-v001 --through 30",
+  "result": "PASS",
+  "exit_code": 0,
+  "errors": [],
+  "internal_errors": [],
+  "negative_case": {
+    "fixture": "tests/fixtures/v1/30_analysis.invalid.profile-mismatch.json",
+    "expected_result": "FAIL",
+    "observed_result": "FAIL",
+    "json_path": "$.profile",
+    "observed_message": "Additional properties are not allowed ('prediction_target' was unexpected)"
+  },
+  "note": "validation_reportはderived audit artifactであり、00/10/20/30 canonical chainの一部ではない。"
+}
