@@ -2,40 +2,40 @@
 
 ## Canonical Research namespace
 
-The canonical implementation for general Research validation is:
+一般Research用validationのcanonical implementationは次とする。
 
 `src/research_atelier/validation/`
 
-The generic core currently provides:
+generic coreは現在、以下を提供する。
 
-- deterministic JSON parsing;
-- Draft 2020-12 JSON Schema validation;
-- stable validation issue/result data structures;
-- deterministic issue sorting.
+- deterministic JSON parsing
+- Draft 2020-12 JSON Schema validation
+- stableなvalidation issue / result data structure
+- deterministic issue sorting
 
-It contains no Research-domain identifiers beyond generic artifact labels and no urban-legend assumptions.
+generic artifact label以外のResearch-domain identifierや、都市伝説固有前提を含めない。
 
 ## Legacy reference namespace
 
-`src/validation/` is retained as a reference implementation from the urban-legend project.
+`src/validation/` は旧・都市伝説projectのreference implementationとして保持する。
 
-It is intentionally not deleted because it preserves useful implementation provenance for:
+以下のimplementation provenanceを残すため、削除しない。
 
-- cross-file reference checking;
-- staged PASS / FAIL / ERROR handling;
-- CLI orchestration;
-- taxonomy validation patterns.
+- cross-file reference check
+- staged PASS / FAIL / ERROR handling
+- CLI orchestration
+- taxonomy validation pattern
 
-However, it contains lore-specific assumptions and is not authoritative for new Research behavior.
+ただしlore固有前提を含むため、新Research behaviorの正本ではない。
 
 ## Extraction rule
 
-New Research code may copy or adapt a legacy algorithm only if its public contract no longer depends on:
+legacy algorithmを新Research codeへcopy / adaptしてよいのは、public contractが以下へ依存しなくなった場合だけとする。
 
-- `Entry_ID`;
-- four-digit lore entry paths;
-- lore artifact suffixes;
-- D01-D21 taxonomy;
-- lore content / variant identifiers.
+- `Entry_ID`
+- 4桁lore entry path
+- lore-specific artifact suffix
+- D01-D21 taxonomy
+- lore content / variant identifier
 
-Task 08 builds Research-specific lineage validation on top of the generic core rather than modifying the legacy validator in place.
+Research-specific lineage validationはgeneric core上へ実装し、legacy validatorをin-place変換しない。
