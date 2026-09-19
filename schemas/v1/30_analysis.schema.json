@@ -1,0 +1,176 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/kousuke-ota-datascience/research-atelier/schemas/v1/30_analysis.schema.json",
+  "title": "Research Atelier 30 Analysis v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "artifact_type",
+    "investigation_id",
+    "rq_id",
+    "analyzed_at",
+    "question_type",
+    "working_answer",
+    "judgments",
+    "limitations",
+    "unresolved_questions"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "artifact_type": {
+      "const": "30_analysis"
+    },
+    "investigation_id": {
+      "type": "string",
+      "pattern": "^RQ-[0-9]{4}-v(?!000)[0-9]{3}$",
+      "description": "Investigation identity. Prefix consistency with rq_id is enforced deterministically by Python."
+    },
+    "rq_id": {
+      "type": "string",
+      "pattern": "^RQ-[0-9]{4}$"
+    },
+    "analyzed_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "question_type": {
+      "type": "string",
+      "enum": [
+        "Exploratory",
+        "Descriptive",
+        "Comparative",
+        "Causal",
+        "Mechanistic",
+        "Predictive",
+        "Methodological",
+        "Conceptual"
+      ],
+      "description": "Common-schema discriminator only. Question-Type-specific fields are intentionally excluded from v1 and will be defined by Task 09."
+    },
+    "working_answer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "text",
+        "knowledge_unit_refs"
+      ],
+      "properties": {
+        "text": {
+          "type": "string",
+          "minLength": 1
+        },
+        "knowledge_unit_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^K[0-9]{4}$"
+          },
+          "uniqueItems": true
+        }
+      }
+    },
+    "judgments": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/judgment"
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/limitation"
+      }
+    },
+    "unresolved_questions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "alternative_interpretations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/alternative"
+      }
+    }
+  },
+  "$defs": {
+    "judgment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "judgment_id",
+        "statement",
+        "knowledge_unit_refs"
+      ],
+      "properties": {
+        "judgment_id": {
+          "type": "string",
+          "pattern": "^J[0-9]{4}$"
+        },
+        "statement": {
+          "type": "string",
+          "minLength": 1
+        },
+        "knowledge_unit_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^K[0-9]{4}$"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      }
+    },
+    "limitation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "text"
+      ],
+      "properties": {
+        "text": {
+          "type": "string",
+          "minLength": 1
+        },
+        "knowledge_unit_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^K[0-9]{4}$"
+          },
+          "uniqueItems": true
+        }
+      }
+    },
+    "alternative": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "text",
+        "knowledge_unit_refs"
+      ],
+      "properties": {
+        "text": {
+          "type": "string",
+          "minLength": 1
+        },
+        "knowledge_unit_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^K[0-9]{4}$"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      }
+    }
+  }
+}
