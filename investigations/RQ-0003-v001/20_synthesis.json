@@ -1,0 +1,92 @@
+{
+  "schema_version": "1.0.0",
+  "artifact_type": "20_synthesis",
+  "investigation_id": "RQ-0003-v001",
+  "rq_id": "RQ-0003",
+  "synthesized_at": "2026-09-19T13:34:15+09:00",
+  "knowledge_units": [
+    {
+      "knowledge_unit_id": "K0001",
+      "statement": "Draft 2020-12では、ifのvalidation結果に応じてthenまたはelseのsubschemaを条件付きで適用できる。",
+      "evidence_refs": [
+        "E0001"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0002",
+      "statement": "additionalPropertiesは、同一schema objectのproperties / patternPropertiesで評価対象にならなかったpropertyへ適用できる。",
+      "evidence_refs": [
+        "E0002"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0003",
+      "statement": "Research Atelierの30_analysis schema v1はquestion_typeを条件にprofile schemaを選び、各profileをadditionalProperties:falseで閉じる構造を持つ。",
+      "evidence_refs": [
+        "E0003"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0004",
+      "statement": "profile-mismatch fixtureはCausal profileへprediction_targetを混入させるnegative caseを定義しており、Type-specific field混入を検査できる形になっている。",
+      "evidence_refs": [
+        "E0004"
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "relation_id": "R0001",
+      "relation_type": "dependency",
+      "knowledge_unit_refs": [
+        "K0001",
+        "K0003"
+      ],
+      "description": "K0003のconditional profile selectionはK0001のif/then semanticsを利用する。",
+      "evidence_refs": [
+        "E0001",
+        "E0003"
+      ]
+    },
+    {
+      "relation_id": "R0002",
+      "relation_type": "dependency",
+      "knowledge_unit_refs": [
+        "K0002",
+        "K0003"
+      ],
+      "description": "K0003のprofile closureはK0002のadditionalProperties semanticsを利用する。",
+      "evidence_refs": [
+        "E0002",
+        "E0003"
+      ]
+    },
+    {
+      "relation_id": "R0003",
+      "relation_type": "dependency",
+      "knowledge_unit_refs": [
+        "K0003",
+        "K0004"
+      ],
+      "description": "K0004はK0003がType-specific field混入を拒否できるかを試すnegative fixtureである。",
+      "evidence_refs": [
+        "E0003",
+        "E0004"
+      ]
+    }
+  ],
+  "uncertainties": [
+    {
+      "uncertainty_id": "U0001",
+      "description": "ここまでのEvidenceはschema設計とnegative fixtureの構造を示すが、実validatorでのFAIL結果自体はまだEvidence snapshotに含めていない。",
+      "knowledge_unit_refs": [
+        "K0003",
+        "K0004"
+      ],
+      "evidence_refs": [
+        "E0003",
+        "E0004"
+      ]
+    }
+  ]
+}
