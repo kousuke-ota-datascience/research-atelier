@@ -1,0 +1,11 @@
+{
+  "schema_version": "1.0.0",
+  "artifact_type": "00_context",
+  "investigation_id": "RQ-7-v1",
+  "rq_id": "RQ-7",
+  "context_state": "draft",
+  "question": {
+    "text": "Example question"
+  },
+  "working_answer": "This field must not exist."
+}

@@ -1,0 +1,713 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/kousuke-ota-datascience/research-atelier/schemas/v1/30_analysis.schema.json",
+  "title": "Research Atelier 30 Analysis v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "artifact_type",
+    "investigation_id",
+    "rq_id",
+    "analyzed_at",
+    "question_type",
+    "profile",
+    "working_answer",
+    "judgments",
+    "limitations",
+    "unresolved_questions"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "artifact_type": {
+      "const": "30_analysis"
+    },
+    "investigation_id": {
+      "type": "string",
+      "pattern": "^RQ-[0-9]{4}-v(?!000)[0-9]{3}$",
+      "description": "Investigation identity. Prefix consistency with rq_id is enforced deterministically by Python."
+    },
+    "rq_id": {
+      "type": "string",
+      "pattern": "^RQ-[0-9]{4}$"
+    },
+    "analyzed_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "question_type": {
+      "type": "string",
+      "enum": [
+        "Exploratory",
+        "Descriptive",
+        "Comparative",
+        "Causal",
+        "Mechanistic",
+        "Predictive",
+        "Methodological",
+        "Conceptual"
+      ]
+    },
+    "profile": {
+      "type": "object",
+      "description": "Question-Type-specific analytical structure selected by question_type."
+    },
+    "working_answer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "text",
+        "knowledge_unit_refs"
+      ],
+      "properties": {
+        "text": {
+          "type": "string",
+          "minLength": 1
+        },
+        "knowledge_unit_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^K[0-9]{4}$"
+          },
+          "uniqueItems": true
+        }
+      }
+    },
+    "judgments": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/judgment"
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/limitation"
+      }
+    },
+    "unresolved_questions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "alternative_interpretations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/alternative"
+      }
+    }
+  },
+  "$defs": {
+    "judgment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "judgment_id",
+        "statement",
+        "knowledge_unit_refs"
+      ],
+      "properties": {
+        "judgment_id": {
+          "type": "string",
+          "pattern": "^J[0-9]{4}$"
+        },
+        "statement": {
+          "type": "string",
+          "minLength": 1
+        },
+        "knowledge_unit_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^K[0-9]{4}$"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      }
+    },
+    "limitation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "text"
+      ],
+      "properties": {
+        "text": {
+          "type": "string",
+          "minLength": 1
+        },
+        "knowledge_unit_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^K[0-9]{4}$"
+          },
+          "uniqueItems": true
+        }
+      }
+    },
+    "alternative": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "text",
+        "knowledge_unit_refs"
+      ],
+      "properties": {
+        "text": {
+          "type": "string",
+          "minLength": 1
+        },
+        "knowledge_unit_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^K[0-9]{4}$"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      }
+    },
+    "exploratory_profile": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "patterns": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "candidate_hypotheses": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "anomalies": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "evidence_gaps": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        }
+      }
+    },
+    "descriptive_profile": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "target": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "constructs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "summary_statistics_or_patterns": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "coverage_limits": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        }
+      }
+    },
+    "comparative_profile": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "comparison_units": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "comparison_dimensions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "contrasts": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "comparability_limits": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        }
+      }
+    },
+    "causal_profile": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "exposure_or_treatment": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "outcome": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "estimand": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "identification_strategy": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "identification_assumptions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "threats_to_identification": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        }
+      }
+    },
+    "mechanistic_profile": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "phenomenon": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "components": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "mechanism_steps": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "intervention_or_perturbation_evidence": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "alternative_mechanisms": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "mechanistic_gaps": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        }
+      }
+    },
+    "predictive_profile": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "prediction_target": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "prediction_horizon": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "input_information": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "evaluation_design": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "performance_measures": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "generalization_limits": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        }
+      }
+    },
+    "methodological_profile": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "method_or_procedure": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "intended_use": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "assumptions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "evaluation_criteria": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "comparators": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "tradeoffs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "applicability_limits": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        }
+      }
+    },
+    "conceptual_profile": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "concept": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "proposed_definition": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "dimensions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "boundary_cases": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "relations_to_adjacent_concepts": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "ambiguities": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "question_type": {
+            "const": "Exploratory"
+          }
+        },
+        "required": [
+          "question_type"
+        ]
+      },
+      "then": {
+        "properties": {
+          "profile": {
+            "$ref": "#/$defs/exploratory_profile"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "question_type": {
+            "const": "Descriptive"
+          }
+        },
+        "required": [
+          "question_type"
+        ]
+      },
+      "then": {
+        "properties": {
+          "profile": {
+            "$ref": "#/$defs/descriptive_profile"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "question_type": {
+            "const": "Comparative"
+          }
+        },
+        "required": [
+          "question_type"
+        ]
+      },
+      "then": {
+        "properties": {
+          "profile": {
+            "$ref": "#/$defs/comparative_profile"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "question_type": {
+            "const": "Causal"
+          }
+        },
+        "required": [
+          "question_type"
+        ]
+      },
+      "then": {
+        "properties": {
+          "profile": {
+            "$ref": "#/$defs/causal_profile"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "question_type": {
+            "const": "Mechanistic"
+          }
+        },
+        "required": [
+          "question_type"
+        ]
+      },
+      "then": {
+        "properties": {
+          "profile": {
+            "$ref": "#/$defs/mechanistic_profile"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "question_type": {
+            "const": "Predictive"
+          }
+        },
+        "required": [
+          "question_type"
+        ]
+      },
+      "then": {
+        "properties": {
+          "profile": {
+            "$ref": "#/$defs/predictive_profile"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "question_type": {
+            "const": "Methodological"
+          }
+        },
+        "required": [
+          "question_type"
+        ]
+      },
+      "then": {
+        "properties": {
+          "profile": {
+            "$ref": "#/$defs/methodological_profile"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "question_type": {
+            "const": "Conceptual"
+          }
+        },
+        "required": [
+          "question_type"
+        ]
+      },
+      "then": {
+        "properties": {
+          "profile": {
+            "$ref": "#/$defs/conceptual_profile"
+          }
+        }
+      }
+    }
+  ]
+}

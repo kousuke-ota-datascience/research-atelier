@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0.0",
+  "artifact_type": "30_analysis",
+  "investigation_id": "RQ-0007-v001",
+  "rq_id": "RQ-0007",
+  "analyzed_at": "2026-09-19T13:20:00+09:00",
+  "question_type": "Causal",
+  "profile": {
+    "exposure_or_treatment": "Exposure X",
+    "outcome": "Outcome Y"
+  },
+  "working_answer": {
+    "text": "Direct evidence bypass is not allowed.",
+    "knowledge_unit_refs": []
+  },
+  "judgments": [
+    {
+      "judgment_id": "J0001",
+      "statement": "The raw evidence proves the claim.",
+      "knowledge_unit_refs": [
+        "K0001"
+      ],
+      "evidence_refs": [
+        "E0001"
+      ]
+    }
+  ],
+  "limitations": [],
+  "unresolved_questions": []
+}

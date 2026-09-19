@@ -1,0 +1,177 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/kousuke-ota-datascience/research-atelier/schemas/v1/20_synthesis.schema.json",
+  "title": "Research Atelier 20 Synthesis v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "artifact_type",
+    "investigation_id",
+    "rq_id",
+    "synthesized_at",
+    "knowledge_units",
+    "relations",
+    "uncertainties"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "artifact_type": {
+      "const": "20_synthesis"
+    },
+    "investigation_id": {
+      "type": "string",
+      "pattern": "^RQ-[0-9]{4}-v(?!000)[0-9]{3}$",
+      "description": "Investigation identity. Prefix consistency with rq_id is enforced deterministically by Python."
+    },
+    "rq_id": {
+      "type": "string",
+      "pattern": "^RQ-[0-9]{4}$"
+    },
+    "synthesized_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "knowledge_units": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/knowledge_unit"
+      }
+    },
+    "relations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/relation"
+      }
+    },
+    "uncertainties": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/uncertainty"
+      }
+    }
+  },
+  "$defs": {
+    "knowledge_unit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "knowledge_unit_id",
+        "statement",
+        "evidence_refs"
+      ],
+      "properties": {
+        "knowledge_unit_id": {
+          "type": "string",
+          "pattern": "^K[0-9]{4}$"
+        },
+        "statement": {
+          "type": "string",
+          "minLength": 1
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^E[0-9]{4}$"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "qualifiers": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        }
+      }
+    },
+    "relation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "relation_id",
+        "relation_type",
+        "knowledge_unit_refs"
+      ],
+      "properties": {
+        "relation_id": {
+          "type": "string",
+          "pattern": "^R[0-9]{4}$"
+        },
+        "relation_type": {
+          "type": "string",
+          "enum": [
+            "agreement",
+            "conflict",
+            "qualification",
+            "dependency",
+            "association"
+          ]
+        },
+        "knowledge_unit_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^K[0-9]{4}$"
+          },
+          "minItems": 2,
+          "uniqueItems": true
+        },
+        "description": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^E[0-9]{4}$"
+          },
+          "uniqueItems": true
+        }
+      }
+    },
+    "uncertainty": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "uncertainty_id",
+        "description"
+      ],
+      "properties": {
+        "uncertainty_id": {
+          "type": "string",
+          "pattern": "^U[0-9]{4}$"
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1
+        },
+        "knowledge_unit_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^K[0-9]{4}$"
+          },
+          "uniqueItems": true
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^E[0-9]{4}$"
+          },
+          "uniqueItems": true
+        }
+      }
+    }
+  }
+}
