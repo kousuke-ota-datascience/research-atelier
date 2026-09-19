@@ -5,6 +5,10 @@
   "rq_id": "RQ-0007",
   "analyzed_at": "2026-09-19T13:20:00+09:00",
   "question_type": "Causal",
+  "profile": {
+    "exposure_or_treatment": "Exposure X",
+    "outcome": "Outcome Y"
+  },
   "working_answer": {
     "text": "Direct evidence bypass is not allowed.",
     "knowledge_unit_refs": []
