@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0.0",
+  "artifact_type": "00_context",
+  "investigation_id": "RQ-0004-v001",
+  "rq_id": "RQ-0004",
+  "context_state": "frozen",
+  "question": {
+    "text": "既設の産業用回転機械に後付けできるセンサーでは何を観測でき、そのデータからどのような故障・劣化の検知／診断／予測が可能で、どの分析手法が対応するか？",
+    "notion_url": "https://app.notion.com/p/3e0e5855be39813dbd6ed470b38c39b3"
+  },
+  "question_type": "Exploratory",
+  "scope": "motor / pump / fan / gearbox 等の既設回転機械。後付け可能性を重視し、振動、温度、音響・AE、電流・電力、磁場、回転数、圧力・流量、潤滑油／摩耗粉等を候補とする。センサー種類だけでなく raw waveform、sampling rate、同期、取付位置など acquisition 条件も分析可能性の一部として扱う。",
+  "significance": "後付け計測で実際に構築可能な故障予測・condition monitoring の分析設計を、観測量→故障モード→分析手法の対応として整理し、今後のセンサー選定・データ設計・モデル選定の基盤にする。",
+  "investigation_boundary": {
+    "include": [
+      "既設回転機械へbrownfield retrofit可能なセンサーmodalities",
+      "各modalitiesで得られる代表的なobservablesとfault diagnosis / condition monitoring手法",
+      "raw waveform・sampling・RPM同期・sensor fusion等のdata acquisition条件"
+    ],
+    "exclude": [
+      "特定メーカー製品の購買比較・価格比較",
+      "個別設備に対する最終的なセンサー選定",
+      "特定モデルの予測精度評価やRULモデルの実証"
+    ]
+  },
+  "assumptions": [
+    "RQ IDはResearch Questions metadataの『RQ UIDから自動生成』とcanonical RQ ID format RQ-NNNNに基づき、RQ UID=4からRQ-0004と決定論的に導出する。",
+    "初回Investigationはresearch map作成を目的とするため、回転機械を中心に広く探索し、asset-specificな最適構成はfollow-up RQへ分割する。"
+  ],
+  "frozen_at": "2026-09-19T13:53:50+09:00"
+}
