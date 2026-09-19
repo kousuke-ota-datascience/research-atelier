@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0.0",
+  "artifact_type": "00_context",
+  "investigation_id": "RQ-0009-v001",
+  "rq_id": "RQ-0009",
+  "context_state": "frozen",
+  "question": {
+    "text": "生産設備の振動データから、設備故障だけでなく、その設備が生産する製品の不具合・不良・品質特性を予測できるか？成立条件と分析手法は何か？",
+    "notion_url": "https://app.notion.com/p/3e0e5855be3981a4b470f948e750a869"
+  },
+  "question_type": "Predictive",
+  "scope": "machine-health vibrationとprocess vibrationを区別し、振動が製品品質へ影響する物理経路、製品/サイクル単位のtraceability、品質label、operating/process parametersを含むpredictive qualityの成立条件を調べる。machiningを中心に、他の生産工程の実例も確認する。",
+  "significance": "predictive maintenanceとpredictive qualityを接続し、後付け振動センサーを設備保全だけでなく不良予測・品質保証へ利用できる条件を明文化する。",
+  "investigation_boundary": {
+    "include": [
+      "製造中の生産設備または加工系から取得した振動信号を入力に含み、同一製品・加工サイクル・加工位置の品質特性または不良をtargetとする研究",
+      "machiningを中心とする実験・実生産データでのpredictive quality事例と、振動を品質推定へ接続するためのtraceability・label・process context条件",
+      "振動raw signalまたは振動特徴量を用いるregression / classification / deep learning / sensor fusionと、そのevaluation design・reported performance"
+    ],
+    "exclude": [
+      "製品品質endpointを持たない設備故障・RUL予測のみの研究",
+      "完成品そのものの動作振動だけを用いるend-of-line inspectionで、生産設備のprocess vibrationと接続されていない事例",
+      "振動を入力に含まない一般的なpredictive quality事例を、振動固有の有効性の直接Evidenceとして扱うこと"
+    ]
+  },
+  "assumptions": [
+    "RQ IDはResearch Questions metadataのRQ UID=9とcanonical format RQ-NNNNからRQ-0009と決定論的に導出する。",
+    "製品品質targetにはsurface roughness等の連続品質特性とOK/NG・defect等の離散品質結果の双方を含める。",
+    "研究内でquality measurementが加工後に得られていても、製造中の振動からそのqualityを推定するモデルはpredictive qualityのEvidence候補とする。ただし単なる事後的defect detectionとは区別して記述する。"
+  ],
+  "frozen_at": "2026-09-19T15:28:22+09:00"
+}
