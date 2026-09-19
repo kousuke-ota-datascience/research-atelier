@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "artifact_type": "00_context",
+  "investigation_id": "RQ-0003-v001",
+  "rq_id": "RQ-0003",
+  "context_state": "frozen",
+  "question": {
+    "text": "JSON Schema Draft 2020-12の条件付きvalidationで、単一の30_analysis schema内にQuestion Type別profileを安全に分離できるか？",
+    "notion_url": "https://app.notion.com/p/3e0e5855be3981dc8b11cb99fc84b62b"
+  },
+  "question_type": "Methodological",
+  "scope": "JSON Schema Draft 2020-12のif/then条件分岐と、profile object内のadditionalProperties:falseによる構造分離を対象とする。意味論的妥当性の自動判定は対象外。",
+  "significance": "Research Atelierの30_analysisを単一artifactのまま8 Question Typeへ拡張しつつ、Type固有fieldの混入を機械的に防げるかを確認するE2E pilot。",
+  "investigation_boundary": {
+    "include": [
+      "JSON Schema Draft 2020-12 Coreで定義されるconditional applicator semantics",
+      "research-atelierの30_analysis schema v1とprofile-mismatch fixture"
+    ],
+    "exclude": [
+      "Question Type別分析内容そのものの科学的妥当性",
+      "他JSON Schema draftとの差分比較"
+    ],
+    "evidence_cutoff": "2026-09-19T13:34:15+09:00"
+  },
+  "assumptions": [
+    "RQ IDはResearch Questions metadataの『RQ UIDから自動生成』とcanonical RQ ID format RQ-NNNNに基づき、RQ UID=3からRQ-0003と決定論的に導出する。"
+  ],
+  "frozen_at": "2026-09-19T13:34:15+09:00"
+}
