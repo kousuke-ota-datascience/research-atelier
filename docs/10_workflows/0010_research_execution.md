@@ -1,26 +1,26 @@
-# Workflow 10 — Execute one Investigation
+# Workflow 10 — 1 InvestigationのResearch実行
 
-## 0. Position
+## 0. 位置付け
 
-This workflow is the canonical execution procedure for constructing one Research Investigation from frozen context through deterministic validation of `30_analysis`.
+本Workflowは、1つのResearch Investigationについて、frozen contextから `30_analysis` のdeterministic validationまでを構築するcanonical execution procedureである。
 
-It defines **execution order and semantic construction rules**.
+本書が定義するのは**実行順序と意味論上の作成規則**である。
 
-It does not redefine JSON fields, required properties, enums, or reference formats. Those are defined by `schemas/v1`.
+JSON field、required property、enum、reference formatは再定義しない。構造契約は `schemas/v1` を正とする。
 
-Deterministic checks are delegated to:
+deterministic checkは以下へ委譲する。
 
 `python -m research_atelier.validation.validate_investigation <Investigation_ID> --through 00|10|20|30`
 
-Semantic construction remains an LLM / researcher responsibility.
+semantic constructionはLLM / researcherの責務である。
 
-## 1. Input and output
+## 1. Input / output
 
 ### Input
 
-- one allocated `Investigation_ID`, e.g. `RQ-0007-v001`;
-- the corresponding Notion Research Question;
-- access to the reusable Notion Sources / Evidence Notes catalogs.
+- allocated `Investigation_ID` 1件。例: `RQ-0007-v001`
+- 対応するNotion Research Question
+- reusable Notion Sources / Evidence Notes catalogへのaccess
 
 ### Canonical output
 
@@ -32,192 +32,192 @@ investigations/<Investigation_ID>/
   30_analysis.json
 ```
 
-## 2. Responsibility boundaries
+## 2. 責務境界
 
 ### Source discovery
 
-Purpose: find candidate sources relevant to the frozen Research Context.
+目的: frozen Research Contextに関係するcandidate Sourceを見つける。
 
-Source discovery may add or refine reusable records in Notion Sources / Evidence Notes. It does not directly create analytical conclusions.
+Source discoveryではNotion Sources / Evidence Notesへreusable recordを追加・改善してよい。Analysis conclusionを直接作らない。
 
-Priority should follow the research question: primary evidence, original data, official specifications, original papers, or other direct sources are preferred when they are the appropriate evidence class.
+Evidence classとして適切な場合、一次資料、original data、official specification、original paperなど対象を直接規定・報告するSourceを優先する。
 
-Absence of a high-authority source must remain visible; lower-quality evidence is not silently promoted.
+high-authority Sourceがない場合、その不在を隠さない。lower-quality Evidenceを暗黙に格上げしない。
 
 ### Evidence selection
 
-Purpose: decide which source-faithful Evidence Notes / direct source observations are included in this Investigation.
+目的: このInvestigationに含めるsource-faithful Evidence Note / direct source observationを選ぶ。
 
-Selection is RQ/context-specific. Evidence content is not rewritten to make it support the desired answer.
+selectionはRQ / Context-specificである。desired answerへ合わせてEvidence contentを書き換えない。
 
-`10_evidence` freezes only selected evidence and provenance; it does not become a second bibliographic database.
+`10_evidence` はselected Evidenceとprovenanceのみをfreezeし、第二のbibliographic DBにはしない。
 
 ### Synthesis
 
-Purpose: construct an evidence-faithful knowledge representation from `10_evidence`.
+目的: `10_evidence` からevidence-faithful knowledge representationを作る。
 
-Synthesis may normalize wording, group evidence, expose agreement/conflict/uncertainty, and make relations explicit.
+wording normalization、Evidence grouping、agreement / conflict / uncertaintyの明示、relation構築は可能。
 
-It must not silently adjudicate conflict or introduce the final Working Answer.
+conflictを暗黙解消したりfinal Working Answerを混入してはならない。
 
 ### Analysis
 
-Purpose: interpret `20_synthesis` for the frozen RQ/context.
+目的: frozen RQ / Contextに対して `20_synthesis` を解釈する。
 
-Analysis uses the Question Type profile defined in `0009_analysis_profiles.md`.
+`0009_analysis_profiles.md` で定義したQuestion Type profileを使用する。
 
-This is the first stage where RQ-specific judgments and Working Answer are canonical.
+RQ-specific judgmentとWorking Answerがcanonicalになる最初のstageである。
 
-## 3. Execution sequence
+## 3. 実行手順
 
 ### Step 0 — Preflight
 
-1. Resolve the RQ corresponding to the Investigation prefix.
-2. Confirm the Investigation ID follows `RQ-NNNN-vVVV`.
-3. Confirm the version has not already been used for a materially different frozen context.
-4. Load the authority, versioning, artifact-chain, projection, and profile contracts.
-5. If an existing Investigation directory exists, inspect its current artifact stage before writing.
+1. Investigation prefixに対応するRQを解決する。
+2. Investigation IDが `RQ-NNNN-vVVV` に従うことを確認する。
+3. 同じversionが実質的に異なるfrozen contextへ既に使われていないことを確認する。
+4. authority / versioning / artifact-chain / projection / profile contractをloadする。
+5. Investigation directoryが存在する場合はcurrent artifact stageを確認する。
 
-Stop if identity or version ownership is ambiguous.
+identity / version ownershipが曖昧なら停止する。
 
-### Step 1 — Construct and freeze `00_context`
+### Step 1 — `00_context` を構築・freeze
 
-1. Snapshot the Notion RQ fields specified by the projection contract.
-2. Add Investigation-specific boundary and assumptions when known.
-3. Keep unknown Scope / Significance / profile-relevant context null or absent; do not invent defaults.
-4. Before freeze, refine the draft until the intended research boundary is sufficiently explicit.
-5. Set `context_state = frozen` and `frozen_at`.
-6. Run:
+1. projection contractで指定したNotion RQ fieldをsnapshotする。
+2. 判明しているInvestigation-specific boundary / assumptionを追加する。
+3. unknown Scope / Significance / profile関連contextは省略または `null` とし、defaultを捏造しない。
+4. freeze前にresearch boundaryを十分明示できるまでdraftを改善する。
+5. `context_state = frozen`、`frozen_at` を設定する。
+6. 実行する:
 
 ```bash
 python -m research_atelier.validation.validate_investigation <ID> --through 00
 ```
 
-7. Do not proceed on FAIL / ERROR.
-8. Commit `00_context.json` as the context baseline.
+7. FAIL / ERRORなら進まない。
+8. `00_context.json` をcontext baselineとしてcommitする。
 
-After this point, context-defining semantic changes require the versioning rules in `0002_investigation_versioning.md`.
+以後、context-defining semantic changeは `0002_investigation_versioning.md` に従う。
 
-### Step 2 — Discover Sources and capture reusable Evidence Notes
+### Step 2 — Source探索 / reusable Evidence Note capture
 
-1. Search for evidence relevant to the frozen question, scope, and investigation boundary.
-2. Add reusable Source records to Notion rather than directly embedding ad-hoc bibliography into Git.
-3. Capture source-faithful Evidence Notes with location / quote where useful.
-4. Track contradictory evidence and null results; do not select only confirming material.
-5. Distinguish source claims from the analyst's own inference.
-6. Stop searching when the Investigation has enough evidence to address the scoped question **or** further search is no longer justified by expected information gain / resource constraints.
-7. Record important evidence gaps explicitly rather than filling them by inference.
+1. frozen Question / Scope / investigation boundaryに関連するEvidenceを探索する。
+2. ad hoc bibliographyをGitへ直接埋めず、reusable Source recordをNotionへ追加する。
+3. 必要に応じてLocation / Direct Quoteを含むsource-faithful Evidence Noteを作る。
+4. contradictory Evidence / null resultも追跡し、confirming materialだけを選ばない。
+5. Source claimとanalyst inferenceを区別する。
+6. scoped questionへ答えるのに十分なEvidenceが揃うか、expected information gain / resource constraint上これ以上の探索が正当化されなくなった時点で探索を止める。
+7. 重要なEvidence gapは明示し、推測で埋めない。
 
-Source discovery is iterative; a new relevant source may return this step to active status before the Investigation is accepted.
+Source discoveryはaccepted前ならiterativeでよい。
 
-### Step 3 — Select and freeze `10_evidence`
+### Step 3 — `10_evidence` を選択・freeze
 
-1. Select the evidence actually used for this Investigation.
-2. Assign Investigation-local `E####` IDs.
-3. Preserve Notion Source / Evidence Note provenance according to the projection contract.
-4. Preserve exact uncertainty and qualification from the source.
-5. Do not add cross-source synthesis, causal judgment, or Working Answer.
-6. Run validation through 10.
-7. Do not proceed on FAIL / ERROR.
-8. Commit `10_evidence.json` independently.
+1. このInvestigationで実際に使うEvidenceを選ぶ。
+2. Investigation-local `E####` IDを付ける。
+3. projection contractに従いNotion Source / Evidence Note provenanceを保持する。
+4. Sourceのuncertainty / qualificationを保持する。
+5. cross-source Synthesis、causal judgment、Working Answerを入れない。
+6. through 10でvalidationする。
+7. FAIL / ERRORなら進まない。
+8. `10_evidence.json` をartifact単位でcommitする。
 
-If the selected evidence set changes substantively later, `20_synthesis` and `30_analysis` become invalid.
+後でEvidence setが実質的に変わった場合、`20_synthesis` と `30_analysis` はinvalidとなる。
 
-### Step 4 — Construct `20_synthesis`
+### Step 4 — `20_synthesis` を構築
 
-1. Use only evidence present in `10_evidence`.
-2. Create stable `K####` knowledge units with `evidence_refs`.
-3. Represent agreement, conflict, qualification, dependency, association, and uncertainty where supported.
-4. Keep source-reported explanations distinguishable from the workflow's own analytical conclusions.
-5. Preserve unresolved conflict rather than forcing one source to win.
-6. Do not place the Working Answer in this artifact.
-7. Run validation through 20.
-8. Do not proceed on FAIL / ERROR.
-9. Commit `20_synthesis.json` independently.
+1. `10_evidence` 内Evidenceだけを使う。
+2. stable `K####` knowledge unitを作り、`evidence_refs` を付ける。
+3. supportedなagreement / conflict / qualification / dependency / association / uncertaintyを表現する。
+4. Source-reported explanationとworkflow自身のanalytical conclusionを区別する。
+5. unresolved conflictを保持し、無理にwinnerを決めない。
+6. Working Answerを置かない。
+7. through 20でvalidationする。
+8. FAIL / ERRORなら進まない。
+9. `20_synthesis.json` をartifact単位でcommitする。
 
-If evidence changes, rebuild/revalidate synthesis before analysis.
+Evidenceが変わったら、Analysis前にSynthesisを再構築または再validationする。
 
-### Step 5 — Construct `30_analysis`
+### Step 5 — `30_analysis` を構築
 
-1. Read the frozen `00_context` and validated `20_synthesis`.
-2. Select the profile that matches `question_type`.
-3. Fill only profile fields that are known and applicable.
-4. Form RQ-specific judgments, limitations, alternatives, unresolved questions, and Working Answer.
-5. Every substantive judgment must trace to one or more `K####` units where the schema requires it.
-6. Do not bypass synthesis by inserting raw Evidence references into analysis judgments.
-7. Distinguish facts represented in synthesis from new analytical inference.
-8. Do not convert association into causation, predictive performance into mechanism, or conceptual coherence into empirical support.
-9. Run validation through 30.
-10. Do not proceed on FAIL / ERROR.
-11. Commit `30_analysis.json` independently.
+1. frozen `00_context` とvalidated `20_synthesis` を読む。
+2. `question_type` に一致するprofileを選ぶ。
+3. known / applicableなprofile fieldだけを埋める。
+4. RQ-specific judgment、limitation、alternative、unresolved question、Working Answerを作る。
+5. Schemaが要求するsubstantive judgmentは1つ以上の `K####` へtraceする。
+6. raw Evidence referenceをAnalysis judgmentへ入れてSynthesisをbypassしない。
+7. Synthesisに表現されたfactと新しいanalytical inferenceを区別する。
+8. associationをcausationへ、predictive performanceをmechanismへ、conceptual coherenceをempirical supportへ変換しない。
+9. through 30でvalidationする。
+10. FAIL / ERRORなら進まない。
+11. `30_analysis.json` をartifact単位でcommitする。
 
-## 4. Evidence insufficiency rule
+## 4. Evidence不足時のrule
 
-Insufficient evidence is a valid research outcome; fabricated completion is not.
+Evidence不足はvalidなresearch outcomeである。fabricated completionは不可。
 
-Stop semantic construction at the earliest stage that cannot be supported:
+支持できなくなった最も早いstageでsemantic constructionを停止する。
 
-- if context is too ambiguous to define an Investigation, stop before freeze;
-- if no usable evidence can be established, do not invent `10_evidence` content;
-- if evidence cannot support a knowledge unit, do not invent `20_synthesis`;
-- if synthesis cannot support a substantive answer, do not infer one.
+- Contextを定義できない -> freeze前に停止
+- usable Evidenceを確立できない -> `10_evidence` contentを捏造しない
+- Evidenceがknowledge unitを支持しない -> `20_synthesis` を捏造しない
+- Synthesisがsubstantive answerを支持しない -> 結論を推測しない
 
-When the useful result is specifically "the available evidence is insufficient", `30_analysis` may state that as the Working Answer **only if** the evidence-search boundary and relevant gaps are explicit and the answer does not smuggle in an unsupported substantive conclusion.
+「available Evidenceでは不十分」が有用な結果の場合、Evidence search boundaryとrelevant gapが明示され、unsupported substantive conclusionを混入しないなら、`30_analysis` のWorking Answerとして記録してよい。
 
-## 5. Upstream change / invalidation handling
+## 5. Upstream change / invalidation
 
-Before editing an upstream canonical artifact, determine whether the versioning rule permits in-place change.
+upstream canonical artifactを変更する前に、versioning rule上in-place changeが許されるか確認する。
 
-Within a not-yet-accepted Investigation:
+未accepted Investigation内では:
 
-- change to `00_context` invalidates 10, 20, 30;
-- change to `10_evidence` invalidates 20, 30;
-- change to `20_synthesis` invalidates 30;
-- change to 30 invalidates only 30 itself.
+- `00_context` change -> 10, 20, 30 invalid
+- `10_evidence` change -> 20, 30 invalid
+- `20_synthesis` change -> 30 invalid
+- 30 change -> 30自身のみ再評価
 
-After an accepted Investigation, changes governed by the versioning contract create a new Investigation version rather than rewriting historical accepted artifacts.
+accepted Investigation後は、versioning contractが要求する変更をhistorical artifactへ上書きせず新Investigation versionへ送る。
 
-"Invalid" means the downstream artifact must not be treated as current until reconstructed or explicitly revalidated against the new upstream state.
+invalidとは、downstream artifactが新upstreamに対してreconstructまたは明示的にrevalidateされるまでcurrentとして扱えないことを意味する。
 
 ## 6. Deterministic validation rule
 
-Run the public CLI, not internal validator functions, at each stage.
+各stageでinternal functionではなくpublic CLIを使う。
 
-Expected machine-readable result:
+machine-readable result:
 
-- `PASS`: deterministic structure / identity / reference rules pass;
-- `FAIL`: artifact content violates a deterministic rule;
-- `ERROR`: validation infrastructure / schema configuration could not run reliably.
+- `PASS`: deterministic structure / identity / reference ruleを通過
+- `FAIL`: artifact contentがdeterministic rule違反
+- `ERROR`: validation infrastructure / schema configurationを信頼して実行できない
 
-Only PASS permits progression to the next canonical artifact.
+次stageへ進めるのはPASSだけ。
 
-A PASS does **not** mean the semantic analysis is scientifically correct.
+PASSはsemantic Analysisの科学的正しさを意味しない。
 
 ## 7. Git rule
 
-Canonical artifact changes are committed at artifact boundaries.
+canonical artifact changeはartifact boundaryでcommitする。
 
-Preferred sequence:
+推奨順序:
 
 1. validated `00_context`
 2. validated `10_evidence`
 3. validated `20_synthesis`
 4. validated `30_analysis`
 
-Do not combine unrelated workflow refactoring with an Investigation artifact commit.
+Investigation artifact commitへ無関係なworkflow refactoringを混在させない。
 
-Git history is provenance, but the artifact contents and validation contract remain the research-state canon.
+Git historyはprovenanceであるが、research stateの正本はartifact contentとvalidation contractである。
 
 ## 8. Completion condition
 
-Workflow 10 is complete when:
+Workflow 10の完了条件:
 
-- `00_context` is frozen;
-- selected `10_evidence` is source-faithful;
-- `20_synthesis` preserves evidence lineage, disagreement, and uncertainty;
-- `30_analysis` uses the correct Question Type profile;
-- validation through 30 returns PASS;
-- the four artifacts are committed;
-- no known upstream change has left a downstream artifact invalid.
+- `00_context` がfrozen
+- selected `10_evidence` がsource-faithful
+- `20_synthesis` がEvidence lineage / disagreement / uncertaintyを保持
+- `30_analysis` が正しいQuestion Type profileを使用
+- validation through 30がPASS
+- 4 artifactがcommit済み
+- known upstream changeによるinvalidated downstreamが残っていない
 
-Projection of an accepted Working Answer to Notion is governed by the projection contract and orchestration workflow, not by artifact construction itself.
+accepted Working AnswerのNotion projectionはartifact constructionではなくprojection contract / orchestration workflowの責務とする。
