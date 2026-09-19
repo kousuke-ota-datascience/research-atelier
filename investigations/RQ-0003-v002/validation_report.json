@@ -1,0 +1,16 @@
+{
+  "report_type": "validation_report",
+  "investigation_id": "RQ-0003-v002",
+  "executed_at": "2026-09-19T13:38:11+09:00",
+  "validator_entrypoint": "python -m research_atelier.validation.validate_investigation RQ-0003-v002 --through 30",
+  "result": "PASS",
+  "exit_code": 0,
+  "errors": [],
+  "internal_errors": [],
+  "lineage_check": {
+    "analysis_to_knowledge": "PASS",
+    "knowledge_to_evidence": "PASS",
+    "evidence_to_notion_provenance": "PASS"
+  },
+  "note": "derived audit artifact。00/10/20/30 canonical chainには含めない。"
+}
