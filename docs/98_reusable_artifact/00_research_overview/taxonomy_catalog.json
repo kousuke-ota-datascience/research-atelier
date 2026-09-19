@@ -1,0 +1,2484 @@
+{
+  "catalog_version": "1.0",
+  "source": {
+    "semantic_definition": "docs/00_research_overview/20_urban_legend_parent_child_code_system.md",
+    "source_blob_sha": "192c2f1593e29eb32292a31d564d21ad4aec2427"
+  },
+  "dimensions": {
+    "D01": {
+      "type": "O"
+    },
+    "D02": {
+      "type": "H1"
+    },
+    "D03": {
+      "type": "H3"
+    },
+    "D04": {
+      "type": "H3"
+    },
+    "D05": {
+      "type": "H3"
+    },
+    "D06": {
+      "type": "S"
+    },
+    "D07": {
+      "type": "H3"
+    },
+    "D08": {
+      "type": "H3"
+    },
+    "D09": {
+      "type": "H3"
+    },
+    "D10": {
+      "type": "H3"
+    },
+    "D11": {
+      "type": "H3"
+    },
+    "D12": {
+      "type": "H3"
+    },
+    "D13": {
+      "type": "H3"
+    },
+    "D14": {
+      "type": "S"
+    },
+    "D15": {
+      "type": "H3"
+    },
+    "D16": {
+      "type": "H3"
+    },
+    "D17": {
+      "type": "H3"
+    },
+    "D18": {
+      "type": "B"
+    },
+    "D19": {
+      "type": "H3"
+    },
+    "D20": {
+      "type": "H3"
+    },
+    "D21": {
+      "type": "O"
+    }
+  },
+  "codes": {
+    "D01.G0": {
+      "code_id": "D01.G0",
+      "parent_id": null,
+      "dimension": "D01"
+    },
+    "D01.G1": {
+      "code_id": "D01.G1",
+      "parent_id": null,
+      "dimension": "D01"
+    },
+    "D01.G2": {
+      "code_id": "D01.G2",
+      "parent_id": null,
+      "dimension": "D01"
+    },
+    "D01.G3": {
+      "code_id": "D01.G3",
+      "parent_id": null,
+      "dimension": "D01"
+    },
+    "D01.G4": {
+      "code_id": "D01.G4",
+      "parent_id": null,
+      "dimension": "D01"
+    },
+    "D01.G5": {
+      "code_id": "D01.G5",
+      "parent_id": null,
+      "dimension": "D01"
+    },
+    "D01.G6": {
+      "code_id": "D01.G6",
+      "parent_id": null,
+      "dimension": "D01"
+    },
+    "D01.G7": {
+      "code_id": "D01.G7",
+      "parent_id": null,
+      "dimension": "D01"
+    },
+    "D01.G8": {
+      "code_id": "D01.G8",
+      "parent_id": null,
+      "dimension": "D01"
+    },
+    "D02.ORL.LOCAL_ORAL": {
+      "code_id": "D02.ORL.LOCAL_ORAL",
+      "parent_id": "D02.ORL",
+      "dimension": "D02"
+    },
+    "D02.ORL.SCHOOL_ORAL": {
+      "code_id": "D02.ORL.SCHOOL_ORAL",
+      "parent_id": "D02.ORL",
+      "dimension": "D02"
+    },
+    "D02.ORL.WORKPLACE_ORAL": {
+      "code_id": "D02.ORL.WORKPLACE_ORAL",
+      "parent_id": "D02.ORL",
+      "dimension": "D02"
+    },
+    "D02.ORL.FAMILY_ORAL": {
+      "code_id": "D02.ORL.FAMILY_ORAL",
+      "parent_id": "D02.ORL",
+      "dimension": "D02"
+    },
+    "D02.ORL.PEER_ORAL": {
+      "code_id": "D02.ORL.PEER_ORAL",
+      "parent_id": "D02.ORL",
+      "dimension": "D02"
+    },
+    "D02.PRT.LETTER": {
+      "code_id": "D02.PRT.LETTER",
+      "parent_id": "D02.PRT",
+      "dimension": "D02"
+    },
+    "D02.PRT.CHAIN_LETTER": {
+      "code_id": "D02.PRT.CHAIN_LETTER",
+      "parent_id": "D02.PRT",
+      "dimension": "D02"
+    },
+    "D02.PRT.NEWSPAPER": {
+      "code_id": "D02.PRT.NEWSPAPER",
+      "parent_id": "D02.PRT",
+      "dimension": "D02"
+    },
+    "D02.PRT.MAGAZINE": {
+      "code_id": "D02.PRT.MAGAZINE",
+      "parent_id": "D02.PRT",
+      "dimension": "D02"
+    },
+    "D02.PRT.BOOK": {
+      "code_id": "D02.PRT.BOOK",
+      "parent_id": "D02.PRT",
+      "dimension": "D02"
+    },
+    "D02.PRT.LEAFLET": {
+      "code_id": "D02.PRT.LEAFLET",
+      "parent_id": "D02.PRT",
+      "dimension": "D02"
+    },
+    "D02.BRD.RADIO": {
+      "code_id": "D02.BRD.RADIO",
+      "parent_id": "D02.BRD",
+      "dimension": "D02"
+    },
+    "D02.BRD.TELEVISION": {
+      "code_id": "D02.BRD.TELEVISION",
+      "parent_id": "D02.BRD",
+      "dimension": "D02"
+    },
+    "D02.EDG.PC_COMM": {
+      "code_id": "D02.EDG.PC_COMM",
+      "parent_id": "D02.EDG",
+      "dimension": "D02"
+    },
+    "D02.EDG.BBS": {
+      "code_id": "D02.EDG.BBS",
+      "parent_id": "D02.EDG",
+      "dimension": "D02"
+    },
+    "D02.EDG.EMAIL": {
+      "code_id": "D02.EDG.EMAIL",
+      "parent_id": "D02.EDG",
+      "dimension": "D02"
+    },
+    "D02.EDG.CHAT_EARLY": {
+      "code_id": "D02.EDG.CHAT_EARLY",
+      "parent_id": "D02.EDG",
+      "dimension": "D02"
+    },
+    "D02.WEB.WEBSITE": {
+      "code_id": "D02.WEB.WEBSITE",
+      "parent_id": "D02.WEB",
+      "dimension": "D02"
+    },
+    "D02.WEB.BLOG": {
+      "code_id": "D02.WEB.BLOG",
+      "parent_id": "D02.WEB",
+      "dimension": "D02"
+    },
+    "D02.WEB.FORUM": {
+      "code_id": "D02.WEB.FORUM",
+      "parent_id": "D02.WEB",
+      "dimension": "D02"
+    },
+    "D02.WEB.SNS": {
+      "code_id": "D02.WEB.SNS",
+      "parent_id": "D02.WEB",
+      "dimension": "D02"
+    },
+    "D02.WEB.MESSAGING": {
+      "code_id": "D02.WEB.MESSAGING",
+      "parent_id": "D02.WEB",
+      "dimension": "D02"
+    },
+    "D02.AVD.VIDEO_SITE": {
+      "code_id": "D02.AVD.VIDEO_SITE",
+      "parent_id": "D02.AVD",
+      "dimension": "D02"
+    },
+    "D02.AVD.LIVE_STREAM": {
+      "code_id": "D02.AVD.LIVE_STREAM",
+      "parent_id": "D02.AVD",
+      "dimension": "D02"
+    },
+    "D02.AVD.PODCAST": {
+      "code_id": "D02.AVD.PODCAST",
+      "parent_id": "D02.AVD",
+      "dimension": "D02"
+    },
+    "D02.INS.OFFICIAL_NOTICE": {
+      "code_id": "D02.INS.OFFICIAL_NOTICE",
+      "parent_id": "D02.INS",
+      "dimension": "D02"
+    },
+    "D02.INS.REPORT_RECORD": {
+      "code_id": "D02.INS.REPORT_RECORD",
+      "parent_id": "D02.INS",
+      "dimension": "D02"
+    },
+    "D02.INS.LEGAL_MEDICAL_RECORD": {
+      "code_id": "D02.INS.LEGAL_MEDICAL_RECORD",
+      "parent_id": "D02.INS",
+      "dimension": "D02"
+    },
+    "D03.ORL.LOCAL_ORAL": {
+      "code_id": "D03.ORL.LOCAL_ORAL",
+      "parent_id": "D03.ORL",
+      "dimension": "D03"
+    },
+    "D03.ORL.SCHOOL_ORAL": {
+      "code_id": "D03.ORL.SCHOOL_ORAL",
+      "parent_id": "D03.ORL",
+      "dimension": "D03"
+    },
+    "D03.ORL.WORKPLACE_ORAL": {
+      "code_id": "D03.ORL.WORKPLACE_ORAL",
+      "parent_id": "D03.ORL",
+      "dimension": "D03"
+    },
+    "D03.ORL.FAMILY_ORAL": {
+      "code_id": "D03.ORL.FAMILY_ORAL",
+      "parent_id": "D03.ORL",
+      "dimension": "D03"
+    },
+    "D03.ORL.PEER_ORAL": {
+      "code_id": "D03.ORL.PEER_ORAL",
+      "parent_id": "D03.ORL",
+      "dimension": "D03"
+    },
+    "D03.PRT.LETTER": {
+      "code_id": "D03.PRT.LETTER",
+      "parent_id": "D03.PRT",
+      "dimension": "D03"
+    },
+    "D03.PRT.CHAIN_LETTER": {
+      "code_id": "D03.PRT.CHAIN_LETTER",
+      "parent_id": "D03.PRT",
+      "dimension": "D03"
+    },
+    "D03.PRT.NEWSPAPER": {
+      "code_id": "D03.PRT.NEWSPAPER",
+      "parent_id": "D03.PRT",
+      "dimension": "D03"
+    },
+    "D03.PRT.MAGAZINE": {
+      "code_id": "D03.PRT.MAGAZINE",
+      "parent_id": "D03.PRT",
+      "dimension": "D03"
+    },
+    "D03.PRT.BOOK": {
+      "code_id": "D03.PRT.BOOK",
+      "parent_id": "D03.PRT",
+      "dimension": "D03"
+    },
+    "D03.PRT.LEAFLET": {
+      "code_id": "D03.PRT.LEAFLET",
+      "parent_id": "D03.PRT",
+      "dimension": "D03"
+    },
+    "D03.BRD.RADIO": {
+      "code_id": "D03.BRD.RADIO",
+      "parent_id": "D03.BRD",
+      "dimension": "D03"
+    },
+    "D03.BRD.TELEVISION": {
+      "code_id": "D03.BRD.TELEVISION",
+      "parent_id": "D03.BRD",
+      "dimension": "D03"
+    },
+    "D03.EDG.PC_COMM": {
+      "code_id": "D03.EDG.PC_COMM",
+      "parent_id": "D03.EDG",
+      "dimension": "D03"
+    },
+    "D03.EDG.BBS": {
+      "code_id": "D03.EDG.BBS",
+      "parent_id": "D03.EDG",
+      "dimension": "D03"
+    },
+    "D03.EDG.EMAIL": {
+      "code_id": "D03.EDG.EMAIL",
+      "parent_id": "D03.EDG",
+      "dimension": "D03"
+    },
+    "D03.EDG.CHAT_EARLY": {
+      "code_id": "D03.EDG.CHAT_EARLY",
+      "parent_id": "D03.EDG",
+      "dimension": "D03"
+    },
+    "D03.WEB.WEBSITE": {
+      "code_id": "D03.WEB.WEBSITE",
+      "parent_id": "D03.WEB",
+      "dimension": "D03"
+    },
+    "D03.WEB.BLOG": {
+      "code_id": "D03.WEB.BLOG",
+      "parent_id": "D03.WEB",
+      "dimension": "D03"
+    },
+    "D03.WEB.FORUM": {
+      "code_id": "D03.WEB.FORUM",
+      "parent_id": "D03.WEB",
+      "dimension": "D03"
+    },
+    "D03.WEB.SNS": {
+      "code_id": "D03.WEB.SNS",
+      "parent_id": "D03.WEB",
+      "dimension": "D03"
+    },
+    "D03.WEB.MESSAGING": {
+      "code_id": "D03.WEB.MESSAGING",
+      "parent_id": "D03.WEB",
+      "dimension": "D03"
+    },
+    "D03.AVD.VIDEO_SITE": {
+      "code_id": "D03.AVD.VIDEO_SITE",
+      "parent_id": "D03.AVD",
+      "dimension": "D03"
+    },
+    "D03.AVD.LIVE_STREAM": {
+      "code_id": "D03.AVD.LIVE_STREAM",
+      "parent_id": "D03.AVD",
+      "dimension": "D03"
+    },
+    "D03.AVD.PODCAST": {
+      "code_id": "D03.AVD.PODCAST",
+      "parent_id": "D03.AVD",
+      "dimension": "D03"
+    },
+    "D03.INS.OFFICIAL_NOTICE": {
+      "code_id": "D03.INS.OFFICIAL_NOTICE",
+      "parent_id": "D03.INS",
+      "dimension": "D03"
+    },
+    "D03.INS.REPORT_RECORD": {
+      "code_id": "D03.INS.REPORT_RECORD",
+      "parent_id": "D03.INS",
+      "dimension": "D03"
+    },
+    "D03.INS.LEGAL_MEDICAL_RECORD": {
+      "code_id": "D03.INS.LEGAL_MEDICAL_RECORD",
+      "parent_id": "D03.INS",
+      "dimension": "D03"
+    },
+    "D04.STB.SINGLE_FIXED": {
+      "code_id": "D04.STB.SINGLE_FIXED",
+      "parent_id": "D04.STB",
+      "dimension": "D04"
+    },
+    "D04.STB.STABILIZED_CANON": {
+      "code_id": "D04.STB.STABILIZED_CANON",
+      "parent_id": "D04.STB",
+      "dimension": "D04"
+    },
+    "D04.VAR.ORAL_VARIATION": {
+      "code_id": "D04.VAR.ORAL_VARIATION",
+      "parent_id": "D04.VAR",
+      "dimension": "D04"
+    },
+    "D04.VAR.RETELLING": {
+      "code_id": "D04.VAR.RETELLING",
+      "parent_id": "D04.VAR",
+      "dimension": "D04"
+    },
+    "D04.VAR.ACCRETION": {
+      "code_id": "D04.VAR.ACCRETION",
+      "parent_id": "D04.VAR",
+      "dimension": "D04"
+    },
+    "D04.VAR.LOCALIZATION": {
+      "code_id": "D04.VAR.LOCALIZATION",
+      "parent_id": "D04.VAR",
+      "dimension": "D04"
+    },
+    "D04.MIG.MEDIUM_SHIFT": {
+      "code_id": "D04.MIG.MEDIUM_SHIFT",
+      "parent_id": "D04.MIG",
+      "dimension": "D04"
+    },
+    "D04.MIG.DIGITAL_REAMPLIFICATION": {
+      "code_id": "D04.MIG.DIGITAL_REAMPLIFICATION",
+      "parent_id": "D04.MIG",
+      "dimension": "D04"
+    },
+    "D04.MIG.FORMAT_TRANSLATION": {
+      "code_id": "D04.MIG.FORMAT_TRANSLATION",
+      "parent_id": "D04.MIG",
+      "dimension": "D04"
+    },
+    "D04.COL.LIVE_COCREATION": {
+      "code_id": "D04.COL.LIVE_COCREATION",
+      "parent_id": "D04.COL",
+      "dimension": "D04"
+    },
+    "D04.COL.MULTI_AUTHOR": {
+      "code_id": "D04.COL.MULTI_AUTHOR",
+      "parent_id": "D04.COL",
+      "dimension": "D04"
+    },
+    "D04.COL.SERIALIZATION": {
+      "code_id": "D04.COL.SERIALIZATION",
+      "parent_id": "D04.COL",
+      "dimension": "D04"
+    },
+    "D04.COL.DERIVATIVE_PROLIFERATION": {
+      "code_id": "D04.COL.DERIVATIVE_PROLIFERATION",
+      "parent_id": "D04.COL",
+      "dimension": "D04"
+    },
+    "D04.MED.MASS_ADAPTATION": {
+      "code_id": "D04.MED.MASS_ADAPTATION",
+      "parent_id": "D04.MED",
+      "dimension": "D04"
+    },
+    "D04.MED.COMMERCIALIZATION": {
+      "code_id": "D04.MED.COMMERCIALIZATION",
+      "parent_id": "D04.MED",
+      "dimension": "D04"
+    },
+    "D04.MED.CROSS_MEDIA": {
+      "code_id": "D04.MED.CROSS_MEDIA",
+      "parent_id": "D04.MED",
+      "dimension": "D04"
+    },
+    "D04.REC.EVENT_ATTACHMENT": {
+      "code_id": "D04.REC.EVENT_ATTACHMENT",
+      "parent_id": "D04.REC",
+      "dimension": "D04"
+    },
+    "D04.REC.PLACE_ATTACHMENT": {
+      "code_id": "D04.REC.PLACE_ATTACHMENT",
+      "parent_id": "D04.REC",
+      "dimension": "D04"
+    },
+    "D04.REC.REVIVAL": {
+      "code_id": "D04.REC.REVIVAL",
+      "parent_id": "D04.REC",
+      "dimension": "D04"
+    },
+    "D04.REC.CONTEXT_UPDATE": {
+      "code_id": "D04.REC.CONTEXT_UPDATE",
+      "parent_id": "D04.REC",
+      "dimension": "D04"
+    },
+    "D04.CON.DEBUNK_RECIRCULATION": {
+      "code_id": "D04.CON.DEBUNK_RECIRCULATION",
+      "parent_id": "D04.CON",
+      "dimension": "D04"
+    },
+    "D04.CON.ORIGIN_LOSS": {
+      "code_id": "D04.CON.ORIGIN_LOSS",
+      "parent_id": "D04.CON",
+      "dimension": "D04"
+    },
+    "D04.CON.CONTESTED_VERSION": {
+      "code_id": "D04.CON.CONTESTED_VERSION",
+      "parent_id": "D04.CON",
+      "dimension": "D04"
+    },
+    "D04.CON.HOAX_REFRAMING": {
+      "code_id": "D04.CON.HOAX_REFRAMING",
+      "parent_id": "D04.CON",
+      "dimension": "D04"
+    },
+    "D05.EXP.RETROSPECTIVE_1P": {
+      "code_id": "D05.EXP.RETROSPECTIVE_1P",
+      "parent_id": "D05.EXP",
+      "dimension": "D05"
+    },
+    "D05.EXP.LIVE_1P": {
+      "code_id": "D05.EXP.LIVE_1P",
+      "parent_id": "D05.EXP",
+      "dimension": "D05"
+    },
+    "D05.EXP.CONFESSION_DIARY": {
+      "code_id": "D05.EXP.CONFESSION_DIARY",
+      "parent_id": "D05.EXP",
+      "dimension": "D05"
+    },
+    "D05.EXP.EXPERIENCE_SUMMARY": {
+      "code_id": "D05.EXP.EXPERIENCE_SUMMARY",
+      "parent_id": "D05.EXP",
+      "dimension": "D05"
+    },
+    "D05.HRS.FOAF": {
+      "code_id": "D05.HRS.FOAF",
+      "parent_id": "D05.HRS",
+      "dimension": "D05"
+    },
+    "D05.HRS.FAMILY_HEARSAY": {
+      "code_id": "D05.HRS.FAMILY_HEARSAY",
+      "parent_id": "D05.HRS",
+      "dimension": "D05"
+    },
+    "D05.HRS.LOCAL_HEARSAY": {
+      "code_id": "D05.HRS.LOCAL_HEARSAY",
+      "parent_id": "D05.HRS",
+      "dimension": "D05"
+    },
+    "D05.HRS.SCHOOL_WORK_HEARSAY": {
+      "code_id": "D05.HRS.SCHOOL_WORK_HEARSAY",
+      "parent_id": "D05.HRS",
+      "dimension": "D05"
+    },
+    "D05.DOC.LOG_THREAD": {
+      "code_id": "D05.DOC.LOG_THREAD",
+      "parent_id": "D05.DOC",
+      "dimension": "D05"
+    },
+    "D05.DOC.DIARY_REPORT": {
+      "code_id": "D05.DOC.DIARY_REPORT",
+      "parent_id": "D05.DOC",
+      "dimension": "D05"
+    },
+    "D05.DOC.NEWS_STYLE": {
+      "code_id": "D05.DOC.NEWS_STYLE",
+      "parent_id": "D05.DOC",
+      "dimension": "D05"
+    },
+    "D05.DOC.AV_RECORD": {
+      "code_id": "D05.DOC.AV_RECORD",
+      "parent_id": "D05.DOC",
+      "dimension": "D05"
+    },
+    "D05.PRP.FACT_CLAIM": {
+      "code_id": "D05.PRP.FACT_CLAIM",
+      "parent_id": "D05.PRP",
+      "dimension": "D05"
+    },
+    "D05.PRP.EXPLANATORY_CLAIM": {
+      "code_id": "D05.PRP.EXPLANATORY_CLAIM",
+      "parent_id": "D05.PRP",
+      "dimension": "D05"
+    },
+    "D05.PRP.PREDICTIVE_CLAIM": {
+      "code_id": "D05.PRP.PREDICTIVE_CLAIM",
+      "parent_id": "D05.PRP",
+      "dimension": "D05"
+    },
+    "D05.PRP.CLASSIFICATION_CLAIM": {
+      "code_id": "D05.PRP.CLASSIFICATION_CLAIM",
+      "parent_id": "D05.PRP",
+      "dimension": "D05"
+    },
+    "D05.RUL.WARNING": {
+      "code_id": "D05.RUL.WARNING",
+      "parent_id": "D05.RUL",
+      "dimension": "D05"
+    },
+    "D05.RUL.TABOO": {
+      "code_id": "D05.RUL.TABOO",
+      "parent_id": "D05.RUL",
+      "dimension": "D05"
+    },
+    "D05.RUL.RITUAL_PROCEDURE": {
+      "code_id": "D05.RUL.RITUAL_PROCEDURE",
+      "parent_id": "D05.RUL",
+      "dimension": "D05"
+    },
+    "D05.RUL.CHAIN_INSTRUCTION": {
+      "code_id": "D05.RUL.CHAIN_INSTRUCTION",
+      "parent_id": "D05.RUL",
+      "dimension": "D05"
+    },
+    "D05.RUL.JINX_RULE": {
+      "code_id": "D05.RUL.JINX_RULE",
+      "parent_id": "D05.RUL",
+      "dimension": "D05"
+    },
+    "D05.HYB.COLLAB_THREAD": {
+      "code_id": "D05.HYB.COLLAB_THREAD",
+      "parent_id": "D05.HYB",
+      "dimension": "D05"
+    },
+    "D05.HYB.MULTI_TESTIMONY": {
+      "code_id": "D05.HYB.MULTI_TESTIMONY",
+      "parent_id": "D05.HYB",
+      "dimension": "D05"
+    },
+    "D05.HYB.QA_EXPERT": {
+      "code_id": "D05.HYB.QA_EXPERT",
+      "parent_id": "D05.HYB",
+      "dimension": "D05"
+    },
+    "D05.HYB.NARRATIVE_EXPLANATION": {
+      "code_id": "D05.HYB.NARRATIVE_EXPLANATION",
+      "parent_id": "D05.HYB",
+      "dimension": "D05"
+    },
+    "D06.T1": {
+      "code_id": "D06.T1",
+      "parent_id": null,
+      "dimension": "D06"
+    },
+    "D06.T2": {
+      "code_id": "D06.T2",
+      "parent_id": null,
+      "dimension": "D06"
+    },
+    "D06.T3": {
+      "code_id": "D06.T3",
+      "parent_id": null,
+      "dimension": "D06"
+    },
+    "D06.T4": {
+      "code_id": "D06.T4",
+      "parent_id": null,
+      "dimension": "D06"
+    },
+    "D06.T5": {
+      "code_id": "D06.T5",
+      "parent_id": null,
+      "dimension": "D06"
+    },
+    "D06.T6": {
+      "code_id": "D06.T6",
+      "parent_id": null,
+      "dimension": "D06"
+    },
+    "D06.T7": {
+      "code_id": "D06.T7",
+      "parent_id": null,
+      "dimension": "D06"
+    },
+    "D07.ANO.ANOMALOUS_PERCEPTION": {
+      "code_id": "D07.ANO.ANOMALOUS_PERCEPTION",
+      "parent_id": "D07.ANO",
+      "dimension": "D07"
+    },
+    "D07.ANO.UNKNOWN_EXISTENCE": {
+      "code_id": "D07.ANO.UNKNOWN_EXISTENCE",
+      "parent_id": "D07.ANO",
+      "dimension": "D07"
+    },
+    "D07.ANO.UNEXPLAINED_EVENT": {
+      "code_id": "D07.ANO.UNEXPLAINED_EVENT",
+      "parent_id": "D07.ANO",
+      "dimension": "D07"
+    },
+    "D07.ANO.DREAM_SLEEP_ANOMALY": {
+      "code_id": "D07.ANO.DREAM_SLEEP_ANOMALY",
+      "parent_id": "D07.ANO",
+      "dimension": "D07"
+    },
+    "D07.DCF.UNEXPLAINED_DEATH_LOSS": {
+      "code_id": "D07.DCF.UNEXPLAINED_DEATH_LOSS",
+      "parent_id": "D07.DCF",
+      "dimension": "D07"
+    },
+    "D07.DCF.COINCIDENCE_PROBABILITY": {
+      "code_id": "D07.DCF.COINCIDENCE_PROBABILITY",
+      "parent_id": "D07.DCF",
+      "dimension": "D07"
+    },
+    "D07.DCF.MISFORTUNE_STREAK": {
+      "code_id": "D07.DCF.MISFORTUNE_STREAK",
+      "parent_id": "D07.DCF",
+      "dimension": "D07"
+    },
+    "D07.DCF.FATE_OMEN": {
+      "code_id": "D07.DCF.FATE_OMEN",
+      "parent_id": "D07.DCF",
+      "dimension": "D07"
+    },
+    "D07.PSE.DANGEROUS_PLACE": {
+      "code_id": "D07.PSE.DANGEROUS_PLACE",
+      "parent_id": "D07.PSE",
+      "dimension": "D07"
+    },
+    "D07.PSE.SPATIAL_ROUTE_ANOMALY": {
+      "code_id": "D07.PSE.SPATIAL_ROUTE_ANOMALY",
+      "parent_id": "D07.PSE",
+      "dimension": "D07"
+    },
+    "D07.PSE.HIDDEN_VANISHED_PLACE": {
+      "code_id": "D07.PSE.HIDDEN_VANISHED_PLACE",
+      "parent_id": "D07.PSE",
+      "dimension": "D07"
+    },
+    "D07.PSE.ENVIRONMENTAL_ANOMALY": {
+      "code_id": "D07.PSE.ENVIRONMENTAL_ANOMALY",
+      "parent_id": "D07.PSE",
+      "dimension": "D07"
+    },
+    "D07.ICT.STRANGER_THREAT": {
+      "code_id": "D07.ICT.STRANGER_THREAT",
+      "parent_id": "D07.ICT",
+      "dimension": "D07"
+    },
+    "D07.ICT.ABDUCTION_ASSAULT": {
+      "code_id": "D07.ICT.ABDUCTION_ASSAULT",
+      "parent_id": "D07.ICT",
+      "dimension": "D07"
+    },
+    "D07.ICT.HIDDEN_CRIMINAL_PRACTICE": {
+      "code_id": "D07.ICT.HIDDEN_CRIMINAL_PRACTICE",
+      "parent_id": "D07.ICT",
+      "dimension": "D07"
+    },
+    "D07.ICT.OUTGROUP_THREAT": {
+      "code_id": "D07.ICT.OUTGROUP_THREAT",
+      "parent_id": "D07.ICT",
+      "dimension": "D07"
+    },
+    "D07.BHF.SYMPTOM_DISEASE": {
+      "code_id": "D07.BHF.SYMPTOM_DISEASE",
+      "parent_id": "D07.BHF",
+      "dimension": "D07"
+    },
+    "D07.BHF.BODY_ANOMALY": {
+      "code_id": "D07.BHF.BODY_ANOMALY",
+      "parent_id": "D07.BHF",
+      "dimension": "D07"
+    },
+    "D07.BHF.MEDICAL_RISK": {
+      "code_id": "D07.BHF.MEDICAL_RISK",
+      "parent_id": "D07.BHF",
+      "dimension": "D07"
+    },
+    "D07.BHF.FOOD_CONTAMINATION": {
+      "code_id": "D07.BHF.FOOD_CONTAMINATION",
+      "parent_id": "D07.BHF",
+      "dimension": "D07"
+    },
+    "D07.BHF.SEX_REPRODUCTION": {
+      "code_id": "D07.BHF.SEX_REPRODUCTION",
+      "parent_id": "D07.BHF",
+      "dimension": "D07"
+    },
+    "D07.TPS.DEVICE_PRODUCT_FAILURE": {
+      "code_id": "D07.TPS.DEVICE_PRODUCT_FAILURE",
+      "parent_id": "D07.TPS",
+      "dimension": "D07"
+    },
+    "D07.TPS.HIDDEN_PRODUCT_FUNCTION": {
+      "code_id": "D07.TPS.HIDDEN_PRODUCT_FUNCTION",
+      "parent_id": "D07.TPS",
+      "dimension": "D07"
+    },
+    "D07.TPS.DIGITAL_SYSTEM_ANOMALY": {
+      "code_id": "D07.TPS.DIGITAL_SYSTEM_ANOMALY",
+      "parent_id": "D07.TPS",
+      "dimension": "D07"
+    },
+    "D07.TPS.TECH_RISK_SURVEILLANCE": {
+      "code_id": "D07.TPS.TECH_RISK_SURVEILLANCE",
+      "parent_id": "D07.TPS",
+      "dimension": "D07"
+    },
+    "D07.INO.HIDDEN_RULE_PROCEDURE": {
+      "code_id": "D07.INO.HIDDEN_RULE_PROCEDURE",
+      "parent_id": "D07.INO",
+      "dimension": "D07"
+    },
+    "D07.INO.ORGANIZATIONAL_SECRECY": {
+      "code_id": "D07.INO.ORGANIZATIONAL_SECRECY",
+      "parent_id": "D07.INO",
+      "dimension": "D07"
+    },
+    "D07.INO.INSTITUTIONAL_MANIPULATION": {
+      "code_id": "D07.INO.INSTITUTIONAL_MANIPULATION",
+      "parent_id": "D07.INO",
+      "dimension": "D07"
+    },
+    "D07.INO.OCCUPATIONAL_HIDDEN_PRACTICE": {
+      "code_id": "D07.INO.OCCUPATIONAL_HIDDEN_PRACTICE",
+      "parent_id": "D07.INO",
+      "dimension": "D07"
+    },
+    "D07.INO.SYSTEM_CAPACITY_FAILURE": {
+      "code_id": "D07.INO.SYSTEM_CAPACITY_FAILURE",
+      "parent_id": "D07.INO",
+      "dimension": "D07"
+    },
+    "D07.ING.PERSONALITY_ATTRIBUTE": {
+      "code_id": "D07.ING.PERSONALITY_ATTRIBUTE",
+      "parent_id": "D07.ING",
+      "dimension": "D07"
+    },
+    "D07.ING.GROUP_STEREOTYPE": {
+      "code_id": "D07.ING.GROUP_STEREOTYPE",
+      "parent_id": "D07.ING",
+      "dimension": "D07"
+    },
+    "D07.ING.NORM_MORALITY": {
+      "code_id": "D07.ING.NORM_MORALITY",
+      "parent_id": "D07.ING",
+      "dimension": "D07"
+    },
+    "D07.ING.BELONGING_BOUNDARY": {
+      "code_id": "D07.ING.BELONGING_BOUNDARY",
+      "parent_id": "D07.ING",
+      "dimension": "D07"
+    },
+    "D07.ISU.INFORMATION_VOID": {
+      "code_id": "D07.ISU.INFORMATION_VOID",
+      "parent_id": "D07.ISU",
+      "dimension": "D07"
+    },
+    "D07.ISU.CRISIS_SCARCITY": {
+      "code_id": "D07.ISU.CRISIS_SCARCITY",
+      "parent_id": "D07.ISU",
+      "dimension": "D07"
+    },
+    "D07.ISU.PUBLIC_FIGURE_UNKNOWN": {
+      "code_id": "D07.ISU.PUBLIC_FIGURE_UNKNOWN",
+      "parent_id": "D07.ISU",
+      "dimension": "D07"
+    },
+    "D07.ISU.FUTURE_SOCIAL_CHANGE": {
+      "code_id": "D07.ISU.FUTURE_SOCIAL_CHANGE",
+      "parent_id": "D07.ISU",
+      "dimension": "D07"
+    },
+    "D08.DEX.PERCEPTUAL_ANOMALY": {
+      "code_id": "D08.DEX.PERCEPTUAL_ANOMALY",
+      "parent_id": "D08.DEX",
+      "dimension": "D08"
+    },
+    "D08.DEX.BODILY_SENSATION": {
+      "code_id": "D08.DEX.BODILY_SENSATION",
+      "parent_id": "D08.DEX",
+      "dimension": "D08"
+    },
+    "D08.DEX.DIRECT_EVENT": {
+      "code_id": "D08.DEX.DIRECT_EVENT",
+      "parent_id": "D08.DEX",
+      "dimension": "D08"
+    },
+    "D08.DEX.DREAM_SLEEP_EVENT": {
+      "code_id": "D08.DEX.DREAM_SLEEP_EVENT",
+      "parent_id": "D08.DEX",
+      "dimension": "D08"
+    },
+    "D08.STY.WITNESS_REPORT": {
+      "code_id": "D08.STY.WITNESS_REPORT",
+      "parent_id": "D08.STY",
+      "dimension": "D08"
+    },
+    "D08.STY.FOAF_REPORT": {
+      "code_id": "D08.STY.FOAF_REPORT",
+      "parent_id": "D08.STY",
+      "dimension": "D08"
+    },
+    "D08.STY.COMMUNITY_REPETITION": {
+      "code_id": "D08.STY.COMMUNITY_REPETITION",
+      "parent_id": "D08.STY",
+      "dimension": "D08"
+    },
+    "D08.STY.AUTHORITY_TESTIMONY": {
+      "code_id": "D08.STY.AUTHORITY_TESTIMONY",
+      "parent_id": "D08.STY",
+      "dimension": "D08"
+    },
+    "D08.PAT.REPEATED_COINCIDENCE": {
+      "code_id": "D08.PAT.REPEATED_COINCIDENCE",
+      "parent_id": "D08.PAT",
+      "dimension": "D08"
+    },
+    "D08.PAT.TEMPORAL_ASSOCIATION": {
+      "code_id": "D08.PAT.TEMPORAL_ASSOCIATION",
+      "parent_id": "D08.PAT",
+      "dimension": "D08"
+    },
+    "D08.PAT.FREQUENCY_PATTERN": {
+      "code_id": "D08.PAT.FREQUENCY_PATTERN",
+      "parent_id": "D08.PAT",
+      "dimension": "D08"
+    },
+    "D08.PAT.SIMILARITY_ANALOGY": {
+      "code_id": "D08.PAT.SIMILARITY_ANALOGY",
+      "parent_id": "D08.PAT",
+      "dimension": "D08"
+    },
+    "D08.TRC.PHOTO_VIDEO_AUDIO": {
+      "code_id": "D08.TRC.PHOTO_VIDEO_AUDIO",
+      "parent_id": "D08.TRC",
+      "dimension": "D08"
+    },
+    "D08.TRC.TEXT_DOCUMENT": {
+      "code_id": "D08.TRC.TEXT_DOCUMENT",
+      "parent_id": "D08.TRC",
+      "dimension": "D08"
+    },
+    "D08.TRC.PHYSICAL_TRACE": {
+      "code_id": "D08.TRC.PHYSICAL_TRACE",
+      "parent_id": "D08.TRC",
+      "dimension": "D08"
+    },
+    "D08.TRC.MISSING_ALTERED_RECORD": {
+      "code_id": "D08.TRC.MISSING_ALTERED_RECORD",
+      "parent_id": "D08.TRC",
+      "dimension": "D08"
+    },
+    "D08.HIS.RECENT_INCIDENT": {
+      "code_id": "D08.HIS.RECENT_INCIDENT",
+      "parent_id": "D08.HIS",
+      "dimension": "D08"
+    },
+    "D08.HIS.HISTORICAL_EVENT": {
+      "code_id": "D08.HIS.HISTORICAL_EVENT",
+      "parent_id": "D08.HIS",
+      "dimension": "D08"
+    },
+    "D08.HIS.DEATH_CRIME_HISTORY": {
+      "code_id": "D08.HIS.DEATH_CRIME_HISTORY",
+      "parent_id": "D08.HIS",
+      "dimension": "D08"
+    },
+    "D08.HIS.PLACE_NAME_RUIN": {
+      "code_id": "D08.HIS.PLACE_NAME_RUIN",
+      "parent_id": "D08.HIS",
+      "dimension": "D08"
+    },
+    "D08.OPA.MALFUNCTION": {
+      "code_id": "D08.OPA.MALFUNCTION",
+      "parent_id": "D08.OPA",
+      "dimension": "D08"
+    },
+    "D08.OPA.OPAQUE_RULE": {
+      "code_id": "D08.OPA.OPAQUE_RULE",
+      "parent_id": "D08.OPA",
+      "dimension": "D08"
+    },
+    "D08.OPA.RESTRICTED_ACCESS": {
+      "code_id": "D08.OPA.RESTRICTED_ACCESS",
+      "parent_id": "D08.OPA",
+      "dimension": "D08"
+    },
+    "D08.OPA.DATA_SYSTEM_GAP": {
+      "code_id": "D08.OPA.DATA_SYSTEM_GAP",
+      "parent_id": "D08.OPA",
+      "dimension": "D08"
+    },
+    "D08.CLM.INHERITED_SAYING": {
+      "code_id": "D08.CLM.INHERITED_SAYING",
+      "parent_id": "D08.CLM",
+      "dimension": "D08"
+    },
+    "D08.CLM.UNSUPPORTED_ASSERTION": {
+      "code_id": "D08.CLM.UNSUPPORTED_ASSERTION",
+      "parent_id": "D08.CLM",
+      "dimension": "D08"
+    },
+    "D08.CLM.IMPORTED_MEDIA_CLAIM": {
+      "code_id": "D08.CLM.IMPORTED_MEDIA_CLAIM",
+      "parent_id": "D08.CLM",
+      "dimension": "D08"
+    },
+    "D08.CLM.FICTION_MEDIA_SEED": {
+      "code_id": "D08.CLM.FICTION_MEDIA_SEED",
+      "parent_id": "D08.CLM",
+      "dimension": "D08"
+    },
+    "D09.CAT.NAMING": {
+      "code_id": "D09.CAT.NAMING",
+      "parent_id": "D09.CAT",
+      "dimension": "D09"
+    },
+    "D09.CAT.TYPE_ASSIGNMENT": {
+      "code_id": "D09.CAT.TYPE_ASSIGNMENT",
+      "parent_id": "D09.CAT",
+      "dimension": "D09"
+    },
+    "D09.CAT.BOUNDARY_CLASSIFICATION": {
+      "code_id": "D09.CAT.BOUNDARY_CLASSIFICATION",
+      "parent_id": "D09.CAT",
+      "dimension": "D09"
+    },
+    "D09.CAU.DIRECT_CAUSE": {
+      "code_id": "D09.CAU.DIRECT_CAUSE",
+      "parent_id": "D09.CAU",
+      "dimension": "D09"
+    },
+    "D09.CAU.HIDDEN_CAUSE": {
+      "code_id": "D09.CAU.HIDDEN_CAUSE",
+      "parent_id": "D09.CAU",
+      "dimension": "D09"
+    },
+    "D09.CAU.BLAME_RESPONSIBILITY": {
+      "code_id": "D09.CAU.BLAME_RESPONSIBILITY",
+      "parent_id": "D09.CAU",
+      "dimension": "D09"
+    },
+    "D09.AGN.AGENCY_ATTRIBUTION": {
+      "code_id": "D09.AGN.AGENCY_ATTRIBUTION",
+      "parent_id": "D09.AGN",
+      "dimension": "D09"
+    },
+    "D09.AGN.MOTIVE_ATTRIBUTION": {
+      "code_id": "D09.AGN.MOTIVE_ATTRIBUTION",
+      "parent_id": "D09.AGN",
+      "dimension": "D09"
+    },
+    "D09.AGN.COORDINATED_INTENT": {
+      "code_id": "D09.AGN.COORDINATED_INTENT",
+      "parent_id": "D09.AGN",
+      "dimension": "D09"
+    },
+    "D09.PPR.CORRELATION_RULE": {
+      "code_id": "D09.PPR.CORRELATION_RULE",
+      "parent_id": "D09.PPR",
+      "dimension": "D09"
+    },
+    "D09.PPR.OMEN_FORECAST": {
+      "code_id": "D09.PPR.OMEN_FORECAST",
+      "parent_id": "D09.PPR",
+      "dimension": "D09"
+    },
+    "D09.PPR.RECURRENCE_RULE": {
+      "code_id": "D09.PPR.RECURRENCE_RULE",
+      "parent_id": "D09.PPR",
+      "dimension": "D09"
+    },
+    "D09.PPR.ANALOGICAL_PATTERN": {
+      "code_id": "D09.PPR.ANALOGICAL_PATTERN",
+      "parent_id": "D09.PPR",
+      "dimension": "D09"
+    },
+    "D09.NOR.GOOD_BAD_VALUATION": {
+      "code_id": "D09.NOR.GOOD_BAD_VALUATION",
+      "parent_id": "D09.NOR",
+      "dimension": "D09"
+    },
+    "D09.NOR.TABOOIZATION": {
+      "code_id": "D09.NOR.TABOOIZATION",
+      "parent_id": "D09.NOR",
+      "dimension": "D09"
+    },
+    "D09.NOR.MORALIZATION": {
+      "code_id": "D09.NOR.MORALIZATION",
+      "parent_id": "D09.NOR",
+      "dimension": "D09"
+    },
+    "D09.NOR.PURITY_CONTAMINATION": {
+      "code_id": "D09.NOR.PURITY_CONTAMINATION",
+      "parent_id": "D09.NOR",
+      "dimension": "D09"
+    },
+    "D09.CTL.AVOIDANCE_RULE": {
+      "code_id": "D09.CTL.AVOIDANCE_RULE",
+      "parent_id": "D09.CTL",
+      "dimension": "D09"
+    },
+    "D09.CTL.RITUAL_RULE": {
+      "code_id": "D09.CTL.RITUAL_RULE",
+      "parent_id": "D09.CTL",
+      "dimension": "D09"
+    },
+    "D09.CTL.TRANSMISSION_RULE": {
+      "code_id": "D09.CTL.TRANSMISSION_RULE",
+      "parent_id": "D09.CTL",
+      "dimension": "D09"
+    },
+    "D09.CTL.VERIFICATION_RULE": {
+      "code_id": "D09.CTL.VERIFICATION_RULE",
+      "parent_id": "D09.CTL",
+      "dimension": "D09"
+    },
+    "D09.SSI.SYSTEM_LOGIC": {
+      "code_id": "D09.SSI.SYSTEM_LOGIC",
+      "parent_id": "D09.SSI",
+      "dimension": "D09"
+    },
+    "D09.SSI.HIDDEN_STRUCTURE": {
+      "code_id": "D09.SSI.HIDDEN_STRUCTURE",
+      "parent_id": "D09.SSI",
+      "dimension": "D09"
+    },
+    "D09.SSI.GROUP_BOUNDARY": {
+      "code_id": "D09.SSI.GROUP_BOUNDARY",
+      "parent_id": "D09.SSI",
+      "dimension": "D09"
+    },
+    "D09.SSI.ROLE_RULE": {
+      "code_id": "D09.SSI.ROLE_RULE",
+      "parent_id": "D09.SSI",
+      "dimension": "D09"
+    },
+    "D09.HST.EVENT_ORIGIN": {
+      "code_id": "D09.HST.EVENT_ORIGIN",
+      "parent_id": "D09.HST",
+      "dimension": "D09"
+    },
+    "D09.HST.HISTORICAL_ANCHOR": {
+      "code_id": "D09.HST.HISTORICAL_ANCHOR",
+      "parent_id": "D09.HST",
+      "dimension": "D09"
+    },
+    "D09.HST.GENEALOGY_TRADITION": {
+      "code_id": "D09.HST.GENEALOGY_TRADITION",
+      "parent_id": "D09.HST",
+      "dimension": "D09"
+    },
+    "D09.UNK.MYSTERY_LABEL": {
+      "code_id": "D09.UNK.MYSTERY_LABEL",
+      "parent_id": "D09.UNK",
+      "dimension": "D09"
+    },
+    "D09.UNK.DELIBERATE_NONRESOLUTION": {
+      "code_id": "D09.UNK.DELIBERATE_NONRESOLUTION",
+      "parent_id": "D09.UNK",
+      "dimension": "D09"
+    },
+    "D09.UNK.FORBIDDEN_INQUIRY": {
+      "code_id": "D09.UNK.FORBIDDEN_INQUIRY",
+      "parent_id": "D09.UNK",
+      "dimension": "D09"
+    },
+    "D10.HUM.INDIVIDUAL_HUMAN": {
+      "code_id": "D10.HUM.INDIVIDUAL_HUMAN",
+      "parent_id": "D10.HUM",
+      "dimension": "D10"
+    },
+    "D10.HUM.INFORMAL_GROUP": {
+      "code_id": "D10.HUM.INFORMAL_GROUP",
+      "parent_id": "D10.HUM",
+      "dimension": "D10"
+    },
+    "D10.HUM.ORGANIZATION": {
+      "code_id": "D10.HUM.ORGANIZATION",
+      "parent_id": "D10.HUM",
+      "dimension": "D10"
+    },
+    "D10.HUM.COLLECTIVE_BEHAVIOR": {
+      "code_id": "D10.HUM.COLLECTIVE_BEHAVIOR",
+      "parent_id": "D10.HUM",
+      "dimension": "D10"
+    },
+    "D10.SUP.GHOST_SPIRIT": {
+      "code_id": "D10.SUP.GHOST_SPIRIT",
+      "parent_id": "D10.SUP",
+      "dimension": "D10"
+    },
+    "D10.SUP.YOKAI_ENTITY": {
+      "code_id": "D10.SUP.YOKAI_ENTITY",
+      "parent_id": "D10.SUP",
+      "dimension": "D10"
+    },
+    "D10.SUP.DEITY_DIVINE": {
+      "code_id": "D10.SUP.DEITY_DIVINE",
+      "parent_id": "D10.SUP",
+      "dimension": "D10"
+    },
+    "D10.SUP.IMPERSONAL_CURSE": {
+      "code_id": "D10.SUP.IMPERSONAL_CURSE",
+      "parent_id": "D10.SUP",
+      "dimension": "D10"
+    },
+    "D10.BIO.ANOMALOUS_ORGANISM": {
+      "code_id": "D10.BIO.ANOMALOUS_ORGANISM",
+      "parent_id": "D10.BIO",
+      "dimension": "D10"
+    },
+    "D10.BIO.PARASITE_INTERNAL": {
+      "code_id": "D10.BIO.PARASITE_INTERNAL",
+      "parent_id": "D10.BIO",
+      "dimension": "D10"
+    },
+    "D10.BIO.TRANSFORMED_HYBRID": {
+      "code_id": "D10.BIO.TRANSFORMED_HYBRID",
+      "parent_id": "D10.BIO",
+      "dimension": "D10"
+    },
+    "D10.OBJ.CURSED_OBJECT": {
+      "code_id": "D10.OBJ.CURSED_OBJECT",
+      "parent_id": "D10.OBJ",
+      "dimension": "D10"
+    },
+    "D10.OBJ.ARTIFACT_DEVICE": {
+      "code_id": "D10.OBJ.ARTIFACT_DEVICE",
+      "parent_id": "D10.OBJ",
+      "dimension": "D10"
+    },
+    "D10.OBJ.INFORMATION_CONTENT": {
+      "code_id": "D10.OBJ.INFORMATION_CONTENT",
+      "parent_id": "D10.OBJ",
+      "dimension": "D10"
+    },
+    "D10.OBJ.SYMBOL_NAME_IMAGE": {
+      "code_id": "D10.OBJ.SYMBOL_NAME_IMAGE",
+      "parent_id": "D10.OBJ",
+      "dimension": "D10"
+    },
+    "D10.SPC.SPECIFIC_PLACE": {
+      "code_id": "D10.SPC.SPECIFIC_PLACE",
+      "parent_id": "D10.SPC",
+      "dimension": "D10"
+    },
+    "D10.SPC.ROUTE_CONNECTION": {
+      "code_id": "D10.SPC.ROUTE_CONNECTION",
+      "parent_id": "D10.SPC",
+      "dimension": "D10"
+    },
+    "D10.SPC.ALTERNATE_WORLD": {
+      "code_id": "D10.SPC.ALTERNATE_WORLD",
+      "parent_id": "D10.SPC",
+      "dimension": "D10"
+    },
+    "D10.SPC.SPATIOTEMPORAL_FIELD": {
+      "code_id": "D10.SPC.SPATIOTEMPORAL_FIELD",
+      "parent_id": "D10.SPC",
+      "dimension": "D10"
+    },
+    "D10.NAT.PHYSICAL_ENV_PROCESS": {
+      "code_id": "D10.NAT.PHYSICAL_ENV_PROCESS",
+      "parent_id": "D10.NAT",
+      "dimension": "D10"
+    },
+    "D10.NAT.BIOPHYSIO_PROCESS": {
+      "code_id": "D10.NAT.BIOPHYSIO_PROCESS",
+      "parent_id": "D10.NAT",
+      "dimension": "D10"
+    },
+    "D10.NAT.CHEM_PATHO_PROCESS": {
+      "code_id": "D10.NAT.CHEM_PATHO_PROCESS",
+      "parent_id": "D10.NAT",
+      "dimension": "D10"
+    },
+    "D10.NAT.PROBABILITY_PROCESS": {
+      "code_id": "D10.NAT.PROBABILITY_PROCESS",
+      "parent_id": "D10.NAT",
+      "dimension": "D10"
+    },
+    "D10.NAT.TECHNICAL_PROCESS": {
+      "code_id": "D10.NAT.TECHNICAL_PROCESS",
+      "parent_id": "D10.NAT",
+      "dimension": "D10"
+    },
+    "D10.PHN.ANOMALOUS_EXPERIENCE": {
+      "code_id": "D10.PHN.ANOMALOUS_EXPERIENCE",
+      "parent_id": "D10.PHN",
+      "dimension": "D10"
+    },
+    "D10.PHN.DREAM_SLEEP_PHENOMENON": {
+      "code_id": "D10.PHN.DREAM_SLEEP_PHENOMENON",
+      "parent_id": "D10.PHN",
+      "dimension": "D10"
+    },
+    "D10.PHN.UNEXPLAINED_PHYSICAL_PHENOMENON": {
+      "code_id": "D10.PHN.UNEXPLAINED_PHYSICAL_PHENOMENON",
+      "parent_id": "D10.PHN",
+      "dimension": "D10"
+    },
+    "D10.PHN.SYNCHRONICITY_OMEN": {
+      "code_id": "D10.PHN.SYNCHRONICITY_OMEN",
+      "parent_id": "D10.PHN",
+      "dimension": "D10"
+    },
+    "D11.SEN.VISUAL_EXPOSURE": {
+      "code_id": "D11.SEN.VISUAL_EXPOSURE",
+      "parent_id": "D11.SEN",
+      "dimension": "D11"
+    },
+    "D11.SEN.AUDITORY_EXPOSURE": {
+      "code_id": "D11.SEN.AUDITORY_EXPOSURE",
+      "parent_id": "D11.SEN",
+      "dimension": "D11"
+    },
+    "D11.SEN.TACTILE_EXPOSURE": {
+      "code_id": "D11.SEN.TACTILE_EXPOSURE",
+      "parent_id": "D11.SEN",
+      "dimension": "D11"
+    },
+    "D11.SEN.OTHER_SENSORY": {
+      "code_id": "D11.SEN.OTHER_SENSORY",
+      "parent_id": "D11.SEN",
+      "dimension": "D11"
+    },
+    "D11.INF.READ_VIEW_MEDIA": {
+      "code_id": "D11.INF.READ_VIEW_MEDIA",
+      "parent_id": "D11.INF",
+      "dimension": "D11"
+    },
+    "D11.INF.LEARN_KNOW": {
+      "code_id": "D11.INF.LEARN_KNOW",
+      "parent_id": "D11.INF",
+      "dimension": "D11"
+    },
+    "D11.INF.SAY_NAME_REMEMBER": {
+      "code_id": "D11.INF.SAY_NAME_REMEMBER",
+      "parent_id": "D11.INF",
+      "dimension": "D11"
+    },
+    "D11.INF.UNDERSTAND_RECOGNIZE": {
+      "code_id": "D11.INF.UNDERSTAND_RECOGNIZE",
+      "parent_id": "D11.INF",
+      "dimension": "D11"
+    },
+    "D11.INF.RECEIVE_MESSAGE": {
+      "code_id": "D11.INF.RECEIVE_MESSAGE",
+      "parent_id": "D11.INF",
+      "dimension": "D11"
+    },
+    "D11.MAN.OPEN_UNSEAL": {
+      "code_id": "D11.MAN.OPEN_UNSEAL",
+      "parent_id": "D11.MAN",
+      "dimension": "D11"
+    },
+    "D11.MAN.TAKE_OWN_CARRY": {
+      "code_id": "D11.MAN.TAKE_OWN_CARRY",
+      "parent_id": "D11.MAN",
+      "dimension": "D11"
+    },
+    "D11.MAN.CREATE_ALTER_MANIPULATE": {
+      "code_id": "D11.MAN.CREATE_ALTER_MANIPULATE",
+      "parent_id": "D11.MAN",
+      "dimension": "D11"
+    },
+    "D11.MAN.PHOTO_RECORD": {
+      "code_id": "D11.MAN.PHOTO_RECORD",
+      "parent_id": "D11.MAN",
+      "dimension": "D11"
+    },
+    "D11.MAN.PERFORM_RITUAL": {
+      "code_id": "D11.MAN.PERFORM_RITUAL",
+      "parent_id": "D11.MAN",
+      "dimension": "D11"
+    },
+    "D11.MAN.RESPOND_CHOOSE": {
+      "code_id": "D11.MAN.RESPOND_CHOOSE",
+      "parent_id": "D11.MAN",
+      "dimension": "D11"
+    },
+    "D11.MOV.ENTER_PASS_CROSS": {
+      "code_id": "D11.MOV.ENTER_PASS_CROSS",
+      "parent_id": "D11.MOV",
+      "dimension": "D11"
+    },
+    "D11.MOV.RIDE_BOARD": {
+      "code_id": "D11.MOV.RIDE_BOARD",
+      "parent_id": "D11.MOV",
+      "dimension": "D11"
+    },
+    "D11.MOV.EXIT_ALIGHT": {
+      "code_id": "D11.MOV.EXIT_ALIGHT",
+      "parent_id": "D11.MOV",
+      "dimension": "D11"
+    },
+    "D11.MOV.FOLLOW_TURN_ROUTE": {
+      "code_id": "D11.MOV.FOLLOW_TURN_ROUTE",
+      "parent_id": "D11.MOV",
+      "dimension": "D11"
+    },
+    "D11.SOC.MEET_INTERACT": {
+      "code_id": "D11.SOC.MEET_INTERACT",
+      "parent_id": "D11.SOC",
+      "dimension": "D11"
+    },
+    "D11.SOC.RELATION_FAMILY": {
+      "code_id": "D11.SOC.RELATION_FAMILY",
+      "parent_id": "D11.SOC",
+      "dimension": "D11"
+    },
+    "D11.SOC.WORK_EMPLOYMENT": {
+      "code_id": "D11.SOC.WORK_EMPLOYMENT",
+      "parent_id": "D11.SOC",
+      "dimension": "D11"
+    },
+    "D11.SOC.CONTRACT_EXCHANGE": {
+      "code_id": "D11.SOC.CONTRACT_EXCHANGE",
+      "parent_id": "D11.SOC",
+      "dimension": "D11"
+    },
+    "D11.SOC.INVESTIGATE_INQUIRE": {
+      "code_id": "D11.SOC.INVESTIGATE_INQUIRE",
+      "parent_id": "D11.SOC",
+      "dimension": "D11"
+    },
+    "D11.CON.TIME_DATE": {
+      "code_id": "D11.CON.TIME_DATE",
+      "parent_id": "D11.CON",
+      "dimension": "D11"
+    },
+    "D11.CON.AGE_LIFESTAGE": {
+      "code_id": "D11.CON.AGE_LIFESTAGE",
+      "parent_id": "D11.CON",
+      "dimension": "D11"
+    },
+    "D11.CON.PERSONAL_ATTRIBUTE": {
+      "code_id": "D11.CON.PERSONAL_ATTRIBUTE",
+      "parent_id": "D11.CON",
+      "dimension": "D11"
+    },
+    "D11.CON.LOCATION_STATE": {
+      "code_id": "D11.CON.LOCATION_STATE",
+      "parent_id": "D11.CON",
+      "dimension": "D11"
+    },
+    "D11.PAS.SLEEP_DREAM": {
+      "code_id": "D11.PAS.SLEEP_DREAM",
+      "parent_id": "D11.PAS",
+      "dimension": "D11"
+    },
+    "D11.PAS.SYMPTOM_ILLNESS": {
+      "code_id": "D11.PAS.SYMPTOM_ILLNESS",
+      "parent_id": "D11.PAS",
+      "dimension": "D11"
+    },
+    "D11.PAS.ACCIDENT_INVOLVEMENT": {
+      "code_id": "D11.PAS.ACCIDENT_INVOLVEMENT",
+      "parent_id": "D11.PAS",
+      "dimension": "D11"
+    },
+    "D11.PAS.SPONTANEOUS_SELECTION": {
+      "code_id": "D11.PAS.SPONTANEOUS_SELECTION",
+      "parent_id": "D11.PAS",
+      "dimension": "D11"
+    },
+    "D11.NCR.INTRINSIC_PROPERTY": {
+      "code_id": "D11.NCR.INTRINSIC_PROPERTY",
+      "parent_id": "D11.NCR",
+      "dimension": "D11"
+    },
+    "D11.NCR.AMBIENT_EFFECT": {
+      "code_id": "D11.NCR.AMBIENT_EFFECT",
+      "parent_id": "D11.NCR",
+      "dimension": "D11"
+    },
+    "D12.FOC.PROTAGONIST_EXPERIENCER": {
+      "code_id": "D12.FOC.PROTAGONIST_EXPERIENCER",
+      "parent_id": "D12.FOC",
+      "dimension": "D12"
+    },
+    "D12.FOC.PRACTITIONER": {
+      "code_id": "D12.FOC.PRACTITIONER",
+      "parent_id": "D12.FOC",
+      "dimension": "D12"
+    },
+    "D12.OTH.SPECIFIC_OTHER": {
+      "code_id": "D12.OTH.SPECIFIC_OTHER",
+      "parent_id": "D12.OTH",
+      "dimension": "D12"
+    },
+    "D12.OTH.BYSTANDER_WITNESS": {
+      "code_id": "D12.OTH.BYSTANDER_WITNESS",
+      "parent_id": "D12.OTH",
+      "dimension": "D12"
+    },
+    "D12.OTH.VICTIM_TARGET": {
+      "code_id": "D12.OTH.VICTIM_TARGET",
+      "parent_id": "D12.OTH",
+      "dimension": "D12"
+    },
+    "D12.KIN.FAMILY_BLOODLINE": {
+      "code_id": "D12.KIN.FAMILY_BLOODLINE",
+      "parent_id": "D12.KIN",
+      "dimension": "D12"
+    },
+    "D12.KIN.PARTNER_FRIEND": {
+      "code_id": "D12.KIN.PARTNER_FRIEND",
+      "parent_id": "D12.KIN",
+      "dimension": "D12"
+    },
+    "D12.GRP.SMALL_GROUP": {
+      "code_id": "D12.GRP.SMALL_GROUP",
+      "parent_id": "D12.GRP",
+      "dimension": "D12"
+    },
+    "D12.GRP.LOCAL_COMMUNITY": {
+      "code_id": "D12.GRP.LOCAL_COMMUNITY",
+      "parent_id": "D12.GRP",
+      "dimension": "D12"
+    },
+    "D12.GRP.DEMOGRAPHIC_GROUP": {
+      "code_id": "D12.GRP.DEMOGRAPHIC_GROUP",
+      "parent_id": "D12.GRP",
+      "dimension": "D12"
+    },
+    "D12.GRP.UNSPECIFIED_PEOPLE": {
+      "code_id": "D12.GRP.UNSPECIFIED_PEOPLE",
+      "parent_id": "D12.GRP",
+      "dimension": "D12"
+    },
+    "D12.ORG.ORGANIZATION": {
+      "code_id": "D12.ORG.ORGANIZATION",
+      "parent_id": "D12.ORG",
+      "dimension": "D12"
+    },
+    "D12.ORG.INSTITUTION_SYSTEM": {
+      "code_id": "D12.ORG.INSTITUTION_SYSTEM",
+      "parent_id": "D12.ORG",
+      "dimension": "D12"
+    },
+    "D12.OTD.OBJECT_PRODUCT": {
+      "code_id": "D12.OTD.OBJECT_PRODUCT",
+      "parent_id": "D12.OTD",
+      "dimension": "D12"
+    },
+    "D12.OTD.DEVICE_INFRA": {
+      "code_id": "D12.OTD.DEVICE_INFRA",
+      "parent_id": "D12.OTD",
+      "dimension": "D12"
+    },
+    "D12.OTD.DATA_RECORD": {
+      "code_id": "D12.OTD.DATA_RECORD",
+      "parent_id": "D12.OTD",
+      "dimension": "D12"
+    },
+    "D12.ENV.PLACE_BUILDING": {
+      "code_id": "D12.ENV.PLACE_BUILDING",
+      "parent_id": "D12.ENV",
+      "dimension": "D12"
+    },
+    "D12.ENV.NATURAL_ENVIRONMENT": {
+      "code_id": "D12.ENV.NATURAL_ENVIRONMENT",
+      "parent_id": "D12.ENV",
+      "dimension": "D12"
+    },
+    "D12.ENV.SPATIAL_WORLD_STATE": {
+      "code_id": "D12.ENV.SPATIAL_WORLD_STATE",
+      "parent_id": "D12.ENV",
+      "dimension": "D12"
+    },
+    "D12.AUD.NARRATOR_TELLER": {
+      "code_id": "D12.AUD.NARRATOR_TELLER",
+      "parent_id": "D12.AUD",
+      "dimension": "D12"
+    },
+    "D12.AUD.READER_LISTENER": {
+      "code_id": "D12.AUD.READER_LISTENER",
+      "parent_id": "D12.AUD",
+      "dimension": "D12"
+    },
+    "D12.AUD.NEXT_RECIPIENT": {
+      "code_id": "D12.AUD.NEXT_RECIPIENT",
+      "parent_id": "D12.AUD",
+      "dimension": "D12"
+    },
+    "D12.AUD.GENERAL_PUBLIC": {
+      "code_id": "D12.AUD.GENERAL_PUBLIC",
+      "parent_id": "D12.AUD",
+      "dimension": "D12"
+    },
+    "D13.MAN.MANIFEST_ONLY": {
+      "code_id": "D13.MAN.MANIFEST_ONLY",
+      "parent_id": "D13.MAN",
+      "dimension": "D13"
+    },
+    "D13.PHY.PHYSICAL_ATTACK": {
+      "code_id": "D13.PHY.PHYSICAL_ATTACK",
+      "parent_id": "D13.PHY",
+      "dimension": "D13"
+    },
+    "D13.PHY.PHYSIOLOGICAL_CHANGE": {
+      "code_id": "D13.PHY.PHYSIOLOGICAL_CHANGE",
+      "parent_id": "D13.PHY",
+      "dimension": "D13"
+    },
+    "D13.PHY.BODY_TRANSFORMATION": {
+      "code_id": "D13.PHY.BODY_TRANSFORMATION",
+      "parent_id": "D13.PHY",
+      "dimension": "D13"
+    },
+    "D13.PHY.BODY_INTRUSION": {
+      "code_id": "D13.PHY.BODY_INTRUSION",
+      "parent_id": "D13.PHY",
+      "dimension": "D13"
+    },
+    "D13.PHY.ENV_OBJECT_MANIPULATION": {
+      "code_id": "D13.PHY.ENV_OBJECT_MANIPULATION",
+      "parent_id": "D13.PHY",
+      "dimension": "D13"
+    },
+    "D13.REL.PURSUIT": {
+      "code_id": "D13.REL.PURSUIT",
+      "parent_id": "D13.REL",
+      "dimension": "D13"
+    },
+    "D13.REL.TARGETING": {
+      "code_id": "D13.REL.TARGETING",
+      "parent_id": "D13.REL",
+      "dimension": "D13"
+    },
+    "D13.REL.LURING": {
+      "code_id": "D13.REL.LURING",
+      "parent_id": "D13.REL",
+      "dimension": "D13"
+    },
+    "D13.REL.MIMICRY": {
+      "code_id": "D13.REL.MIMICRY",
+      "parent_id": "D13.REL",
+      "dimension": "D13"
+    },
+    "D13.REL.PERSISTENT_ATTACHMENT": {
+      "code_id": "D13.REL.PERSISTENT_ATTACHMENT",
+      "parent_id": "D13.REL",
+      "dimension": "D13"
+    },
+    "D13.REL.OTHER_ANOMALY_INTERFERENCE": {
+      "code_id": "D13.REL.OTHER_ANOMALY_INTERFERENCE",
+      "parent_id": "D13.REL",
+      "dimension": "D13"
+    },
+    "D13.INT.POSSESSION_CONTROL": {
+      "code_id": "D13.INT.POSSESSION_CONTROL",
+      "parent_id": "D13.INT",
+      "dimension": "D13"
+    },
+    "D13.INT.PARASITIC_HABITATION": {
+      "code_id": "D13.INT.PARASITIC_HABITATION",
+      "parent_id": "D13.INT",
+      "dimension": "D13"
+    },
+    "D13.INT.SYMBIOTIC_DEPENDENCE": {
+      "code_id": "D13.INT.SYMBIOTIC_DEPENDENCE",
+      "parent_id": "D13.INT",
+      "dimension": "D13"
+    },
+    "D13.COG.COGNITION_TRIGGERED_HARM": {
+      "code_id": "D13.COG.COGNITION_TRIGGERED_HARM",
+      "parent_id": "D13.COG",
+      "dimension": "D13"
+    },
+    "D13.COG.MENTAL_INFLUENCE": {
+      "code_id": "D13.COG.MENTAL_INFLUENCE",
+      "parent_id": "D13.COG",
+      "dimension": "D13"
+    },
+    "D13.COG.MEMORY_ALTERATION": {
+      "code_id": "D13.COG.MEMORY_ALTERATION",
+      "parent_id": "D13.COG",
+      "dimension": "D13"
+    },
+    "D13.COG.INFORMATION_INDUCED_ACTION": {
+      "code_id": "D13.COG.INFORMATION_INDUCED_ACTION",
+      "parent_id": "D13.COG",
+      "dimension": "D13"
+    },
+    "D13.RST.REALITY_ALTERATION": {
+      "code_id": "D13.RST.REALITY_ALTERATION",
+      "parent_id": "D13.RST",
+      "dimension": "D13"
+    },
+    "D13.RST.REALITY_REPLACEMENT": {
+      "code_id": "D13.RST.REALITY_REPLACEMENT",
+      "parent_id": "D13.RST",
+      "dimension": "D13"
+    },
+    "D13.RST.SPATIAL_DISTORTION": {
+      "code_id": "D13.RST.SPATIAL_DISTORTION",
+      "parent_id": "D13.RST",
+      "dimension": "D13"
+    },
+    "D13.RST.TEMPORAL_DISTORTION": {
+      "code_id": "D13.RST.TEMPORAL_DISTORTION",
+      "parent_id": "D13.RST",
+      "dimension": "D13"
+    },
+    "D13.TRN.PERSON_TRANSFER": {
+      "code_id": "D13.TRN.PERSON_TRANSFER",
+      "parent_id": "D13.TRN",
+      "dimension": "D13"
+    },
+    "D13.TRN.MEDIA_OBJECT_TRANSFER": {
+      "code_id": "D13.TRN.MEDIA_OBJECT_TRANSFER",
+      "parent_id": "D13.TRN",
+      "dimension": "D13"
+    },
+    "D13.TRN.HEREDITARY_TRANSFER": {
+      "code_id": "D13.TRN.HEREDITARY_TRANSFER",
+      "parent_id": "D13.TRN",
+      "dimension": "D13"
+    },
+    "D13.SOC.CONCEAL_SUPPRESS": {
+      "code_id": "D13.SOC.CONCEAL_SUPPRESS",
+      "parent_id": "D13.SOC",
+      "dimension": "D13"
+    },
+    "D13.SOC.EXCLUDE_STIGMATIZE": {
+      "code_id": "D13.SOC.EXCLUDE_STIGMATIZE",
+      "parent_id": "D13.SOC",
+      "dimension": "D13"
+    },
+    "D13.SOC.COERCE_CONFINE": {
+      "code_id": "D13.SOC.COERCE_CONFINE",
+      "parent_id": "D13.SOC",
+      "dimension": "D13"
+    },
+    "D13.SOC.INSTITUTIONAL_MANIPULATION": {
+      "code_id": "D13.SOC.INSTITUTIONAL_MANIPULATION",
+      "parent_id": "D13.SOC",
+      "dimension": "D13"
+    },
+    "D13.FAT.CURSE_MISFORTUNE": {
+      "code_id": "D13.FAT.CURSE_MISFORTUNE",
+      "parent_id": "D13.FAT",
+      "dimension": "D13"
+    },
+    "D13.FAT.FATE_FIXING": {
+      "code_id": "D13.FAT.FATE_FIXING",
+      "parent_id": "D13.FAT",
+      "dimension": "D13"
+    },
+    "D13.FAT.LUCK_BENEFIT": {
+      "code_id": "D13.FAT.LUCK_BENEFIT",
+      "parent_id": "D13.FAT",
+      "dimension": "D13"
+    },
+    "D14.NEG": {
+      "code_id": "D14.NEG",
+      "parent_id": null,
+      "dimension": "D14"
+    },
+    "D14.NEU": {
+      "code_id": "D14.NEU",
+      "parent_id": null,
+      "dimension": "D14"
+    },
+    "D14.POS": {
+      "code_id": "D14.POS",
+      "parent_id": null,
+      "dimension": "D14"
+    },
+    "D14.MIX": {
+      "code_id": "D14.MIX",
+      "parent_id": null,
+      "dimension": "D14"
+    },
+    "D15.BOD.DISCOMFORT_MINOR": {
+      "code_id": "D15.BOD.DISCOMFORT_MINOR",
+      "parent_id": "D15.BOD",
+      "dimension": "D15"
+    },
+    "D15.BOD.DISEASE_ILLNESS": {
+      "code_id": "D15.BOD.DISEASE_ILLNESS",
+      "parent_id": "D15.BOD",
+      "dimension": "D15"
+    },
+    "D15.BOD.SEVERE_INJURY": {
+      "code_id": "D15.BOD.SEVERE_INJURY",
+      "parent_id": "D15.BOD",
+      "dimension": "D15"
+    },
+    "D15.BOD.DEATH": {
+      "code_id": "D15.BOD.DEATH",
+      "parent_id": "D15.BOD",
+      "dimension": "D15"
+    },
+    "D15.BOD.BODY_CHANGE_CONTAMINATION": {
+      "code_id": "D15.BOD.BODY_CHANGE_CONTAMINATION",
+      "parent_id": "D15.BOD",
+      "dimension": "D15"
+    },
+    "D15.MND.FEAR_TRAUMA": {
+      "code_id": "D15.MND.FEAR_TRAUMA",
+      "parent_id": "D15.MND",
+      "dimension": "D15"
+    },
+    "D15.MND.SLEEP_DISTURBANCE": {
+      "code_id": "D15.MND.SLEEP_DISTURBANCE",
+      "parent_id": "D15.MND",
+      "dimension": "D15"
+    },
+    "D15.MND.PERCEPTUAL_DISTURBANCE": {
+      "code_id": "D15.MND.PERCEPTUAL_DISTURBANCE",
+      "parent_id": "D15.MND",
+      "dimension": "D15"
+    },
+    "D15.MND.MEMORY_COGNITION": {
+      "code_id": "D15.MND.MEMORY_COGNITION",
+      "parent_id": "D15.MND",
+      "dimension": "D15"
+    },
+    "D15.MND.COMPULSION_BEHAVIOR": {
+      "code_id": "D15.MND.COMPULSION_BEHAVIOR",
+      "parent_id": "D15.MND",
+      "dimension": "D15"
+    },
+    "D15.MND.SELF_IDENTITY_DISRUPTION": {
+      "code_id": "D15.MND.SELF_IDENTITY_DISRUPTION",
+      "parent_id": "D15.MND",
+      "dimension": "D15"
+    },
+    "D15.SOC.RELATION_BREAKDOWN": {
+      "code_id": "D15.SOC.RELATION_BREAKDOWN",
+      "parent_id": "D15.SOC",
+      "dimension": "D15"
+    },
+    "D15.SOC.REPUTATION_TRUST": {
+      "code_id": "D15.SOC.REPUTATION_TRUST",
+      "parent_id": "D15.SOC",
+      "dimension": "D15"
+    },
+    "D15.SOC.EXCLUSION_STIGMA": {
+      "code_id": "D15.SOC.EXCLUSION_STIGMA",
+      "parent_id": "D15.SOC",
+      "dimension": "D15"
+    },
+    "D15.SOC.JOB_SCHOOL_STATUS": {
+      "code_id": "D15.SOC.JOB_SCHOOL_STATUS",
+      "parent_id": "D15.SOC",
+      "dimension": "D15"
+    },
+    "D15.SOC.LEGAL_CRIMINAL_STATUS": {
+      "code_id": "D15.SOC.LEGAL_CRIMINAL_STATUS",
+      "parent_id": "D15.SOC",
+      "dimension": "D15"
+    },
+    "D15.MAT.PROPERTY_DAMAGE": {
+      "code_id": "D15.MAT.PROPERTY_DAMAGE",
+      "parent_id": "D15.MAT",
+      "dimension": "D15"
+    },
+    "D15.MAT.MONEY_GAIN_LOSS": {
+      "code_id": "D15.MAT.MONEY_GAIN_LOSS",
+      "parent_id": "D15.MAT",
+      "dimension": "D15"
+    },
+    "D15.MAT.DEVICE_DATA_LOSS": {
+      "code_id": "D15.MAT.DEVICE_DATA_LOSS",
+      "parent_id": "D15.MAT",
+      "dimension": "D15"
+    },
+    "D15.MAT.RESOURCE_SCARCITY": {
+      "code_id": "D15.MAT.RESOURCE_SCARCITY",
+      "parent_id": "D15.MAT",
+      "dimension": "D15"
+    },
+    "D15.MAT.INFRA_DISRUPTION": {
+      "code_id": "D15.MAT.INFRA_DISRUPTION",
+      "parent_id": "D15.MAT",
+      "dimension": "D15"
+    },
+    "D15.BEH.AVOIDANCE_ROUTE_CHANGE": {
+      "code_id": "D15.BEH.AVOIDANCE_ROUTE_CHANGE",
+      "parent_id": "D15.BEH",
+      "dimension": "D15"
+    },
+    "D15.BEH.RITUAL_COMPULSIVE_ACTION": {
+      "code_id": "D15.BEH.RITUAL_COMPULSIVE_ACTION",
+      "parent_id": "D15.BEH",
+      "dimension": "D15"
+    },
+    "D15.BEH.PURCHASE_HOARDING": {
+      "code_id": "D15.BEH.PURCHASE_HOARDING",
+      "parent_id": "D15.BEH",
+      "dimension": "D15"
+    },
+    "D15.BEH.SHARING_TRANSMISSION": {
+      "code_id": "D15.BEH.SHARING_TRANSMISSION",
+      "parent_id": "D15.BEH",
+      "dimension": "D15"
+    },
+    "D15.BEH.RISKY_HARMFUL_ACTION": {
+      "code_id": "D15.BEH.RISKY_HARMFUL_ACTION",
+      "parent_id": "D15.BEH",
+      "dimension": "D15"
+    },
+    "D15.BEH.COMPLIANCE_DECISION": {
+      "code_id": "D15.BEH.COMPLIANCE_DECISION",
+      "parent_id": "D15.BEH",
+      "dimension": "D15"
+    },
+    "D15.LIF.FUTURE_CONSTRAINT": {
+      "code_id": "D15.LIF.FUTURE_CONSTRAINT",
+      "parent_id": "D15.LIF",
+      "dimension": "D15"
+    },
+    "D15.LIF.DISAPPEARANCE": {
+      "code_id": "D15.LIF.DISAPPEARANCE",
+      "parent_id": "D15.LIF",
+      "dimension": "D15"
+    },
+    "D15.LIF.LIFE_SUCCESS_FAILURE": {
+      "code_id": "D15.LIF.LIFE_SUCCESS_FAILURE",
+      "parent_id": "D15.LIF",
+      "dimension": "D15"
+    },
+    "D15.LIF.IDENTITY_TRANSFORMATION": {
+      "code_id": "D15.LIF.IDENTITY_TRANSFORMATION",
+      "parent_id": "D15.LIF",
+      "dimension": "D15"
+    },
+    "D15.LIF.EXISTENCE_ERASURE": {
+      "code_id": "D15.LIF.EXISTENCE_ERASURE",
+      "parent_id": "D15.LIF",
+      "dimension": "D15"
+    },
+    "D15.KNW.UNCERTAINTY_PRESERVED": {
+      "code_id": "D15.KNW.UNCERTAINTY_PRESERVED",
+      "parent_id": "D15.KNW",
+      "dimension": "D15"
+    },
+    "D15.KNW.BELIEF_REVISION": {
+      "code_id": "D15.KNW.BELIEF_REVISION",
+      "parent_id": "D15.KNW",
+      "dimension": "D15"
+    },
+    "D15.KNW.REVELATION_KNOWLEDGE": {
+      "code_id": "D15.KNW.REVELATION_KNOWLEDGE",
+      "parent_id": "D15.KNW",
+      "dimension": "D15"
+    },
+    "D15.KNW.REALITY_TRUST_LOSS": {
+      "code_id": "D15.KNW.REALITY_TRUST_LOSS",
+      "parent_id": "D15.KNW",
+      "dimension": "D15"
+    },
+    "D15.COL.PANIC": {
+      "code_id": "D15.COL.PANIC",
+      "parent_id": "D15.COL",
+      "dimension": "D15"
+    },
+    "D15.COL.COLLECTIVE_VIOLENCE": {
+      "code_id": "D15.COL.COLLECTIVE_VIOLENCE",
+      "parent_id": "D15.COL",
+      "dimension": "D15"
+    },
+    "D15.COL.INSTITUTIONAL_LOAD_POLICY": {
+      "code_id": "D15.COL.INSTITUTIONAL_LOAD_POLICY",
+      "parent_id": "D15.COL",
+      "dimension": "D15"
+    },
+    "D15.COL.MARKET_SOCIAL_BEHAVIOR": {
+      "code_id": "D15.COL.MARKET_SOCIAL_BEHAVIOR",
+      "parent_id": "D15.COL",
+      "dimension": "D15"
+    },
+    "D15.COL.COMMUNITY_CHANGE": {
+      "code_id": "D15.COL.COMMUNITY_CHANGE",
+      "parent_id": "D15.COL",
+      "dimension": "D15"
+    },
+    "D15.OPP.LUCK_MISFORTUNE": {
+      "code_id": "D15.OPP.LUCK_MISFORTUNE",
+      "parent_id": "D15.OPP",
+      "dimension": "D15"
+    },
+    "D15.OPP.ROMANCE": {
+      "code_id": "D15.OPP.ROMANCE",
+      "parent_id": "D15.OPP",
+      "dimension": "D15"
+    },
+    "D15.OPP.EXAM_CAREER": {
+      "code_id": "D15.OPP.EXAM_CAREER",
+      "parent_id": "D15.OPP",
+      "dimension": "D15"
+    },
+    "D15.OPP.WISH_FULFILLMENT": {
+      "code_id": "D15.OPP.WISH_FULFILLMENT",
+      "parent_id": "D15.OPP",
+      "dimension": "D15"
+    },
+    "D15.OPP.DISASTER_AVOIDANCE": {
+      "code_id": "D15.OPP.DISASTER_AVOIDANCE",
+      "parent_id": "D15.OPP",
+      "dimension": "D15"
+    },
+    "D16.STA.STATIC_ATTRIBUTE": {
+      "code_id": "D16.STA.STATIC_ATTRIBUTE",
+      "parent_id": "D16.STA",
+      "dimension": "D16"
+    },
+    "D16.STA.STATIC_ASSOCIATION": {
+      "code_id": "D16.STA.STATIC_ASSOCIATION",
+      "parent_id": "D16.STA",
+      "dimension": "D16"
+    },
+    "D16.STA.STATIC_RULE": {
+      "code_id": "D16.STA.STATIC_RULE",
+      "parent_id": "D16.STA",
+      "dimension": "D16"
+    },
+    "D16.STA.ENDURING_CONDITION": {
+      "code_id": "D16.STA.ENDURING_CONDITION",
+      "parent_id": "D16.STA",
+      "dimension": "D16"
+    },
+    "D16.EVT.IMMEDIATE": {
+      "code_id": "D16.EVT.IMMEDIATE",
+      "parent_id": "D16.EVT",
+      "dimension": "D16"
+    },
+    "D16.EVT.SINGLE_OBSERVATION": {
+      "code_id": "D16.EVT.SINGLE_OBSERVATION",
+      "parent_id": "D16.EVT",
+      "dimension": "D16"
+    },
+    "D16.EVT.SINGLE_EPISODE": {
+      "code_id": "D16.EVT.SINGLE_EPISODE",
+      "parent_id": "D16.EVT",
+      "dimension": "D16"
+    },
+    "D16.EVT.SEQUENTIAL_EPISODE": {
+      "code_id": "D16.EVT.SEQUENTIAL_EPISODE",
+      "parent_id": "D16.EVT",
+      "dimension": "D16"
+    },
+    "D16.DLY.DELAYED": {
+      "code_id": "D16.DLY.DELAYED",
+      "parent_id": "D16.DLY",
+      "dimension": "D16"
+    },
+    "D16.DLY.DEADLINE": {
+      "code_id": "D16.DLY.DEADLINE",
+      "parent_id": "D16.DLY",
+      "dimension": "D16"
+    },
+    "D16.DLY.LATENT": {
+      "code_id": "D16.DLY.LATENT",
+      "parent_id": "D16.DLY",
+      "dimension": "D16"
+    },
+    "D16.PRG.STAGED_PROGRESSION": {
+      "code_id": "D16.PRG.STAGED_PROGRESSION",
+      "parent_id": "D16.PRG",
+      "dimension": "D16"
+    },
+    "D16.PRG.GRADUAL_EROSION": {
+      "code_id": "D16.PRG.GRADUAL_EROSION",
+      "parent_id": "D16.PRG",
+      "dimension": "D16"
+    },
+    "D16.PRG.LIFELONG": {
+      "code_id": "D16.PRG.LIFELONG",
+      "parent_id": "D16.PRG",
+      "dimension": "D16"
+    },
+    "D16.REC.RECURRENT": {
+      "code_id": "D16.REC.RECURRENT",
+      "parent_id": "D16.REC",
+      "dimension": "D16"
+    },
+    "D16.REC.PERIODIC": {
+      "code_id": "D16.REC.PERIODIC",
+      "parent_id": "D16.REC",
+      "dimension": "D16"
+    },
+    "D16.REC.TRIGGERED_RECURRENCE": {
+      "code_id": "D16.REC.TRIGGERED_RECURRENCE",
+      "parent_id": "D16.REC",
+      "dimension": "D16"
+    },
+    "D16.CON.CONTINUOUS": {
+      "code_id": "D16.CON.CONTINUOUS",
+      "parent_id": "D16.CON",
+      "dimension": "D16"
+    },
+    "D16.CON.PURSUIT_DURATION": {
+      "code_id": "D16.CON.PURSUIT_DURATION",
+      "parent_id": "D16.CON",
+      "dimension": "D16"
+    },
+    "D16.CON.PERSISTENT_ATTACHMENT": {
+      "code_id": "D16.CON.PERSISTENT_ATTACHMENT",
+      "parent_id": "D16.CON",
+      "dimension": "D16"
+    },
+    "D16.TRN.CHAIN_SPREAD": {
+      "code_id": "D16.TRN.CHAIN_SPREAD",
+      "parent_id": "D16.TRN",
+      "dimension": "D16"
+    },
+    "D16.TRN.SUCCESSIVE_VICTIMS": {
+      "code_id": "D16.TRN.SUCCESSIVE_VICTIMS",
+      "parent_id": "D16.TRN",
+      "dimension": "D16"
+    },
+    "D16.TRN.INTERGENERATIONAL": {
+      "code_id": "D16.TRN.INTERGENERATIONAL",
+      "parent_id": "D16.TRN",
+      "dimension": "D16"
+    },
+    "D17.AVO.DO_NOT_ENGAGE": {
+      "code_id": "D17.AVO.DO_NOT_ENGAGE",
+      "parent_id": "D17.AVO",
+      "dimension": "D17"
+    },
+    "D17.AVO.FLEE_ESCAPE": {
+      "code_id": "D17.AVO.FLEE_ESCAPE",
+      "parent_id": "D17.AVO",
+      "dimension": "D17"
+    },
+    "D17.AVO.DISTANCE_ROUTE_CHANGE": {
+      "code_id": "D17.AVO.DISTANCE_ROUTE_CHANGE",
+      "parent_id": "D17.AVO",
+      "dimension": "D17"
+    },
+    "D17.RUL.OBEY_TABOO": {
+      "code_id": "D17.RUL.OBEY_TABOO",
+      "parent_id": "D17.RUL",
+      "dimension": "D17"
+    },
+    "D17.RUL.CORRECT_ANSWER": {
+      "code_id": "D17.RUL.CORRECT_ANSWER",
+      "parent_id": "D17.RUL",
+      "dimension": "D17"
+    },
+    "D17.RUL.TIMING_ORDER": {
+      "code_id": "D17.RUL.TIMING_ORDER",
+      "parent_id": "D17.RUL",
+      "dimension": "D17"
+    },
+    "D17.RUL.PROCEDURAL_RULE": {
+      "code_id": "D17.RUL.PROCEDURAL_RULE",
+      "parent_id": "D17.RUL",
+      "dimension": "D17"
+    },
+    "D17.RIT.RITUAL_CLOSURE": {
+      "code_id": "D17.RIT.RITUAL_CLOSURE",
+      "parent_id": "D17.RIT",
+      "dimension": "D17"
+    },
+    "D17.RIT.RELIGIOUS_SPECIALIST": {
+      "code_id": "D17.RIT.RELIGIOUS_SPECIALIST",
+      "parent_id": "D17.RIT",
+      "dimension": "D17"
+    },
+    "D17.RIT.MEDICAL_PROFESSIONAL": {
+      "code_id": "D17.RIT.MEDICAL_PROFESSIONAL",
+      "parent_id": "D17.RIT",
+      "dimension": "D17"
+    },
+    "D17.RIT.LEGAL_OFFICIAL": {
+      "code_id": "D17.RIT.LEGAL_OFFICIAL",
+      "parent_id": "D17.RIT",
+      "dimension": "D17"
+    },
+    "D17.CST.PAYMENT_SACRIFICE": {
+      "code_id": "D17.CST.PAYMENT_SACRIFICE",
+      "parent_id": "D17.CST",
+      "dimension": "D17"
+    },
+    "D17.CST.TRANSFER_SUBSTITUTE": {
+      "code_id": "D17.CST.TRANSFER_SUBSTITUTE",
+      "parent_id": "D17.CST",
+      "dimension": "D17"
+    },
+    "D17.CST.CONTAINMENT": {
+      "code_id": "D17.CST.CONTAINMENT",
+      "parent_id": "D17.CST",
+      "dimension": "D17"
+    },
+    "D17.CST.ONGOING_MANAGEMENT": {
+      "code_id": "D17.CST.ONGOING_MANAGEMENT",
+      "parent_id": "D17.CST",
+      "dimension": "D17"
+    },
+    "D17.INF.VERIFY_DEBUNK": {
+      "code_id": "D17.INF.VERIFY_DEBUNK",
+      "parent_id": "D17.INF",
+      "dimension": "D17"
+    },
+    "D17.INF.DO_NOT_FORWARD_CORRECT": {
+      "code_id": "D17.INF.DO_NOT_FORWARD_CORRECT",
+      "parent_id": "D17.INF",
+      "dimension": "D17"
+    },
+    "D17.INF.TECHNICAL_RESTORE": {
+      "code_id": "D17.INF.TECHNICAL_RESTORE",
+      "parent_id": "D17.INF",
+      "dimension": "D17"
+    },
+    "D17.INF.SAFETY_EVIDENCE_ACTION": {
+      "code_id": "D17.INF.SAFETY_EVIDENCE_ACTION",
+      "parent_id": "D17.INF",
+      "dimension": "D17"
+    },
+    "D17.USE.DELIBERATE_INVOCATION": {
+      "code_id": "D17.USE.DELIBERATE_INVOCATION",
+      "parent_id": "D17.USE",
+      "dimension": "D17"
+    },
+    "D17.USE.LUCK_EXPLOITATION": {
+      "code_id": "D17.USE.LUCK_EXPLOITATION",
+      "parent_id": "D17.USE",
+      "dimension": "D17"
+    },
+    "D17.USE.STRATEGIC_RULE_USE": {
+      "code_id": "D17.USE.STRATEGIC_RULE_USE",
+      "parent_id": "D17.USE",
+      "dimension": "D17"
+    },
+    "D17.UNA.NO_KNOWN_ESCAPE": {
+      "code_id": "D17.UNA.NO_KNOWN_ESCAPE",
+      "parent_id": "D17.UNA",
+      "dimension": "D17"
+    },
+    "D17.UNA.FIXED_OUTCOME": {
+      "code_id": "D17.UNA.FIXED_OUTCOME",
+      "parent_id": "D17.UNA",
+      "dimension": "D17"
+    },
+    "D17.NON.OBSERVATIONAL_ONLY": {
+      "code_id": "D17.NON.OBSERVATIONAL_ONLY",
+      "parent_id": "D17.NON",
+      "dimension": "D17"
+    },
+    "D17.NON.BENIGN_NO_CONTROL": {
+      "code_id": "D17.NON.BENIGN_NO_CONTROL",
+      "parent_id": "D17.NON",
+      "dimension": "D17"
+    },
+    "D18.L1": {
+      "code_id": "D18.L1",
+      "parent_id": null,
+      "dimension": "D18"
+    },
+    "D18.L2": {
+      "code_id": "D18.L2",
+      "parent_id": null,
+      "dimension": "D18"
+    },
+    "D18.L3": {
+      "code_id": "D18.L3",
+      "parent_id": null,
+      "dimension": "D18"
+    },
+    "D19.PRI.ISOLATED_EXPERIENCER": {
+      "code_id": "D19.PRI.ISOLATED_EXPERIENCER",
+      "parent_id": "D19.PRI",
+      "dimension": "D19"
+    },
+    "D19.PRI.PRIVATE_HOUSEHOLD": {
+      "code_id": "D19.PRI.PRIVATE_HOUSEHOLD",
+      "parent_id": "D19.PRI",
+      "dimension": "D19"
+    },
+    "D19.KIN.FAMILY_NETWORK": {
+      "code_id": "D19.KIN.FAMILY_NETWORK",
+      "parent_id": "D19.KIN",
+      "dimension": "D19"
+    },
+    "D19.KIN.FRIEND_PEER": {
+      "code_id": "D19.KIN.FRIEND_PEER",
+      "parent_id": "D19.KIN",
+      "dimension": "D19"
+    },
+    "D19.KIN.SCHOOL_YOUTH": {
+      "code_id": "D19.KIN.SCHOOL_YOUTH",
+      "parent_id": "D19.KIN",
+      "dimension": "D19"
+    },
+    "D19.LOC.NEIGHBORHOOD": {
+      "code_id": "D19.LOC.NEIGHBORHOOD",
+      "parent_id": "D19.LOC",
+      "dimension": "D19"
+    },
+    "D19.LOC.REGIONAL": {
+      "code_id": "D19.LOC.REGIONAL",
+      "parent_id": "D19.LOC",
+      "dimension": "D19"
+    },
+    "D19.LOC.LOCAL_TRADITION": {
+      "code_id": "D19.LOC.LOCAL_TRADITION",
+      "parent_id": "D19.LOC",
+      "dimension": "D19"
+    },
+    "D19.PRO.OCCUPATIONAL": {
+      "code_id": "D19.PRO.OCCUPATIONAL",
+      "parent_id": "D19.PRO",
+      "dimension": "D19"
+    },
+    "D19.PRO.EXPERT_SPECIALIST": {
+      "code_id": "D19.PRO.EXPERT_SPECIALIST",
+      "parent_id": "D19.PRO",
+      "dimension": "D19"
+    },
+    "D19.PRO.HOBBY_SUBCULTURE": {
+      "code_id": "D19.PRO.HOBBY_SUBCULTURE",
+      "parent_id": "D19.PRO",
+      "dimension": "D19"
+    },
+    "D19.ORG.COMPANY_INSTITUTION": {
+      "code_id": "D19.ORG.COMPANY_INSTITUTION",
+      "parent_id": "D19.ORG",
+      "dimension": "D19"
+    },
+    "D19.ORG.STATE_MILITARY": {
+      "code_id": "D19.ORG.STATE_MILITARY",
+      "parent_id": "D19.ORG",
+      "dimension": "D19"
+    },
+    "D19.ORG.RELIGIOUS_CLOSED_GROUP": {
+      "code_id": "D19.ORG.RELIGIOUS_CLOSED_GROUP",
+      "parent_id": "D19.ORG",
+      "dimension": "D19"
+    },
+    "D19.NET.CLOSED_ONLINE": {
+      "code_id": "D19.NET.CLOSED_ONLINE",
+      "parent_id": "D19.NET",
+      "dimension": "D19"
+    },
+    "D19.NET.OPEN_FORUM_WEB": {
+      "code_id": "D19.NET.OPEN_FORUM_WEB",
+      "parent_id": "D19.NET",
+      "dimension": "D19"
+    },
+    "D19.NET.SNS_VIRAL": {
+      "code_id": "D19.NET.SNS_VIRAL",
+      "parent_id": "D19.NET",
+      "dimension": "D19"
+    },
+    "D19.MAS.NATIONAL_PUBLIC": {
+      "code_id": "D19.MAS.NATIONAL_PUBLIC",
+      "parent_id": "D19.MAS",
+      "dimension": "D19"
+    },
+    "D19.MAS.CROSS_GENERATIONAL": {
+      "code_id": "D19.MAS.CROSS_GENERATIONAL",
+      "parent_id": "D19.MAS",
+      "dimension": "D19"
+    },
+    "D19.MAS.TRANSNATIONAL": {
+      "code_id": "D19.MAS.TRANSNATIONAL",
+      "parent_id": "D19.MAS",
+      "dimension": "D19"
+    },
+    "D20.NON.COMMON_KNOWLEDGE": {
+      "code_id": "D20.NON.COMMON_KNOWLEDGE",
+      "parent_id": "D20.NON",
+      "dimension": "D20"
+    },
+    "D20.NON.NO_HIDDEN_TRUTH": {
+      "code_id": "D20.NON.NO_HIDDEN_TRUTH",
+      "parent_id": "D20.NON",
+      "dimension": "D20"
+    },
+    "D20.PER.EXPERIENCER": {
+      "code_id": "D20.PER.EXPERIENCER",
+      "parent_id": "D20.PER",
+      "dimension": "D20"
+    },
+    "D20.PER.FAMILY_BLOODLINE": {
+      "code_id": "D20.PER.FAMILY_BLOODLINE",
+      "parent_id": "D20.PER",
+      "dimension": "D20"
+    },
+    "D20.INS.LOCAL_RESIDENT": {
+      "code_id": "D20.INS.LOCAL_RESIDENT",
+      "parent_id": "D20.INS",
+      "dimension": "D20"
+    },
+    "D20.INS.SCHOOL_WORK_INSIDER": {
+      "code_id": "D20.INS.SCHOOL_WORK_INSIDER",
+      "parent_id": "D20.INS",
+      "dimension": "D20"
+    },
+    "D20.INS.SUBCULTURE_VETERAN": {
+      "code_id": "D20.INS.SUBCULTURE_VETERAN",
+      "parent_id": "D20.INS",
+      "dimension": "D20"
+    },
+    "D20.EXP.MEDICAL_SCIENTIFIC": {
+      "code_id": "D20.EXP.MEDICAL_SCIENTIFIC",
+      "parent_id": "D20.EXP",
+      "dimension": "D20"
+    },
+    "D20.EXP.TECHNICAL_OCCUPATIONAL": {
+      "code_id": "D20.EXP.TECHNICAL_OCCUPATIONAL",
+      "parent_id": "D20.EXP",
+      "dimension": "D20"
+    },
+    "D20.EXP.RELIGIOUS_FOLKLORE": {
+      "code_id": "D20.EXP.RELIGIOUS_FOLKLORE",
+      "parent_id": "D20.EXP",
+      "dimension": "D20"
+    },
+    "D20.ORG.INSTITUTION_AUTHORITY": {
+      "code_id": "D20.ORG.INSTITUTION_AUTHORITY",
+      "parent_id": "D20.ORG",
+      "dimension": "D20"
+    },
+    "D20.ORG.PERPETRATOR_CRIMINAL": {
+      "code_id": "D20.ORG.PERPETRATOR_CRIMINAL",
+      "parent_id": "D20.ORG",
+      "dimension": "D20"
+    },
+    "D20.ORG.SECRET_NETWORK": {
+      "code_id": "D20.ORG.SECRET_NETWORK",
+      "parent_id": "D20.ORG",
+      "dimension": "D20"
+    },
+    "D20.UNK.NO_ONE_KNOWS": {
+      "code_id": "D20.UNK.NO_ONE_KNOWS",
+      "parent_id": "D20.UNK",
+      "dimension": "D20"
+    },
+    "D20.UNK.LOST_ORIGIN": {
+      "code_id": "D20.UNK.LOST_ORIGIN",
+      "parent_id": "D20.UNK",
+      "dimension": "D20"
+    },
+    "D20.UNK.DEAD_MISSING_HOLDER": {
+      "code_id": "D20.UNK.DEAD_MISSING_HOLDER",
+      "parent_id": "D20.UNK",
+      "dimension": "D20"
+    },
+    "D20.HAZ.DANGEROUS_TO_KNOW": {
+      "code_id": "D20.HAZ.DANGEROUS_TO_KNOW",
+      "parent_id": "D20.HAZ",
+      "dimension": "D20"
+    },
+    "D20.HAZ.TABOO_RESTRICTED": {
+      "code_id": "D20.HAZ.TABOO_RESTRICTED",
+      "parent_id": "D20.HAZ",
+      "dimension": "D20"
+    },
+    "D20.HAZ.CURSED_RECORD": {
+      "code_id": "D20.HAZ.CURSED_RECORD",
+      "parent_id": "D20.HAZ",
+      "dimension": "D20"
+    },
+    "D21.A0": {
+      "code_id": "D21.A0",
+      "parent_id": null,
+      "dimension": "D21"
+    },
+    "D21.A1": {
+      "code_id": "D21.A1",
+      "parent_id": null,
+      "dimension": "D21"
+    },
+    "D21.A2": {
+      "code_id": "D21.A2",
+      "parent_id": null,
+      "dimension": "D21"
+    },
+    "D21.A3": {
+      "code_id": "D21.A3",
+      "parent_id": null,
+      "dimension": "D21"
+    },
+    "D21.A4": {
+      "code_id": "D21.A4",
+      "parent_id": null,
+      "dimension": "D21"
+    }
+  }
+}

@@ -1,0 +1,463 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "review_10_contents.schema.json",
+  "title": "Urban Legend Review 10 Contents",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "entry_id",
+    "artifact",
+    "review_seq",
+    "target",
+    "checks",
+    "reconstruction",
+    "findings",
+    "verdict"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "entry_id": {
+      "type": "string",
+      "pattern": "^[0-9]{4}$"
+    },
+    "artifact": {
+      "const": "10"
+    },
+    "review_seq": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "target": {
+      "$ref": "review_common.schema.json#/$defs/target"
+    },
+    "checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "evidence_content_support",
+        "summary_reconstruction",
+        "structural_probe",
+        "variant_boundary",
+        "uncertainty_preservation"
+      ],
+      "properties": {
+        "evidence_content_support": {
+          "$ref": "review_common.schema.json#/$defs/reviewCheck"
+        },
+        "summary_reconstruction": {
+          "$ref": "review_common.schema.json#/$defs/reviewCheck"
+        },
+        "structural_probe": {
+          "$ref": "review_common.schema.json#/$defs/reviewCheck"
+        },
+        "variant_boundary": {
+          "$ref": "review_common.schema.json#/$defs/reviewCheck"
+        },
+        "uncertainty_preservation": {
+          "$ref": "review_common.schema.json#/$defs/reviewCheck"
+        },
+        "narrative_reconstruction": {
+          "$ref": "review_common.schema.json#/$defs/reviewCheck"
+        }
+      }
+    },
+    "reconstruction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "blind_decode",
+        "reference_story",
+        "probes",
+        "analysis_invariance",
+        "verdict"
+      ],
+      "properties": {
+        "blind_decode": {
+          "type": "string",
+          "minLength": 1
+        },
+        "reference_story": {
+          "type": "string",
+          "minLength": 1
+        },
+        "probes": {
+          "type": "array",
+          "minItems": 12,
+          "maxItems": 12,
+          "uniqueItems": true,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "probe_id",
+              "blind",
+              "reference",
+              "difference"
+            ],
+            "properties": {
+              "probe_id": {
+                "$ref": "review_common.schema.json#/$defs/probeId"
+              },
+              "blind": {
+                "type": "string"
+              },
+              "reference": {
+                "type": "string"
+              },
+              "difference": {
+                "type": "string",
+                "enum": [
+                  "NONE",
+                  "LOSS",
+                  "CONFLICT"
+                ]
+              },
+              "notes": {
+                "type": "string"
+              }
+            }
+          },
+          "allOf": [
+            {
+              "contains": {
+                "type": "object",
+                "properties": {
+                  "probe_id": {
+                    "const": "P01"
+                  }
+                },
+                "required": [
+                  "probe_id"
+                ]
+              },
+              "minContains": 1,
+              "maxContains": 1
+            },
+            {
+              "contains": {
+                "type": "object",
+                "properties": {
+                  "probe_id": {
+                    "const": "P02"
+                  }
+                },
+                "required": [
+                  "probe_id"
+                ]
+              },
+              "minContains": 1,
+              "maxContains": 1
+            },
+            {
+              "contains": {
+                "type": "object",
+                "properties": {
+                  "probe_id": {
+                    "const": "P03"
+                  }
+                },
+                "required": [
+                  "probe_id"
+                ]
+              },
+              "minContains": 1,
+              "maxContains": 1
+            },
+            {
+              "contains": {
+                "type": "object",
+                "properties": {
+                  "probe_id": {
+                    "const": "P04"
+                  }
+                },
+                "required": [
+                  "probe_id"
+                ]
+              },
+              "minContains": 1,
+              "maxContains": 1
+            },
+            {
+              "contains": {
+                "type": "object",
+                "properties": {
+                  "probe_id": {
+                    "const": "P05"
+                  }
+                },
+                "required": [
+                  "probe_id"
+                ]
+              },
+              "minContains": 1,
+              "maxContains": 1
+            },
+            {
+              "contains": {
+                "type": "object",
+                "properties": {
+                  "probe_id": {
+                    "const": "P06"
+                  }
+                },
+                "required": [
+                  "probe_id"
+                ]
+              },
+              "minContains": 1,
+              "maxContains": 1
+            },
+            {
+              "contains": {
+                "type": "object",
+                "properties": {
+                  "probe_id": {
+                    "const": "P07"
+                  }
+                },
+                "required": [
+                  "probe_id"
+                ]
+              },
+              "minContains": 1,
+              "maxContains": 1
+            },
+            {
+              "contains": {
+                "type": "object",
+                "properties": {
+                  "probe_id": {
+                    "const": "P08"
+                  }
+                },
+                "required": [
+                  "probe_id"
+                ]
+              },
+              "minContains": 1,
+              "maxContains": 1
+            },
+            {
+              "contains": {
+                "type": "object",
+                "properties": {
+                  "probe_id": {
+                    "const": "P09"
+                  }
+                },
+                "required": [
+                  "probe_id"
+                ]
+              },
+              "minContains": 1,
+              "maxContains": 1
+            },
+            {
+              "contains": {
+                "type": "object",
+                "properties": {
+                  "probe_id": {
+                    "const": "P10"
+                  }
+                },
+                "required": [
+                  "probe_id"
+                ]
+              },
+              "minContains": 1,
+              "maxContains": 1
+            },
+            {
+              "contains": {
+                "type": "object",
+                "properties": {
+                  "probe_id": {
+                    "const": "P11"
+                  }
+                },
+                "required": [
+                  "probe_id"
+                ]
+              },
+              "minContains": 1,
+              "maxContains": 1
+            },
+            {
+              "contains": {
+                "type": "object",
+                "properties": {
+                  "probe_id": {
+                    "const": "P12"
+                  }
+                },
+                "required": [
+                  "probe_id"
+                ]
+              },
+              "minContains": 1,
+              "maxContains": 1
+            }
+          ]
+        },
+        "analysis_invariance": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "status",
+            "notes"
+          ],
+          "properties": {
+            "status": {
+              "$ref": "review_common.schema.json#/$defs/checkStatus"
+            },
+            "notes": {
+              "type": "string"
+            }
+          }
+        },
+        "verdict": {
+          "type": "string",
+          "enum": [
+            "PASS",
+            "FINDING"
+          ]
+        },
+        "coverage_audit": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "content_ref",
+              "salient_meaning",
+              "blind_reconstruction",
+              "difference"
+            ],
+            "properties": {
+              "content_ref": {
+                "type": "string",
+                "pattern": "^CNT-[0-9]{3,}$"
+              },
+              "salient_meaning": {
+                "type": "string",
+                "minLength": 1
+              },
+              "blind_reconstruction": {
+                "type": "string"
+              },
+              "difference": {
+                "type": "string",
+                "enum": [
+                  "NONE",
+                  "LOSS",
+                  "CONFLICT"
+                ]
+              },
+              "notes": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "finding_id",
+          "severity",
+          "category",
+          "summary",
+          "rationale",
+          "impact",
+          "fix_direction"
+        ],
+        "properties": {
+          "finding_id": {
+            "type": "string",
+            "pattern": "^F[0-9]{3,}$"
+          },
+          "severity": {
+            "$ref": "review_common.schema.json#/$defs/severity"
+          },
+          "category": {
+            "type": "string",
+            "enum": [
+              "evidence_content_support",
+              "summary_reconstruction",
+              "structural_probe",
+              "variant_boundary",
+              "uncertainty_preservation",
+              "content_analysis_contamination",
+              "narrative_reconstruction"
+            ]
+          },
+          "summary": {
+            "type": "string",
+            "minLength": 1
+          },
+          "rationale": {
+            "type": "string",
+            "minLength": 1
+          },
+          "impact": {
+            "type": "string",
+            "minLength": 1
+          },
+          "fix_direction": {
+            "type": "string",
+            "minLength": 1
+          },
+          "evidence_refs": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "pattern": "^EVD-[0-9]{3,}$"
+            }
+          },
+          "content_refs": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "pattern": "^CNT-[0-9]{3,}$"
+            }
+          },
+          "variant_refs": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "pattern": "^VAR-[0-9]{3,}$"
+            }
+          },
+          "probe_refs": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "$ref": "review_common.schema.json#/$defs/probeId"
+            }
+          },
+          "notes": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "verdict": {
+      "$ref": "review_common.schema.json#/$defs/verdict"
+    },
+    "review_notes": {
+      "type": "string"
+    }
+  }
+}

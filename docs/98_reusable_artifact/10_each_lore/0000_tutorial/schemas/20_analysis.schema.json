@@ -1,0 +1,325 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "20_analysis.schema.json",
+  "title": "Urban Legend Analysis",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "entry_id",
+    "macro_category",
+    "entry_type",
+    "version_scope",
+    "dimensions"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "entry_id": {
+      "type": "string",
+      "pattern": "^[0-9]{4}$"
+    },
+    "macro_category": {
+      "type": "string",
+      "minLength": 1
+    },
+    "entry_type": {
+      "type": "string",
+      "minLength": 1
+    },
+    "version_scope": {
+      "$ref": "#/$defs/versionScope"
+    },
+    "dimensions": {
+      "type": "array",
+      "minItems": 21,
+      "maxItems": 21,
+      "items": {
+        "$ref": "#/$defs/dimension"
+      }
+    },
+    "analysis_notes": {
+      "type": "string"
+    }
+  },
+  "$defs": {
+    "versionScope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "description",
+        "included_variants",
+        "excluded_variants",
+        "content_refs"
+      ],
+      "properties": {
+        "description": {
+          "type": "string",
+          "minLength": 1
+        },
+        "included_variants": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^VAR-[0-9]{3,}$"
+          }
+        },
+        "excluded_variants": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^VAR-[0-9]{3,}$"
+          }
+        },
+        "content_refs": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^CNT-[0-9]{3,}$"
+          }
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "codeRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "code_id"
+      ],
+      "properties": {
+        "code_id": {
+          "type": "string",
+          "pattern": "^D(0[1-9]|1[0-9]|2[01])\\..+$"
+        },
+        "parent_id": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "taxonomyGap": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "present"
+      ],
+      "properties": {
+        "present": {
+          "type": "boolean"
+        },
+        "description": {
+          "type": "string"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "present": {
+                "const": true
+              }
+            },
+            "required": [
+              "present"
+            ]
+          },
+          "then": {
+            "required": [
+              "description"
+            ]
+          }
+        }
+      ]
+    },
+    "dimension": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "dimension_id",
+        "status",
+        "primary",
+        "secondary",
+        "rationale",
+        "manifestation",
+        "content_refs"
+      ],
+      "properties": {
+        "dimension_id": {
+          "type": "string",
+          "enum": [
+            "D01",
+            "D02",
+            "D03",
+            "D04",
+            "D05",
+            "D06",
+            "D07",
+            "D08",
+            "D09",
+            "D10",
+            "D11",
+            "D12",
+            "D13",
+            "D14",
+            "D15",
+            "D16",
+            "D17",
+            "D18",
+            "D19",
+            "D20",
+            "D21"
+          ]
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "D",
+            "I",
+            "U",
+            "NA",
+            "C"
+          ]
+        },
+        "primary": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/codeRef"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "secondary": {
+          "type": "array",
+          "maxItems": 2,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/codeRef"
+          }
+        },
+        "rationale": {
+          "type": "string",
+          "minLength": 1
+        },
+        "manifestation": {
+          "type": "string",
+          "minLength": 1
+        },
+        "content_refs": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^CNT-[0-9]{3,}$"
+          }
+        },
+        "evidence_refs": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^EVD-[0-9]{3,}$"
+          }
+        },
+        "taxonomy_gap": {
+          "$ref": "#/$defs/taxonomyGap"
+        },
+        "notes": {
+          "type": "string"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "enum": [
+                  "D",
+                  "I"
+                ]
+              }
+            },
+            "required": [
+              "status"
+            ]
+          },
+          "then": {
+            "if": {
+              "properties": {
+                "taxonomy_gap": {
+                  "properties": {
+                    "present": {
+                      "const": true
+                    }
+                  },
+                  "required": [
+                    "present"
+                  ]
+                }
+              },
+              "required": [
+                "taxonomy_gap"
+              ]
+            },
+            "then": {
+              "properties": {
+                "primary": {
+                  "oneOf": [
+                    {
+                      "$ref": "#/$defs/codeRef"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                }
+              }
+            },
+            "else": {
+              "properties": {
+                "primary": {
+                  "$ref": "#/$defs/codeRef"
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "enum": [
+                  "U",
+                  "NA",
+                  "C"
+                ]
+              }
+            },
+            "required": [
+              "status"
+            ]
+          },
+          "then": {
+            "properties": {
+              "primary": {
+                "type": "null"
+              },
+              "secondary": {
+                "maxItems": 0
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

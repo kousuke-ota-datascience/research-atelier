@@ -93,7 +93,7 @@
 
 ---
 
-# 4. 理論・コーディング・分析の三層モデル
+# 4. 理論・分析コード付与・分析の三層モデル
 
 ## 4.1. 理論層 — Conceptual Dimensions
 
@@ -101,7 +101,7 @@
 
 Parent / Child、Primary / Secondary、Excel列数は、この21という理論次元数を増やさない。
 
-## 4.2. コーディング層 — Atomic Coding Fields
+## 4.2. 分析コード付与層 — Atomic Coding Fields
 
 人手で入力する原子的な値である。H3次元では原則として、
 

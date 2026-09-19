@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "review_00_sources.schema.json",
+  "title": "Urban Legend Review 00 Sources",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "entry_id", "artifact", "review_seq", "target", "checks", "findings", "verdict"],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "entry_id": {"type": "string", "pattern": "^[0-9]{4}$"},
+    "artifact": {"const": "00"},
+    "review_seq": {"type": "integer", "minimum": 1},
+    "target": {"$ref": "review_common.schema.json#/$defs/target"},
+    "checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_assessment", "evidence_integrity", "source_evidence_support", "primary_source_relation", "earliest_attestation", "uncertainty_preservation"],
+      "properties": {
+        "source_assessment": {"$ref": "review_common.schema.json#/$defs/reviewCheck"},
+        "evidence_integrity": {"$ref": "review_common.schema.json#/$defs/reviewCheck"},
+        "source_evidence_support": {"$ref": "review_common.schema.json#/$defs/reviewCheck"},
+        "primary_source_relation": {"$ref": "review_common.schema.json#/$defs/reviewCheck"},
+        "earliest_attestation": {"$ref": "review_common.schema.json#/$defs/reviewCheck"},
+        "uncertainty_preservation": {"$ref": "review_common.schema.json#/$defs/reviewCheck"}
+      }
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["finding_id", "severity", "category", "summary", "rationale", "impact", "fix_direction"],
+        "properties": {
+          "finding_id": {"type": "string", "pattern": "^F[0-9]{3,}$"},
+          "severity": {"$ref": "review_common.schema.json#/$defs/severity"},
+          "category": {"type": "string", "enum": ["source_assessment", "evidence_integrity", "source_evidence_support", "primary_source_relation", "earliest_attestation", "uncertainty_preservation"]},
+          "summary": {"type": "string", "minLength": 1},
+          "rationale": {"type": "string", "minLength": 1},
+          "impact": {"type": "string", "minLength": 1},
+          "fix_direction": {"type": "string", "minLength": 1},
+          "source_refs": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^SRC-[0-9]{3,}$"}},
+          "evidence_refs": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^EVD-[0-9]{3,}$"}},
+          "notes": {"type": "string"}
+        }
+      }
+    },
+    "verdict": {"$ref": "review_common.schema.json#/$defs/verdict"},
+    "review_notes": {"type": "string"}
+  }
+}

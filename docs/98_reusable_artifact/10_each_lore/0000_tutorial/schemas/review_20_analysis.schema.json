@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "review_20_analysis.schema.json",
+  "title": "Urban Legend Review 20 Analysis",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "entry_id", "artifact", "review_seq", "target", "checks", "sensemaking_reconstruction", "findings", "verdict"],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "entry_id": {"type": "string", "pattern": "^[0-9]{4}$"},
+    "artifact": {"const": "20"},
+    "review_seq": {"type": "integer", "minimum": 1},
+    "target": {"$ref": "review_common.schema.json#/$defs/target"},
+    "checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["version_scope", "dimension_semantics", "taxonomy_gap", "causality", "semantic_traceability", "analysis_invariance", "status_reasoning", "d12_d13_d15_causal_chain", "d18_scope_independent_x_evidence", "d19_publicability_vs_national_distribution", "d20_missing_info_vs_no_one_knows", "d21_reality_anchor", "evidence_confidence_ceiling", "entry_classification"],
+      "properties": {
+        "version_scope": {"$ref": "review_common.schema.json#/$defs/reviewCheck"},
+        "dimension_semantics": {"$ref": "review_common.schema.json#/$defs/reviewCheck"},
+        "taxonomy_gap": {"$ref": "review_common.schema.json#/$defs/reviewCheck"},
+        "causality": {"$ref": "review_common.schema.json#/$defs/reviewCheck"},
+        "semantic_traceability": {"$ref": "review_common.schema.json#/$defs/reviewCheck"},
+        "analysis_invariance": {"$ref": "review_common.schema.json#/$defs/reviewCheck"},
+        "status_reasoning": {"$ref": "review_common.schema.json#/$defs/reviewCheck"},
+        "d12_d13_d15_causal_chain": {"$ref": "review_common.schema.json#/$defs/auditCheck"},
+        "d18_scope_independent_x_evidence": {"$ref": "review_common.schema.json#/$defs/auditCheck"},
+        "d19_publicability_vs_national_distribution": {"$ref": "review_common.schema.json#/$defs/auditCheck"},
+        "d20_missing_info_vs_no_one_knows": {"$ref": "review_common.schema.json#/$defs/auditCheck"},
+        "d21_reality_anchor": {"$ref": "review_common.schema.json#/$defs/auditCheck"},
+        "evidence_confidence_ceiling": {"$ref": "review_common.schema.json#/$defs/auditCheck"},
+        "entry_classification": {"$ref": "review_common.schema.json#/$defs/auditCheck"}
+      }
+    },
+    "sensemaking_reconstruction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["model", "content_refs", "dimension_refs", "status"],
+      "properties": {
+        "model": {"type": "string", "minLength": 1},
+        "content_refs": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "pattern": "^CNT-[0-9]{3,}$"}},
+        "dimension_refs": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"$ref": "review_common.schema.json#/$defs/dimensionId"}},
+        "evidence_refs": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^EVD-[0-9]{3,}$"}},
+        "status": {"type": "string", "enum": ["PASS", "FINDING"]},
+        "notes": {"type": "string"}
+      }
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["finding_id", "severity", "category", "summary", "rationale", "impact", "fix_direction"],
+        "properties": {
+          "finding_id": {"type": "string", "pattern": "^F[0-9]{3,}$"},
+          "severity": {"$ref": "review_common.schema.json#/$defs/severity"},
+          "category": {"type": "string", "enum": ["version_scope", "dimension_semantics", "taxonomy_gap", "causality", "semantic_traceability", "analysis_invariance", "status_reasoning", "entry_classification"]},
+          "summary": {"type": "string", "minLength": 1},
+          "rationale": {"type": "string", "minLength": 1},
+          "impact": {"type": "string", "minLength": 1},
+          "fix_direction": {"type": "string", "minLength": 1},
+          "content_refs": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^CNT-[0-9]{3,}$"}},
+          "evidence_refs": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^EVD-[0-9]{3,}$"}},
+          "dimension_refs": {"type": "array", "uniqueItems": true, "items": {"$ref": "review_common.schema.json#/$defs/dimensionId"}},
+          "notes": {"type": "string"}
+        }
+      }
+    },
+    "verdict": {"$ref": "review_common.schema.json#/$defs/verdict"},
+    "review_notes": {"type": "string"}
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "review_common.schema.json",
+  "title": "Urban Legend Review Common Definitions",
+  "$defs": {
+    "target": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["artifact_path", "commit_sha", "blob_sha", "reviewed_at"],
+      "properties": {
+        "artifact_path": {"type": "string", "minLength": 1},
+        "commit_sha": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "blob_sha": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "reviewed_at": {"type": "string", "format": "date-time"}
+      }
+    },
+    "severity": {"type": "string", "enum": ["Minor", "Moderate", "Major"]},
+    "verdict": {"type": "string", "enum": ["Pass", "Minor", "Moderate", "Major"]},
+    "check_status": {"type": "string", "enum": ["PASS", "FINDING", "NOT_APPLICABLE"]},
+    "checkStatus": {"$ref": "#/$defs/check_status"},
+    "reviewCheck": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status"],
+      "properties": {
+        "status": {"$ref": "#/$defs/check_status"},
+        "notes": {"type": "string"}
+      }
+    },
+    "auditCheck": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "notes"],
+      "properties": {
+        "status": {"$ref": "#/$defs/check_status"},
+        "notes": {"type": "string"}
+      }
+    },
+    "finding_base": {
+      "type": "object",
+      "required": ["finding_id", "severity", "category", "summary", "rationale", "impact", "fix_direction"],
+      "properties": {
+        "finding_id": {"type": "string", "pattern": "^F[0-9]{3,}$"},
+        "severity": {"$ref": "#/$defs/severity"},
+        "category": {"type": "string", "minLength": 1},
+        "summary": {"type": "string", "minLength": 1},
+        "rationale": {"type": "string", "minLength": 1},
+        "impact": {"type": "string", "minLength": 1},
+        "fix_direction": {"type": "string", "minLength": 1},
+        "notes": {"type": "string"}
+      }
+    },
+    "review_base": {
+      "type": "object",
+      "required": ["schema_version", "entry_id", "artifact", "review_seq", "target", "findings", "verdict"],
+      "properties": {
+        "schema_version": {"const": "1.0"},
+        "entry_id": {"type": "string", "pattern": "^[0-9]{4}$"},
+        "artifact": {"type": "string", "enum": ["00", "10", "20"]},
+        "review_seq": {"type": "integer", "minimum": 1},
+        "target": {"$ref": "#/$defs/target"},
+        "findings": {"type": "array", "items": {"$ref": "#/$defs/finding_base"}},
+        "verdict": {"$ref": "#/$defs/verdict"},
+        "review_notes": {"type": "string"},
+        "checks": {"type": "object"}
+      }
+    },
+    "dimensionId": {
+      "type": "string",
+      "enum": ["D01", "D02", "D03", "D04", "D05", "D06", "D07", "D08", "D09", "D10", "D11", "D12", "D13", "D14", "D15", "D16", "D17", "D18", "D19", "D20", "D21"]
+    },
+    "probeId": {
+      "type": "string",
+      "enum": ["P01", "P02", "P03", "P04", "P05", "P06", "P07", "P08", "P09", "P10", "P11", "P12"]
+    }
+  }
+}
