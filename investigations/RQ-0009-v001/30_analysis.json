@@ -1,0 +1,91 @@
+{
+  "schema_version": "1.0.0",
+  "artifact_type": "30_analysis",
+  "investigation_id": "RQ-0009-v001",
+  "rq_id": "RQ-0009",
+  "analyzed_at": "2026-09-19T15:34:29+09:00",
+  "question_type": "Predictive",
+  "profile": {
+    "prediction_target": "製造された製品の品質特性または品質category。selected Evidenceではsurface roughness、gear quality category、injection-molded product quality gradeを含む。",
+    "prediction_horizon": "製造process中に取得した振動から、同一cycle / product / surface positionについて加工中または加工直後に測定される品質を推定する。長期の設備RULから将来lot不良を予測するhorizonは今回のEvidenceでは未確立。",
+    "input_information": [
+      "製造process中のmachine / spindle / process vibration raw signalまたはtime / frequency / time-frequency features",
+      "spindle speed、feed、cutting depth等のprocess parameters / operating context",
+      "必要に応じてsound、spindle current、cavity temperature / pressure等のadditional sensor modalities",
+      "product ID、manufacturing cycle、CNC position等、振動をquality labelへ対応付けるtraceability information"
+    ],
+    "evaluation_design": "product / cycle / position単位で対応付けたsupervised predictionを基本とする。selected Evidenceにはindependent machining test、experimental train/test、process-specific validationが含まれるが、設備横断・材料横断のexternal validationは十分ではない。",
+    "performance_measures": [
+      "classification accuracy",
+      "RMSE / prediction error for continuous quality values",
+      "R²",
+      "process-parameter-only baselineに対するincremental predictive performance"
+    ],
+    "generalization_limits": [
+      "設備、tool、材料、製品形状、process setting、sensor placementが変わると振動分布とquality mappingが変化し得る。",
+      "小規模experimentや限定条件で高い精度が出てもrunning productionへのgeneralizationは保証されない。",
+      "machine-health vibrationが設備故障を予測できることだけでは、その振動が製品品質を予測できるとは言えない。product-forming processとのcouplingとquality labelへのtraceabilityが別途必要である。"
+    ]
+  },
+  "working_answer": {
+    "text": "条件付きで可能である。今回のEvidenceでは、end millingのsurface roughness、gear grindingのquality category、injection moldingのproduct quality gradeなどについて、製造中に取得した振動を入力に含むモデルで製品品質を予測・分類した実証例がある。特にend millingではcutting parametersに振動を追加したANNが、cutting parametersのみのモデルより高い独立test性能を示している。ただし『設備故障を予測できる振動なら、そのまま不良品も予測できる』とは言えない。成立条件は、振動が製品形成processの状態を反映していること、振動sample / cycle / positionを対応する製品quality labelへtraceできること、運転条件・process parameterを必要に応じて併用すること、そして対象設備・製品条件でout-of-sample validationを行うことである。分析手法は、time/frequency特徴量 + regression / ANN、Wavelet等のtime-frequency変換 + CNN、raw vibrationの1D-CNN + sensor fusion、CNC positionと同期したattention / transformer系まで実証例がある。現時点ではprocess vibrationからqualityを推定するEvidenceは強い一方、bearing劣化などのmachine-health vibrationから将来の製品不良までを直接予測するEvidenceは不足している。",
+    "knowledge_unit_refs": ["K0001", "K0002", "K0003", "K0004", "K0005", "K0006", "K0007", "K0008", "K0009", "K0010"]
+  },
+  "judgments": [
+    {
+      "judgment_id": "J0001",
+      "statement": "製造中のprocess vibrationから製品品質を予測することは、少なくともmachining / grinding / injection moldingのselected Evidence範囲で実証されている。",
+      "knowledge_unit_refs": ["K0002", "K0003", "K0004", "K0005", "K0006"]
+    },
+    {
+      "judgment_id": "J0002",
+      "statement": "振動を品質予測へ利用する中心的な成立条件は、sensor signalを同一product / cycle / positionのquality labelへtraceできるdata modelを作ることである。",
+      "knowledge_unit_refs": ["K0001", "K0006", "K0008"]
+    },
+    {
+      "judgment_id": "J0003",
+      "statement": "振動単独を前提にせず、process parametersや他sensor modalitiesを併用し、振動のincremental predictive valueをbaseline比較で確認する設計が妥当である。",
+      "knowledge_unit_refs": ["K0002", "K0003", "K0005", "K0009"]
+    },
+    {
+      "judgment_id": "J0004",
+      "statement": "equipment failure predictionに有効なmachine-health vibrationとproduct-quality predictionに有効なprocess vibrationは区別すべきであり、前者の有効性だけから後者を推論してはならない。",
+      "knowledge_unit_refs": ["K0002", "K0003", "K0004", "K0005", "K0006", "K0008"]
+    },
+    {
+      "judgment_id": "J0005",
+      "statement": "分析手法は単一のbest methodへ収束しておらず、data量・sampling・target・traceability粒度に応じてfeature-based ML、time-frequency CNN、raw-signal deep learning、spatially aligned modelを選ぶべきである。",
+      "knowledge_unit_refs": ["K0007", "K0008", "K0009"]
+    }
+  ],
+  "limitations": [
+    {
+      "text": "selected Evidenceはmachining系が中心で、processごとのEvidence量に偏りがある。",
+      "knowledge_unit_refs": ["K0002", "K0003", "K0004", "K0005", "K0006"]
+    },
+    {
+      "text": "高いreported performanceの多くはprocess-specific experimentであり、別設備・別材料・別製品・長期running productionへのgeneralizationは未保証である。",
+      "knowledge_unit_refs": ["K0010"]
+    },
+    {
+      "text": "今回のEvidenceはpredictive associationを支持するが、振動そのものが品質劣化を因果的に引き起こすことを一律に証明するものではない。",
+      "knowledge_unit_refs": ["K0001", "K0002", "K0005", "K0008", "K0009"]
+    },
+    {
+      "text": "bearing degradation等のmachine-health signalから、製品不良発生までのlead timeを直接推定するEvidenceは不足している。",
+      "knowledge_unit_refs": ["K0002", "K0003", "K0004", "K0005", "K0006"]
+    }
+  ],
+  "unresolved_questions": [
+    "bearing / spindle / gearbox等のmachine-health degradationを起点に、どのprocess quality metricがどのlead timeで悪化するかを直接検証した研究はどこまで存在するか？",
+    "実生産でproduct / cycle / position traceabilityを実装する際、どのtimestamp synchronization精度とsampling specificationが必要か？",
+    "process parametersのみのbaselineに対してvibrationが追加するinformation gainは、machining以外のprocessでどの程度再現するか？",
+    "model validationをrandom splitではなくtime / batch / machine splitで行った場合、performanceはどの程度低下するか？"
+  ],
+  "alternative_interpretations": [
+    {
+      "text": "製品品質を十分に予測できるprocess parametersやcavity sensor等が既に存在する工程では、vibration sensorの追加価値が小さい可能性がある。したがって振動導入の価値は、vibration-inclusive modelと既存signal-only baselineの比較で評価すべきである。",
+      "knowledge_unit_refs": ["K0002", "K0005", "K0009"]
+    }
+  ]
+}
