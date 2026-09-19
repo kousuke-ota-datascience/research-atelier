@@ -3,7 +3,7 @@
   "artifact_type": "20_synthesis",
   "investigation_id": "RQ-0003-v001",
   "rq_id": "RQ-0003",
-  "synthesized_at": "2026-09-19T13:34:15+09:00",
+  "synthesized_at": "2026-09-19T13:39:00+09:00",
   "knowledge_units": [
     {
       "knowledge_unit_id": "K0001",
@@ -31,6 +31,13 @@
       "statement": "profile-mismatch fixtureはCausal profileへprediction_targetを混入させるnegative caseを定義しており、Type-specific field混入を検査できる形になっている。",
       "evidence_refs": [
         "E0004"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0005",
+      "statement": "JSON Schema validationで保証できるのは定義した構造制約への適合であり、Question Type分類やanalysis内容のdomain-specificな意味論的妥当性までは保証しない。",
+      "evidence_refs": [
+        "E0005"
       ]
     }
   ],
@@ -73,19 +80,34 @@
         "E0003",
         "E0004"
       ]
+    },
+    {
+      "relation_id": "R0004",
+      "relation_type": "qualification",
+      "knowledge_unit_refs": [
+        "K0003",
+        "K0005"
+      ],
+      "description": "K0003の構造分離はstructural safetyを与えるが、semantic correctnessまでは保証しない。",
+      "evidence_refs": [
+        "E0003",
+        "E0005"
+      ]
     }
   ],
   "uncertainties": [
     {
       "uncertainty_id": "U0001",
-      "description": "ここまでのEvidenceはschema設計とnegative fixtureの構造を示すが、実validatorでのFAIL結果自体はまだEvidence snapshotに含めていない。",
+      "description": "本pilotは1つのMethodological RQと代表negative caseを中心に検証しており、8 Question Typeすべてのprofile field completenessまでは検証していない。",
       "knowledge_unit_refs": [
         "K0003",
-        "K0004"
+        "K0004",
+        "K0005"
       ],
       "evidence_refs": [
         "E0003",
-        "E0004"
+        "E0004",
+        "E0005"
       ]
     }
   ]
