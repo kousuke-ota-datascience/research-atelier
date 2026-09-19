@@ -1,0 +1,11 @@
+{
+  "report_type": "projection_log",
+  "target_rq_url": "https://app.notion.com/p/3e0e5855be3981dc8b11cb99fc84b62b",
+  "rq_id": "RQ-0003",
+  "source_investigation_id": "RQ-0003-v002",
+  "source_30_analysis_commit_sha": "89c6f1bdc61caf750aa7c7400a5ee7c2e2f5baa3",
+  "projection_timestamp": "2026-09-19T13:41:36+09:00",
+  "target_property": "Research Questions.Working Answer",
+  "result": "SUCCESS",
+  "note": "Notion Statusはprojection contractに従い変更していない。"
+}
