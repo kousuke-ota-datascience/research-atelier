@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0.0",
+  "artifact_type": "30_analysis",
+  "investigation_id": "RQ-0007-v001",
+  "rq_id": "RQ-0007",
+  "analyzed_at": "2026-09-19T13:20:00+09:00",
+  "question_type": "Causal",
+  "profile": {
+    "prediction_target": "Outcome Y"
+  },
+  "working_answer": {
+    "text": "Example.",
+    "knowledge_unit_refs": [
+      "K0001"
+    ]
+  },
+  "judgments": [],
+  "limitations": [],
+  "unresolved_questions": []
+}
