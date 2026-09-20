@@ -1,240 +1,194 @@
-# Investigation identity / versioning
+# Investigation identity / lifecycle / compatibility
 
 ## 目的
 
-本書は、長期的に維持される Research Question（RQ）と、ある具体的Research Contextをfreezeした versioned Investigation の関係を定義する。
+本書は、Research Question（RQ）、Investigation、Investigation Contextのidentity・cardinality・lifecycle、およびlegacy v1 artifactとの互換方針を定義する。
 
-本書は `0001_research_architecture.md` に従う。mutableなRQ catalogはNotionが正本であり、frozen Investigation versionはGit artifactが正本である。
+本書は `0001_research_architecture.md` に従う。mutableなRQ catalogはNotionが正本であり、1回のResearch executionをfreezeしたcanonical artifact chainはGitが正本である。
 
-## 1. RQとInvestigationは別identity
+## 1. Canonical domain model
 
-### Research Question (RQ)
+v2では次を採用する。
 
-RQは、追究する問いの長期的identityである。
+```text
+Research Question (RQ)
+  1
+  |
+  | 0..*
+  v
+Investigation (INV)
+  |
+  +-- 00_context = Investigation Context
+  +-- 10_evidence
+  +-- 20_synthesis
+  +-- 30_analysis
+```
 
-RQは「何を問うか」という安定した概念的意図を持つ。Notion上のrecordは運用上更新されうるが、過去のInvestigationがその編集を暗黙に継承してはならない。
+### Research Question
 
-例:
+RQは「何を問うか」という長期的semantic identityである。
 
-`RQ-0007`
+canonical ID: `RQ-<NNNN>`
+
+Regex: `^RQ-[0-9]{4}$`
+
+RQ wordingの編集だけでidentityを変えない。回答集合、target construct、estimand等が実質的に変わる場合にだけ新RQを作る。
 
 ### Investigation
 
-Investigationは、特定のfrozen Research Contextの下でRQを1回実行した単位である。
+Investigationは、exactly one RQを特定のexecution conditionの下で1回実行する独立identityである。
 
-問いのsnapshotと、Evidenceを選択・Synthesis・Analysisした条件を記録する。
+v2 canonical ID: `INV-<NNNNNN>`
 
-例:
+Regex: `^INV-(?!000000)[0-9]{6}$`
 
-`RQ-0007-v001`
+Investigation IDはRQ IDをencodeしない。RQとの対応はartifactの `rq_id` で明示する。
 
-同一RQに複数Investigationが存在しうる。
+### Investigation Context
 
-- `RQ-0007-v001`
-- `RQ-0007-v002`
-- `RQ-0007-v003`
+Investigation Contextは、そのInvestigationのexecution semanticsを規定するinput snapshotである。authorityは `00_context.json` に置く。
 
-各versionは独立に解釈可能であり、Notion側のRQが後から更新されてもhistorical versionの意味は変わらない。
+代表的な内容:
+- frozen question wording
+- Question Type
+- Scope
+- inclusion / exclusion
+- evidence cutoff（必要な場合のみ）
+- analytical / operational assumptions
+- frozen timestamp
+- Notion RQ provenance
 
-## 2. Identifier形式
+`00_context` はResearch Context entityではない。
 
-### RQ ID
+## 2. Research Contextをfirst-class entityにしない理由
 
-canonical form:
+Research Contextという語は、problem、decision context、hypothesis、domain framingなどRQより上流の文脈を指しうる。
 
-`RQ-<NNNN>`
+しかし現時点で、Research Context自体をRQから独立してversioningすること、同一Context versionを複数Investigationからcanonical referenceすること、Context IDをlineage / validator / projectionの必須keyとすること、の実証要件はない。
 
-v1では `NNNN` は0埋め4桁の10進数とする。
+first-class entity化するとResearch Context ↔ RQのN:M、Context Version ID、projection、migration、validatorが追加される一方、現行workflowの再現性要件はInvestigation Contextで満たせる。
 
-Regex:
+したがってv2ではResearch Contextをcanonical identity modelへ入れない。将来、独立再利用・versioningの要件が確認された場合は別ADRで追加する。
 
-`^RQ-[0-9]{4}$`
+## 3. Cardinality
 
-例:
+- Research Question 1 : Investigation 0..*
+- Investigation : Research Question = exactly 1
+- Investigation : Investigation Context = exactly 1 canonical `00_context` after materialization
 
-- valid: `RQ-0001`
-- valid: `RQ-0427`
-- invalid: `RQ-7`
-- invalid: `rq-0007`
+同じRQを異なるScope、cutoff、assumption、Evidence snapshotで再実行する場合、それぞれ別Investigationになる。
 
-RQが9999件を超える場合は、formatを暗黙に拡張せずidentifier contractを明示的にmigrationする。
+Research Context ↔ RQのcardinalityはv2 canonical contractの対象外である。
 
-### Investigation ID
+## 4. Draft / frozen / accepted lifecycle
 
-canonical form:
+### Draft
 
-`<RQ_ID>-v<VVV>`
+`00_context.context_state = draft` の間は、同じInvestigationをin-placeでrefineしてよい。unknownを埋めるために架空defaultを作ってはならない。
 
-v1では `VVV` は0埋め3桁、`001` から開始し、RQごとに単調増加させる。
+### Frozen
 
-Regex:
+`context_state = frozen` かつ `frozen_at` が設定された時点でInvestigation Contextをfreezeする。
 
-`^RQ-[0-9]{4}-v[0-9]{3}$`
+freeze後にcontext-defining fieldをsemanticに変更する場合、同じInvestigationを書き換えず **新しいInvestigation IDを採番する**。
 
-例:
+### Accepted
 
-- `RQ-0007-v001`
-- `RQ-0007-v002`
+current `30_analysis` をそのInvestigationのresultとしてacceptし、必要なprojectionが完了した状態。
 
-一度canonical Investigationとしてcommitしたversion番号は再利用してはならない。
+accepted InvestigationのEvidence / Synthesis / Analysisをsubstantively再構成する場合も、新しいInvestigationを作る。
 
-## 3. Lifecycle / mutation rule
+formatting、validator refactor、derived rendering再生成などcanonical research semanticsを変えない変更は新Investigationを要求しない。
 
-Investigation versionには、versioning上2つのphaseがある。
+## 5. RQ identity変更とInvestigation変更の境界
 
-### Draft context
+### 同じRQのまま新Investigation
 
-Research Contextをfreezeする前は、同じInvestigation versionをin-placeで修正してよい。
+- freeze後のScope変更
+- freeze後のQuestion Type変更
+- inclusion / exclusion変更
+- evidence cutoff / time horizon変更
+- analytical assumption変更
+- dataset / source boundary変更
+- accepted resultを新しいEvidence snapshotで再実行
+- 同じ問いを別条件・別時点で再調査
 
-同一draft versionで許容する代表例:
+### 新RQ
 
-- RQ identityを変えないquestion wordingの改善
-- 未確定だったScope / Significanceの追記
-- Question Typeの訂正
-- investigation boundaryの具体化
-- 不足context fieldの追記
-- freeze前に発見した誤りの修正
+answer spaceまたは問いのsemantic targetが実質的に変わる場合は新RQを作る。
 
-unknownは有効な状態である。未確定fieldはSchemaが許す範囲で省略または `null` とし、validationを通すための架空defaultを入れてはならない。
-
-### Frozen context
-
-`00_context` をEvidence収集のbaselineとして明示的に受け入れた時点をfreeze pointとする。
-
-freeze後、context-defining fieldをin-placeで変更してはならない。
-
-context-defining fieldを変更する場合は次のInvestigation versionを採番する。
-
-`10_evidence`、`20_synthesis`、`30_analysis` はそのfrozen contextの下で構築する。Investigation resultをacceptするまでは同一version内で反復改善してよい。
-
-Investigation resultをacceptした後、Evidence snapshotまたはaccepted Analysisを実質的に変更する場合も新versionを必要とする。historical accepted artifactを書き換えてはならない。
-
-## 4. 新Investigation versionが必要な変更
-
-基礎となるRQ identityが同一である前提で、freeze後に以下が変わる場合は新versionを作る。
-
-- question snapshotの意味が変わる
-- Scopeが変わる
-- Question Typeが変わる
-- investigation boundary / inclusion-exclusion criteriaが変わる
-- eligible Evidenceへ影響するtime horizon / evidence cutoffが変わる
-- 解釈を定義するanalytical assumptionが変わる
-- accepted Investigationを実質的に異なるEvidenceで再実行する
-
-canonical inputを変更してaccepted resultを再計算する場合も新versionとする。
-
-## 5. 新versionを必要としない変更
-
-以下では新Investigation versionは不要。
-
-- contextがdraftの間の編集
-- formattingのみの変更
-- 意味を変えないことが明らかな誤字・文法修正
-- canonical input/outputを変えないvalidator refactoring
-- 不変canonical artifactからderived renderingを再生成するだけの変更
-- frozen Research Contextに含まれないNotion operational metadataの変更
-
-Git historyには実装・format変更が残るが、Investigation versioningはresearch-semantic changeに対して使う。
-
-## 6. Question wording rule
-
-### 非意味的変更
-
-許容される回答集合、および意図するconstruct / estimandが変わらない場合、RQ identityは同一とする。
-
-例:
-
-- 文法修正
-- 用語表記統一
-- 意味を変えない明確化
-
-draft Investigationなら同一versionを更新してよい。
-
-freeze済みInvestigationはhistorical question snapshotを保存する。将来の新実行では更新後のwordingを次versionにsnapshotしてよいが、過去versionは書き換えない。
-
-### 意味的変更
-
-何が回答になりうるかを実質的に変える場合、それはInvestigation version変更ではなく新RQ identityである。
-
-判断材料の例:
-
+判断材料:
 - target construct
 - 問いに本質的なpopulation / unit of analysis
 - causal treatment / comparator
-- outcome
+- outcome / estimand
 - prediction target
 - central mechanism
 
-不明な場合は既存RQを維持する側を基本とし、answer spaceが実質的に変わる場合だけ新RQを作る。関連RQはNotionでlinkしてよい。
+単なるwording改善では新RQを作らない。
 
-## 7. Scope変更
+## 6. ID allocation
 
-Scopeは原則としてRQ identityではなくInvestigationを定義する。
+新規canonical Investigationはglobal sequenceとして `INV-NNNNNN` を採番する。
 
-- freeze前: 同一versionを更新
-- freeze後: 次versionを採番
+1. 既存 `INV-NNNNNN` の最大値を確認する。
+2. 次の未使用整数を6桁0埋めで採番する。
+3. 一度materialize / commitしたIDは再利用しない。
+4. abandoned InvestigationのIDも再利用しない。
+5. 同一RQのversion番号を意味するsuffixは持たない。
 
-ただしScope変更が概念的な問いそのものを変える場合は新RQとする。
+global sequenceはidentity allocationのためだけに使い、chronological quality rankingやsemantic versionを意味しない。
 
-## 8. Question Type変更
+## 7. Cross-artifact identity invariant
 
-Question Typeはdownstream Analysis Profileを選択・制約する。
+1つのInvestigation directory内のcanonical artifactはすべて同じ `investigation_id` と同じ `rq_id` を持つ。
 
-したがって:
+v2では `investigation_id` から `rq_id` を導出してはならない。
 
-- freeze前: 同一versionを更新
-- freeze後: 次versionを採番
+```text
+investigations/
+  INV-000001/
+    00_context.json
+    10_evidence.json
+    20_synthesis.json
+    30_analysis.json
+```
 
-Question Typeは分析分類であり、単独の変更では通常RQ identityを変えない。
+## 8. Legacy v1 compatibility
 
-## 9. Significanceなど未確定field
+既存 `RQ-NNNN-vVVV` はlegacy v1 Investigation IDとして保持する。
 
-Significanceはunknownを許容する。
+- historical directoryをv2 IDへrenameしない。
+- historical JSONの `investigation_id` をrewriteしない。
+- `schemas/v1` はlegacy contractとして凍結する。
+- validatorはlegacy v1 IDとv2 IDの両方をvalidateできる。
+- legacy v1ではID prefixと `rq_id` の一致を引き続き検査する。
+- 新規Investigationにはlegacy形式を使わない。
 
-workflowは以下を含むInvestigation draftを扱えなければならない。
+## 9. Schema version
 
-- Scope unknown
-- Significance unknown
-- investigation boundaryの一部がpending
+- legacy artifact: `schema_version = 1.0.0`, `schemas/v1`
+- v2 canonical artifact: `schema_version = 2.0.0`, `schemas/v2`
 
-unknownはJSON Schemaに従い、省略または `null` で表す。`TBD`、空文字、架空defaultをcanonical valueとして使わない。
+v2の構造はv1を必要以上に変更しない。Task 17ではidentity semanticsとContext責務の修正に限定する。
 
-後からNotionのSignificanceが変更されても、frozen Investigationを遡及変更しない。新しい実行を意図的に作る場合にだけ、その時点の値をsnapshotする。
+`00_context.schema.json` のv2 title / documentationはInvestigation Contextであることを明示する。
 
-## 10. Version allocation algorithm
+## 10. Decision table
 
-新しいRQ実行では:
-
-1. RQ IDを読む。
-2. そのRQでcommit済みの最大Investigation versionを探す。
-3. 次の整数versionを3桁0埋めで採番する。
-4. Investigationをdraftとして作成する。
-5. `00_context` をvalidかつ明示的にfrozenになるまで整える。
-6. freeze後のcontext-defining semantic changeは次versionへ送る。
-7. historical Investigationをrenumberしない。
-
-例:
-
-`RQ-0007-v001` と `RQ-0007-v002` が存在する場合、v002が途中でabandonされていても次は `RQ-0007-v003` とする。
-
-## 11. Decision table
-
-| 変更 | Draft context | Frozen context | RQ identity |
+| Change | Draft Investigation | Frozen / Accepted Investigation | RQ identity |
 | --- | --- | --- | --- |
-| 文法のみのwording修正 | 同一version | frozen snapshotを維持し書換えない | 同一RQ |
-| 意味同一のwording改善 | 同一version | 新実行では次version | 同一RQ |
-| semantic question identity変更 | 新RQ | 新RQ | 新RQ |
-| Scope変更 | 同一version | 次version | 通常は同一RQ |
-| Question Type変更 | 同一version | 次version | 同一RQ |
-| unknown Scope / Significanceの補完 | 同一version | frozen snapshot維持。新実行に必要なら次version | 同一RQ |
-| result accept前のEvidence追加・修正 | 同一version | 同一version | 同一RQ |
-| accepted result後の実質的Evidence追加 | N/A | 次version | 同一RQ |
-| rendering / validator refactorのみ | 同一version | 同一version | 同一RQ |
+| wordingの非意味的修正 | 同一INV | historical snapshot維持。必要なら新INV | 同一RQ |
+| semantic question identity変更 | 新RQへ切替 | 新RQ + 新INV | 新RQ |
+| Scope変更 | 同一INV | 新INV | 通常同一RQ |
+| Question Type変更 | 同一INV | 新INV | 同一RQ |
+| boundary / cutoff / assumption変更 | 同一INV | 新INV | 同一RQ |
+| result accept前のEvidence更新 | 同一INV、downstream invalidate | N/A | 同一RQ |
+| accepted resultのsubstantive再調査 | N/A | 新INV | 同一RQ |
+| rendering / validator refactorのみ | 同一INV | 同一INV | 同一RQ |
 
-## 12. Invariant
+## 11. Invariant
 
-Investigation IDは次を意味する。
+Investigation IDは、1つのRQに対して1つのfrozen Investigation Contextとartifact chainを束ねる独立Research execution identityである。
 
-> prefixで示されるRQを、このversionでfreezeされたResearch Contextの下で実行したもの。
-
-したがって、同じInvestigation IDが実質的に異なる2つのfrozen contextを指してはならない。
+同じInvestigation IDが異なるRQ、異なるfrozen context、異なるaccepted executionを指してはならない。
