@@ -1,0 +1,25 @@
+name: Task 17 validation
+
+on:
+  push:
+    branches:
+      - task17-domain-model-v2
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install jsonschema
+      - name: Run regression tests
+        run: python -m unittest discover -s tests -p 'test_*.py' -v
+      - name: Validate accepted legacy pilots
+        env:
+          PYTHONPATH: src
+        run: |
+          python -m research_atelier.validation.validate_investigation RQ-0003-v002 --through 30
+          python -m research_atelier.validation.validate_investigation RQ-0004-v001 --through 30
+          python -m research_atelier.validation.validate_investigation RQ-0009-v001 --through 30
