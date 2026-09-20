@@ -1,0 +1,35 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "00_context",
+  "investigation_id": "INV-000001",
+  "rq_id": "RQ-0010",
+  "context_state": "frozen",
+  "question": {
+    "text": "製造プロセスにおいて、品質予測値と製造後の品質実測値との誤差を用い、品質予測モデル自体を再学習せずに、その後の品質予測値を逐次補正する方法には何があるか？",
+    "notion_url": "https://app.notion.com/p/3e1e5855be3981bfb887ef7fc9e2ca8f"
+  },
+  "question_type": "Methodological",
+  "scope": "製造前または製造時に品質を予測し、その後に対応する品質実測値が取得される反復的な製造プロセスを対象とする。学習済み品質予測モデル本体は固定し、過去のprediction errorを利用して将来の品質予測値または外部補正層を逐次補正する方式を含む。base modelのonline retraining / continual learning、およびPLCへ送る制御パラメータ自体のfeedback correctionを主対象から除外する。製造方式はbatch / lot / continuous等に限定しない。",
+  "significance": null,
+  "investigation_boundary": {
+    "include": [
+      "製造前または製造時の品質予測と、その後に得られる対応する品質実測値を反復的に対応付けられる製造プロセス",
+      "学習済みbase prediction modelのparameterを変更せず、過去のprediction errorを用いて将来の品質予測値または外部補正層を逐次更新する方法",
+      "batch / lot / continuousを含み、特定の製造方式には限定しない",
+      "公開された学術文献、標準・公的資料、または権威ある公開技術資料に基づく方法・原理・適用条件の調査"
+    ],
+    "exclude": [
+      "base prediction modelのonline retraining、continual learning、またはparameter update",
+      "PLCへ送る制御パラメータ自体のfeedback correctionまたは最適制御architecture",
+      "外部補正からbase model再学習へ移行すべき条件の決定",
+      "特定の社内製造データセットに対する数値性能評価"
+    ],
+    "evidence_cutoff": "2026-09-20T23:59:59+09:00"
+  },
+  "assumptions": [
+    "各品質予測に対応する製造後の品質実測値が後から取得でき、予測値と対応付けられる",
+    "本Investigationではbase prediction model自体をfrozenとし、base model parameterは変更しない",
+    "特定の社内製造データセットは入力として与えられていないため、個別工程の数値最適化ではなく一般化可能な方法・成立条件・限界を調査する"
+  ],
+  "frozen_at": "2026-09-20T10:15:27Z"
+}
