@@ -1,0 +1,172 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "30_analysis",
+  "investigation_id": "INV-000001",
+  "rq_id": "RQ-0010",
+  "analyzed_at": "2026-09-20T10:30:42Z",
+  "question_type": "Methodological",
+  "profile": {
+    "method_or_procedure": "学習済みbase prediction modelを固定し、製造後に得られる対応実測値とのprediction errorを、base model外部の逐次補正層で将来予測へ反映する。補正層は、simple/weighted bias update、Bayesian/statistical bias estimator、residual time-series predictor、Kalman/state-data fusion、separate adaptive calibration modelから、残差構造と実測取得条件に応じて選択する。",
+    "intended_use": "base prediction modelをonline retrainingせず、反復製造における将来の品質予測値のbias/drift/dynamic residualを追従補正する。",
+    "assumptions": [
+      "各予測値と後から得られる品質実測値を正しく対応付けられる。",
+      "base prediction modelのparameterは固定し、補正層のstate/parameterと明確に分離して管理する。",
+      "品質実測値の取得遅延・取得頻度・measurement validityを把握できる。",
+      "補正方式の選定・tuningにはtarget processの時系列データで検証できることが必要である。"
+    ],
+    "evaluation_criteria": [
+      "補正前後のprediction errorのbiasとerror magnitude",
+      "tracking性能とnoise/variance amplificationのtrade-off",
+      "measurement delay・sporadic/multirate ground truthへの適合性",
+      "residual autocorrelation/stationarityおよびoutlier・disturbanceへのrobustness",
+      "operating-condition changeに対する適用限界",
+      "correction layerの実装・tuning・validation・rollbackの複雑さ"
+    ],
+    "comparators": [
+      "補正なしのfrozen base prediction model",
+      "simpleまたはweighted bias update",
+      "Bayesian/statistical bias update",
+      "residual time-series predictionによるerror compensation",
+      "Kalman/state-data fusionによるoutput calibration",
+      "base predictorと分離されたadaptive calibration model"
+    ],
+    "tradeoffs": [
+      "速いbias追従とmeasurement noise/variance amplificationの間にtrade-offがある。",
+      "simple output calibrationは実装が軽い一方、大きなworking-condition changeでは不足し得る。",
+      "residual predictive correctionは時系列構造を利用できる一方、stationarity・outlier・disturbanceに依存する。",
+      "Kalman/data-fusion correctionは遅い・多レート実測を扱える一方、process dynamicsの表現とfilter tuningが必要になる。",
+      "adaptive calibration layerはsimple biasより表現力が高い一方、補正層自体がadaptive modelとなるためversioning・validation・監視対象が増える。"
+    ],
+    "applicability_limits": [
+      "base modelと実プロセスの関係が大きく変化し、外部補正では追従できない場合は本RQの範囲を超え、RQ-0012の再学習判断対象になる。",
+      "予測値と実測値の対応付けが不正確な場合、逐次補正は誤ったerror signalを学習・蓄積し得る。",
+      "serious disturbanceやoutlierが支配的な工程では、単純biasまたはARMA型補正だけでは不十分な可能性がある。",
+      "選択Evidenceはchemical/process soft-sensor領域に偏っており、他製造領域への一般化はtarget processでのvalidationを要する。"
+    ]
+  },
+  "working_answer": {
+    "text": "実現手段はある。base prediction model本体を固定したまま、製造後に得られる品質実測値とのprediction errorを外部補正層で逐次利用する方法は、選択Evidenceから少なくとも5系統に整理できる。(1) simple/weighted bias・offset update、(2) Bayesian/statistical bias estimation、(3) ARMA等でresidual dynamicsを予測して加算するerror-compensation layer、(4) Kalman filter等によるmodel predictionと遅い・multirate実測のdata fusion、(5) base predictorと分離したadaptive calibration modelである。第一段としては、base modelと補正stateを分離し、measurement delayを考慮したweighted/tuned bias correctionを検証するのが実装上妥当で、residualに予測可能な時系列構造が残る場合はresidual predictor、遅延・多レート観測とprocess dynamicsを明示的に扱う必要がある場合はBayesian/Kalman系、simple biasでは不足するがbase modelを更新したくない場合はadaptive calibration layerへ拡張できる。ただし、raw errorの一対一注入はnoise/variance増幅の危険があり、方法選択とparameterはresidual structure、実測取得周期、noise/outlier、operating-condition changeに依存する。target processデータなしでは普遍的なgain・window・filterを確定できない。",
+    "knowledge_unit_refs": [
+      "K0001",
+      "K0002",
+      "K0003",
+      "K0004",
+      "K0005",
+      "K0006",
+      "K0008",
+      "K0009",
+      "K0010",
+      "K0011"
+    ]
+  },
+  "judgments": [
+    {
+      "judgment_id": "J0001",
+      "statement": "RQ-0010への回答は肯定的であり、base model再学習なしの逐次prediction correctionは実装可能な方法群としてprocess soft-sensor literatureに複数存在する。",
+      "knowledge_unit_refs": [
+        "K0010"
+      ]
+    },
+    {
+      "judgment_id": "J0002",
+      "statement": "初期実装では、補正なしのbase predictionを必ず保持した上で、full error injectionではなくtuned/weighted bias correctionを独立層として置く構成から検証するのが妥当である。これはoutput calibrationの実装容易性と、過剰bias updateによるvariance増大のEvidenceを両方踏まえたengineering judgmentである。",
+      "knowledge_unit_refs": [
+        "K0001",
+        "K0002",
+        "K0009"
+      ]
+    },
+    {
+      "judgment_id": "J0003",
+      "statement": "bias補正後のresidualに再現性のあるautocorrelation/dynamicsが残るなら、base predictorを変えずにresidual modelを追加する方式が次の候補になる。ただしstationarity・outlier robustness・held-out validationを満たすことを条件とすべきである。",
+      "knowledge_unit_refs": [
+        "K0004",
+        "K0005"
+      ]
+    },
+    {
+      "judgment_id": "J0004",
+      "statement": "品質実測が遅延・sporadic・multirateで得られる場合は、その時間構造を無視した補正より、delay-aware bias estimator、Bayesian bias update、またはKalman/data-fusion型補正を候補にするのが妥当である。",
+      "knowledge_unit_refs": [
+        "K0003",
+        "K0006"
+      ]
+    },
+    {
+      "judgment_id": "J0005",
+      "statement": "simple bias correctionがworking-condition changeに追従できないがbase modelを凍結したい場合、base predictorと別versionで管理するadaptive calibration modelは再学習前の中間選択肢になり得る。",
+      "knowledge_unit_refs": [
+        "K0008",
+        "K0009"
+      ]
+    },
+    {
+      "judgment_id": "J0006",
+      "statement": "correction layerはprediction errorを無条件に一対一で注入せず、noise・outlier・delayを考慮してtuningし、補正後performanceが悪化した場合に無効化またはbase予測へrollbackできるよう独立運用するのが安全側である。",
+      "knowledge_unit_refs": [
+        "K0002",
+        "K0005",
+        "K0011"
+      ]
+    },
+    {
+      "judgment_id": "J0007",
+      "statement": "Evidenceは単一のuniversal winnerやprocess-independentな数値parameterを支持していないため、target processでは複数補正方式を同一holdout/rolling evaluation条件で比較して選ぶ必要がある。",
+      "knowledge_unit_refs": [
+        "K0007",
+        "K0011"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "text": "今回のEvidence setはsoft-sensor/process industryを中心とした8 Sourcesであり、全製造業を対象とするsystematic reviewではない。",
+      "knowledge_unit_refs": [
+        "K0010",
+        "K0011"
+      ]
+    },
+    {
+      "text": "simulation、laboratory experiment、specific industrial datasetが混在しており、異なるSource間の数値性能を直接比較してmethod rankingすることはできない。",
+      "knowledge_unit_refs": [
+        "K0007",
+        "K0011"
+      ]
+    },
+    {
+      "text": "一部Sourceはpublisher abstract中心の確認であり、詳細な実験条件やすべてのfailure modeまでは検証していない。",
+      "knowledge_unit_refs": [
+        "K0003",
+        "K0007"
+      ]
+    },
+    {
+      "text": "target processの実データがないため、gain、window、ARMA order、Kalman covariance等の具体値は確定していない。",
+      "knowledge_unit_refs": [
+        "K0011"
+      ]
+    },
+    {
+      "text": "PLCへ送るcontrol parameterのfeedback correctionおよびbase model再学習への移行条件は、それぞれRQ-0011/RQ-0012の対象であり本Analysisには含めない。",
+      "knowledge_unit_refs": [
+        "K0009"
+      ]
+    }
+  ],
+  "unresolved_questions": [
+    "target processにおけるquality actualの取得遅延・取得周期・欠測率はどの程度か。",
+    "base prediction residualは主にconstant/slow biasか、自己相関を持つdynamic residualか、operating point依存か。",
+    "quality actualのmeasurement noise・outlier・検査系driftをどの程度見込む必要があるか。",
+    "補正後predictionに許容する最大correction magnitudeとrollback条件をどう設定するか。",
+    "simple/external correctionでは不十分と判断してRQ-0012のretraining decisionへ移る監視条件をどう定義するか。"
+  ],
+  "alternative_interpretations": [
+    {
+      "text": "「モデル自体を再学習しない」を、base predictorだけでなく補正層のparameter updateも一切禁止する意味に厳格化する場合、adaptive calibration modelや一部のonline estimatorは範囲外になり、固定式のweighted bias/state update中心に候補が狭まる。",
+      "knowledge_unit_refs": [
+        "K0008",
+        "K0010"
+      ]
+    }
+  ]
+}
