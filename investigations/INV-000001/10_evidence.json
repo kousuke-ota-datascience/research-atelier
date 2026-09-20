@@ -1,0 +1,298 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "10_evidence",
+  "investigation_id": "INV-000001",
+  "rq_id": "RQ-0010",
+  "snapshot_at": "2026-09-20T10:25:27.665Z",
+  "evidence_items": [
+    {
+      "evidence_id": "E0001",
+      "content": "Quelhas and Pinto describe bias updating as a widespread adaptation procedure for allowing inference models to follow time-varying features of a real process.",
+      "source_locator": "Abstract",
+      "selection_reason": "Establishes bias updating as an established output-correction family directly within the RQ boundary.",
+      "note_type": "Method",
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e1e5855be398137ba70cb030068e194",
+          "title": "SRC-0027"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e1e5855be3981dba7b7f92ca18db51f",
+          "title": "EV-0031"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0002",
+      "content": "In the statistical setting analyzed by Quelhas and Pinto, bias-updated inferences were unbiased but had 100% larger variance than estimates without bias updating; the authors therefore suggest weighting the bias update to balance benefits and penalties.",
+      "source_locator": "Abstract",
+      "selection_reason": "Captures a documented variance trade-off and the rationale for weighted rather than full correction.",
+      "note_type": "Result",
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e1e5855be398137ba70cb030068e194",
+          "title": "SRC-0027"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e1e5855be3981588ddae5e699c32a84",
+          "title": "EV-0032"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0003",
+      "content": "Shardt and Huang analyze a soft-sensor bias update term for the ideal open-loop case, measurement delay, multirate sampling, and the combination of delay and multirate sampling, and provide tuning rules aimed at tracking the quality variable under slow or drifting disturbances.",
+      "source_locator": "Abstract",
+      "selection_reason": "Shows that delay and sparse/multirate quality measurements can be designed into bias correction rather than requiring base-model retraining.",
+      "note_type": "Method",
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e1e5855be39818f89dde71de0210ff1",
+          "title": "SRC-0028"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e1e5855be39811a90dcd5b64018d5f7",
+          "title": "EV-0033"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0004",
+      "content": "The open-loop bias-update study reports simulation and experimental validation of its tuning rules, indicating that delay and measurement frequency are explicit design conditions rather than details that can be ignored.",
+      "source_locator": "Abstract",
+      "selection_reason": "Supports design-condition requirements for applying a bias updater to delayed laboratory quality measurements.",
+      "note_type": "Result",
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e1e5855be39818f89dde71de0210ff1",
+          "title": "SRC-0028"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e1e5855be3981819023c34eda9057ba",
+          "title": "EV-0034"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0005",
+      "content": "Sangoi et al. propose Bayesian automatic bias updating using online process-variable measurements and sporadic laboratory measurements of the critical variable; the method continuously monitors the mean and standard deviation of prediction error and adapts the bias without operational parameter adjustment.",
+      "source_locator": "Abstract; Introduction",
+      "selection_reason": "Provides a self-adaptive statistical bias estimator suitable when ground-truth quality is sporadic.",
+      "note_type": "Method",
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e1e5855be398113af9eec7296209b87",
+          "title": "SRC-0029"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e1e5855be39816d96a0de113e055538",
+          "title": "EV-0035"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0006",
+      "content": "For simulated examples of a continuous styrene-butadiene-rubber process, the Bayesian bias-updating method produced estimates similar to classical approaches after their parameter tuning, while the Bayesian bias showed lower variability.",
+      "source_locator": "Abstract; Conclusions",
+      "selection_reason": "Provides continuous-process evaluation and a variability comparison for Bayesian versus classical bias updating.",
+      "note_type": "Result",
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e1e5855be398113af9eec7296209b87",
+          "title": "SRC-0029"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e1e5855be3981efac3edac6bf1eb7ff",
+          "title": "EV-0036"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0007",
+      "content": "Du, Guan, and Qian construct a static LS-SVM soft sensor and use an ARMA model to dynamically estimate its prediction error; that estimated error is added as a dynamic correction to the static model output.",
+      "source_locator": "Abstract",
+      "selection_reason": "Establishes residual time-series modeling as a correction layer outside a fixed predictor.",
+      "note_type": "Method",
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e1e5855be39814bb4a8e902b2ff7584",
+          "title": "SRC-0030"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e1e5855be398123b75eefcf10758692",
+          "title": "EV-0037"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0008",
+      "content": "In an ethylene-distillation simulation for ethane concentration, the LSSVM-ARMA error-compensation approach was reported to have better tracking and generalization than using the LSSVM model alone.",
+      "source_locator": "Abstract",
+      "selection_reason": "Provides process-domain evidence that dynamic residual correction can outperform an uncorrected static predictor.",
+      "note_type": "Result",
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e1e5855be39814bb4a8e902b2ff7584",
+          "title": "SRC-0030"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e1e5855be39818aadedda5633c44e53",
+          "title": "EV-0038"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0009",
+      "content": "Wu and Luo distinguish soft-sensor output calibration from model self-adjustment and describe output calibration as an operationally simpler, lower-cost alternative when operating conditions do not change greatly.",
+      "source_locator": "Introduction",
+      "selection_reason": "Directly supports the RQ distinction between output correction and base-model adaptation and states an applicability limit.",
+      "note_type": "Claim",
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e1e5855be3981d0afb1c3331ffcb2b6",
+          "title": "SRC-0031"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e1e5855be3981308629c39716989b7d",
+          "title": "EV-0039"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0010",
+      "content": "Wu and Luo propose multirate Kalman-filter data fusion to calibrate soft-sensor model estimates using process measurements sampled at different rates.",
+      "source_locator": "Abstract; §4 KF-based multirate data rectification",
+      "selection_reason": "Establishes Kalman/data-fusion calibration as a no-base-retraining correction architecture.",
+      "note_type": "Method",
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e1e5855be3981d0afb1c3331ffcb2b6",
+          "title": "SRC-0031"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e1e5855be398104b3ece668a0122c29",
+          "title": "EV-0040"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0011",
+      "content": "Their simulations and laboratory-scale experiment indicate that multirate Kalman-filter calibration can improve soft-estimation accuracy and reliability when essential process dynamics are included in the filter model and filter parameters are properly tuned.",
+      "source_locator": "Abstract; Conclusions",
+      "selection_reason": "Captures both evidence of benefit and the requirement for adequate dynamics and tuning.",
+      "note_type": "Result",
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e1e5855be3981d0afb1c3331ffcb2b6",
+          "title": "SRC-0031"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e1e5855be3981eba282da09d51099a1",
+          "title": "EV-0041"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0012",
+      "content": "Klimchenko et al. replace a purely sample-based bias update with a predictive correction layer that models historical prediction errors; their implementation uses an ARMA predictive filter in the compensator so future model error can be predicted and added to the soft-sensor output.",
+      "source_locator": "§1 Introduction; §2.3 Summary of the Proposed Approach",
+      "selection_reason": "Provides a predictive-residual correction architecture that leaves the process predictor separate from the error model.",
+      "note_type": "Method",
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e1e5855be398137b4dfcdd148f3b83e",
+          "title": "SRC-0032"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e1e5855be3981bea844db22b26d6460",
+          "title": "EV-0042"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0013",
+      "content": "The predictive-error filter is stated to be suitable when the error sequence is stationary or close to stationary, or can be transformed to such a process; the authors also require performance checking on a test sample not used to fit the correction model.",
+      "source_locator": "§2.3 Summary of the Proposed Approach",
+      "selection_reason": "Defines key applicability and validation conditions for an error-prediction corrector.",
+      "note_type": "Limitation",
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e1e5855be398137b4dfcdd148f3b83e",
+          "title": "SRC-0032"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e1e5855be3981bf816dc451f63db989",
+          "title": "EV-0043"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0014",
+      "content": "On the industrial reactive-distillation dataset, the predictive-error filter reduced MSE for three output variables by 32%, 67%, and 9.5% relative to a moving-window adaptive-bias method; the authors note that the filters used do not handle serious disturbances or outliers well.",
+      "source_locator": "Abstract; Results; Conclusions",
+      "selection_reason": "Provides industrial-data comparison plus a documented failure mode for residual-prediction correction.",
+      "note_type": "Result",
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e1e5855be398137b4dfcdd148f3b83e",
+          "title": "SRC-0032"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e1e5855be39817ab625e24e89293a9b",
+          "title": "EV-0044"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0015",
+      "content": "Qian et al. report that applying different nonlinear filters to correct errors of the same data-driven composition soft sensor led to different dynamic trade-offs in a Kaibel dividing-wall column: EKF showed oscillations, PF retained steady-state offsets, and UKF gave stable behavior without those two observed issues in that application.",
+      "source_locator": "Abstract",
+      "selection_reason": "Demonstrates that correction-filter choice can change dynamic behavior and that there is no process-independent universal filter choice.",
+      "note_type": "Result",
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e1e5855be3981d8a58cfe193b972ce3",
+          "title": "SRC-0033"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e1e5855be3981f89d11ef123d35694c",
+          "title": "EV-0045"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0016",
+      "content": "Dong et al. structure their Double Gaussian Bayesian Network as an offline prediction model plus a calibration model; the prediction model supplies initial estimates, while the calibration model learns from prediction errors to improve those estimates.",
+      "source_locator": "§ Double Gaussian Bayesian network",
+      "selection_reason": "Provides direct evidence for a frozen/offline predictor plus a separate adaptive calibration layer.",
+      "note_type": "Method",
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e1e5855be3981b683f2c7b53100166d",
+          "title": "SRC-0034"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e1e5855be398109a18ee1e4b1683d0d",
+          "title": "EV-0046"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0017",
+      "content": "The authors distinguish bias correction from parameter correction and note that bias correction is easy to implement but may become inadequate under large working-condition changes; their ADGBN therefore incrementally updates the auxiliary calibration model and uses a dynamic variable window to decide adaptive updates.",
+      "source_locator": "Introduction; Abstract",
+      "selection_reason": "Defines an intermediate correction-layer adaptation strategy and states when simple bias correction may be insufficient.",
+      "note_type": "Limitation",
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e1e5855be3981b683f2c7b53100166d",
+          "title": "SRC-0034"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e1e5855be39812da717ee6cc5aacc76",
+          "title": "EV-0047"
+        }
+      }
+    }
+  ]
+}
