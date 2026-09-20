@@ -1,5 +1,7 @@
 # Schema v1 contract
 
+> **Legacy compatibility contract.** 新規Investigationには使用しない。既存 `RQ-NNNN-vVVV` historical artifactの再検証専用として凍結する。新規canonical artifactは `schemas/v2` を使用する。
+
 このdirectoryには、Research Atelier artifactに対するcanonical JSON Schema Draft 2020-12 contractを置く。
 
 ## Policy
