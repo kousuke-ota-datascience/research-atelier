@@ -20,11 +20,14 @@
 
 ## Authority model
 
-| 対象 | System / artifact | 責務 | Authority |
+| 対象 | System / actor | 責務 | Authority |
 | --- | --- | --- | --- |
+| Research intent / semantic commitment | Human / Researcher | Research Questionの意味の定義・採択、調査実行の意図、Scope / assumptions / cutoff等の意味論的条件の決定・確認 | 「何を・どの意味で調べるか」のdecision authority |
 | Discovery、capture、reusable catalog、運用上のcurrent state | Notion | Research Topics、Research Questions、Sources、Evidence Notes、task state、運用metadata | mutableな運用状態とreusable catalog recordの正本 |
 | Frozen Investigation artifact | Git JSON | Investigation Context、Evidence snapshot、Synthesis、Analysis | 特定Investigationの正本 |
-| 意味論的構築・判断 | LLM | structured Synthesis、分析判断、mapping案の作成 | 単独では正本ではない。指定canonical artifactへmaterializeされ、必要なvalidation/reviewを通過して初めて正本化される |
+| Semantic assistance / materialization | LLM | RQ wording整理、条件候補提示、Investigation Context / Evidence / Synthesis / Analysisのmaterialization支援 | semantic proposalを作れるが、RQのsemantic ownership、research intent、未確認conditionを単独で確定しない |
+| Investigation orchestration | Workflow 00 / deterministic system | accepted RQまたは既存Investigationを入口として、resume / new判定、INV ID採番、lifecycle / invalidation、accepted result projectionを管理 | execution identity / lifecycle / orchestrationのauthority。RQ semantic meaningのauthorityは持たない |
+| Investigation execution | Workflow 10 | frozen Investigation Contextの下でSource discovery、Evidence capture / selection、Synthesis、Analysisを順序立てて実行 | canonical execution procedureのauthority。Research Questionの作成・採択は責務外 |
 | 構造契約 | JSON Schema | 許可構造、required、type、enum、conditional structure | artifact structureの正本契約 |
 | Deterministic enforcement | Python | schema、reference、ID、version/path、その他機械判定可能なinvariantの検査 | machine-checkable ruleの実行正本 |
 
@@ -53,6 +56,70 @@ Investigation (INV)
 - 将来、同一framingを複数RQ / Investigationから独立に再利用・versioningする実需要が確認された場合に限り、Research Contextを別entityとして追加する。その場合もInvestigation Contextと混同しない。
 
 canonicalに固定するcardinalityは **RQ 1 : Investigation 0..*** であり、各Investigationはexactly one RQを参照する。
+
+## Human / workflow responsibility boundary
+
+Research Atelierは、Research Questionを生成するworkflowではない。canonical research workflowは、**人間が意味を定義し採択したResearch Question**、または既存Investigation IDを外部入力として開始する。
+
+基本原則は次のとおり。
+
+> **Human owns research intent and semantic commitments. Workflow owns Investigation lifecycle and identity allocation.**
+
+- Human / ResearcherはResearch Questionのsemantic identity、調査するというintent、Scope / assumption / cutoff等の意味論的条件を決定・確認する。
+- LLMはQuestion wordingの整理、候補提示、artifact materializationを支援できるが、human-ownedなsemantic commitmentを暗黙に確定しない。
+- Workflow 00はaccepted RQからInvestigationをorchestrateし、resume / new、ID、lifecycle、invalidation、final projectionを管理する。
+- Workflow 10はInvestigation executionを担当し、Research Questionの作成・採択を行わない。
+- deterministic systemはmachine-checkableなstate / identity / validationを管理し、semantic research intentを推測しない。
+
+Task 17が定義するのはRQ / Investigation / Investigation Contextの**domain model**であり、本節が定義するのはactor responsibility / workflow entrance / execution authorityである。両者を混同しない。
+
+## Canonical research execution invariant
+
+対象となるaccepted Research Questionが存在し、外部Sourceを探索してsubstantive conclusionを生成する場合、そのresearch executionはWorkflow 00を入口としてWorkflow 10のcanonical chainを経由しなければならない。
+
+```text
+accepted Research Question
+        |
+        v
+Workflow 00
+        |
+        v
+Investigation Context freeze
+        |
+        v
+Source discovery / Evidence capture
+        |
+        v
+10_evidence
+        |
+        v
+20_synthesis
+        |
+        v
+30_analysis
+        |
+        v
+accepted Working Answer projection
+```
+
+chat上のad hoc Web searchやcitation付き回答だけで、Sources / Evidence Notes / `10_evidence` / `20_synthesis` / `30_analysis` を経由せずにcanonical research resultを成立させてはならない。そのような回答は参考情報にはなり得るが、Research Atelier上は**workflow incomplete / non-canonical**として扱う。
+
+## Evidence and lineage invariant
+
+Research AtelierにおけるEvidenceとは、LLMが根拠らしい文章を生成することではない。**Sourceへtrace可能なsource-faithful observation / claimをcaptureし、必要なprovenanceを保持したもの**である。
+
+canonical resultは少なくとも次のlineageを辿れることを要求する。
+
+```text
+Working Answer
+  -> Judgment / Analysis
+  -> Knowledge Unit
+  -> Evidence
+  -> Evidence Note
+  -> Source
+```
+
+途中段階をLLMの非追跡な要約で代替してはならない。Sourceの内容、workflowによるSynthesis、RQ-specific analytical judgmentを区別する。
 
 ## Single-authority rule
 
@@ -117,9 +184,12 @@ Research workflowは次の分離を基本とする。
 実装責務は次のとおり。
 
 ```text
+Human        = research intent / semantic commitments
 Notion       = operational state / reusable catalog
+Workflow 00  = Investigation orchestration / lifecycle / projection
+Workflow 10  = canonical Investigation execution procedure
 Git JSON     = frozen canonical artifact
-LLM          = semantic construction / judgment
+LLM          = semantic assistance / materialization
 JSON Schema  = structure contract
 Python       = deterministic enforcement
 ```

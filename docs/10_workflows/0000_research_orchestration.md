@@ -19,9 +19,11 @@ JSON Schemaやlineage validationも再実装しない。deterministic validator�
 
 ## 1. Public input
 
-通常のbusiness inputは、1つのResearch Questionまたは1つのInvestigation IDとする。
+通常のbusiness inputは、**人間が意味を定義し採択した1つのResearch Question**、または1つの既存Investigation IDとする。未採択の会話上の問いを、Workflow 00自身がcanonical Research Questionとして暗黙に生成してはならない。
 
 RQだけが与えられ、Investigation IDが指定されていない場合:
+
+0. Research Questionがacceptedであり、「このRQを調査する」というhuman research intentが成立していることを確認する。
 
 1. そのRQに紐づく未完了Investigationを確認する。
 2. current workとして再開すべき同一executionが存在するか判定する。
@@ -30,6 +32,25 @@ RQだけが与えられ、Investigation IDが指定されていない場合:
 v2 Investigation IDはRQ IDをencodeしない。RQとのbindingは `00_context.rq_id` で行う。
 
 内部artifact pathやvalidator stageを導出できる場合、それらを通常のuser inputとして要求しない。
+
+### 1.1 Entrance contract
+
+Workflow 00の責務は**accepted Research Questionからcanonical research executionへhandoffすること**であり、Research Questionのsemantic formulation / acceptanceそのものではない。
+
+入口条件:
+
+- 新規research: accepted Research Questionが存在し、human research intentが確認されている。
+- resume: 既存Investigation IDが与えられ、そのRQ bindingとlifecycleを解決できる。
+- RQ wording整理や候補提示はLLMが支援してよいが、semantic target / Scope / assumptions等のhuman-owned commitmentを暗黙に確定しない。
+- semantic question identityが未確定なら、Workflow 00はResearch executionを開始せず、RQ acceptanceが成立するまでBLOCKEDとする。
+
+### 1.2 Canonical execution invariant
+
+対象RQが存在し、外部Sourceを探索してsubstantive conclusionを生成する場合、その実行はWorkflow 00を経由し、Workflow 10のcanonical artifact chainへ接続しなければならない。
+
+ad hocなWeb search / citation付きchat回答だけで substantive research を完了扱いしてはならない。Sources / Evidence Notes / canonical Investigation artifactを形成していない場合、その回答はResearch Atelier上のcanonical resultではなく **workflow incomplete / non-canonical** である。
+
+したがって、ad hoc回答を直接 `Research Questions.Working Answer` へ書き込んだり、COMPLETEと判定したりしてはならない。
 
 ## 2. Derived state model
 
@@ -274,6 +295,8 @@ Workflow 00の実行結果では少なくとも以下を報告する。
 
 Workflow 00はorchestratorであり、alternate source of truthではない。
 
+Human / Researcherが所有するのはresearch intentとsemantic commitmentsであり、Workflow 00が所有するのはInvestigation lifecycle / identity allocation / orchestrationである。Workflow 00はResearch Questionを生成・採択するauthorityを持たない。
+
 stateは次から導出する。
 
 - canonical Git artifact
@@ -284,6 +307,26 @@ stateは次から導出する。
 old downstream artifactを、fileが存在するという理由だけでtrustedにしてはならない。
 
 
-## 11. v1 legacy handling
+## 11. Regression scenario — accepted RQをchatだけで調査してしまうケース
+
+以下をTask 18の回帰シナリオとして扱う。
+
+1. Humanが深掘り質問を提示し、LLM支援でResearch QuestionとしてNotionへmaterializeした。
+2. そのRQに対して外部Web Sourceを探索し、citation付きのsubstantive answerをchat上で生成した。
+3. Workflow 00へhandoffせず、Investigation IDを解決・採番しなかった。
+4. Sources / Evidence Notesをcaptureせず、`10_evidence` / `20_synthesis` / `30_analysis` を作成しなかった。
+5. それでも回答済みと扱った。
+
+この状態は**Research Atelier上では未完了**である。理由は、回答からSourceへ遡るcanonical Evidence lineageと、frozen execution conditionを持つInvestigationが存在しないためである。
+
+期待動作:
+
+- accepted RQに対するsubstantive research開始時点でWorkflow 00へ入る。
+- resume可能なInvestigationがなければ新しい `INV-NNNNNN` を採番する。
+- Workflow 10を通してSource / Evidence lineageとcanonical artifactsを構築する。
+- through-30 validationとaccepted result projectionが完了するまでCOMPLETEにしない。
+- chat上のad hoc answerはcanonical Working Answerのsourceとして扱わない。
+
+## 12. v1 legacy handling
 
 既存 `RQ-NNNN-vVVV` Investigationをorchestrateする場合はlegacy v1 identity / schemaを維持する。新規executionではlegacy IDを採番せず、`INV-NNNNNN` を使用する。

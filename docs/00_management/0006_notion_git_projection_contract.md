@@ -143,6 +143,8 @@ Notion Research Questionsの `Working Answer` は、そのRQについてlatest a
 
 authorityはaccepted Git `30_analysis` に残る。
 
+projection authorityはWorkflow 00のfinalizationにある。**through-30 validation済みでacceptedされたInvestigationの `30_analysis` だけがprojection sourceになれる。** chat上のad hoc Web回答や、canonical artifact chainを経ていない文章をWorking Answerへcanonical projectionしてはならない。
+
 したがって:
 
 - Notion `Working Answer` のhuman editはnon-canonical
