@@ -9,7 +9,8 @@ from typing import Any, Mapping
 from .schema_validator import ValidationIssue
 
 
-INVESTIGATION_RE = re.compile(r"^(RQ-[0-9]{4})-v(?!000)[0-9]{3}$")
+LEGACY_INVESTIGATION_RE = re.compile(r"^(RQ-[0-9]{4})-v(?!000)[0-9]{3}$")
+CANONICAL_INVESTIGATION_RE = re.compile(r"^INV-(?!000000)[0-9]{6}$")
 
 
 @dataclass(frozen=True)
@@ -71,19 +72,22 @@ def validate_references(
     """
     errors: list[ValidationIssue] = []
 
-    match = INVESTIGATION_RE.fullmatch(investigation_id)
-    if match is None:
+    legacy_match = LEGACY_INVESTIGATION_RE.fullmatch(investigation_id)
+    canonical_match = CANONICAL_INVESTIGATION_RE.fullmatch(investigation_id)
+    if legacy_match is None and canonical_match is None:
         return (
             _issue(
                 "V-INV-000",
                 "investigation",
                 "$",
                 "invalid investigation_id format",
-                expected="RQ-NNNN-vVVV",
+                expected="INV-NNNNNN or RQ-NNNN-vVVV (legacy)",
                 actual=investigation_id,
             ),
         )
-    expected_rq_id = match.group(1)
+
+    expected_rq_id = legacy_match.group(1) if legacy_match is not None else None
+    canonical_rq_id: str | None = None
 
     for artifact, parsed in artifacts.items():
         actual_investigation = parsed.data.get("investigation_id")
@@ -99,17 +103,32 @@ def validate_references(
                 )
             )
         actual_rq = parsed.data.get("rq_id")
-        if actual_rq != expected_rq_id:
-            errors.append(
-                _issue(
-                    "V-RQ-001",
-                    artifact,
-                    "$.rq_id",
-                    "rq_id does not match investigation_id prefix",
-                    expected=expected_rq_id,
-                    actual=actual_rq,
+        if expected_rq_id is not None:
+            if actual_rq != expected_rq_id:
+                errors.append(
+                    _issue(
+                        "V-RQ-001",
+                        artifact,
+                        "$.rq_id",
+                        "rq_id does not match legacy investigation_id prefix",
+                        expected=expected_rq_id,
+                        actual=actual_rq,
+                    )
                 )
-            )
+        elif isinstance(actual_rq, str):
+            if canonical_rq_id is None:
+                canonical_rq_id = actual_rq
+            elif actual_rq != canonical_rq_id:
+                errors.append(
+                    _issue(
+                        "V-RQ-001",
+                        artifact,
+                        "$.rq_id",
+                        "rq_id mismatch across Investigation artifact chain",
+                        expected=canonical_rq_id,
+                        actual=actual_rq,
+                    )
+                )
 
     evidence_ids: set[str] = set()
     knowledge_ids: set[str] = set()

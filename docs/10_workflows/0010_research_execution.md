@@ -18,7 +18,7 @@ semantic constructionはLLM / researcherの責務とする。
 
 ### Input
 
-- 採番済みの `Investigation_ID` 1件。例: `RQ-0007-v001`
+- 採番済みの `Investigation_ID` 1件。v2例: `INV-000001`
 - 対応するNotion Research Question
 - reusable Notion Sources / Evidence Notes catalogへのaccess
 
@@ -72,13 +72,14 @@ RQ-specific judgmentとWorking Answerが初めてcanonicalになるstageであ�
 
 ### Step 0 — Preflight
 
-1. Investigation prefixに対応するRQを解決する。
-2. Investigation IDが `RQ-NNNN-vVVV` に従うことを確認する。
-3. 同じversionがmaterially異なるfrozen contextへ既に使われていないことを確認する。
-4. authority、versioning、artifact-chain、projection、profile contractを読む。
-5. 既存Investigation directoryがある場合、current artifact stageを確認してから書き込みを始める。
+1. v2新規executionではInvestigation IDが `INV-NNNNNN` に従うことを確認する。既存v1 executionは `RQ-NNNN-vVVV` をlegacyとして維持する。
+2. 対象Research Questionの `rq_id` を解決する。
+3. v2ではInvestigation ID自体からRQを推定せず、`00_context.rq_id` でexactly one RQへbindする。
+4. 同じInvestigation IDがmaterially異なるexecutionへ既に使われていないことを確認する。
+5. authority、identity/lifecycle、artifact-chain、projection、profile contractを読む。
+6. 既存Investigation directoryがある場合、current artifact stageを確認してから書き込みを始める。
 
-identity / version ownershipがambiguousなら停止する。
+identity / RQ bindingがambiguousなら停止する。
 
 ### Step 1 — `00_context` の構築とfreeze
 
@@ -96,7 +97,7 @@ python -m research_atelier.validation.validate_investigation <ID> --through 00
 7. FAIL / ERRORでは次へ進まない。
 8. `00_context.json` をcontext baselineとしてcommitする。
 
-以降、context-defining semantic changeには `0002_investigation_versioning.md` のversioning ruleを適用する。
+以降、context-defining semantic changeには `0002_investigation_versioning.md` のlifecycle ruleを適用し、freeze後は新しいInvestigationを作る。
 
 ### Step 2 — Source探索とreusable Evidence Note capture
 
@@ -175,7 +176,7 @@ upstream canonical artifactを編集する前に、versioning ruleがin-place ch
 - `20_synthesis` change -> 30をinvalidate
 - 30 change -> 30自身のみ再評価
 
-accepted Investigationでは、versioning contractが新versionを要求するchangeをhistorical artifactへ上書きしない。
+accepted Investigationでは、lifecycle contractが新しいInvestigationを要求するchangeをhistorical artifactへ上書きしない。
 
 `INVALID` は、new upstream stateに対してreconstructまたは明示的にrevalidateされるまで、downstream artifactをcurrentとして扱えないことを意味する。
 
@@ -221,3 +222,8 @@ Workflow 10は以下をすべて満たしたとき完了とする。
 - known upstream changeによってinvalidatedされたdownstream artifactが残っていない
 
 accepted Working AnswerのNotion projectionはprojection contractとorchestration workflowの責務であり、artifact construction自体には含めない。
+
+
+## 9. v1 legacy handling
+
+既存 `RQ-NNNN-vVVV` directoryを実行・再検証する場合は `schemas/v1` を使用し、identityをin-place migrationしない。新規Investigationは `INV-NNNNNN` + `schema_version = 2.0.0` を使用する。

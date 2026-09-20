@@ -23,10 +23,36 @@
 | 対象 | System / artifact | 責務 | Authority |
 | --- | --- | --- | --- |
 | Discovery、capture、reusable catalog、運用上のcurrent state | Notion | Research Topics、Research Questions、Sources、Evidence Notes、task state、運用metadata | mutableな運用状態とreusable catalog recordの正本 |
-| Frozen Investigation artifact | Git JSON | versioned Research Context、Evidence snapshot、Synthesis、Analysis | 特定Investigation versionの正本 |
+| Frozen Investigation artifact | Git JSON | Investigation Context、Evidence snapshot、Synthesis、Analysis | 特定Investigationの正本 |
 | 意味論的構築・判断 | LLM | structured Synthesis、分析判断、mapping案の作成 | 単独では正本ではない。指定canonical artifactへmaterializeされ、必要なvalidation/reviewを通過して初めて正本化される |
 | 構造契約 | JSON Schema | 許可構造、required、type、enum、conditional structure | artifact structureの正本契約 |
 | Deterministic enforcement | Python | schema、reference、ID、version/path、その他機械判定可能なinvariantの検査 | machine-checkable ruleの実行正本 |
+
+## Domain identity model
+
+v2のcanonical domain modelは次のとおり。
+
+```text
+Research Question (RQ)
+  1
+  |
+  | 0..*
+  v
+Investigation (INV)
+  |
+  +-- 00_context = frozen Investigation Context
+  +-- 10_evidence
+  +-- 20_synthesis
+  +-- 30_analysis
+```
+
+- **Research Question** は「何を問うか」の長期的semantic identityであり、Notion catalogがcurrent stateの正本である。
+- **Investigation** は、1つのRQを特定のexecution conditionで実行する独立identityである。v2のIDは `INV-NNNNNN` とし、RQ IDをID文字列へ埋め込まない。
+- **Investigation Context** はInvestigation固有のimmutable execution inputであり、`00_context.json` がfreeze後の正本である。
+- **Research Context** はproblem / decision context / hypothesis / domain framing等の上流概念を指す一般語としてのみ使用する。v2では独立identity、独立version、canonical DBを持つfirst-class entityにはしない。
+- 将来、同一framingを複数RQ / Investigationから独立に再利用・versioningする実需要が確認された場合に限り、Research Contextを別entityとして追加する。その場合もInvestigation Contextと混同しない。
+
+canonicalに固定するcardinalityは **RQ 1 : Investigation 0..*** であり、各Investigationはexactly one RQを参照する。
 
 ## Single-authority rule
 
@@ -48,9 +74,9 @@ derived copyはprojection、snapshot、cache、renderingとしてのみ存在で
 
 ### Git artifact-authoritative
 
-1つのfrozen Investigation versionについて:
+1つのfrozen Investigationについて:
 
-- Investigation / Research Context
+- Investigation Context
 - そのversionで選択したEvidence snapshot
 - evidence-faithful Synthesis
 - RQ-specific AnalysisとWorking Answer
@@ -70,7 +96,7 @@ derived copyはprojection、snapshot、cache、renderingとしてのみ存在で
 
 1. Notion catalog dataは、frozen Git Investigation artifactへsnapshotしてよい。
 2. Git canonical analysisはNotionのoperational current stateへprojectionしてよいが、別のsync contractがauthority transferを明示しない限りderivedである。
-3. projectionにはsource Investigation versionを識別できるprovenanceを残す。
+3. projectionにはsource Investigation identityを識別できるprovenanceを残す。
 4. 同一fieldをNotionとGitの双方でauthoritativeに手動管理してはならない。
 5. upstream canonical artifactが変更された場合、依存するdownstream artifactは再validationまたは再生成されるまでinvalidとする。
 
@@ -98,4 +124,4 @@ JSON Schema  = structure contract
 Python       = deterministic enforcement
 ```
 
-このboundaryを、Investigation versioning、canonical artifact、validation、Notion/Git projectionの前提とする。
+このboundaryを、Investigation identity/lifecycle、canonical artifact、validation、Notion/Git projectionの前提とする。

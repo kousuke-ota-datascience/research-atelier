@@ -1,0 +1,160 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/kousuke-ota-datascience/research-atelier/schemas/v2/10_evidence.schema.json",
+  "title": "Research Atelier 10 Evidence v2",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "artifact_type",
+    "investigation_id",
+    "rq_id",
+    "snapshot_at",
+    "evidence_items"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "2.0.0"
+    },
+    "artifact_type": {
+      "const": "10_evidence"
+    },
+    "investigation_id": {
+      "type": "string",
+      "pattern": "^INV-(?!000000)[0-9]{6}$",
+      "description": "Independent Investigation identity. RQ binding is represented by rq_id and cross-artifact consistency is enforced deterministically by Python."
+    },
+    "rq_id": {
+      "type": "string",
+      "pattern": "^RQ-[0-9]{4}$"
+    },
+    "snapshot_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "evidence_items": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/evidence_item"
+      }
+    }
+  },
+  "$defs": {
+    "evidence_item": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "evidence_id",
+        "content",
+        "provenance"
+      ],
+      "properties": {
+        "evidence_id": {
+          "type": "string",
+          "pattern": "^E[0-9]{4}$"
+        },
+        "content": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_locator": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "selection_reason": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "note_type": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "Claim",
+            "Result",
+            "Method",
+            "Definition",
+            "Theory",
+            "Data",
+            "Limitation",
+            "Counterargument",
+            "Open Question",
+            "Other",
+            null
+          ]
+        },
+        "direct_quote": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "provenance": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "source",
+            "evidence_note"
+          ],
+          "properties": {
+            "source": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "notion_url"
+              ],
+              "properties": {
+                "notion_url": {
+                  "type": "string",
+                  "format": "uri"
+                },
+                "title": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "minLength": 1
+                }
+              }
+            },
+            "evidence_note": {
+              "oneOf": [
+                {
+                  "type": "null"
+                },
+                {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "notion_url"
+                  ],
+                  "properties": {
+                    "notion_url": {
+                      "type": "string",
+                      "format": "uri"
+                    },
+                    "title": {
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "minLength": 1
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

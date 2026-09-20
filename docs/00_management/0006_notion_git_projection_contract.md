@@ -32,13 +32,13 @@ authorityは常に `0001_research_architecture.md` に従う。
 
 ### Gitが正本
 
-特定Investigation versionについて:
+特定Investigationについて:
 
 - frozen `00_context`
 - frozen `10_evidence` snapshot
 - `20_synthesis`
 - `30_analysis`
-- そのversionでacceptedされたWorking Answer
+- そのInvestigationでacceptedされたWorking Answer
 
 ### Projectionは第二の正本ではない
 
@@ -49,9 +49,9 @@ boundaryを跨いでcopyされた値は、次のどちらかである。
 
 copyしたことで独立編集可能な第二authorityを作ってはならない。
 
-## 2. Notion -> Git: Research Question freeze
+## 2. Notion -> Git: Research Question -> Investigation Context freeze
 
-`00_context` 作成時、Research Questions DBの以下をfreezeする。
+`00_context`（Investigation Context）作成時、Research Questions DBの以下をfreezeする。
 
 | Notion property | Git 00_context field | Rule |
 | --- | --- | --- |
@@ -147,9 +147,9 @@ authorityはaccepted Git `30_analysis` に残る。
 
 - Notion `Working Answer` のhuman editはnon-canonical
 - 次回projectionで上書きされうる
-- canonical answerを変える場合はversioning ruleに従ってInvestigation Analysisを変更し、Notionだけを独立変更しない
+- canonical answerを変える場合はInvestigation lifecycle ruleに従って新しいInvestigationを作るか、未accept draftを更新し、Notionだけを独立変更しない
 
-### v1でprojectionしないもの
+### v2でprojectionしないもの
 
 Gitから自動projectionしない:
 
@@ -174,7 +174,7 @@ Working Answer projection成功だけで `Status = Answered` へ自動変更し�
 
 ## 6. Projection provenance
 
-v1ではprojection provenance専用のNotion propertyを追加しない。
+v2ではprojection provenance専用のNotion propertyを追加しない。
 
 projection operationは少なくとも以下をlogする。
 
@@ -213,7 +213,7 @@ failed / partial Git candidateはcanonicalではない。
 
 previous committed Investigationは、そのhistorical versionについて引き続きcanonicalである。
 
-Notion current stateからretryするか、Research Contextが変わったなら新Investigation versionを作る。
+Notion current stateからretryするか、Investigation Contextをfreeze後に変更する必要があるなら新しいInvestigationを作る。
 
 ### Git -> Notion projection failure
 
@@ -240,8 +240,8 @@ Investigationが `10_evidence` をfreezeした後にNotion Source / Evidence Not
 
 - historical `10_evidence` は不変
 - Notion catalogはcurrent reusable recordを保持
-- update後Evidenceを使う新analysisは未accept Investigationを更新するか、新versionを作る
-- accepted Investigationへ実質的に異なるEvidenceを組み込む場合は新Investigation version
+- update後Evidenceを使う新analysisは未accept Investigationを更新するか、新しいInvestigationを作る
+- accepted Investigationへ実質的に異なるEvidenceを組み込む場合は新しいInvestigation
 
 ## 10. Reliability Note boundary
 
@@ -268,7 +268,7 @@ projectionは意図的に狭く保つ。
 
 ## 12. Operational contract
 
-v1における4 Research DBへのGit write-backは次の1つだけ。
+v2における4 Research DBへのGit write-backは次の1つだけ。
 
 ```text
 accepted 30_analysis.working_answer.text
@@ -282,3 +282,10 @@ accepted 30_analysis.working_answer.text
 - Notion-only reusable catalog / operational state
 
 このboundaryでdual authorityを防ぐ。
+
+
+## 13. Investigation identity migration
+
+新規freezeではv2 canonical ID `INV-NNNNNN` を使用し、`rq_id` は独立fieldとしてsnapshotする。
+
+既存 `RQ-NNNN-vVVV` artifactはlegacy v1として保持し、projection provenanceでもhistorical `investigation_id` をそのまま記録する。過去artifactをv2 IDへrenameしない。
