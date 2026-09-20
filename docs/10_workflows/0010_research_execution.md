@@ -2,17 +2,17 @@
 
 ## 0. 位置付け
 
-本Workflowは、frozen contextから `30_analysis` のdeterministic validationまで、1つのResearch Investigationを構築するcanonical execution procedureである。
+本Workflowは、**accepted Research Questionに紐づく採番済みInvestigation**について、frozen Investigation Contextから `30_analysis` のdeterministic validationまでを構築するcanonical execution procedureである。Research Questionのsemantic formulation / acceptanceは本Workflowの責務外である。
 
 本書が定義するのは、**実行順序と意味論上の作成規則**である。
 
-JSON field、required、enum、reference format等の構造は再定義しない。構造契約は `schemas/v1` を正とする。
+JSON field、required、enum、reference format等の構造は再定義しない。新規canonical Investigationは `schemas/v2`、既存legacy Investigationは `schemas/v1` を正とする。
 
 deterministic checkは以下へ委譲する。
 
 `python -m research_atelier.validation.validate_investigation <Investigation_ID> --through 00|10|20|30`
 
-semantic constructionはLLM / researcherの責務とする。
+semantic constructionでは、Human / Researcherがresearch intentとsemantic commitmentsを所有し、LLMはwording整理、候補提示、artifact materialization、Synthesis / Analysis作成を支援する。LLMは未確認のsemantic conditionを勝手に確定しない。
 
 ## 1. Input / output
 
@@ -36,13 +36,24 @@ investigations/<Investigation_ID>/
 
 ### Source discovery
 
-目的は、frozen Research Contextに関連するcandidate Sourceを探索すること。
+目的は、frozen Investigation Contextに関連するcandidate Sourceを探索すること。
 
 Source discoveryではNotion Sources / Evidence Notesへreusable recordを追加・refineしてよいが、analytical conclusionを直接作らない。
 
 Evidence classに応じて、primary evidence、original data、official specification、original paperなど、問いを直接規定・報告するSourceを優先する。
 
 high-authority Sourceが見つからない場合、その不在を隠さず、lower-quality Evidenceを暗黙に格上げしない。
+
+### Evidence meaning
+
+Research AtelierにおけるEvidenceは、LLMが「根拠」として生成した文章ではない。
+
+Evidenceとは、**Sourceへtrace可能なsource-faithful observation / claim / result / method / definitionをcaptureし、必要なprovenanceを保持したもの**である。
+
+- Sourceに存在しないclaimをEvidenceとして生成しない。
+- analyst inferenceやcross-source interpretationをEvidence layerへ混入しない。
+- Notion Evidence Noteを経由する場合、そのSource relationとlocation / quote等のprovenanceを保持する。
+- direct source observationを使う場合も、後からSourceへ戻れるlocatorを保持する。
 
 ### Evidence selection
 
@@ -72,12 +83,13 @@ RQ-specific judgmentとWorking Answerが初めてcanonicalになるstageであ�
 
 ### Step 0 — Preflight
 
-1. v2新規executionではInvestigation IDが `INV-NNNNNN` に従うことを確認する。既存v1 executionは `RQ-NNNN-vVVV` をlegacyとして維持する。
-2. 対象Research Questionの `rq_id` を解決する。
-3. v2ではInvestigation ID自体からRQを推定せず、`00_context.rq_id` でexactly one RQへbindする。
-4. 同じInvestigation IDがmaterially異なるexecutionへ既に使われていないことを確認する。
-5. authority、identity/lifecycle、artifact-chain、projection、profile contractを読む。
-6. 既存Investigation directoryがある場合、current artifact stageを確認してから書き込みを始める。
+1. 対象Research Questionがhumanによって意味を定義・採択済みであり、「このRQを調査する」というresearch intentが成立していることを確認する。未採択の会話上の問いをWorkflow 10自身がcanonical RQとして生成しない。
+2. v2新規executionではInvestigation IDが `INV-NNNNNN` に従うことを確認する。既存v1 executionは `RQ-NNNN-vVVV` をlegacyとして維持する。
+3. 対象Research Questionの `rq_id` を解決する。
+4. v2ではInvestigation ID自体からRQを推定せず、`00_context.rq_id` でexactly one RQへbindする。
+5. 同じInvestigation IDがmaterially異なるexecutionへ既に使われていないことを確認する。
+6. authority、identity/lifecycle、artifact-chain、projection、profile contractを読む。
+7. 既存Investigation directoryがある場合、current artifact stageを確認してから書き込みを始める。
 
 identity / RQ bindingがambiguousなら停止する。
 
@@ -221,9 +233,21 @@ Workflow 10は以下をすべて満たしたとき完了とする。
 - 4 artifactがcommit済み
 - known upstream changeによってinvalidatedされたdownstream artifactが残っていない
 
+- Working AnswerからAnalysis / Judgment、Knowledge Unit、Evidence、Evidence Note、Sourceへ遡れるlineageが保たれている
+
 accepted Working AnswerのNotion projectionはprojection contractとorchestration workflowの責務であり、artifact construction自体には含めない。
 
+## 9. Execution boundary invariant
 
-## 9. v1 legacy handling
+Workflow 10は**Investigation execution**のworkflowであり、Research Questionを作るworkflowではない。
+
+対象のaccepted RQに対して外部Sourceを探索しsubstantive conclusionを生成するなら、Workflow 00からhandoffされたInvestigationとして本Workflowを実行する。chat上のad hoc Web回答だけで、Source / Evidence capture、`10_evidence`、`20_synthesis`、`30_analysis` を省略してcanonical research resultとみなしてはならない。
+
+そのようなad hoc回答はResearch Atelier上ではworkflow incomplete / non-canonicalであり、accepted Working Answer projectionのsourceにならない。
+
+
+## 10. v1 legacy handling
+
+
 
 既存 `RQ-NNNN-vVVV` directoryを実行・再検証する場合は `schemas/v1` を使用し、identityをin-place migrationしない。新規Investigationは `INV-NNNNNN` + `schema_version = 2.0.0` を使用する。
