@@ -73,7 +73,7 @@ wording normalization、Evidence grouping、agreement / conflict / uncertainty�
 
 ### Analysis
 
-目的は、frozen RQ / contextに照らして `20_synthesis` を解釈すること。
+目的は、accepted RQとfrozen Investigation Contextに照らして `20_synthesis` を解釈すること。
 
 `0009_analysis_profiles.md` で定義したQuestion Type profileを使用する。
 
@@ -232,7 +232,6 @@ Workflow 10は以下をすべて満たしたとき完了とする。
 - through 30 validationがPASS
 - 4 artifactがcommit済み
 - known upstream changeによってinvalidatedされたdownstream artifactが残っていない
-
 - Working AnswerからAnalysis / Judgment、Knowledge Unit、Evidence、Evidence Note、Sourceへ遡れるlineageが保たれている
 
 accepted Working AnswerのNotion projectionはprojection contractとorchestration workflowの責務であり、artifact construction自体には含めない。
@@ -247,7 +246,5 @@ Workflow 10は**Investigation execution**のworkflowであり、Research Questio
 
 
 ## 10. v1 legacy handling
-
-
 
 既存 `RQ-NNNN-vVVV` directoryを実行・再検証する場合は `schemas/v1` を使用し、identityをin-place migrationしない。新規Investigationは `INV-NNNNNN` + `schema_version = 2.0.0` を使用する。
