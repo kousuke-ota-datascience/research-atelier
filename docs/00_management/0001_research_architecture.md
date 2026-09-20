@@ -184,9 +184,12 @@ Research workflowは次の分離を基本とする。
 実装責務は次のとおり。
 
 ```text
+Human        = research intent / semantic commitments
 Notion       = operational state / reusable catalog
+Workflow 00  = Investigation orchestration / lifecycle / projection
+Workflow 10  = canonical Investigation execution procedure
 Git JSON     = frozen canonical artifact
-LLM          = semantic construction / judgment
+LLM          = semantic assistance / materialization
 JSON Schema  = structure contract
 Python       = deterministic enforcement
 ```
