@@ -96,7 +96,7 @@ derived copyはprojection、snapshot、cache、renderingとしてのみ存在で
 
 1. Notion catalog dataは、frozen Git Investigation artifactへsnapshotしてよい。
 2. Git canonical analysisはNotionのoperational current stateへprojectionしてよいが、別のsync contractがauthority transferを明示しない限りderivedである。
-3. projectionにはsource Investigation versionを識別できるprovenanceを残す。
+3. projectionにはsource Investigation identityを識別できるprovenanceを残す。
 4. 同一fieldをNotionとGitの双方でauthoritativeに手動管理してはならない。
 5. upstream canonical artifactが変更された場合、依存するdownstream artifactは再validationまたは再生成されるまでinvalidとする。
 
@@ -124,4 +124,4 @@ JSON Schema  = structure contract
 Python       = deterministic enforcement
 ```
 
-このboundaryを、Investigation versioning、canonical artifact、validation、Notion/Git projectionの前提とする。
+このboundaryを、Investigation identity/lifecycle、canonical artifact、validation、Notion/Git projectionの前提とする。
