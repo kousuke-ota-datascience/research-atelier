@@ -23,9 +23,11 @@ JSON Schemaやlineage validationも再実装しない。deterministic validator�
 
 RQだけが与えられ、Investigation IDが指定されていない場合:
 
-1. 既存Investigation versionを確認する。
-2. current workを未完了versionから再開できるか判定する。
-3. 再開できなければ `0002_investigation_versioning.md` に従って次versionを採番する。
+1. そのRQに紐づく未完了Investigationを確認する。
+2. current workとして再開すべき同一executionが存在するか判定する。
+3. 再開対象がなければ `0002_investigation_versioning.md` に従って新しい `INV-NNNNNN` をglobal sequenceから採番する。
+
+v2 Investigation IDはRQ IDをencodeしない。RQとのbindingは `00_context.rq_id` で行う。
 
 内部artifact pathやvalidator stageを導出できる場合、それらを通常のuser inputとして要求しない。
 
@@ -110,9 +112,9 @@ external / semantic prerequisiteを解消しない限り進行できない状態
 例:
 
 - RQ identityを解決できない。
-- Investigation version ownershipがambiguous。
+- Investigation ownership / RQ bindingがambiguous。
 - 必要なNotion / Git accessがない。
-- assumptionを捏造せずにResearch Contextをfreezeできるほど明確化できない。
+- assumptionを捏造せずにInvestigation Contextをfreezeできるほど明確化できない。
 - canonical contract間にlocalでは解消不能な矛盾がある。
 
 処理:
@@ -207,7 +209,7 @@ downstream fileがbyte-for-byteで存在していてもinvalidatedされ得る�
 
 したがって、file existenceだけでcurrencyを証明してはならない。
 
-context-defining changeがfreeze後に発生した場合、またはaccepted resultをsubstantively reopenする場合は、historyを書き換えずInvestigation versioning contractを適用する。
+context-defining changeがfreeze後に発生した場合、またはaccepted resultをsubstantively reopenする場合は、historyを書き換えず新しいInvestigationを作る。
 
 ## 6. Near-idempotent rerun rule
 
@@ -215,7 +217,7 @@ inputが変わらない限り、再実行は同じcanonical stateへ収束する
 
 rule:
 
-- Workflow 00を再実行しただけで新Investigation versionを採番しない。
+- Workflow 00を再実行しただけで新しいInvestigationを採番しない。
 - upstream inputが変わらずsemantic correctionも不要なら、PASS済みartifactを再生成しない。
 - timestamp更新だけを目的にfileを書き換えない。
 - semantic reasonなしにE / K / J identifierをrenumberしない。
@@ -280,3 +282,8 @@ stateは次から導出する。
 - そのcatalogがauthorityを持つ範囲のcurrent Notion state
 
 old downstream artifactを、fileが存在するという理由だけでtrustedにしてはならない。
+
+
+## 11. v1 legacy handling
+
+既存 `RQ-NNNN-vVVV` Investigationをorchestrateする場合はlegacy v1 identity / schemaを維持する。新規executionではlegacy IDを採番せず、`INV-NNNNNN` を使用する。
