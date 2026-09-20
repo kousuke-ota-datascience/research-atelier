@@ -10,28 +10,28 @@ chainは次のとおり。
 
 中心的な設計制約は、**evidence-faithful representation** と **RQ-specific judgment** を別artifactに分離することである。
 
-これは、都市伝説workflowでSource / Content再構成とAnalysis codingを分離していた考え方を一般Researchへ拡張し、その前段に明示的なfrozen Research Contextを追加したものである。
+これは、都市伝説workflowでSource / Content再構成とAnalysis codingを分離していた考え方を一般Researchへ拡張し、その前段に明示的なfrozen Investigation Contextを追加したものである。
 
 ## 1. Canonical directory layout
 
-Investigation `RQ-0007-v001` の例:
+v2 Investigation `INV-000001` の例:
 
 ```text
 investigations/
-  RQ-0007-v001/
+  INV-000001/
     00_context.json
     10_evidence.json
     20_synthesis.json
     30_analysis.json
 ```
 
-この4 JSON fileが、そのInvestigation versionのcanonical research artifactである。
+この4 JSON fileが、そのInvestigationのcanonical research artifactである。
 
 Markdown / HTML / report / dashboard / Notion projectionなどのderived outputは、別契約で明示されない限りcanonicalではない。
 
 ## 2. Global invariants
 
-4 artifactはすべて同じ `investigation_id` を持たなければならない。
+4 artifactはすべて同じ `investigation_id` と同じ `rq_id` を持たなければならない。v2では `investigation_id` から `rq_id` を導出しない。
 
 downstream artifactは、upstream canonical artifactに存在しないSource Evidenceを新規導入してはならない。
 
@@ -47,7 +47,7 @@ dependencyは一方向である。downstreamはupstreamを解釈してよいが�
 
 `00_context` は、何をどの条件でinvestigateするかをfreezeする。
 
-そのInvestigation versionにおけるResearch Context baselineである。
+そのInvestigationにおけるInvestigation Context baselineである。
 
 ### 記載する
 
@@ -75,7 +75,7 @@ dependencyは一方向である。downstreamはupstreamを解釈してよいが�
 
 ### Authority
 
-このInvestigation versionのfrozen Research Contextについて、本fileを正本とする。
+このInvestigationのfrozen Investigation Contextについて、本fileを正本とする。
 
 Notion RQの関連状態をsnapshotするが、後続のNotion編集はhistorical contextを変更しない。
 
@@ -167,7 +167,7 @@ Evidence不足はuncertaintyとして残す。
 
 `30_analysis` は、RQ-specificなanalysis judgmentが初めてcanonicalになるartifactである。
 
-frozen Research Contextの下で、evidence-faithful Synthesisを解釈する。
+frozen Investigation Contextの下で、evidence-faithful Synthesisを解釈する。
 
 ### Direct input
 
@@ -239,7 +239,7 @@ freeze前にcontext-defining fieldを変更した場合:
 - 同一draft Investigationを更新してよい
 - 既作成の `10_evidence`、`20_synthesis`、`30_analysis` はinvalid
 
-freeze後のcontext-defining changeは `0002_investigation_versioning.md` に従い新Investigation versionを作る。
+freeze後のcontext-defining changeは `0002_investigation_versioning.md` に従い新しいInvestigationを作る。
 
 ### 10_evidence変更
 
@@ -287,7 +287,7 @@ canonical processingでは以下を禁止する。
 
 ## 11. 最小lineage identifiers
 
-v1 Schemaは少なくとも以下を扱う。
+v2 Schemaは少なくとも以下を扱う。
 
 - 全artifactの `investigation_id`
 - 各 `10_evidence` itemの `evidence_id`
@@ -307,3 +307,12 @@ v1 Schemaは少なくとも以下を扱う。
 4. `30_analysis`: このRQ / contextの下で何を結論するか。
 
 Working Answerはstage 30のみに存在する。
+
+
+## 13. Legacy v1 compatibility
+
+既存 `investigations/RQ-NNNN-vVVV/` はhistorical artifactとしてそのまま保持する。
+
+- legacy artifactは `schemas/v1` でvalidationする。
+- 新規artifactは `INV-NNNNNN` と `schemas/v2` を使用する。
+- legacy directoryをv2へrename / rewriteしない。
