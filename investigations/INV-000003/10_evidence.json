@@ -1,0 +1,229 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "10_evidence",
+  "investigation_id": "INV-000003",
+  "rq_id": "RQ-0014",
+  "snapshot_at": "2026-09-21T18:00:00Z",
+  "evidence_items": [
+    {
+      "evidence_id": "E0001",
+      "content": "Arthurは新たに得た剣と鞘のうち剣の方を好むと答えるが、Merlinは鞘の方が剣10本分の価値があると述べ、鞘を身につけている間は重傷でも血を失わないと説明する。",
+      "source_locator": "Arthur receives Excalibur; sword/scabbard exchange",
+      "selection_reason": "すでに価値の高い魔剣と、その価値評価を反転させる鞘の明示的比較を示す古典例。",
+      "note_type": "Claim",
+      "provenance": {
+        "source": {"notion_url": "https://app.notion.com/p/3e2e5855be3981b3987ff353d1223ced", "title": "Le Morte D’Arthur, Volume I (Project Gutenberg text)"},
+        "evidence_note": {"notion_url": "https://app.notion.com/p/3e2e5855be398195ba06ef1b3e517617", "title": "EV-0048"}
+      }
+    },
+    {
+      "evidence_id": "E0002",
+      "content": "Tolkienは1951年の書簡で、『ホビット』における指輪の『chief and only immediately obvious power』を、着用者を透明にすることだと説明している。",
+      "source_locator": "Paragraph discussing The Hobbit and the magic ring",
+      "selection_reason": "一つの指輪について初期に認識される表層機能を固定する。",
+      "note_type": "Claim",
+      "provenance": {
+        "source": {"notion_url": "https://app.notion.com/p/3e2e5855be3981f0b52ee7936ca4bea5", "title": "Letter to Milton Waldman, publisher, 1951"},
+        "evidence_note": {"notion_url": "https://app.notion.com/p/3e2e5855be3981c99846db585d60d6a0", "title": "EV-0049"}
+      }
+    },
+    {
+      "evidence_id": "E0003",
+      "content": "Tolkienは1963年の書簡で、透明化を指輪の『subsidiary power』と位置づけ、指輪をcommand and dominationの道具として用いる可能性を論じている。",
+      "source_locator": "Discussion of Frodo, Ringwraiths, and the Ring at Mount Doom",
+      "selection_reason": "表層機能とより本質的な支配機能の明示的な位置づけ差を示す。",
+      "note_type": "Claim",
+      "provenance": {
+        "source": {"notion_url": "https://app.notion.com/p/3e2e5855be398190a4a6cf779c3ea934", "title": "Letter to Eileen Elgar, September 1963"},
+        "evidence_note": {"notion_url": "https://app.notion.com/p/3e2e5855be3981c1888ac64a2b98eac5", "title": "EV-0050"}
+      }
+    },
+    {
+      "evidence_id": "E0004",
+      "content": "同じ1963年の書簡でTolkienは、指輪を支配に用いるには使用者の意志が十分に強くなる必要があり、指輪を制御することと指輪に制御されることが表裏一体になると説明している。",
+      "source_locator": "Discussion of Frodo's will and controlling the Ring",
+      "selection_reason": "道具の真価が使用者の能力・意志とのcouplingに依存する例として選択。",
+      "note_type": "Theory",
+      "provenance": {
+        "source": {"notion_url": "https://app.notion.com/p/3e2e5855be398190a4a6cf779c3ea934", "title": "Letter to Eileen Elgar, September 1963"},
+        "evidence_note": {"notion_url": "https://app.notion.com/p/3e2e5855be3981888900e1661d9849f2", "title": "EV-0051"}
+      }
+    },
+    {
+      "evidence_id": "E0005",
+      "content": "Penguin Random Houseのガイドは、Sword of Shannaraの『vaunted magic』の性質が予想外であり、その力はTruthを明らかにすることだと説明している。",
+      "source_locator": "Plot Summary — The Sword of Shannara",
+      "selection_reason": "強い魔剣という期待から、作用原理が『Truth』へずれる明示的な再解釈を示す。",
+      "note_type": "Claim",
+      "provenance": {
+        "source": {"notion_url": "https://app.notion.com/p/3e2e5855be398117a4aaf1401376fba2", "title": "The Sword of Shannara Trilogy — Teacher's Guide"},
+        "evidence_note": {"notion_url": "https://app.notion.com/p/3e2e5855be3981c69cc9e8c8143fe177", "title": "EV-0052"}
+      }
+    },
+    {
+      "evidence_id": "E0006",
+      "content": "同ガイドは、Warlock Lordの存在自体がillusionであるため、Truthを示す剣によって自らの非実在性を突きつけられることが破壊につながると説明している。",
+      "source_locator": "Plot Summary — final confrontation with the Warlock Lord",
+      "selection_reason": "非戦闘的に見える原理が敵の成立条件に対して決定的になることを示す。",
+      "note_type": "Theory",
+      "provenance": {
+        "source": {"notion_url": "https://app.notion.com/p/3e2e5855be398117a4aaf1401376fba2", "title": "The Sword of Shannara Trilogy — Teacher's Guide"},
+        "evidence_note": {"notion_url": "https://app.notion.com/p/3e2e5855be398197af41ef567dc24d77", "title": "EV-0053"}
+      }
+    },
+    {
+      "evidence_id": "E0007",
+      "content": "Philip Pullmanは、Subtle Knifeが空気の分子を切るほど鋭く、任意の別世界へ通じる開口部を切り開けると説明している。",
+      "source_locator": "His Dark Materials > Parallel Worlds",
+      "selection_reason": "物質を切る鋭利さが世界間の境界を切る機能まで拡張されるscope-extension例。",
+      "note_type": "Claim",
+      "provenance": {
+        "source": {"notion_url": "https://app.notion.com/p/3e2e5855be398162b7d4ddf9e831e13a", "title": "Philip Pullman — His Dark Materials: Parallel Worlds"},
+        "evidence_note": {"notion_url": "https://app.notion.com/p/3e2e5855be39818b939bf20cc38696ec", "title": "EV-0054"}
+      }
+    },
+    {
+      "evidence_id": "E0008",
+      "content": "HarryPotter.comはElder Wandを同種の杖の中で最も強力で、所有者をほぼ無敵にする杖として説明し、前の所有者から『won』した魔法使いに忠誠を示すとしている。",
+      "source_locator": "Overview / Magical properties",
+      "selection_reason": "初期価値が明確に非常に高い道具であることと、忠誠という条件を同時に示す。",
+      "note_type": "Claim",
+      "provenance": {
+        "source": {"notion_url": "https://app.notion.com/p/3e2e5855be3981d9b61fde92b8789780", "title": "The Elder Wand | Official Harry Potter Encyclopedia"},
+        "evidence_note": {"notion_url": "https://app.notion.com/p/3e2e5855be39818bb0b2d0c61162632d", "title": "EV-0055"}
+      }
+    },
+    {
+      "evidence_id": "E0009",
+      "content": "HarryPotter.comは、Elder Wandを得るために前のmasterを殺す必要があるという理解は誤りであり、DracoはDumbledoreを武装解除することで忠誠を得たと説明している。",
+      "source_locator": "There have been several misconceptions surrounding its ownership",
+      "selection_reason": "武器性能ではなくmastery/ownership ruleの理解が決戦上重要になる例。",
+      "note_type": "Claim",
+      "provenance": {
+        "source": {"notion_url": "https://app.notion.com/p/3e2e5855be39811d8c3fd5c7f75a86ef", "title": "The Elder Wand — Everything We Know"},
+        "evidence_note": {"notion_url": "https://app.notion.com/p/3e2e5855be3981e08398c11fd948da9a", "title": "EV-0056"}
+      }
+    },
+    {
+      "evidence_id": "E0010",
+      "content": "HarryPotter.comは、Elder Wandの所有・忠誠は本人が気づかないまま移ることもあり得ると説明している。",
+      "source_locator": "Ownership discussion / Draco Malfoy example",
+      "selection_reason": "ownership ruleが見かけの所持と一致しないことを示す補助Evidence。",
+      "note_type": "Claim",
+      "provenance": {
+        "source": {"notion_url": "https://app.notion.com/p/3e2e5855be39811d8c3fd5c7f75a86ef", "title": "The Elder Wand — Everything We Know"},
+        "evidence_note": {"notion_url": "https://app.notion.com/p/3e2e5855be3981808b5eeaa48f92b25a", "title": "EV-0057"}
+      }
+    },
+    {
+      "evidence_id": "E0011",
+      "content": "『西遊記』第三回では、海蔵の巨大な鉄柱に対し悟空が短く細くなるよう望むと、その言葉に応じて実際に縮小し、後に『如意金箍棒』の銘が確認される。",
+      "source_locator": "第三回・東海龍宮で神珍鉄を得る場面",
+      "selection_reason": "既に特別な神鉄が適格な使用者の要求に応じて可変武器として機能する古典例。",
+      "note_type": "Result",
+      "provenance": {
+        "source": {"notion_url": "https://app.notion.com/p/3e2e5855be3981d2bd8fe95a9f2a8673", "title": "西遊記 第三回 — Chinese Text Project"},
+        "evidence_note": {"notion_url": "https://app.notion.com/p/3e2e5855be3981849731c6357c83ac1f", "title": "EV-0058"}
+      }
+    },
+    {
+      "evidence_id": "E0012",
+      "content": "NARUTO公式は影分身の術について、チャクラを分割して実体のある分身体を作り、分身が消えるとその経験や情報が本体へ還元されると説明している。",
+      "source_locator": "千手扉間 誕生日コラム > 影分身の術",
+      "selection_reason": "戦闘用分身として見える能力に情報・経験回収という別軸の機構があることを示す。",
+      "note_type": "Definition",
+      "provenance": {
+        "source": {"notion_url": "https://app.notion.com/p/3e2e5855be39815a9169c60eaeb76101", "title": "NARUTO公式 誕生日コラム — 千手扉間（影分身の術）"},
+        "evidence_note": {"notion_url": "https://app.notion.com/p/3e2e5855be39811d9afde6386764061a", "title": "EV-0062"}
+      }
+    },
+    {
+      "evidence_id": "E0013",
+      "content": "NARUTO公式は、ナルトが多重影分身の術を活用することで通常の何倍ものスピードで修業を積み、風の性質変化を会得したと説明している。",
+      "source_locator": "うずまきナルト誕生日コラム前編 > 新術開発修業",
+      "selection_reason": "経験回収の機構が並列学習として実用化されたことを示す。",
+      "note_type": "Result",
+      "provenance": {
+        "source": {"notion_url": "https://app.notion.com/p/3e2e5855be3981d5ae8ae13424fd42e6", "title": "NARUTO公式 誕生日コラム — うずまきナルト前編"},
+        "evidence_note": {"notion_url": "https://app.notion.com/p/3e2e5855be3981d08251c17f37d69b09", "title": "EV-0064"}
+      }
+    },
+    {
+      "evidence_id": "E0014",
+      "content": "NARUTO公式の回顧記事は、我愛羅戦で影分身の術により1000人のナルトが現れ、2000発の打撃を浴びせる戦闘描写を紹介している。",
+      "source_locator": "Retracing the Anime's Ninja Way No.2 > Naruto vs. Gaara",
+      "selection_reason": "影分身が真価開示以前にも十分強力な戦闘能力として機能することを固定する。",
+      "note_type": "Result",
+      "provenance": {
+        "source": {"notion_url": "https://app.notion.com/p/3e2e5855be39814fa2dbff9d075a87dd", "title": "NARUTO 20th Anniversary Column — Retracing the Anime's Ninja Way No.2"},
+        "evidence_note": {"notion_url": "https://app.notion.com/p/3e2e5855be3981b596d2ed93af84e512", "title": "EV-0065"}
+      }
+    },
+    {
+      "evidence_id": "E0015",
+      "content": "HarryPotter.comはグリフィンドールの剣について、ゴブリン製で汚れや錆を寄せ付けず、自身を強くするものだけを取り込み、バジリスクの毒を帯びたと説明している。",
+      "source_locator": "Magical properties",
+      "selection_reason": "既知の魔剣が使用履歴によって機能的価値を獲得する原理を示す。",
+      "note_type": "Definition",
+      "provenance": {
+        "source": {"notion_url": "https://app.notion.com/p/3e2e5855be3981d8b042e201e248de32", "title": "The Sword of Gryffindor | Official Harry Potter Encyclopedia"},
+        "evidence_note": {"notion_url": "https://app.notion.com/p/3e2e5855be3981849d42c0b33736e9dc", "title": "EV-0066"}
+      }
+    },
+    {
+      "evidence_id": "E0016",
+      "content": "HarryPotter.comは、グリフィンドールの剣が『秘密の部屋』でバジリスクを倒した際、ゴブリン製の性質によって毒を取り込み、その結果、分霊箱を破壊できる貴重な手段になったと説明している。",
+      "source_locator": "Would the sword of Gryffindor have been so important?",
+      "selection_reason": "初期の武器使用が後に別の勝利条件を満たす能力へ転化することを示す。",
+      "note_type": "Claim",
+      "provenance": {
+        "source": {"notion_url": "https://app.notion.com/p/3e2e5855be3981e8afa6cc52cd388323", "title": "What if Ginny Weasley had never possessed Tom Riddle's diary?"},
+        "evidence_note": {"notion_url": "https://app.notion.com/p/3e2e5855be39813cbf45de8ee857a22e", "title": "EV-0067"}
+      }
+    },
+    {
+      "evidence_id": "E0017",
+      "content": "Halo Waypointは、作中でHaloがまず『powerful, ancient weapon』として把握されると要約している。",
+      "source_locator": "SEPTEMBER 21 — Alpha Base",
+      "selection_reason": "真目的開示前にも対象が強大な兵器として認識されていることを固定する。",
+      "note_type": "Claim",
+      "provenance": {
+        "source": {"notion_url": "https://app.notion.com/p/3e2e5855be39814c818dded924a3c605", "title": "That's So Raven | Halo — Official Site"},
+        "evidence_note": {"notion_url": "https://app.notion.com/p/3e2e5855be39813e8838fa66009757cd", "title": "EV-0068"}
+      }
+    },
+    {
+      "evidence_id": "E0018",
+      "content": "同じHalo Waypoint記事は、その後CortanaがHaloの真の目的を、Flood感染を止めるため銀河の全知的生命を消去することだと明かす展開を要約している。",
+      "source_locator": "SEPTEMBER 21 — Control room / true purpose reveal",
+      "selection_reason": "性能向上ではなく目的・作用対象が反転する『真目的』型の比較例。",
+      "note_type": "Claim",
+      "provenance": {
+        "source": {"notion_url": "https://app.notion.com/p/3e2e5855be39814c818dded924a3c605", "title": "That's So Raven | Halo — Official Site"},
+        "evidence_note": {"notion_url": "https://app.notion.com/p/3e2e5855be3981ddb5c9ecf8f205ec9f", "title": "EV-0069"}
+      }
+    },
+    {
+      "evidence_id": "E0019",
+      "content": "BLEACH千年血戦篇第13話の公式あらすじは、一護が自分に死神と滅却師の血が流れる出生の真実を知った後、王悦からそれまでの『斬月』に別れを告げるよう言われると説明している。",
+      "source_locator": "Episode 13 THE BLADE IS ME — Story",
+      "selection_reason": "正体再定義型の境界例として、公式資料で確認できる範囲のみ採択する。",
+      "note_type": "Claim",
+      "provenance": {
+        "source": {"notion_url": "https://app.notion.com/p/3e2e5855be3981b3a3eeee0ec8c18644", "title": "BLEACH: Thousand-Year Blood War — Episode 13 THE BLADE IS ME"},
+        "evidence_note": {"notion_url": "https://app.notion.com/p/3e2e5855be3981de8d19ec97d1b0e125", "title": "EV-0059"}
+      }
+    },
+    {
+      "evidence_id": "E0020",
+      "content": "ONE PIECE.comは、ルフィが食べた『ゴムゴムの実』には実は『ヒトヒトの実 幻獣種 モデル“ニカ”』という別名があったことが作中で明かされたと説明している。",
+      "source_locator": "2023-10-02 article body",
+      "selection_reason": "能力の再解釈と新identity/追加能力の境界を検討するための比較Evidence。",
+      "note_type": "Claim",
+      "provenance": {
+        "source": {"notion_url": "https://app.notion.com/p/3e2e5855be3981ffb891df9040f61056", "title": "ONE PIECE.com — Hito Hito no Mi, Mythical Zoan Model Nika announcement"},
+        "evidence_note": {"notion_url": "https://app.notion.com/p/3e2e5855be398127a59fde225fea9d65", "title": "EV-0060"}
+      }
+    }
+  ]
+}
