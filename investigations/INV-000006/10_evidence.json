@@ -3,13 +3,13 @@
   "artifact_type": "10_evidence",
   "investigation_id": "INV-000006",
   "rq_id": "RQ-0017",
-  "snapshot_at": "2026-09-22T12:29:00Z",
+  "snapshot_at": "2026-09-22T12:46:00Z",
   "evidence_items": [
     {
       "evidence_id": "E0001",
       "content": "八王子市の公式解説は、1859年の横浜開港後、八王子周辺で生産された生糸が八王子宿に集められ、神奈川往還・浜街道を通って横浜へ運ばれたと説明する。",
       "source_locator": "「絹の道」解説",
-      "selection_reason": "RQで優先する八王子―横浜の地域流通経路を確認するcontext Evidenceとして選択。品質・信用の直接根拠には用いない。",
+      "selection_reason": "八王子―横浜の地域流通経路を確認するcontext Evidence。経路自体を品質・信用保証の根拠には用いない。",
       "note_type": "Data",
       "direct_quote": null,
       "provenance": {
@@ -63,7 +63,7 @@
       "evidence_id": "E0004",
       "content": "横浜開港資料館は、特定の生糸商標名が横浜市場における個別工場の生糸の品位（格付）を表し、製糸家が信用維持のため商標管理に注意を払っていたと説明する。",
       "source_locator": "「生糸商標（Ab4-01）」解説",
-      "selection_reason": "製糸家・品質・市場信用が商標で結び付けられたことを示す。",
+      "selection_reason": "製糸家・商標・品質格・市場信用の対応を示す。",
       "note_type": "Claim",
       "direct_quote": null,
       "provenance": {
@@ -81,7 +81,7 @@
       "evidence_id": "E0005",
       "content": "横浜開港資料館は、特定の優等製糸を除く多くの生糸で、横浜出荷後に荷口をまとめるため生産者の原商標が輸出商社によって剥がされ、商社独自の商標に付け替えられることが一般的だったと説明する。",
       "source_locator": "「生糸商標（Ab4-01）」解説",
-      "selection_reason": "原商標喪失が正規の再荷造り・商流処理でも生じたことを示す重要な反証Evidence。",
+      "selection_reason": "原商標喪失が正規の荷口形成・再表示でも生じたことを示す反証Evidence。",
       "note_type": "Claim",
       "direct_quote": null,
       "provenance": {
@@ -99,7 +99,7 @@
       "evidence_id": "E0006",
       "content": "谷山英祐は、開港後の生糸輸出増大に伴う日本産生糸の品質低下の一因として取引相手を騙す不正取引を挙げ、それへの対応として外国商館が「拝見」という検査制度と「私商標」を確立したと論じる。",
       "source_locator": "抄録",
-      "selection_reason": "由来・品質情報への不信に対して検査と商標が制度化された背景を示す。",
+      "selection_reason": "不正・情報非対称への対応として検査と私商標が形成されたことを示す。",
       "note_type": "Claim",
       "direct_quote": null,
       "provenance": {
@@ -117,7 +117,7 @@
       "evidence_id": "E0007",
       "content": "谷山英祐は、外国商館による「拝見」の恣意性などを背景に、生糸売込商が組織化し、外国商館に代わって生糸の検査・選別を行うことを目的として生糸改会社や連合生糸荷預所が設立されたと論じる。",
       "source_locator": "抄録",
-      "selection_reason": "品質・信用問題への対応が再検査・選別・組織化だったことを示す。",
+      "selection_reason": "品質・信用問題への制度的対応が検査・選別・組織化だったことを示す。",
       "note_type": "Claim",
       "direct_quote": null,
       "provenance": {
@@ -135,7 +135,7 @@
       "evidence_id": "E0008",
       "content": "横浜市立図書館の年表解説は、1873年創立の横浜生糸改会社が生糸製品の検査だけでなく技術的指導も行い、製品に銘柄を与えたと説明する。",
       "source_locator": "1873/06 横浜生糸改会社創立項目",
-      "selection_reason": "検査を経て製品に銘柄を与える制度的な品質・同定処理を示す。",
+      "selection_reason": "検査を経て製品に銘柄を与える品質・同定処理を示す。",
       "note_type": "Data",
       "direct_quote": null,
       "provenance": {
@@ -152,8 +152,8 @@
     {
       "evidence_id": "E0009",
       "content": "中林真幸は、合資岡谷製糸会社の信認された商標糸について、横浜到着後に荷口のまま直ちに販売され、商標による品質保証が信頼されていたため売込問屋に買い手の探索を依頼する必要がなかったと分析する。",
-      "source_locator": "本文・商標の信認に関する節",
-      "selection_reason": "製糸家商標と荷口が維持される場合の品質信用・取引コスト低下を示す。",
+      "source_locator": "本文 p.622（PDF page 17）",
+      "selection_reason": "商標・荷口の対応が維持され信認された場合の取引信用を示す。",
       "note_type": "Claim",
       "direct_quote": null,
       "provenance": {
@@ -169,45 +169,9 @@
     },
     {
       "evidence_id": "E0010",
-      "content": "中林真幸は、1910年代前半の横浜市場では上一番未満の低品質生糸の原商標は信頼されない場合があり、アメリカの貿易商社が原商標を取り除いて品質別に再荷造し、私商標を貼付して品質プレミアムを得る運用を記述する。",
-      "source_locator": "本文・低品質糸の原商標と私商標に関する節",
-      "selection_reason": "原商標の信用が弱い荷が再選別・再荷造り・再ブランド化される処理を示す。",
-      "note_type": "Claim",
-      "direct_quote": null,
-      "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be398120a1c5dd85739fa08f",
-          "title": "大規模製糸工場の成立とアメリカ市場―合資岡谷製糸会社における経営発展と商標の確立"
-        },
-        "evidence_note": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be3981289ae5fcc99cf8dc54",
-          "title": "EV-0112"
-        }
-      }
-    },
-    {
-      "evidence_id": "E0011",
-      "content": "長野市誌は、松代製糸会社が明治16年（1883年）以降、荷口の斉一を図ることで横浜市場で高い声価を得たと記述する。",
-      "source_locator": "松代製糸会社・品質改良の記述",
-      "selection_reason": "荷口の均一性そのものが市場信用に関係したことを示す。",
-      "note_type": "Claim",
-      "direct_quote": null,
-      "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be39816489eac1d1a5f45348",
-          "title": "長野市誌 第五巻 歴史編 近代1―製糸業と生糸出荷"
-        },
-        "evidence_note": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be398105a8e4eb8ef76e0160",
-          "title": "EV-0113"
-        }
-      }
-    },
-    {
-      "evidence_id": "E0012",
       "content": "長野市誌は、六工社が荷口を大きくするため、松代地方の精工社など他の座繰製糸組織の生糸も六工社のものと一緒に出荷したことがあったと記述する。",
-      "source_locator": "六工社・同伸社との取引の記述",
-      "selection_reason": "荷口と単一生産者の対応が必ずしも一対一ではなく、正規に複数由来をまとめる場合があったことを示す。",
+      "source_locator": "「器械製糸の導入と六工社」",
+      "selection_reason": "荷口と単一生産者の対応が一対一ではなく、複数由来を正規にまとめる場合があったことを示す。",
       "note_type": "Data",
       "direct_quote": null,
       "provenance": {
@@ -222,28 +186,10 @@
       }
     },
     {
-      "evidence_id": "E0013",
-      "content": "横浜市史第4巻上には、明治34年頃・明治42年の横浜入荷生糸主要荷主、共同荷造所の商標別出荷個数、明治30年の荷主と売込問屋の関係を集計した表が収録されている。",
-      "source_locator": "表目次 第41〜48表",
-      "selection_reason": "横浜市場で荷主・商標・売込問屋の対応関係が集計対象となっていたことを示す補助Evidence。",
-      "note_type": "Data",
-      "direct_quote": null,
-      "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be39812aa174c2d66f54a8a8",
-          "title": "横浜市史 第4巻 上―生糸市場・荷主・商標・売込問屋関係表"
-        },
-        "evidence_note": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be398130a7f6d5e5f594afc1",
-          "title": "EV-0115"
-        }
-      }
-    },
-    {
-      "evidence_id": "E0014",
+      "evidence_id": "E0011",
       "content": "大野彰は、1895年の京都府蚕糸業者の横浜商館視察記録を引き、外国商館の倉庫で各地製糸家の原商標が剥がされ、商館の商標へ貼り替えられていた実態を示す。",
-      "source_locator": "史料紹介・1895年横浜164番館視察記録",
-      "selection_reason": "原商標から私商標への変換が実際に観察されたことを示す史料ベースEvidence。",
+      "source_locator": "本文・1895年横浜164番館視察記録",
+      "selection_reason": "原商標から商館商標への変換が実際に観察されたin-period Evidence。",
       "note_type": "Data",
       "direct_quote": null,
       "provenance": {
@@ -258,10 +204,10 @@
       }
     },
     {
-      "evidence_id": "E0015",
-      "content": "大野彰は、輸出商が生糸を買い取って所有権が移転した後に自己の商標へ貼り替えること自体は所有権上の問題とはならず、別生産者の商標を他者の製品に付す場合は別問題だと論じる。",
-      "source_locator": "原商標・私商標と所有権の議論",
-      "selection_reason": "由来表示の変更と所有権異常を区別する直接的な分析。",
+      "evidence_id": "E0012",
+      "content": "大野彰は、1919年の望月駒太郎「蚕人冗語」を引用し、横浜商館が既に買い取って所有権を取得した生糸について自己の私商標へ貼り替えること自体は問題ではないとの同時代に近い議論があり、一方で他の生産者の商標を別人の製品に付すことは問題だとされていたことを紹介する。",
+      "source_locator": "本文・史料5（望月駒太郎1919年「蚕人冗語」）",
+      "selection_reason": "所有権移転後の再表示と虚偽表示を区別する近接時期の回顧的Evidence。RQ期間外の1919年論説なので限定使用する。",
       "note_type": "Claim",
       "direct_quote": null,
       "provenance": {
@@ -276,10 +222,10 @@
       }
     },
     {
-      "evidence_id": "E0016",
-      "content": "1896年の大審院「詐欺取財ノ件」は、被告らが共謀して襤褸荷と生糸荷を掏り替え、内国通運会社が銀行の依頼で保管していた生糸荷が騙取されたとされた事件を扱っている。",
-      "source_locator": "判決本文",
-      "selection_reason": "由来・内容の不一致が正規の再分類ではなく詐取となる境界事例として再利用。発生頻度の一般化には用いない。",
+      "evidence_id": "E0013",
+      "content": "1896年の大審院「詐欺取財ノ件」は、内国通運株式会社で貨物発送を担当する雇員らが荷札を掏り替え、生糸荷と襤褸荷を掏り替えて生糸荷を騙取し、さらにその生糸荷を担保に荷為替を取り組んだ事件を扱っている。",
+      "source_locator": "判決本文・荷札および生糸荷／襤褸荷の掏替え認定部分",
+      "selection_reason": "表示と実物の対応を故意に破壊する入れ替えが所有・責任上の不正となった直接事例。",
       "note_type": "Data",
       "direct_quote": null,
       "provenance": {
@@ -290,6 +236,78 @@
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be3981deb2fddeee11c1d80b",
           "title": "EV-0096"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0014",
+      "content": "1880年7月〜1881年4月の協力社「売込会計規則」第3条は、輸出生糸を会社で量目改めする際、生糸1把ごとに紙札へ符号番号を記して挿入した上で輸出することを定めていた。",
+      "source_locator": "本文・協力社「売込会計規則」第3条（p.10-11相当）",
+      "selection_reason": "荷の細粒度単位と符号番号を対応させる直接的な同一性管理Evidence。",
+      "note_type": "Data",
+      "direct_quote": null,
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be39818aa69fd0be04839e1c",
+          "title": "アメリカ市場で日本産生糸が躍進した理由について"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be39812cb7ece7d3ff855ef3",
+          "title": "EV-0118"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0015",
+      "content": "協力社「売込会計規則」第4条は、横浜で外商の鑑定が済んだ後、1把ごとの紙札・指札を抜き取り、鑑定等級と売込問屋の証印を付して返送することを定めていた。返送された札の等級は加盟生産者への売上金分配基準に用いられた。",
+      "source_locator": "本文・協力社「売込会計規則」第4条（p.11相当）",
+      "selection_reason": "荷の符号と品質鑑定・問屋証印・代金分配を往復対応させる実務を示す。",
+      "note_type": "Data",
+      "direct_quote": null,
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be39818aa69fd0be04839e1c",
+          "title": "アメリカ市場で日本産生糸が躍進した理由について"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be398198b4abde6bcadd1689",
+          "title": "EV-0119"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0016",
+      "content": "大野彰は、協力社が生糸1把ごとに符号番号付きの紙札・指札を付し、横浜鑑定後の等級・売込問屋証印を返送させる仕組みにより、生産者・産地の偽装を確認しやすくし、品質評価を生産側へフィードバックする機能を持たせていたと解釈する。",
+      "source_locator": "本文・協力社「売込会計規則」解説（p.11相当）",
+      "selection_reason": "符号札が由来確認と品質評価フィードバックを結ぶ機能を示す分析。",
+      "note_type": "Claim",
+      "direct_quote": null,
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be39818aa69fd0be04839e1c",
+          "title": "アメリカ市場で日本産生糸が躍進した理由について"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be3981bf83dfd63142aed50b",
+          "title": "EV-0120"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0017",
+      "content": "1896年の大審院判決は、掏り替えられた生糸荷について第百七国立銀行が質権を有し、内国通運会社が同銀行の依頼で保有していたものと認定しており、贓物返還請求は現に占有する者に対して行うべきだと判示した。",
+      "source_locator": "判旨第一点・第十六点および質権・占有関係",
+      "selection_reason": "所有・返還関係が荷札だけでなく質権・占有の法的関係で処理されたcase Evidence。",
+      "note_type": "Data",
+      "direct_quote": null,
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be398133b695d73273e232cd",
+          "title": "詐欺取財ノ件（明治29年第558号）"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be3981b9ad43ca3a6d6d0d69",
+          "title": "EV-0121"
         }
       }
     }
