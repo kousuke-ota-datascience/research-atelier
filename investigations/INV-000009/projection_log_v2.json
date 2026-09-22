@@ -11,5 +11,5 @@
     "section_heading": "# Working Answer"
   },
   "result": "SUCCESS",
-  "note": "RQ-0020 / INV-000009 の 30_analysis から deterministic rendering を作成し、Notion RQ body の unique top-level # Working Answer へ投影した。再取得後、本文との一致と legacy Working Answer property への非dual-writeを確認した。なお、現チャット実行環境にはrepository checkoutがなく外部git cloneもDNS制約で実行できないため、public CLIそのものの実行はこの環境では再現できていない。GitHub上の現行schema/validator contractを読んだ identity / lineage / reference / profile の等価チェックはPASSしているが、strict Workflow 10 completionとしては canonical CLI実行確認が未了である。"
+  "note": "Human explicitly authorized skipping the canonical public CLI for this run. The current 30_analysis is accepted as the projection source. RQ-0020 page body was refetched after projection; exactly one top-level # Working Answer section exists and its deterministic rendering matches the accepted 30_analysis. Because the Notion body already matched exactly, this final reflection step was a NOOP rather than an unnecessary rewrite. Legacy Working Answer property was not dual-written."
 }
