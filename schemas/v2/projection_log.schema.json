@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/kousuke-ota-datascience/research-atelier/schemas/v2/projection_log.schema.json",
+  "title": "Research Atelier Projection Log v2",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "report_type",
+    "target_rq_url",
+    "rq_id",
+    "source_investigation_id",
+    "source_30_analysis_commit_sha",
+    "projection_timestamp",
+    "projection_target",
+    "result"
+  ],
+  "properties": {
+    "schema_version": {"const": "2.0.0"},
+    "report_type": {"const": "projection_log"},
+    "target_rq_url": {"type": "string", "format": "uri"},
+    "rq_id": {"type": "string", "pattern": "^RQ-[0-9]{4}$"},
+    "source_investigation_id": {
+      "type": "string",
+      "pattern": "^(?:INV-(?!000000)[0-9]{6}|RQ-[0-9]{4}-v[0-9]{3})$"
+    },
+    "source_30_analysis_commit_sha": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "projection_timestamp": {"type": "string", "format": "date-time"},
+    "projection_target": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["surface", "section_heading"],
+      "properties": {
+        "surface": {"const": "page_body"},
+        "section_heading": {"const": "# Working Answer"}
+      }
+    },
+    "result": {"type": "string", "enum": ["SUCCESS", "FAILURE"]},
+    "note": {"type": "string", "minLength": 1}
+  }
+}
