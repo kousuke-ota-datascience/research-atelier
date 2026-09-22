@@ -53,7 +53,7 @@ class WorkingAnswerRenderingTests(unittest.TestCase):
             "alternative_interpretations": [],
         }
         rendered = render_working_answer_section(analysis)
-        self.assertEqual(rendered, "# Working Answer\n\n## Answer\nOnly answer.")
+        self.assertEqual(rendered, "# Working Answer\n## Answer\nOnly answer.")
         self.assertNotIn("Key Judgments", rendered)
         self.assertNotIn("Limitations", rendered)
 
@@ -106,7 +106,7 @@ class WorkingAnswerPatchTests(unittest.TestCase):
         rendered = render_working_answer_section(ANALYSIS)
         self.assertEqual(working_answer_projection_state("<empty-block/>", ANALYSIS), "MISSING")
         self.assertEqual(
-            working_answer_projection_state("# Working Answer\n\n## Answer\nstale", ANALYSIS),
+            working_answer_projection_state("# Working Answer\n## Answer\nstale", ANALYSIS),
             "STALE",
         )
         self.assertEqual(working_answer_projection_state(rendered, ANALYSIS), "CURRENT")
