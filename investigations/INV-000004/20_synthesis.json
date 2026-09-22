@@ -1,0 +1,33 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "20_synthesis",
+  "investigation_id": "INV-000004",
+  "rq_id": "RQ-0015",
+  "synthesized_at": "2026-09-22T11:10:15Z",
+  "knowledge_units": [
+    {"knowledge_unit_id":"K0001","statement":"江戸期の公用道路輸送では、宿駅が人馬を提供し、荷物を次の宿駅へ継ぎ立てることを基本単位とし、問屋・年寄等の宿役人または問屋場がその運用を担った。","evidence_refs":["E0003","E0016"],"qualifiers":["公用宿駅制度についての記述であり、民間商業輸送全体を代表しない。"]},
+    {"knowledge_unit_id":"K0002","statement":"1794年の具体例では、各宿駅が荷を受領し、駄賃を差し引き、受取駄賃額・次宿・荷物・残額を帳面に記録し、荷・残金・帳面を次宿へ引き渡していた。人馬駄賃帳は各宿駅での継立料の証明にも用いられた。","evidence_refs":["E0001","E0002"],"qualifiers":["状箱輸送の一事例であり、すべての荷種に同一帳票が用いられたことまでは示さない。"]},
+    {"knowledge_unit_id":"K0003","statement":"公用継立では、御朱印・御証文と宿駅側の印鑑の照合による利用資格の確認や、先触による必要人馬数等の事前伝達が運用に組み込まれていた。","evidence_refs":["E0004","E0005"],"qualifiers":["公用・無賃人馬の利用統制と事前手配に関する手続である。"]},
+    {"knowledge_unit_id":"K0004","statement":"民間商業輸送は公用宿継だけではなく、相対賃銭による馬子・人足利用、地域の馬借による区間継送、明治初年の民間貨客向け私的継立機関など複数の形態で行われていた。","evidence_refs":["E0006","E0017","E0018"],"qualifiers":["具体例は甲州道中および若狭・近江接続部など地域的に限定される。"]},
+    {"knowledge_unit_id":"K0005","statement":"飛脚問屋は書状だけでなく金銭・荷物も扱う通信運輸主体として存在し、近世の貨物輸送には宿駅・馬借とは異なる組織的経路もあった。","evidence_refs":["E0012"],"qualifiers":["井野口屋の史料群は業務範囲を示すが、個別荷物の受渡手順はこのEvidenceからは復元できない。"]},
+    {"knowledge_unit_id":"K0006","statement":"明治後期の商法は、運送状に運送品の種類・重量または容積・荷造・個数・記号・到達地・荷受人等を、貨物引換証にこれらに加えて荷送人・運送賃等を記載する仕組みを規定し、1896年には実物の荷物送状も確認できる。","evidence_refs":["E0007","E0009","E0013"],"qualifiers":["法定記載事項と実物文書の存在を示すが、全輸送での発行率は不明。"]},
+    {"knowledge_unit_id":"K0007","statement":"送状・貨物引換証は明治後期に実務上存在したが、常時必須ではなく、特に小荷物では送状を付さない慣行があり、貨物引換証も請求時に交付するものとされた。","evidence_refs":["E0008","E0010"],"qualifiers":["文書による管理を「全荷物に一律必須」と理解することを否定する。"]},
+    {"knowledge_unit_id":"K0008","statement":"貨物引換証が作成された場合、運送品の引渡しは貨物引換証との引換えで請求する制度が定められ、文書が引渡し権限と結び付けられた。","evidence_refs":["E0015"],"qualifiers":["貨物引換証が作成された場合に限る。"]},
+    {"knowledge_unit_id":"K0009","statement":"明治後期の運送人には受取・引渡・保管・運送に関する注意義務が課され、滅失・毀損・延着について責任を負い、相次いで運送する複数運送人には連帯責任が規定された。","evidence_refs":["E0011","E0014"],"qualifiers":["1899年商法上の法的責任規律であり、江戸期の責任慣行を直接示すものではない。"]},
+    {"knowledge_unit_id":"K0010","statement":"1870年には公設宿駅とは別に民間貨客向けの私的継立機関が組織され、1890年代には荷物送状の実物と運送状・貨物引換証・運送人責任の法規定が確認できる。","evidence_refs":["E0006","E0007","E0009","E0011","E0013","E0014","E0015"],"qualifiers":["制度変化の存在を時系列に並べたもので、各段階の因果関係や全国的普及速度を示すものではない。"]}
+  ],
+  "relations": [
+    {"relation_id":"R0001","relation_type":"agreement","knowledge_unit_refs":["K0001","K0002"],"description":"宿駅単位の継立という制度説明と、1794年の受領・記帳・次宿引渡しの具体例が整合する。","evidence_refs":["E0001","E0002","E0003","E0016"]},
+    {"relation_id":"R0002","relation_type":"qualification","knowledge_unit_refs":["K0001","K0004"],"description":"公用宿駅の継立は重要な制度モデルだが、相対賃銭・馬借・私的継立など民間商業輸送の別形態が存在し、当時の陸上物流全体を単一モデルで表せない。","evidence_refs":["E0003","E0006","E0016","E0017","E0018"]},
+    {"relation_id":"R0003","relation_type":"qualification","knowledge_unit_refs":["K0006","K0007"],"description":"明治後期には詳細な運送文書形式が存在した一方、その発行は荷種や請求の有無に依存し、一律必須ではなかった。","evidence_refs":["E0007","E0008","E0009","E0010","E0013"]},
+    {"relation_id":"R0004","relation_type":"dependency","knowledge_unit_refs":["K0006","K0008"],"description":"貨物引換証による引渡し統制は、貨物引換証が作成される場合に成立する。","evidence_refs":["E0009","E0015"]},
+    {"relation_id":"R0005","relation_type":"association","knowledge_unit_refs":["K0009","K0010"],"description":"明治後期には、帳票による取引記録と運送人の責任規律が同じ商業運送法制の中で明文化されている。","evidence_refs":["E0007","E0009","E0011","E0014","E0015"]}
+  ],
+  "uncertainties": [
+    {"uncertainty_id":"U0001","description":"近世の具体的な受渡・記帳手順を直接示すEvidenceは1794年の状箱輸送など限られた事例に偏り、荷種・地域を横断した全国的な通常実務の頻度は確定できない。","knowledge_unit_refs":["K0001","K0002"],"evidence_refs":["E0001","E0002","E0003","E0016"]},
+    {"uncertainty_id":"U0002","description":"選択Evidenceからは、各引渡し時に荷姿・数量・封印等をどの程度現物検査したかを一般化できない。","knowledge_unit_refs":["K0002","K0004","K0006"],"evidence_refs":["E0002","E0007","E0009","E0018"]},
+    {"uncertainty_id":"U0003","description":"荷札の常用実態は今回のselected Evidenceでは直接確認できず、荷の同一性管理を荷札中心と断定できない。","knowledge_unit_refs":["K0002","K0006"],"evidence_refs":["E0002","E0007","E0009","E0013"]},
+    {"uncertainty_id":"U0004","description":"1870年から1890年代の制度変化は確認できるが、宿駅・馬借中心の運用から近代的運送契約・帳票へ移行した時期・地域差・普及率は連続的に追えていない。","knowledge_unit_refs":["K0004","K0006","K0010"],"evidence_refs":["E0006","E0013"]},
+    {"uncertainty_id":"U0005","description":"飛脚問屋史料は荷物取扱いの存在を示すが、受領証・荷札・検品・責任分界などの具体的オペレーションは未抽出である。","knowledge_unit_refs":["K0005"],"evidence_refs":["E0012"]}
+  ]
+}
