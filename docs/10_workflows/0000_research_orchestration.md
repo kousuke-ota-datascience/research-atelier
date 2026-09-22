@@ -50,7 +50,7 @@ Workflow 00の責務は**accepted Research Questionからcanonical research exec
 
 ad hocなWeb search / citation付きchat回答だけで substantive research を完了扱いしてはならない。Sources / Evidence Notes / canonical Investigation artifactを形成していない場合、その回答はResearch Atelier上のcanonical resultではなく **workflow incomplete / non-canonical** である。
 
-したがって、ad hoc回答を直接 `Research Questions.Working Answer` へ書き込んだり、COMPLETEと判定したりしてはならない。
+したがって、ad hoc回答をResearch Question bodyの `# Working Answer` へcanonical projectionしたり、COMPLETEと判定したりしてはならない。
 
 ## 2. Derived state model
 
@@ -119,7 +119,8 @@ stateはcurrent artifactとvalidation resultから導出する。第二のauthor
 - through-30 deterministic validationがPASSする。
 - Workflow 10のcompletion conditionを満たす。
 - current `30_analysis` が当該Investigationのcurrent resultとしてacceptされている。
-- `30_analysis.working_answer.text` が対応するNotion Research Questionへ正常にprojectionされている。
+- 対応するNotion Research Question bodyのunique `# Working Answer` sectionがcurrent accepted `30_analysis` のdeterministic renderingと一致している。
+- legacy `Research Questions.Working Answer` propertyの値はCOMPLETE判定へ使用しない。
 - unappliedなknown upstream changeがない。
 
 Workflow 00を再実行した場合、COMPLETEを認識しcanonical artifactを不要に書き換えない。
@@ -137,6 +138,7 @@ external / semantic prerequisiteを解消しない限り進行できない状態
 - 必要なNotion / Git accessがない。
 - assumptionを捏造せずにInvestigation Contextをfreezeできるほど明確化できない。
 - canonical contract間にlocalでは解消不能な矛盾がある。
+- target RQ bodyにtop-level `# Working Answer` headingが複数存在し、安全なprojection targetを一意に決められない。
 
 処理:
 
@@ -183,9 +185,14 @@ Investigation `ID` に対して:
    - FAIL -> reportされたearliest stageでINVALID
    - ERROR -> ERROR
 10. 全段階PASSならVALIDATED。
-11. current analysisのaccepted-result projectionが完了済みか確認する。
-   - yes -> COMPLETE
-   - no -> finalize / projectし、成功後COMPLETE
+11. current accepted `30_analysis` とRQ bodyの `# Working Answer` projection stateを確認する。
+   - unique sectionがdeterministic renderingと一致する = CURRENT -> COMPLETE
+   - section missing = MISSING -> finalize / project
+   - unique sectionが異なる = STALE -> body sectionだけをreproject
+   - target headingが複数 = BLOCKED -> bodyを推測更新しない
+12. MISSING / STALEをprojectした場合、RQ pageを再取得してCURRENTを確認してからCOMPLETEとする。write / verification failureではVALIDATEDのままとする。
+
+legacy `Research Questions.Working Answer` propertyのempty / legacy / stale valueはこのstate derivationへ参加しない。
 
 validator resultはdeterministic validityに関する事実であり、semantic quality scoreではない。
 
@@ -242,8 +249,9 @@ rule:
 - upstream inputが変わらずsemantic correctionも不要なら、PASS済みartifactを再生成しない。
 - timestamp更新だけを目的にfileを書き換えない。
 - semantic reasonなしにE / K / J identifierをrenumberしない。
-- Notionがcurrent accepted Git answerと一致している場合、Working Answerを再projectionしない。
-- projectionだけがstaleなら、derived Notion Working Answerだけを更新しGitは変更しない。
+- RQ bodyのunique `# Working Answer` sectionがcurrent accepted `30_analysis` のdeterministic renderingと一致する場合、再projectionしない。
+- projectionだけがMISSING / STALEなら、derived body sectionだけを更新しGit artifactとlegacy propertyは変更しない。
+- timestamp更新だけを理由にbody sectionをrewriteしない。
 - validationはdeterministicなので安全に再実行してよい。
 
 external Evidence discoveryやresearcherの明示的decisionによってinputが正当に変わり得るため、idempotenceはabsoluteではなくnear-idempotentとする。
@@ -255,10 +263,15 @@ stateがVALIDATEDに到達したら:
 1. Workflow 10のcompletion conditionを確認する。
 2. pendingなknown Evidence / context changeがないことを確認する。
 3. current `30_analysis` を当該Investigationのaccepted resultとして扱う。
-4. `30_analysis.working_answer.text` をNotion `Research Questions.Working Answer` へprojectionする。
-5. `0006_notion_git_projection_contract.md` に従い、target RQ、Investigation ID、Git commit SHA、timestamp、success / failureをlogする。
-6. projection成功後、state = COMPLETE。
-7. projection失敗時はGitがauthorityのまま、成功するまでstate = VALIDATED。
+4. `src/research_atelier/projection/working_answer.py` のdeterministic rendererでstructured `# Working Answer` sectionを生成する。
+5. RQ page bodyを取得し、`0006_notion_git_projection_contract.md` のsafe body update semanticsに従ってtarget sectionだけをcreate / replaceする。
+6. top-level `# Working Answer` が複数ならBLOCKEDとし、どれを更新するか推測しない。
+7. Notion write後にRQ pageを再取得し、body sectionがcurrent accepted renderingと一致することを確認する。
+8. target RQ、RQ ID、Investigation ID、accepted `30_analysis` commit SHA、timestamp、body target、success / failureを `projection_log_v2.json` としてlogする。historical `projection_log.json` はrewriteしない。
+9. verification成功後、state = COMPLETE。
+10. projection write / verification失敗時はGitがauthorityのまま、成功するまでstate = VALIDATED。
+
+legacy `Research Questions.Working Answer` propertyは削除しないが、projection targetへdual-writeせずCOMPLETE判定にも使用しない。
 
 projectionはnarrowに保つ。Workflow 00はGitから他のNotion DB全体をsyncしない。
 
@@ -288,7 +301,7 @@ Workflow 00の実行結果では少なくとも以下を報告する。
 - COMPLETEでない場合のearliest resume stage
 - latest deterministic validation result
 - invalidated downstream artifactの有無
-- Working Answer projectionがcurrentか
+- Working Answer body projection state: MISSING / STALE / CURRENT / BLOCKED
 - BLOCKED / ERROR時のdetail
 
 ## 10. Invariant
