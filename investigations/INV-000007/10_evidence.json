@@ -1,0 +1,281 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "10_evidence",
+  "investigation_id": "INV-000007",
+  "rq_id": "RQ-0018",
+  "snapshot_at": "2026-09-22T14:35:07.147302Z",
+  "evidence_items": [
+    {
+      "evidence_id": "E0001",
+      "content": "町田市立自由民権資料館は、野津田村出身の石阪昌孝が明治初年に戸長・区長等を経験し、初代神奈川県会議長となり、地域の教育運動を早くから組織して地域の自由民権運動を先導したと説明する。",
+      "source_locator": "「町田の民権家たち」>「石阪昌孝」",
+      "selection_reason": "町田市域の主要民権家について、地域行政・教育活動・県会を接続する経歴を示すため。",
+      "note_type": "Claim",
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be39813ab37ac6973e8e5b13",
+          "title": "町田の民権家と結社"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be398114ae6bd049acdac5ff",
+          "title": "EV-0122"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0002",
+      "content": "町田市立自由民権資料館は、野津田村出身の村野常右衛門が戸長時代に自治運動に取り組み、文武道場「凌霜館」を設けて若手民権家の育成に取り組んだと説明する。",
+      "source_locator": "「町田の民権家たち」>「村野常右衛門」",
+      "selection_reason": "地域自治と次世代育成を担う人物ネットワークの再生産を示すため。",
+      "note_type": "Claim",
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be39813ab37ac6973e8e5b13",
+          "title": "町田の民権家と結社"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be3981f0b9d0ebe46ffcb228",
+          "title": "EV-0123"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0003",
+      "content": "責善会は1878年5月に結成された多摩地域でも初期の学習・親睦結社で、石阪昌孝・村野常右衛門らが中心となり、現在の町田市域から23名が参加した。民権学習・政治運動組織ではなかったが、平等な発言権による徹底した討論方法を採用した。",
+      "source_locator": "「町田の結社」>「責善会」",
+      "selection_reason": "民権政治結社に先行する地域的な討論・学習インフラの存在を示すため。",
+      "note_type": "Data",
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be39813ab37ac6973e8e5b13",
+          "title": "町田の民権家と結社"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be3981f6be77ee04295ba853",
+          "title": "EV-0124"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0004",
+      "content": "琢磨会は1880年に小川村の細野喜代四郎と鶴間村の井上光治らが結成し、南多摩・都筑・高座の3郡7か村から16名が参加して、演説・討論を行いながら民権思想を学んだ。",
+      "source_locator": "「町田の結社」>「琢磨会」",
+      "selection_reason": "町田周辺の結社が郡境を越え、演説・討論を通じて民権思想を学んだことを示すため。",
+      "note_type": "Data",
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be39813ab37ac6973e8e5b13",
+          "title": "町田の民権家と結社"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be39818b89bac920c5f3efd1",
+          "title": "EV-0125"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0005",
+      "content": "1881年1月30日に原町田の吉田楼で開かれた武相懇親会には、東京から民権派ジャーナリストが招かれ、武相7郡49か村から戸長・筆生・県会議員など地域指導層が参加した。資料館は、この集会を地域指導層へ自由民権運動が広がる画期と位置づける。",
+      "source_locator": "「町田の結社」>「武相懇親会」",
+      "selection_reason": "原町田が広域の地域指導層と東京の言論人を結ぶ集会拠点になった具体例を示すため。",
+      "note_type": "Data",
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be39813ab37ac6973e8e5b13",
+          "title": "町田の民権家と結社"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be3981668117e0aab5b803dd",
+          "title": "EV-0126"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0006",
+      "content": "融貫社は1881年11月、武蔵・相模の国境周辺の民権家を統合する政治結社として設立され、石阪昌孝・村野常右衛門・細野喜代四郎らのほか都筑・鎌倉郡の有力者も参加した。演説会・討論会を開き、自由党結成後は社員らが大挙して入党した。",
+      "source_locator": "「町田の結社」>「融貫社」",
+      "selection_reason": "武蔵・相模境界を越える政治結社と、自由党への組織的接続を示すため。",
+      "note_type": "Data",
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be39813ab37ac6973e8e5b13",
+          "title": "町田の民権家と結社"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be39818884f9db6060826dd0",
+          "title": "EV-0127"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0007",
+      "content": "町田市立自由民権資料館は、現在の町田市域の民権家には江戸時代に村役人を務めた家の出身者が多く、地域の安定と発展への関心が大きかったと説明する。",
+      "source_locator": "「町田の民権家たち」冒頭",
+      "selection_reason": "運動を担った地域指導層の社会的・行政的背景を示すため。",
+      "note_type": "Claim",
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be398124938dc9e10a39741a",
+          "title": "自由民権資料館常設展示「自由民権運動と町田」その2"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be398165bb3ec23389eacea8",
+          "title": "EV-0128"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0008",
+      "content": "町田市立自由民権資料館は、横浜に近く生糸を横浜へ運ぶ「絹の道」の中継地点であった現在の町田市域には人や文物が集まり、西洋の新しい思想に触れる機会が豊富だったと説明する。",
+      "source_locator": "「町田の民権家たち」冒頭",
+      "selection_reason": "横浜・生糸流通との接続が思想・情報接触の条件だったとする地域史上の説明を保持するため。",
+      "note_type": "Claim",
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be398124938dc9e10a39741a",
+          "title": "自由民権資料館常設展示「自由民権運動と町田」その2"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be398118b9e0cf94cf64c390",
+          "title": "EV-0129"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0009",
+      "content": "町田市立自由民権資料館は、1879年の神奈川県会開会によって地域リーダーの政治参加と議員間の広域ネットワーク形成が進み、その活動・経験が県会議員経験者を中心とする武相の自由民権運動の基盤になったと説明する。",
+      "source_locator": "「つどい、つながる地域のリーダー」>「神奈川県会での活動」",
+      "selection_reason": "県会という制度的場が地域指導者間の広域ネットワーク形成に関与したという説明を示すため。",
+      "note_type": "Claim",
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be398139ac7afa013f49cdaa",
+          "title": "自由民権資料館常設展示「自由民権運動と町田」その3"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be398116a34de92e49d84f9b",
+          "title": "EV-0130"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0010",
+      "content": "町田市立自由民権資料館は、明治10年代以降の武相各地の結社で、社員が欧米の制度・思想や天賦人権思想を学び、定期的な演説・討論会によって知見と思想を深めたと説明する。",
+      "source_locator": "「つどい、つながる地域のリーダー」>「結社での活動」",
+      "selection_reason": "結社が思想学習と演説・討論の反復的な場として機能したことを示すため。",
+      "note_type": "Claim",
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be398139ac7afa013f49cdaa",
+          "title": "自由民権資料館常設展示「自由民権運動と町田」その3"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be3981acb6fbcfcd5bcf9324",
+          "title": "EV-0131"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0011",
+      "content": "町田市立自由民権資料館は、武相地域では1880年頃からジャーナリストを招いた演説会や地域の活字メディアが現れ、声と文字のメディアが集団の意思の統一・表明に機能したと説明する。",
+      "source_locator": "「全国への広がり、地域とのかかわり」>「民権運動の拡大～演説会、新聞・雑誌～」",
+      "selection_reason": "運動拡大を支えた言論・メディア経路を示すため。",
+      "note_type": "Claim",
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be398139ac7afa013f49cdaa",
+          "title": "自由民権資料館常設展示「自由民権運動と町田」その3"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be398133a6c7e86cf8822d68",
+          "title": "EV-0132"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0012",
+      "content": "大畑哲は、1880年の神奈川県における国会開設請願運動が県会議員有志の提唱後約3か月で相州9郡559町村から2万3千余の署名を集め、県会議員、郡村の戸長・書記・村議らが組織主体となったと記述する。",
+      "source_locator": "「寄稿 神奈川の自由民権運動」第1段落",
+      "selection_reason": "旧神奈川県域で国会開設運動が大規模に組織され、地域行政層が担い手だったことを示すため。",
+      "note_type": "Data",
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be3981e29f48dee9a19da278",
+          "title": "公文書館だより 創刊号―寄稿「神奈川の自由民権運動」"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be398145b18ce907de0b677e",
+          "title": "EV-0133"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0013",
+      "content": "大畑哲は、神奈川県の国会開設請願運動を担った層の経済的基盤を地主・豪農層とし、豪農層が民権運動の主体となったことを神奈川県の運動の特徴としている。",
+      "source_locator": "「寄稿 神奈川の自由民権運動」第1段落",
+      "selection_reason": "武相・神奈川県域の運動の社会経済的担い手に関する研究上の説明を保持するため。",
+      "note_type": "Claim",
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be3981e29f48dee9a19da278",
+          "title": "公文書館だより 創刊号―寄稿「神奈川の自由民権運動」"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be39819f8495e09f134eaa7f",
+          "title": "EV-0134"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0014",
+      "content": "大畑哲は、1881年以降、南多摩郡の融貫社など各地で結社が相次いで結成され、三多摩を含む神奈川県下に100を超す民権結社が形成されたと記述する。",
+      "source_locator": "「寄稿 神奈川の自由民権運動」第2～3段落",
+      "selection_reason": "南多摩の結社形成を、県域全体の結社拡大の中に位置づけるため。",
+      "note_type": "Data",
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be3981e29f48dee9a19da278",
+          "title": "公文書館だより 創刊号―寄稿「神奈川の自由民権運動」"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be3981619f6bff55f9500bb8",
+          "title": "EV-0135"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0015",
+      "content": "神奈川県議会の公式一覧では、石坂昌孝は初代神奈川県会議長として1879年3月から同年4月まで在任した。",
+      "source_locator": "「歴代議長・副議長一覧」初代",
+      "selection_reason": "町田市域の主要民権家が県会中枢に位置した事実を公式記録で確認するため。",
+      "note_type": "Data",
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be3981338b93e61878d6a529",
+          "title": "神奈川県議会 県議会の歴史 歴代議長・副議長一覧"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be3981de871eec58a8c91bf7",
+          "title": "EV-0136"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0016",
+      "content": "町田市は、明治以降の原町田地域が、生糸生産地の甲府・八王子と貿易港横浜を結ぶ「絹の道」の中継点としてにぎわったと説明する。",
+      "source_locator": "「町田市の商業の沿革」冒頭",
+      "selection_reason": "生糸流通と横浜への地理的・経済的接続自体を、思想伝播の解釈とは独立に確認するため。",
+      "note_type": "Claim",
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be39812e8fa4ffdc1a5c36de",
+          "title": "町田市の商業の沿革"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be3981479a24f1acf3c6228c",
+          "title": "EV-0137"
+        }
+      }
+    }
+  ]
+}
