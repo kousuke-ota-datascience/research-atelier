@@ -84,7 +84,10 @@ def render_working_answer_section(analysis: Mapping[str, Any]) -> str:
         field="alternative_interpretations",
     )
 
-    blocks: list[str] = [WORKING_ANSWER_HEADING, "", "## Answer", answer_text]
+    # Notion strips ordinary blank lines on write/read round trips. Keep the
+    # canonical serialization as a block sequence without blank-line separators
+    # so exact CURRENT/STALE comparison is stable after refetch.
+    blocks: list[str] = [WORKING_ANSWER_HEADING, "## Answer", answer_text]
 
     for title, items in (
         ("Key Judgments", judgments),
@@ -93,7 +96,7 @@ def render_working_answer_section(analysis: Mapping[str, Any]) -> str:
         ("Alternative Interpretations", alternatives),
     ):
         if items:
-            blocks.extend(["", f"## {title}", *_render_bullets(items)])
+            blocks.extend([f"## {title}", *_render_bullets(items)])
 
     return "\n".join(blocks).rstrip()
 
@@ -153,7 +156,9 @@ def patch_working_answer_section(page_markdown: str, analysis: Mapping[str, Any]
 
     bounds = _section_bounds(body)
     if bounds is None:
-        separator = "" if body.endswith("\n\n") else ("\n" if body.endswith("\n") else "\n\n")
+        # Append at the end of the RQ body. One newline is sufficient because
+        # Notion itself owns visual block spacing and strips ordinary blank lines.
+        separator = "" if body.endswith("\n") else "\n"
         return PatchResult(markdown=f"{body}{separator}{rendered}", action="CREATE")
 
     lines = body.splitlines()
