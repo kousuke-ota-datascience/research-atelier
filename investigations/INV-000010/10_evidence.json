@@ -1,0 +1,230 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "10_evidence",
+  "investigation_id": "INV-000010",
+  "rq_id": "RQ-0021",
+  "snapshot_at": "2026-09-22T23:42:00.000Z",
+  "evidence_items": [
+    {
+      "evidence_id": "E0001",
+      "content": "東京都公文書館の『東京市史稿 上水篇第2』目次には、1873年6月の史料項目として「上水沿岸諸村管轄換請議」が掲げられており、三多摩移管の20年前に玉川上水沿岸村の管轄変更が行政課題として文書化されていたことを確認できる。",
+      "source_locator": "「上水沿岸諸村管轄換請議」上水2-0257、1873（明治6）年6月",
+      "selection_reason": "東京府側の管轄変更要求が1892年に突如生じたのか、それ以前から存在したのかを確認するため。",
+      "note_type": "Data",
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be3981528974da77cebc099d",
+          "title": "SRC-0099"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be39812e9645ef1a17e43e64",
+          "title": "EV-0174"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0002",
+      "content": "東京都公文書館の『東京市史稿 市街篇第84』目次は、1892年9月20日の「神奈川県西北南多摩三郡管轄替ノ上申」を掲げ、その参考史料として「明治十九年八月中西北多摩郡管轄替上申書」を明示している。",
+      "source_locator": "市街84-93「神奈川県西北南多摩三郡管轄替ノ上申」および市街84-105「参考 明治十九年八月中西北多摩郡管轄替上申書」",
+      "selection_reason": "1886年の西・北多摩移管上申と1892年の三郡移管上申の史料上の連続性を確認するため。",
+      "note_type": "Data",
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be3981dabfb5ea36d065ed4b",
+          "title": "SRC-0102"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be3981aa8cc4d0af80f6b254",
+          "title": "EV-0175"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0003",
+      "content": "東京都公文書館の史料解説は、1891年11月に神奈川県が西多摩郡民の上申を受けて水源涵養林の伐採禁止を解除し、東京府側の水源管理上の懸念と神奈川県側の地域行政判断が衝突していたと説明する。",
+      "source_locator": "「資料解説～西南北多摩郡東京府移管反対運動」冒頭の背景説明",
+      "selection_reason": "1892年の移管上申直前に、水源管理をめぐる具体的な府県間摩擦が存在したことを確認するため。",
+      "note_type": "Result",
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be3981129356c8924a2b45ba",
+          "title": "SRC-0097"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be39815a87dbf3324c1a0afb",
+          "title": "EV-0170"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0004",
+      "content": "東京都公文書館の史料解説は、1891年11月の水源涵養林伐採禁止解除を受け、東京府知事富田鉄之助が水源管理を東京府に一元化するため多摩地域の移管を目指し、当初は玉川上水路と水源地に対応する西多摩・北多摩二郡の移管を求めたと説明している。",
+      "source_locator": "「第13回 西南北多摩郡東京府移管反対運動」背景解説",
+      "selection_reason": "富田知事の直近の行政判断と、当初の移管対象が水路・水源地に対応していたことを確認するため。",
+      "note_type": "Result",
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be3981129356c8924a2b45ba",
+          "title": "SRC-0097"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be39815cbb11edc995ed62ca",
+          "title": "EV-0176"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0005",
+      "content": "東京都公文書館の史料解説は、南多摩郡が神奈川県知事内海忠勝の要請で移管対象に追加され、1892年9月20日に東京府知事と神奈川県知事がそれぞれ西南北三多摩郡移管の上申書を政府へ提出したと説明している。",
+      "source_locator": "「第13回 西南北多摩郡東京府移管反対運動」背景解説",
+      "selection_reason": "東京府側の当初の西・北多摩要求から三郡一括案への拡張過程を確認するため。",
+      "note_type": "Result",
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be3981129356c8924a2b45ba",
+          "title": "SRC-0097"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be39818ebaabe9274e431901",
+          "title": "EV-0177"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0006",
+      "content": "東京都公文書館の展示資料リストは、東京府の「神奈川県西北南多摩三郡管轄替之儀上申」と神奈川県の「神奈川県西多摩外二郡ヲ東京府ニ編入ノ儀ニ関スル内申」をいずれも1892年9月20日付として掲げ、三郡移管の政府文書を同年12月16日付として掲げている。",
+      "source_locator": "章Ⅳ「西南北多摩郡東京府移管」展示資料リスト",
+      "selection_reason": "1892年の両府県上申と政府処理の公文書上の時系列を独立確認するため。",
+      "note_type": "Data",
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be398170aac1f14ebdb2e5c9",
+          "title": "SRC-0096"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be3981d6aca7ed2c74fb2e39",
+          "title": "EV-0169"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0007",
+      "content": "東京都水道局の公式水道史は、上水路の汚染、木樋の腐朽、消防用水確保の問題に加えて1886年のコレラ大流行が近代水道創設を促進し、1888年に東京近代水道創設に向けた具体的な調査設計が開始されたと説明している。",
+      "source_locator": "「東京近代水道125周年」近代水道の創設",
+      "selection_reason": "東京府・東京市側で水道・衛生問題が近代都市インフラ計画へ転換した時期と背景を確認するため。",
+      "note_type": "Result",
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be3981689a8adfb752724533",
+          "title": "SRC-0100"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be39818c8623d79bd71f32ef",
+          "title": "EV-0178"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0008",
+      "content": "東京都水道局の公式水道史は、近代水道計画が玉川上水路を利用して多摩川の水を淀橋浄水場へ導き、沈でん・ろ過後に市内へ給水する設計だったと説明している。",
+      "source_locator": "「東京近代水道125周年」近代水道の創設",
+      "selection_reason": "近代水道計画において多摩川・玉川上水が東京市の都市インフラへ直接組み込まれていたことを確認するため。",
+      "note_type": "Result",
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be3981689a8adfb752724533",
+          "title": "SRC-0100"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be398177924dfed340bd1db8",
+          "title": "EV-0179"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0009",
+      "content": "帝国議会で内務省県治局長の大森鍾一は、三多摩移管の必要は東京市の飲用水道と新水道計画に由来し、水源涵養、森林保護、衛生警察上の取締を同一管轄で行う必要があると政府理由を説明した。",
+      "source_locator": "第40号・発言003 大森鍾一、本文L124-L183",
+      "selection_reason": "1893年法案について政府が公的に提示した水道・水源・衛生上の理由を一次史料から確認するため。",
+      "note_type": "Claim",
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be39816bbcbafa8d4c643ddf",
+          "title": "SRC-0094"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be3981fd8957d5d39690a8f0",
+          "title": "EV-0159"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0010",
+      "content": "大森鍾一は、水道との直接関係が薄い南多摩郡も含める理由として、三多摩の歴史的・地理的・交通上の一体性に加え、南多摩だけを神奈川県に残すと衆議院選挙区を作り直す不便が生じることを挙げた。",
+      "source_locator": "第40号・発言003 大森鍾一、本文L184-L202",
+      "selection_reason": "三郡一括移管の説明が水源論だけでは完結していなかったことを示す公式説明を保持するため。",
+      "note_type": "Claim",
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be39816bbcbafa8d4c643ddf",
+          "title": "SRC-0094"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be398169b548d814cf0e1931",
+          "title": "EV-0160"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0011",
+      "content": "大森鍾一は、三多摩住民から管轄替えの申出や請求はなかったと答弁し、政府が水道上の必要から移管を進めるにあたり住民への不利益がないかを調査したと説明した。",
+      "source_locator": "第40号・発言026・028 大森鍾一、本文L430-L482",
+      "selection_reason": "移管が住民請願起点ではなく行政側の政策判断として公的に説明されていたことを確認するため。",
+      "note_type": "Claim",
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be39816bbcbafa8d4c643ddf",
+          "title": "SRC-0094"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be398190be33c69051af1b2a",
+          "title": "EV-0161"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0012",
+      "content": "東京都水道局の玉川上水史年表は、1893年の三多摩地域東京府編入と同年の「東京府が上水道として玉川上水を一元管理」を同一項目で記載している。",
+      "source_locator": "「玉川上水の歴史」年表・明治26年（1893）",
+      "selection_reason": "移管後に玉川上水管理が東京府へ一元化されたという制度上の帰結を確認するため。",
+      "note_type": "Result",
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be3981feb696c54d4394ad37",
+          "title": "SRC-0101"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be39810dbeb5f7e503a0aad2",
+          "title": "EV-0180"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0013",
+      "content": "東京都水道局の玉川上水史は、明治期の玉川上水で塵芥・泥水の流入、木樋の腐朽、市中のコレラ流行が問題となり、水源保全のための三多摩東京編入等と、ろ過・鉄管給水による近代水道整備が進められたと説明している。",
+      "source_locator": "「玉川上水の歴史」5「近代水道の創設と玉川上水」2）近代水道の創設",
+      "selection_reason": "水源保全・衛生問題・近代水道整備を一連の東京水道史として位置づける公式事業史の整理を保持するため。",
+      "note_type": "Result",
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be3981feb696c54d4394ad37",
+          "title": "SRC-0101"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be39815a88d9f783f9050767",
+          "title": "EV-0181"
+        }
+      }
+    }
+  ]
+}
