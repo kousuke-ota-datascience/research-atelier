@@ -4,12 +4,12 @@
   "target_rq_url": "https://app.notion.com/p/3e3e5855be3981d49b07df18e5cbd82b",
   "rq_id": "RQ-0021",
   "source_investigation_id": "INV-000010",
-  "source_30_analysis_commit_sha": "cacddf4a8fb1428a528fe5ebd10de10adc615001",
-  "projection_timestamp": "2026-09-22T23:41:41.031Z",
+  "source_30_analysis_commit_sha": "ea5f85df9a030130412fd32720d39fce1b152204",
+  "projection_timestamp": "2026-09-22T23:56:39.733Z",
   "projection_target": {
     "surface": "page_body",
     "section_heading": "# Working Answer"
   },
   "result": "SUCCESS",
-  "note": "Human explicitly authorized skipping the canonical public CLI. Equivalent deterministic identity, reference, lineage, and Descriptive-profile checks passed through 30_analysis. RQ-0021 page body was projected from 30_analysis and then refetched; after timestamp-only corrections to the Git artifacts, the current accepted 30_analysis deterministic rendering remained exactly identical to the Notion page body, with exactly one top-level # Working Answer section. No semantic content changed during timestamp correction, so no redundant Notion rewrite was performed. Legacy Working Answer property was not dual-written and RQ Status remained Active."
+  "note": "Human explicitly authorized skipping the canonical public CLI. RQ-0021 was subsequently subjected to a source-by-source external audit. EV-0174 and EV-0175 were narrowed because the 1873 and 1886 primary texts were not directly read; their existence is confirmed but policy continuity and reasons are not. Primary Diet records added EV-0182 through EV-0184, including the government's qualification that the 1886 contamination incident was only an example and the 1893 House special committee's contemporaneous rejection of the claim that jurisdiction transfer was indispensable for water protection. 10_evidence, 20_synthesis, and 30_analysis were revised accordingly. Equivalent deterministic identity/reference/lineage/Descriptive-profile checks passed with 16 evidence items, 13 knowledge units, 9 relations, 7 uncertainties, and 8 judgments. RQ-0021 was reprojected from revised 30_analysis and refetched: exactly one top-level # Working Answer exists and its deterministic rendering matches exactly. Legacy Working Answer property remains empty and Status remains Active."
 }
