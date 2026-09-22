@@ -1,0 +1,42 @@
+{
+  "schema_version":"2.0.0",
+  "artifact_type":"20_synthesis",
+  "investigation_id":"INV-000005",
+  "rq_id":"RQ-0016",
+  "synthesized_at":"2026-09-22T11:39:41Z",
+  "knowledge_units":[
+    {"knowledge_unit_id":"K0001","statement":"1804年の通し馬の分担記録では、荷を宿駅ごとに積み替えず同じ馬で目的地まで運ぶ方式について、親方、渡し先、馬数、個々の馬方を記録しており、担当主体と引渡先を可視化する実務が確認できる。","evidence_refs":["E0005"],"qualifiers":["公的・地域的な通し馬史料であり、民間商人荷物全体への一般化はできない。"]},
+    {"knowledge_unit_id":"K0002","statement":"宿駅ごとの積替えは荷物の損傷・遅延・費用増を生じ得たため、近世中後期には積替えを減らす通し運送や宿駅を避ける脇道利用が発達した。","evidence_refs":["E0003","E0004"],"qualifiers":["脇道利用はそれ自体で不正・経路逸脱を意味しない。"]},
+    {"knowledge_unit_id":"K0003","statement":"1831年の甲州の願書は、一部の中馬がより有利な荷を見つけて受託荷を放棄したり、受託した駄賃荷物を売却したと訴えており、運送人自身による荷の放棄・処分が実際の統制課題になった事例を示す。","evidence_refs":["E0001","E0002"],"qualifiers":["一地域の訴願史料であり、行為の頻度や全国的普遍性は示さない。"]},
+    {"knowledge_unit_id":"K0004","statement":"1876年の彰真社・中牛馬会社間の運送約定では、荷受け後の速やかな運送、送状、期限、受取証の取り置きが定められ、受渡しと遅延を文書・期限で確認する仕組みが置かれていた。","evidence_refs":["E0012"],"qualifiers":["特定企業間契約の直接Evidenceである。"]},
+    {"knowledge_unit_id":"K0005","statement":"同じ1876年運送約定では、濡れ・傷み・火災・盗難が生じた場合の運送会社による弁償と、雨天・泥道での荷積み時に粗雑な取扱いを避ける注意が明文化されていた。","evidence_refs":["E0013","E0015"],"qualifiers":["明治前期の特定会社間契約で確認できる統制であり、全国一律規則とは限らない。"]},
+    {"knowledge_unit_id":"K0006","statement":"1876年の彰真社・中牛馬会社間の約定では弁償原資の確保と受負人・保証人の財産による弁償が定められ、事故・不履行時の責任履行を財務的に担保していた。","evidence_refs":["E0014"],"qualifiers":["特定企業間契約に基づく。"]},
+    {"knowledge_unit_id":"K0007","statement":"1876年の内国通運会社規則では、担当分社が引受中の荷物の事故・紛争に責任を負い、弁償準備として事業量に応じた抵当品を本社へ差し出すことが定められていた。","evidence_refs":["E0006","E0007"],"qualifiers":["分社制度下の区間責任と財務担保を示す。"]},
+    {"knowledge_unit_id":"K0008","statement":"明治前期の内国通運網では、本道だけでなく枝道・枝々道に運賃が設定され、脇往還にも継立所が置かれており、本道外の経路が正式な輸送網に組み込まれる場合があった。","evidence_refs":["E0008"],"qualifiers":["三重県の運用例である。"]},
+    {"knowledge_unit_id":"K0009","statement":"1899年商法は、運送状に運送品の種類、重量・容積、荷造、個数・記号、到達地、荷受人等を記載する制度を置いた一方、小荷物などでは送状を付さない慣行も認識しており、文書による同一性・数量管理は存在したが全荷物一律ではなかった。","evidence_refs":["E0016","E0017"],"qualifiers":["運送状の発行頻度を示すEvidenceではない。"]},
+    {"knowledge_unit_id":"K0010","statement":"貨物引換証が作成された場合、1899年商法は証券との引換えでのみ荷物の引渡しを請求できるとし、引渡し権限を文書に結び付けた。","evidence_refs":["E0020"],"qualifiers":["貨物引換証が作成された場合に限る。"]},
+    {"knowledge_unit_id":"K0011","statement":"1899年商法は、受取・引渡・保管・運送について運送人に注意義務を課し、相次いで運送する複数運送人には滅失・毀損・延着について連帯責任を負わせた。","evidence_refs":["E0018","E0019"],"qualifiers":["法的責任規律であり、個々の事業者の実際の遵守率は不明。"]},
+    {"knowledge_unit_id":"K0012","statement":"1899年商法では、高価品について種類・価額の事前申告を運送人責任の条件とし、引渡し後に直ちに発見できない毀損・一部滅失は2週間以内の通知で責任追及を維持できるとした。","evidence_refs":["E0010","E0011"],"qualifiers":["高価品申告と事後通知という異なるリスク段階の制度を示す。"]},
+    {"knowledge_unit_id":"K0013","statement":"1896年の大審院事件は、襤褸荷と生糸荷の掏り替えによる騙取が実際に生じた事例を示す。","evidence_refs":["E0009"],"qualifiers":["単一の刑事事件であり、入れ替えの頻度や標準的統制の有効性を示さない。"]}
+  ],
+  "relations":[
+    {"relation_id":"R0001","relation_type":"qualification","knowledge_unit_refs":["K0002","K0008"],"description":"近世の脇道・通し運送と明治前期の枝道・脇往還の制度化はいずれも、本道から外れること自体を不正とみなせないことを示す。","evidence_refs":["E0003","E0004","E0008"]},
+    {"relation_id":"R0002","relation_type":"association","knowledge_unit_refs":["K0003","K0004"],"description":"運送人による受託荷の放棄・処分という近世の具体的リスクに対し、明治前期には送状・期限・受取証で受託と履行を明示する契約統制が確認できる。","evidence_refs":["E0001","E0002","E0012"]},
+    {"relation_id":"R0003","relation_type":"agreement","knowledge_unit_refs":["K0004","K0009"],"description":"明治前期の企業間契約と明治後期の商法はいずれも、荷の受託・内容・引渡しを文書で確認する統制を示す。","evidence_refs":["E0012","E0016","E0017"]},
+    {"relation_id":"R0004","relation_type":"association","knowledge_unit_refs":["K0005","K0011"],"description":"特定契約の取扱注意・事故弁償と、後の商法上の工程横断的注意義務・損害賠償責任は、物理的取扱いと法的責任を接続する。","evidence_refs":["E0013","E0015","E0018","E0019"]},
+    {"relation_id":"R0005","relation_type":"agreement","knowledge_unit_refs":["K0006","K0007"],"description":"異なる1876年の企業制度で、弁償原資・保証人財産または抵当品によって損害賠償の履行可能性を事前に確保していた。","evidence_refs":["E0007","E0014"]},
+    {"relation_id":"R0006","relation_type":"qualification","knowledge_unit_refs":["K0009","K0010"],"description":"文書による荷の識別・引渡統制は存在したが、送状は常時必須ではなく、貨物引換証による引渡し統制も証券が作成された場合に限られた。","evidence_refs":["E0016","E0017","E0020"]},
+    {"relation_id":"R0007","relation_type":"association","knowledge_unit_refs":["K0011","K0012"],"description":"運送中の注意義務・複数運送人責任に加え、事前の高価品申告と事後の隠れた損傷通知が責任処理の時間軸を形成している。","evidence_refs":["E0010","E0011","E0018","E0019"]},
+    {"relation_id":"R0008","relation_type":"qualification","knowledge_unit_refs":["K0013","K0009"],"description":"荷の掏り替え事件はリスクの実在を示すが、運送状等の文書統制が入れ替えを一般に防止できた、またはできなかったことまでは示さない。","evidence_refs":["E0009","E0016","E0017"]}
+  ],
+  "uncertainties":[
+    {"uncertainty_id":"U0001","description":"封印、施錠、護衛、荷札の照合といった物理的セキュリティが道路貨物でどの程度常用されたかはselected Evidenceから一般化できない。","knowledge_unit_refs":["K0004","K0009"],"evidence_refs":["E0012","E0016"]},
+    {"uncertainty_id":"U0002","description":"1831年の中馬不当行為は地域的な訴願事例であり、受託荷の放棄・売却がどの程度頻発したかは不明である。","knowledge_unit_refs":["K0003"],"evidence_refs":["E0001","E0002"]},
+    {"uncertainty_id":"U0003","description":"1804年の通し馬記録は担当者・渡し先の可視化を示すが、公用・地域的運送から一般商業貨物へ同じ統制を一般化できない。","knowledge_unit_refs":["K0001"],"evidence_refs":["E0005"]},
+    {"uncertainty_id":"U0004","description":"経路変更・脇道利用の適法性・許容性は時期、地域、運送主体、宿駅権益との関係に依存し、本道逸脱を全国一律の違反として定義できない。","knowledge_unit_refs":["K0002","K0008"],"evidence_refs":["E0003","E0004","E0008"]},
+    {"uncertainty_id":"U0005","description":"送状・貨物引換証等の文書統制は全荷物一律ではなく、文書を伴わない荷の識別・検知手段は今回十分に復元できていない。","knowledge_unit_refs":["K0009","K0010"],"evidence_refs":["E0017","E0020"]},
+    {"uncertainty_id":"U0006","description":"1876年の詳細な濡損・盗難・保証・雨天取扱い条項は特定企業・地域の契約に基づき、全国的な標準条項であったかは未確定である。","knowledge_unit_refs":["K0004","K0005","K0006","K0007"],"evidence_refs":["E0006","E0007","E0012","E0013","E0014","E0015"]},
+    {"uncertainty_id":"U0007","description":"規則・契約が実際にどの程度事故・盗難・入れ替えを抑止したかを定量化するEvidenceはない。","knowledge_unit_refs":["K0004","K0005","K0006","K0007","K0009","K0011"],"evidence_refs":[]},
+    {"uncertainty_id":"U0008","description":"各中継点で数量・荷姿を現物照合する具体的手順と、その反復頻度はselected Evidenceからは不十分である。","knowledge_unit_refs":["K0001","K0004","K0009"],"evidence_refs":["E0005","E0012","E0016"]}
+  ]
+}
