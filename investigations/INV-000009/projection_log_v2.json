@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "report_type": "projection_log",
+  "target_rq_url": "https://app.notion.com/p/3e3e5855be39813394e5f54eeaf2a31c",
+  "rq_id": "RQ-0020",
+  "source_investigation_id": "INV-000009",
+  "source_30_analysis_commit_sha": "8b6aca175ea07490021924605cb97bcc1b83aec2",
+  "projection_timestamp": "2026-09-22T17:26:22.524Z",
+  "projection_target": {
+    "surface": "page_body",
+    "section_heading": "# Working Answer"
+  },
+  "result": "SUCCESS",
+  "note": "User instructed execution of RQ-0020 / INV-000009. Current repository validator source and v2 schema contracts were read from GitHub and reconstructed in the execution environment; the public validate_investigation CLI interface returned PASS through 10, 20, and 30. GitHub-resident current artifacts also passed exact identity/lineage/reference checks. The accepted 30_analysis was deterministically rendered to the RQ page body, Notion was refetched, one unique top-level # Working Answer was found, and the body matched the rendering exactly. Legacy Working Answer property was not dual-written."
+}
