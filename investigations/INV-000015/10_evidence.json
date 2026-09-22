@@ -1,0 +1,332 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "10_evidence",
+  "investigation_id": "INV-000015",
+  "rq_id": "RQ-0019",
+  "snapshot_at": "2026-09-22T17:24:30.000Z",
+  "evidence_items": [
+    {
+      "evidence_id": "E0001",
+      "content": "町田市立自由民権資料館は、1881年の自由党結成後に武相地域から多くの人が入党し、1882年の集会条例改定で政党の地方支部が禁止されると、地域独自の組織化・連携が難しくなり、武相の民権運動が党の方針に基づく全国的に統一された活動へ変化したと説明する。",
+      "source_locator": "「全国への広がり、地域とのかかわり」>「自由党への参加」",
+      "selection_reason": "民権運動から全国政党への組織的接続を示す。",
+      "note_type": "Claim",
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be398139ac7afa013f49cdaa",
+          "title": "SRC-0081"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be39815590e9e4769d0f390e",
+          "title": "EV-0138"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0002",
+      "content": "町田市立自由民権資料館は、自由党解党後も1890年の国会開設を前に大同団結運動・三大事件建白運動が活発化し、旧自由党系では壮士と穏健派の対立が深まる中で神奈川県通信所・神奈川県倶楽部が組織され、北多摩では穏健派を中心に正義派が形成されたと説明する。",
+      "source_locator": "「明治20年代の政治運動と三多摩移管」>「国会開設前夜」",
+      "selection_reason": "自由党解党後の再組織化と派閥分化を示す。",
+      "note_type": "Claim",
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be398139ac7afa013f49cdaa",
+          "title": "SRC-0081"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be3981c4ab5ee13bbd8ac9b7",
+          "title": "EV-0139"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0003",
+      "content": "町田市立自由民権資料館は、政府の言論弾圧と不景気で民権運動が停滞すると、明治20年頃から暴力も辞さない壮士と呼ばれる若手民権家が現れ、特に多摩地域ではその活動が盛んだったと説明する。",
+      "source_locator": "「武相地域の自由民権運動」冒頭",
+      "selection_reason": "選挙政治以前から多摩地域で壮士活動が存在した背景を保持する。",
+      "note_type": "Claim",
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be398139ac7afa013f49cdaa",
+          "title": "SRC-0081"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be398168a8e8e00b7c17f249",
+          "title": "EV-0143"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0004",
+      "content": "『小平市史 近現代編』は、1890年第1回総選挙前、吉野泰三が再興自由党に加盟して石阪昌孝と吉野の2名を自由党候補とすることを企図したが、壮士勢力に阻まれて自由党候補は石阪昌孝・瀬戸岡為一郎となり、吉野は落選し、その後北多摩郡正義派が解散したと記述する。",
+      "source_locator": "「正義派解散後の小平」",
+      "selection_reason": "1890年前後の吉野・石阪・瀬戸岡の党派関係が固定的ではなく再編されたことを示す。",
+      "note_type": "Claim",
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be3981e290adffd7915ede8e",
+          "title": "SRC-0092"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be3981e2ad6cf8080ccc279d",
+          "title": "EV-0154"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0005",
+      "content": "『多摩市史 通史編2』は、1892年の第2回総選挙で三多摩では自由党から石阪昌孝・瀬戸岡為一郎が立候補し、吏党側から吉野泰三・平林定兵衛が立候補したと記述する。",
+      "source_locator": "「選挙大干渉」",
+      "selection_reason": "第2回総選挙時点の候補者ブロックを具体化する。",
+      "note_type": "Claim",
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be39814688adda75a25c4bd9",
+          "title": "SRC-0091"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be39811cac67eecb3b6499ac",
+          "title": "EV-0150"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0006",
+      "content": "『多摩市史 通史編2』が引用する1892年2月12日付の内海忠勝神奈川県知事から松方正義への報告では、八王子方面に巡査を約100名繰り出したこと、旧議員の石阪昌孝・瀬戸岡為一郎をともに落選させ「味方」の全勝を見込んでいることが述べられている。",
+      "source_locator": "「選挙大干渉」・1892年2月12日内海忠勝知事から松方正義への報告（『松方正義関係文書』8巻）",
+      "selection_reason": "神奈川県知事自身の報告を通じ、県第3区における警察動員と自由党候補敗北の意図を示す。",
+      "note_type": "Data",
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be39814688adda75a25c4bd9",
+          "title": "SRC-0091"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be3981df9496cbcefa162eee",
+          "title": "EV-0151"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0007",
+      "content": "『多摩市史 通史編2』は、第2回総選挙の選挙戦中に村野常右衛門が自宅で、森久保作蔵が府中分署で身柄を拘束されたと記し、それにもかかわらず内海忠勝知事の予想に反して石阪昌孝・瀬戸岡為一郎が当選したと叙述する。",
+      "source_locator": "「選挙大干渉」",
+      "selection_reason": "選挙区内での拘束と選挙結果の関係を記述する。",
+      "note_type": "Claim",
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be39814688adda75a25c4bd9",
+          "title": "SRC-0091"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be3981e3b37ee3e31d603819",
+          "title": "EV-0152"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0008",
+      "content": "『神奈川県史』の第2回総選挙結果表では、神奈川県第3区の有権者数は1,635人で、石坂昌孝890票、瀬戸岡為一郎720票が当選し、吉野泰三663票が次点となっている。",
+      "source_locator": "第52表「第2回総選挙当選者及び次点者得票数」",
+      "selection_reason": "第3区の得票結果を定量的に確認する。",
+      "note_type": "Data",
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be3981f8b8fad2094537ddac",
+          "title": "SRC-0087"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be3981d79db0f62342873a38",
+          "title": "EV-0146"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0009",
+      "content": "『神奈川県史 通史編4』は、神奈川県第3区を吏党対民党・藩閥対立憲の対立が典型的に現れた選挙区と位置づけ、品川弥二郎内務大臣の指揮する選挙干渉のもと、警察官の動員、民党壮士への拘束・圧迫、双方の衝突が生じたと叙述する。",
+      "source_locator": "pp.553-554（第2回総選挙・第3区の選挙干渉）",
+      "selection_reason": "神奈川県史による第3区固有の選挙干渉・衝突の叙述を保持する。",
+      "note_type": "Claim",
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be3981f8b8fad2094537ddac",
+          "title": "SRC-0087"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be3981dd90dae3385a1e5013",
+          "title": "EV-0157"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0010",
+      "content": "国立国会図書館は、第2回総選挙に際して政府が各選挙区の候補者を吏党系の「着実派」と民党系の「過激派」に分類して選挙動向を調査していたことを、品川弥二郎関係文書の候補者名簿を用いて示している。",
+      "source_locator": "2-13「選挙干渉」",
+      "selection_reason": "第3区の出来事を全国的な政府の候補者分類・選挙干渉の文脈に位置づける。",
+      "note_type": "Data",
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be398129a165f60b65228a10",
+          "title": "SRC-0088"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be3981d29dcdf6763ce55975",
+          "title": "EV-0147"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0011",
+      "content": "国立国会図書館は、1892年2月15日の投票日までに地方官・警察官による苛烈な選挙干渉が行われ、民党側に多数の死傷者が出たと解説する。",
+      "source_locator": "2-13「選挙干渉」",
+      "selection_reason": "第2回総選挙における全国的な干渉の強度を示す。",
+      "note_type": "Claim",
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be398129a165f60b65228a10",
+          "title": "SRC-0088"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be39813ba9facc06afb98af5",
+          "title": "EV-0148"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0012",
+      "content": "末木孝典は、第2回総選挙の選挙干渉について、政府支持派候補の拡大には一定の効果があった一方、選挙後の第三議会で政府方針に従う安定した多数派形成には成功せず、議会運営を円滑化する効果は得られなかったと分析している。",
+      "source_locator": "抄録",
+      "selection_reason": "選挙干渉の全国レベルの効果を第3区の局地的結果と区別して比較する。",
+      "note_type": "Result",
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be3981b9ab33c8cb1e9a402d",
+          "title": "SRC-0089"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be39813c9487e785998c1785",
+          "title": "EV-0149"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0013",
+      "content": "町田市文化財保護審議会資料5が翻刻する1892年11月26日東京控訴院裁判言渡書写は、被告らが第2回衆議院議員総選挙で自由党員の石阪昌孝・瀬戸岡為一郎を当選させるため熱心に運動し、大須賀明が当初協力を約しながら反対党候補の吉野泰三への投票を勧めるようになったことへの憤りを記載している。",
+      "source_locator": "資料5 pp.9-10、史料11「東京控訴院裁判言渡書写」",
+      "selection_reason": "大須賀明殺害事件と地域の選挙対立の直接的関係を、裁判史料翻刻から確認する。",
+      "note_type": "Data",
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be398104b5bde8d128b9623a",
+          "title": "SRC-0098"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be39818fa8d2e23b5e98ccea",
+          "title": "EV-0171"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0014",
+      "content": "町田市文化財保護審議会資料5が翻刻する1892年4月17日予審終結決定では、村野常右衛門・山中勘次郎・大矢正夫について大須賀明謀殺の教唆に関する犯罪証憑が十分でないとして免訴が決定されている。",
+      "source_locator": "資料5 pp.8-9、史料10「予審終結決定」",
+      "selection_reason": "地域指導者への謀殺教唆帰責をSourceの範囲内に限定するため。",
+      "note_type": "Data",
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be398104b5bde8d128b9623a",
+          "title": "SRC-0098"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be3981c3a175f2340b919ca6",
+          "title": "EV-0172"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0015",
+      "content": "町田市文化財保護審議会資料5が翻刻する東京控訴院裁判言渡書写は、事件関係者らが平素から凌霜館に集まり、時事を談論し文武を研究していた旨を記載している。",
+      "source_locator": "資料5 pp.9-10、史料11「東京控訴院裁判言渡書写」",
+      "selection_reason": "凌霜館が事件関係者の政治・文武活動の集会空間だったことを裁判史料翻刻から確認する。",
+      "note_type": "Data",
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be398104b5bde8d128b9623a",
+          "title": "SRC-0098"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be3981e08109e08a1bd22a8c",
+          "title": "EV-0173"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0016",
+      "content": "『神奈川県史 通史編4』は、第2回総選挙後の大須賀明殺害事件について、大須賀が民党支持を約しながら吉野泰三支持へ転じて同村の票をまとめたことを犯行動機として叙述し、村野常右衛門らは謀殺教唆容疑で検挙されたが証拠不十分で釈放され、鶴川村の青年壮士7名が裁判で処罰されたと記述する。",
+      "source_locator": "p.554（大須賀明殺害事件）",
+      "selection_reason": "裁判史料翻刻から得た事件構造を県史叙述で独立に照合する。",
+      "note_type": "Claim",
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be3981f8b8fad2094537ddac",
+          "title": "SRC-0087"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be3981cbb99eec51b43edaf4",
+          "title": "EV-0158"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0017",
+      "content": "『多摩市史 通史編2』は、第2回総選挙後も神奈川県内で選挙干渉への抗議が続き、1892年12月12日の神奈川県会で県知事と警部長の罷免建議案が可決され、その後県会が解散されたと記述する。",
+      "source_locator": "「選挙大干渉」",
+      "selection_reason": "選挙干渉が投票後も県政上の責任追及へ続いたことを示す。",
+      "note_type": "Claim",
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be39814688adda75a25c4bd9",
+          "title": "SRC-0091"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be39816f8d88d21ab7fcbe22",
+          "title": "EV-0153"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0018",
+      "content": "『小平市史 近現代編』は、政府支持を明確にした国民協会が1892年6月22日に創立され、吉野泰三ら40名が同年8月13日に入会したと記述する。したがって吉野の国民協会への正式加入は同年2月の第2回総選挙後である。",
+      "source_locator": "「国民協会の結成と小平」",
+      "selection_reason": "吉野を第2回総選挙時点から後発の国民協会員として扱う時系列誤認を防ぐ。",
+      "note_type": "Data",
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be39812588f5ec265745697a",
+          "title": "SRC-0093"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be398136b710eea691b703b0",
+          "title": "EV-0155"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0019",
+      "content": "町田市立自由民権資料館は、第2回総選挙では選挙干渉があったにもかかわらず自由党が勝利し、県会で責任を追及された県知事が自由党の勢力地である三多摩の東京移管を考えたと説明する。",
+      "source_locator": "「三多摩移管～神奈川から東京へ～」",
+      "selection_reason": "1892年選挙闘争と三多摩移管を結ぶ後世の地域史解釈を、RQ-0020へ渡す検証対象として保持する。",
+      "note_type": "Claim",
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be398139ac7afa013f49cdaa",
+          "title": "SRC-0081"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be39814d8312d5c48bbf829d",
+          "title": "EV-0142"
+        }
+      }
+    }
+  ]
+}
