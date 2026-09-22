@@ -1,0 +1,225 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "10_evidence",
+  "investigation_id": "INV-000004",
+  "rq_id": "RQ-0015",
+  "snapshot_at": "2026-09-22T11:06:28Z",
+  "evidence_items": [
+    {
+      "evidence_id": "E0001",
+      "content": "江戸期の宿駅継立では、継立料の領収証として各宿駅の問屋から証明を得るため、人馬駄賃帳を携帯する例があった。",
+      "source_locator": "注記・内容紹介",
+      "selection_reason": "RQの受け渡し・記録・責任管理、または公用/民間・時代差・文書運用の境界条件を直接記述するため。",
+      "note_type": "Data",
+      "direct_quote": null,
+      "provenance": {
+        "source": {"notion_url": "https://app.notion.com/p/3e3e5855be39810fad79cbb4006751ae", "title": "道中駄賃帳"},
+        "evidence_note": {"notion_url": "https://app.notion.com/p/3e3e5855be39812e81e3edc7ad69370a", "title": "EV-0070"}
+      }
+    },
+    {
+      "evidence_id": "E0002",
+      "content": "1794年の状箱輸送例では、各宿駅が状箱を受け取り、必要な駄賃を差し引き、帳面に受取駄賃額・次の宿駅名・荷物・賃銭残額を記したうえで、状箱・残金・帳面を次宿へ継ぎ立てた。",
+      "source_locator": "内容紹介・詳細解説",
+      "selection_reason": "RQの受け渡し・記録・責任管理、または公用/民間・時代差・文書運用の境界条件を直接記述するため。",
+      "note_type": "Method",
+      "direct_quote": null,
+      "provenance": {
+        "source": {"notion_url": "https://app.notion.com/p/3e3e5855be39810fad79cbb4006751ae", "title": "道中駄賃帳"},
+        "evidence_note": {"notion_url": "https://app.notion.com/p/3e3e5855be39815d982afbc4e0dc90ec", "title": "EV-0071"}
+      }
+    },
+    {
+      "evidence_id": "E0003",
+      "content": "江戸時代の宿駅は、公用の旅客・荷物・通信に対して人馬を提供し、次の宿駅まで継ぎ立てる任務を担い、問屋・年寄などの宿役人がその運用を担った。",
+      "source_locator": "「宿場と問屋」",
+      "selection_reason": "RQの受け渡し・記録・責任管理、または公用/民間・時代差・文書運用の境界条件を直接記述するため。",
+      "note_type": "Claim",
+      "direct_quote": null,
+      "provenance": {
+        "source": {"notion_url": "https://app.notion.com/p/3e3e5855be3981f3aff5c8a98d3db888", "title": "平成22年度収蔵資料展1「街道をいきかう人々と宿場のくらし」"},
+        "evidence_note": {"notion_url": "https://app.notion.com/p/3e3e5855be39816eba67c34ccde41e51", "title": "EV-0072"}
+      }
+    },
+    {
+      "evidence_id": "E0004",
+      "content": "公用で無賃の人馬を利用する場合、利用者が持参する御朱印・御証文を、宿駅側があらかじめ保有する印鑑と照合してから人馬を提供するのが原則だった。",
+      "source_locator": "「問屋と先触の役割」—継立の解説",
+      "selection_reason": "RQの受け渡し・記録・責任管理、または公用/民間・時代差・文書運用の境界条件を直接記述するため。",
+      "note_type": "Method",
+      "direct_quote": null,
+      "provenance": {
+        "source": {"notion_url": "https://app.notion.com/p/3e3e5855be3981f3aff5c8a98d3db888", "title": "平成22年度収蔵資料展1「街道をいきかう人々と宿場のくらし」"},
+        "evidence_note": {"notion_url": "https://app.notion.com/p/3e3e5855be398124a161e6b9f3085db8", "title": "EV-0073"}
+      }
+    },
+    {
+      "evidence_id": "E0005",
+      "content": "先触は通行前に宿駅間を順次伝達され、出立日や必要な人足・馬数を知らせることで、各宿の問屋が事前に人馬を手配する仕組みとして用いられた。",
+      "source_locator": "「問屋と先触の役割」",
+      "selection_reason": "RQの受け渡し・記録・責任管理、または公用/民間・時代差・文書運用の境界条件を直接記述するため。",
+      "note_type": "Method",
+      "direct_quote": null,
+      "provenance": {
+        "source": {"notion_url": "https://app.notion.com/p/3e3e5855be3981f3aff5c8a98d3db888", "title": "平成22年度収蔵資料展1「街道をいきかう人々と宿場のくらし」"},
+        "evidence_note": {"notion_url": "https://app.notion.com/p/3e3e5855be3981e0b680e7b2fc330e34", "title": "EV-0074"}
+      }
+    },
+    {
+      "evidence_id": "E0006",
+      "content": "1870年、明治政府は公設宿駅とは別に民間貨客のみを扱う私的継立機関の設置を指導し、甲州道中の宿駅では甲府柳町宿の問屋を中心に稼ぎ馬・売り荷物・荷物駄賃等の取決めを設けた。",
+      "source_locator": "注記・内容紹介",
+      "selection_reason": "RQの受け渡し・記録・責任管理、または公用/民間・時代差・文書運用の境界条件を直接記述するため。",
+      "note_type": "Data",
+      "direct_quote": null,
+      "provenance": {
+        "source": {"notion_url": "https://app.notion.com/p/3e3e5855be39816d957bc1b7b42f0861", "title": "公事録"},
+        "evidence_note": {"notion_url": "https://app.notion.com/p/3e3e5855be398114b973fc233b0f7367", "title": "EV-0075"}
+      }
+    },
+    {
+      "evidence_id": "E0007",
+      "content": "1899年商法332条は、運送人の請求がある場合に荷送人が運送状を交付し、運送品の種類、重量または容積、荷造の種類、個数・記号、到達地、荷受人、作成地・年月日を記載して署名することを定めた。",
+      "source_locator": "公布332条",
+      "selection_reason": "RQの受け渡し・記録・責任管理、または公用/民間・時代差・文書運用の境界条件を直接記述するため。",
+      "note_type": "Data",
+      "direct_quote": null,
+      "provenance": {
+        "source": {"notion_url": "https://app.notion.com/p/3e3e5855be3981f38761ee01c4b699c4", "title": "332条（明治商法・明治32年）"},
+        "evidence_note": {"notion_url": "https://app.notion.com/p/3e3e5855be398182a320e063ad94b31b", "title": "EV-0076"}
+      }
+    },
+    {
+      "evidence_id": "E0008",
+      "content": "商法332条の修正案理由書は、当時の慣習として荷送人から運送人へ送状を渡し、運送人から荷送人へ受取証書または貨物引換証を渡す一方、小荷物では送状を付さないのが通例であったため、送状を常時必須とはしなかったと説明する。",
+      "source_locator": "商法修正案理由書・第三百三十一條",
+      "selection_reason": "RQの受け渡し・記録・責任管理、または公用/民間・時代差・文書運用の境界条件を直接記述するため。",
+      "note_type": "Claim",
+      "direct_quote": null,
+      "provenance": {
+        "source": {"notion_url": "https://app.notion.com/p/3e3e5855be3981f38761ee01c4b699c4", "title": "332条（明治商法・明治32年）"},
+        "evidence_note": {"notion_url": "https://app.notion.com/p/3e3e5855be39819b944ded9e24d802a9", "title": "EV-0077"}
+      }
+    },
+    {
+      "evidence_id": "E0009",
+      "content": "1899年商法333条は、荷送人の請求がある場合に運送人が貨物引換証を交付し、運送品・到達地・荷受人に関する事項に加えて荷送人名、運送賃、作成地・年月日を記載し、運送人が署名することを定めた。",
+      "source_locator": "公布333条",
+      "selection_reason": "RQの受け渡し・記録・責任管理、または公用/民間・時代差・文書運用の境界条件を直接記述するため。",
+      "note_type": "Data",
+      "direct_quote": null,
+      "provenance": {
+        "source": {"notion_url": "https://app.notion.com/p/3e3e5855be3981a785baf370d0b37e95", "title": "333条（明治商法・明治32年）"},
+        "evidence_note": {"notion_url": "https://app.notion.com/p/3e3e5855be3981ada9b2fe5791ed5271", "title": "EV-0078"}
+      }
+    },
+    {
+      "evidence_id": "E0010",
+      "content": "商法333条の修正案理由書は、貨物引換証も常に発行されるものではなく、荷送人が必要として請求した場合に限り交付する慣習を前提にしたと説明する。",
+      "source_locator": "商法修正案理由書・第三百三十二條",
+      "selection_reason": "RQの受け渡し・記録・責任管理、または公用/民間・時代差・文書運用の境界条件を直接記述するため。",
+      "note_type": "Claim",
+      "direct_quote": null,
+      "provenance": {
+        "source": {"notion_url": "https://app.notion.com/p/3e3e5855be3981a785baf370d0b37e95", "title": "333条（明治商法・明治32年）"},
+        "evidence_note": {"notion_url": "https://app.notion.com/p/3e3e5855be398115ab7cf7dabab6b3bd", "title": "EV-0079"}
+      }
+    },
+    {
+      "evidence_id": "E0011",
+      "content": "1899年商法339条は、複数の運送人が相次いで運送する場合、各運送人が運送品の滅失・毀損・延着について連帯して損害賠償責任を負うと定めた。",
+      "source_locator": "公布339条",
+      "selection_reason": "RQの受け渡し・記録・責任管理、または公用/民間・時代差・文書運用の境界条件を直接記述するため。",
+      "note_type": "Data",
+      "direct_quote": null,
+      "provenance": {
+        "source": {"notion_url": "https://app.notion.com/p/3e3e5855be398120bf08e07bad46ee78", "title": "339条（明治商法・明治32年）"},
+        "evidence_note": {"notion_url": "https://app.notion.com/p/3e3e5855be3981a3a9b8e5030301fd6a", "title": "EV-0080"}
+      }
+    },
+    {
+      "evidence_id": "E0012",
+      "content": "飛脚問屋井野口屋は1723年に尾張藩の御用飛脚認可を受け、1869年まで書状・金銭・荷物等を扱い、藩領内の町村と主に京・大坂との通信運輸業務を担った。現存記録は井野口屋内部で作成された33冊で、営業や藩との交渉等を含む。",
+      "source_locator": "解説",
+      "selection_reason": "RQの受け渡し・記録・責任管理、または公用/民間・時代差・文書運用の境界条件を直接記述するため。",
+      "note_type": "Data",
+      "direct_quote": null,
+      "provenance": {
+        "source": {"notion_url": "https://app.notion.com/p/3e3e5855be3981c293f2c4f0bb886722", "title": "飛脚問屋井野口屋記録"},
+        "evidence_note": {"notion_url": "https://app.notion.com/p/3e3e5855be398172bc69d54611c28d79", "title": "EV-0081"}
+      }
+    },
+    {
+      "evidence_id": "E0013",
+      "content": "江戸東京博物館には1896年7月19日付の「荷物送状」実物文書が所蔵されており、明治中期に荷物送状という文書形式が実際に用いられていたことを確認できる。",
+      "source_locator": "資料メタデータ",
+      "selection_reason": "RQの受け渡し・記録・責任管理、または公用/民間・時代差・文書運用の境界条件を直接記述するため。",
+      "note_type": "Data",
+      "direct_quote": null,
+      "provenance": {
+        "source": {"notion_url": "https://app.notion.com/p/3e3e5855be3981cba626f0293c01e338", "title": "荷物送状"},
+        "evidence_note": {"notion_url": "https://app.notion.com/p/3e3e5855be39819c9fcbeb864cca5d20", "title": "EV-0082"}
+      }
+    },
+    {
+      "evidence_id": "E0014",
+      "content": "1899年商法337条は、運送人が、自己・運送取扱人・使用人等について運送品の受取・引渡・保管・運送に関する注意を怠らなかったことを証明しない限り、滅失・毀損・延着の損害賠償責任を免れないと定めた。",
+      "source_locator": "第337条",
+      "selection_reason": "RQの受け渡し・記録・責任管理、または公用/民間・時代差・文書運用の境界条件を直接記述するため。",
+      "note_type": "Data",
+      "direct_quote": null,
+      "provenance": {
+        "source": {"notion_url": "https://app.notion.com/p/3e3e5855be3981afa766c378de85f6b3", "title": "商法（明治32年法律第48号）— 法令データベース"},
+        "evidence_note": {"notion_url": "https://app.notion.com/p/3e3e5855be398117a90ed9844e51dacc", "title": "EV-0083"}
+      }
+    },
+    {
+      "evidence_id": "E0015",
+      "content": "1899年商法344条は、貨物引換証を作成した場合、運送品の引渡しは貨物引換証との引換えでなければ請求できないと定めた。",
+      "source_locator": "第344条",
+      "selection_reason": "RQの受け渡し・記録・責任管理、または公用/民間・時代差・文書運用の境界条件を直接記述するため。",
+      "note_type": "Data",
+      "direct_quote": null,
+      "provenance": {
+        "source": {"notion_url": "https://app.notion.com/p/3e3e5855be3981afa766c378de85f6b3", "title": "商法（明治32年法律第48号）— 法令データベース"},
+        "evidence_note": {"notion_url": "https://app.notion.com/p/3e3e5855be39819fabcbdf2100f13639", "title": "EV-0084"}
+      }
+    },
+    {
+      "evidence_id": "E0016",
+      "content": "『福井県史』は、宿駅では荷物が宿駅を素通りすることを原則として禁じ、次の宿駅へ継ぎ立て、その業務を各宿駅の問屋場と宿役人が担ったと叙述する。",
+      "source_locator": "第4章第3節1「江戸幕府の宿駅制度」",
+      "selection_reason": "RQの受け渡し・記録・責任管理、または公用/民間・時代差・文書運用の境界条件を直接記述するため。",
+      "note_type": "Claim",
+      "direct_quote": null,
+      "provenance": {
+        "source": {"notion_url": "https://app.notion.com/p/3e3e5855be398115823bf39fe2e42338", "title": "『福井県史』通史編3 近世一—江戸幕府の宿駅制度"},
+        "evidence_note": {"notion_url": "https://app.notion.com/p/3e3e5855be3981d3b410fa5e56e76310", "title": "EV-0085"}
+      }
+    },
+    {
+      "evidence_id": "E0017",
+      "content": "『福井県史』は、公用人馬に余裕がある場合、荷主や一般旅人が馬子・人足を相対賃銭で使用できたと叙述する。",
+      "source_locator": "第4章第3節1「江戸幕府の宿駅制度」",
+      "selection_reason": "RQの受け渡し・記録・責任管理、または公用/民間・時代差・文書運用の境界条件を直接記述するため。",
+      "note_type": "Claim",
+      "direct_quote": null,
+      "provenance": {
+        "source": {"notion_url": "https://app.notion.com/p/3e3e5855be398115823bf39fe2e42338", "title": "『福井県史』通史編3 近世一—江戸幕府の宿駅制度"},
+        "evidence_note": {"notion_url": "https://app.notion.com/p/3e3e5855be398160a068f338924d62f2", "title": "EV-0086"}
+      }
+    },
+    {
+      "evidence_id": "E0018",
+      "content": "享和3年（1803）の若狭方面では、小浜に入った諸荷物を小浜から熊川までは若狭の馬借、熊川から今津までは近江の馬借が運び、商人米を含む品目ごとに駄賃基準が設定されていた。",
+      "source_locator": "第4章第3節2「馬借と駄賃」",
+      "selection_reason": "RQの受け渡し・記録・責任管理、または公用/民間・時代差・文書運用の境界条件を直接記述するため。",
+      "note_type": "Data",
+      "direct_quote": null,
+      "provenance": {
+        "source": {"notion_url": "https://app.notion.com/p/3e3e5855be398130bd50ccc462d98aa0", "title": "『福井県史』通史編3 近世一—馬借と駄賃"},
+        "evidence_note": {"notion_url": "https://app.notion.com/p/3e3e5855be398160a358c71f8cfe209a", "title": "EV-0087"}
+      }
+    }
+  ]
+}
