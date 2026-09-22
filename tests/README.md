@@ -43,3 +43,20 @@ v2 testは以下を追加で確認する。
 - artifact間の `rq_id` mismatchがFAILする
 - `INV-000000` がinvalid
 - staged validationがv2でもPASSする
+
+
+## Working Answer body projection regression
+
+`test_working_answer_projection.py` はBKL-0025のbody projection contractを固定する。
+
+- accepted `30_analysis` からstructured `# Working Answer` をdeterministically render
+- optional / empty chapter omission
+- J/K internal lineage IDをhuman-facing viewへ露出しない
+- section create / replace / NOOP
+- Working Answer以外のchapter保持
+- duplicate top-level headingをBLOCKED
+- fenced code内の擬似headingを無視
+- MISSING / STALE / CURRENT / BLOCKED state derivation
+- body targetを表現するv2 projection log schema
+- SUCCESS / FAILURE provenance
+- Notion round-tripで除去されるordinary blank lineへ依存しないserialization
