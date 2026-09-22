@@ -45,7 +45,7 @@ authorityは常に `0001_research_architecture.md` に従う。
 boundaryを跨いでcopyされた値は、次のどちらかである。
 
 - Notionからfrozen Git artifactへの **snapshot**
-- GitからNotion display / operational propertyへの **projection**
+- GitからNotion display / operational viewへの **projection**
 
 copyしたことで独立編集可能な第二authorityを作ってはならない。
 
@@ -65,7 +65,7 @@ copyしたことで独立編集可能な第二authorityを作ってはならな�
 原則として以下は `00_context` へfreezeしない。
 
 - `Status`: Notion operational state
-- `Working Answer`: Git-derived projection target
+- `Working Answer`: legacy / compatibility property。current Git-derived projection targetはRQ page bodyの `# Working Answer` section
 - `Topic`: catalog organization relation
 - `Parent Question`: catalog relation
 - `RQ UID`: Notion内部実装用identifier。canonical snapshotには `RQ ID` とpage URLを使う
@@ -135,61 +135,107 @@ Notion側relation変更でhistorical Investigation artifactを書き換えない
 
 ## 5. Git -> Notion projection
 
-### RQ.Working Answer
+### Research Question body / `# Working Answer`
 
-決定: **Gitからprojectionする。**
+決定: **accepted `30_analysis` からResearch Question page body内のtop-level `# Working Answer` sectionへprojectionする。**
 
-Notion Research Questionsの `Working Answer` は、そのRQについてlatest accepted `30_analysis.working_answer.text` を示すderived operational viewとする。
+authorityはaccepted Git `30_analysis` に残る。RQ page bodyの `# Working Answer` はderived operational current viewであり、第二のcanonical sourceではない。
 
-authorityはaccepted Git `30_analysis` に残る。
+projection authorityはWorkflow 00のfinalizationにある。**through-30 validation済みでacceptedされたInvestigationの `30_analysis` だけがprojection sourceになれる。** chat上のad hoc Web回答やcanonical artifact chainを経ていない文章を `# Working Answer` へcanonical projectionしてはならない。
 
-projection authorityはWorkflow 00のfinalizationにある。**through-30 validation済みでacceptedされたInvestigationの `30_analysis` だけがprojection sourceになれる。** chat上のad hoc Web回答や、canonical artifact chainを経ていない文章をWorking Answerへcanonical projectionしてはならない。
+body内 `# Working Answer` のhuman editはnon-canonicalであり、次回projectionで上書きされうる。canonical answerを変える場合はInvestigation lifecycle ruleに従い、Notion bodyだけを独立変更しない。
 
-したがって:
+### Structured rendering contract
 
-- Notion `Working Answer` のhuman editはnon-canonical
-- 次回projectionで上書きされうる
-- canonical answerを変える場合はInvestigation lifecycle ruleに従って新しいInvestigationを作るか、未accept draftを更新し、Notionだけを独立変更しない
+accepted `30_analysis` を次の順序でdeterministically renderする。
+
+```markdown
+# Working Answer
+## Answer
+<30_analysis.working_answer.text>
+## Key Judgments
+- <30_analysis.judgments[].statement>
+## Limitations
+- <30_analysis.limitations[].text>
+## Unresolved Questions
+- <30_analysis.unresolved_questions[]>
+## Alternative Interpretations
+- <30_analysis.alternative_interpretations[].text>
+```
+
+rule:
+
+- `# Working Answer` と `## Answer` は常に生成する。
+- `Key Judgments` / `Limitations` / `Unresolved Questions` / `Alternative Interpretations` は、対応arrayが空またはfieldが存在しない場合、そのchapter自体を省略する。空chapterを生成しない。
+- `J####` / `K####` 等の内部lineage IDは通常のhuman-facing current viewへ露出させない。canonical lineageはGit artifact内に保持する。
+- body表示用の新しい要約・再解釈を生成しない。accepted `30_analysis` のtext fieldをそのままrenderする。
+- Notionは通常の空行をwrite/read round-tripで保持しないため、canonical serializationは空行separatorを持たないblock sequenceとする。視覚的spacingはNotion block layoutへ委譲する。
+
+### Safe body update semantics
+
+projection adapterはRQ page body全体を意味的に再構築しない。`src/research_atelier/projection/working_answer.py` のdeterministic renderer / section patch contractに従う。
+
+- top-level exact heading `# Working Answer` をtargetとし、次のtop-level H1直前までをsection boundaryとする。
+- targetが0件ならRQ body末尾へ新規作成する。
+- targetが1件なら、そのsectionだけをcurrent accepted renderingへreplaceする。
+- current renderingと一致する場合はNOOPとし、timestamp更新だけを理由にNotion bodyを書き換えない。
+- target headingが2件以上存在する場合、どれを上書きするか推測せずprojectionを **BLOCKED** とする。重複headingを人間または明示的repairで解消してから再実行する。
+- fenced code block内の `# Working Answer` はsection headingとして数えない。
+- projection後はRQ pageを再取得し、unique `# Working Answer` sectionがdeterministic renderingと一致することを確認する。
+- Working Answer以外のchapter、手書き本文、関連メモは保持する。
+
+### Legacy `Working Answer` property
+
+既存の `Research Questions.Working Answer` propertyは削除しない。**legacy / compatibility fieldとして残すが、新contractではcanonical projection targetではない。**
+
+- migration時にexisting valueを削除しない。
+- body projection成功後にpropertyへdual-writeしない。
+- propertyがempty / legacy / staleでもWorkflow 00のCOMPLETE判定を妨げない。
+- propertyとbodyが異なる場合、accepted Git `30_analysis` とbody内 `# Working Answer` をcurrent projectionとして扱う。
+- property valueからbodyやGit `30_analysis` をreverse reconstructionしない。
+- 将来property自体をdeprecated表示または削除する場合は、別ticketでschema / migrationを明示的に扱う。
 
 ### v2でprojectionしないもの
 
 Gitから自動projectionしない:
 
 - `20_synthesis`
-- individual judgment
-- limitation
-- unresolved question
 - Evidence snapshot content
 - Question Type / Scope / Significance
 - Source / Evidence Note record
 - Topic / Source relation
 
-必要なら将来derived viewとして追加する。
+`judgments` / `limitations` / `unresolved_questions` / `alternative_interpretations` は独立したNotion propertyへprojectionせず、上記structured `# Working Answer` current view内だけにrenderする。
 
 ### Research Question Status
 
 `Status` はNotion-authoritative operational stateとする。
 
-Working Answer projection成功だけで `Status = Answered` へ自動変更しない。
+Working Answer body projection成功だけで `Status = Answered` へ自動変更しない。
 
 自動更新するなら、別仕様とtestを定義してから導入する。
 
 ## 6. Projection provenance
 
-v2ではprojection provenance専用のNotion propertyを追加しない。
+projection provenance専用のNotion propertyは追加しない。
 
-projection operationは少なくとも以下をlogする。
+new body projectionは、historical `projection_log.json` をrewriteせず、Investigation directoryの `projection_log_v2.json` に記録する。schemaは `schemas/v2/projection_log.schema.json` を正本とする。
+
+少なくとも以下をlogする。
 
 - target RQ page URL
 - `rq_id`
 - source `investigation_id`
 - accepted `30_analysis` を含むGit commit SHA
 - projection timestamp
+- `projection_target.surface = page_body`
+- `projection_target.section_heading = "# Working Answer"`
 - success / failure
+- failure時は可能な範囲で原因を `note` に記録する
+
+BKL-0025以前のproperty projectionを記録したhistorical `projection_log.json` はその時点の事実として保持し、`target_property` をbody targetへ書き換えない。
 
 Notion property数を増やさずauditabilityを確保する。
-
-pilotでNotion上からsource Investigationを直接確認する必要性が明確になった場合、複数fieldを埋め込むのではなく専用provenance property 1つを追加する。
 
 ## 7. Freeze transaction rule
 
@@ -221,9 +267,9 @@ Notion current stateからretryするか、Investigation Contextをfreeze後に�
 
 Gitが正本のままである。
 
-Notion `Working Answer` はstaleになりうる。
+RQ page bodyの `# Working Answer` sectionはstale / missingになりうる。
 
-stale Notion値へ合わせてGitを書き換えてはならない。
+stale / missing body projectionやlegacy `Working Answer` propertyへ合わせてGitを書き換えてはならない。
 
 accepted Git artifactからprojectionをretryする。
 
@@ -257,7 +303,7 @@ mutable Reliability NoteをEvidence layerへ暗黙copyしない。
 
 ## 11. No reverse reconstruction rule
 
-Git artifactからNotion catalog全体を再構築・overwriteしてはならない。
+Git artifactからNotion catalog全体を再構築・overwriteしてはならない。また、Notion body / legacy propertyからGit canonical analysisをreverse reconstructionしてはならない。
 
 禁止例:
 
@@ -265,17 +311,23 @@ Git artifactからNotion catalog全体を再構築・overwriteしてはならな
 - `20_synthesis` からEvidence Notesを生成する
 - historical `00_context` からRQ Question / Scope / Question Typeをoverwriteする
 - frozen Git referenceからNotion relationを再構築する
+- body内 `# Working Answer` のhuman editから `30_analysis` を更新する
+- legacy `Research Questions.Working Answer` propertyからbodyまたは `30_analysis` を再構築する
 
 projectionは意図的に狭く保つ。
 
 ## 12. Operational contract
 
-v2における4 Research DBへのGit write-backは次の1つだけ。
+v2におけるResearch QuestionへのGit write-backは次のderived body projectionだけとする。
 
 ```text
-accepted 30_analysis.working_answer.text
-    -> Research Questions.Working Answer
+accepted 30_analysis
+    -> Research Question page body
+       -> # Working Answer
+          -> deterministic structured current view
 ```
+
+legacy `Research Questions.Working Answer` propertyへはwrite-backしない。
 
 その他は:
 
@@ -291,3 +343,23 @@ accepted 30_analysis.working_answer.text
 新規freezeではv2 canonical ID `INV-NNNNNN` を使用し、`rq_id` は独立fieldとしてsnapshotする。
 
 既存 `RQ-NNNN-vVVV` artifactはlegacy v1として保持し、projection provenanceでもhistorical `investigation_id` をそのまま記録する。過去artifactをv2 IDへrenameしない。
+
+
+## 14. Working Answer body migration
+
+property projection済みRQを新contractへ移行する場合:
+
+1. accepted Git `30_analysis` とそのcommit SHAをsourceとして確定する。
+2. existing RQ bodyを取得し、safe body update semanticsを適用する。
+3. legacy `Working Answer` propertyからcontentをreverse reconstructionしない。
+4. body内 `# Working Answer` をcreate / replaceし、再取得してcurrent renderingと一致することを確認する。
+5. legacy propertyは削除・clear・dual-writeしない。
+6. historical `projection_log.json` はrewriteせず、新body projectionを `projection_log_v2.json` として記録する。
+
+## 15. Deterministic implementation boundary
+
+Working Answer body rendering / section patch / projection-current判定 / v2 log materializationのcanonical helper implementationは `src/research_atelier/projection/working_answer.py` とする。
+
+Notion APIの認証・fetch・update自体はWorkflow 00のprojection adapter責務である。adapterはhelperのresultを尊重し、独自のsection parsing / rendering ruleを再実装しない。
+
+projection adapterがNotion writeに失敗した場合はGit artifactを変更せず、failure provenanceを残してstateをCOMPLETEへ進めない。
