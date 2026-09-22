@@ -1,0 +1,11 @@
+{
+  "report_type": "projection_log",
+  "target_rq_url": "https://app.notion.com/p/3e3e5855be3981129c7fd1ff68a9098b",
+  "rq_id": "RQ-0018",
+  "source_investigation_id": "INV-000013",
+  "source_30_analysis_commit_sha": "b7c93c1c4786a288d273bccc314d3b772a0b1f86",
+  "projection_timestamp": "2026-09-23T00:47:58+09:00",
+  "target_property": "Research Questions.Working Answer",
+  "result": "SUCCESS",
+  "note": "HumanがINV-000013の30_analysisをaccepted resultとして採択。Notion Statusはprojection contractに従い変更していない。"
+}
