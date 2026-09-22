@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "report_type": "projection_log",
+  "target_rq_url": "https://app.notion.com/p/3e3e5855be3981b5bc09e1d298cac05e",
+  "rq_id": "RQ-0019",
+  "source_investigation_id": "INV-000014",
+  "source_30_analysis_commit_sha": "0bc94828728a677af8bdad8957ca8cf2e6b0dd4d",
+  "projection_timestamp": "2026-09-23T01:40:09+09:00",
+  "projection_target": {
+    "surface": "page_body",
+    "section_heading": "# Working Answer"
+  },
+  "result": "SUCCESS",
+  "note": "Human explicitly accepted INV-000014 analysis and authorized skipping canonical CLI validation for this run. Schema/identity/lineage/question-type equivalent checks had passed before finalization. Projected the deterministic structured current view from accepted 30_analysis to the RQ body # Working Answer section, refetched Notion, and verified exact match with one unique top-level target heading. Legacy Working Answer property was not dual-written."
+}
