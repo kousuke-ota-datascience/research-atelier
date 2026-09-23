@@ -34,6 +34,7 @@ def reconcile_review_state(
     target_relation: str = "missing",
     review_requested: bool = False,
     review_not_applicable: bool = False,
+    review_eligible: bool = True,
     repair_started: bool = False,
 ) -> ReviewReconcileResult:
     """Derive only Review Status / Latest Review Seq; never mutate semantic content."""
@@ -43,6 +44,14 @@ def reconcile_review_state(
         issues.append(f"unknown_review_status:{status}")
     if target_relation not in SAFE_RELATIONS:
         issues.append(f"unknown_target_relation:{target_relation}")
+
+    # Historical compatibility: an Investigation whose frozen Context lacks a
+    # Question Type is not semantically reviewable. Eligibility overrides an
+    # explicit request so connector/UI requests cannot move it back to waiting.
+    if not review_eligible:
+        review_requested = False
+        review_not_applicable = True
+
     if review_requested and review_not_applicable:
         issues.append("conflicting_review_events")
     if issues:
@@ -133,6 +142,7 @@ def reconcile_payload(payload: Mapping[str, Any]) -> dict[str, Any]:
     current = dict(payload.get("current") or {})
     review = dict(payload.get("review") or {})
     events = dict(payload.get("events") or {})
+    eligibility = dict(payload.get("eligibility") or {})
     result = reconcile_review_state(
         current_status=current.get("review_status"),
         current_latest_review_seq=current.get("latest_review_seq"),
@@ -141,6 +151,7 @@ def reconcile_payload(payload: Mapping[str, Any]) -> dict[str, Any]:
         target_relation=str(review.get("target_relation") or "missing"),
         review_requested=bool(events.get("review_requested", False)),
         review_not_applicable=bool(events.get("review_not_applicable", False)),
+        review_eligible=bool(eligibility.get("review_eligible", True)),
         repair_started=bool(events.get("repair_started", False)),
     )
     return {
