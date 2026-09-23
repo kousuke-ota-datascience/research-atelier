@@ -26,3 +26,19 @@ BKL-0025以降のWorking Answer body projection provenanceは `projection_log.sc
 - targetはResearch Question page bodyの `# Working Answer` section。
 - historical property projectionの `projection_log.json` はrewriteしない。
 - new body projectionはInvestigation directoryの `projection_log_v2.json` として記録する。
+
+
+## Semantic Review persistence
+
+BKL-0027以降、Workflow 20を実行した場合のcanonical Review resultはInvestigation directory配下のappend-only JSONとする。
+
+```text
+investigations/<Investigation ID>/reviews/review-<Review Seq: 6 digits>.json
+```
+
+- Review cycle identityは `(Investigation ID, Review Seq)`。
+- `review_cycle.schema.json` が1 cycleのcanonical schema。
+- `review_common.schema.json` はFinding / severity / repair direction等の共通型定義。
+- 1 cycleは3 semantic transitionを1 JSONに集約する。
+- VerdictはFinding集合から `PASS / FINDINGS` をdeterministically算出する。
+- Markdown等のReview viewはderivedでありcanonical factではない。
