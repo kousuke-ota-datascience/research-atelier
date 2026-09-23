@@ -257,7 +257,7 @@ canonical schema:
 - `schemas/v2/review_10_evidence.schema.json`
 - `schemas/v2/review_20_synthesis.schema.json`
 - `schemas/v2/review_30_analysis.schema.json`
-- common definitions: `schemas/v2/review_common.schema.json`
+- common definitions: `schemas/v2/review_layer_common.schema.json`
 
 Review Cycle identityは `(Investigation ID, Review Seq)` とする。global `REV-NNNN` は導入しない。
 
@@ -274,6 +274,14 @@ layer-level Verdictとcycle-level VerdictはReviewerが独立入力しない。
 
 ### 9.2 Legacy compatibility
 
+> **DEPRECATED SCHEMA WARNING**
+>
+> `schemas/v2/review_cycle.schema.json` と `schemas/v2/review_common.schema.json` はhistorical compatibility専用であり、**新規Workflow 20 Reviewのauthoringに使用してはならない**。
+>
+> legacy実体は `schemas/v2/legacy/` 配下に置く。top-level旧pathは既存参照を壊さないためのdeprecated compatibility redirectである。
+>
+> Human researcher / LLM executorは、新規Reviewを作成するときに旧2 schemaを選択候補から除外する。
+
 BKL-0034以前のsingle-file canonical Review Cycleはhistorical factとして保持し、in-place rewriteしない。
 
 ```text
@@ -281,11 +289,32 @@ review-000001.json
 report_type = semantic_review
 ```
 
-既存 `schemas/v2/review_cycle.schema.json` をlegacy validatorとして維持する。history loaderはlegacy single-file cycleとnew split cycleの双方をnormalized Review Cycleへ変換し、projection / reconciliationへstorage format差を漏らさない。
+deprecated compatibility path `schemas/v2/review_cycle.schema.json`（実体: `schemas/v2/legacy/review_cycle.schema.json`）をhistorical validatorとして維持する。history loaderはlegacy single-file cycleとnew split cycleの双方をnormalized Review Cycleへ変換し、projection / reconciliationへstorage format差を漏らさない。
 
 new split cycleでmanifestまたは4 layer fileの一部欠落、orphan layer、filename / payload Seq不一致、target SHA不一致、duplicate Finding ID、Verdict / Finding mismatchがある場合はfail-stopする。
 
 Markdown Reviewは作成してもderived viewであり、Review history / completion / reconciliationの事実源にしない。
+
+### 9.3 Workflow execution schema guard
+
+新規Review Cycleを開始する前に、executorはschema selectionを確認する。
+
+```text
+CURRENT / use for new Review:
+  schemas/v2/review_layer_common.schema.json
+  schemas/v2/review_manifest.schema.json
+  schemas/v2/review_00_context.schema.json
+  schemas/v2/review_10_evidence.schema.json
+  schemas/v2/review_20_synthesis.schema.json
+  schemas/v2/review_30_analysis.schema.json
+
+DEPRECATED / historical validation only:
+  schemas/v2/review_common.schema.json
+  schemas/v2/review_cycle.schema.json
+  schemas/v2/legacy/*
+```
+
+new Review writer / reviewer instructionがdeprecated schemaを新規authoring schemaとして指定している場合、そのinstructionをstale contractとして扱い、current split schema setへ読み替える。historical Review validationの場合だけdeprecated schemaを使用する。
 
 ## 10. Repair handoff
 
@@ -367,7 +396,7 @@ BKL-0021でdeferしていたpersistent Review infrastructureは、BKL-0027で次
 
 - per-Investigation Review Seq
 - append-only Review JSON
-- Review common / cycle JSON Schema
+- split Review manifest / 4 layer / current common JSON Schema
 - deterministic Review writer
 - read-only Review history loader
 - target commit / blob freeze
