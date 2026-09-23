@@ -1,0 +1,189 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "10_evidence",
+  "investigation_id": "INV-000019",
+  "rq_id": "RQ-0022",
+  "snapshot_at": "2026-09-23T16:05:00.000Z",
+  "evidence_items": [
+    {
+      "evidence_id": "E0001",
+      "content": "東京都公文書館の史料解説は、三多摩の東京府移管をめぐり地域側が賛成派と反対派に分かれ、演説会や帝国議会・内務大臣への請願を行ったと説明する。とりわけ西多摩・南多摩では町村長・助役の辞職や役場封鎖も生じたとしており、地域側を単一意思として扱えないこと、反対が行政的抵抗の形も取ったことを示す。",
+      "source_locator": "「資料解説～西南北多摩郡東京府移管反対運動」本文",
+      "selection_reason": "地域側に賛否が併存したことと、南多摩を含む行政的抵抗を同時に確認できるため。",
+      "note_type": "Result",
+      "direct_quote": null,
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be3981129356c8924a2b45ba",
+          "title": "東京都公文書館「第13回 西南北多摩郡東京府移管反対運動」"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e4e5855be3981bdafc1cd528629ab82",
+          "title": "EV-0185"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0002",
+      "content": "町田市立自由民権資料館の常設展示「自由民権運動と町田」その3は、移管問題の展示資料として「三郡町村長の移管反対陳情書」を掲げている。少なくとも三多摩の町村長層による組織的な移管反対陳情が史料として残ることを確認できるが、この展示ページだけでは個々の署名者や町田市域の町村長の参加有無までは確定できない。",
+      "source_locator": "「実現した憲法・国会のもとで」展示資料「三郡町村長の移管反対陳情書」",
+      "selection_reason": "町村長層の組織的反対陳情を確認しつつ、町田市域への過剰一般化を避けるため。",
+      "note_type": "Data",
+      "direct_quote": null,
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be398139ac7afa013f49cdaa",
+          "title": "自由民権資料館常設展示「自由民権運動と町田」その3"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e4e5855be39816eb24de6bf17d283d9",
+          "title": "EV-0186"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0003",
+      "content": "『多摩市史 通史編2』は、法案可決後の1893年3月3日、神奈川県議らから第五議会への境域復旧議案提出を求められた石阪昌孝が、その要望を自由党代議士総会へ提出して賛成を求めたが、党中央の代議士は不可としたと叙述する。地域側の境域復旧要求と自由党中央の判断が一致していなかったことを示す。",
+      "source_locator": "第四章第四節「移管後の状況と知事襲撃事件」p.240-243、1893年3月3日の記述",
+      "selection_reason": "石阪昌孝の復旧行動と地域側・党中央の立場の不一致を示すため。",
+      "note_type": "Result",
+      "direct_quote": null,
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be3981e89190c5df7e3de208",
+          "title": "『多摩市史 通史編2 近現代』第四章第四節「三多摩の東京府編入問題」"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e4e5855be39816f8838c6f230f28033",
+          "title": "EV-0187"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0004",
+      "content": "1893年3月7日、南多摩郡八王子町本町で三郡交渉会が開かれ、一郡5人の交渉委員と有志総代計34人が参加し、第五議会への境域復旧請願書提出を決めたと『多摩市史』の表は記録する。南多摩の八王子が三郡横断の復旧請願運動の調整拠点になっていたことを示す。",
+      "source_locator": "第四章第四節 表1-4-10、1893年3月7日「南多摩郡八王子町本町 三郡交渉会」",
+      "selection_reason": "南多摩の具体的な組織化と請願行動を確認するため。",
+      "note_type": "Result",
+      "direct_quote": null,
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be3981e89190c5df7e3de208",
+          "title": "『多摩市史 通史編2 近現代』第四章第四節「三多摩の東京府編入問題」"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e4e5855be3981cebf25e701bc8934fd",
+          "title": "EV-0188"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0005",
+      "content": "同じ1893年3月7日、南多摩郡八王子町関谷座では移管反対演説会が開かれ、出席者は『多摩市史』表で1500余人とされ、土方篠三郎の「境域変更に反対の理由」など複数の反対演説が行われた。人数は同時代新聞『自由』に依拠する報告値であり、南多摩住民全体の支持率を示すものではない。",
+      "source_locator": "第四章第四節 表1-4-10、1893年3月7日「南多摩郡八王子町関谷座 演説会」",
+      "selection_reason": "南多摩での公開反対演説を確認し、参加者数を支持率へ誤変換しないため。",
+      "note_type": "Result",
+      "direct_quote": null,
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be3981e89190c5df7e3de208",
+          "title": "『多摩市史 通史編2 近現代』第四章第四節「三多摩の東京府編入問題」"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e4e5855be3981c5b52ec7194e2c6ccb",
+          "title": "EV-0189"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0006",
+      "content": "1893年4月5日、三郡交渉会の代表委員である土方篠三郎（七生村）、富沢政賢（多摩村）、大平安三（八王子町）、井上吉之助（鶴川村）らは、八王子の東京府知事富田鉄之助の宿所を訪れ、境域復旧を請願する予定であるため諸制度を神奈川県方式のまま据え置くよう申し入れた。鶴川村は現在の町田市域であり、井上吉之助については町田市域からの具体的な復旧運動・交渉行動を地域単位まで同定できる。",
+      "source_locator": "第四章第四節 p.240-243、1893年4月5日の富田知事宿所への申入れ",
+      "selection_reason": "現在の町田市域の具体的主体と交渉行動を同定できるため。",
+      "note_type": "Result",
+      "direct_quote": null,
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be3981e89190c5df7e3de208",
+          "title": "『多摩市史 通史編2 近現代』第四章第四節「三多摩の東京府編入問題」"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e4e5855be3981c29aacebaf3188567a",
+          "title": "EV-0190"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0007",
+      "content": "1893年3月15日の神奈川県自由党大会には山田東次、石阪昌孝ら県選出代議士、県議、森久保作蔵ら250余人が参加し、三多摩を含む神奈川県域を網羅する自由党武相支部を従来どおり維持すること、総理大臣・内務大臣へ境域復旧の陳情書を提出することを決めたと『多摩市史』は記す。反対・復旧運動が村単位だけでなく旧神奈川県域の党組織ネットワークで継続されたことを示す。",
+      "source_locator": "第四章第四節、1893年3月15日神奈川県自由党大会",
+      "selection_reason": "復旧運動と自由党武相支部の広域ネットワークとの連続性を示すため。",
+      "note_type": "Result",
+      "direct_quote": null,
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be3981e89190c5df7e3de208",
+          "title": "『多摩市史 通史編2 近現代』第四章第四節「三多摩の東京府編入問題」"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e4e5855be3981e4b939cf4dd72f8ed3",
+          "title": "EV-0191"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0008",
+      "content": "1893年4月5日の時点で、町村長らの辞職により三郡の行政事務はなお麻痺しており、同日の三郡交渉会では役場再開と町村長復職が協議されたと『多摩市史』は記す。反対運動は請願・演説だけでなく、地方行政の職務拒否・辞職と、その後の復職交渉という制度的行動にも及んだ。",
+      "source_locator": "第四章第四節 表1-4-10および1893年4月5日の記述",
+      "selection_reason": "反対運動の行政的抵抗と復職交渉を確認するため。",
+      "note_type": "Result",
+      "direct_quote": null,
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be3981e89190c5df7e3de208",
+          "title": "『多摩市史 通史編2 近現代』第四章第四節「三多摩の東京府編入問題」"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e4e5855be3981ffb632f24cc8839251",
+          "title": "EV-0192"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0009",
+      "content": "1893年3月14日の北多摩郡調布町蓮慶寺の演説会で、鶴川村の井上吉之助は「神奈川県と東京府との経済」を題目に演説したと『多摩市史』の表は記録する。井上の境域復旧行動が請願・交渉だけでなく、府県間の経済問題を論点とする言論活動を伴っていたことを示す。ただし題目のみから具体的な経済主張の内容までは復元できない。",
+      "source_locator": "第四章第四節 表1-4-10、1893年3月14日「北多摩郡調布町蓮慶寺 演説会」",
+      "selection_reason": "町田市域の具体主体について、交渉以外の言論活動と経済論点を確認するため。",
+      "note_type": "Result",
+      "direct_quote": null,
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be3981e89190c5df7e3de208",
+          "title": "『多摩市史 通史編2 近現代』第四章第四節「三多摩の東京府編入問題」"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e4e5855be3981c7876cd52d7cc83305",
+          "title": "EV-0193"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0010",
+      "content": "町田市立自由民権資料館は、石阪昌孝が多摩郡野津田村（現町田市野津田町）に生まれ、地域の自由民権運動を主導し、神奈川県会初代議長・衆議院議員を務めたと説明する。このSourceは石阪を現在の町田市域に帰属する地域政治主体として同定するために用い、三多摩移管への具体的立場は別Evidenceで確認する。",
+      "source_locator": "「石阪昌孝」人物解説",
+      "selection_reason": "石阪昌孝を現在の町田市域の主体として位置づける地理・人物情報を補強するため。",
+      "note_type": "Data",
+      "direct_quote": null,
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e4e5855be3981c28303e9238e3a4673",
+          "title": "町田市立自由民権資料館「町田の民権家と結社」"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e4e5855be3981c4a9f6c3fb85be5c19",
+          "title": "EV-0194"
+        }
+      }
+    }
+  ]
+}
