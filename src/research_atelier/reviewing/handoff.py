@@ -34,6 +34,14 @@ class ReviewHandoffPlan:
     issues: tuple[str, ...]
 
 
+@dataclass(frozen=True)
+class ReviewHandoffPreflight:
+    outcome: str  # PROCEED | REUSE | BLOCKED
+    successor_investigation_id: str | None
+    canonical_path: str
+    issues: tuple[str, ...]
+
+
 def review_handoff_filename(review_seq: int) -> str:
     if not isinstance(review_seq, int) or review_seq < 1:
         raise ReviewHandoffError("review_seq must be an integer >= 1")
@@ -306,6 +314,43 @@ def validate_review_handoff_record(
         issues.append(str(exc))
 
     return tuple(sorted(set(issues)))
+
+
+def preflight_review_handoff(
+    *,
+    source_review: Mapping[str, Any],
+    source_rq_id: str,
+    existing_handoff: Mapping[str, Any] | None,
+) -> ReviewHandoffPreflight:
+    """Resolve an already-completed handoff before any successor allocation.
+
+    Workflow 00 must call this before running a new allocation/numbering step.
+    A valid existing record is an idempotency barrier: reuse its successor and
+    do not create another Investigation or handoff record for the same Review.
+    """
+
+    source_investigation_id, source_review_seq = _review_identity(source_review)
+    canonical_path = review_handoff_path(source_investigation_id, source_review_seq)
+    if existing_handoff is None:
+        return ReviewHandoffPreflight("PROCEED", None, canonical_path, ())
+
+    issues = validate_review_handoff_record(
+        existing_handoff,
+        source_review=source_review,
+        source_rq_id=source_rq_id,
+    )
+    if issues:
+        return ReviewHandoffPreflight("BLOCKED", None, canonical_path, issues)
+
+    successor_id = existing_handoff.get("successor_investigation_id")
+    if not isinstance(successor_id, str) or not successor_id:
+        return ReviewHandoffPreflight(
+            "BLOCKED",
+            None,
+            canonical_path,
+            ("successor_investigation_id_missing",),
+        )
+    return ReviewHandoffPreflight("REUSE", successor_id, canonical_path, ())
 
 
 def plan_review_handoff(
