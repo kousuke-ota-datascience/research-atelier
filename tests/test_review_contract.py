@@ -12,7 +12,7 @@ SRC_ROOT = REPO_ROOT / "src"
 if str(SRC_ROOT) not in sys.path:
     sys.path.insert(0, str(SRC_ROOT))
 
-from research_atelier.reviewing.handoff import plan_review_handoff
+from research_atelier.reviewing.handoff import plan_review_handoff, preflight_review_handoff
 from research_atelier.reviewing.reconcile import reconcile_payload, reconcile_review_state
 from research_atelier.reviewing.review_state import load_review_history
 from research_atelier.reviewing.review_writer import (
@@ -487,6 +487,45 @@ class ReviewContractTest(unittest.TestCase):
             artifact="review-handoff",
         )
         self.assertTrue(result.ok, result.errors)
+
+    def test_handoff_preflight_reuses_existing_successor_before_allocation(self) -> None:
+        record = self._save(findings=True, new_investigation=True)
+        first = self._valid_handoff(record)
+        assert first.record is not None
+
+        preflight = preflight_review_handoff(
+            source_review=record,
+            source_rq_id=SOURCE_RQ_ID,
+            existing_handoff=first.record,
+        )
+
+        self.assertEqual(preflight.outcome, "REUSE")
+        self.assertEqual(preflight.successor_investigation_id, SUCCESSOR_ID)
+        self.assertEqual(preflight.issues, ())
+
+        no_existing = preflight_review_handoff(
+            source_review=record,
+            source_rq_id=SOURCE_RQ_ID,
+            existing_handoff=None,
+        )
+        self.assertEqual(no_existing.outcome, "PROCEED")
+        self.assertIsNone(no_existing.successor_investigation_id)
+
+    def test_handoff_preflight_blocks_conflicting_existing_record(self) -> None:
+        record = self._save(findings=True, new_investigation=True)
+        first = self._valid_handoff(record)
+        assert first.record is not None
+        conflicting = dict(first.record)
+        conflicting["source_rq_id"] = "RQ-9999"
+
+        preflight = preflight_review_handoff(
+            source_review=record,
+            source_rq_id=SOURCE_RQ_ID,
+            existing_handoff=conflicting,
+        )
+
+        self.assertEqual(preflight.outcome, "BLOCKED")
+        self.assertIn("handoff_source_rq_id_mismatch", preflight.issues)
 
     def test_handoff_plan_is_idempotent_and_preserves_original_timestamp(self) -> None:
         record = self._save(findings=True, new_investigation=True)
