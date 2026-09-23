@@ -57,6 +57,7 @@ def reconcile_review_state(
     repair_started: bool = False,
     new_investigation_handoff_completed: bool = False,
     review_handoff: Mapping[str, Any] | None = None,
+    source_rq_id: str | None = None,
 ) -> ReviewReconcileResult:
     """Derive only Review Status / Latest Review Seq; never mutate semantic content."""
     issues: list[str] = list(history_issues)
@@ -139,9 +140,17 @@ def reconcile_review_state(
                     "unsafe Review handoff",
                 )
             assert review_handoff is not None
+            if source_rq_id is None:
+                return ReviewReconcileResult(
+                    "BLOCKED",
+                    {},
+                    ("handoff_source_rq_unresolved",),
+                    "unsafe Review handoff",
+                )
             handoff_issues = validate_review_handoff_record(
                 review_handoff,
                 source_review=latest_review,
+                source_rq_id=source_rq_id,
             )
             if handoff_issues:
                 return ReviewReconcileResult(
@@ -215,6 +224,11 @@ def reconcile_payload(payload: Mapping[str, Any]) -> dict[str, Any]:
             events.get("new_investigation_handoff_completed", False)
         ),
         review_handoff=handoff,
+        source_rq_id=(
+            str(context.get("rq_id"))
+            if context is not None and context.get("rq_id") is not None
+            else None
+        ),
     )
     return {
         "outcome": result.outcome,
