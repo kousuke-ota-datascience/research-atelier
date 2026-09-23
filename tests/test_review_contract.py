@@ -12,6 +12,7 @@ SRC_ROOT = REPO_ROOT / "src"
 if str(SRC_ROOT) not in sys.path:
     sys.path.insert(0, str(SRC_ROOT))
 
+from research_atelier.reviewing.handoff import plan_review_handoff
 from research_atelier.reviewing.reconcile import reconcile_payload, reconcile_review_state
 from research_atelier.reviewing.review_state import load_review_history
 from research_atelier.reviewing.review_writer import (
@@ -66,6 +67,21 @@ FINDING = {
     },
 }
 
+NEW_INVESTIGATION_FINDING = {
+    "severity": "Major",
+    "target": "00_context.investigation_boundary.scope",
+    "evidence": ["00_context:investigation_boundary.scope"],
+    "impact": "The finding cannot be repaired without changing frozen Context semantics.",
+    "repair_direction": {
+        "mode": "new_investigation",
+        "affected_layer": "00_context",
+        "instruction": "Create a successor Investigation with the corrected frozen Context.",
+    },
+}
+
+SOURCE_RQ_ID = "RQ-0001"
+SUCCESSOR_ID = "INV-000002"
+
 
 class ReviewContractTest(unittest.TestCase):
     def setUp(self) -> None:
@@ -75,7 +91,7 @@ class ReviewContractTest(unittest.TestCase):
     def tearDown(self) -> None:
         self.tempdir.cleanup()
 
-    def _save(self, *, findings: bool = False) -> dict:
+    def _save(self, *, findings: bool = False, new_investigation: bool = False) -> dict:
         prepared = prepare_review_cycle(
             INVESTIGATION_ID,
             review_dir=self.review_dir,
@@ -85,7 +101,10 @@ class ReviewContractTest(unittest.TestCase):
         )
         layers = json.loads(json.dumps(PASS_LAYERS))
         if findings:
-            layers["30_analysis"]["findings"] = [FINDING]
+            if new_investigation:
+                layers["00_context"]["findings"] = [NEW_INVESTIGATION_FINDING]
+            else:
+                layers["30_analysis"]["findings"] = [FINDING]
         save_review_cycle(
             prepared,
             reviewed_at="2026-09-23T00:00:00Z",
@@ -387,6 +406,175 @@ class ReviewContractTest(unittest.TestCase):
             repair_started=True,
         )
         self.assertEqual(repairing.changes["Review Status"], "再作業中")
+
+    def _valid_allocation_decision(self) -> dict:
+        return {
+            "decision": "allocate_new",
+            "selected_existing_investigation": INVESTIGATION_ID,
+            "new_investigation_allocated": True,
+            "semantic_differences": [
+                {
+                    "field": "scope",
+                    "existing": "old scope",
+                    "requested": "corrected scope",
+                    "material": True,
+                    "reason": "context_defining_field_changed",
+                }
+            ],
+            "explicit_new_execution_intent": False,
+            "intent": "repair",
+            "reason_codes": ["material_semantic_difference"],
+            "issues": [],
+        }
+
+    def _valid_handoff(self, record: dict, *, existing: dict | None = None):
+        return plan_review_handoff(
+            source_review=record,
+            source_rq_id=SOURCE_RQ_ID,
+            allocation_decision=self._valid_allocation_decision(),
+            successor={
+                "exists": True,
+                "investigation_id": SUCCESSOR_ID,
+                "rq_ids": [SOURCE_RQ_ID],
+            },
+            handoff_at="2026-09-24T00:00:00Z",
+            existing_handoff=existing,
+        )
+
+    def test_new_investigation_finding_alone_does_not_close_review(self) -> None:
+        record = self._save(findings=True, new_investigation=True)
+        result = reconcile_review_state(
+            current_status="レビュー待",
+            current_latest_review_seq=None,
+            latest_review=record,
+            target_relation="exact",
+            review_eligible=True,
+        )
+        self.assertEqual(
+            result.changes,
+            {"Review Status": "要修正", "Latest Review Seq": 1},
+        )
+
+    def test_valid_successor_handoff_transitions_to_terminal_state(self) -> None:
+        record = self._save(findings=True, new_investigation=True)
+        plan = self._valid_handoff(record)
+        self.assertEqual(plan.outcome, "CREATE")
+        self.assertIsNotNone(plan.record)
+        assert plan.record is not None
+        result = reconcile_review_state(
+            current_status="要修正",
+            current_latest_review_seq=1,
+            latest_review=record,
+            target_relation="exact",
+            review_eligible=True,
+            new_investigation_handoff_completed=True,
+            review_handoff=plan.record,
+        )
+        self.assertEqual(result.outcome, "UPDATE")
+        self.assertEqual(result.changes, {"Review Status": "引継済"})
+        self.assertEqual(record["verdict"], "FINDINGS")
+
+    def test_handoff_plan_is_idempotent_and_preserves_original_timestamp(self) -> None:
+        record = self._save(findings=True, new_investigation=True)
+        first = self._valid_handoff(record)
+        assert first.record is not None
+        second = plan_review_handoff(
+            source_review=record,
+            source_rq_id=SOURCE_RQ_ID,
+            allocation_decision=self._valid_allocation_decision(),
+            successor={
+                "exists": True,
+                "investigation_id": SUCCESSOR_ID,
+                "rq_ids": [SOURCE_RQ_ID],
+            },
+            handoff_at="2026-09-24T01:00:00Z",
+            existing_handoff=first.record,
+        )
+        self.assertEqual(second.outcome, "NOOP")
+        self.assertEqual(second.record["handoff_at"], "2026-09-24T00:00:00Z")
+
+    def test_handoff_blocks_until_successor_persisted_and_exactly_bound(self) -> None:
+        record = self._save(findings=True, new_investigation=True)
+        missing = plan_review_handoff(
+            source_review=record,
+            source_rq_id=SOURCE_RQ_ID,
+            allocation_decision=self._valid_allocation_decision(),
+            successor={
+                "exists": False,
+                "investigation_id": SUCCESSOR_ID,
+                "rq_ids": [SOURCE_RQ_ID],
+            },
+            handoff_at="2026-09-24T00:00:00Z",
+        )
+        self.assertEqual(missing.outcome, "BLOCKED")
+        self.assertIn("successor_investigation_not_persisted", missing.issues)
+
+        bad_binding = plan_review_handoff(
+            source_review=record,
+            source_rq_id=SOURCE_RQ_ID,
+            allocation_decision=self._valid_allocation_decision(),
+            successor={
+                "exists": True,
+                "investigation_id": SUCCESSOR_ID,
+                "rq_ids": ["RQ-9999"],
+            },
+            handoff_at="2026-09-24T00:00:00Z",
+        )
+        self.assertEqual(bad_binding.outcome, "BLOCKED")
+        self.assertIn("successor_rq_binding_not_exact", bad_binding.issues)
+
+    def test_handoff_blocks_without_allocate_new_versioning_decision(self) -> None:
+        record = self._save(findings=True, new_investigation=True)
+        decision = self._valid_allocation_decision()
+        decision["decision"] = "reuse_existing"
+        decision["new_investigation_allocated"] = False
+        plan = plan_review_handoff(
+            source_review=record,
+            source_rq_id=SOURCE_RQ_ID,
+            allocation_decision=decision,
+            successor={
+                "exists": True,
+                "investigation_id": SUCCESSOR_ID,
+                "rq_ids": [SOURCE_RQ_ID],
+            },
+            handoff_at="2026-09-24T00:00:00Z",
+        )
+        self.assertEqual(plan.outcome, "BLOCKED")
+        self.assertIn("versioning_decision_not_allocate_new", plan.issues)
+
+    def test_handoff_event_without_canonical_record_blocks(self) -> None:
+        record = self._save(findings=True, new_investigation=True)
+        result = reconcile_review_state(
+            current_status="要修正",
+            current_latest_review_seq=1,
+            latest_review=record,
+            target_relation="exact",
+            review_eligible=True,
+            new_investigation_handoff_completed=True,
+        )
+        self.assertEqual(result.outcome, "BLOCKED")
+        self.assertIn("handoff_event_without_record", result.issues)
+
+    def test_handoff_payload_reconciliation_is_idempotent(self) -> None:
+        record = self._save(findings=True, new_investigation=True)
+        plan = self._valid_handoff(record)
+        assert plan.record is not None
+        payload = {
+            "current": {
+                "review_status": "引継済",
+                "latest_review_seq": 1,
+            },
+            "review": {"latest": record, "target_relation": "exact"},
+            "handoff": plan.record,
+            "events": {"new_investigation_handoff_completed": True},
+            "context": {
+                "context_state": "frozen",
+                "question_type": "Descriptive",
+            },
+        }
+        result = reconcile_payload(payload)
+        self.assertEqual(result["outcome"], "NOOP")
+        self.assertEqual(result["changes"], {})
 
     def test_stale_review_becomes_rereview_waiting(self) -> None:
         record = self._save(findings=True)
