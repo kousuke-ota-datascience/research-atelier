@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000016",
+  "review_seq": 2,
+  "layer": "20_synthesis",
+  "review_kind": "10_evidence_to_20_synthesis",
+  "target_blob_sha": "351b7cd8cd014bb579eaa4ac5c3b0c8433c9412e",
+  "assessment": "Knowledge Unitはcurrent 10_evidenceのsupport boundary内で再構築されている。K0007は知事の移管支持、賛否請願、青梅の反対運動、神奈川県自由党大会・県会の境域復旧要求を直接Evidenceから統合し、請願人数の代表性と法案可決後の反対行動をqualificationしている。Review 000001のF002で指摘された財政relation mismatchは、政府側財政命題K0010と委員会側・条件付き賛成命題K0012を分離し、R0005をこの2命題間のconflictとして構成することで解消された。R0007は政府の『住民請願が起点ではない』説明と審議期の賛否請願を時間的に区別しており、Evidence間の見かけ上の矛盾も過剰統合していない。",
+  "findings": [],
+  "verdict": "PASS"
+}
