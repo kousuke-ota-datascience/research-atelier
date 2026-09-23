@@ -4,12 +4,12 @@
   "target_rq_url": "https://app.notion.com/p/3e3e5855be39813394e5f54eeaf2a31c",
   "rq_id": "RQ-0020",
   "source_investigation_id": "INV-000016",
-  "source_30_analysis_commit_sha": "9ce264323346ba93774416dfa273049a06dee1a4",
-  "projection_timestamp": "2026-09-23T07:05:39.418Z",
+  "source_30_analysis_commit_sha": "1ace98952495befdf807b0d801aba2046381a66b",
+  "projection_timestamp": "2026-09-23T18:45:20.240Z",
   "projection_target": {
     "surface": "page_body",
     "section_heading": "# Working Answer"
   },
   "result": "SUCCESS",
-  "note": "User-requested reinvestigation completed from a new Descriptive freeze. Workflow 20 semantic review was not a prerequisite; accepted 30_analysis was projected after through-30 deterministic lineage checks."
+  "note": "Review 000001 findings were repaired in-place under the BKL-0035 same-Investigation repair contract; Review 000002 passed all four layers, and the repaired 30_analysis Working Answer was deterministically re-projected to RQ-0020 and verified current."
 }
