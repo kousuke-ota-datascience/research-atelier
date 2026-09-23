@@ -1,5 +1,19 @@
 """Deterministic Git -> Notion projection helpers."""
 
+from .review import (
+    AmbiguousInvestigationProjectionRowError,
+    DuplicateReviewProjectionRowError,
+    NextAction,
+    ReviewProjection,
+    ReviewProjectionError,
+    build_review_projection,
+    derive_artifact_outcomes,
+    derive_next_action,
+    highest_severity,
+    reconcile_latest_review_relation,
+    resolve_unique_investigation_row,
+    resolve_unique_review_row,
+)
 from .working_answer import (
     DuplicateWorkingAnswerSectionError,
     PatchResult,
@@ -11,6 +25,18 @@ from .working_answer import (
 )
 
 __all__ = [
+    "AmbiguousInvestigationProjectionRowError",
+    "DuplicateReviewProjectionRowError",
+    "NextAction",
+    "ReviewProjection",
+    "ReviewProjectionError",
+    "build_review_projection",
+    "derive_artifact_outcomes",
+    "derive_next_action",
+    "highest_severity",
+    "reconcile_latest_review_relation",
+    "resolve_unique_investigation_row",
+    "resolve_unique_review_row",
     "DuplicateWorkingAnswerSectionError",
     "PatchResult",
     "build_projection_log_v2",
