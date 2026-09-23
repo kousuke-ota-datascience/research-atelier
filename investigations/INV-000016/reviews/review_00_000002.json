@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000016",
+  "review_seq": 2,
+  "layer": "00_context",
+  "review_kind": "context_semantic_validity",
+  "target_blob_sha": "29970d9838ce1500478286d15b3140c5ba77d840",
+  "assessment": "Review 000001以降00_contextはbyte-levelで不変である。Frozen Research Question、Scope、include / exclude、assumptions、Question Type=Descriptiveは相互に整合し、神奈川県側を一枚岩とせず、公的理由と私的・政治的動機を分離し、移管推進・容認・反対の各立場を検証するsemantic boundaryも維持されている。今回のrepairは既存Context内のEvidence selection / Synthesis lineage / Analysis表現の修正であり、Context-defining changeを必要としない。",
+  "findings": [],
+  "verdict": "PASS"
+}
