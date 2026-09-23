@@ -1,0 +1,248 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "10_evidence",
+  "investigation_id": "INV-000016",
+  "rq_id": "RQ-0020",
+  "snapshot_at": "2026-09-23T06:59:23.413Z",
+  "evidence_items": [
+    {
+      "evidence_id": "E0001",
+      "content": "帝国議会で内務省県治局長の大森鍾一は、三多摩移管の必要は東京市の飲用水道と新水道計画に由来し、水源涵養、森林保護、衛生警察上の取締を同一管轄で行う必要があると政府理由を説明した。",
+      "source_locator": "第4回帝国議会 衆議院 本会議 第40号・発言003 大森鍾一",
+      "selection_reason": "政府が公的に提示した移管理由を一次史料から確定するため。",
+      "note_type": "Claim",
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be39816bbcbafa8d4c643ddf",
+          "title": "SRC-0094"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be3981fd8957d5d39690a8f0",
+          "title": "EV-0159"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0002",
+      "content": "大森鍾一は、水道との直接関係が薄い南多摩郡も含める理由として、三多摩の歴史的・地理的・交通上の一体性に加え、南多摩だけを神奈川県に残すと衆議院選挙区を作り直す不便が生じることを挙げた。",
+      "source_locator": "第4回帝国議会 衆議院 本会議 第40号・発言003等",
+      "selection_reason": "南多摩を含む三郡一括移管の公的説明に、区域的一体性と選挙区再編上の便宜が含まれていたことを確認するため。",
+      "note_type": "Claim",
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be39816bbcbafa8d4c643ddf",
+          "title": "SRC-0094"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be398169b548d814cf0e1931",
+          "title": "EV-0160"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0003",
+      "content": "大森鍾一は、三多摩住民から管轄替えの申出や請求はなかったと答弁し、政府が水道上の必要から移管を進めるにあたり住民への不利益がないかを調査したと説明した。",
+      "source_locator": "第4回帝国議会 衆議院 本会議 第40号・発言026・028 大森鍾一",
+      "selection_reason": "移管が住民請願を直接の起点とする措置ではないという政府説明を確認するため。",
+      "note_type": "Claim",
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be39816bbcbafa8d4c643ddf",
+          "title": "SRC-0094"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be398190be33c69051af1b2a",
+          "title": "EV-0161"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0004",
+      "content": "大森鍾一は、三多摩を失う神奈川県の財政について、三郡に支出していた費用も減るため県経済に困難は生じないとの政府見解を示した。",
+      "source_locator": "第4回帝国議会 衆議院 本会議 第40号・発言020 大森鍾一",
+      "selection_reason": "神奈川県側の財政的不利益について政府がどのように説明したかを確認するため。",
+      "note_type": "Claim",
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be39816bbcbafa8d4c643ddf",
+          "title": "SRC-0094"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be398173a99fcf41b4d7f1ed",
+          "title": "EV-0162"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0005",
+      "content": "1892年9月20日付の内海忠勝内申は、東京市の飲用水路をめぐる府県間の行政上の紛議・困難を述べ、水源山林から水路までを同一管轄に置くことが将来の困難回避に有効だと説明している。また南多摩郡について、多摩川の治水上の連関、三郡の地勢・風俗人情・従来の結合、衆議院議員選挙区が三郡で一体であることを理由に、西・北多摩だけでなく三郡を同一管轄とするのが適当だと内申している。",
+      "source_locator": "『神奈川県史 資料編11 近代・現代（2）』第2編 明治中後期「多摩三郡の管轄替に関する神奈川県知事内海忠勝の内申」（1892-09-20）",
+      "selection_reason": "神奈川県知事自身の公式な移管理由を、県史資料編所収の同時代内申翻刻から確認するため。",
+      "note_type": "Result",
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e4e5855be3981d6aba4dcb9e0c1438f",
+          "title": "SRC-0104"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e4e5855be39813a80c7dacb181e8876",
+          "title": "EV-0171"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0006",
+      "content": "東京都公文書館の展示資料リストは、東京府の「神奈川県西北南多摩三郡管轄替之儀上申」と神奈川県の「神奈川県西多摩外二郡ヲ東京府ニ編入ノ儀ニ関スル内申」をいずれも1892年9月20日付として掲げ、三郡移管の政府文書を同年12月16日付として掲げている。",
+      "source_locator": "東京都公文書館企画展示「東京府文書にみる多摩と東京」章Ⅳ展示資料リスト",
+      "selection_reason": "神奈川県知事の正式な移管内申が12月の県会責任追及より前に成立していた時系列を公文書館所蔵情報で確認するため。",
+      "note_type": "Data",
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be398170aac1f14ebdb2e5c9",
+          "title": "SRC-0096"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be3981d6aca7ed2c74fb2e39",
+          "title": "EV-0169"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0007",
+      "content": "1892年10月19日付の内海忠勝から井上馨への書簡では、内海は三多摩で春以来知事排斥運動が続き、その年の県会で一層の攻撃が予想されると認識していた。内海は自分が放逐されるより三多摩を管轄外へ移す方がよいと考え、準備を進め、県会前の発表を求めていた旨を記している。",
+      "source_locator": "「三多摩の東京府移管（1893年4月）」史料6、PDF p.9。『東京市史稿 市街篇第84』所収翻刻の再録。",
+      "selection_reason": "内海知事本人が移管準備と三多摩の知事排斥運動・県会での政治的対立を明示的に結び付けた私信を確認するため。",
+      "note_type": "Result",
+      "direct_quote": "知事を放逐するより知事か三多摩を放逐する方可然",
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e4e5855be398155a4dac2edc1a47e99",
+          "title": "SRC-0105"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e4e5855be3981b9b2eedb4be492f285",
+          "title": "EV-0172"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0008",
+      "content": "『多摩市史』が引用する1892年2月12日付の内海忠勝から松方正義への報告では、八王子に約100名の巡査を出しており、石阪昌孝・瀬戸岡為一郎を敗北させ政府側候補が勝つとの見通しを内海自身が述べていた。",
+      "source_locator": "『多摩市史 通史編2 近現代』第三章第三節「選挙大干渉」、『松方正義関係文書』8巻の引用",
+      "selection_reason": "1892年選挙干渉に内海知事自身が関与し、三多摩の自由党系政治家を具体的な対立対象としていたことを本人報告由来の引用から確認するため。",
+      "note_type": "Result",
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be39814688adda75a25c4bd9",
+          "title": "SRC-0091"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be3981db9706e7b9b9c04c6a",
+          "title": "EV-0167"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0009",
+      "content": "『神奈川県史 通史編4』は、1892年12月の通常県会解散を扱う箇所で、自由党系県会議員らが同年2月以来、選挙干渉の責任を追及し、知事・警部長の罷免を求めて再三陳情していたと叙述する。",
+      "source_locator": "第3章「議会政治の発足と県政」／「県会の解散と選挙」、p.557付近",
+      "selection_reason": "県会側と知事・警察行政の政治的対立が移管検討期を通じて継続していたことを、神奈川県側の公刊県史から確認するため。",
+      "note_type": "Result",
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e4e5855be3981b9924dc2d020ad3a88",
+          "title": "SRC-0106"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e4e5855be3981cd9d23d86ee04b0c17",
+          "title": "EV-0173"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0010",
+      "content": "『多摩市史』は、1892年12月12日の神奈川県会で県知事と警部長の罷免建議案が可決され、その後県会が解散されたと叙述する。",
+      "source_locator": "『多摩市史 通史編2 近現代』第三章第三節「選挙大干渉」pp.230-232",
+      "selection_reason": "県会による正式な知事責任追及の時期を把握し、移管内申・内海書簡との前後関係を検証するため。逐語議事録・建議本文は今回未取得。",
+      "note_type": "Result",
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be39814688adda75a25c4bd9",
+          "title": "SRC-0091"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be39815eb296e1de7c78df20",
+          "title": "EV-0168"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0011",
+      "content": "『多摩市史』が紹介する1893年2月25日付『国会』記事は、内海忠勝が三多摩を自由党の強い地域で県会運営・統治上の困難があると述べ、南多摩を含む三郡一括移管を東京府側へ求めたと報じている。",
+      "source_locator": "『多摩市史 通史編2 近現代』第四章第四節 p.234、『国会』1893-02-25記事の紹介",
+      "selection_reason": "同時代新聞に政治的説明が存在したことを保持するため。ただし今回『国会』原紙は直接実読できず、自治体史を介した間接確認にとどめる。",
+      "note_type": "Claim",
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be3981e89190c5df7e3de208",
+          "title": "SRC-0095"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be3981058efce9bf1155b0d8",
+          "title": "EV-0164"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0012",
+      "content": "『多摩市史』は、内海忠勝が県会からの追及を予期し、神奈川自由党の分断を狙って三多摩を東京府へ移そうとしたと解釈し、神奈川県側の政治事情と東京府側の水源上の宿願が一致したと論じる。",
+      "source_locator": "『多摩市史 通史編2 近現代』第四章第四節 p.235",
+      "selection_reason": "「神奈川自由党の分断」という後世の歴史解釈を、内海本人の同時代文書で直接確認できる事実と分離して保持するため。",
+      "note_type": "Claim",
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be3981e89190c5df7e3de208",
+          "title": "SRC-0095"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be39819c8d5cc56e9dabf6f1",
+          "title": "EV-0166"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0013",
+      "content": "東京都公文書館の史料解説は、1891年11月に神奈川県が西多摩郡民の上申を受けて水源涵養林の伐採禁止を解除し、東京府側の水源管理上の懸念と神奈川県側の地域行政判断が衝突していたと説明する。",
+      "source_locator": "東京都公文書館「第13回 西南北多摩郡東京府移管反対運動」背景説明",
+      "selection_reason": "1892年の選挙・県会対立以前から、水源管理をめぐる府県間の行政利害が存在したことを確認するため。",
+      "note_type": "Result",
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be3981129356c8924a2b45ba",
+          "title": "SRC-0097"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be39815a87dbf3324c1a0afb",
+          "title": "EV-0170"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0014",
+      "content": "1893年2月28日の衆議院本会議で、境域変更法案委員長工藤行幹は、政府が当初示した三多摩が他郡から補助を受けているとの財政説明は委員会調査と一致せず、三多摩から他地域へ回っている額があり、移管後は神奈川県に残る十二郡の負担増になると報告した。少数意見側の楠本正隆も、神奈川県側に約四千円規模の不便が生じる点自体を認めつつ、水道上の必要を重視して法案賛成を述べた。",
+      "source_locator": "第4回帝国議会 衆議院 本会議 第46号・工藤行幹発言（025・029）および楠本正隆発言（033）",
+      "selection_reason": "神奈川県財政への影響について、政府の「困難なし」という説明が同時代の法案審査で争われていたことを一次史料で保持するため。",
+      "note_type": "Counterargument",
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e4e5855be398188b180ff47b6187bcc",
+          "title": "SRC-0107"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e4e5855be3981748dbec2b9f23aa724",
+          "title": "EV-0174"
+        }
+      }
+    }
+  ]
+}
