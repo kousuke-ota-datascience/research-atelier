@@ -1,0 +1,113 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "20_synthesis",
+  "investigation_id": "INV-000019",
+  "rq_id": "RQ-0022",
+  "synthesized_at": "2026-09-23T16:07:00.000Z",
+  "knowledge_units": [
+    {
+      "knowledge_unit_id": "K0001",
+      "statement": "三多摩の地域側には移管賛成派と反対派が併存し、地域住民を単一の意思主体として扱うことはできない。",
+      "evidence_refs": ["E0001"],
+      "qualifiers": ["郡・町村別の賛否分布は今回のEvidenceでは完全には復元していない。"]
+    },
+    {
+      "knowledge_unit_id": "K0002",
+      "statement": "南多摩では、町村長層の反対陳情、八王子での三郡交渉会と移管反対演説会、町村長等の辞職による行政事務の麻痺が確認でき、反対・復旧行動は請願・演説・行政的抵抗の複数形態を取った。",
+      "evidence_refs": ["E0002","E0004","E0005","E0008"],
+      "qualifiers": ["これらの記録は行動の存在を示すが、南多摩住民全体の多数意見や賛否比率を示さない。"]
+    },
+    {
+      "knowledge_unit_id": "K0003",
+      "statement": "現在の町田市域では、鶴川村の井上吉之助が境域復旧運動の具体的主体として確認でき、東京府知事への制度据置き申入れと府県間の経済を題目とする演説を行った。",
+      "evidence_refs": ["E0006","E0009"],
+      "qualifiers": ["演説は題目までしか確認できず、具体的な経済論の内容は未復元である。"]
+    },
+    {
+      "knowledge_unit_id": "K0004",
+      "statement": "石阪昌孝は野津田村（現町田市）を基盤とする地域政治家であり、法案成立後には境域復旧要求を自由党代議士総会へ持ち込み、神奈川県自由党大会でも復旧陳情を進める側にいた。",
+      "evidence_refs": ["E0003","E0007","E0010"],
+      "qualifiers": ["石阪の地域帰属と移管後の具体的行動は別Sourceで相互補完している。"]
+    },
+    {
+      "knowledge_unit_id": "K0005",
+      "statement": "移管反対・境域復旧運動は町村単位に閉じず、三郡交渉会と旧神奈川県域の自由党武相支部という広域ネットワークを通じて展開された。",
+      "evidence_refs": ["E0004","E0007"],
+      "qualifiers": ["各地域の参加密度や影響力の比較までは行っていない。"]
+    },
+    {
+      "knowledge_unit_id": "K0006",
+      "statement": "地域側の境域復旧要求と自由党中央の判断は一致しておらず、石阪昌孝が代議士総会へ持ち込んだ復旧議案要求は党中央から受け入れられなかった。",
+      "evidence_refs": ["E0003"],
+      "qualifiers": ["自由党支持層全体の立場を代表するとは限らない。"]
+    },
+    {
+      "knowledge_unit_id": "K0007",
+      "statement": "法案成立後も反対運動は継続し、要求は移管阻止から境域復旧・制度据置きへ移行しつつ、請願・交渉・行政的抵抗として続いた。",
+      "evidence_refs": ["E0003","E0004","E0006","E0007","E0008"],
+      "qualifiers": ["法案成立前の反対と成立後の復旧要求を同一局面として混同しない。"]
+    },
+    {
+      "knowledge_unit_id": "K0008",
+      "statement": "今回選択したEvidenceでは南多摩・現在の町田市域の反対・復旧主体は複数具体化できた一方、移管賛成主体を人物・町村・組織単位で同程度には復元できていない。",
+      "evidence_refs": ["E0001","E0002","E0003","E0004","E0005","E0006","E0007","E0008","E0009","E0010"],
+      "qualifiers": ["これは賛成主体の不存在ではなく、今回のEvidence coverageの非対称性を示す。"]
+    }
+  ],
+  "relations": [
+    {
+      "relation_id": "R0001",
+      "relation_type": "qualification",
+      "knowledge_unit_refs": ["K0001","K0002"],
+      "description": "南多摩で反対行動が具体的に確認できても、三多摩全体に賛否併存があるため地域総意へ一般化できない。",
+      "evidence_refs": ["E0001","E0002","E0004","E0005","E0008"]
+    },
+    {
+      "relation_id": "R0002",
+      "relation_type": "association",
+      "knowledge_unit_refs": ["K0003","K0004","K0005"],
+      "description": "町田市域の井上吉之助・石阪昌孝の行動は、南多摩・三郡・旧神奈川県域の広域政治ネットワークに接続していた。",
+      "evidence_refs": ["E0003","E0004","E0006","E0007","E0009","E0010"]
+    },
+    {
+      "relation_id": "R0003",
+      "relation_type": "conflict",
+      "knowledge_unit_refs": ["K0004","K0006"],
+      "description": "石阪ら地域側の境域復旧要求と自由党中央の判断は一致しなかった。",
+      "evidence_refs": ["E0003"]
+    },
+    {
+      "relation_id": "R0004",
+      "relation_type": "dependency",
+      "knowledge_unit_refs": ["K0002","K0007"],
+      "description": "法案成立・移管施行という制度状況の変化に応じ、反対行動は阻止要求から境域復旧・制度据置き要求へ移行した。",
+      "evidence_refs": ["E0003","E0004","E0006","E0008"]
+    }
+  ],
+  "uncertainties": [
+    {
+      "uncertainty_id": "U0001",
+      "description": "南多摩・現在の町田市域における移管賛成主体を人物・町村・組織単位で十分に同定できていない。",
+      "knowledge_unit_refs": ["K0001","K0008"],
+      "evidence_refs": ["E0001"]
+    },
+    {
+      "uncertainty_id": "U0002",
+      "description": "三郡町村長の移管反対陳情書の個別署名者を全文確認しておらず、現在の町田市域各町村長の参加状況を確定できない。",
+      "knowledge_unit_refs": ["K0002"],
+      "evidence_refs": ["E0002"]
+    },
+    {
+      "uncertainty_id": "U0003",
+      "description": "井上吉之助の「神奈川県と東京府との経済」演説は題目のみ確認しており、具体的な経済的反対理由は不明である。",
+      "knowledge_unit_refs": ["K0003"],
+      "evidence_refs": ["E0009"]
+    },
+    {
+      "uncertainty_id": "U0004",
+      "description": "演説会・大会の参加者数は同時代新聞等を介した自治体史の整理を含み、地域住民全体の賛否比率を示す統計ではない。",
+      "knowledge_unit_refs": ["K0002","K0005"],
+      "evidence_refs": ["E0005","E0007"]
+    }
+  ]
+}
