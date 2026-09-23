@@ -28,13 +28,16 @@ RQだけが与えられ、Investigation IDが指定されていない場合:
 
 0. Research Questionがacceptedであり、「このRQを調査する」というhuman research intentが成立していることを確認する。
 
-1. そのRQに紐づく未完了InvestigationをGit artifactとNotion Investigations registryから確認する。
-2. current workとして再開すべき同一executionが存在するか判定する。
-3. 再開対象がなければ `0002_investigation_versioning.md` に従って新しい `INV-NNNNNN` をglobal sequenceから採番する。
-4. new Investigationでは、採番直後にNotion Investigations DBへ `Investigation ID` とexactly one `Research Question` relationを持つrowを1件作成する。このID/rowはdraft workspace確保であり、Context freezeやsubstantive research execution開始を意味しない。
-5. new draft、またはまだfrozen `00_context` を持たないresume draftでは、Question TypeをHuman / Researcherの具体値へcommitする。nullなら同じdraft INV rowを保持したままBLOCKEDとし、`00_context` freeze / Source探索 / `10_evidence` へ進まない。
-6. 既にfrozen `00_context` があるresumeではGit Contextをauthorityとする。そこが `question_type = null` ならhistorical compatibility branchへ入り、同じINVへQuestion Typeをbackfillして再開しない。
-7. resumeでは `Investigation ID` で既存rowをreuseし、duplicate rowを作成しない。
+1. そのRQに紐づく既存InvestigationをGit artifactとNotion Investigations registryから確認し、resume / repair候補を解決する。
+2. Human instructionを自然言語表面形だけで解釈せず、今回のintentを `retry_completion / repair / explicit_new_execution / semantic_reinvestigation` のいずれかへ分類する。
+3. candidate existing Investigationと今回のrequested semantic conditionを `src/research_atelier/orchestration/investigation_allocation.py` のdeterministic guardへ渡す。
+4. guardが `reuse_existing` ならそのInvestigationをresume / repairする。「再度実行」「やり直し」「retry」「もう一度」だけを理由にnew INVへ分岐しない。
+5. guardが `blocked` ならsemantic difference / Evidence cutoff materiality等の未解決事項を報告し、採番しない。
+6. guardが `allocate_new` の場合にだけ、`0002_investigation_versioning.md` に従って新しい `INV-NNNNNN` をglobal sequenceから採番する。
+7. new Investigationでは、採番直後にNotion Investigations DBへ `Investigation ID` とexactly one `Research Question` relationを持つrowを1件作成する。このID/rowはdraft workspace確保であり、Context freezeやsubstantive research execution開始を意味しない。
+8. new draft、またはまだfrozen `00_context` を持たないresume draftでは、Question TypeをHuman / Researcherの具体値へcommitする。nullなら同じdraft INV rowを保持したままBLOCKEDとし、`00_context` freeze / Source探索 / `10_evidence` へ進まない。
+9. 既にfrozen `00_context` があるresumeではGit Contextをauthorityとする。そこが `question_type = null` ならhistorical compatibility branchへ入り、同じINVへQuestion Typeをbackfillして再開しない。
+10. resumeでは `Investigation ID` で既存rowをreuseし、duplicate rowを作成しない。
 
 v2 Investigation IDはRQ IDをencodeしない。RQとのbindingはNotion Investigations DBのexplicit relationと、freeze後の `00_context.rq_id` で行う。
 
@@ -66,7 +69,38 @@ Workflow 00はNotion Investigations DBをInvestigationのoperational registryと
 
 rowの有無だけでInvestigation execution stateを決めない。NEW / PARTIAL / VALIDATED等のstateは引き続きcanonical artifactとvalidationからderiveする。
 
-### 1.3 Canonical execution invariant
+### 1.3 Investigation allocation guard
+
+new Investigation allocationはworkflow retry counterではなく、independent execution identityの生成である。したがって、採番前に次を比較する。
+
+- Research Question
+- Question Type
+- Scope
+- Include / Exclude
+- Assumptions
+- Evidence cutoff / time horizon
+- dataset / source boundary
+- Humanが明示したindependent execution intent
+
+requested inputで既存semantic fieldが省略されている場合、その省略を変更要求とみなさない。
+
+Evidence cutoffに値差があっても、timestamp差だけでnew INVとしない。Evidence population / snapshotの意味が変わったかを解決する。同じsnapshotの再取得・retry等でsemantic changeがないならsame Investigationを維持する。materialityが解決できない場合はBLOCKEDとする。
+
+Review Finding起点でも同じguardを用いる。frozen Contextが不変で、既存Include / source boundary内のEvidence omission補完、lineage修正、support-boundary修正、downstream rebuildで解消できる場合はsame-Investigation repairとする。Finding解消にContext-defining fieldの変更が必要な場合だけsuccessor Investigationへhandoffする。
+
+decision outputは少なくとも次をmachine-readableに保持する。
+
+```text
+decision
+selected_existing_investigation
+new_investigation_allocated
+semantic_differences
+explicit_new_execution_intent
+reason_codes
+issues
+```
+
+### 1.4 Canonical execution invariant
 
 対象RQが存在し、外部Sourceを探索してsubstantive conclusionを生成する場合、その実行はWorkflow 00を経由し、Workflow 10のcanonical artifact chainへ接続しなければならない。
 
@@ -225,7 +259,7 @@ Investigation `ID` に対して:
    - Review未実施 -> VALIDATEDのままReview pendingとして停止する。
    - BLOCKED -> state = BLOCKED。
    - STALE -> VALIDATEDのままcurrent targetをfreezeし直してreReviewする。
-   - FINDINGS -> findingが示すearliest affected stageをsemantic INVALIDとしてrepair / reconstructする。
+   - FINDINGS -> versioning allocation guardを先に適用する。frozen Context semanticsが不変ならsame Investigationでfindingが示すearliest affected stageをrepair / reconstructする。Context-defining semantic changeが必要な場合だけsuccessor Investigationへhandoffする。
    - PASS -> finalizationへ進める。
    defaultではReviewを要求せず、このstepをskipする。
 14. current accepted `30_analysis` とRQ bodyの `# Working Answer` projection stateを確認する。
@@ -280,7 +314,7 @@ downstream fileがbyte-for-byteで存在していてもinvalidatedされ得る�
 
 したがって、file existenceだけでcurrencyを証明してはならない。
 
-context-defining changeがfreeze後に発生した場合、またはaccepted resultをsubstantively reopenする場合は、historyを書き換えず新しいInvestigationを作る。
+context-defining changeがfreeze後に発生した場合、またはHumanが既存resultとは独立した別executionを明示した場合は、historyを書き換えず新しいInvestigationを作る。一方、accepted resultであってもfrozen Context semanticsを変えないReview repair / operational repairはsame Investigationのinvalidation -> rebuildとして扱う。
 
 ## 6. Near-idempotent rerun rule
 
@@ -289,6 +323,7 @@ inputが変わらない限り、再実行は同じcanonical stateへ収束する
 rule:
 
 - Workflow 00を再実行しただけで新しいInvestigationを採番しない。
+- 「再度実行」「やり直し」「retry」「もう一度」等の表現だけをnew Investigation allocation reasonにしない。
 - resume時は既存Notion Investigation rowをreuseし、同じIDのrowを追加しない。
 - frozen Git InvestigationにNotion rowだけが欠ける場合は、new Investigationを採番せずcontrolled backfillする。
 - upstream inputが変わらずsemantic correctionも不要なら、PASS済みartifactを再生成しない。
