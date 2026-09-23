@@ -177,6 +177,8 @@ def _candidate_record(
     if not isinstance(reason_codes, Sequence) or isinstance(reason_codes, (str, bytes)):
         issues.append("allocation_reason_codes_invalid")
         reason_codes = []
+    elif not list(reason_codes):
+        issues.append("allocation_reason_codes_missing")
     semantic_differences = allocation_decision.get("semantic_differences", [])
     if not isinstance(semantic_differences, Sequence) or isinstance(
         semantic_differences, (str, bytes)
@@ -192,6 +194,7 @@ def _candidate_record(
         "report_type": HANDOFF_REPORT_TYPE,
         "source_investigation_id": source_investigation_id,
         "source_review_seq": source_review_seq,
+        "source_rq_id": source_rq_id,
         "finding_ids": finding_ids,
         "handoff_mode": HANDOFF_MODE,
         "successor_investigation_id": successor_investigation_id,
@@ -220,6 +223,7 @@ def validate_review_handoff_record(
     record: Mapping[str, Any],
     *,
     source_review: Mapping[str, Any],
+    source_rq_id: str | None = None,
 ) -> tuple[str, ...]:
     """Validate handoff semantics needed by the Review reconciler.
 
@@ -242,6 +246,11 @@ def validate_review_handoff_record(
         issues.append("handoff_source_investigation_mismatch")
     if record.get("source_review_seq") != source_review_seq:
         issues.append("handoff_source_review_seq_mismatch")
+    record_source_rq_id = record.get("source_rq_id")
+    if not isinstance(record_source_rq_id, str) or not record_source_rq_id:
+        issues.append("handoff_source_rq_id_missing")
+    if source_rq_id is not None and record_source_rq_id != source_rq_id:
+        issues.append("handoff_source_rq_id_mismatch")
     if record.get("handoff_mode") != HANDOFF_MODE:
         issues.append("invalid_handoff_mode")
     if record.get("successor_exists") is not True:
@@ -269,6 +278,8 @@ def validate_review_handoff_record(
     else:
         expected_rq_id = binding.get("expected_rq_id")
         actual_rq_ids = binding.get("actual_rq_ids")
+        if expected_rq_id != record_source_rq_id:
+            issues.append("handoff_expected_rq_mismatch")
         if binding.get("exact") is not True:
             issues.append("successor_rq_binding_not_exact")
         if (
