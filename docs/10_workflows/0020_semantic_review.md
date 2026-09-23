@@ -91,28 +91,33 @@ deterministic validationが既知のFAIL / ERRORである場合、Semantic Revie
 
 ## 4. Review target freeze
 
-Review開始時に最低限、次を固定する。
+Review開始時は `src/research_atelier/reviewing/review_writer.py::prepare_review_cycle()` と同じcontractでtargetをfreezeする。
+
+固定するもの:
 
 - `investigation_id`
-- reviewed `30_analysis` を含むGit commit SHA、または `30_analysis` artifact blob SHA
-- `reviewed_at`
+- next per-Investigation `review_seq`
+- reviewed canonical chainを含むGit commit SHA
+- `00_context / 10_evidence / 20_synthesis / 30_analysis` の各blob SHA
 
-可能なら `00_context / 10_evidence / 20_synthesis / 30_analysis` の各blob SHAも記録する。
+Review cycle identityは `(Investigation ID, Review Seq)` とする。global `REV-NNNN` は導入しない。
 
-Review中にtargetを読み替えない。
+prepare時に既存Review historyがmalformed、Schema invalid、Seq欠番、filename / payload不一致ならfail-stopする。Review中にtargetを読み替えない。
+
+save直前にcommit SHAと4 artifact blob SHAを再取得し、prepare時snapshotとexact一致しなければ保存しない。new targetを再prepareして別cycleとしてReviewする。
 
 ### Staleness rule
 
 次の場合、old Review outcomeをcurrent artifactへ流用しない。
 
-- reviewed `30_analysis` blobが変わった。
-- reviewed commitからcanonical artifactが更新された。
+- frozen artifact blobのいずれかが変わった。
 - upstream artifact変更によりreviewed downstreamがinvalidatedされた。
-- repairにより新しいInvestigationが作られた。
+- repairによりnew targetが成立した。
+- repair directionが `new_investigation` でnew Investigationへhandoffされた。
 
-Review中にtargetが更新された場合、旧targetに対するReviewはhistorical observationとしては残せるが、new targetのPass証明にはならない。new targetを再度freezeしてreReviewする。
+Review target commit SHAはaudit provenanceとして保持する。canonical chainのcontent stalenessはartifact blob SHAを主に用い、別fileだけのcommit差分をsemantic target changeと誤認しない。
 
-SHA ancestry、current/staleの自動判定、projection / sync state追跡はControl Plane側のmechanical responsibilityであり、Semantic Reviewer自身の判断責務にしない。
+Git ancestryからReview targetがcurrent artifactよりahead / divergedと判定される場合は自動収束せずBLOCKEDとする。SHA relationのmechanical判定はadapter / Control Plane責務でありReviewerのsemantic judgmentにしない。
 
 ## 5. Reviewするsemantic transition
 
@@ -193,16 +198,62 @@ severityの目安:
 
 Reviewerはfindingを記録する。canonical artifactをReviewの名義で直接修正しない。
 
-## 9. Review outcome
+## 9. Canonical Review result / outcome
 
-BKL-0021時点のexecution-level outcomeは次とする。
+Workflow 20を実行した場合、Review結果をephemeral chat outputで終わらせない。canonical authorityはGit上のmachine-readable JSONとする。
 
-- `PASS`: semantic findingなし。
-- `FINDINGS`: 1件以上のfindingあり。
-- `STALE`: review targetがexecution中またはその後に更新され、current artifactへoutcomeを適用できない。
-- `BLOCKED`: target・provenance・required artifact等を一意に解決できずReview不能。
+保存先:
 
-これは現時点ではpersistent canonical Review JSONのschema enumではない。
+```text
+investigations/<Investigation ID>/reviews/
+  review-000001.json
+  review-000002.json
+  ...
+```
+
+1 Review cycle = 1 JSONとし、3 semantic transitionを同一cycleへ集約する。
+
+1. `source_evidence_note_to_10_evidence`
+2. `10_evidence_to_20_synthesis`
+3. `20_synthesis_plus_00_context_to_30_analysis`
+
+canonical schema:
+
+- `schemas/v2/review_cycle.schema.json`
+- common Finding definitions: `schemas/v2/review_common.schema.json`
+
+各recordは少なくとも次を保持する。
+
+- `schema_version`
+- `investigation_id`
+- `review_seq`
+- target commit SHA
+- 00 / 10 / 20 / 30 blob SHA
+- `reviewed_at`
+- transition別semantic assessment
+- Findings
+- deterministic Verdict
+
+Finding identityはcycle-local `F001...` とし、logical identityは `(Investigation ID, Review Seq, Finding ID)` で表す。
+
+Findingは次を持つ。
+
+- `severity = Minor / Moderate / Major`
+- `target`
+- canonical artifact上の `evidence` reference
+- `impact`
+- `repair_direction.mode = same_investigation / new_investigation`
+- `repair_direction.affected_layer = 00_context / 10_evidence / 20_synthesis / 30_analysis`
+- repair instruction
+
+cycle-level VerdictはReviewerが独立入力しない。writerがFinding集合からdeterministically算出する。
+
+- Finding 0件 -> `PASS`
+- Finding 1件以上 -> `FINDINGS`
+
+`STALE / BLOCKED` はcanonical semantic Verdictではなく、target relation / execution conditionからreconcilerが導出するworkflow outcomeである。
+
+Markdown Reviewは作成してもderived viewであり、Review history / completion / reconciliationの事実源にしない。
 
 ## 10. Repair handoff
 
@@ -274,21 +325,40 @@ Reviewをmandatory state gateへ昇格する場合は、Task 14のdecisionを別
 - research conclusionのsemantic judgment
 - Evidence qualityの専門判断
 
-## 13. Persistent Review artifactを現時点で導入しない
+## 13. Persistent Review implementation / BKL-0021 amendment
 
-BKL-0021では以下を**まだcanonical contractとして採用しない**。
+BKL-0021でdeferしていたpersistent Review infrastructureは、BKL-0027で次の範囲を採用する。
 
-- Review Seq
-- Review JSON
-- append-only review storage
-- Review専用JSON Schema
-- review writer
-- persistent verdict history
-- NotionへのReview SHA / state同期
+### 採用
 
-理由は、pilotでSemantic Reviewの有用性は確認できた一方、persistent Review infrastructureを正当化する反復failure / concurrency / stale-target failureはまだ観測されていないためである。
+- per-Investigation Review Seq
+- append-only Review JSON
+- Review common / cycle JSON Schema
+- deterministic Review writer
+- read-only Review history loader
+- target commit / blob freeze
+- prepare後target変更fail-stop
+- deterministic Verdict aggregation
+- Investigation rowの `Review Status / Latest Review Seq`
+- Python reconcilerによるcurrent state mutation plan
 
-将来persistent Review artifactを導入する場合は、authority、path、schema、versioning、writer、reReview、staleness、Workflow 00 integrationを別contractで同時に定義する。urban-legend版の `Entry_ID / Review_Seq` 実装をそのままcopyしない。
+canonical implementation:
+
+- `src/research_atelier/reviewing/review_writer.py`
+- `src/research_atelier/reviewing/review_state.py`
+- `src/research_atelier/reviewing/reconcile.py`
+
+### 引き続き採用しない / defer
+
+- global first-class `REV-NNNN` identity
+- Review専用Notion DB
+- artifactごとのNotion Status row
+- Notion上のpre-SHA / post-SHA / target SHA property
+- Markdown Reviewをcanonical authorityとすること
+- persistent `レビュー中` Status
+- `要再調査` Status
+
+Workflow 20は引き続きoptionalであり、通常のWorkflow 10 completionをmandatory Review gateへ変更しない。ただしWorkflow 20を実行した場合、そのReview persistence / history / state reconciliationはmandatoryである。
 
 ## 14. Invariant
 
