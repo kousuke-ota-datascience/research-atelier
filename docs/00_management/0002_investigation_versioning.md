@@ -46,7 +46,7 @@ Investigation IDはRQ IDをencodeしない。RQとの対応はartifactの `rq_id
 
 ### Investigation Context
 
-Investigation Contextは、そのInvestigationのexecution semanticsを規定するinput snapshotである。authorityは `00_context.json` に置く。
+Investigation Contextは、そのInvestigationのexecution semanticsを規定するinput snapshotである。**freeze前のmutable operational input authorityはNotion Investigations DB、freeze後のcanonical authorityは `00_context.json`** とする。
 
 代表的な内容:
 - frozen question wording
@@ -59,6 +59,20 @@ Investigation Contextは、そのInvestigationのexecution semanticsを規定す
 - Notion RQ provenance
 
 `00_context` はResearch Context entityではない。
+
+### Notion operational representation
+
+Notionの `Investigations` DBはcanonical Investigation domain entityのoperational registryであり、**1 Investigation = 1 row** とする。別のdomain identityを追加するものではない。
+
+- title propertyはcanonical `Investigation ID` をそのまま保持する。
+- `Research Question` relationでexactly one RQへexplicitにbindする。v2ではInvestigation IDからRQを推定しない。
+- freeze前のQuestion Type / Scope / Include / Exclude / Evidence Cutoff / Assumptionsはこのrowでrefineする。
+- Question wordingはrowへduplicateせず、Research Questions DBをcurrent semantic authorityとしてfreeze時にsnapshotする。
+- Review Status / Latest Review SeqはReviewのcurrent operational pointerであり、Review historyやFinding/Verdictのcanonical storeではない。
+
+new InvestigationではWorkflow 00がID採番直後、`00_context` freeze前にrowを1件作成する。resumeではInvestigation IDで既存rowをreuseし、duplicate rowを作らない。同じIDのrowが複数ある場合はfail-stopする。
+
+既存Git Investigationにrowがない場合は、frozen `00_context` をauthorityとしてrowをbackfillしてよい。historical Scope等をcurrent RQ metadataから逆算しない。
 
 ## 2. Research Contextをfirst-class entityにしない理由
 
@@ -84,11 +98,15 @@ Research Context ↔ RQのcardinalityはv2 canonical contractの対象外であ�
 
 ### Draft
 
-`00_context.context_state = draft` の間は、同じInvestigationをin-placeでrefineしてよい。unknownを埋めるために架空defaultを作ってはならない。
+freeze前はNotion Investigations rowがmutable Investigation Context inputのauthorityである。同じInvestigationをin-placeでrefineしてよい。unknownを埋めるために架空defaultを作ってはならない。
+
+一時的に `00_context.context_state = draft` をmaterializeしてよいが、freeze完了まではcandidate representationであり、Notion rowと独立したcanonical authorityにはしない。
 
 ### Frozen
 
-`context_state = frozen` かつ `frozen_at` が設定された時点でInvestigation Contextをfreezeする。
+`context_state = frozen` かつ `frozen_at` が設定され、validation後に `00_context.json` がcommitされた時点でInvestigation Contextをfreezeする。以後、そのInvestigation Contextのcanonical authorityはGit `00_context` である。
+
+Notion rowはoperational / derived representationとして残すが、frozen contextと不一致ならGitを基準にreconcileし、Notion側の編集からhistorical Git artifactを変更しない。
 
 freeze後にcontext-defining fieldをsemanticに変更する場合、同じInvestigationを書き換えず **新しいInvestigation IDを採番する**。
 
@@ -160,6 +178,7 @@ investigations/
 
 - historical directoryをv2 IDへrenameしない。
 - historical JSONの `investigation_id` をrewriteしない。
+- Notion Investigations DBへbackfillする場合もlegacy IDをそのままrow titleとして使い、new v2 IDへ置換しない。
 - `schemas/v1` はlegacy contractとして凍結する。
 - validatorはlegacy v1 IDとv2 IDの両方をvalidateできる。
 - legacy v1ではID prefixと `rq_id` の一致を引き続き検査する。
