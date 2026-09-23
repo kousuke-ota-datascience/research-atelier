@@ -3,7 +3,7 @@
   "artifact_type": "10_evidence",
   "investigation_id": "INV-000018",
   "rq_id": "RQ-0022",
-  "snapshot_at": "2026-09-23T08:57:43.920117Z",
+  "snapshot_at": "2026-09-23T09:01:20.377163Z",
   "evidence_items": [
     {
       "evidence_id": "E0001",
@@ -155,6 +155,23 @@
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e4e5855be3981c7876cd52d7cc83305",
           "title": "EV-0193"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0010",
+      "content": "町田市立自由民権資料館は、石阪昌孝が多摩郡野津田村（現町田市野津田町）に生まれ、地域の自由民権運動を主導し、神奈川県会初代議長・衆議院議員を務めたと説明する。このEvidenceは石阪を現在の町田市域に帰属する地域政治主体として同定するために用い、三多摩移管への具体的立場はE0003・E0007で確認する。",
+      "source_locator": "「石阪昌孝」人物解説",
+      "selection_reason": "石阪昌孝の復旧運動を現在の町田市域の主体に帰属させるため、人物の地理的・政治的identityを移管行動とは独立した公式Sourceで根拠化するため。",
+      "note_type": "Data",
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e4e5855be3981c28303e9238e3a4673",
+          "title": "SRC-0108"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e4e5855be3981c4a9f6c3fb85be5c19",
+          "title": "EV-0194"
         }
       }
     }
