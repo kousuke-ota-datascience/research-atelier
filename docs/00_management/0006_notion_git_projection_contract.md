@@ -409,16 +409,21 @@ projection adapterがNotion writeに失敗した場合はGit artifactを変更�
 
 ## 16. Git Review -> Notion Investigation Review current state
 
-Workflow 20を実行した場合、canonical Review contentはGitに保持し、Notion Investigations DBへはcurrent operational pointerだけをreconcileする。
+Workflow 20を実行した場合、canonical Review contentはGitに保持し、NotionにはBKL-0032で定義したderived operational projectionをreconcileする。
 
 ```text
 Git canonical Review JSON history
     |
-    | deterministic reconcile
+    | deterministic projection / reconcile
+    v
+Reviews DB (human-facing derived view)
+    |
+    | latest relation
     v
 Investigations DB
     ├─ Review Status
-    └─ Latest Review Seq
+    ├─ Latest Review
+    └─ Latest Review Seq (compatibility)
 ```
 
 ### Authority
@@ -432,12 +437,12 @@ Git authority:
 - severity / evidence / impact / repair direction
 - cycle Verdict
 
-Notion authorityではなくderived current view:
+Notion authorityではなくderived operational surface:
 
-- `Review Status`
-- `Latest Review Seq`
+- Investigations DB: `Review Status` / `Latest Review` / `Latest Review Seq`
+- Reviews DB: `Verdict` / artifact-level OK・NG / Highest Severity / Finding details / provenance
 
-NotionへFinding本文、Verdict、target SHA、pre/post SHAを複製しない。
+Reviews DBへのFinding本文・Verdict・target provenanceの表示は、Git canonical Review JSONからのdeterministic projectionとしてのみ許可する。Notion上の値をReview semantic authorityとして扱わず、Gitへreverse applyしない。pre/post SHA等の独立control-plane propertyは追加しない。
 
 ### Status contract
 
@@ -464,7 +469,56 @@ state transition / fail-stop / mutation planは `src/research_atelier/reviewing/
 - `repair_started` は実際にsame-Investigation repair phaseへ入った時だけWorkflow 00が発行する。
 - malformed / duplicate / incomplete Review history、target ahead / divergedはBLOCKEDとし、mutationを適用しない。
 - stale Reviewはcurrent targetのPass証明ではなく、reReview対象として扱う。
-- mutation適用後はInvestigation rowを再取得し、`Review Status / Latest Review Seq` がplanと一致することをverifyする。
+- mutation適用後はReviews rowとInvestigation rowを再取得し、Review projectionおよび `Review Status / Latest Review / Latest Review Seq` がplanと一致することをverifyする。
 
 このprojectionはReview semantic authorityのtransferではない。Notion rowはcurrent pointerであり、Git Review JSONがcanonical Review factのままである。
 
+
+
+## 17. Reviews DB projection contract / BKL-0032
+
+BKL-0032は、BKL-0027でdeferしていたReview DBを**human-facing operational projection**として採用する変更である。これはReviewをcore first-class domain entityへ昇格させる変更ではない。
+
+### Identity / authority
+
+- logical Review identity: `(Investigation ID, Review Seq)`
+- canonical authority: Git `investigations/<INV>/reviews/review-XXXXXX.json`
+- Notion Reviews row: canonical JSONから再構築可能なderived view
+- global `REV-NNNN`: 導入しない
+
+### Projection mapping
+
+| Git Review fact | Notion Reviews |
+| --- | --- |
+| `investigation_id` | `Investigation` relation + title |
+| `review_seq` | `Review Seq` |
+| deterministic `verdict` | `Verdict` |
+| Finding / transition | `00 Context / 10 Evidence / 20 Synthesis / 30 Analysis` OK/NG |
+| Finding severity | `Highest Severity` |
+| `reviewed_at` | `Reviewed At` |
+| assessment / Finding / repair direction / target provenance | Review page body |
+
+artifact-level OK/NGはmanual fieldではない。transition Findingと `repair_direction.affected_layer` からderiveする。
+
+### Human-facing body
+
+Review page bodyは `Summary -> Next Action — Quick Reference -> Review Details -> Provenance` の順でrenderする。
+
+Next Actionはcanonical Findingから導出する。
+
+- `new_investigation` が必要ならWorkflow 00へhandoffする。
+- same-Investigation repairは最上流のaffected layerからWorkflow 10をresumeし、現行 `10 -> 20 -> 30` invalidation ruleに従う。
+- frozen `00_context` のsame-Investigation repairはunsafeとしてfail-stopする。
+
+### Idempotence / failure
+
+canonical implementationは `src/research_atelier/projection/review.py`。
+
+- Investigation bindingはexactly one row必須。
+- logical Review identityはNotionで0または1 rowのみ許容する。
+- duplicate rowは自動mergeせずBLOCKED。
+- latest canonical Reviewに対応するrowが成立しない状態で `Latest Review` relationだけ更新しない。
+- 同一Git factsから再実行した場合、Review row追加や不要なpointer mutationを行わない。
+- Notion write失敗・projection driftはGit Review JSONを変更する根拠にしない。
+
+`Latest Review Seq` はmigration compatibilityのため当面保持する。human navigationには `Latest Review` relationを使う。
