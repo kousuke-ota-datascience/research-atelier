@@ -112,6 +112,7 @@ stateはcurrent artifactとvalidation resultから導出する。第二のauthor
 処理:
 
 - Workflow 10のcompletion conditionを確認する。
+- acceptance前Workflow 20が明示的prerequisiteなら、そのReviewを完了する。
 - current Investigationのanalysisをacceptする場合、projection contractを適用する。
 
 ### COMPLETE
@@ -191,8 +192,10 @@ Investigation `ID` に対して:
    - ERROR -> ERROR
 10. 全段階PASSならVALIDATED。
 11. acceptance前Workflow 20が明示的prerequisiteとして要求されている場合:
-   - Review未実施 / BLOCKED / STALE -> VALIDATEDのまま停止する。
-   - FINDINGS -> findingのrepair handoffを行い、affected stageを再評価する。
+   - Review未実施 -> VALIDATEDのままReview pendingとして停止する。
+   - BLOCKED -> state = BLOCKED。
+   - STALE -> VALIDATEDのままcurrent targetをfreezeし直してreReviewする。
+   - FINDINGS -> findingが示すearliest affected stageをsemantic INVALIDとしてrepair / reconstructする。
    - PASS -> finalizationへ進める。
    defaultではReviewを要求せず、このstepをskipする。
 12. current accepted `30_analysis` とRQ bodyの `# Working Answer` projection stateを確認する。
@@ -273,7 +276,7 @@ stateがVALIDATEDに到達したら:
 1. Workflow 10のcompletion conditionを確認する。
 2. pendingなknown Evidence / context changeがないことを確認する。
 3. acceptance前Workflow 20が明示的prerequisiteとして要求されている場合、`0020_semantic_review.md` に従いcurrent targetをReviewし、PASSであることを確認する。FINDINGS / STALE / BLOCKEDではfinal acceptanceへ進まない。
-4. current `30_analysis` を当該Investigationのaccepted resultとして扱う.
+4. current `30_analysis` を当該Investigationのaccepted resultとして扱う。
 5. `src/research_atelier/projection/working_answer.py` のdeterministic rendererでstructured `# Working Answer` sectionを生成する。
 6. RQ page bodyを取得し、`0006_notion_git_projection_contract.md` のsafe body update semanticsに従ってtarget sectionだけをcreate / replaceする。
 7. top-level `# Working Answer` が複数ならBLOCKEDとし、どれを更新するか推測しない。
