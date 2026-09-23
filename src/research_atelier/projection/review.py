@@ -235,7 +235,7 @@ def derive_next_action(review: Mapping[str, Any]) -> NextAction:
             workflow="Workflow 00",
             investigation=investigation_id,
             resume_from="new Investigation allocation",
-            action=_unique_instructions(new_investigation),
+            action=_unique_instructions(findings),
             do_not="Do not repair the frozen/accepted Investigation in place.",
             completion=(
                 "Allocate a new Investigation, build and validate its canonical chain, commit, "
