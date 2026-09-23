@@ -6,7 +6,8 @@ Research MVPでは、現時点で以下を必須実装しない。
 
 - Workflow 20をWorkflow 00のdefault completion gateとして必須化すること
 - Review Seq
-- review targetのcommit / blob SHA freeze
+- persistent Review JSON / Review専用Schema / writer
+- review target SHAを永続管理・同期するControl Plane
 - NotionへSHAを同期するControl Plane
 - Git ancestryを用いたreconciliation
 - persistent orchestration state machine
@@ -92,7 +93,7 @@ review中にcanonical artifactが更新された場合、old Review outcomeをne
 
 一方、Review Seq、persistent Review JSON、NotionへのSHA同期、Git ancestryを用いた自動staleness判定は引き続きdeferする。
 
-## 6. 将来導入する場合の責務分離
+## 6. Semantic Review / Control Planeの責務分離
 
 ### Semantic Review
 
@@ -138,11 +139,11 @@ review中にcanonical artifactが更新された場合、old Review outcomeをne
 
 ## 8. Conclusion
 
-Task 12 pilot後の判断は次のとおり。
+Task 12 pilot直後の判断は次のとおりだった。
 
-> **MVPではSemantic Review / SHA Control Plane高度化を導入しない。既存のversioning、invalidation、deterministic validation、Git optimistic concurrencyで運用を継続し、上記triggerが観測された時点で再評価する。**
+> **当時のMVPではSemantic Review / SHA Control Plane高度化を導入せず、既存のversioning、invalidation、deterministic validation、Git optimistic concurrencyで運用を継続する。**
 
-これにより、観測されていない問題に対する基盤を先行実装せず、必要になった機構だけを追加する。
+このhistorical decisionのうちSemantic Review部分は、BKL-0021により「未導入」から「optional Workflow 20を導入。ただしdefault mandatory gateではない」へamendした。persistent Review infrastructure / SHA Control Planeのdeferは継続する。
 
 
 ## 9. BKL-0021 amendment — optional Workflow 20
