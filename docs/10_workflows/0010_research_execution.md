@@ -91,7 +91,7 @@ RQ-specific judgmentとWorking Answerが初めてcanonicalになるstageであ�
 1. 対象Research Questionがhumanによって意味を定義・採択済みであり、「このRQを調査する」というresearch intentが成立していることを確認する。未採択の会話上の問いをWorkflow 10自身がcanonical RQとして生成しない。
 2. 対象InvestigationのNotion Investigations rowが存在し、new / resumeのregistry contractをWorkflow 00が満たしていることを確認する。既存Git Investigationでrowが欠落している場合はWorkflow 00のcontrolled backfillを先に行う。
 3. v2新規executionではInvestigation IDが `INV-NNNNNN` に従うことを確認する。既存v1 executionは `RQ-NNNN-vVVV` をlegacyとして維持する。
-4. Investigations rowのQuestion TypeがHuman / Researcherによって具体値へcommitされていることを確認する。nullならcanonical freeze / Source探索へ進まずBLOCKEDとする。同じdraft INV rowを保持し、Question Type確定だけを理由に別INVを採番しない。
+4. まだfrozen `00_context` を持たないnew / resume draftでは、Investigations rowのQuestion TypeがHuman / Researcherによって具体値へcommitされていることを確認する。nullならcanonical freeze / Source探索へ進まずBLOCKEDとする。同じdraft INV rowを保持し、Question Type確定だけを理由に別INVを採番しない。既にfrozen `00_context` があるresumeではGit Contextをauthorityとし、historical `question_type = null` ならbackfillせずWorkflow 00のhistorical compatibility branchへ戻す。
 5. 対象Research Questionの `rq_id` を解決する。
 6. v2ではInvestigation ID自体からRQを推定せず、Notion relationと `00_context.rq_id` でexactly one RQへbindする。
 7. 同じInvestigation IDがmaterially異なるexecutionへ既に使われていないことを確認する。
