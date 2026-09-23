@@ -22,6 +22,7 @@ semantic constructionでは、Human / Researcherがresearch intentとsemantic co
 
 - 採番済みの `Investigation_ID` 1件。v2例: `INV-000001`
 - 対応するNotion Research Question
+- 対応するNotion Investigations DB row（newではWorkflow 00が作成、resumeでは既存rowをreuse）
 - reusable Notion Sources / Evidence Notes catalogへのaccess
 
 ### Canonical output
@@ -86,30 +87,33 @@ RQ-specific judgmentとWorking Answerが初めてcanonicalになるstageであ�
 ### Step 0 — Preflight
 
 1. 対象Research Questionがhumanによって意味を定義・採択済みであり、「このRQを調査する」というresearch intentが成立していることを確認する。未採択の会話上の問いをWorkflow 10自身がcanonical RQとして生成しない。
-2. v2新規executionではInvestigation IDが `INV-NNNNNN` に従うことを確認する。既存v1 executionは `RQ-NNNN-vVVV` をlegacyとして維持する。
-3. 対象Research Questionの `rq_id` を解決する。
-4. v2ではInvestigation ID自体からRQを推定せず、`00_context.rq_id` でexactly one RQへbindする。
-5. 同じInvestigation IDがmaterially異なるexecutionへ既に使われていないことを確認する。
-6. authority、identity/lifecycle、artifact-chain、projection、profile contractを読む。
-7. 既存Investigation directoryがある場合、current artifact stageを確認してから書き込みを始める。
+2. 対象InvestigationのNotion Investigations rowが存在し、new / resumeのregistry contractをWorkflow 00が満たしていることを確認する。既存Git Investigationでrowが欠落している場合はWorkflow 00のcontrolled backfillを先に行う。
+3. v2新規executionではInvestigation IDが `INV-NNNNNN` に従うことを確認する。既存v1 executionは `RQ-NNNN-vVVV` をlegacyとして維持する。
+4. 対象Research Questionの `rq_id` を解決する。
+5. v2ではInvestigation ID自体からRQを推定せず、Notion relationと `00_context.rq_id` でexactly one RQへbindする。
+6. 同じInvestigation IDがmaterially異なるexecutionへ既に使われていないことを確認する。
+7. authority、identity/lifecycle、artifact-chain、projection、profile contractを読む。
+8. 既存Investigation directoryがある場合、current artifact stageを確認してから書き込みを始める。
 
 identity / RQ bindingがambiguousなら停止する。
 
 ### Step 1 — `00_context` の構築とfreeze
 
-1. projection contractで指定されたNotion RQ fieldをsnapshotする。
-2. 判明しているInvestigation-specific boundary / assumptionを追加する。
-3. unknownなScope / Significance / profile-relevant contextはnullまたは省略とし、defaultを捏造しない。
-4. freeze前に、intended research boundaryが十分明確になるまでdraftをrefineする。
-5. `context_state = frozen` と `frozen_at` を設定する。
-6. 以下を実行する。
+1. 対象Investigation IDに対応するNotion Investigations rowをexactly one解決し、`Research Question` relationが対象RQと一致することを確認する。duplicate / ambiguousなら停止する。
+2. Research Questions DBからprojection contractで指定されたRQ-level field（RQ ID、page URL、Question、optional Significance）をreadする。
+3. Investigations DB rowからQuestion Type / Scope / Include / Exclude / Evidence Cutoff / Assumptionsをreadする。
+4. unknownなScope / Significance / profile-relevant contextはnullまたは省略とし、defaultを捏造しない。
+5. freeze前はNotion Investigations rowをmutable Context input authorityとして、intended research boundaryが十分明確になるまでdraftをrefineする。draft `00_context` を一時materializeしても独立authorityにしない。
+6. RQ-level fieldとInvestigation rowをprojection contractに従って `00_context` へmaterializeし、`context_state = frozen` と `frozen_at` を設定する。
+7. 以下を実行する。
 
 ```bash
 python -m research_atelier.validation.validate_investigation <ID> --through 00
 ```
 
-7. FAIL / ERRORでは次へ進まない。
-8. `00_context.json` をcontext baselineとしてcommitする。
+8. FAIL / ERRORでは次へ進まない。
+9. `00_context.json` をcontext baselineとしてcommitする。
+10. commit後はGit `00_context` を当該Investigation Contextのcanonical authorityとする。Notion rowはoperational / derived representationとなり、その差分からhistorical `00_context` を書き換えない。
 
 以降、context-defining semantic changeには `0002_investigation_versioning.md` のlifecycle ruleを適用し、freeze後は新しいInvestigationを作る。
 
