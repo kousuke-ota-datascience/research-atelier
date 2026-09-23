@@ -23,7 +23,8 @@
 | 対象 | System / actor | 責務 | Authority |
 | --- | --- | --- | --- |
 | Research intent / semantic commitment | Human / Researcher | Research Questionの意味の定義・採択、調査実行の意図、Scope / assumptions / cutoff等の意味論的条件の決定・確認 | 「何を・どの意味で調べるか」のdecision authority |
-| Discovery、capture、reusable catalog、運用上のcurrent state | Notion | Research Topics、Research Questions、Sources、Evidence Notes、task state、運用metadata | mutableな運用状態とreusable catalog recordの正本 |
+| Discovery、capture、reusable catalog | Notion | Research Topics、Research Questions、Sources、Evidence Notes、task state | mutableなreusable catalog record / operational task stateの正本 |
+| Investigation operational representation | Notion Investigations DB | 1 Investigation = 1 row、explicit RQ binding、freeze前のQuestion Type / Scope / Include / Exclude / Evidence Cutoff / Assumptions、Review current pointer | freeze前のInvestigation Context inputとmutable operational stateの正本。freeze後のContext semantic authorityはGit `00_context`へ移る |
 | Frozen Investigation artifact | Git JSON | Investigation Context、Evidence snapshot、Synthesis、Analysis | 特定Investigationの正本 |
 | Semantic assistance / materialization | LLM | RQ wording整理、条件候補提示、Investigation Context / Evidence / Synthesis / Analysisのmaterialization支援 | semantic proposalを作れるが、RQのsemantic ownership、research intent、未確認conditionを単独で確定しない |
 | Investigation orchestration | Workflow 00 / deterministic system | accepted RQまたは既存Investigationを入口として、resume / new判定、INV ID採番、lifecycle / invalidation、accepted result projectionを管理 | execution identity / lifecycle / orchestrationのauthority。RQ semantic meaningのauthorityは持たない |
@@ -138,7 +139,9 @@ derived copyはprojection、snapshot、cache、renderingとしてのみ存在で
 ### Notion-authoritative
 
 - Research Topic catalogとmutable metadata
-- Research Question catalogとmutable operational metadata
+- Research Question catalogとmutable RQ-level metadata
+- Investigation rowのidentity / explicit RQ binding、およびfreeze前のQuestion Type / Scope / Include / Exclude / Evidence Cutoff / Assumptions
+- Investigation Reviewのcurrent operational pointer（Review Status / Latest Review Seq）
 - Source identityとbibliographic metadata
 - source-faithfulなreusable Evidence Note
 - Backlog / workflow statusなどのoperational current state
@@ -165,11 +168,13 @@ derived copyはprojection、snapshot、cache、renderingとしてのみ存在で
 
 ## Write-direction constraints
 
-1. Notion catalog dataは、frozen Git Investigation artifactへsnapshotしてよい。
-2. Git canonical analysisはNotionのoperational current stateへprojectionしてよいが、別のsync contractがauthority transferを明示しない限りderivedである。
-3. projectionにはsource Investigation identityを識別できるprovenanceを残す。
-4. 同一fieldをNotionとGitの双方でauthoritativeに手動管理してはならない。
-5. upstream canonical artifactが変更された場合、依存するdownstream artifactは再validationまたは再生成されるまでinvalidとする。
+1. freeze前はNotion Research QuestionのQuestion / provenance等とNotion Investigations rowのInvestigation-specific conditionを、Git `00_context` へsnapshotしてよい。
+2. `00_context` がfreezeされcommitされた後、そのInvestigation ContextのauthorityはGitへ移る。Notion Investigations rowを独立した第二のsemantic authorityとして編集してはならない。
+3. Git canonical analysisはNotionのoperational current stateへprojectionしてよいが、別のsync contractがauthority transferを明示しない限りderivedである。
+4. projection / backfillにはsource Investigation identityを識別できるprovenanceを残す。
+5. 既存InvestigationのNotion rowが欠落している場合、frozen Git `00_context` をauthorityとしてoperational rowをbackfillしてよい。current RQ metadataからhistorical conditionを逆算しない。
+6. 同一fieldをNotionとGitの双方でauthoritativeに手動管理してはならない。
+7. upstream canonical artifactが変更された場合、依存するdownstream artifactは再validationまたは再生成されるまでinvalidとする。
 
 ## docs/98_reusable_artifact の位置付け
 
