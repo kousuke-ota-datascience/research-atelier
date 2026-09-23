@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000016",
+  "review_seq": 2,
+  "layer": "10_evidence",
+  "review_kind": "source_evidence_note_to_10_evidence",
+  "target_blob_sha": "6c83df8bdbbe47674f87a739538b07649bedeaac",
+  "assessment": "18件のfrozen Evidenceは対応するNotion Evidence NoteとSource relationへtraceできる。Review 000001のF001で欠落していた移管そのものへの直接的な賛否について、既利用SourceのSRC-0107から賛成・反対請願集計と条件付き賛成、SRC-0097から青梅の750名規模反対集会、SRC-0095から神奈川県自由党大会・県会による境域復旧要求を追加し、知事の移管支持と地域・政治主体の反対をEvidence layerで直接区別できるようになった。追加Evidenceはいずれも既存Source boundary内であり、新規SourceによるContext拡張は行っていない。請願人数を住民全体の支持率とみなさないsupport boundaryも下流へ保持可能である。",
+  "findings": [],
+  "verdict": "PASS"
+}
