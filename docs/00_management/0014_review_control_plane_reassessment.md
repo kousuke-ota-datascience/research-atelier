@@ -4,9 +4,10 @@
 
 Research MVPでは、現時点で以下を必須実装しない。
 
-- independent Semantic Review workflow
+- Workflow 20をWorkflow 00のdefault completion gateとして必須化すること
 - Review Seq
-- review targetのcommit / blob SHA freeze
+- persistent Review JSON / Review専用Schema / writer
+- review target SHAを永続管理・同期するControl Plane
 - NotionへSHAを同期するControl Plane
 - Git ancestryを用いたreconciliation
 - persistent orchestration state machine
@@ -78,17 +79,21 @@ stale artifactのrisk自体は実在する。
 
 ## 5. Review target freeze評価
 
-MVPではindependent Semantic Review cycleそのものを必須化しないため、review target freezeも必須化しない。
+Workflow 20はBKL-0021でoptional workflowとしてcanonicalizeした。Workflow 20自体をdefault completion gateにはしない。
 
-将来Review workflowを導入する場合は、review対象を最低でも次で固定する。
+ただし、**Workflow 20を実際に実行する個別Reviewではtarget freezeをminimum contractとする。**
+
+最低でも次を固定する。
 
 - `investigation_id`
 - reviewed `30_analysis` を含むGit commit SHA、またはartifact blob SHA
 - review timestamp
 
-review中にcanonical artifactが更新された場合、old review verdictをnew artifactへ流用しない。
+review中にcanonical artifactが更新された場合、old Review outcomeをnew artifactへ流用しない。
 
-## 6. 将来導入する場合の責務分離
+一方、Review Seq、persistent Review JSON、NotionへのSHA同期、Git ancestryを用いた自動staleness判定は引き続きdeferする。
+
+## 6. Semantic Review / Control Planeの責務分離
 
 ### Semantic Review
 
@@ -134,8 +139,31 @@ review中にcanonical artifactが更新された場合、old review verdictをne
 
 ## 8. Conclusion
 
-Task 12 pilot後の判断は次のとおり。
+Task 12 pilot直後の判断は次のとおりだった。
 
-> **MVPではSemantic Review / SHA Control Plane高度化を導入しない。既存のversioning、invalidation、deterministic validation、Git optimistic concurrencyで運用を継続し、上記triggerが観測された時点で再評価する。**
+> **当時のMVPではSemantic Review / SHA Control Plane高度化を導入せず、既存のversioning、invalidation、deterministic validation、Git optimistic concurrencyで運用を継続する。**
 
-これにより、観測されていない問題に対する基盤を先行実装せず、必要になった機構だけを追加する。
+このhistorical decisionのうちSemantic Review部分は、BKL-0021により「未導入」から「optional Workflow 20を導入。ただしdefault mandatory gateではない」へamendした。persistent Review infrastructure / SHA Control Planeのdeferは継続する。
+
+
+## 9. BKL-0021 amendment — optional Workflow 20
+
+BKL-0021では `INV-000001` を対象にpilot Semantic Reviewを行った。詳細は `0015_semantic_review_pilot.md` を参照する。
+
+pilotでは、deterministic validationでは扱わないsemantic support boundaryに関するfindingを確認した。
+
+- Moderate: 1件
+- Minor: 2件
+- Major: 0件
+
+Review targetはInvestigation ID + commit / artifact blob SHAで一意に固定でき、repair / reReviewも既存invalidation / Investigation lifecycleへmappingできた。
+
+したがってTask 14 decisionを次のようにamendする。
+
+1. **optional independent Semantic ReviewとしてWorkflow 20 contractを導入する。**
+2. Workflow 20未実施だけを理由にWorkflow 00のVALIDATED / COMPLETEを阻害しない。
+3. Human / Workflow 00がacceptance前Reviewを明示的に要求した場合、そのexecutionではReview completionをprerequisiteとして扱う。
+4. Review Seq / persistent Review JSON / dedicated Review Schema / writer / SHA Control Planeは引き続きdeferする。
+5. mandatory Review gateへ昇格するのは、Majorまたはmaterially consequential semantic findingの反復、stale-target運用 failure、concurrency、regulated / high-stakes requirement等が観測された場合に再評価する。
+
+つまりBKL-0021は「Semantic Reviewは未導入」を**optional Workflow 20は存在する**へ更新するが、「全Investigationでmandatory」「persistent Review infrastructureを必須実装」というTask 14のdefer判断はsupersedeしない。

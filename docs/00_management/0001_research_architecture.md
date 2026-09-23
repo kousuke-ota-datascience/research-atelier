@@ -28,6 +28,7 @@
 | Semantic assistance / materialization | LLM | RQ wording整理、条件候補提示、Investigation Context / Evidence / Synthesis / Analysisのmaterialization支援 | semantic proposalを作れるが、RQのsemantic ownership、research intent、未確認conditionを単独で確定しない |
 | Investigation orchestration | Workflow 00 / deterministic system | accepted RQまたは既存Investigationを入口として、resume / new判定、INV ID採番、lifecycle / invalidation、accepted result projectionを管理 | execution identity / lifecycle / orchestrationのauthority。RQ semantic meaningのauthorityは持たない |
 | Investigation execution | Workflow 10 | frozen Investigation Contextの下でSource discovery、Evidence capture / selection、Synthesis、Analysisを順序立てて実行 | canonical execution procedureのauthority。Research Questionの作成・採択は責務外 |
+| Independent semantic assessment | Workflow 20 | committed Investigation artifactについてEvidence-faithfulness、Synthesisのsupport境界、Question Type固有analysis、Working Answer / limitation等を独立評価 | optional semantic assessmentのprocedure authority。RQ semantic meaning、canonical artifact repair、deterministic validation、Control Planeのauthorityは持たない |
 | 構造契約 | JSON Schema | 許可構造、required、type、enum、conditional structure | artifact structureの正本契約 |
 | Deterministic enforcement | Python | schema、reference、ID、version/path、その他機械判定可能なinvariantの検査 | machine-checkable ruleの実行正本 |
 
@@ -69,7 +70,10 @@ Research Atelierは、Research Questionを生成するworkflowではない。can
 - LLMはQuestion wordingの整理、候補提示、artifact materializationを支援できるが、human-ownedなsemantic commitmentを暗黙に確定しない。
 - Workflow 00はaccepted RQからInvestigationをorchestrateし、resume / new、ID、lifecycle、invalidation、final projectionを管理する。
 - Workflow 10はInvestigation executionを担当し、Research Questionの作成・採択を行わない。
+- Workflow 20は、明示的に起動された場合にInvestigationのsemantic correctnessを独立評価するoptional workflowである。findingは記録するが、Research Questionを再定義せず、reviewer自身がcanonical artifactを直接repairしない。
 - deterministic systemはmachine-checkableなstate / identity / validationを管理し、semantic research intentを推測しない。
+
+BKL-0021時点ではWorkflow 20をWorkflow 00のdefault completion gateにしない。Review未実施だけを理由にVALIDATED / COMPLETEを阻害しない。mandatory化する場合はTask 14のdecisionとWorkflow 00 state contractを明示的に改訂する。
 
 Task 17が定義するのはRQ / Investigation / Investigation Contextの**domain model**であり、本節が定義するのはactor responsibility / workflow entrance / execution authorityである。両者を混同しない。
 
@@ -188,6 +192,7 @@ Human        = research intent / semantic commitments
 Notion       = operational state / reusable catalog
 Workflow 00  = Investigation orchestration / lifecycle / projection
 Workflow 10  = canonical Investigation execution procedure
+Workflow 20  = optional independent semantic assessment
 Git JSON     = frozen canonical artifact
 LLM          = semantic assistance / materialization
 JSON Schema  = structure contract
