@@ -152,6 +152,18 @@ class ReviewContractTest(unittest.TestCase):
         self.assertEqual(result.outcome, "UPDATE")
         self.assertEqual(result.changes["Review Status"], "レビュー待")
 
+    def test_ineligible_review_request_becomes_not_applicable(self) -> None:
+        result = reconcile_review_state(
+            current_status="レビュー待",
+            current_latest_review_seq=None,
+            latest_review=None,
+            target_relation="missing",
+            review_requested=True,
+            review_eligible=False,
+        )
+        self.assertEqual(result.outcome, "UPDATE")
+        self.assertEqual(result.changes, {"Review Status": "－（対象外）"})
+
     def test_pass_becomes_complete(self) -> None:
         record = self._save()
         result = reconcile_review_state(
