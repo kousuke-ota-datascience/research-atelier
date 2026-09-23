@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "report_type": "projection_log",
+  "target_rq_url": "https://app.notion.com/p/3e3e5855be3981d49b07df18e5cbd82b",
+  "rq_id": "RQ-0021",
+  "source_investigation_id": "INV-000017",
+  "source_30_analysis_commit_sha": "f360f02ca356652da91c645a956df42053f571ce",
+  "projection_timestamp": "2026-09-23T08:08:25.304Z",
+  "projection_target": {
+    "surface": "page_body",
+    "section_heading": "# Working Answer"
+  },
+  "result": "SUCCESS",
+  "note": "User-requested reinvestigation completed from a new Descriptive freeze. Audited Sources/Evidence Notes were reselected under the new Investigation; unresolved 1873/1886/1892 primary-text gaps remain explicit. Workflow 20 semantic review was not a prerequisite; accepted 30_analysis was projected after through-30 deterministic schema and lineage checks."
+}
