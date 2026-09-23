@@ -25,6 +25,22 @@ class ReviewReconcileResult:
     summary: str
 
 
+def derive_review_eligibility(
+    context: Mapping[str, Any] | None,
+) -> tuple[bool | None, tuple[str, ...]]:
+    """Derive Review eligibility from the frozen canonical Context.
+
+    The adapter owns this derivation. Missing Context is unresolved rather than
+    implicitly eligible, preventing caller omission from reopening historical
+    null-Question-Type Investigations to Review.
+    """
+    if context is None:
+        return None, ("review_eligibility_context_missing",)
+    if context.get("context_state") != "frozen":
+        return None, ("review_eligibility_context_not_frozen",)
+    return context.get("question_type") is not None, ()
+
+
 def reconcile_review_state(
     *,
     current_status: str | None,
@@ -34,7 +50,7 @@ def reconcile_review_state(
     target_relation: str = "missing",
     review_requested: bool = False,
     review_not_applicable: bool = False,
-    review_eligible: bool = True,
+    review_eligible: bool | None = None,
     repair_started: bool = False,
 ) -> ReviewReconcileResult:
     """Derive only Review Status / Latest Review Seq; never mutate semantic content."""
@@ -45,10 +61,11 @@ def reconcile_review_state(
     if target_relation not in SAFE_RELATIONS:
         issues.append(f"unknown_target_relation:{target_relation}")
 
-    # Historical compatibility: an Investigation whose frozen Context lacks a
-    # Question Type is not semantically reviewable. Eligibility overrides an
-    # explicit request so connector/UI requests cannot move it back to waiting.
-    if not review_eligible:
+    # Historical compatibility: eligibility must be deterministically resolved
+    # from the frozen 00_context by the adapter. Omission is unsafe and blocks.
+    if review_eligible is None:
+        issues.append("review_eligibility_unresolved")
+    elif not review_eligible:
         review_requested = False
         review_not_applicable = True
 
@@ -142,16 +159,18 @@ def reconcile_payload(payload: Mapping[str, Any]) -> dict[str, Any]:
     current = dict(payload.get("current") or {})
     review = dict(payload.get("review") or {})
     events = dict(payload.get("events") or {})
-    eligibility = dict(payload.get("eligibility") or {})
+    context_value = payload.get("context")
+    context = dict(context_value) if isinstance(context_value, Mapping) else None
+    review_eligible, eligibility_issues = derive_review_eligibility(context)
     result = reconcile_review_state(
         current_status=current.get("review_status"),
         current_latest_review_seq=current.get("latest_review_seq"),
         latest_review=review.get("latest"),
-        history_issues=tuple(review.get("issues") or ()),
+        history_issues=tuple(review.get("issues") or ()) + eligibility_issues,
         target_relation=str(review.get("target_relation") or "missing"),
         review_requested=bool(events.get("review_requested", False)),
         review_not_applicable=bool(events.get("review_not_applicable", False)),
-        review_eligible=bool(eligibility.get("review_eligible", True)),
+        review_eligible=review_eligible,
         repair_started=bool(events.get("repair_started", False)),
     )
     return {
