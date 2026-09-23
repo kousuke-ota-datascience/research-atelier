@@ -1,0 +1,151 @@
+"""Deterministic reconciliation of Git Review facts to Investigation Review pointers."""
+
+from __future__ import annotations
+
+from dataclasses import dataclass
+from typing import Any, Mapping
+
+REVIEW_STATUSES = (
+    "未",
+    "レビュー待",
+    "要修正",
+    "再作業中",
+    "再レビュー待",
+    "完了",
+    "－（対象外）",
+)
+SAFE_RELATIONS = ("exact", "stale", "ahead", "diverged", "missing")
+
+
+@dataclass(frozen=True)
+class ReviewReconcileResult:
+    outcome: str  # NOOP | UPDATE | BLOCKED
+    changes: Mapping[str, Any]
+    issues: tuple[str, ...]
+    summary: str
+
+
+def reconcile_review_state(
+    *,
+    current_status: str | None,
+    current_latest_review_seq: int | None,
+    latest_review: Mapping[str, Any] | None,
+    history_issues: tuple[str, ...] = (),
+    target_relation: str = "missing",
+    review_requested: bool = False,
+    review_not_applicable: bool = False,
+    repair_started: bool = False,
+) -> ReviewReconcileResult:
+    """Derive only Review Status / Latest Review Seq; never mutate semantic content."""
+    issues: list[str] = list(history_issues)
+    status = current_status or "未"
+    if status not in REVIEW_STATUSES:
+        issues.append(f"unknown_review_status:{status}")
+    if target_relation not in SAFE_RELATIONS:
+        issues.append(f"unknown_target_relation:{target_relation}")
+    if review_requested and review_not_applicable:
+        issues.append("conflicting_review_events")
+    if issues:
+        return ReviewReconcileResult("BLOCKED", {}, tuple(sorted(set(issues))), "unsafe Review state")
+
+    desired_status = status
+    desired_seq = current_latest_review_seq
+
+    if review_not_applicable:
+        if latest_review is not None or repair_started:
+            return ReviewReconcileResult(
+                "BLOCKED", {}, ("not_applicable_conflicts_with_review_history",), "unsafe Review state"
+            )
+        desired_status = "－（対象外）"
+        desired_seq = None
+
+    elif latest_review is None:
+        if repair_started:
+            return ReviewReconcileResult(
+                "BLOCKED", {}, ("repair_start_without_review",), "unsafe Review state"
+            )
+        if review_requested:
+            if target_relation not in {"exact", "missing"}:
+                return ReviewReconcileResult(
+                    "BLOCKED", {}, ("review_request_target_not_ready",), "unsafe Review state"
+                )
+            desired_status = "レビュー待"
+            desired_seq = None
+        elif status not in {"未", "－（対象外）", "レビュー待"}:
+            return ReviewReconcileResult(
+                "BLOCKED", {}, ("status_requires_review_history",), "unsafe Review state"
+            )
+
+    else:
+        seq = latest_review.get("review_seq")
+        verdict = latest_review.get("verdict")
+        if not isinstance(seq, int) or seq < 1:
+            return ReviewReconcileResult(
+                "BLOCKED", {}, ("invalid_latest_review_seq",), "unsafe Review state"
+            )
+        if verdict not in {"PASS", "FINDINGS"}:
+            return ReviewReconcileResult(
+                "BLOCKED", {}, ("invalid_latest_review_verdict",), "unsafe Review state"
+            )
+        desired_seq = seq
+
+        if target_relation == "exact":
+            if verdict == "PASS":
+                if repair_started:
+                    return ReviewReconcileResult(
+                        "BLOCKED", {}, ("repair_start_after_pass",), "unsafe Review state"
+                    )
+                desired_status = "完了"
+            else:
+                if repair_started or status == "再作業中":
+                    desired_status = "再作業中"
+                else:
+                    desired_status = "要修正"
+
+        elif target_relation == "stale":
+            if repair_started:
+                return ReviewReconcileResult(
+                    "BLOCKED", {}, ("repair_start_on_stale_review",), "unsafe Review state"
+                )
+            desired_status = "再レビュー待"
+
+        else:
+            return ReviewReconcileResult(
+                "BLOCKED",
+                {},
+                (f"unsafe_review_target_relation:{target_relation}",),
+                "unsafe Review target relation",
+            )
+
+    changes: dict[str, Any] = {}
+    if desired_status != status:
+        changes["Review Status"] = desired_status
+    if desired_seq != current_latest_review_seq:
+        changes["Latest Review Seq"] = desired_seq
+
+    if changes:
+        return ReviewReconcileResult("UPDATE", changes, (), "Review current state requires synchronization")
+    return ReviewReconcileResult("NOOP", {}, (), "Review current state already matches canonical facts")
+
+
+def reconcile_payload(payload: Mapping[str, Any]) -> dict[str, Any]:
+    """JSON-friendly adapter used by connector-driven Workflow 00/20 orchestration."""
+    current = dict(payload.get("current") or {})
+    review = dict(payload.get("review") or {})
+    events = dict(payload.get("events") or {})
+    result = reconcile_review_state(
+        current_status=current.get("review_status"),
+        current_latest_review_seq=current.get("latest_review_seq"),
+        latest_review=review.get("latest"),
+        history_issues=tuple(review.get("issues") or ()),
+        target_relation=str(review.get("target_relation") or "missing"),
+        review_requested=bool(events.get("review_requested", False)),
+        review_not_applicable=bool(events.get("review_not_applicable", False)),
+        repair_started=bool(events.get("repair_started", False)),
+    )
+    return {
+        "outcome": result.outcome,
+        "changes": dict(result.changes),
+        "issues": list(result.issues),
+        "summary": result.summary,
+    }
