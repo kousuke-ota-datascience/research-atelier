@@ -163,6 +163,64 @@ class ReviewContractTest(unittest.TestCase):
         )
         self.assertTrue(history.issues)
 
+    def test_legacy_seq1_and_split_seq2_load_as_one_history(self) -> None:
+        legacy_source = (
+            REPO_ROOT
+            / "investigations"
+            / "INV-000015"
+            / "reviews"
+            / "review-000001.json"
+        )
+        legacy = json.loads(legacy_source.read_text(encoding="utf-8"))
+        self.review_dir.mkdir(parents=True)
+        (self.review_dir / "review-000001.json").write_text(
+            json.dumps(legacy, ensure_ascii=False, indent=2) + "\n",
+            encoding="utf-8",
+        )
+
+        prepared = prepare_review_cycle(
+            "INV-000015",
+            review_dir=self.review_dir,
+            schema_path=SCHEMA,
+            target_commit_sha=legacy["target"]["commit_sha"],
+            artifact_blob_shas=legacy["target"]["artifact_blob_shas"],
+        )
+        self.assertEqual(prepared.review_seq, 2)
+        save_review_cycle(
+            prepared,
+            reviewed_at="2026-09-23T06:00:00Z",
+            layer_bodies=PASS_LAYERS,
+            current_target_commit_sha=legacy["target"]["commit_sha"],
+            current_artifact_blob_shas=legacy["target"]["artifact_blob_shas"],
+            review_dir=self.review_dir,
+            schema_path=SCHEMA,
+        )
+        history = load_review_history(
+            "INV-000015",
+            review_dir=self.review_dir,
+            schema_path=SCHEMA,
+        )
+        self.assertEqual(history.issues, ())
+        self.assertEqual(
+            [record["storage_format"] for record in history.records],
+            ["legacy_single", "split_v2"],
+        )
+
+    def test_orphan_split_layer_blocks_history(self) -> None:
+        self.review_dir.mkdir(parents=True)
+        (self.review_dir / "review_00_000001.json").write_text(
+            "{}\n",
+            encoding="utf-8",
+        )
+        history = load_review_history(
+            INVESTIGATION_ID,
+            review_dir=self.review_dir,
+            schema_path=SCHEMA,
+        )
+        self.assertTrue(
+            any(issue.startswith("orphan_review_layer:") for issue in history.issues)
+        )
+
     def test_initial_request_becomes_review_waiting(self) -> None:
         result = reconcile_review_state(
             current_status="未",
