@@ -1,0 +1,57 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review",
+  "investigation_id": "INV-000015",
+  "review_seq": 1,
+  "target": {
+    "commit_sha": "80fa48a27a4367c21926bd53344536545b41dde1",
+    "artifact_blob_shas": {
+      "00_context": "ba394ad6150a18376b9977246f7b59b55bf39235",
+      "10_evidence": "87972f0dc8e84b61e0bf8bf9ef4ba40509023cda",
+      "20_synthesis": "79c31423a205028cb3ccc7b25401b5e02b10fc61",
+      "30_analysis": "268cf993140e01795359012346205ef432da17fc"
+    }
+  },
+  "reviewed_at": "2026-09-23T04:26:08.520667Z",
+  "transitions": [
+    {
+      "transition": "source_evidence_note_to_10_evidence",
+      "target_artifact": "10_evidence",
+      "target_blob_sha": "87972f0dc8e84b61e0bf8bf9ef4ba40509023cda",
+      "assessment": "All 19 frozen evidence items resolve to the stated Notion Evidence Notes and Sources, and the Evidence text/location/type are preserved without material semantic drift. Independent checks of the accessible municipal histories, NDL exhibit, J-STAGE abstract, and official archive text support the selected claims. Primary-source-image limitations are already represented as provenance/uncertainty rather than silently upgraded.",
+      "findings": []
+    },
+    {
+      "transition": "10_evidence_to_20_synthesis",
+      "target_artifact": "20_synthesis",
+      "target_blob_sha": "79c31423a205028cb3ccc7b25401b5e02b10fc61",
+      "assessment": "Knowledge units remain traceable to the frozen Evidence set, keep source-level qualifications, separate local election results from nationwide effectiveness analysis, and explicitly preserve uncertainty around original-document inspection, local effect size, participant responsibility, public reception, and the later Tama transfer. No unsupported synthesis-level proposition requiring repair was identified.",
+      "findings": []
+    },
+    {
+      "transition": "20_synthesis_plus_00_context_to_30_analysis",
+      "target_artifact": "30_analysis",
+      "target_blob_sha": "268cf993140e01795359012346205ef432da17fc",
+      "assessment": "The Descriptive analysis is broadly aligned with the frozen scope and uses the synthesis rather than asserting causal effects. It preserves limitations on election-interference effects, leadership responsibility, and the 1893 Tama transfer. One minor no-bypass defect remains in the opening Working Answer wording.",
+      "findings": [
+        {
+          "finding_id": "F001",
+          "severity": "Minor",
+          "target": "30_analysis.working_answer",
+          "evidence": [
+            "30_analysis.working_answer",
+            "20_synthesis:K0001",
+            "10_evidence:E0001"
+          ],
+          "impact": "The opening phrase characterizes the earlier movement specifically as centered on local associations, speeches, and study. Those details are present in the external Machida source, but they are not frozen at that specificity in E0001 or K0001. This introduces a small Source-to-Analysis bypass and weakens canonical lineage for that wording, although it does not change the main conclusion.",
+          "repair_direction": {
+            "mode": "same_investigation",
+            "affected_layer": "30_analysis",
+            "instruction": "Narrow the opening wording to the content represented in K0001/K0002 (for example, regional freedom-and-rights activity and organization leading into Liberal Party participation), or first add the specific associations/speeches/study content through the canonical Evidence and Synthesis layers before using it in the Working Answer."
+          }
+        }
+      ]
+    }
+  ],
+  "verdict": "FINDINGS"
+}
