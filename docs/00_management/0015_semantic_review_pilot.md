@@ -29,7 +29,9 @@ Review中にtargetを読み替えていない。
 
 canonical chain 4 artifactはGit上に存在し、同じ `investigation_id = INV-000001` / `rq_id = RQ-0010` を持つ。
 
-このpilotではrepository runtimeをlocal実行していないため、`validate_investigation --through 30` を再実行したという主張はしない。既存canonical workflowで生成・commit済みのartifactをReview対象とし、BKL-0021ではsemantic assessmentに集中した。
+このpilotではreview対象Investigation artifactを変更しておらず、Workflow 10で成立したcanonical chainへのsemantic assessmentを目的としたため、`validate_investigation --through 30` の再実行は不要と判断した。
+
+Workflow 20の開始条件は、毎回CLIを再実行することではなく、対象chainがdeterministically validなcanonical targetとして扱えることである。再validationはtarget artifact / applicable validation contractの変更、known invalidation、validity不明、repair後のnew target等がある場合に行う。
 
 provenance確認:
 
