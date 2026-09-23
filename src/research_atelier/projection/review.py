@@ -277,7 +277,7 @@ def derive_next_action(review: Mapping[str, Any]) -> NextAction:
         resume_from=resume_from,
         action=_unique_instructions(same_investigation),
         do_not=do_not,
-        completion="through-30 PASS -> commit -> Workflow 20 re-review.",
+        completion="through-30 PASS → commit → Workflow 20 re-review.",
     )
 
 
