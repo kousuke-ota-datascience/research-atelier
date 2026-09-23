@@ -333,7 +333,35 @@ accepted Investigationであること自体はnew Investigation triggerではな
 
 Workflow 20の `repair_direction.mode` はversioning contractを迂回して独立executionを新設する権限ではない。Workflow 00はrepair handoff時に `src/research_atelier/orchestration/investigation_allocation.py` のallocation guardを適用し、Context-defining semantic differenceまたはHumanのexplicit independent execution intentがある場合だけnew Investigationへhandoffする。
 
-repair後は新しいtarget SHA / blobをfreezeし、old Review outcomeを流用せずreReviewする。
+### Valid new-Investigation handoff completion
+
+`repair_direction.mode = new_investigation` はhandoff requestであってhandoff completionではない。旧InvestigationのReview lifecycleをterminalへ移すには、次をすべて満たす。
+
+1. source latest ReviewのVerdictが `FINDINGS` で、少なくとも1 Findingが `new_investigation` を要求している。
+2. BKL-0035 allocation guardのmachine-readable decisionが `allocate_new` で、source Investigationを明示している。
+3. successor Investigationがpersist済みである。
+4. successorがsourceのexpected RQへexactly one relationでbindされている。
+5. source Reviewの全Findingをsuccessorへhandoffするprovenanceがappend-onlyで保存されている。
+
+canonical handoff artifact:
+
+```text
+investigations/<source Investigation ID>/reviews/
+  handoff-<Review Seq>.json
+```
+
+schema / implementation:
+
+- `schemas/v2/review_handoff.schema.json`
+- `src/research_atelier/reviewing/handoff.py`
+
+最低限のprovenanceは `source_investigation_id / source_review_seq / source_rq_id / finding_ids / handoff_mode / successor_investigation_id / successor_rq_binding / versioning_decision / handoff_at` を持つ。Review manifest / layer JSONへhandoff結果を追記せず、source ReviewのVerdictは `FINDINGS` のままimmutableに保つ。
+
+handoff artifactを保存・再読込・validationした後にだけWorkflow 00は `new_investigation_handoff_completed` eventをreconcilerへ渡す。これによりsource Investigationの `Review Status` は `要修正 -> 引継済` へ遷移する。`引継済` は「Review PASS」ではなく「FINDINGSのrepair responsibilityをvalid successorへ移譲済み」を意味する。allocation / persistence / RQ binding / provenance validationが失敗した場合はterminalへ遷移しない。
+
+同じfactsでのrerunでは既存handoff artifactをreuseし、同じReview Seqに2つ目のhandoff recordやsuccessorを生成しない。既存recordと新candidateが矛盾する場合は推測で上書きせずBLOCKEDとする。
+
+repair後は新しいtarget SHA / blobをfreezeし、old Review outcomeを流用せずreReviewする。same-Investigation repair pathは従来どおり `要修正 -> 再作業中 -> 再レビュー待` を使い、本handoff terminal stateを使用しない。
 
 ## 11. Workflow 00 / 10との関係
 
