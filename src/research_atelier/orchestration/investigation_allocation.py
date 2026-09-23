@@ -217,18 +217,6 @@ def decide_investigation_allocation(
             }
         )
 
-    if issues:
-        return AllocationDecision(
-            decision="blocked",
-            selected_existing_investigation=existing_investigation_id,
-            new_investigation_allocated=False,
-            semantic_differences=tuple(differences),
-            explicit_new_execution_intent=explicit_new,
-            intent=intent,
-            reason_codes=("semantic_difference_unresolved",),
-            issues=tuple(sorted(set(issues))),
-        )
-
     material_differences = [item for item in differences if item["material"]]
 
     if explicit_new:
@@ -253,6 +241,18 @@ def decide_investigation_allocation(
             intent=intent,
             reason_codes=("material_semantic_difference",),
             issues=(),
+        )
+
+    if issues:
+        return AllocationDecision(
+            decision="blocked",
+            selected_existing_investigation=existing_investigation_id,
+            new_investigation_allocated=False,
+            semantic_differences=tuple(differences),
+            explicit_new_execution_intent=False,
+            intent=intent,
+            reason_codes=("semantic_difference_unresolved",),
+            issues=tuple(sorted(set(issues))),
         )
 
     if intent == "semantic_reinvestigation":
@@ -295,7 +295,7 @@ def decide_investigation_allocation_payload(
         dict(requested_value) if isinstance(requested_value, Mapping) else None
     )
     evidence_change = payload.get("evidence_population_changed")
-    if evidence_change not in {None, True, False}:
+    if not (evidence_change is None or isinstance(evidence_change, bool)):
         return AllocationDecision(
             decision="blocked",
             selected_existing_investigation=existing.get("investigation_id"),
