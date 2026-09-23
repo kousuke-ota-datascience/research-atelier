@@ -10,10 +10,13 @@ Workflow 00は、1つのResearch Investigation全体を統括するtop-level orc
 - 安全に再開できる最も早い地点
 - upstream変更後にdownstream artifactがstaleかどうか
 - Workflow 10をいつ実行するか
+- optional Workflow 20を明示的に要求するか
 - Investigationをいつfinalizeできるか
 - Git -> NotionのWorking Answer projectionを適用すべきか
 
 Workflow 00自身は、Source discovery、Evidence selection、Synthesis、Analysisの意味論を再実装しない。これらはWorkflow 10の責務である。
+
+independent Semantic Reviewを実行する場合、その意味論的assessmentはWorkflow 20へ委譲する。Workflow 00自身がReviewerにならない。
 
 JSON Schemaやlineage validationも再実装しない。deterministic validatorへ委譲する。
 
@@ -122,6 +125,8 @@ stateはcurrent artifactとvalidation resultから導出する。第二のauthor
 - 対応するNotion Research Question bodyのunique `# Working Answer` sectionがcurrent accepted `30_analysis` のdeterministic renderingと一致している。
 - legacy `Research Questions.Working Answer` propertyの値はCOMPLETE判定へ使用しない。
 - unappliedなknown upstream changeがない。
+- defaultではWorkflow 20未実施をCOMPLETE阻害条件にしない。
+- acceptance前Workflow 20が明示的prerequisiteとして要求された場合は、そのReviewが未完了またはcurrent targetにunresolved findingを持つ間はCOMPLETEにしない。
 
 Workflow 00を再実行した場合、COMPLETEを認識しcanonical artifactを不要に書き換えない。
 
@@ -185,12 +190,17 @@ Investigation `ID` に対して:
    - FAIL -> reportされたearliest stageでINVALID
    - ERROR -> ERROR
 10. 全段階PASSならVALIDATED。
-11. current accepted `30_analysis` とRQ bodyの `# Working Answer` projection stateを確認する。
+11. acceptance前Workflow 20が明示的prerequisiteとして要求されている場合:
+   - Review未実施 / BLOCKED / STALE -> VALIDATEDのまま停止する。
+   - FINDINGS -> findingのrepair handoffを行い、affected stageを再評価する。
+   - PASS -> finalizationへ進める。
+   defaultではReviewを要求せず、このstepをskipする。
+12. current accepted `30_analysis` とRQ bodyの `# Working Answer` projection stateを確認する。
    - unique sectionがdeterministic renderingと一致する = CURRENT -> COMPLETE
    - section missing = MISSING -> finalize / project
    - unique sectionが異なる = STALE -> body sectionだけをreproject
    - target headingが複数 = BLOCKED -> bodyを推測更新しない
-12. MISSING / STALEをprojectした場合、RQ pageを再取得してCURRENTを確認してからCOMPLETEとする。write / verification failureではVALIDATEDのままとする。
+13. MISSING / STALEをprojectした場合、RQ pageを再取得してCURRENTを確認してからCOMPLETEとする。write / verification failureではVALIDATEDのままとする。
 
 legacy `Research Questions.Working Answer` propertyのempty / legacy / stale valueはこのstate derivationへ参加しない。
 
@@ -262,35 +272,41 @@ stateがVALIDATEDに到達したら:
 
 1. Workflow 10のcompletion conditionを確認する。
 2. pendingなknown Evidence / context changeがないことを確認する。
-3. current `30_analysis` を当該Investigationのaccepted resultとして扱う。
-4. `src/research_atelier/projection/working_answer.py` のdeterministic rendererでstructured `# Working Answer` sectionを生成する。
-5. RQ page bodyを取得し、`0006_notion_git_projection_contract.md` のsafe body update semanticsに従ってtarget sectionだけをcreate / replaceする。
-6. top-level `# Working Answer` が複数ならBLOCKEDとし、どれを更新するか推測しない。
-7. Notion write後にRQ pageを再取得し、body sectionがcurrent accepted renderingと一致することを確認する。
-8. target RQ、RQ ID、Investigation ID、accepted `30_analysis` commit SHA、timestamp、body target、success / failureを `projection_log_v2.json` としてlogする。historical `projection_log.json` はrewriteしない。
-9. verification成功後、state = COMPLETE。
-10. projection write / verification失敗時はGitがauthorityのまま、成功するまでstate = VALIDATED。
+3. acceptance前Workflow 20が明示的prerequisiteとして要求されている場合、`0020_semantic_review.md` に従いcurrent targetをReviewし、PASSであることを確認する。FINDINGS / STALE / BLOCKEDではfinal acceptanceへ進まない。
+4. current `30_analysis` を当該Investigationのaccepted resultとして扱う.
+5. `src/research_atelier/projection/working_answer.py` のdeterministic rendererでstructured `# Working Answer` sectionを生成する。
+6. RQ page bodyを取得し、`0006_notion_git_projection_contract.md` のsafe body update semanticsに従ってtarget sectionだけをcreate / replaceする。
+7. top-level `# Working Answer` が複数ならBLOCKEDとし、どれを更新するか推測しない。
+8. Notion write後にRQ pageを再取得し、body sectionがcurrent accepted renderingと一致することを確認する。
+9. target RQ、RQ ID、Investigation ID、accepted `30_analysis` commit SHA、timestamp、body target、success / failureを `projection_log_v2.json` としてlogする。historical `projection_log.json` はrewriteしない。
+10. verification成功後、state = COMPLETE。
+11. projection write / verification失敗時はGitがauthorityのまま、成功するまでstate = VALIDATED。
 
 legacy `Research Questions.Working Answer` propertyは削除しないが、projection targetへdual-writeせずCOMPLETE判定にも使用しない。
 
 projectionはnarrowに保つ。Workflow 00はGitから他のNotion DB全体をsyncしない。
 
-## 8. MVPで必須にしないもの
+## 8. Optional Workflow 20 / MVPで必須にしないもの
 
-MVPでは以下を必須としない。
+Workflow 20はoptional independent Semantic Reviewとして `0020_semantic_review.md` に定義する。
 
-- independent semantic Review workflow
+default運用ではReview未実施をCOMPLETE阻害条件にしない。Reviewを実行する場合は、targetをInvestigation ID + commit / artifact blob SHA + timestampで固定する。
+
+一方、MVPでは以下を必須としない。
+
+- Workflow 20を全Investigationのdefault completion gateにすること
 - Review sequence number
-- review-target SHA freeze
+- persistent Review JSON / dedicated Review Schema / writer
+- persistent review-target SHA control plane
 - Git ancestry control-plane logic
 - NotionへのSHA synchronization
 - persistent orchestration state machine
 - automatic Notion Status change
 - Workflow 90型のcontrol-plane reconciliation
 
-E2E pilotで具体的な必要性が確認された場合のみ後から導入する。
+BKL-0021 pilotではoptional Semantic Reviewの有用性は確認したが、mandatory gate / persistent Review infrastructureを正当化する反復failureは観測していない。
 
-通常のGit commitはprovenanceとして残すが、専用SHA control planeをCOMPLETEの前提にはしない。
+通常のGit commitはprovenanceとして残すが、専用SHA control planeをdefault COMPLETEの前提にはしない。
 
 ## 9. Completion report
 
@@ -302,6 +318,7 @@ Workflow 00の実行結果では少なくとも以下を報告する。
 - latest deterministic validation result
 - invalidated downstream artifactの有無
 - Working Answer body projection state: MISSING / STALE / CURRENT / BLOCKED
+- Workflow 20を明示的に実行した場合のみReview outcome: PASS / FINDINGS / STALE / BLOCKED
 - BLOCKED / ERROR時のdetail
 
 ## 10. Invariant
