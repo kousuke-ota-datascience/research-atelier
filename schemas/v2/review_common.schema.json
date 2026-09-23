@@ -9,20 +9,55 @@
     },
     "severity": {
       "type": "string",
-      "enum": ["Minor", "Moderate", "Major"]
+      "enum": [
+        "Minor",
+        "Moderate",
+        "Major"
+      ]
     },
     "affected_layer": {
       "type": "string",
-      "enum": ["00_context", "10_evidence", "20_synthesis", "30_analysis"]
+      "enum": [
+        "00_context",
+        "10_evidence",
+        "20_synthesis",
+        "30_analysis"
+      ]
     },
     "repair_mode": {
       "type": "string",
-      "enum": ["same_investigation", "new_investigation"]
+      "enum": [
+        "same_investigation",
+        "new_investigation"
+      ]
+    },
+    "layer": {
+      "type": "string",
+      "enum": [
+        "00_context",
+        "10_evidence",
+        "20_synthesis",
+        "30_analysis"
+      ]
+    },
+    "verdict": {
+      "type": "string",
+      "enum": [
+        "PASS",
+        "FINDINGS"
+      ]
     },
     "finding": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["finding_id", "severity", "target", "evidence", "impact", "repair_direction"],
+      "required": [
+        "finding_id",
+        "severity",
+        "target",
+        "evidence",
+        "impact",
+        "repair_direction"
+      ],
       "properties": {
         "finding_id": {
           "type": "string",
@@ -50,7 +85,11 @@
         "repair_direction": {
           "type": "object",
           "additionalProperties": false,
-          "required": ["mode", "affected_layer", "instruction"],
+          "required": [
+            "mode",
+            "affected_layer",
+            "instruction"
+          ],
           "properties": {
             "mode": {
               "$ref": "#/$defs/repair_mode"
