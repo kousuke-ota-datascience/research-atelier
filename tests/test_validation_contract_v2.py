@@ -94,6 +94,53 @@ class ValidationContractV2Test(unittest.TestCase):
         self.assertEqual(result["result"], "FAIL", result)
         self.assertTrue(any(e["rule_id"] == "V-INV-000" for e in result["errors"]), result)
 
+    def test_historical_frozen_null_question_type_remains_validatable(self) -> None:
+        docs = self._valid_docs()
+        docs["00"]["context_state"] = "frozen"
+        docs["00"]["frozen_at"] = "2026-09-22T14:19:25.560Z"
+        self._write_docs(docs, "00")
+
+        result = self._validate("00")
+
+        self.assertEqual(result["result"], "PASS", result)
+
+    def test_new_freeze_rejects_null_question_type(self) -> None:
+        docs = self._valid_docs()
+        docs["00"]["context_state"] = "frozen"
+        docs["00"]["frozen_at"] = "2026-09-23T04:00:00Z"
+        self._write_docs(docs, "00")
+
+        result = validate_investigation(
+            INVESTIGATION_ID,
+            through="00",
+            investigation_root=self.investigation_root,
+            schema_root=SCHEMA_ROOT,
+            new_freeze=True,
+        )
+
+        self.assertEqual(result["result"], "FAIL", result)
+        self.assertTrue(
+            any(error["rule_id"] == "V-FREEZE-002" for error in result["errors"]),
+            result,
+        )
+
+    def test_new_freeze_accepts_concrete_question_type(self) -> None:
+        docs = self._valid_docs()
+        docs["00"]["context_state"] = "frozen"
+        docs["00"]["question_type"] = "Descriptive"
+        docs["00"]["frozen_at"] = "2026-09-23T04:00:00Z"
+        self._write_docs(docs, "00")
+
+        result = validate_investigation(
+            INVESTIGATION_ID,
+            through="00",
+            investigation_root=self.investigation_root,
+            schema_root=SCHEMA_ROOT,
+            new_freeze=True,
+        )
+
+        self.assertEqual(result["result"], "PASS", result)
+
     def test_partial_validation_passes_each_stage(self) -> None:
         for through in ARTIFACT_ORDER:
             with self.subTest(through=through):
