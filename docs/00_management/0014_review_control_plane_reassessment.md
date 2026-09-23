@@ -2,19 +2,25 @@
 
 ## 1. Decision
 
-Research MVPでは、現時点で以下を必須実装しない。
+Task 14時点では、以下をMVP必須実装からdeferした。
 
 - Workflow 20をWorkflow 00のdefault completion gateとして必須化すること
 - Review Seq
 - persistent Review JSON / Review専用Schema / writer
-- review target SHAを永続管理・同期するControl Plane
+- review target SHAを永続管理・同期する専用Control Plane
 - NotionへSHAを同期するControl Plane
-- Git ancestryを用いたreconciliation
+- full Git ancestry / sync reconciliation
 - persistent orchestration state machine
 
-既存のWorkflow 00 / Workflow 10、Investigation versioning、artifact invalidation、deterministic validation、Gitのoptimistic concurrencyでMVPを継続する。
+その後のdecisionはBKL-0021 / BKL-0027で段階的にamendされた。
 
-これは「将来も不要」という判断ではなく、**今回のpilotでは追加complexityを正当化するfailure modeが観測されなかったためdeferする**という判断である。
+**BKL-0027 current decision:**
+- Workflow 20をdefault mandatory gateにしない、というdecisionは維持する。
+- Workflow 20を実行した場合のper-Investigation Review Seq、append-only Review JSON、dedicated Review Schema / writer / read-only history loader、Review Status reconcilerは採用する。
+- Review target commit / artifact blob SHAはReview JSON内のcanonical audit factとして永続化する。
+- NotionへSHA propertyを追加する専用Control Plane、artifact単位のStatus row、full Git ancestry sync control planeは引き続きdeferする。
+
+したがってTask 14はhistorical decision recordであり、current normative contractはWorkflow 20 / Workflow 00 / projection contractを参照する。
 
 ## 2. Pilotで観測したfailure mode
 
@@ -91,7 +97,9 @@ Workflow 20はBKL-0021でoptional workflowとしてcanonicalizeした。Workflow
 
 review中にcanonical artifactが更新された場合、old Review outcomeをnew artifactへ流用しない。
 
-一方、Review Seq、persistent Review JSON、NotionへのSHA同期、Git ancestryを用いた自動staleness判定は引き続きdeferする。
+BKL-0027により、Review Seqとpersistent Review JSONは採用した。Review JSONはtarget commit SHAと00 / 10 / 20 / 30 blob SHAを保持し、current targetとのexact / stale判定に使用する。
+
+一方、NotionへのSHA同期、専用pre/post SHA property、repository全体のfull Git ancestry control planeは引き続きdeferする。target ahead / diverged等、blob比較だけで安全に収束できないrelationはadapterがGit factsを解決できない限りBLOCKEDとする。
 
 ## 6. Semantic Review / Control Planeの責務分離
 
@@ -143,7 +151,9 @@ Task 12 pilot直後の判断は次のとおりだった。
 
 > **当時のMVPではSemantic Review / SHA Control Plane高度化を導入せず、既存のversioning、invalidation、deterministic validation、Git optimistic concurrencyで運用を継続する。**
 
-このhistorical decisionのうちSemantic Review部分は、BKL-0021により「未導入」から「optional Workflow 20を導入。ただしdefault mandatory gateではない」へamendした。persistent Review infrastructure / SHA Control Planeのdeferは継続する。
+このhistorical decisionのうちSemantic Review部分は、BKL-0021により「未導入」から「optional Workflow 20を導入。ただしdefault mandatory gateではない」へamendした。
+
+さらにBKL-0027により、persistent Review infrastructureのdeferを部分的に解除した。Review Seq / append-only Review JSON / Schema / writer / loader / deterministic Review current-state reconciliationを採用する。一方、Notion SHA propertiesやfull SHA Control Planeはdeferを継続する。
 
 
 ## 9. BKL-0021 amendment — optional Workflow 20
@@ -163,7 +173,25 @@ Review targetはInvestigation ID + commit / artifact blob SHAで一意に固定�
 1. **optional independent Semantic ReviewとしてWorkflow 20 contractを導入する。**
 2. Workflow 20未実施だけを理由にWorkflow 00のVALIDATED / COMPLETEを阻害しない。
 3. Human / Workflow 00がacceptance前Reviewを明示的に要求した場合、そのexecutionではReview completionをprerequisiteとして扱う。
-4. Review Seq / persistent Review JSON / dedicated Review Schema / writer / SHA Control Planeは引き続きdeferする。
-5. mandatory Review gateへ昇格するのは、Majorまたはmaterially consequential semantic findingの反復、stale-target運用 failure、concurrency、regulated / high-stakes requirement等が観測された場合に再評価する。
+4. BKL-0021時点ではReview Seq / persistent Review JSON / dedicated Review Schema / writerをdeferしたが、**この項目はBKL-0027でsupersedeされた**。
+5. BKL-0027ではReview実行自体をmandatory化せず、実行されたReviewのpersistence / history / reconciliationだけをmandatory contractとした。
+6. global Review ID、Review専用Notion DB、Notion SHA property、full SHA Control Planeは引き続き採用しない。
+7. mandatory Review gateへ昇格するのは、Majorまたはmaterially consequential semantic findingの反復、regulated / high-stakes requirement等が観測された場合に再評価する。
 
-つまりBKL-0021は「Semantic Reviewは未導入」を**optional Workflow 20は存在する**へ更新するが、「全Investigationでmandatory」「persistent Review infrastructureを必須実装」というTask 14のdefer判断はsupersedeしない。
+つまりcurrent contractは、**Reviewはoptional / executed Review persistenceはmandatory**である。
+
+## 10. BKL-0027 amendment — persistent Review contract
+
+BKL-0027で次をcanonicalizeした。
+
+- Review cycle identity: `(Investigation ID, Review Seq)`
+- storage: `investigations/<Investigation ID>/reviews/review-<Review Seq:6 digits>.json`
+- one cycle = one JSON containing the three Research semantic transitions
+- target commit SHA + 00 / 10 / 20 / 30 blob SHA freeze
+- Finding: severity / target / evidence / impact / repair direction
+- deterministic cycle Verdict: `PASS / FINDINGS`
+- Notion Investigations DB current pointer: `Review Status / Latest Review Seq`
+- deterministic reconciler as the single transition / fail-stop / mutation-plan implementation
+
+BKL-0027はTask 14のfull Control Plane deferを全面撤回するものではない。Review historyを安全に永続化しInvestigation current pointerを収束させる最小限のmechanical layerだけを導入した。
+
