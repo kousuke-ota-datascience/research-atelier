@@ -12,6 +12,8 @@ deterministic checkは以下へ委譲する。
 
 `python -m research_atelier.validation.validate_investigation <Investigation_ID> --through 00|10|20|30`
 
+新規 `00_context` freezeを成立させる操作では、通常validationに加えて `--new-freeze` を指定する。通常validationはhistorical v2 artifactの互換読取にも使用するため、`question_type = null` を一律INVALIDにはしない。
+
 semantic constructionでは、Human / Researcherがresearch intentとsemantic commitmentsを所有し、LLMはwording整理、候補提示、artifact materialization、Synthesis / Analysis作成を支援する。LLMは未確認のsemantic conditionを勝手に確定しない。
 
 独立Semantic Reviewは `0020_semantic_review.md` のWorkflow 20が担う。Workflow 10はWorkflow 20を暗黙起動せず、Review finding / verdictを生成する責務を持たない。
@@ -89,11 +91,12 @@ RQ-specific judgmentとWorking Answerが初めてcanonicalになるstageであ�
 1. 対象Research Questionがhumanによって意味を定義・採択済みであり、「このRQを調査する」というresearch intentが成立していることを確認する。未採択の会話上の問いをWorkflow 10自身がcanonical RQとして生成しない。
 2. 対象InvestigationのNotion Investigations rowが存在し、new / resumeのregistry contractをWorkflow 00が満たしていることを確認する。既存Git Investigationでrowが欠落している場合はWorkflow 00のcontrolled backfillを先に行う。
 3. v2新規executionではInvestigation IDが `INV-NNNNNN` に従うことを確認する。既存v1 executionは `RQ-NNNN-vVVV` をlegacyとして維持する。
-4. 対象Research Questionの `rq_id` を解決する。
-5. v2ではInvestigation ID自体からRQを推定せず、Notion relationと `00_context.rq_id` でexactly one RQへbindする。
-6. 同じInvestigation IDがmaterially異なるexecutionへ既に使われていないことを確認する。
-7. authority、identity/lifecycle、artifact-chain、projection、profile contractを読む。
-8. 既存Investigation directoryがある場合、current artifact stageを確認してから書き込みを始める。
+4. Investigations rowのQuestion TypeがHuman / Researcherによって具体値へcommitされていることを確認する。nullならcanonical freeze / Source探索へ進まずBLOCKEDとする。同じdraft INV rowを保持し、Question Type確定だけを理由に別INVを採番しない。
+5. 対象Research Questionの `rq_id` を解決する。
+6. v2ではInvestigation ID自体からRQを推定せず、Notion relationと `00_context.rq_id` でexactly one RQへbindする。
+7. 同じInvestigation IDがmaterially異なるexecutionへ既に使われていないことを確認する。
+8. authority、identity/lifecycle、artifact-chain、projection、profile contractを読む。
+9. 既存Investigation directoryがある場合、current artifact stageを確認してから書き込みを始める。
 
 identity / RQ bindingがambiguousなら停止する。
 
@@ -102,18 +105,19 @@ identity / RQ bindingがambiguousなら停止する。
 1. 対象Investigation IDに対応するNotion Investigations rowをexactly one解決し、`Research Question` relationが対象RQと一致することを確認する。duplicate / ambiguousなら停止する。
 2. Research Questions DBからprojection contractで指定されたRQ-level field（RQ ID、page URL、Question、optional Significance）をreadする。
 3. Investigations DB rowからQuestion Type / Scope / Include / Exclude / Evidence Cutoff / Assumptionsをreadする。
-4. unknownなScope / Significance / profile-relevant contextはnullまたは省略とし、defaultを捏造しない。
-5. freeze前はNotion Investigations rowをmutable Context input authorityとして、intended research boundaryが十分明確になるまでdraftをrefineする。draft `00_context` を一時materializeしても独立authorityにしない。
-6. RQ-level fieldとInvestigation rowをprojection contractに従って `00_context` へmaterializeし、`context_state = frozen` と `frozen_at` を設定する。
-7. 以下を実行する。
+4. Question TypeがnullならBLOCKEDとし、`context_state = frozen` を成立させない。Human commitmentを得た後も同じdraft INVを継続する。
+5. unknownなScope / Significance / profile-relevant contextはnullまたは省略とし、defaultを捏造しない。ただしQuestion Typeだけはnew freeze時にnullを許容しない。
+6. freeze前はNotion Investigations rowをmutable Context input authorityとして、intended research boundaryが十分明確になるまでdraftをrefineする。draft `00_context` を一時materializeしても独立authorityにしない。
+7. RQ-level fieldとInvestigation rowをprojection contractに従って `00_context` へmaterializeし、`context_state = frozen` と `frozen_at` を設定する。
+8. new-freeze operation validationとして以下を実行する。
 
 ```bash
-python -m research_atelier.validation.validate_investigation <ID> --through 00
+python -m research_atelier.validation.validate_investigation <ID> --through 00 --new-freeze
 ```
 
-8. FAIL / ERRORでは次へ進まない。
-9. `00_context.json` をcontext baselineとしてcommitする。
-10. commit後はGit `00_context` を当該Investigation Contextのcanonical authorityとする。Notion rowはoperational / derived representationとなり、その差分からhistorical `00_context` を書き換えない。
+9. FAIL / ERRORでは次へ進まない。特に `V-FREEZE-002` はQuestion Type未確定を意味し、10_evidenceへ進入しない。
+10. `00_context.json` をcontext baselineとしてcommitする。
+11. commit後はGit `00_context` を当該Investigation Contextのcanonical authorityとする。Notion rowはoperational / derived representationとなり、その差分からhistorical `00_context` を書き換えない。
 
 以降、context-defining semantic changeには `0002_investigation_versioning.md` のlifecycle ruleを適用し、freeze後は新しいInvestigationを作る。
 
@@ -131,6 +135,7 @@ Source discoveryはiterativeである。Investigation accept前に新しいrelev
 
 ### Step 3 — `10_evidence` の選択とfreeze
 
+0. frozen `00_context.question_type` がnon-nullであることを確認する。nullのfrozen ContextはBKL-0031以前のhistorical compatibility artifactとして保存するが、そこから新たに10_evidenceを生成・再開しない。
 1. このInvestigationで実際に使用するEvidenceを選択する。
 2. Investigation-localな `E####` IDを付与する。
 3. projection contractに従ってNotion Source / Evidence Note provenanceを保持する。
@@ -211,6 +216,8 @@ machine-readable result:
 次canonical artifactへ進めるのはPASSのみ。
 
 PASSはsemantic analysisがscientifically correctであることを意味しない。
+
+通常の `--through 00` PASSはhistorical compatibility上の構造validityを意味し、新規freeze可否を意味しない。新規freeze可否は `--new-freeze` を付けたoperation validationでのみ判定する。
 
 ## 7. Git rule
 
