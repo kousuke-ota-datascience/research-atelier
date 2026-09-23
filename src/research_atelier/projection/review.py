@@ -8,6 +8,7 @@ connector adapter. It never writes canonical Review facts back from Notion.
 from __future__ import annotations
 
 from dataclasses import dataclass
+from datetime import datetime
 from typing import Any, Mapping, Sequence
 
 
@@ -54,6 +55,14 @@ class ReviewProjection:
     next_action: NextAction
 
 
+@dataclass(frozen=True)
+class ReviewRowPlan:
+    outcome: str  # CREATE | UPDATE | NOOP
+    review_url: str | None
+    properties: Mapping[str, Any]
+    body_markdown: str
+
+
 def _nonempty_text(value: Any, *, field: str) -> str:
     if not isinstance(value, str) or not value.strip():
         raise ReviewProjectionError(f"{field} must be a non-empty string")
@@ -62,6 +71,17 @@ def _nonempty_text(value: Any, *, field: str) -> str:
 
 def _line_text(value: Any, *, field: str) -> str:
     return " ".join(_nonempty_text(value, field=field).splitlines())
+
+
+def _notion_datetime(value: str) -> str:
+    """Normalize an exact canonical timestamp to Notion's minute-level date surface."""
+
+    try:
+        parsed = datetime.fromisoformat(value.replace("Z", "+00:00"))
+    except ValueError as exc:
+        raise ReviewProjectionError("reviewed_at must be ISO-8601 date-time") from exc
+    normalized = parsed.replace(second=0, microsecond=0).isoformat()
+    return normalized.replace("+00:00", "Z")
 
 
 def _identity(review: Mapping[str, Any]) -> tuple[str, int]:
@@ -402,7 +422,7 @@ def build_review_projection(
         "Review Seq": review_seq,
         "Verdict": verdict,
         "Highest Severity": severity,
-        "date:Reviewed At:start": reviewed_at,
+        "date:Reviewed At:start": _notion_datetime(reviewed_at),
         "date:Reviewed At:is_datetime": 1,
     }
     for layer in ARTIFACT_LAYERS:
@@ -462,6 +482,55 @@ def resolve_unique_review_row(
             f"duplicate Review rows for ({investigation_id}, {review_seq})"
         )
     return matches[0] if matches else None
+
+
+def plan_review_row(
+    review: Mapping[str, Any],
+    *,
+    existing_rows: Sequence[Mapping[str, Any]],
+    canonical_path: str | None = None,
+) -> ReviewRowPlan:
+    """Plan CREATE/UPDATE/NOOP for one logical Review projection row.
+
+    existing_rows are adapter-normalized rows with investigation_id, review_seq,
+    url, properties, and body_markdown. Duplicate logical identities fail-stop.
+    """
+
+    projection = build_review_projection(review, canonical_path=canonical_path)
+    existing = resolve_unique_review_row(
+        existing_rows,
+        investigation_id=projection.investigation_id,
+        review_seq=projection.review_seq,
+    )
+    if existing is None:
+        return ReviewRowPlan(
+            outcome="CREATE",
+            review_url=None,
+            properties=projection.properties,
+            body_markdown=projection.body_markdown,
+        )
+
+    review_url = existing.get("url")
+    if not isinstance(review_url, str) or not review_url:
+        raise ReviewProjectionError("existing Review row must have a URL")
+    current_properties = existing.get("properties")
+    if not isinstance(current_properties, Mapping):
+        raise ReviewProjectionError("existing Review row properties must be an object")
+    current_body = existing.get("body_markdown")
+    if not isinstance(current_body, str):
+        raise ReviewProjectionError("existing Review row body_markdown must be a string")
+
+    properties_match = all(
+        current_properties.get(name) == value
+        for name, value in projection.properties.items()
+    )
+    body_matches = current_body.rstrip() == projection.body_markdown
+    return ReviewRowPlan(
+        outcome="NOOP" if properties_match and body_matches else "UPDATE",
+        review_url=review_url,
+        properties=projection.properties,
+        body_markdown=projection.body_markdown,
+    )
 
 
 def reconcile_latest_review_relation(
