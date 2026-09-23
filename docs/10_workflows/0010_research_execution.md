@@ -255,16 +255,27 @@ Workflow 10は**Investigation execution**のworkflowであり、Research Questio
 
 ## 10. Workflow 20 findingからのrepair
 
-Workflow 20でfindingが確定した場合、reviewer自身がcanonical artifactを直接修正せず、finding targetに応じて本Workflowへrepairをhandoffする。
+Workflow 20でcanonical Review JSONにFindingが確定した場合、reviewer自身がcanonical artifactを直接修正せず、Findingの `repair_direction` をWorkflow 00 / 10へhandoffする。
 
-- Source / Evidence / `10_evidence` finding -> Evidence stageからrepairし、20 / 30をinvalidateする。
-- `20_synthesis` finding -> Synthesis stageからrepairし、30をinvalidateする。
-- `30_analysis` finding -> Analysis stageからrepair / revalidateする。
-- frozen `00_context` のsemantic condition変更が必要 -> `0002_investigation_versioning.md` に従い原則new Investigation。
+- `affected_layer = 10_evidence` -> Evidence stageからrepairし、20 / 30をinvalidateする。
+- `affected_layer = 20_synthesis` -> Synthesis stageからrepairし、30をinvalidateする。
+- `affected_layer = 30_analysis` -> Analysis stageからrepair / revalidateする。
+- `affected_layer = 00_context` -> frozen context変更なので原則 `new_investigation`。
+- `repair_direction.mode = new_investigation` -> same Investigationをrepairしない。
 
-accepted Investigationのsubstantive repairではhistorical artifactをin-place rewriteせず、versioning contractを優先する。
+same-Investigation repairを開始する直前、Workflow 00はReview reconcilerへexplicit `repair_started` eventを渡す。Review JSONの存在だけで `要修正 -> 再作業中` を推測しない。
 
-repair後はReview targetが変わるため、old Review outcomeを流用せずWorkflow 20でnew targetをreReviewする。
+dependency invalidationは既存contractを維持する。
+
+```text
+10_evidence change -> invalidate 20_synthesis + 30_analysis
+20_synthesis change -> invalidate 30_analysis
+30_analysis change -> 30 only
+```
+
+repair artifact commit後はold Reviewのfrozen blob SHAとcurrent chainが不一致になるため、reconcilerは `再レビュー待` をderiveする。old Review outcomeをnew targetへ流用せず、Workflow 20でnext Review SeqをallocateしてreReviewする。
+
+accepted Investigationのsubstantive repairではhistorical accepted resultをin-place rewriteせず、`0002_investigation_versioning.md` を優先する。
 
 ## 11. v1 legacy handling
 
