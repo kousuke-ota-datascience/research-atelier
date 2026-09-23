@@ -5,6 +5,8 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Any, Mapping
 
+from research_atelier.reviewing.handoff import validate_review_handoff_record
+
 REVIEW_STATUSES = (
     "未",
     "レビュー待",
@@ -12,6 +14,7 @@ REVIEW_STATUSES = (
     "再作業中",
     "再レビュー待",
     "完了",
+    "引継済",
     "－（対象外）",
 )
 SAFE_RELATIONS = ("exact", "stale", "ahead", "diverged", "missing")
@@ -52,6 +55,8 @@ def reconcile_review_state(
     review_not_applicable: bool = False,
     review_eligible: bool | None = None,
     repair_started: bool = False,
+    new_investigation_handoff_completed: bool = False,
+    review_handoff: Mapping[str, Any] | None = None,
 ) -> ReviewReconcileResult:
     """Derive only Review Status / Latest Review Seq; never mutate semantic content."""
     issues: list[str] = list(history_issues)
@@ -71,6 +76,16 @@ def reconcile_review_state(
 
     if review_requested and review_not_applicable:
         issues.append("conflicting_review_events")
+    if new_investigation_handoff_completed and review_not_applicable:
+        issues.append("handoff_conflicts_with_not_applicable")
+    if new_investigation_handoff_completed and repair_started:
+        issues.append("conflicting_repair_and_handoff_events")
+    if new_investigation_handoff_completed and latest_review is None:
+        issues.append("handoff_without_review")
+    if new_investigation_handoff_completed and review_handoff is None:
+        issues.append("handoff_event_without_record")
+    if review_handoff is not None and not new_investigation_handoff_completed:
+        issues.append("handoff_record_without_completion_event")
     if issues:
         return ReviewReconcileResult("BLOCKED", {}, tuple(sorted(set(issues))), "unsafe Review state")
 
@@ -115,7 +130,29 @@ def reconcile_review_state(
             )
         desired_seq = seq
 
-        if target_relation == "exact":
+        if new_investigation_handoff_completed:
+            if target_relation != "exact":
+                return ReviewReconcileResult(
+                    "BLOCKED",
+                    {},
+                    ("handoff_requires_exact_review_target",),
+                    "unsafe Review handoff",
+                )
+            assert review_handoff is not None
+            handoff_issues = validate_review_handoff_record(
+                review_handoff,
+                source_review=latest_review,
+            )
+            if handoff_issues:
+                return ReviewReconcileResult(
+                    "BLOCKED",
+                    {},
+                    handoff_issues,
+                    "unsafe Review handoff",
+                )
+            desired_status = "引継済"
+
+        elif target_relation == "exact":
             if verdict == "PASS":
                 if repair_started:
                     return ReviewReconcileResult(
@@ -161,6 +198,8 @@ def reconcile_payload(payload: Mapping[str, Any]) -> dict[str, Any]:
     events = dict(payload.get("events") or {})
     context_value = payload.get("context")
     context = dict(context_value) if isinstance(context_value, Mapping) else None
+    handoff_value = payload.get("handoff")
+    handoff = dict(handoff_value) if isinstance(handoff_value, Mapping) else None
     review_eligible, eligibility_issues = derive_review_eligibility(context)
     result = reconcile_review_state(
         current_status=current.get("review_status"),
@@ -172,6 +211,10 @@ def reconcile_payload(payload: Mapping[str, Any]) -> dict[str, Any]:
         review_not_applicable=bool(events.get("review_not_applicable", False)),
         review_eligible=review_eligible,
         repair_started=bool(events.get("repair_started", False)),
+        new_investigation_handoff_completed=bool(
+            events.get("new_investigation_handoff_completed", False)
+        ),
+        review_handoff=handoff,
     )
     return {
         "outcome": result.outcome,
