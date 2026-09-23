@@ -32,8 +32,9 @@ RQだけが与えられ、Investigation IDが指定されていない場合:
 2. current workとして再開すべき同一executionが存在するか判定する。
 3. 再開対象がなければ `0002_investigation_versioning.md` に従って新しい `INV-NNNNNN` をglobal sequenceから採番する。
 4. new Investigationでは、採番直後にNotion Investigations DBへ `Investigation ID` とexactly one `Research Question` relationを持つrowを1件作成する。このID/rowはdraft workspace確保であり、Context freezeやsubstantive research execution開始を意味しない。
-5. new / resumeのどちらでも、Question TypeをHuman / Researcherの具体値へcommitする。nullなら同じdraft INV rowを保持したままBLOCKEDとし、`00_context` freeze / Source探索 / `10_evidence` へ進まない。
-6. resumeでは `Investigation ID` で既存rowをreuseし、duplicate rowを作成しない。
+5. new draft、またはまだfrozen `00_context` を持たないresume draftでは、Question TypeをHuman / Researcherの具体値へcommitする。nullなら同じdraft INV rowを保持したままBLOCKEDとし、`00_context` freeze / Source探索 / `10_evidence` へ進まない。
+6. 既にfrozen `00_context` があるresumeではGit Contextをauthorityとする。そこが `question_type = null` ならhistorical compatibility branchへ入り、同じINVへQuestion Typeをbackfillして再開しない。
+7. resumeでは `Investigation ID` で既存rowをreuseし、duplicate rowを作成しない。
 
 v2 Investigation IDはRQ IDをencodeしない。RQとのbindingはNotion Investigations DBのexplicit relationと、freeze後の `00_context.rq_id` で行う。
 
@@ -204,8 +205,8 @@ Investigation `ID` に対して:
 5. frozen `00_context.question_type = null` ならhistorical compatibility branchとする。
    - current schema変更だけを理由にINVALID化しない。
    - missing 10 / 20 / 30を生成しない。
-   - downstream missingならPARTIAL (historical, non-resumable)として保持し、resume targetを設定しない。
-   - existing downstreamがある場合はread-onlyに通常validationを継続してよい。
+   - downstream missingならPARTIAL (historical, non-resumable)として保持し、resume targetを設定せず、その時点でstate derivationを停止する。
+   - 4 artifactがすべて既存ならread-onlyに通常validationを継続してよい。
    - Workflow 20 eligibilityはfalse。
 6. 10がなければPARTIAL、resume = 10。
 7. through 10をvalidateする。
