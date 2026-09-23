@@ -81,6 +81,23 @@ class ReviewProjectionRegressionTests(unittest.TestCase):
         self.assertEqual(action.resume_from, "new Investigation allocation")
         self.assertIn("Do not repair", action.do_not)
 
+    def test_new_investigation_handoff_preserves_all_finding_instructions(self) -> None:
+        review = copy.deepcopy(self.review)
+        original = review["transitions"][2]["findings"][0]
+        original["repair_direction"]["mode"] = "new_investigation"
+        original["repair_direction"]["affected_layer"] = "00_context"
+        second = copy.deepcopy(original)
+        second["finding_id"] = "F002"
+        second["repair_direction"]["mode"] = "same_investigation"
+        second["repair_direction"]["affected_layer"] = "30_analysis"
+        second["repair_direction"]["instruction"] = "Repair the downstream wording as well."
+        review["transitions"][2]["findings"].append(second)
+
+        action = derive_next_action(review)
+        self.assertEqual(action.workflow, "Workflow 00")
+        self.assertIn("Narrow the opening wording", action.action)
+        self.assertIn("Repair the downstream wording as well.", action.action)
+
     def test_pass_review_requires_no_repair(self) -> None:
         review = copy.deepcopy(self.review)
         for transition in review["transitions"]:
