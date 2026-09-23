@@ -15,6 +15,7 @@ from research_atelier.projection import (  # noqa: E402
     build_review_projection,
     derive_artifact_outcomes,
     derive_next_action,
+    plan_review_row,
     reconcile_latest_review_relation,
     resolve_unique_investigation_row,
     resolve_unique_review_row,
@@ -38,6 +39,7 @@ class ReviewProjectionRegressionTests(unittest.TestCase):
         self.assertEqual(projection.properties["20 Synthesis"], "OK")
         self.assertEqual(projection.properties["30 Analysis"], "NG")
         self.assertEqual(projection.properties["Highest Severity"], "Minor")
+        self.assertEqual(projection.properties["date:Reviewed At:start"], "2026-09-23T04:26:00Z")
         self.assertEqual(projection.next_action.workflow, "Workflow 10")
         self.assertEqual(projection.next_action.investigation, "INV-000015")
         self.assertEqual(projection.next_action.resume_from, "30_analysis")
@@ -134,6 +136,29 @@ class ReviewProjectionRegressionTests(unittest.TestCase):
             resolve_unique_investigation_row(
                 [row, dict(row)], investigation_id="INV-000015"
             )
+
+    def test_review_row_plan_create_update_noop(self) -> None:
+        projection = build_review_projection(self.review)
+        create = plan_review_row(self.review, existing_rows=[])
+        self.assertEqual(create.outcome, "CREATE")
+        self.assertIsNone(create.review_url)
+
+        current = {
+            "investigation_id": "INV-000015",
+            "review_seq": 1,
+            "url": "review-url",
+            "properties": dict(projection.properties),
+            "body_markdown": projection.body_markdown,
+        }
+        noop = plan_review_row(self.review, existing_rows=[current])
+        self.assertEqual(noop.outcome, "NOOP")
+        self.assertEqual(noop.review_url, "review-url")
+
+        stale = copy.deepcopy(current)
+        stale["properties"]["30 Analysis"] = "OK"
+        update = plan_review_row(self.review, existing_rows=[stale])
+        self.assertEqual(update.outcome, "UPDATE")
+        self.assertEqual(update.properties["30 Analysis"], "NG")
 
     def test_latest_review_relation_reconciliation_is_idempotent(self) -> None:
         self.assertEqual(
