@@ -446,7 +446,7 @@ Reviews DBへのFinding本文・Verdict・target provenanceの表示は、Git ca
 
 ### Status contract
 
-許容値は以下の7値に限定する。
+許容値は以下の8値に限定する。
 
 - `未`
 - `レビュー待`
@@ -454,11 +454,14 @@ Reviews DBへのFinding本文・Verdict・target provenanceの表示は、Git ca
 - `再作業中`
 - `再レビュー待`
 - `完了`
+- `引継済`
 - `－（対象外）`
 
 `未` はoptional Review process未開始、`－（対象外）` は明示的な対象外decisionである。Git factsだけから `－（対象外）` を推測しない。
 
-`要再調査` / `レビュー中` はpersistent Statusとして追加しない。new Investigation handoffはFindingの `repair_direction.mode = new_investigation` とversioning contractで表す。
+`引継済` はlatest Reviewが `FINDINGS` のまま、valid successor Investigationへrepair responsibilityをhandoff済みであることを示すsource Investigationのterminal operational stateである。`完了`（latest Review PASS）とは別概念であり、Notionだけで手入力して成立させない。canonical authorityはsource Review JSON + `handoff-<Review Seq>.json` である。
+
+`要再調査` / `レビュー中` はpersistent Statusとして追加しない。Findingの `repair_direction.mode = new_investigation` だけでは `引継済` に遷移せず、versioning decision・successor persistence・exact RQ binding・canonical handoff provenanceのvalidation完了を必要とする。
 
 ### Reconciliation
 
@@ -467,6 +470,9 @@ state transition / fail-stop / mutation planは `src/research_atelier/reviewing/
 - Workflow 20はReview JSON保存後にNotion Statusを直接writeしない。
 - Workflow 00 / connector adapterはGit Review facts、current target relation、explicit eventsをreconcilerへ入力する。
 - `repair_started` は実際にsame-Investigation repair phaseへ入った時だけWorkflow 00が発行する。
+- new-Investigation handoffのrerunでは、successor allocation / ID採番より先にexpected `handoff-<Review Seq>.json` をpreflightする。valid recordがあればrecord済みsuccessorをreuseし、duplicate successor / handoffを生成しない。
+- `new_investigation_handoff_completed` は `schemas/v2/review_handoff.schema.json` に適合するcanonical handoff artifactを保存・再読込し、source Review / source RQ / successor binding / allocation decisionとの整合を確認した後だけ発行する。
+- handoff artifactが存在してもcompletion eventをreconciler入力へ渡さない、またはeventだけでcanonical handoff recordがない状態はcontract violationとしてBLOCKEDとする。
 - malformed / duplicate / incomplete Review history、target ahead / divergedはBLOCKEDとし、mutationを適用しない。
 - stale Reviewはcurrent targetのPass証明ではなく、reReview対象として扱う。
 - mutation適用後はReviews rowとInvestigation rowを再取得し、Review projectionおよび `Review Status / Latest Review / Latest Review Seq` がplanと一致することをverifyする。

@@ -144,6 +144,20 @@ class ReviewProjectionRegressionTests(unittest.TestCase):
         self.assertEqual(action.resume_from, "new Investigation allocation")
         self.assertIn("Do not repair", action.do_not)
 
+    def test_new_investigation_handoff_keeps_reviews_db_verdict_as_findings(self) -> None:
+        review = copy.deepcopy(self.review)
+        finding = review["transitions"][2]["findings"][0]
+        finding["repair_direction"]["mode"] = "new_investigation"
+        finding["repair_direction"]["affected_layer"] = "00_context"
+
+        projection = build_review_projection(review)
+
+        self.assertEqual(projection.properties["Verdict"], "FINDINGS")
+        self.assertEqual(projection.properties["00 Context"], "NG")
+        self.assertEqual(projection.next_action.workflow, "Workflow 00")
+        self.assertIn("Repair mode: new_investigation", projection.body_markdown)
+        self.assertIn("F001", projection.body_markdown)
+
     def test_new_investigation_handoff_preserves_all_finding_instructions(self) -> None:
         review = copy.deepcopy(self.review)
         original = review["transitions"][2]["findings"][0]

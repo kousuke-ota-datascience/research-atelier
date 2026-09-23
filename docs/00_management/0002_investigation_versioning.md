@@ -197,6 +197,18 @@ new INVを採番した場合、既存INVをresume / repairできなかった理�
 
 global sequenceはidentity allocationのためだけに使い、chronological quality rankingやsemantic versionを意味しない。
 
+### Review Findingからsuccessorへ移譲する場合
+
+Review起点でallocation guardが `allocate_new` を返したことは、旧InvestigationのReviewを直ちに閉じる条件ではない。successor IDのallocationだけでなく、successor persistenceとsource RQへのexactly-one bindingまで完了した後、source Reviewごとにcanonical handoff artifactを作る。
+
+```text
+investigations/<source INV>/reviews/handoff-<Review Seq>.json
+```
+
+このartifactはsource Reviewのrewriteではなくappend-only provenance eventである。source Reviewの `FINDINGS` / Findingを保持しつつ、repair responsibilityがどのsuccessorへ移ったかをmachine-readableに記録する。Notionの `Review Status = 引継済` はこのGit factから導出するoperational pointerであり、それ自体をversioning / handoff authorityにしない。
+
+successor allocation・persistence・RQ bindingの途中失敗ではhandoff artifactを成立させず、source Reviewをterminalにしない。同じsource Reviewに対するrerunでは、ID allocationより先にexpected handoff pathをpreflightする。valid existing recordがあれば記録済みsuccessorをreuseし、新しいInvestigation IDを採番しない。既存recordがsource Review / RQと矛盾する場合はBLOCKEDとし、矛盾を新規successorで回避しない。
+
 ## 7. Cross-artifact identity invariant
 
 1つのInvestigation directory内のcanonical artifactはすべて同じ `investigation_id` と同じ `rq_id` を持つ。

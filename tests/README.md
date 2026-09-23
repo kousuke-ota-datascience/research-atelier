@@ -74,6 +74,8 @@ v2 testは以下を追加で確認する。
 - `未 -> レビュー待 -> 完了 / 要修正 -> 再作業中 -> 再レビュー待` のdeterministic reconciliation
 - repair開始にはexplicit eventが必要
 - stale Review、duplicate / malformed history、idempotent reconciliation
+- BKL-0036: `new_investigation` Findingだけではterminalにせず、valid successor handoff + canonical provenanceでのみ `引継済` へ遷移
+- BKL-0036: allocation / persistence / exact RQ binding失敗時のfail-stop、handoff record schema validation、allocation前preflightによるexisting successor reuse、rerun idempotency、source Review `FINDINGS` preservation
 
 
 ## Review DB projection regression
@@ -84,6 +86,7 @@ v2 testは以下を追加で確認する。
 - Review pageのSummary / Next Action / Details / Provenance rendering
 - same-Investigation 30_analysis repair handoff
 - new-Investigation handoff
+- BKL-0036: handoff後もReviews DB projectionのVerdict / Findingはsource canonical Reviewどおり `FINDINGS` のまま保持
 - frozen 00_contextへのunsafe same-Investigation repairをfail-stop
 - Investigation bindingのexactly-one enforcement
 - logical Review identity重複時のfail-stop
