@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000015",
+  "review_seq": 2,
+  "layer": "10_evidence",
+  "review_kind": "source_evidence_note_to_10_evidence",
+  "target_blob_sha": "87972f0dc8e84b61e0bf8bf9ef4ba40509023cda",
+  "assessment": "All 19 frozen Evidence items still match their referenced Notion Evidence Notes on Evidence text, Location, Note Type, and Source relation. Public spot-checks of the Machida municipal exhibition, Tama/Kodaira municipal histories, the National Diet Library exhibit, and the J-STAGE abstract support the selected claims and qualifications. Limitations around uninspected original images and use of official transcriptions remain explicit rather than being silently upgraded. No Evidence-layer semantic finding was identified.",
+  "findings": [],
+  "verdict": "PASS"
+}

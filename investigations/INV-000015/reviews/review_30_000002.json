@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000015",
+  "review_seq": 2,
+  "layer": "30_analysis",
+  "review_kind": "20_synthesis_plus_00_context_to_30_analysis",
+  "target_blob_sha": "268cf993140e01795359012346205ef432da17fc",
+  "assessment": "The Descriptive analysis is otherwise aligned with the frozen Context and Synthesis: it keeps party-position chronology explicit, does not infer a local vote-effect counterfactual from the result, limits leadership responsibility in the Osuga murder case, and leaves the Tama-transfer causal question unresolved. One Minor no-bypass defect remains in the opening Working Answer wording.",
+  "findings": [
+    {
+      "finding_id": "F001",
+      "severity": "Minor",
+      "target": "30_analysis.working_answer",
+      "evidence": [
+        "30_analysis.working_answer",
+        "20_synthesis:K0001",
+        "10_evidence:E0001"
+      ],
+      "impact": "The opening phrase characterizes the earlier movement specifically as centered on local associations, speeches, and study. Those details are present in the external Machida source, but they are not frozen at that specificity in E0001 or K0001. The wording therefore bypasses the canonical Evidence/Synthesis chain for that level of detail. This weakens lineage but does not change the main conclusion.",
+      "repair_direction": {
+        "mode": "same_investigation",
+        "affected_layer": "30_analysis",
+        "instruction": "Narrow the opening wording to the content actually represented in K0001/K0002 (for example, regional freedom-and-rights activity and organization leading into Liberal Party participation), or first add the specific associations/speeches/study content through the canonical Evidence and Synthesis layers before using it in the Working Answer."
+      }
+    }
+  ],
+  "verdict": "FINDINGS"
+}

@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000015",
+  "review_seq": 2,
+  "layer": "20_synthesis",
+  "review_kind": "10_evidence_to_20_synthesis",
+  "target_blob_sha": "79c31423a205028cb3ccc7b25401b5e02b10fc61",
+  "assessment": "The 14 Knowledge Units remain traceable to the frozen Evidence set and preserve material qualifications. The synthesis distinguishes local election results from nationwide effectiveness analysis, avoids treating later National Association membership as if it applied in February 1892, limits responsibility claims in the Osuga murder case to the evidentiary boundary, and explicitly defers causal claims about the 1893 Tama transfer. No unsupported synthesis proposition requiring repair was identified.",
+  "findings": [],
+  "verdict": "PASS"
+}
