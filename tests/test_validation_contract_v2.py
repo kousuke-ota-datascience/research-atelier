@@ -104,6 +104,31 @@ class ValidationContractV2Test(unittest.TestCase):
 
         self.assertEqual(result["result"], "PASS", result)
 
+    def test_inv_000008_regression_is_preserved_but_not_new_freeze_eligible(self) -> None:
+        historical = validate_investigation(
+            "INV-000008",
+            through="00",
+            investigation_root=REPO_ROOT / "investigations",
+            schema_root=SCHEMA_ROOT,
+        )
+        self.assertEqual(historical["result"], "PASS", historical)
+        self.assertFalse(
+            (REPO_ROOT / "investigations" / "INV-000008" / "30_analysis.json").exists()
+        )
+
+        new_freeze = validate_investigation(
+            "INV-000008",
+            through="00",
+            investigation_root=REPO_ROOT / "investigations",
+            schema_root=SCHEMA_ROOT,
+            new_freeze=True,
+        )
+        self.assertEqual(new_freeze["result"], "FAIL", new_freeze)
+        self.assertTrue(
+            any(error["rule_id"] == "V-FREEZE-002" for error in new_freeze["errors"]),
+            new_freeze,
+        )
+
     def test_new_freeze_rejects_null_question_type(self) -> None:
         docs = self._valid_docs()
         docs["00"]["context_state"] = "frozen"
