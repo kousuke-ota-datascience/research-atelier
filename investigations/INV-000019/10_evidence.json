@@ -3,7 +3,7 @@
   "artifact_type": "10_evidence",
   "investigation_id": "INV-000019",
   "rq_id": "RQ-0022",
-  "snapshot_at": "2026-09-23T16:05:00.000Z",
+  "snapshot_at": "2026-09-23T18:54:00.000Z",
   "evidence_items": [
     {
       "evidence_id": "E0001",
@@ -97,9 +97,9 @@
     },
     {
       "evidence_id": "E0006",
-      "content": "1893年4月5日、三郡交渉会の代表委員である土方篠三郎（七生村）、富沢政賢（多摩村）、大平安三（八王子町）、井上吉之助（鶴川村）らは、八王子の東京府知事富田鉄之助の宿所を訪れ、境域復旧を請願する予定であるため諸制度を神奈川県方式のまま据え置くよう申し入れた。鶴川村は現在の町田市域であり、井上吉之助については町田市域からの具体的な復旧運動・交渉行動を地域単位まで同定できる。",
+      "content": "1893年4月5日、三郡交渉会の代表委員である土方篠三郎（七生村）、富沢政賢（多摩村）、大平安三（八王子町）、井上吉之助（鶴川村）らは、八王子の東京府知事富田鉄之助の宿所を訪れ、境域復旧を請願する予定であるため諸制度を神奈川県方式のまま据え置くよう申し入れた。この史料から、井上吉之助が鶴川村の代表として具体的な復旧運動・交渉行動に参加したことを確認できる。",
       "source_locator": "第四章第四節 p.240-243、1893年4月5日の富田知事宿所への申入れ",
-      "selection_reason": "現在の町田市域の具体的主体と交渉行動を同定できるため。",
+      "selection_reason": "鶴川村の井上吉之助という具体的主体と、その境域復旧に伴う交渉行動を同定できるため。",
       "note_type": "Result",
       "direct_quote": null,
       "provenance": {
@@ -182,6 +182,24 @@
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e4e5855be3981c4a9f6c3fb85be5c19",
           "title": "EV-0194"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0011",
+      "content": "町田市公式ページは、町田市が1958年2月1日に町田町・鶴川村・忠生村・堺村の1町3村の合併により成立したと説明する。したがって、歴史上の鶴川村は現在の町田市域を構成した地域の一つとして位置づけられる。",
+      "source_locator": "本文冒頭「まちだってこんなまち」",
+      "selection_reason": "鶴川村を現在の町田市域に位置づける地理対応を、1893年の行動史料とは独立したauthoritative provenanceで支えるため。",
+      "note_type": "Data",
+      "direct_quote": null,
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e4e5855be39815b875ded5183bd8c03",
+          "title": "まちだってこんなまち"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e4e5855be398135b747c50f83fc0df8",
+          "title": "EV-0204"
         }
       }
     }
