@@ -154,6 +154,32 @@ class InvestigationAllocationTest(unittest.TestCase):
         self.assertEqual(result.decision, "allocate_new")
         self.assertTrue(result.explicit_new_execution_intent)
 
+    def test_explicit_execution_does_not_depend_on_cutoff_materiality(self) -> None:
+        existing = load_context("INV-000018")
+        accidental_successor = load_context("INV-000019")
+        result = decide_investigation_allocation(
+            intent="explicit_new_execution",
+            existing_investigation_id="INV-000018",
+            existing_context=existing,
+            requested_context=accidental_successor,
+        )
+        self.assertEqual(result.decision, "allocate_new")
+        self.assertEqual(result.reason_codes, ("explicit_independent_execution",))
+
+    def test_scope_change_allocates_even_if_cutoff_materiality_is_unresolved(self) -> None:
+        existing = load_context("INV-000018")
+        result = decide_investigation_allocation(
+            intent="semantic_reinvestigation",
+            existing_investigation_id="INV-000018",
+            existing_context=existing,
+            requested_context={
+                "scope": existing["scope"] + " 追加対象を含む。",
+                "evidence_cutoff": "2026-09-24T00:00:00Z",
+            },
+        )
+        self.assertEqual(result.decision, "allocate_new")
+        self.assertEqual(result.reason_codes, ("material_semantic_difference",))
+
     def test_semantic_reinvestigation_without_difference_blocks(self) -> None:
         existing = load_context("INV-000018")
         result = decide_investigation_allocation(
