@@ -556,6 +556,18 @@ class ReviewContractTest(unittest.TestCase):
         self.assertEqual(plan.outcome, "BLOCKED")
         self.assertIn("versioning_decision_not_allocate_new", plan.issues)
 
+    def test_notion_handoff_status_without_canonical_fact_does_not_authorize_terminal_state(self) -> None:
+        record = self._save(findings=True, new_investigation=True)
+        result = reconcile_review_state(
+            current_status="引継済",
+            current_latest_review_seq=1,
+            latest_review=record,
+            target_relation="exact",
+            review_eligible=True,
+        )
+        self.assertEqual(result.outcome, "UPDATE")
+        self.assertEqual(result.changes, {"Review Status": "要修正"})
+
     def test_handoff_event_without_canonical_record_blocks(self) -> None:
         record = self._save(findings=True, new_investigation=True)
         result = reconcile_review_state(
