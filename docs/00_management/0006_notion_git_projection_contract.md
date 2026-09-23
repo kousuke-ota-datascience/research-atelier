@@ -28,7 +28,8 @@ authorityは常に `0001_research_architecture.md` に従う。
 - current Research Question catalog state
 - Source bibliographic identity / metadata
 - reusable Evidence Notes
-- mutable operational workflow state
+- freeze前のInvestigations DB Context inputとReview current operational state
+- その他mutable operational workflow state
 
 ### Gitが正本
 
@@ -49,28 +50,63 @@ boundaryを跨いでcopyされた値は、次のどちらかである。
 
 copyしたことで独立編集可能な第二authorityを作ってはならない。
 
-## 2. Notion -> Git: Research Question -> Investigation Context freeze
+## 2. Notion -> Git: Research Question + Investigation row -> Investigation Context freeze
 
-`00_context`（Investigation Context）作成時、Research Questions DBの以下をfreezeする。
+`00_context`（Investigation Context）作成時は、**Research Questionのsemantic identity / wording** と **Notion Investigations DBのInvestigation-specific execution condition** を分けてreadし、1つのfrozen snapshotへmaterializeする。
 
-| Notion property | Git 00_context field | Rule |
+### Research Questions DBからsnapshotするもの
+
+| Notion property / value | Git 00_context field | Rule |
 | --- | --- | --- |
 | `RQ ID` | `rq_id` | 必須identity |
 | page URL | `question.notion_url` | provenance |
 | `Question` | `question.text` | frozen wording snapshot |
-| `Question Type` | `question_type` | draftではnull可 |
-| `Scope` | `scope` | null可 |
-| `Significance` | `significance` | null可 |
+| `Significance` | `significance` | optional RQ-level snapshot。null可 |
 
-原則として以下は `00_context` へfreezeしない。
+原則として以下はResearch Questions DBから `00_context` へfreezeしない。
 
-- `Status`: Notion operational state
+- `Status`: RQ operational state
 - `Working Answer`: legacy / compatibility property。current Git-derived projection targetはRQ page bodyの `# Working Answer` section
 - `Topic`: catalog organization relation
 - `Parent Question`: catalog relation
 - `RQ UID`: Notion内部実装用identifier。canonical snapshotには `RQ ID` とpage URLを使う
+- `Question Type` / `Scope`: BKL-0028以降のnew InvestigationではInvestigations DB側をauthorityとする。Research Questions DBに残る同名propertyはBKL-0029完了までのlegacy / migration stagingであり、新規freeze inputとして使わない
 
-Investigation-specific boundary / assumptionsはGitの `00_context` で管理し、RQ recordへduplicate propertyとして書き戻さない。
+### Investigations DBからsnapshotするもの
+
+| Notion Investigations property | Git 00_context field | Rule |
+| --- | --- | --- |
+| `Investigation ID` | `investigation_id` | 必須identity。v2は `INV-NNNNNN` |
+| `Research Question` relation | `rq_id` / `question.notion_url` のbinding validation | exactly one RQ。ID文字列からRQを推定しない |
+| `Question Type` | `question_type` | null可 |
+| `Scope` | `scope` | null可 |
+| `Include` | `investigation_boundary.include` | 1条件1行をarrayへmaterialize |
+| `Exclude` | `investigation_boundary.exclude` | 1条件1行をarrayへmaterialize |
+| `Evidence Cutoff` | `investigation_boundary.evidence_cutoff` | optional |
+| `Assumptions` | `assumptions` | 1 assumption 1行をarrayへmaterialize |
+
+`Review Status` / `Latest Review Seq` はReview current operational stateであり、`00_context` へfreezeしない。
+
+Question wordingをInvestigations DBへduplicateしない。Investigation rowの `Research Question` relation先からcurrent Questionをreadし、freeze時点のsnapshotを `question.text` とする。
+
+### Draft / frozen authority transition
+
+- **freeze前**: Notion Investigations rowがQuestion Type / Scope / boundary / cutoff / assumptionsのmutable operational authorityである。RQ Question / SignificanceはResearch Questions DBがcurrent authority。
+- draft `00_context` を一時materializeしても、freeze完了前はcandidate representationであり、Notionと独立したcanonical authorityにはしない。
+- **freeze完了後**: validation済みでcommitされたGit `00_context.json` がそのInvestigation Contextのcanonical authorityとなる。
+- frozen InvestigationのNotion rowはoperational / derived viewとして残し、semantic fieldを独立編集してhistorical Git artifactを変更しない。不一致はGitを基準にreconcileする。
+- freeze後にcontext-defining semantic changeが必要なら、versioning contractに従ってnew Investigationを作る。
+
+### Existing Investigation backfill
+
+Notion Investigations rowが存在しないhistorical Investigationをoperational registryへ登録する場合:
+
+1. Git `00_context` をsource of truthとする。
+2. `investigation_id` をrow titleへそのまま使う。legacy `RQ-NNNN-vVVV` もrenameしない。
+3. `question.notion_url` / `rq_id` を使ってResearch Question relationを解決する。
+4. Question Type / Scope / Include / Exclude / Evidence Cutoff / Assumptionsはfrozen `00_context` からmaterializeする。
+5. current Research Questions DBのScope / Question Type等からhistorical conditionを推測補完しない。
+6. backfillはRQ catalogをGitからreverse overwriteする操作ではない。
 
 ## 3. Notion -> Git: Evidence freeze
 
@@ -126,6 +162,7 @@ Investigationがfreezeするのは「実際に使用したEvidence」であり�
 - Research Topics.`Research Questions`
 - Research Questions.`Topic`
 - Research Questions.`Parent Question`
+- Investigations.`Research Question`
 - Sources.`Research Questions`
 - Evidence Notes.`Source`
 
@@ -197,13 +234,15 @@ projection adapterはRQ page body全体を意味的に再構築しない。`src/
 
 ### v2でprojectionしないもの
 
-Gitから自動projectionしない:
+Gitから通常のfinalization write-backとして自動projectionしない:
 
 - `20_synthesis`
 - Evidence snapshot content
 - Question Type / Scope / Significance
 - Source / Evidence Note record
 - Topic / Source relation
+
+ただし、**Investigations DB rowのcontrolled backfill / frozen-context reconciliationは例外**であり、既存Git `00_context` がauthorityのとき、そのContext fieldをNotion operational rowへmaterializeしてよい。この操作はResearch Question catalogへのreverse reconstructionではない。
 
 `judgments` / `limitations` / `unresolved_questions` / `alternative_interpretations` は独立したNotion propertyへprojectionせず、上記structured `# Working Answer` current view内だけにrenderする。
 
@@ -310,7 +349,8 @@ Git artifactからNotion catalog全体を再構築・overwriteしてはならな
 - `10_evidence` からSourcesを生成しGitをSource authority扱いする
 - `20_synthesis` からEvidence Notesを生成する
 - historical `00_context` からRQ Question / Scope / Question Typeをoverwriteする
-- frozen Git referenceからNotion relationを再構築する
+- frozen Git referenceからResearch Topics / Research Questions / Sources / Evidence Notes等のcatalog relationを再構築する
+- ただしBKL-0028で定義したInvestigations DB rowのbackfill / frozen-context reconciliationは、`00_context` のexplicit RQ provenanceを用いる限定的な例外とする
 - body内 `# Working Answer` のhuman editから `30_analysis` を更新する
 - legacy `Research Questions.Working Answer` propertyからbodyまたは `30_analysis` を再構築する
 
