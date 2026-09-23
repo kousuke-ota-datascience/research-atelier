@@ -8,7 +8,7 @@ connector adapter. It never writes canonical Review facts back from Notion.
 from __future__ import annotations
 
 from dataclasses import dataclass
-from datetime import datetime
+from datetime import datetime, timezone
 from typing import Any, Mapping, Sequence
 
 
@@ -80,8 +80,10 @@ def _notion_datetime(value: str) -> str:
         parsed = datetime.fromisoformat(value.replace("Z", "+00:00"))
     except ValueError as exc:
         raise ReviewProjectionError("reviewed_at must be ISO-8601 date-time") from exc
-    normalized = parsed.replace(second=0, microsecond=0).isoformat()
-    return normalized.replace("+00:00", "Z")
+    if parsed.tzinfo is None:
+        raise ReviewProjectionError("reviewed_at must include a timezone")
+    normalized = parsed.astimezone(timezone.utc).replace(second=0, microsecond=0)
+    return normalized.strftime("%Y-%m-%dT%H:%M:00.000Z")
 
 
 def _identity(review: Mapping[str, Any]) -> tuple[str, int]:
@@ -530,6 +532,61 @@ def plan_review_row(
         review_url=review_url,
         properties=projection.properties,
         body_markdown=projection.body_markdown,
+    )
+
+
+def plan_review_projection(
+    review: Mapping[str, Any],
+    *,
+    investigation_rows: Sequence[Mapping[str, Any]],
+    existing_review_rows: Sequence[Mapping[str, Any]],
+    canonical_path: str | None = None,
+) -> ReviewRowPlan:
+    """Plan one Review row with a verified exactly-one Investigation binding."""
+
+    projection = build_review_projection(review, canonical_path=canonical_path)
+    investigation_row = resolve_unique_investigation_row(
+        investigation_rows,
+        investigation_id=projection.investigation_id,
+    )
+    investigation_url = investigation_row.get("url")
+    if not isinstance(investigation_url, str) or not investigation_url:
+        raise ReviewProjectionError("Investigation row must have a URL")
+
+    base_plan = plan_review_row(
+        review,
+        existing_rows=existing_review_rows,
+        canonical_path=canonical_path,
+    )
+    desired_properties = dict(base_plan.properties)
+    desired_properties["Investigation"] = [investigation_url]
+
+    existing = resolve_unique_review_row(
+        existing_review_rows,
+        investigation_id=projection.investigation_id,
+        review_seq=projection.review_seq,
+    )
+    if existing is None:
+        return ReviewRowPlan(
+            outcome="CREATE",
+            review_url=None,
+            properties=desired_properties,
+            body_markdown=base_plan.body_markdown,
+        )
+
+    current_properties = existing.get("properties")
+    if not isinstance(current_properties, Mapping):
+        raise ReviewProjectionError("existing Review row properties must be an object")
+    properties_match = all(
+        current_properties.get(name) == value
+        for name, value in desired_properties.items()
+    )
+    body_matches = existing.get("body_markdown", "").rstrip() == base_plan.body_markdown
+    return ReviewRowPlan(
+        outcome="NOOP" if properties_match and body_matches else "UPDATE",
+        review_url=base_plan.review_url,
+        properties=desired_properties,
+        body_markdown=base_plan.body_markdown,
     )
 
 
