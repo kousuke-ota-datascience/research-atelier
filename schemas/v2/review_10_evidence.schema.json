@@ -38,7 +38,7 @@
       "const": "source_evidence_note_to_10_evidence"
     },
     "target_blob_sha": {
-      "$ref": "review_common.schema.json#/$defs/sha"
+      "$ref": "review_layer_common.schema.json#/$defs/sha"
     },
     "assessment": {
       "type": "string",
@@ -47,11 +47,11 @@
     "findings": {
       "type": "array",
       "items": {
-        "$ref": "review_common.schema.json#/$defs/finding"
+        "$ref": "review_layer_common.schema.json#/$defs/finding"
       }
     },
     "verdict": {
-      "$ref": "review_common.schema.json#/$defs/verdict"
+      "$ref": "review_layer_common.schema.json#/$defs/verdict"
     }
   }
 }

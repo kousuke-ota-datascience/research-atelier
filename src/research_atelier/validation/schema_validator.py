@@ -57,7 +57,7 @@ def _local_schema_store(schema_path: Path) -> dict[str, Any]:
 
     store: dict[str, Any] = {}
     try:
-        siblings = sorted(schema_path.parent.glob("*.schema.json"))
+        siblings = sorted(schema_path.parent.rglob("*.schema.json"))
     except OSError:
         return store
 

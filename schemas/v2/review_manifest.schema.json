@@ -38,7 +38,7 @@
       ],
       "properties": {
         "commit_sha": {
-          "$ref": "review_common.schema.json#/$defs/sha"
+          "$ref": "review_layer_common.schema.json#/$defs/sha"
         },
         "artifact_blob_shas": {
           "type": "object",
@@ -51,16 +51,16 @@
           ],
           "properties": {
             "00_context": {
-              "$ref": "review_common.schema.json#/$defs/sha"
+              "$ref": "review_layer_common.schema.json#/$defs/sha"
             },
             "10_evidence": {
-              "$ref": "review_common.schema.json#/$defs/sha"
+              "$ref": "review_layer_common.schema.json#/$defs/sha"
             },
             "20_synthesis": {
-              "$ref": "review_common.schema.json#/$defs/sha"
+              "$ref": "review_layer_common.schema.json#/$defs/sha"
             },
             "30_analysis": {
-              "$ref": "review_common.schema.json#/$defs/sha"
+              "$ref": "review_layer_common.schema.json#/$defs/sha"
             }
           }
         }
@@ -99,7 +99,7 @@
       }
     },
     "verdict": {
-      "$ref": "review_common.schema.json#/$defs/verdict"
+      "$ref": "review_layer_common.schema.json#/$defs/verdict"
     }
   }
 }

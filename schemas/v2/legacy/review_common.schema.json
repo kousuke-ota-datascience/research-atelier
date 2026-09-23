@@ -1,0 +1,112 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://research-atelier.local/schemas/v2/legacy/review_common.schema.json",
+  "title": "DEPRECATED — Legacy Review Common Definitions",
+  "$defs": {
+    "sha": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{40}$"
+    },
+    "severity": {
+      "type": "string",
+      "enum": [
+        "Minor",
+        "Moderate",
+        "Major"
+      ]
+    },
+    "affected_layer": {
+      "type": "string",
+      "enum": [
+        "00_context",
+        "10_evidence",
+        "20_synthesis",
+        "30_analysis"
+      ]
+    },
+    "repair_mode": {
+      "type": "string",
+      "enum": [
+        "same_investigation",
+        "new_investigation"
+      ]
+    },
+    "layer": {
+      "type": "string",
+      "enum": [
+        "00_context",
+        "10_evidence",
+        "20_synthesis",
+        "30_analysis"
+      ]
+    },
+    "verdict": {
+      "type": "string",
+      "enum": [
+        "PASS",
+        "FINDINGS"
+      ]
+    },
+    "finding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "finding_id",
+        "severity",
+        "target",
+        "evidence",
+        "impact",
+        "repair_direction"
+      ],
+      "properties": {
+        "finding_id": {
+          "type": "string",
+          "pattern": "^F[0-9]{3}$"
+        },
+        "severity": {
+          "$ref": "#/$defs/severity"
+        },
+        "target": {
+          "type": "string",
+          "minLength": 1
+        },
+        "evidence": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "impact": {
+          "type": "string",
+          "minLength": 1
+        },
+        "repair_direction": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "mode",
+            "affected_layer",
+            "instruction"
+          ],
+          "properties": {
+            "mode": {
+              "$ref": "#/$defs/repair_mode"
+            },
+            "affected_layer": {
+              "$ref": "#/$defs/affected_layer"
+            },
+            "instruction": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        }
+      }
+    }
+  },
+  "description": "DEPRECATED. Historical compatibility only. Do not use for new Workflow 20 Review cycles; use ../review_layer_common.schema.json.",
+  "deprecated": true,
+  "$comment": "BKL-0034 legacy schema. Retained only to validate historical/compatibility references."
+}

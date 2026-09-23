@@ -1,109 +1,31 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://research-atelier.local/schemas/v2/review_common.schema.json",
-  "title": "Research Atelier Review Common Definitions",
+  "title": "DEPRECATED — Review Common Compatibility Redirect",
+  "description": "DEPRECATED. Historical compatibility path only. New Workflow 20 schemas must use review_layer_common.schema.json. Definitions redirect to schemas/v2/legacy/review_common.schema.json.",
+  "deprecated": true,
+  "$comment": "Do not use for new Review schema authoring. This path remains only so historical references fail safe rather than break.",
   "$defs": {
     "sha": {
-      "type": "string",
-      "pattern": "^[0-9a-f]{40}$"
+      "$ref": "legacy/review_common.schema.json#/$defs/sha"
     },
     "severity": {
-      "type": "string",
-      "enum": [
-        "Minor",
-        "Moderate",
-        "Major"
-      ]
+      "$ref": "legacy/review_common.schema.json#/$defs/severity"
     },
     "affected_layer": {
-      "type": "string",
-      "enum": [
-        "00_context",
-        "10_evidence",
-        "20_synthesis",
-        "30_analysis"
-      ]
+      "$ref": "legacy/review_common.schema.json#/$defs/affected_layer"
     },
     "repair_mode": {
-      "type": "string",
-      "enum": [
-        "same_investigation",
-        "new_investigation"
-      ]
+      "$ref": "legacy/review_common.schema.json#/$defs/repair_mode"
     },
     "layer": {
-      "type": "string",
-      "enum": [
-        "00_context",
-        "10_evidence",
-        "20_synthesis",
-        "30_analysis"
-      ]
+      "$ref": "legacy/review_common.schema.json#/$defs/layer"
     },
     "verdict": {
-      "type": "string",
-      "enum": [
-        "PASS",
-        "FINDINGS"
-      ]
+      "$ref": "legacy/review_common.schema.json#/$defs/verdict"
     },
     "finding": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": [
-        "finding_id",
-        "severity",
-        "target",
-        "evidence",
-        "impact",
-        "repair_direction"
-      ],
-      "properties": {
-        "finding_id": {
-          "type": "string",
-          "pattern": "^F[0-9]{3}$"
-        },
-        "severity": {
-          "$ref": "#/$defs/severity"
-        },
-        "target": {
-          "type": "string",
-          "minLength": 1
-        },
-        "evidence": {
-          "type": "array",
-          "minItems": 1,
-          "items": {
-            "type": "string",
-            "minLength": 1
-          }
-        },
-        "impact": {
-          "type": "string",
-          "minLength": 1
-        },
-        "repair_direction": {
-          "type": "object",
-          "additionalProperties": false,
-          "required": [
-            "mode",
-            "affected_layer",
-            "instruction"
-          ],
-          "properties": {
-            "mode": {
-              "$ref": "#/$defs/repair_mode"
-            },
-            "affected_layer": {
-              "$ref": "#/$defs/affected_layer"
-            },
-            "instruction": {
-              "type": "string",
-              "minLength": 1
-            }
-          }
-        }
-      }
+      "$ref": "legacy/review_common.schema.json#/$defs/finding"
     }
   }
 }
