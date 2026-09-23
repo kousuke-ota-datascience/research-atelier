@@ -72,6 +72,8 @@ Notionの `Investigations` DBはcanonical Investigation domain entityのoperatio
 
 new InvestigationではWorkflow 00がID採番直後、`00_context` freeze前にrowを1件作成する。resumeではInvestigation IDで既存rowをreuseし、duplicate rowを作らない。同じIDのrowが複数ある場合はfail-stopする。
 
+ID採番とrow作成はdraft workspace確保であり、Context freezeやsubstantive research execution開始を意味しない。Question Type未確定のままID/rowが存在しても、同じdraft INVをBLOCKEDとして保持し、Human commitment後に同じINVでfreezeへ進む。Question Type確定だけを理由に再採番しない。
+
 既存Git Investigationにrowがない場合は、frozen `00_context` をauthorityとしてrowをbackfillしてよい。historical Scope等をcurrent RQ metadataから逆算しない。
 
 ## 2. Research Contextをfirst-class entityにしない理由
@@ -100,15 +102,21 @@ Research Context ↔ RQのcardinalityはv2 canonical contractの対象外であ�
 
 freeze前はNotion Investigations rowがmutable Investigation Context inputのauthorityである。同じInvestigationをin-placeでrefineしてよい。unknownを埋めるために架空defaultを作ってはならない。
 
+Question Typeはdraftではnullを許容する。ただしnullの間はWorkflow 00 / 10をBLOCKEDとし、new frozen Contextや `10_evidence` を成立させない。draft内の `null -> concrete Question Type` はversion changeではなくsemantic prerequisiteの確定であり、同一INVのまま扱う。
+
 一時的に `00_context.context_state = draft` をmaterializeしてよいが、freeze完了まではcandidate representationであり、Notion rowと独立したcanonical authorityにはしない。
 
 ### Frozen
 
-`context_state = frozen` かつ `frozen_at` が設定され、validation後に `00_context.json` がcommitされた時点でInvestigation Contextをfreezeする。以後、そのInvestigation Contextのcanonical authorityはGit `00_context` である。
+新規v2 freezeでは、`context_state = frozen`、`frozen_at` 設定に加え、`question_type != null` をoperation-time invariantとする。通常のv2 JSON Schemaはhistorical compatibilityのためnullを許容し続け、新規freeze可否は `validate_investigation --through 00 --new-freeze` で判定する。
+
+`context_state = frozen` かつ `frozen_at` が設定され、new-freeze validation後に `00_context.json` がcommitされた時点でInvestigation Contextをfreezeする。以後、そのInvestigation Contextのcanonical authorityはGit `00_context` である。
 
 Notion rowはoperational / derived representationとして残すが、frozen contextと不一致ならGitを基準にreconcileし、Notion側の編集からhistorical Git artifactを変更しない。
 
-freeze後にcontext-defining fieldをsemanticに変更する場合、同じInvestigationを書き換えず **新しいInvestigation IDを採番する**。
+freeze後にcontext-defining fieldをsemanticに変更する場合、同じInvestigationを書き換えず **新しいInvestigation IDを採番する**。具体的Question Typeの `Descriptive -> Mechanistic` 等は従来どおりnew Investigationである。
+
+BKL-0031以前に存在するfrozen `question_type = null` artifactはhistorical compatibility対象であり、Question Typeをbackfillしてcurrent Contextへrepairしない。regular schema validationで一律INVALID化せず、missing downstream artifactも後付けしない。
 
 ### Accepted
 
@@ -154,6 +162,7 @@ answer spaceまたは問いのsemantic targetが実質的に変わる場合は�
 3. 一度materialize / commitしたIDは再利用しない。
 4. abandoned InvestigationのIDも再利用しない。
 5. 同一RQのversion番号を意味するsuffixは持たない。
+6. draft rowでQuestion Type等のsemantic prerequisiteを確定する間は同じIDを保持し、未確定値のcommitだけを理由にnext IDをallocateしない。
 
 global sequenceはidentity allocationのためだけに使い、chronological quality rankingやsemantic versionを意味しない。
 
@@ -200,7 +209,8 @@ v2の構造はv1を必要以上に変更しない。Task 17ではidentity semant
 | wordingの非意味的修正 | 同一INV | historical snapshot維持。必要なら新INV | 同一RQ |
 | semantic question identity変更 | 新RQへ切替 | 新RQ + 新INV | 新RQ |
 | Scope変更 | 同一INV | 新INV | 通常同一RQ |
-| Question Type変更 | 同一INV | 新INV | 同一RQ |
+| Question Type `null -> concrete` | 同一INV（draft prerequisite確定） | historical null frozen artifactはin-place repairせず保存 | 同一RQ |
+| concrete Question Type変更 | 同一INV（freeze前） | 新INV | 同一RQ |
 | boundary / cutoff / assumption変更 | 同一INV | 新INV | 同一RQ |
 | result accept前のEvidence更新 | 同一INV、downstream invalidate | N/A | 同一RQ |
 | accepted resultのsubstantive再調査 | N/A | 新INV | 同一RQ |
