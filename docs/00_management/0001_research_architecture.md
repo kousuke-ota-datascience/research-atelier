@@ -29,7 +29,7 @@
 | Semantic assistance / materialization | LLM | RQ wording整理、条件候補提示、Investigation Context / Evidence / Synthesis / Analysisのmaterialization支援 | semantic proposalを作れるが、RQのsemantic ownership、research intent、未確認conditionを単独で確定しない |
 | Investigation orchestration | Workflow 00 / deterministic system | accepted RQまたは既存Investigationを入口として、resume / new判定、INV ID採番、lifecycle / invalidation、accepted result projectionを管理 | execution identity / lifecycle / orchestrationのauthority。RQ semantic meaningのauthorityは持たない |
 | Investigation execution | Workflow 10 | frozen Investigation Contextの下でSource discovery、Evidence capture / selection、Synthesis、Analysisを順序立てて実行 | canonical execution procedureのauthority。Research Questionの作成・採択は責務外 |
-| Independent semantic assessment | Workflow 20 | committed Investigation artifactについてEvidence-faithfulness、Synthesisのsupport境界、Question Type固有analysis、Working Answer / limitation等を独立評価 | optional semantic assessmentのprocedure authority。RQ semantic meaning、canonical artifact repair、deterministic validation、Control Planeのauthorityは持たない |
+| Independent semantic assessment | Workflow 20 | committed Investigation artifactについてEvidence-faithfulness、Synthesisのsupport境界、Question Type固有analysis、Working Answer / limitation等を独立評価し、実行時はcanonical Review JSONを永続化 | optional semantic assessmentのprocedure authority。Review実行の有無はoptionalだが、実行したReviewのFinding / Verdict / target freezeはGit Review JSONがauthority |
 | 構造契約 | JSON Schema | 許可構造、required、type、enum、conditional structure | artifact structureの正本契約 |
 | Deterministic enforcement | Python | schema、reference、ID、version/path、その他機械判定可能なinvariantの検査 | machine-checkable ruleの実行正本 |
 
@@ -74,7 +74,7 @@ Research Atelierは、Research Questionを生成するworkflowではない。can
 - Workflow 20は、明示的に起動された場合にInvestigationのsemantic correctnessを独立評価するoptional workflowである。findingは記録するが、Research Questionを再定義せず、reviewer自身がcanonical artifactを直接repairしない。
 - deterministic systemはmachine-checkableなstate / identity / validationを管理し、semantic research intentを推測しない。
 
-BKL-0021時点ではWorkflow 20をWorkflow 00のdefault completion gateにしない。Review未実施だけを理由にVALIDATED / COMPLETEを阻害しない。mandatory化する場合はTask 14のdecisionとWorkflow 00 state contractを明示的に改訂する。
+BKL-0021で確定した「Workflow 20はdefault completion gateにしない」というdecisionは維持する。BKL-0027以降は、**Review実行自体はoptionalだが、実行したReviewのpersistent JSON / history / current-state reconciliationはmandatory**とする。Review未実施だけを理由にVALIDATED / COMPLETEを阻害しない。
 
 Task 17が定義するのはRQ / Investigation / Investigation Contextの**domain model**であり、本節が定義するのはactor responsibility / workflow entrance / execution authorityである。両者を混同しない。
 
@@ -155,6 +155,12 @@ derived copyはprojection、snapshot、cache、renderingとしてのみ存在で
 - evidence-faithful Synthesis
 - RQ-specific AnalysisとWorking Answer
 - canonical artifact内のlineage / version identifiers
+- Workflow 20を実行した場合のappend-only Semantic Review history
+  - `(Investigation ID, Review Seq)` identity
+  - frozen target commit / artifact blob SHA
+  - transition別semantic assessment
+  - Findings / repair direction
+  - deterministic Verdict
 
 ### Contract-authoritative
 
@@ -175,6 +181,8 @@ derived copyはprojection、snapshot、cache、renderingとしてのみ存在で
 5. 既存InvestigationのNotion rowが欠落している場合、frozen Git `00_context` をauthorityとしてoperational rowをbackfillしてよい。current RQ metadataからhistorical conditionを逆算しない。
 6. 同一fieldをNotionとGitの双方でauthoritativeに手動管理してはならない。
 7. upstream canonical artifactが変更された場合、依存するdownstream artifactは再validationまたは再生成されるまでinvalidとする。
+8. Workflow 20 Review content / Findings / VerdictはGit Review JSONがauthorityであり、Notion Investigations DBには `Review Status / Latest Review Seq` というderived current pointerだけを保持する。
+9. Review Status mutationは `src/research_atelier/reviewing/reconcile.py` のdeterministic planを介し、Workflow 20やconnectorが独自に書き換えない。
 
 ## docs/98_reusable_artifact の位置付け
 
