@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000016",
+  "review_seq": 1,
+  "layer": "20_synthesis",
+  "review_kind": "10_evidence_to_20_synthesis",
+  "target_blob_sha": "f79f28e5d056df141da0fe3e3300af96e756198d",
+  "assessment": "各Knowledge Unitの大半は参照Evidenceに支持され、一次史料未照合、後世解釈、財政計算の対立等のqualification / uncertaintyも保持している。水源・行政上の理由と政治的利害を単一因果へ統合しない点も適切である。ただし財政conflictを表すR0005のKnowledge Unit参照にsemantic mismatchがある。",
+  "findings": [
+    {
+      "finding_id": "F002",
+      "severity": "Minor",
+      "target": "20_synthesis.relations.R0005.knowledge_unit_refs",
+      "evidence": [
+        "20_synthesis.R0005.descriptionは政府の財政説明と法案委員会側の財政計算の対立を記述し、evidence_refsはE0004/E0014である。",
+        "20_synthesis.K0010は当該財政上の対立を表す。",
+        "20_synthesis.K0007は「神奈川県側は一枚岩ではない」という主体異質性の命題であり、財政上の対立命題ではない。"
+      ],
+      "impact": "Relation graph上、K0010とK0007が相互にconflictする命題であるかのように表現され、財政論点のsemantic lineageが不正確になる。K0010自体の内容はEvidenceに支持されるため、main conclusionを直ちに反転させる欠陥ではない。",
+      "repair_direction": {
+        "mode": "new_investigation",
+        "affected_layer": "20_synthesis",
+        "instruction": "new InvestigationでSynthesisを再構築する際、R0005のrelation participantsを財政命題に整合させ、K0007を財政conflictの相手として参照しない。必要なら政府側と委員会側の財政命題を別Knowledge Unitに分けてconflictを表現する。"
+      }
+    }
+  ],
+  "verdict": "FINDINGS"
+}

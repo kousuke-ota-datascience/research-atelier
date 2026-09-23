@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000016",
+  "review_seq": 1,
+  "layer": "30_analysis",
+  "review_kind": "20_synthesis_plus_00_context_to_30_analysis",
+  "target_blob_sha": "3d950770e24a89a7a621ba9d75691d64fd9b2437",
+  "assessment": "Working AnswerはDescriptive RQに沿い、行政上の理由、内海個人の政治的利害、選挙・県会対立、財政上の争点を区別し、自由党排除だけに還元する単線的説明を避けている。limitations / unresolved questions / alternative interpretationsも主要な不確実性を保持している。J0005のみ、K0009が支持する時間的先行性より強い「独立した前史」という表現を用いている。",
+  "findings": [
+    {
+      "finding_id": "F003",
+      "severity": "Minor",
+      "target": "30_analysis.judgments.J0005",
+      "evidence": [
+        "20_synthesis.K0009は、水源管理をめぐる府県間摩擦が1891年から確認でき、1892年の選挙・県会対立より時間的に先行することを支持する。",
+        "20_synthesis.R0006は、水源・行政上の理由と政治的利害の相対的な因果寄与を順位付けしないと明示する。",
+        "30_analysis.J0005は「1892年の選挙・県会対立とは独立した前史を持つ」と記述する。"
+      ],
+      "impact": "「独立した」は時間的先行性を超えて要因間の独立性・分離可能性を示唆しうるため、DescriptiveなSynthesisのsupport boundaryをわずかに越える。Working Answer本文はより慎重であり、影響は局所的である。",
+      "repair_direction": {
+        "mode": "new_investigation",
+        "affected_layer": "30_analysis",
+        "instruction": "new InvestigationのAnalysisでは、追加Evidenceなしに「独立」と断定せず、「1892年の政治対立より前から確認できる前史」など、Evidenceが支持する時間的先行性に限定して記述する。"
+      }
+    }
+  ],
+  "verdict": "FINDINGS"
+}

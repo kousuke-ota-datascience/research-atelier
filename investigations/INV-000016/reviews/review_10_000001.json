@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000016",
+  "review_seq": 1,
+  "layer": "10_evidence",
+  "review_kind": "source_evidence_note_to_10_evidence",
+  "target_blob_sha": "7ff48058b9e38e8a6b1c7f3792041a65a8fd2f9c",
+  "assessment": "14件のfrozen Evidenceは対応するNotion Evidence Noteの内容・Source relationと一致し、主要な政府答弁、内海公式内申・私信、選挙干渉、県会責任追及、水源管理摩擦、財政論争へtraceできる。公的理由と政治的動機、一次史料と後世解釈の区別も概ね保持される。一方、Contextが明示的に要求する移管推進・容認・反対の各立場について、利用済みSource内にある直接的な賛否Evidenceの重要なselection omissionがある。",
+  "findings": [
+    {
+      "finding_id": "F001",
+      "severity": "Moderate",
+      "target": "10_evidence evidence selection for transfer-supporting / accepting / opposing positions, especially E0014 / SRC-0107",
+      "evidence": [
+        "00_context.investigation_boundary.include[1]: 「移管推進、容認、反対の各立場とその根拠」",
+        "SRC-0107 / 第4回帝国議会 衆議院 本会議 第46号: 委員長報告は移管希望11通667人、反対19通3552人等を記録するが、E0014は同じSourceから財政論点のみをfreezeしている。",
+        "10_evidence.E0014",
+        "SRC-0095 / 『多摩市史 通史編2 近現代』第四章第四節: 神奈川県側の移管賛成運動・請願主体を叙述する。"
+      ],
+      "impact": "Frozen Contextが明示的に要求する移管推進・容認・反対の主体別立場をEvidence layerが十分にcaptureしていないため、K0007/J0007およびWorking Answerの「神奈川県側は一枚岩ではない」という記述は、移管そのものへの直接的な賛否Evidenceよりも周辺の政治対立から構成されている。RQに対する記述的coverageとsupport boundaryが不十分になる。",
+      "repair_direction": {
+        "mode": "new_investigation",
+        "affected_layer": "10_evidence",
+        "instruction": "Workflow 00で同一RQのnew Investigationを開始し、神奈川県側の移管推進・容認・反対主体（県議、三多摩政治家・有志、町村長等）の同時代意思表明・請願とその根拠をEvidenceとしてcaptureし、20_synthesis / 30_analysisをそのEvidenceから再構築する。"
+      }
+    }
+  ],
+  "verdict": "FINDINGS"
+}

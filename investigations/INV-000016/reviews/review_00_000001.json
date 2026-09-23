@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000016",
+  "review_seq": 1,
+  "layer": "00_context",
+  "review_kind": "context_semantic_validity",
+  "target_blob_sha": "29970d9838ce1500478286d15b3140c5ba77d840",
+  "assessment": "Frozen Research Question、Scope、include / exclude、assumptions、Question Type=Descriptiveは相互に整合している。主体を一枚岩として扱わず、公的理由と私的・政治的動機を分離し、自由党・選挙干渉を候補要因として扱う設計はRQに適合する。downstream解釈に必要な主要semantic boundaryの欠落や、frozen Context自体を変更しなければ解消できない矛盾は確認しなかった。",
+  "findings": [],
+  "verdict": "PASS"
+}
