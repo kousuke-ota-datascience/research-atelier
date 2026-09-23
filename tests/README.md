@@ -102,3 +102,17 @@ BKL-0034ではReview Cycle persistenceをcycle manifest + 4 layer JSONへ分割�
 - orphan / incomplete / malformed split cycleはfail-stopする
 - split cycleのdirect layer verdictとcross-layer `affected_layer` からReviews DB OK/NGをderiveする
 - legacy INV-000015 Review 000001 projectionを回帰させない
+
+## Investigation allocation / rerun regression
+
+`test_investigation_allocation.py` はBKL-0035のInvestigation allocation guardを固定する。
+
+- 同一semantic contextのretry / completionでnew Investigationを採番しない
+- RQ-0022 / INV-000018 -> INV-000019相当のrerun regression
+- RQ-0020 / INV-000016 -> INV-000020相当のReview repair regression
+- Evidence cutoffのtimestamp差だけではnew Investigationを正当化しない
+- cutoff差のsemantic materialityが決定不能ならBLOCKED
+- Scope / concrete Question Type / Evidence population変更ではnew Investigation
+- Humanがexplicit independent executionを要求した場合は同一Contextでもnew Investigation
+- allocation decision reportがmachine-readable audit fieldを持つ
+
