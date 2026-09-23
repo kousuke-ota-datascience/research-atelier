@@ -28,11 +28,13 @@ RQだけが与えられ、Investigation IDが指定されていない場合:
 
 0. Research Questionがacceptedであり、「このRQを調査する」というhuman research intentが成立していることを確認する。
 
-1. そのRQに紐づく未完了Investigationを確認する。
+1. そのRQに紐づく未完了InvestigationをGit artifactとNotion Investigations registryから確認する。
 2. current workとして再開すべき同一executionが存在するか判定する。
 3. 再開対象がなければ `0002_investigation_versioning.md` に従って新しい `INV-NNNNNN` をglobal sequenceから採番する。
+4. new Investigationでは、採番直後にNotion Investigations DBへ `Investigation ID` とexactly one `Research Question` relationを持つrowを1件作成する。
+5. resumeでは `Investigation ID` で既存rowをreuseし、duplicate rowを作成しない。
 
-v2 Investigation IDはRQ IDをencodeしない。RQとのbindingは `00_context.rq_id` で行う。
+v2 Investigation IDはRQ IDをencodeしない。RQとのbindingはNotion Investigations DBのexplicit relationと、freeze後の `00_context.rq_id` で行う。
 
 内部artifact pathやvalidator stageを導出できる場合、それらを通常のuser inputとして要求しない。
 
@@ -47,7 +49,21 @@ Workflow 00の責務は**accepted Research Questionからcanonical research exec
 - RQ wording整理や候補提示はLLMが支援してよいが、semantic target / Scope / assumptions等のhuman-owned commitmentを暗黙に確定しない。
 - semantic question identityが未確定なら、Workflow 00はResearch executionを開始せず、RQ acceptanceが成立するまでBLOCKEDとする。
 
-### 1.2 Canonical execution invariant
+### 1.2 Investigations DB registry contract
+
+Workflow 00はNotion Investigations DBをInvestigationのoperational registryとして扱う。
+
+- **new**: ID採番後、`00_context` freeze前にrowを作成する。row作成に失敗した状態で別経路からContext constructionを継続しない。
+- **resume**: Investigation IDでexactly one rowを解決してreuseする。同じIDが複数rowならBLOCKED。
+- **existing Git / missing Notion row**: frozen `00_context` が存在する場合は、そのGit snapshotをauthorityとしてrowをbackfillする。current RQ metadataからhistorical conditionを推測しない。
+- **draft**: Question Type / Scope / Include / Exclude / Evidence Cutoff / Assumptionsのmutable input authorityはNotion row。
+- **frozen**: validation済み `00_context.json` がcommitされた後はGitがContext authority。Notion rowの差異からfrozen Gitを変更しない。
+- Question wordingはInvestigations rowへduplicateせず、freeze時にrelated Research Questionからsnapshotする。
+- Review Status / Latest Review Seqはcurrent Review operational pointerであり、Investigation lifecycle stateやReview historyの第二authorityにしない。
+
+rowの有無だけでInvestigation execution stateを決めない。NEW / PARTIAL / VALIDATED等のstateは引き続きcanonical artifactとvalidationからderiveする。
+
+### 1.3 Canonical execution invariant
 
 対象RQが存在し、外部Sourceを探索してsubstantive conclusionを生成する場合、その実行はWorkflow 00を経由し、Workflow 10のcanonical artifact chainへ接続しなければならない。
 
@@ -142,6 +158,8 @@ external / semantic prerequisiteを解消しない限り進行できない状態
 - RQ identityを解決できない。
 - Investigation ownership / RQ bindingがambiguous。
 - 必要なNotion / Git accessがない。
+- new InvestigationのNotion rowを作成できない。
+- 同じInvestigation IDのNotion rowが複数存在する、またはResearch Question relationがambiguous。
 - assumptionを捏造せずにInvestigation Contextをfreezeできるほど明確化できない。
 - canonical contract間にlocalでは解消不能な矛盾がある。
 - target RQ bodyにtop-level `# Working Answer` headingが複数存在し、安全なprojection targetを一意に決められない。
@@ -259,6 +277,8 @@ inputが変わらない限り、再実行は同じcanonical stateへ収束する
 rule:
 
 - Workflow 00を再実行しただけで新しいInvestigationを採番しない。
+- resume時は既存Notion Investigation rowをreuseし、同じIDのrowを追加しない。
+- frozen Git InvestigationにNotion rowだけが欠ける場合は、new Investigationを採番せずcontrolled backfillする。
 - upstream inputが変わらずsemantic correctionも不要なら、PASS済みartifactを再生成しない。
 - timestamp更新だけを目的にfileを書き換えない。
 - semantic reasonなしにE / K / J identifierをrenumberしない。
@@ -355,7 +375,8 @@ old downstream artifactを、fileが存在するという理由だけでtrusted�
 期待動作:
 
 - accepted RQに対するsubstantive research開始時点でWorkflow 00へ入る。
-- resume可能なInvestigationがなければ新しい `INV-NNNNNN` を採番する。
+- resume可能なInvestigationがなければ新しい `INV-NNNNNN` を採番し、Notion Investigations DBへ1 rowを作成する。
+- freeze前のInvestigation-specific conditionはそのrowでrefineし、freeze後はGit `00_context` をauthorityとする。
 - Workflow 10を通してSource / Evidence lineageとcanonical artifactsを構築する。
 - through-30 validationとaccepted result projectionが完了するまでCOMPLETEにしない。
 - chat上のad hoc answerはcanonical Working Answerのsourceとして扱わない。
