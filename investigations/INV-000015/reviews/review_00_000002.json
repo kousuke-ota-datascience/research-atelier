@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000015",
+  "review_seq": 2,
+  "layer": "00_context",
+  "review_kind": "context_semantic_validity",
+  "target_blob_sha": "ba394ad6150a18376b9977246f7b59b55bf39235",
+  "assessment": "The frozen Investigation Context is semantically coherent for a Descriptive investigation. The question, scope, include/exclude boundaries, evidence cutoff, and assumptions consistently separate historical description from causal-effect claims. The stated interest in the later Tama transfer is explicitly bounded so that temporal/political connection may be described while causal contribution is deferred to a later RQ. No context defect requiring a new Investigation was identified.",
+  "findings": [],
+  "verdict": "PASS"
+}
