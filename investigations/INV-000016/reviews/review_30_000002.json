@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000016",
+  "review_seq": 2,
+  "layer": "30_analysis",
+  "review_kind": "20_synthesis_plus_00_context_to_30_analysis",
+  "target_blob_sha": "0f9f0a11e4864b2ba19fac3fa3f91a4f20c9abc4",
+  "assessment": "Working AnswerとJudgmentsはQuestion Type=Descriptiveに沿い、内海知事の行政上の公式理由、本人私信に表れる政治的利害、移管そのものへの賛否、選挙干渉をめぐる対立、財政上の争点を分離して記述している。請願数は組織化された意思表明として扱い、住民全体の支持率へ一般化していない。Review 000001のF003で問題となったJ0005の『独立した前史』は、『1892年の選挙・県会対立より時間的に先行する前史』へ限定され、Evidenceが支持する時間的先行性を越える独立性の断定は解消された。政府の初期説明と後続請願の関係、財政評価の対立、後世の自由党分断解釈に関するlimitations / unresolved questionsも保持されており、20_synthesisを越える新たなoverclaimは確認しない。",
+  "findings": [],
+  "verdict": "PASS"
+}
