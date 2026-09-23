@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000015",
+  "review_seq": 3,
+  "layer": "20_synthesis",
+  "review_kind": "10_evidence_to_20_synthesis",
+  "target_blob_sha": "79c31423a205028cb3ccc7b25401b5e02b10fc61",
+  "assessment": "The 20_synthesis blob is unchanged from the PASS target in Review 000002. The current repair does not modify any Knowledge Unit or Evidence reference, and the Analysis continues to use the existing synthesis chain rather than adding a new upstream proposition. No Synthesis-layer repair is required.",
+  "findings": [],
+  "verdict": "PASS"
+}

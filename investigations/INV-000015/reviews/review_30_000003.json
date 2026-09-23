@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000015",
+  "review_seq": 3,
+  "layer": "30_analysis",
+  "review_kind": "20_synthesis_plus_00_context_to_30_analysis",
+  "target_blob_sha": "bdc749e17c7f632921dd68cb9d40fb4b87b3a2b2",
+  "assessment": "The Review 000002 finding is resolved. The Working Answer opening now characterizes the earlier phase only as regional freedom-and-rights activity leading into Liberal Party participation, which stays within the abstraction represented by K0001/K0002 instead of bypassing the canonical Evidence/Synthesis chain with the previously unsupported associations/speeches/study specificity. The remainder of 30_analysis is unchanged and preserves the previously accepted qualifications and causal boundaries. No Analysis-layer finding remains.",
+  "findings": [],
+  "verdict": "PASS"
+}

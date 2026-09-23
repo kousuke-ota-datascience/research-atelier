@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000015",
+  "review_seq": 3,
+  "layer": "10_evidence",
+  "review_kind": "source_evidence_note_to_10_evidence",
+  "target_blob_sha": "87972f0dc8e84b61e0bf8bf9ef4ba40509023cda",
+  "assessment": "The 10_evidence blob is unchanged from the PASS target in Review 000002. The current repair modifies only 30_analysis, so the frozen Evidence selection, provenance, qualifications, and Source/Evidence Note lineage are unchanged. No new Evidence-layer semantic defect is introduced by the repaired target.",
+  "findings": [],
+  "verdict": "PASS"
+}
