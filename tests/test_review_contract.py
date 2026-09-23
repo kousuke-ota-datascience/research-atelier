@@ -469,6 +469,7 @@ class ReviewContractTest(unittest.TestCase):
             review_eligible=True,
             new_investigation_handoff_completed=True,
             review_handoff=plan.record,
+            source_rq_id=SOURCE_RQ_ID,
         )
         self.assertEqual(result.outcome, "UPDATE")
         self.assertEqual(result.changes, {"Review Status": "引継済"})
@@ -570,6 +571,7 @@ class ReviewContractTest(unittest.TestCase):
             "context": {
                 "context_state": "frozen",
                 "question_type": "Descriptive",
+                "rq_id": SOURCE_RQ_ID,
             },
         }
         result = reconcile_payload(payload)
