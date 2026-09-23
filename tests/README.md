@@ -74,3 +74,17 @@ v2 testは以下を追加で確認する。
 - `未 -> レビュー待 -> 完了 / 要修正 -> 再作業中 -> 再レビュー待` のdeterministic reconciliation
 - repair開始にはexplicit eventが必要
 - stale Review、duplicate / malformed history、idempotent reconciliation
+
+
+## Review DB projection regression
+
+`test_review_projection.py` はBKL-0032のGit Review JSON -> Notion Reviews operational projection contractを固定する。
+
+- INV-000015 / Review Seq 1をregression fixtureとして 00=OK / 10=OK / 20=OK / 30=NG / Minor をderive
+- Review pageのSummary / Next Action / Details / Provenance rendering
+- same-Investigation 30_analysis repair handoff
+- new-Investigation handoff
+- frozen 00_contextへのunsafe same-Investigation repairをfail-stop
+- Investigation bindingのexactly-one enforcement
+- logical Review identity重複時のfail-stop
+- existing row解決とLatest Review relation reconciliationのidempotence
