@@ -12,7 +12,7 @@ SRC_ROOT = REPO_ROOT / "src"
 if str(SRC_ROOT) not in sys.path:
     sys.path.insert(0, str(SRC_ROOT))
 
-from research_atelier.reviewing.reconcile import reconcile_review_state
+from research_atelier.reviewing.reconcile import reconcile_payload, reconcile_review_state
 from research_atelier.reviewing.review_state import load_review_history
 from research_atelier.reviewing.review_writer import (
     ReviewPersistenceError,
@@ -148,6 +148,7 @@ class ReviewContractTest(unittest.TestCase):
             latest_review=None,
             target_relation="exact",
             review_requested=True,
+            review_eligible=True,
         )
         self.assertEqual(result.outcome, "UPDATE")
         self.assertEqual(result.changes["Review Status"], "レビュー待")
@@ -164,6 +165,79 @@ class ReviewContractTest(unittest.TestCase):
         self.assertEqual(result.outcome, "UPDATE")
         self.assertEqual(result.changes, {"Review Status": "－（対象外）"})
 
+    def test_inv_000008_explicit_review_request_remains_not_applicable(self) -> None:
+        context = json.loads(
+            (REPO_ROOT / "investigations" / "INV-000008" / "00_context.json").read_text(
+                encoding="utf-8"
+            )
+        )
+        result = reconcile_payload(
+            {
+                "current": {
+                    "review_status": "未",
+                    "latest_review_seq": None,
+                },
+                "review": {"latest": None, "target_relation": "missing"},
+                "events": {"review_requested": True},
+                "context": context,
+            }
+        )
+        self.assertEqual(result["outcome"], "UPDATE")
+        self.assertEqual(result["changes"], {"Review Status": "－（対象外）"})
+        self.assertFalse(
+            (REPO_ROOT / "investigations" / "INV-000008" / "reviews").exists()
+        )
+
+    def test_payload_derives_historical_null_as_ineligible(self) -> None:
+        result = reconcile_payload(
+            {
+                "current": {
+                    "review_status": "レビュー待",
+                    "latest_review_seq": None,
+                },
+                "review": {"latest": None, "target_relation": "missing"},
+                "events": {"review_requested": True},
+                "context": {
+                    "context_state": "frozen",
+                    "question_type": None,
+                },
+            }
+        )
+        self.assertEqual(result["outcome"], "UPDATE")
+        self.assertEqual(result["changes"], {"Review Status": "－（対象外）"})
+
+    def test_payload_derives_concrete_question_type_as_eligible(self) -> None:
+        result = reconcile_payload(
+            {
+                "current": {
+                    "review_status": "未",
+                    "latest_review_seq": None,
+                },
+                "review": {"latest": None, "target_relation": "exact"},
+                "events": {"review_requested": True},
+                "context": {
+                    "context_state": "frozen",
+                    "question_type": "Descriptive",
+                },
+            }
+        )
+        self.assertEqual(result["outcome"], "UPDATE")
+        self.assertEqual(result["changes"], {"Review Status": "レビュー待"})
+
+    def test_payload_missing_context_blocks_instead_of_defaulting_eligible(self) -> None:
+        result = reconcile_payload(
+            {
+                "current": {
+                    "review_status": "未",
+                    "latest_review_seq": None,
+                },
+                "review": {"latest": None, "target_relation": "exact"},
+                "events": {"review_requested": True},
+            }
+        )
+        self.assertEqual(result["outcome"], "BLOCKED")
+        self.assertIn("review_eligibility_context_missing", result["issues"])
+
     def test_pass_becomes_complete(self) -> None:
         record = self._save()
         result = reconcile_review_state(
@@ -171,6 +245,7 @@ class ReviewContractTest(unittest.TestCase):
             current_latest_review_seq=None,
             latest_review=record,
             target_relation="exact",
+            review_eligible=True,
         )
         self.assertEqual(result.changes, {"Review Status": "完了", "Latest Review Seq": 1})
 
@@ -181,6 +256,7 @@ class ReviewContractTest(unittest.TestCase):
             current_latest_review_seq=None,
             latest_review=record,
             target_relation="exact",
+            review_eligible=True,
         )
         self.assertEqual(finding.changes["Review Status"], "要修正")
         repairing = reconcile_review_state(
@@ -188,6 +264,7 @@ class ReviewContractTest(unittest.TestCase):
             current_latest_review_seq=1,
             latest_review=record,
             target_relation="exact",
+            review_eligible=True,
             repair_started=True,
         )
         self.assertEqual(repairing.changes["Review Status"], "再作業中")
@@ -199,6 +276,7 @@ class ReviewContractTest(unittest.TestCase):
             current_latest_review_seq=1,
             latest_review=record,
             target_relation="stale",
+            review_eligible=True,
         )
         self.assertEqual(result.changes["Review Status"], "再レビュー待")
 
@@ -209,6 +287,7 @@ class ReviewContractTest(unittest.TestCase):
             latest_review=None,
             history_issues=("duplicate_review_seq:1",),
             target_relation="exact",
+            review_eligible=True,
         )
         self.assertEqual(result.outcome, "BLOCKED")
         self.assertEqual(result.changes, {})
@@ -220,6 +299,7 @@ class ReviewContractTest(unittest.TestCase):
             current_latest_review_seq=1,
             latest_review=record,
             target_relation="exact",
+            review_eligible=True,
         )
         self.assertEqual(result.outcome, "NOOP")
         self.assertEqual(result.changes, {})

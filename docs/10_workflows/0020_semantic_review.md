@@ -80,7 +80,7 @@ BKL-0031以前にfreezeされたhistorical Investigationのうち、`00_context.
 - historical `00_context` へQuestion Typeをbackfillしない。
 - missing `30_analysis` をReviewのために後付けしない。
 
-これはhistorical compatibility ruleであり、新規Investigationで `question_type = null` のfreezeを許容する根拠ではない。新規freeze禁止はBKL-0031のcontract変更で扱う。
+これはhistorical compatibility ruleであり、新規Investigationで `question_type = null` のfreezeを許容する根拠ではない。BKL-0031以後のnew freezeは `validate_investigation <ID> --through 00 --new-freeze` により `question_type != null` をoperation-time invariantとして強制する。通常のv2 schema validationはhistorical互換のためnullを許容し続ける。
 
 ### Validation freshness
 
@@ -334,6 +334,8 @@ Reviewをmandatory state gateへ昇格する場合は、Task 14のdecisionを別
 - targetとcurrent artifactのmechanical staleness判定
 - projection / sync state tracking
 - divergence / concurrent editのdeterministic detection
+- frozen `00_context` をReview reconcilerへ渡し、`derive_review_eligibility()` でQuestion Typeからeligibilityをdeterministically導出すること
+- eligibility Contextが欠落・未freezeならeligible=trueへdefaultせずBLOCKEDとすること
 
 担わない:
 

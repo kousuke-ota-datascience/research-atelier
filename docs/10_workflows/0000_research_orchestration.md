@@ -31,8 +31,10 @@ RQだけが与えられ、Investigation IDが指定されていない場合:
 1. そのRQに紐づく未完了InvestigationをGit artifactとNotion Investigations registryから確認する。
 2. current workとして再開すべき同一executionが存在するか判定する。
 3. 再開対象がなければ `0002_investigation_versioning.md` に従って新しい `INV-NNNNNN` をglobal sequenceから採番する。
-4. new Investigationでは、採番直後にNotion Investigations DBへ `Investigation ID` とexactly one `Research Question` relationを持つrowを1件作成する。
-5. resumeでは `Investigation ID` で既存rowをreuseし、duplicate rowを作成しない。
+4. new Investigationでは、採番直後にNotion Investigations DBへ `Investigation ID` とexactly one `Research Question` relationを持つrowを1件作成する。このID/rowはdraft workspace確保であり、Context freezeやsubstantive research execution開始を意味しない。
+5. new draft、またはまだfrozen `00_context` を持たないresume draftでは、Question TypeをHuman / Researcherの具体値へcommitする。nullなら同じdraft INV rowを保持したままBLOCKEDとし、`00_context` freeze / Source探索 / `10_evidence` へ進まない。
+6. 既にfrozen `00_context` があるresumeではGit Contextをauthorityとする。そこが `question_type = null` ならhistorical compatibility branchへ入り、同じINVへQuestion Typeをbackfillして再開しない。
+7. resumeでは `Investigation ID` で既存rowをreuseし、duplicate rowを作成しない。
 
 v2 Investigation IDはRQ IDをencodeしない。RQとのbindingはNotion Investigations DBのexplicit relationと、freeze後の `00_context.rq_id` で行う。
 
@@ -48,6 +50,7 @@ Workflow 00の責務は**accepted Research Questionからcanonical research exec
 - resume: 既存Investigation IDが与えられ、そのRQ bindingとlifecycleを解決できる。
 - RQ wording整理や候補提示はLLMが支援してよいが、semantic target / Scope / assumptions等のhuman-owned commitmentを暗黙に確定しない。
 - semantic question identityが未確定なら、Workflow 00はResearch executionを開始せず、RQ acceptanceが成立するまでBLOCKEDとする。
+- Question Typeはcanonical Context freeze前のmandatory semantic prerequisiteである。未確定ならBLOCKEDとし、Human commitmentを要求する。draft内の `null -> concrete` はsame Investigationのrefinementであり、version change / 再採番にしない。
 
 ### 1.2 Investigations DB registry contract
 
@@ -56,8 +59,8 @@ Workflow 00はNotion Investigations DBをInvestigationのoperational registryと
 - **new**: ID採番後、`00_context` freeze前にrowを作成する。row作成に失敗した状態で別経路からContext constructionを継続しない。
 - **resume**: Investigation IDでexactly one rowを解決してreuseする。同じIDが複数rowならBLOCKED。
 - **existing Git / missing Notion row**: frozen `00_context` が存在する場合は、そのGit snapshotをauthorityとしてrowをbackfillする。current RQ metadataからhistorical conditionを推測しない。
-- **draft**: Question Type / Scope / Include / Exclude / Evidence Cutoff / Assumptionsのmutable input authorityはNotion row。
-- **frozen**: validation済み `00_context.json` がcommitされた後はGitがContext authority。Notion rowの差異からfrozen Gitを変更しない。
+- **draft**: Question Type / Scope / Include / Exclude / Evidence Cutoff / Assumptionsのmutable input authorityはNotion row。Question Typeはnullでもよいが、その間はfreeze / canonical executionへ進めない。
+- **frozen**: new freezeでは `question_type != null` を `validate_investigation --through 00 --new-freeze` でoperation-time validationし、PASSした `00_context.json` がcommitされた後はGitがContext authority。Notion rowの差異からfrozen Gitを変更しない。
 - Question wordingはInvestigations rowへduplicateせず、freeze時にrelated Research Questionからsnapshotする。
 - Review Status / Latest Review Seqはcurrent Review operational pointerであり、Investigation lifecycle stateやReview historyの第二authorityにしない。
 
@@ -83,7 +86,8 @@ stateはcurrent artifactとvalidation resultから導出する。第二のauthor
 
 処理:
 
-- Workflow 10をcontext constructionから開始する。
+- Notion draft rowのQuestion Typeがnon-nullならWorkflow 10をcontext constructionから開始する。
+- Question Typeがnullならstate = BLOCKEDとし、same INV row上でHuman commitmentを待つ。別INVを採番しない。
 
 ### PARTIAL
 
@@ -102,6 +106,7 @@ stateはcurrent artifactとvalidation resultから導出する。第二のauthor
 処理:
 
 - earliest missing artifactから再開する。
+- ただしfrozen `00_context.question_type = null` はBKL-0031以前のhistorical compatibility artifactとして扱い、通常INVALIDへ落とさない一方、missing downstream artifactを新規生成して再開もしない。historical PARTIALはnon-resumableとして保持する。
 
 ### INVALID
 
@@ -191,37 +196,44 @@ workflow machinery自体を信頼して動かせない状態。
 
 Investigation `ID` に対して:
 
-1. `investigations/ID/` と `00_context.json` の存在を確認する。
-2. 00がなければstate = NEW。
-3. through 00をvalidateする。
+1. `investigations/ID/`、Notion Investigations row、`00_context.json` の存在を確認する。
+2. 00がなく、draft rowのQuestion Typeがnullならstate = BLOCKED。same INV rowを保持し、Human commitment後に再開する。
+3. 00がなければstate = NEW。
+4. through 00を通常validateする。
    - FAIL -> 00でINVALID
    - ERROR -> ERROR
-4. 10がなければPARTIAL、resume = 10。
-5. through 10をvalidateする。
+5. frozen `00_context.question_type = null` ならhistorical compatibility branchとする。
+   - current schema変更だけを理由にINVALID化しない。
+   - missing 10 / 20 / 30を生成しない。
+   - downstream missingならPARTIAL (historical, non-resumable)として保持し、resume targetを設定せず、その時点でstate derivationを停止する。
+   - 4 artifactがすべて既存ならread-onlyに通常validationを継続してよい。
+   - Workflow 20 eligibilityはfalse。
+6. 10がなければPARTIAL、resume = 10。
+7. through 10をvalidateする。
    - FAIL -> reportされた00 / 10 errorのうちearliestでINVALID
    - ERROR -> ERROR
-6. 20がなければPARTIAL、resume = 20。
-7. through 20をvalidateする。
+8. 20がなければPARTIAL、resume = 20。
+9. through 20をvalidateする。
    - FAIL -> reportされた00 / 10 / 20 errorのうちearliestでINVALID
    - ERROR -> ERROR
-8. 30がなければPARTIAL、resume = 30。
-9. through 30をvalidateする。
+10. 30がなければPARTIAL、resume = 30。
+11. through 30をvalidateする。
    - FAIL -> reportされたearliest stageでINVALID
    - ERROR -> ERROR
-10. 全段階PASSならVALIDATED。
-11. acceptance前Workflow 20が明示的prerequisiteとして要求されている場合:
+12. 全段階PASSならVALIDATED。
+13. acceptance前Workflow 20が明示的prerequisiteとして要求されている場合:
    - Review未実施 -> VALIDATEDのままReview pendingとして停止する。
    - BLOCKED -> state = BLOCKED。
    - STALE -> VALIDATEDのままcurrent targetをfreezeし直してreReviewする。
    - FINDINGS -> findingが示すearliest affected stageをsemantic INVALIDとしてrepair / reconstructする。
    - PASS -> finalizationへ進める。
    defaultではReviewを要求せず、このstepをskipする。
-12. current accepted `30_analysis` とRQ bodyの `# Working Answer` projection stateを確認する。
+14. current accepted `30_analysis` とRQ bodyの `# Working Answer` projection stateを確認する。
    - unique sectionがdeterministic renderingと一致する = CURRENT -> COMPLETE
    - section missing = MISSING -> finalize / project
    - unique sectionが異なる = STALE -> body sectionだけをreproject
    - target headingが複数 = BLOCKED -> bodyを推測更新しない
-13. MISSING / STALEをprojectした場合、RQ pageを再取得してCURRENTを確認してからCOMPLETEとする。write / verification failureではVALIDATEDのままとする。
+15. MISSING / STALEをprojectした場合、RQ pageを再取得してCURRENTを確認してからCOMPLETEとする。write / verification failureではVALIDATEDのままとする。
 
 legacy `Research Questions.Working Answer` propertyのempty / legacy / stale valueはこのstate derivationへ参加しない。
 
@@ -318,7 +330,8 @@ Workflow 20はoptional independent Semantic Reviewとして `0020_semantic_revie
 ### Review request / current state
 
 - Review request前にWorkflow 20 eligibilityを解決する。
-- frozen `00_context.question_type = null` のhistorical Investigationは `review_eligible = false` とする。
+- Workflow 00 adapterはfrozen `00_context` をreconciler payloadの `context` として渡し、`src/research_atelier/reviewing/reconcile.py::derive_review_eligibility()` にeligibility derivationを一元化する。caller supplied defaultでeligibleを推測しない。
+- frozen `00_context.question_type = null` のhistorical Investigationは `review_eligible = false` とする。Contextが欠落・未freezeでeligibilityを解決できない場合はBLOCKEDとし、trueへdefaultしない。
 - eligibleなInvestigationへの明示要求だけ `review_requested` eventとしてreconcilerへ渡す。
 - `review_eligible = false` はexplicit Review requestより優先し、`Review Status = －（対象外）`、`Latest Review Seq = empty` へ収束させる。
 - その他、Reviewを明示的に対象外とする場合は `review_not_applicable` eventを使う。

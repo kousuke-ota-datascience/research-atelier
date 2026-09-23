@@ -8,7 +8,12 @@ from .review_writer import (
     save_review_cycle,
 )
 from .review_state import ReviewHistory, load_review_history, target_relation_from_blobs
-from .reconcile import ReviewReconcileResult, reconcile_payload, reconcile_review_state
+from .reconcile import (
+    ReviewReconcileResult,
+    derive_review_eligibility,
+    reconcile_payload,
+    reconcile_review_state,
+)
 
 __all__ = [
     "PreparedReviewCycle",
@@ -20,6 +25,7 @@ __all__ = [
     "load_review_history",
     "target_relation_from_blobs",
     "ReviewReconcileResult",
+    "derive_review_eligibility",
     "reconcile_payload",
     "reconcile_review_state",
 ]
