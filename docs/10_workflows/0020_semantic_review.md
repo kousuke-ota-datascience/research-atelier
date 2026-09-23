@@ -359,7 +359,7 @@ schema / implementation:
 
 handoff artifactを保存・再読込・validationした後にだけWorkflow 00は `new_investigation_handoff_completed` eventをreconcilerへ渡す。これによりsource Investigationの `Review Status` は `要修正 -> 引継済` へ遷移する。`引継済` は「Review PASS」ではなく「FINDINGSのrepair responsibilityをvalid successorへ移譲済み」を意味する。allocation / persistence / RQ binding / provenance validationが失敗した場合はterminalへ遷移しない。
 
-同じfactsでのrerunでは既存handoff artifactをreuseし、同じReview Seqに2つ目のhandoff recordやsuccessorを生成しない。既存recordと新candidateが矛盾する場合は推測で上書きせずBLOCKEDとする。
+rerunでは**allocationより先に** `preflight_review_handoff()` を実行する。expected canonical pathにvalid handoff artifactが既にあればrecord済み `successor_investigation_id` をreuseし、新しいsuccessorのallocation / ID採番も、新しいhandoff record作成も行わない。既存recordとsource Review / source RQが矛盾する場合は推測で上書きせずBLOCKEDとする。
 
 repair後は新しいtarget SHA / blobをfreezeし、old Review outcomeを流用せずreReviewする。same-Investigation repair pathは従来どおり `要修正 -> 再作業中 -> 再レビュー待` を使い、本handoff terminal stateを使用しない。
 
