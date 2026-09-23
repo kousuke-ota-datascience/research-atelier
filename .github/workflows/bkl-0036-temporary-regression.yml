@@ -1,4 +1,5 @@
 name: BKL-0036 temporary regression
+# verification-only workflow; removed before merge
 
 on:
   pull_request:
