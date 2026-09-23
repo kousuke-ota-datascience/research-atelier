@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000019",
+  "review_seq": 1,
+  "layer": "20_synthesis",
+  "review_kind": "10_evidence_to_20_synthesis",
+  "target_blob_sha": "5a7bef13cf0a7fddcf6d8eef04de635a310e10f3",
+  "assessment": "選択済み10_evidenceから20_synthesisへの変換は概ねsupport境界を保持している。三多摩に賛否が併存すること、南多摩で確認できる反対・復旧行動の複数形態、井上吉之助・石阪昌孝の具体行動、三郡交渉会・自由党武相支部の広域ネットワーク、地域側要求と自由党中央の不一致は参照Evidenceで支持され、住民全体の多数意見へ一般化しないqualifierや賛成主体のcoverage非対称性も明示されている。10_evidence.E0006には上流provenance findingがあるが、選択済みEvidenceからKnowledge Unitを生成する変換自体に独立したunsupported proposition、過剰一般化、conflict/uncertainty消失は確認しなかった。",
+  "findings": [],
+  "verdict": "PASS"
+}

@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000019",
+  "review_seq": 1,
+  "layer": "30_analysis",
+  "review_kind": "20_synthesis_plus_00_context_to_30_analysis",
+  "target_blob_sha": "0862eb9ba06a1dc7f453fd2618ae51ff9145b2de",
+  "assessment": "Working AnswerとjudgmentsはQuestion Type=Descriptiveに従い、地域側を単一意思主体とせず、南多摩・現在の町田市域で具体的に復元できた反対・境域復旧行動を人物・組織・行動形態ごとに記述している。賛成主体が同程度に復元できていないこと、参加人数を支持率へ一般化できないこと、一般住民・女性・非有権者・商工業者のcoverage不足、因果効果を同定していないことをlimitationsとして保持しており、20_synthesisを越えたmain conclusionの断定は確認しなかった。上流10_evidenceのF001により井上吉之助を「現在の町田市域」の主体へ結び付けるlineageの一部にprovenance gapは残るが、30_analysisへの変換自体には独立したsemantic defectを認めない。",
+  "findings": [],
+  "verdict": "PASS"
+}

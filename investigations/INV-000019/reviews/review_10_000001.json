@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000019",
+  "review_seq": 1,
+  "layer": "10_evidence",
+  "review_kind": "source_evidence_note_to_10_evidence",
+  "target_blob_sha": "5ada796ddb62a715f6b9c00c833ff174890c2325",
+  "assessment": "10件のfrozen Evidenceは対応するNotion Evidence Noteの内容・Note Type・Source relationと一致し、東京都公文書館、町田市立自由民権資料館、『多摩市史 通史編2』の該当記述との照合でも、賛否併存、反対陳情、三郡交渉会、演説会、境域復旧、町村長辞職・行政麻痺、自由党内の不一致、石阪昌孝の地域帰属など主要記述は概ねSource-faithfulである。参加者数を支持率へ変換しないこと、演説題目から具体的主張を復元しないこと、賛成主体のcoverage不足も明示されている。一方、E0006はSRC-0095の該当locatorが支持する「井上吉之助（鶴川村）」と1893年4月5日の交渉行動に加えて、「鶴川村は現在の町田市域」という現代自治体への地理対応をEvidence本文へ取り込んでいるが、その対応関係を支えるSource provenanceをE0006内に保持していない。",
+  "findings": [
+    {
+      "finding_id": "F001",
+      "severity": "Minor",
+      "target": "10_evidence.E0006 — source-faithfulness / provenance for the claim that 鶴川村 is within the present-day Machida City area",
+      "evidence": [
+        "10_evidence.E0006 / EV-0190 cites SRC-0095『多摩市史 通史編2』p.240-243 for 井上吉之助（鶴川村） and the 1893-04-05 request to keep the Kanagawa system while a boundary-restoration petition was planned; the cited locator does not itself establish the modern administrative mapping 鶴川村→現在の町田市域.",
+        "E0006 nevertheless states「鶴川村は現在の町田市域であり」and uses that added mapping to characterize 井上吉之助 as a concrete current-Machida-area actor.",
+        "町田市公式『まちだってこんなまち』states that present Machida City was created in 1958 by the merger of 町田町・鶴川村・忠生村・堺村, confirming that the mapping is factually supportable but is not represented in E0006.provenance."
+      ],
+      "impact": "The geographic mapping is likely correct and does not overturn the Working Answer, but one part of E0006 that is necessary to connect 井上吉之助 to the RQ's「現在の町田市域」unit of analysis is not traceable through the frozen Evidence provenance. This weakens lineage/traceability for a named Machida-area actor even though the underlying historical action is supported.",
+      "repair_direction": {
+        "mode": "new_investigation",
+        "affected_layer": "10_evidence",
+        "instruction": "INV-000019 is already accepted, so do not rewrite it in place. Start a new Investigation for RQ-0022 and, when rebuilding 10_evidence, capture an authoritative Source/Evidence Note that explicitly establishes the historical 鶴川村→present-day Machida City mapping (for example, Machida City's official municipal-history/merger record), then rebuild 20_synthesis and 30_analysis from the repaired Evidence chain and run Workflow 20 again."
+      }
+    }
+  ],
+  "verdict": "FINDINGS"
+}
