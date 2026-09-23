@@ -70,7 +70,8 @@ copyしたことで独立編集可能な第二authorityを作ってはならな�
 - `Topic`: catalog organization relation
 - `Parent Question`: catalog relation
 - `RQ UID`: Notion内部実装用identifier。canonical snapshotには `RQ ID` とpage URLを使う
-- `Question Type` / `Scope`: BKL-0028以降のnew InvestigationではInvestigations DB側をauthorityとする。Research Questions DBに残る同名propertyはBKL-0029完了までのlegacy / migration stagingであり、新規freeze inputとして使わない
+
+Research Questions DBには `Question Type` / `Scope` を持たない。これらはInvestigation Context属性であり、Notion Investigations DBからfreezeする。RQ側へ同名propertyを再追加して第二authorityを作らない。
 
 ### Investigations DBからsnapshotするもの
 
@@ -348,7 +349,8 @@ Git artifactからNotion catalog全体を再構築・overwriteしてはならな
 
 - `10_evidence` からSourcesを生成しGitをSource authority扱いする
 - `20_synthesis` からEvidence Notesを生成する
-- historical `00_context` からRQ Question / Scope / Question Typeをoverwriteする
+- historical `00_context` からRQ Questionをoverwriteする
+- historical `00_context` のScope / Question TypeをResearch Questions DBへ逆投影し、RQ-level propertyを再作成する
 - frozen Git referenceからResearch Topics / Research Questions / Sources / Evidence Notes等のcatalog relationを再構築する
 - ただしBKL-0028で定義したInvestigations DB rowのbackfill / frozen-context reconciliationは、`00_context` のexplicit RQ provenanceを用いる限定的な例外とする
 - body内 `# Working Answer` のhuman editから `30_analysis` を更新する
