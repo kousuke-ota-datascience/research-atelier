@@ -14,6 +14,8 @@ deterministic checkは以下へ委譲する。
 
 semantic constructionでは、Human / Researcherがresearch intentとsemantic commitmentsを所有し、LLMはwording整理、候補提示、artifact materialization、Synthesis / Analysis作成を支援する。LLMは未確認のsemantic conditionを勝手に確定しない。
 
+独立Semantic Reviewは `0020_semantic_review.md` のWorkflow 20が担う。Workflow 10はWorkflow 20を暗黙起動せず、Review finding / verdictを生成する責務を持たない。
+
 ## 1. Input / output
 
 ### Input
@@ -236,6 +238,8 @@ Workflow 10は以下をすべて満たしたとき完了とする。
 
 accepted Working AnswerのNotion projectionはprojection contractとorchestration workflowの責務であり、artifact construction自体には含めない。
 
+Workflow 20は本completion conditionのdefault必須要件ではない。through-30 PASSはSemantic Reviewの開始前提にはなり得るが、deterministic PASSをsemantic correctnessの証明とはみなさない。Human / Workflow 00がacceptance前のReviewを明示的prerequisiteとして要求した場合だけ、そのReview handoffを完了してからfinal acceptanceへ進む。
+
 ## 9. Execution boundary invariant
 
 Workflow 10は**Investigation execution**のworkflowであり、Research Questionを作るworkflowではない。
@@ -245,6 +249,19 @@ Workflow 10は**Investigation execution**のworkflowであり、Research Questio
 そのようなad hoc回答はResearch Atelier上ではworkflow incomplete / non-canonicalであり、accepted Working Answer projectionのsourceにならない。
 
 
-## 10. v1 legacy handling
+## 10. Workflow 20 findingからのrepair
+
+Workflow 20でfindingが確定した場合、reviewer自身がcanonical artifactを直接修正せず、finding targetに応じて本Workflowへrepairをhandoffする。
+
+- Source / Evidence / `10_evidence` finding -> Evidence stageからrepairし、20 / 30をinvalidateする。
+- `20_synthesis` finding -> Synthesis stageからrepairし、30をinvalidateする。
+- `30_analysis` finding -> Analysis stageからrepair / revalidateする。
+- frozen `00_context` のsemantic condition変更が必要 -> `0002_investigation_versioning.md` に従い原則new Investigation。
+
+accepted Investigationのsubstantive repairではhistorical artifactをin-place rewriteせず、versioning contractを優先する。
+
+repair後はReview targetが変わるため、old Review outcomeを流用せずWorkflow 20でnew targetをreReviewする。
+
+## 11. v1 legacy handling
 
 既存 `RQ-NNNN-vVVV` directoryを実行・再検証する場合は `schemas/v1` を使用し、identityをin-place migrationしない。新規Investigationは `INV-NNNNNN` + `schema_version = 2.0.0` を使用する。
