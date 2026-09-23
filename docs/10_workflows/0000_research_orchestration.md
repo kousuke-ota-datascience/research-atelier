@@ -309,27 +309,59 @@ legacy `Research Questions.Working Answer` propertyは削除しないが、proje
 
 projectionはnarrowに保つ。Workflow 00はGitから他のNotion DB全体をsyncしない。
 
-## 8. Optional Workflow 20 / MVPで必須にしないもの
+## 8. Optional Workflow 20 / persistent Review reconciliation
 
-Workflow 20はoptional independent Semantic Reviewとして `0020_semantic_review.md` に定義する。
+Workflow 20はoptional independent Semantic Reviewとして `0020_semantic_review.md` に定義する。default運用ではReview未実施をCOMPLETE阻害条件にしない。
 
-default運用ではReview未実施をCOMPLETE阻害条件にしない。Reviewを実行する場合は、targetをInvestigation ID + commit / artifact blob SHA + timestampで固定する。
+ただし、Workflow 20を明示的に要求・実行した場合はpersistent Review contractを適用する。
 
-一方、MVPでは以下を必須としない。
+### Review request / current state
 
-- Workflow 20を全Investigationのdefault completion gateにすること
-- Review sequence number
-- persistent Review JSON / dedicated Review Schema / writer
-- persistent review-target SHA control plane
-- Git ancestry control-plane logic
-- NotionへのSHA synchronization
-- persistent orchestration state machine
-- automatic Notion Status change
-- Workflow 90型のcontrol-plane reconciliation
+- Reviewを明示要求した時点で `review_requested` eventをreconcilerへ渡す。
+- Reviewを明示的に対象外とする場合だけ `review_not_applicable` eventを使う。
+- `未` = Review processをまだ開始していない。optional Review未要求を含む。
+- `－（対象外）` = Human / Workflow policyがこのInvestigationをReview対象外と明示した状態。Git factsだけから自動付与しない。
+- `レビュー中` はpersistent Statusとして持たない。
 
-BKL-0021 pilotではoptional Semantic Reviewの有用性は確認したが、mandatory gate / persistent Review infrastructureを正当化する反復failureは観測していない。
+### Canonical Review facts
 
-通常のGit commitはprovenanceとして残すが、専用SHA control planeをdefault COMPLETEの前提にはしない。
+Review history authorityは次とする。
+
+```text
+investigations/<Investigation ID>/reviews/review-<Review Seq>.json
+```
+
+- Review SeqはInvestigation内で1から連続採番する。
+- `Latest Review Seq` はGit Review historyからderivedするcurrent pointer。
+- `Review Status` はInvestigation全体のcurrent Review process state。
+- Finding / Verdict / target SHAはNotionへ複製せずGit Review JSONをauthorityとする。
+
+### Deterministic reconciliation
+
+Review Status / Latest Review Seqのmutation planは `src/research_atelier/reviewing/reconcile.py` の結果だけを適用する。Workflow Markdown、LLM、connector adapterが独自にstate transitionを再実装しない。
+
+baseline transition:
+
+```text
+未
+  -- explicit review_requested --> レビュー待
+レビュー待
+  -- PASS ----------------------> 完了
+  -- FINDINGS ------------------> 要修正
+要修正
+  -- explicit repair_started ---> 再作業中
+再作業中
+  -- target changed/commit -----> 再レビュー待
+再レビュー待
+  -- PASS ----------------------> 完了
+  -- FINDINGS ------------------> 要修正
+```
+
+`要修正 -> 再作業中` はReview JSONの存在だけから推測せず、Workflow 00が実際にrepair phaseへ入る時だけ `repair_started` eventを発行する。
+
+latest Review targetがcurrent canonical chainより古い場合は `再レビュー待` へ収束する。Review targetがcurrentよりahead / diverged、historyがmalformed / duplicate / Seq欠番の場合はBLOCKEDとし、Notion mutationを生成しない。
+
+Review findingの `repair_direction.mode = new_investigation` またはfrozen Context / accepted resultをsubstantiveにreopenする必要がある場合は、current Investigationを書き換えず `0002_investigation_versioning.md` に従ってnew Investigationへhandoffする。
 
 ## 9. Completion report
 
