@@ -88,3 +88,17 @@ v2 testは以下を追加で確認する。
 - Investigation bindingのexactly-one enforcement
 - logical Review identity重複時のfail-stop
 - existing row解決とLatest Review relation reconciliationのidempotence
+
+
+## Split Review persistence regression
+
+BKL-0034ではReview Cycle persistenceをcycle manifest + 4 layer JSONへ分割した。
+
+追加で確認するcontract:
+
+- new Review Cycleはmanifest + `review_00 / 10 / 20 / 30` の5 fileで保存される
+- layer verdict / cycle verdict / Finding IDがdeterministic
+- legacy single-file seqとsplit seqを同一contiguous historyとして読める
+- orphan / incomplete / malformed split cycleはfail-stopする
+- split cycleのdirect layer verdictとcross-layer `affected_layer` からReviews DB OK/NGをderiveする
+- legacy INV-000015 Review 000001 projectionを回帰させない
