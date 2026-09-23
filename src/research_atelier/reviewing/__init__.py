@@ -15,6 +15,15 @@ from .review_state import (
     normalize_legacy_review,
     target_relation_from_blobs,
 )
+from .handoff import (
+    ReviewHandoffError,
+    ReviewHandoffPlan,
+    load_review_handoff,
+    plan_review_handoff,
+    review_handoff_filename,
+    review_handoff_path,
+    validate_review_handoff_record,
+)
 from .reconcile import (
     ReviewReconcileResult,
     derive_review_eligibility,
@@ -34,6 +43,13 @@ __all__ = [
     "load_review_history",
     "normalize_legacy_review",
     "target_relation_from_blobs",
+    "ReviewHandoffError",
+    "ReviewHandoffPlan",
+    "load_review_handoff",
+    "plan_review_handoff",
+    "review_handoff_filename",
+    "review_handoff_path",
+    "validate_review_handoff_record",
     "ReviewReconcileResult",
     "derive_review_eligibility",
     "reconcile_payload",
