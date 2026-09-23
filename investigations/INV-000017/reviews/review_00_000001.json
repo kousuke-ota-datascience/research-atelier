@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000017",
+  "review_seq": 1,
+  "layer": "00_context",
+  "review_kind": "context_semantic_validity",
+  "target_blob_sha": "9529e73b70ec8a4abd71c1fdab870c6fc2f1f533",
+  "assessment": "Frozen Research Question、Scope、include / exclude、assumptions、Question Type=Descriptiveは相互に整合している。東京府側を一枚岩として扱わないこと、水源・玉川上水管理を単一原因として先験的に採用しないこと、同時代史料と後世の制度史を区別することが明示されており、RQの記述的検討に必要なsemantic boundaryは適切に設定されている。frozen Context自体を変更しなければ解消できない矛盾・欠落は確認しなかった。",
+  "findings": [],
+  "verdict": "PASS"
+}

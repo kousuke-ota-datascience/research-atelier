@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000017",
+  "review_seq": 1,
+  "layer": "20_synthesis",
+  "review_kind": "10_evidence_to_20_synthesis",
+  "target_blob_sha": "9c2580f439d63681ce47ff0e7a009fff52def08e",
+  "assessment": "選択済み10_evidenceから構成された各Knowledge Unitは参照Evidenceの内容に支持され、1873年・1886年・1892年一次文書の未読、後世の公式事業史の性格、政府理由と議会反論の区別がqualifiers / uncertaintiesとして保持されている。relationsも水源管理・近代水道・三郡一括化の非水源理由・境域変更必要性への反論を過度に統合せず、相対的重要度の因果順位付けを避けている。10_evidenceに上流のcoverage findingはあるが、選択済みEvidenceから20_synthesisへの変換自体に独立したsemantic defectは確認しなかった。",
+  "findings": [],
+  "verdict": "PASS"
+}

@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000017",
+  "review_seq": 1,
+  "layer": "10_evidence",
+  "review_kind": "source_evidence_note_to_10_evidence",
+  "target_blob_sha": "004f696549716937abe5777457500e2a4f0b4055",
+  "assessment": "16件のfrozen Evidenceは対応するNotion Evidence Noteの内容・Note Type・Source relationと照合でき、Evidenceとしてfreezeされた各記述は選択されたSourceのsupport boundaryを概ね保持している。1873年・1886年・1892年の本文未読、後世の公式事業史と同時代一次史料の区別、政府の公式理由と政策手段の必要性への反論も適切に限定されている。一方、RQとfrozen Includeが東京府行政・政治主体の意思表明・行政折衝・中央行政との関係を明示的に対象とするのに対し、利用済みSRC-0097に含まれる東京府自身の直接文書から、移管反対運動への行政・警備対応と内務大臣・警視総監・神奈川県知事への情報共有がEvidenceとして選択されていない。",
+  "findings": [
+    {
+      "finding_id": "F001",
+      "severity": "Moderate",
+      "target": "10_evidence evidence selection from SRC-0097 for Tokyo府 administrative/political actor perspective and intergovernmental coordination",
+      "evidence": [
+        "00_context.question.text / investigation_boundary.include: 東京府側の行政・政治主体の視点・思惑・利害、意思表明・政策提案・行政折衝、内務省等との行政関係を検証対象としている。",
+        "SRC-0097所収の東京府文書「神奈川県西多摩郡不穏の景況上申及通知」（1893-03-06）は、富田鉄之助から内務大臣への内申、警視総監・神奈川県知事への通知と、玉川上水警備に伴う反対派動向把握を直接記録している。",
+        "10_evidence.E0003-E0005はSRC-0097から1891年の水源管理摩擦、富田の移管推進、南多摩追加経緯をfreezeしているが、同Source内の東京府自身による反対運動対応・情報共有の直接Evidenceをcaptureしていない。"
+      ],
+      "impact": "RQの中核である東京府側の複数行政・政治主体の視点と行動について、Evidence layerが水源管理上の利害と政府の公式理由に偏り、東京府自身の行政・警備対応および中央・隣県との情報共有という直接観察可能な行動を欠く。30_analysisはこの不足をlimitationsとして認識しているため直ちに誤断定してはいないが、RQに対する記述的coverageが不十分である。",
+      "repair_direction": {
+        "mode": "new_investigation",
+        "affected_layer": "10_evidence",
+        "instruction": "Workflow 00で同一RQのnew Investigationを開始し、SRC-0097所収の東京府文書「神奈川県西多摩郡不穏の景況上申及通知」等から、東京府自身の移管反対運動への行政・警備対応、内務大臣・警視総監・神奈川県知事との情報共有をEvidenceとしてcaptureする。必要に応じて東京府会・東京市会・警視庁・内務省内部の同時代一次史料も主体別に追加し、東京府側を一枚岩とせず20_synthesis / 30_analysisを再構築する。"
+      }
+    }
+  ],
+  "verdict": "FINDINGS"
+}

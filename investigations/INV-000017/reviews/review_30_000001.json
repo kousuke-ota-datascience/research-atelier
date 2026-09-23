@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000017",
+  "review_seq": 1,
+  "layer": "30_analysis",
+  "review_kind": "20_synthesis_plus_00_context_to_30_analysis",
+  "target_blob_sha": "4a585b450bf6d9288032c2ae1766724205822c92",
+  "assessment": "Working AnswerとjudgmentsはQuestion Type=Descriptiveに従い、水源・衛生・近代水道を重要な行政上の利害・公式理由として記述しつつ、三郡一括移管を水源だけの単一原因または最大原因とは順位付けしていない。政府が提示した理由の存在と境域変更の政策的必要性を区別し、南多摩追加の非水源理由も保持している。limitations / unresolved_questions / alternative_interpretationsは東京府会・東京市会・警視庁・内務省内部のcoverage不足を明示しており、20_synthesisのsupport boundaryを越える独立した分析上のoverclaimは確認しなかった。上流10_evidenceのcoverage findingはnew Investigationで解消すべきである。",
+  "findings": [],
+  "verdict": "PASS"
+}
