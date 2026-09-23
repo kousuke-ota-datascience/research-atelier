@@ -415,7 +415,9 @@ latest Review targetがcurrent canonical chainより古い場合は `再レビ�
 
 Review findingの `repair_direction.mode = new_investigation` またはfrozen Context / accepted resultをsubstantiveにreopenする必要がある場合は、current Investigationを書き換えず `0002_investigation_versioning.md` に従ってnew Investigationへhandoffする。ただしFindingに `new_investigation` が存在するだけでは旧Reviewを閉じない。
 
-valid handoffは、BKL-0035のallocation guardが `allocate_new` を返し、successor Investigationが実際にpersistされ、sourceと同じRQへexactly one relationでbindされた後にだけ成立する。Workflow 00はその事実を `investigations/<source INV>/reviews/handoff-<Review Seq>.json` へappend-onlyで保存し、保存済みartifactをre-read / validateしたときだけ `new_investigation_handoff_completed` eventをreconcilerへ発行する。successor allocation / persistence / bindingのいずれかが未成立なら旧Reviewは `要修正` のまま、またはBLOCKEDとする。
+Workflow 00はnew successorをallocateする前に、source Reviewから一意に決まる `handoff-<Review Seq>.json` の既存有無を `preflight_review_handoff()` で確認する。valid existing handoffがあれば、そのrecordの `successor_investigation_id` をreuseし、BKL-0035 allocation guard / ID採番 / handoff record作成を再実行しない。既存recordがsource Review / source RQと矛盾する場合はBLOCKEDとし、別successorを作って回避しない。
+
+新規handoffは、preflightが `PROCEED` で、BKL-0035のallocation guardが `allocate_new` を返し、successor Investigationが実際にpersistされ、sourceと同じRQへexactly one relationでbindされた後にだけ成立する。Workflow 00はその事実を `investigations/<source INV>/reviews/handoff-<Review Seq>.json` へappend-onlyで保存し、保存済みartifactをre-read / validateしたときだけ `new_investigation_handoff_completed` eventをreconcilerへ発行する。successor allocation / persistence / bindingのいずれかが未成立なら旧Reviewは `要修正` のまま、またはBLOCKEDとする。
 
 `引継済` はsource Investigationだけのterminal operational stateであり、PASSを意味しない。source ReviewのVerdict / Findingは `FINDINGS` のままrewriteせず、`Latest Review Seq` もそのReview cycleを指し続ける。successor InvestigationのReview lifecycleは独立して `未 -> レビュー待 -> ...` から開始する。
 
