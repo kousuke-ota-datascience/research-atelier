@@ -28,6 +28,26 @@ BKL-0025以降のWorking Answer body projection provenanceは `projection_log.sc
 - new body projectionはInvestigation directoryの `projection_log_v2.json` として記録する。
 
 
+## Review schema selection — current vs deprecated
+
+**New Workflow 20 Review cycles MUST NOT use** the following deprecated compatibility paths:
+
+- `review_common.schema.json`
+- `review_cycle.schema.json`
+
+These names remain only for historical compatibility and are explicitly marked `deprecated: true`. Their legacy implementations live under `schemas/v2/legacy/`.
+
+For a new split Review cycle, the current schema set is:
+
+- `review_layer_common.schema.json`
+- `review_manifest.schema.json`
+- `review_00_context.schema.json`
+- `review_10_evidence.schema.json`
+- `review_20_synthesis.schema.json`
+- `review_30_analysis.schema.json`
+
+Human researchers and LLM executors should treat any instruction to author a new Review against `review_cycle.schema.json` or `review_common.schema.json` as stale.
+
 ## Semantic Review persistence
 
 BKL-0034以降、新規Workflow 20 Review Cycleは **cycle manifest + 4 layer Review JSON** としてappend-only保存する。
@@ -46,7 +66,7 @@ investigations/<Investigation ID>/reviews/
 - `review_00 / 10 / 20 / 30` は各semantic review layerのcanonical assessmentを保持する。
 - `review_manifest.schema.json` がnew split cycle manifest schema。
 - `review_00_context.schema.json / review_10_evidence.schema.json / review_20_synthesis.schema.json / review_30_analysis.schema.json` がlayer schema。
-- `review_common.schema.json` はFinding / severity / repair direction / SHA / verdict等の共通型定義。
+- `review_layer_common.schema.json` はFinding / severity / repair direction / SHA / verdict等の**current**共通型定義。
 - layer verdictは各layerのFinding集合から、cycle verdictは4 layer Finding集合のunionからdeterministically算出する。
 - Finding IDはReview Cycle全体で `F001...` の連番とし、logical identityは `(Investigation ID, Review Seq, Finding ID)`。
 - manifestと4 layer fileはInvestigation ID / Review Seq / target blob SHA / filename / verdict consistencyをloaderが検証する。
@@ -57,7 +77,7 @@ investigations/<Investigation ID>/reviews/
 
 BKL-0034以前のcanonical `review-XXXXXX.json` はhistorical single-file Review Cycleとしてin-place rewriteしない。
 
-- legacy `report_type = semantic_review` は既存 `review_cycle.schema.json` で継続validationする。
+- legacy `report_type = semantic_review` はdeprecated compatibility path `review_cycle.schema.json`（実体: `legacy/review_cycle.schema.json`）で継続validationする。
 - new split cycleは `report_type = semantic_review_manifest` + 4 layer filesを使用する。
 - history loaderはlegacy / split双方をstorage-neutral normalized Review Cycleへ変換する。
 - `schemas/v3` は作成せず、compatibilityを `schemas/v2` 内で管理する。
