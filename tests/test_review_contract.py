@@ -165,6 +165,29 @@ class ReviewContractTest(unittest.TestCase):
         self.assertEqual(result.outcome, "UPDATE")
         self.assertEqual(result.changes, {"Review Status": "－（対象外）"})
 
+    def test_inv_000008_explicit_review_request_remains_not_applicable(self) -> None:
+        context = json.loads(
+            (REPO_ROOT / "investigations" / "INV-000008" / "00_context.json").read_text(
+                encoding="utf-8"
+            )
+        )
+        result = reconcile_payload(
+            {
+                "current": {
+                    "review_status": "未",
+                    "latest_review_seq": None,
+                },
+                "review": {"latest": None, "target_relation": "missing"},
+                "events": {"review_requested": True},
+                "context": context,
+            }
+        )
+        self.assertEqual(result["outcome"], "UPDATE")
+        self.assertEqual(result["changes"], {"Review Status": "－（対象外）"})
+        self.assertFalse(
+            (REPO_ROOT / "investigations" / "INV-000008" / "reviews").exists()
+        )
+
     def test_payload_derives_historical_null_as_ineligible(self) -> None:
         result = reconcile_payload(
             {
