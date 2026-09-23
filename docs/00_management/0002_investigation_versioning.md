@@ -122,9 +122,18 @@ BKL-0031以前に存在するfrozen `question_type = null` artifactはhistorical
 
 current `30_analysis` をそのInvestigationのresultとしてacceptし、必要なprojectionが完了した状態。
 
-accepted InvestigationのEvidence / Synthesis / Analysisをsubstantively再構成する場合も、新しいInvestigationを作る。
+accepted Investigationでも、**frozen Investigation Contextと独立execution intentが不変なら、Review Findingやoperational defectを解消するためのsame-Investigation repairを許容する**。acceptedという事実だけでnew Investigationへ分岐しない。
 
-formatting、validator refactor、derived rendering再生成などcanonical research semanticsを変えない変更は新Investigationを要求しない。
+same-Investigation repairに含める:
+- Contextですでに要求していたEvidence selection omissionの補完
+- 同一dataset / source boundary内のEvidence取りこぼし修正
+- Evidence -> Synthesis lineage / relation修正
+- Evidence support boundaryを超えたAnalysis表現の修正
+- 上記repairに伴う20_synthesis / 30_analysisのdownstream rebuild
+- projection / validation / connector / reconciliation retry
+- formatting、validator refactor、derived rendering再生成等、canonical research semanticsを変えない変更
+
+new Investigationが必要なのは、freeze済みContext-defining conditionを実質的に変える場合、Evidence population / snapshotの意味を変える場合、またはHumanが既存結果とは独立した別executionを明示した場合である。
 
 ## 5. RQ identity変更とInvestigation変更の境界
 
@@ -155,14 +164,36 @@ answer spaceまたは問いのsemantic targetが実質的に変わる場合は�
 
 ## 6. ID allocation
 
-新規canonical Investigationはglobal sequenceとして `INV-NNNNNN` を採番する。
+新規canonical Investigationはglobal sequenceとして `INV-NNNNNN` を採番する。ただし、**採番の前に既存Investigationとのsemantic-equivalence guardを必ず通す**。
 
-1. 既存 `INV-NNNNNN` の最大値を確認する。
-2. 次の未使用整数を6桁0埋めで採番する。
-3. 一度materialize / commitしたIDは再利用しない。
-4. abandoned InvestigationのIDも再利用しない。
-5. 同一RQのversion番号を意味するsuffixは持たない。
-6. draft rowでQuestion Type等のsemantic prerequisiteを確定する間は同じIDを保持し、未確定値のcommitだけを理由にnext IDをallocateしない。
+Humanの「再度実行」「やり直し」「retry」「もう一度」等の自然言語だけをnew allocation triggerにしない。Workflow 00は今回のintentを最低限次のいずれかへ分類する。
+
+- `retry_completion`
+- `repair`
+- `explicit_new_execution`
+- `semantic_reinvestigation`
+
+比較対象は少なくともResearch Question、Question Type、Scope、Include / Exclude、Assumptions、Evidence cutoff / time horizon、dataset / source boundaryとする。requested inputが既存fieldを再提示していない場合、その欠落自体をsemantic differenceと解釈しない。
+
+Evidence cutoffの値だけが異なる場合、timestamp差だけではnew Investigationを正当化しない。Evidence population / snapshotの意味が変わったかを別に解決し、未解決なら採番せずBLOCKEDとする。
+
+canonical deterministic helperは `src/research_atelier/orchestration/investigation_allocation.py` とする。decisionは `reuse_existing / allocate_new / blocked` のいずれかで、少なくとも次をmachine-readableに残す。
+
+- `decision`
+- `selected_existing_investigation`
+- `new_investigation_allocated`
+- `semantic_differences`
+- `explicit_new_execution_intent`
+
+new INVを採番した場合、既存INVをresume / repairできなかった理由を `reason_codes` とsemantic differenceで追跡可能にする。
+
+1. semantic-equivalence guardが `allocate_new` を返したことを確認する。
+2. 既存 `INV-NNNNNN` の最大値を確認する。
+3. 次の未使用整数を6桁0埋めで採番する。
+4. 一度materialize / commitしたIDは再利用しない。
+5. abandoned InvestigationのIDも再利用しない。
+6. 同一RQのversion番号を意味するsuffixは持たない。
+7. draft rowでQuestion Type等のsemantic prerequisiteを確定する間は同じIDを保持し、未確定値のcommitだけを理由にnext IDをallocateしない。
 
 global sequenceはidentity allocationのためだけに使い、chronological quality rankingやsemantic versionを意味しない。
 
@@ -213,8 +244,9 @@ v2の構造はv1を必要以上に変更しない。Task 17ではidentity semant
 | concrete Question Type変更 | 同一INV（freeze前） | 新INV | 同一RQ |
 | boundary / cutoff / assumption変更 | 同一INV | 新INV | 同一RQ |
 | result accept前のEvidence更新 | 同一INV、downstream invalidate | N/A | 同一RQ |
-| accepted resultのsubstantive再調査 | N/A | 新INV | 同一RQ |
-| rendering / validator refactorのみ | 同一INV | 同一INV | 同一RQ |
+| Review FindingによるEvidence / Synthesis / Analysis repair（frozen Context不変） | 同一INV | 同一INV | 同一RQ |
+| accepted resultを別Evidence snapshot / 別時点の独立executionとして再調査 | N/A | 新INV | 同一RQ |
+| rendering / validator / projection / connector repairのみ | 同一INV | 同一INV | 同一RQ |
 
 ## 11. Invariant
 
