@@ -40,6 +40,7 @@ authorityは常に `0001_research_architecture.md` に従う。
 - `20_synthesis`
 - `30_analysis`
 - そのInvestigationでacceptedされたWorking Answer
+- Workflow 20を実行した場合のappend-only Review JSON history / Findings / Verdict / frozen target
 
 ### Projectionは第二の正本ではない
 
@@ -405,3 +406,65 @@ Working Answer body rendering / section patch / projection-current判定 / v2 lo
 Notion APIの認証・fetch・update自体はWorkflow 00のprojection adapter責務である。adapterはhelperのresultを尊重し、独自のsection parsing / rendering ruleを再実装しない。
 
 projection adapterがNotion writeに失敗した場合はGit artifactを変更せず、failure provenanceを残してstateをCOMPLETEへ進めない。
+
+## 16. Git Review -> Notion Investigation Review current state
+
+Workflow 20を実行した場合、canonical Review contentはGitに保持し、Notion Investigations DBへはcurrent operational pointerだけをreconcileする。
+
+```text
+Git canonical Review JSON history
+    |
+    | deterministic reconcile
+    v
+Investigations DB
+    ├─ Review Status
+    └─ Latest Review Seq
+```
+
+### Authority
+
+Git authority:
+
+- Review Seq history
+- target commit SHA / artifact blob SHA
+- transition別semantic assessment
+- Findings
+- severity / evidence / impact / repair direction
+- cycle Verdict
+
+Notion authorityではなくderived current view:
+
+- `Review Status`
+- `Latest Review Seq`
+
+NotionへFinding本文、Verdict、target SHA、pre/post SHAを複製しない。
+
+### Status contract
+
+許容値は以下の7値に限定する。
+
+- `未`
+- `レビュー待`
+- `要修正`
+- `再作業中`
+- `再レビュー待`
+- `完了`
+- `－（対象外）`
+
+`未` はoptional Review process未開始、`－（対象外）` は明示的な対象外decisionである。Git factsだけから `－（対象外）` を推測しない。
+
+`要再調査` / `レビュー中` はpersistent Statusとして追加しない。new Investigation handoffはFindingの `repair_direction.mode = new_investigation` とversioning contractで表す。
+
+### Reconciliation
+
+state transition / fail-stop / mutation planは `src/research_atelier/reviewing/reconcile.py` をcanonical deterministic implementationとする。
+
+- Workflow 20はReview JSON保存後にNotion Statusを直接writeしない。
+- Workflow 00 / connector adapterはGit Review facts、current target relation、explicit eventsをreconcilerへ入力する。
+- `repair_started` は実際にsame-Investigation repair phaseへ入った時だけWorkflow 00が発行する。
+- malformed / duplicate / incomplete Review history、target ahead / divergedはBLOCKEDとし、mutationを適用しない。
+- stale Reviewはcurrent targetのPass証明ではなく、reReview対象として扱う。
+- mutation適用後はInvestigation rowを再取得し、`Review Status / Latest Review Seq` がplanと一致することをverifyする。
+
+このprojectionはReview semantic authorityのtransferではない。Notion rowはcurrent pointerであり、Git Review JSONがcanonical Review factのままである。
+
