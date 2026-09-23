@@ -60,3 +60,17 @@ v2 testは以下を追加で確認する。
 - body targetを表現するv2 projection log schema
 - SUCCESS / FAILURE provenance
 - Notion round-tripで除去されるordinary blank lineへ依存しないserialization
+
+
+## Semantic Review persistence / reconciliation regression
+
+`test_review_contract.py` はBKL-0027のReview persistence contractを固定する。
+
+- append-only Review historyとper-Investigation Review Seq
+- target commit / blob freezeとprepare後target変更fail-stop
+- save-time Review schema validation
+- Finding local IDとVerdict aggregation
+- malformed / incomplete Review history検出
+- `未 -> レビュー待 -> 完了 / 要修正 -> 再作業中 -> 再レビュー待` のdeterministic reconciliation
+- repair開始にはexplicit eventが必要
+- stale Review、duplicate / malformed history、idempotent reconciliation
