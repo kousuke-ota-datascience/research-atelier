@@ -63,9 +63,24 @@ Reviewを実行しなかったことだけを理由に、Workflow 00の通常の
 最低条件:
 
 - `00_context / 10_evidence / 20_synthesis / 30_analysis` が存在する。
+- frozen `00_context.question_type` がnon-nullである。
 - Review対象chainがcurrent deterministic contract上でvalidと扱える。
 - canonical artifactがGitへcommitされている。
 - Review対象版を一意に固定できる。
+
+### Historical null Question Type compatibility
+
+BKL-0031以前にfreezeされたhistorical Investigationのうち、`00_context.question_type = null` のものはWorkflow 20の**Review非対象**とする。
+
+- Review cycleを開始しない。
+- Review Seqをallocateしない。
+- Review JSONを生成しない。
+- Notion Investigations DBは `Review Status = －（対象外）`、`Latest Review Seq = empty` へreconcileする。
+- HumanがReviewを明示要求してもeligibility ruleを上書きしない。
+- historical `00_context` へQuestion Typeをbackfillしない。
+- missing `30_analysis` をReviewのために後付けしない。
+
+これはhistorical compatibility ruleであり、新規Investigationで `question_type = null` のfreezeを許容する根拠ではない。新規freeze禁止はBKL-0031のcontract変更で扱う。
 
 ### Validation freshness
 
