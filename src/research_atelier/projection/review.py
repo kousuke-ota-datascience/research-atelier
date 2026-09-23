@@ -1,0 +1,484 @@
+"""Deterministic Git Review JSON -> Notion Reviews projection helpers.
+
+Git Review JSON remains the canonical Review authority. This module renders a
+human-facing Notion projection and provides identity/pointer helpers for the
+connector adapter. It never writes canonical Review facts back from Notion.
+"""
+
+from __future__ import annotations
+
+from dataclasses import dataclass
+from typing import Any, Mapping, Sequence
+
+
+ARTIFACT_LAYERS = ("00_context", "10_evidence", "20_synthesis", "30_analysis")
+LAYER_PROPERTY = {
+    "00_context": "00 Context",
+    "10_evidence": "10 Evidence",
+    "20_synthesis": "20 Synthesis",
+    "30_analysis": "30 Analysis",
+}
+SEVERITY_RANK = {"Minor": 1, "Moderate": 2, "Major": 3}
+
+
+class ReviewProjectionError(ValueError):
+    """Raised when canonical Review facts cannot be projected safely."""
+
+
+class DuplicateReviewProjectionRowError(ReviewProjectionError):
+    """Raised when one logical Review identity resolves to multiple Notion rows."""
+
+
+class AmbiguousInvestigationProjectionRowError(ReviewProjectionError):
+    """Raised when an Investigation identity does not resolve exactly once."""
+
+
+@dataclass(frozen=True)
+class NextAction:
+    workflow: str
+    investigation: str
+    resume_from: str
+    action: str
+    do_not: str
+    completion: str
+
+
+@dataclass(frozen=True)
+class ReviewProjection:
+    investigation_id: str
+    review_seq: int
+    title: str
+    properties: Mapping[str, Any]
+    body_markdown: str
+    canonical_path: str
+    next_action: NextAction
+
+
+def _nonempty_text(value: Any, *, field: str) -> str:
+    if not isinstance(value, str) or not value.strip():
+        raise ReviewProjectionError(f"{field} must be a non-empty string")
+    return value.strip()
+
+
+def _line_text(value: Any, *, field: str) -> str:
+    return " ".join(_nonempty_text(value, field=field).splitlines())
+
+
+def _identity(review: Mapping[str, Any]) -> tuple[str, int]:
+    investigation_id = _nonempty_text(review.get("investigation_id"), field="investigation_id")
+    review_seq = review.get("review_seq")
+    if not isinstance(review_seq, int) or review_seq < 1:
+        raise ReviewProjectionError("review_seq must be an integer >= 1")
+    return investigation_id, review_seq
+
+
+def _transitions(review: Mapping[str, Any]) -> list[Mapping[str, Any]]:
+    value = review.get("transitions")
+    if not isinstance(value, list) or not value:
+        raise ReviewProjectionError("transitions must be a non-empty array")
+    transitions: list[Mapping[str, Any]] = []
+    for index, item in enumerate(value):
+        if not isinstance(item, Mapping):
+            raise ReviewProjectionError(f"transitions[{index}] must be an object")
+        transitions.append(item)
+    return transitions
+
+
+def _findings(review: Mapping[str, Any]) -> list[Mapping[str, Any]]:
+    findings: list[Mapping[str, Any]] = []
+    for transition_index, transition in enumerate(_transitions(review)):
+        transition_findings = transition.get("findings", [])
+        if not isinstance(transition_findings, list):
+            raise ReviewProjectionError(
+                f"transitions[{transition_index}].findings must be an array"
+            )
+        for finding_index, finding in enumerate(transition_findings):
+            if not isinstance(finding, Mapping):
+                raise ReviewProjectionError(
+                    f"transitions[{transition_index}].findings[{finding_index}] must be an object"
+                )
+            findings.append(finding)
+    return findings
+
+
+def derive_artifact_outcomes(review: Mapping[str, Any]) -> dict[str, str]:
+    """Derive Notion OK/NG properties from canonical Review facts.
+
+    10/20/30 are NG when their semantic transition has findings. Any finding's
+    explicit repair_direction.affected_layer also marks that layer NG.
+    Therefore 00_context can be represented independently without adding a
+    second manually maintained verdict field to historical Review JSON.
+    """
+
+    outcomes = {layer: "OK" for layer in ARTIFACT_LAYERS}
+    for transition_index, transition in enumerate(_transitions(review)):
+        target_artifact = transition.get("target_artifact")
+        findings = transition.get("findings", [])
+        if not isinstance(findings, list):
+            raise ReviewProjectionError(
+                f"transitions[{transition_index}].findings must be an array"
+            )
+        if findings:
+            if target_artifact not in {"10_evidence", "20_synthesis", "30_analysis"}:
+                raise ReviewProjectionError(
+                    f"unexpected transition target_artifact: {target_artifact!r}"
+                )
+            outcomes[str(target_artifact)] = "NG"
+
+        for finding_index, finding in enumerate(findings):
+            if not isinstance(finding, Mapping):
+                raise ReviewProjectionError(
+                    f"transitions[{transition_index}].findings[{finding_index}] must be an object"
+                )
+            repair_direction = finding.get("repair_direction")
+            if not isinstance(repair_direction, Mapping):
+                raise ReviewProjectionError("finding.repair_direction must be an object")
+            affected_layer = repair_direction.get("affected_layer")
+            if affected_layer not in ARTIFACT_LAYERS:
+                raise ReviewProjectionError(
+                    f"unexpected affected_layer: {affected_layer!r}"
+                )
+            outcomes[str(affected_layer)] = "NG"
+    return outcomes
+
+
+def highest_severity(review: Mapping[str, Any]) -> str | None:
+    highest: str | None = None
+    for finding in _findings(review):
+        severity = finding.get("severity")
+        if severity not in SEVERITY_RANK:
+            raise ReviewProjectionError(f"unexpected severity: {severity!r}")
+        if highest is None or SEVERITY_RANK[str(severity)] > SEVERITY_RANK[highest]:
+            highest = str(severity)
+    return highest
+
+
+def _validate_verdict(review: Mapping[str, Any]) -> tuple[str, list[Mapping[str, Any]]]:
+    verdict = review.get("verdict")
+    if verdict not in {"PASS", "FINDINGS"}:
+        raise ReviewProjectionError(f"unexpected verdict: {verdict!r}")
+    findings = _findings(review)
+    expected = "FINDINGS" if findings else "PASS"
+    if verdict != expected:
+        raise ReviewProjectionError(
+            f"verdict/finding mismatch: verdict={verdict}, expected={expected}"
+        )
+    return str(verdict), findings
+
+
+def _unique_instructions(findings: Sequence[Mapping[str, Any]]) -> str:
+    values: list[str] = []
+    for finding in findings:
+        repair_direction = finding.get("repair_direction")
+        if not isinstance(repair_direction, Mapping):
+            raise ReviewProjectionError("finding.repair_direction must be an object")
+        instruction = _line_text(
+            repair_direction.get("instruction"), field="finding.repair_direction.instruction"
+        )
+        if instruction not in values:
+            values.append(instruction)
+    return " / ".join(values)
+
+
+def derive_next_action(review: Mapping[str, Any]) -> NextAction:
+    investigation_id, _ = _identity(review)
+    verdict, findings = _validate_verdict(review)
+
+    if verdict == "PASS":
+        return NextAction(
+            workflow="Workflow 20",
+            investigation=investigation_id,
+            resume_from="none",
+            action="No repair is required for this reviewed target.",
+            do_not="Do not reopen canonical artifacts solely from this PASS Review.",
+            completion="Reconcile Review Status = 完了 and Latest Review to this Review cycle.",
+        )
+
+    new_investigation = []
+    same_investigation = []
+    for finding in findings:
+        repair_direction = finding.get("repair_direction")
+        if not isinstance(repair_direction, Mapping):
+            raise ReviewProjectionError("finding.repair_direction must be an object")
+        mode = repair_direction.get("mode")
+        if mode == "new_investigation":
+            new_investigation.append(finding)
+        elif mode == "same_investigation":
+            same_investigation.append(finding)
+        else:
+            raise ReviewProjectionError(f"unexpected repair mode: {mode!r}")
+
+    if new_investigation:
+        return NextAction(
+            workflow="Workflow 00",
+            investigation=investigation_id,
+            resume_from="new Investigation allocation",
+            action=_unique_instructions(new_investigation),
+            do_not="Do not repair the frozen/accepted Investigation in place.",
+            completion=(
+                "Allocate a new Investigation, build and validate its canonical chain, commit, "
+                "then run Workflow 20 again when Review is required."
+            ),
+        )
+
+    affected_layers: list[str] = []
+    for finding in same_investigation:
+        repair_direction = finding["repair_direction"]
+        layer = str(repair_direction.get("affected_layer"))
+        if layer == "00_context":
+            raise ReviewProjectionError(
+                "same_investigation repair of frozen 00_context is unsafe; use new_investigation"
+            )
+        if layer not in {"10_evidence", "20_synthesis", "30_analysis"}:
+            raise ReviewProjectionError(f"unexpected affected_layer: {layer!r}")
+        affected_layers.append(layer)
+
+    order = {"10_evidence": 10, "20_synthesis": 20, "30_analysis": 30}
+    resume_from = min(affected_layers, key=order.__getitem__)
+    do_not = {
+        "10_evidence": (
+            "Do not allocate a new Investigation; do not reuse stale 20_synthesis/30_analysis "
+            "after the Evidence repair."
+        ),
+        "20_synthesis": (
+            "Do not allocate a new Investigation; do not rebuild 10_evidence; "
+            "do not reuse stale 30_analysis."
+        ),
+        "30_analysis": (
+            "Do not allocate a new Investigation; do not rebuild 10_evidence; "
+            "do not rebuild 20_synthesis."
+        ),
+    }[resume_from]
+    return NextAction(
+        workflow="Workflow 10",
+        investigation=investigation_id,
+        resume_from=resume_from,
+        action=_unique_instructions(same_investigation),
+        do_not=do_not,
+        completion="through-30 PASS -> commit -> Workflow 20 re-review.",
+    )
+
+
+def _render_summary(review: Mapping[str, Any], outcomes: Mapping[str, str]) -> list[str]:
+    verdict, findings = _validate_verdict(review)
+    severity = highest_severity(review)
+    if findings:
+        summary = (
+            f"{len(findings)} {severity or ''} finding(s) recorded; "
+            + ", ".join(f"{layer}={outcomes[layer]}" for layer in ARTIFACT_LAYERS)
+            + "."
+        )
+    else:
+        summary = "No semantic finding is recorded for the reviewed target."
+
+    return [
+        "# Summary",
+        f"- Verdict: {verdict}",
+        f"- Findings: {len(findings)}",
+        f"- Highest Severity: {severity or 'none'}",
+        f"- 00_context: {outcomes['00_context']}",
+        f"- 10_evidence: {outcomes['10_evidence']}",
+        f"- 20_synthesis: {outcomes['20_synthesis']}",
+        f"- 30_analysis: {outcomes['30_analysis']}",
+        f"- Summary: {summary}",
+    ]
+
+
+def _render_next_action(action: NextAction) -> list[str]:
+    return [
+        "# Next Action — Quick Reference",
+        f"- Workflow: {action.workflow}",
+        f"- Investigation: {action.investigation}",
+        f"- Resume from: {action.resume_from}",
+        f"- Action: {action.action}",
+        f"- Do not: {action.do_not}",
+        f"- Completion: {action.completion}",
+    ]
+
+
+def _render_review_details(review: Mapping[str, Any]) -> list[str]:
+    lines = ["# Review Details"]
+    for transition_index, transition in enumerate(_transitions(review)):
+        transition_name = _nonempty_text(
+            transition.get("transition"),
+            field=f"transitions[{transition_index}].transition",
+        )
+        assessment = _line_text(
+            transition.get("assessment"),
+            field=f"transitions[{transition_index}].assessment",
+        )
+        lines.extend([f"## {transition_name}", f"**Assessment:** {assessment}"])
+        findings = transition.get("findings", [])
+        if not findings:
+            lines.append("**Findings:** none.")
+            continue
+        for finding_index, finding in enumerate(findings):
+            finding_id = _nonempty_text(
+                finding.get("finding_id"),
+                field=f"transitions[{transition_index}].findings[{finding_index}].finding_id",
+            )
+            severity = finding.get("severity")
+            if severity not in SEVERITY_RANK:
+                raise ReviewProjectionError(f"unexpected severity: {severity!r}")
+            target = _line_text(finding.get("target"), field="finding.target")
+            evidence = finding.get("evidence")
+            if not isinstance(evidence, list) or not evidence:
+                raise ReviewProjectionError("finding.evidence must be a non-empty array")
+            evidence_text = "; ".join(
+                _line_text(item, field="finding.evidence[]") for item in evidence
+            )
+            impact = _line_text(finding.get("impact"), field="finding.impact")
+            repair_direction = finding.get("repair_direction")
+            if not isinstance(repair_direction, Mapping):
+                raise ReviewProjectionError("finding.repair_direction must be an object")
+            mode = _nonempty_text(repair_direction.get("mode"), field="repair_direction.mode")
+            layer = _nonempty_text(
+                repair_direction.get("affected_layer"), field="repair_direction.affected_layer"
+            )
+            instruction = _line_text(
+                repair_direction.get("instruction"), field="repair_direction.instruction"
+            )
+            lines.extend(
+                [
+                    f"### {finding_id}",
+                    f"- Severity: {severity}",
+                    f"- Target: {target}",
+                    f"- Evidence: {evidence_text}",
+                    f"- Impact: {impact}",
+                    f"- Repair mode: {mode}",
+                    f"- Affected layer: {layer}",
+                    f"- Repair direction: {instruction}",
+                ]
+            )
+    return lines
+
+
+def _render_provenance(review: Mapping[str, Any], *, canonical_path: str) -> list[str]:
+    target = review.get("target")
+    if not isinstance(target, Mapping):
+        raise ReviewProjectionError("target must be an object")
+    commit_sha = _nonempty_text(target.get("commit_sha"), field="target.commit_sha")
+    blob_shas = target.get("artifact_blob_shas")
+    if not isinstance(blob_shas, Mapping):
+        raise ReviewProjectionError("target.artifact_blob_shas must be an object")
+    reviewed_at = _nonempty_text(review.get("reviewed_at"), field="reviewed_at")
+
+    lines = [
+        "# Provenance",
+        f"- Canonical Review JSON: {canonical_path}",
+        f"- Review target commit SHA: {commit_sha}",
+    ]
+    for layer in ARTIFACT_LAYERS:
+        lines.append(
+            f"- {layer} blob SHA: "
+            f"{_nonempty_text(blob_shas.get(layer), field=f'target.artifact_blob_shas.{layer}')}"
+        )
+    lines.append(f"- Reviewed at: {reviewed_at}")
+    return lines
+
+
+def build_review_projection(
+    review: Mapping[str, Any],
+    *,
+    canonical_path: str | None = None,
+) -> ReviewProjection:
+    """Render one canonical Review cycle into a deterministic Notion projection."""
+
+    if not isinstance(review, Mapping):
+        raise ReviewProjectionError("review must be an object")
+    investigation_id, review_seq = _identity(review)
+    verdict, _ = _validate_verdict(review)
+    outcomes = derive_artifact_outcomes(review)
+    severity = highest_severity(review)
+    reviewed_at = _nonempty_text(review.get("reviewed_at"), field="reviewed_at")
+    canonical_path = canonical_path or (
+        f"investigations/{investigation_id}/reviews/review-{review_seq:06d}.json"
+    )
+    title = f"{investigation_id} / Review {review_seq:06d}"
+    action = derive_next_action(review)
+
+    properties: dict[str, Any] = {
+        "Review": title,
+        "Review Seq": review_seq,
+        "Verdict": verdict,
+        "Highest Severity": severity,
+        "date:Reviewed At:start": reviewed_at,
+        "date:Reviewed At:is_datetime": 1,
+    }
+    for layer in ARTIFACT_LAYERS:
+        properties[LAYER_PROPERTY[layer]] = outcomes[layer]
+
+    body_markdown = "\n".join(
+        [
+            *_render_summary(review, outcomes),
+            *_render_next_action(action),
+            *_render_review_details(review),
+            *_render_provenance(review, canonical_path=canonical_path),
+        ]
+    ).rstrip()
+
+    return ReviewProjection(
+        investigation_id=investigation_id,
+        review_seq=review_seq,
+        title=title,
+        properties=properties,
+        body_markdown=body_markdown,
+        canonical_path=canonical_path,
+        next_action=action,
+    )
+
+
+def resolve_unique_investigation_row(
+    rows: Sequence[Mapping[str, Any]],
+    *,
+    investigation_id: str,
+) -> Mapping[str, Any]:
+    """Resolve exactly one adapter-normalized Investigation row or fail-stop."""
+
+    matches = [row for row in rows if row.get("investigation_id") == investigation_id]
+    if len(matches) != 1:
+        raise AmbiguousInvestigationProjectionRowError(
+            f"expected exactly one Investigation row for {investigation_id}, found {len(matches)}"
+        )
+    return matches[0]
+
+
+def resolve_unique_review_row(
+    rows: Sequence[Mapping[str, Any]],
+    *,
+    investigation_id: str,
+    review_seq: int,
+) -> Mapping[str, Any] | None:
+    """Resolve zero or one adapter-normalized Review row for the logical identity."""
+
+    matches = [
+        row
+        for row in rows
+        if row.get("investigation_id") == investigation_id
+        and row.get("review_seq") == review_seq
+    ]
+    if len(matches) > 1:
+        raise DuplicateReviewProjectionRowError(
+            f"duplicate Review rows for ({investigation_id}, {review_seq})"
+        )
+    return matches[0] if matches else None
+
+
+def reconcile_latest_review_relation(
+    *,
+    current_latest_review_url: str | None,
+    latest_review_url: str | None,
+    latest_review_exists: bool,
+) -> dict[str, Any]:
+    """Derive the Notion Latest Review relation mutation.
+
+    The adapter must first resolve/create the logical Review row. A canonical
+    latest Review without a unique Notion row is unsafe and therefore blocks.
+    """
+
+    if latest_review_exists and not latest_review_url:
+        raise ReviewProjectionError("latest canonical Review exists but Review row URL is missing")
+    desired = latest_review_url if latest_review_exists else None
+    if current_latest_review_url == desired:
+        return {}
+    return {"Latest Review": [desired] if desired else []}
