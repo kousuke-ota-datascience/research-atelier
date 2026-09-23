@@ -470,6 +470,7 @@ state transition / fail-stop / mutation planは `src/research_atelier/reviewing/
 - Workflow 20はReview JSON保存後にNotion Statusを直接writeしない。
 - Workflow 00 / connector adapterはGit Review facts、current target relation、explicit eventsをreconcilerへ入力する。
 - `repair_started` は実際にsame-Investigation repair phaseへ入った時だけWorkflow 00が発行する。
+- new-Investigation handoffのrerunでは、successor allocation / ID採番より先にexpected `handoff-<Review Seq>.json` をpreflightする。valid recordがあればrecord済みsuccessorをreuseし、duplicate successor / handoffを生成しない。
 - `new_investigation_handoff_completed` は `schemas/v2/review_handoff.schema.json` に適合するcanonical handoff artifactを保存・再読込し、source Review / source RQ / successor binding / allocation decisionとの整合を確認した後だけ発行する。
 - handoff artifactが存在してもcompletion eventをreconciler入力へ渡さない、またはeventだけでcanonical handoff recordがない状態はcontract violationとしてBLOCKEDとする。
 - malformed / duplicate / incomplete Review history、target ahead / divergedはBLOCKEDとし、mutationを適用しない。
