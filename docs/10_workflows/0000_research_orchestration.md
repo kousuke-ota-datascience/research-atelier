@@ -317,10 +317,13 @@ Workflow 20はoptional independent Semantic Reviewとして `0020_semantic_revie
 
 ### Review request / current state
 
-- Reviewを明示要求した時点で `review_requested` eventをreconcilerへ渡す。
-- Reviewを明示的に対象外とする場合だけ `review_not_applicable` eventを使う。
+- Review request前にWorkflow 20 eligibilityを解決する。
+- frozen `00_context.question_type = null` のhistorical Investigationは `review_eligible = false` とする。
+- eligibleなInvestigationへの明示要求だけ `review_requested` eventとしてreconcilerへ渡す。
+- `review_eligible = false` はexplicit Review requestより優先し、`Review Status = －（対象外）`、`Latest Review Seq = empty` へ収束させる。
+- その他、Reviewを明示的に対象外とする場合は `review_not_applicable` eventを使う。
 - `未` = Review processをまだ開始していない。optional Review未要求を含む。
-- `－（対象外）` = Human / Workflow policyがこのInvestigationをReview対象外と明示した状態。Git factsだけから自動付与しない。
+- `－（対象外）` = Human / Workflow policyまたはhistorical compatibility ruleによりReview非対象と確定した状態。
 - `レビュー中` はpersistent Statusとして持たない。
 
 ### Canonical Review facts
