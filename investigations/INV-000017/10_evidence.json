@@ -3,7 +3,7 @@
   "artifact_type": "10_evidence",
   "investigation_id": "INV-000017",
   "rq_id": "RQ-0021",
-  "snapshot_at": "2026-09-23T08:02:45.186Z",
+  "snapshot_at": "2026-09-23T18:59:49.543Z",
   "evidence_items": [
     {
       "evidence_id": "E0001",
@@ -274,6 +274,40 @@
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be3981afadb4e605e27d7ef8",
           "title": "EV-0184"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0017",
+      "content": "1893年3月5日、青梅町初音座で移管反対運動者750名が集会し、代議士瀬戸岡為一郎が来会した。8名が境域変更反対を演説し、村役場閉鎖・役場員の不就職による行政機関運転の妨害、管轄引継ぎ延期の請願作成、3月7日の八王子集会を決議したと東京府の同時代報告は記録する。",
+      "source_locator": "東京府文書「神奈川県西多摩郡不穏の景況上申及通知」1893-03-06、東京都公文書館解読文",
+      "selection_reason": "移管実施直前に東京府が把握していた反対運動の具体的行動と行政機関への影響を、東京府自身の同時代文書から確認するため。",
+      "note_type": "Result",
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be3981129356c8924a2b45ba",
+          "title": "SRC-0097"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e4e5855be39813ba211efdb4e5e04da",
+          "title": "EV-0201"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0018",
+      "content": "1893年3月6日の東京府文書では、羽村の玉川上水取入口にいた東京府第二課出張員から反対運動の動向報告を受けた東京府知事富田鉄之助が、その「不穏の景況」を内務大臣へ内申し、警視総監および神奈川県知事にも同内容を通知した。これは、東京府が取水口周辺の反対運動を行政的に把握し、その情報を中央政府・警察・隣県との間で共有していたことを直接示す。",
+      "source_locator": "東京府文書「神奈川県西多摩郡不穏の景況上申及通知」1893-03-06、東京都公文書館「資料の解読と読み下し例」",
+      "selection_reason": "RQのIncludeにある東京府行政主体の行動と内務省等との行政関係を、東京府自身の一次文書から直接captureするため。",
+      "note_type": "Result",
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be3981129356c8924a2b45ba",
+          "title": "SRC-0097"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e4e5855be3981cb83bfd34401bdc8c0",
+          "title": "EV-0205"
         }
       }
     }
