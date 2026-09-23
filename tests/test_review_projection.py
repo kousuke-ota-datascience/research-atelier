@@ -72,7 +72,10 @@ class ReviewProjectionRegressionTests(unittest.TestCase):
         self.assertEqual(outcomes["30_analysis"], "NG")
 
     def test_split_normalized_projection_uses_layer_verdicts_and_paths(self) -> None:
-        review = self.review
+        review = copy.deepcopy(self.review)
+        finding = review["transitions"][2]["findings"][0]
+        finding["repair_direction"]["mode"] = "new_investigation"
+        finding["repair_direction"]["affected_layer"] = "00_context"
         normalized = {
             "schema_version": review["schema_version"],
             "report_type": "semantic_review_normalized",
@@ -125,8 +128,9 @@ class ReviewProjectionRegressionTests(unittest.TestCase):
             },
         }
         projection = build_review_projection(normalized)
-        self.assertEqual(projection.properties["00 Context"], "OK")
+        self.assertEqual(projection.properties["00 Context"], "NG")
         self.assertEqual(projection.properties["30 Analysis"], "NG")
+        self.assertEqual(projection.next_action.workflow, "Workflow 00")
         self.assertIn("Storage format: split_v2", projection.body_markdown)
         self.assertIn("review_00_000001.json", projection.body_markdown)
 
