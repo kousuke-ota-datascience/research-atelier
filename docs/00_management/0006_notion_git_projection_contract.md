@@ -522,3 +522,26 @@ canonical implementationは `src/research_atelier/projection/review.py`。
 - Notion write失敗・projection driftはGit Review JSONを変更する根拠にしない。
 
 `Latest Review Seq` はmigration compatibilityのため当面保持する。human navigationには `Latest Review` relationを使う。
+
+
+## 18. Split Review persistence / BKL-0034
+
+BKL-0034以降、新規Review CycleのGit canonical authorityは1つのcycle manifestと4 layer Review JSONから構成する。
+
+```text
+review-XXXXXX.json
+review_00_XXXXXX.json
+review_10_XXXXXX.json
+review_20_XXXXXX.json
+review_30_XXXXXX.json
+```
+
+Reviews DBの1 row = 1 Review Cycle contractは変更しない。projection adapterはraw file layoutを直接解釈せず、`review_state.load_review_history()` が返すnormalized Review Cycleを入力とする。
+
+artifact-level OK / NGは以下からdeterministically導出する。
+
+1. 対応layer review verdictが `FINDINGS` ならNG。
+2. 任意Findingの `repair_direction.affected_layer` が当該layerならNG。
+3. それ以外はOK。
+
+split cycleのProvenanceにはmanifest pathと4 layer JSON pathを表示する。legacy single-file Reviewはhistorical canonical recordとして継続読取し、Git/Notionいずれからもin-place migrationしない。

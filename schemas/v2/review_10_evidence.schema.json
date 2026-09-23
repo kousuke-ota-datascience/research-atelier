@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://research-atelier.local/schemas/v2/review_10_evidence.schema.json",
+  "title": "Research Atelier Semantic Review Layer: 10_evidence",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "report_type",
+    "investigation_id",
+    "review_seq",
+    "layer",
+    "review_kind",
+    "target_blob_sha",
+    "assessment",
+    "findings",
+    "verdict"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "report_type": {
+      "const": "semantic_review_layer"
+    },
+    "investigation_id": {
+      "type": "string",
+      "pattern": "^(?:INV-(?!000000)[0-9]{6}|RQ-[0-9]{4}-v(?!000)[0-9]{3})$"
+    },
+    "review_seq": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "layer": {
+      "const": "10_evidence"
+    },
+    "review_kind": {
+      "const": "source_evidence_note_to_10_evidence"
+    },
+    "target_blob_sha": {
+      "$ref": "review_common.schema.json#/$defs/sha"
+    },
+    "assessment": {
+      "type": "string",
+      "minLength": 1
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "$ref": "review_common.schema.json#/$defs/finding"
+      }
+    },
+    "verdict": {
+      "$ref": "review_common.schema.json#/$defs/verdict"
+    }
+  }
+}

@@ -134,11 +134,23 @@ Review target commit SHAはaudit provenanceとして保持する。canonical cha
 
 Git ancestryからReview targetがcurrent artifactよりahead / divergedと判定される場合は自動収束せずBLOCKEDとする。SHA relationのmechanical判定はadapter / Control Plane責務でありReviewerのsemantic judgmentにしない。
 
-## 5. Reviewするsemantic transition
+## 5. Reviewするsemantic layer
 
-Reviewはcanonical chainの順序を維持する。
+Reviewはcanonical chainの順序を維持し、new split-format cycleでは4 layerを独立assessmentとして記録する。
 
-### 5.1 Source / Evidence Note provenance -> `10_evidence`
+### 5.1 `00_context` semantic validity
+
+確認対象:
+
+- frozen Research Question / Scope / assumptionsとInvestigation Contextの整合。
+- Question Typeとcontext設計の意味論的一貫性。
+- downstream Analysisの解釈に必要なscope / population / temporal boundary / assumptions等の欠落。
+- context内部のsemantic contradiction。
+- frozen contextを変更しなければ修正できないdefect。
+
+freeze済み `00_context` のsubstantive defectは原則 `repair_direction.mode = new_investigation` とする。same-Investigation repairはunsafeとしてfail-stopする。
+
+### 5.2 Source / Evidence Note provenance -> `10_evidence`
 
 確認対象:
 
@@ -149,7 +161,7 @@ Reviewはcanonical chainの順序を維持する。
 
 Source上の情報を直接Analysisへ持ち込んで不足を補完しない。Evidence layerの不足はupstream findingとして扱う。
 
-### 5.2 `10_evidence` -> `20_synthesis`
+### 5.3 `10_evidence` -> `20_synthesis`
 
 確認対象:
 
@@ -159,7 +171,7 @@ Source上の情報を直接Analysisへ持ち込んで不足を補完しない。
 - cross-source synthesisとSource自身のclaimが区別されているか。
 - downstream Analysisに必要なmeaningを作るためEvidenceを越えていないか。
 
-### 5.3 `20_synthesis + 00_context` -> `30_analysis`
+### 5.4 `20_synthesis + 00_context` -> `30_analysis`
 
 確認対象:
 
@@ -168,6 +180,8 @@ Source上の情報を直接Analysisへ持ち込んで不足を補完しない。
 - Judgment / Working AnswerがSynthesisを越えて断定していないか。
 - limitation / alternative explanation / unresolved questionが重要な不確実性を保持しているか。
 - raw Evidence / Sourceを直接使って `20_synthesis` をbypassしていないか。
+
+layer verdictは「そのreview layerでFindingが存在するか」を表す。Findingの `repair_direction.affected_layer` は「repair開始layer」を表し、両者を混同しない。cross-layer defectの場合、発見元layerとaffected layerが異なってよい。
 
 ## 6. No-bypass / no-upstream-healing rule
 
@@ -217,56 +231,59 @@ Reviewerはfindingを記録する。canonical artifactをReviewの名義で直�
 
 Workflow 20を実行した場合、Review結果をephemeral chat outputで終わらせない。canonical authorityはGit上のmachine-readable JSONとする。
 
-保存先:
+### 9.1 New split-format cycle
+
+BKL-0034以降の新規Review Cycleは次の5 fileで保存する。
 
 ```text
 investigations/<Investigation ID>/reviews/
-  review-000001.json
   review-000002.json
-  ...
+  review_00_000002.json
+  review_10_000002.json
+  review_20_000002.json
+  review_30_000002.json
 ```
 
-1 Review cycle = 1 JSONとし、3 semantic transitionを同一cycleへ集約する。
-
-1. `source_evidence_note_to_10_evidence`
-2. `10_evidence_to_20_synthesis`
-3. `20_synthesis_plus_00_context_to_30_analysis`
+- `review-XXXXXX.json`: cycle manifest。Review identity、target commit / 4 artifact blob SHA、reviewed_at、layer file references、overall verdict。
+- `review_00_XXXXXX.json`: `00_context` semantic assessment。
+- `review_10_XXXXXX.json`: Source / Evidence Note -> `10_evidence` assessment。
+- `review_20_XXXXXX.json`: `10_evidence` -> `20_synthesis` assessment。
+- `review_30_XXXXXX.json`: `20_synthesis + 00_context` -> `30_analysis` assessment。
 
 canonical schema:
 
-- `schemas/v2/review_cycle.schema.json`
-- common Finding definitions: `schemas/v2/review_common.schema.json`
+- `schemas/v2/review_manifest.schema.json`
+- `schemas/v2/review_00_context.schema.json`
+- `schemas/v2/review_10_evidence.schema.json`
+- `schemas/v2/review_20_synthesis.schema.json`
+- `schemas/v2/review_30_analysis.schema.json`
+- common definitions: `schemas/v2/review_common.schema.json`
 
-各recordは少なくとも次を保持する。
+Review Cycle identityは `(Investigation ID, Review Seq)` とする。global `REV-NNNN` は導入しない。
 
-- `schema_version`
-- `investigation_id`
-- `review_seq`
-- target commit SHA
-- 00 / 10 / 20 / 30 blob SHA
-- `reviewed_at`
-- transition別semantic assessment
-- Findings
-- deterministic Verdict
+Finding IDはcycle-global `F001...` とし、logical identityは `(Investigation ID, Review Seq, Finding ID)` で表す。
 
-Finding identityはcycle-local `F001...` とし、logical identityは `(Investigation ID, Review Seq, Finding ID)` で表す。
+layer-level Verdictとcycle-level VerdictはReviewerが独立入力しない。
 
-Findingは次を持つ。
-
-- `severity = Minor / Moderate / Major`
-- `target`
-- canonical artifact上の `evidence` reference
-- `impact`
-- `repair_direction.mode = same_investigation / new_investigation`
-- `repair_direction.affected_layer = 00_context / 10_evidence / 20_synthesis / 30_analysis`
-- repair instruction
-
-cycle-level VerdictはReviewerが独立入力しない。writerがFinding集合からdeterministically算出する。
-
-- Finding 0件 -> `PASS`
-- Finding 1件以上 -> `FINDINGS`
+- layer Finding 0件 -> layer `PASS`
+- layer Finding 1件以上 -> layer `FINDINGS`
+- 4 layer全体でFinding 0件 -> cycle `PASS`
+- 4 layer全体でFinding 1件以上 -> cycle `FINDINGS`
 
 `STALE / BLOCKED` はcanonical semantic Verdictではなく、target relation / execution conditionからreconcilerが導出するworkflow outcomeである。
+
+### 9.2 Legacy compatibility
+
+BKL-0034以前のsingle-file canonical Review Cycleはhistorical factとして保持し、in-place rewriteしない。
+
+```text
+review-000001.json
+report_type = semantic_review
+```
+
+既存 `schemas/v2/review_cycle.schema.json` をlegacy validatorとして維持する。history loaderはlegacy single-file cycleとnew split cycleの双方をnormalized Review Cycleへ変換し、projection / reconciliationへstorage format差を漏らさない。
+
+new split cycleでmanifestまたは4 layer fileの一部欠落、orphan layer、filename / payload Seq不一致、target SHA不一致、duplicate Finding ID、Verdict / Finding mismatchがある場合はfail-stopする。
 
 Markdown Reviewは作成してもderived viewであり、Review history / completion / reconciliationの事実源にしない。
 
@@ -448,3 +465,15 @@ adapterは少なくとも次を満たす。
 - canonical history invalid、Investigation binding不明/重複、Review projection row重複では推測してmutationしない。
 
 Review Status transitionは引き続き `src/research_atelier/reviewing/reconcile.py` が所有し、Review DB導入を理由にstate machineを二重実装しない。
+
+
+## 16. BKL-0034 split persistence implementation
+
+canonical helper implementation:
+
+- `src/research_atelier/reviewing/review_writer.py`: target freeze、cycle-global Finding ID、4 layer + manifest validation、append-only finalize。
+- `src/research_atelier/reviewing/review_state.py`: legacy / split history validationとnormalized Review Cycle生成。
+- `src/research_atelier/projection/review.py`: normalized cycleからReviews DB projectionを生成。
+- `src/research_atelier/reviewing/reconcile.py`: storage-neutral `review_seq / verdict / target` を用いる既存state machineを継続。
+
+新規schema分割を理由にReviews DBのlogical identityやInvestigations.`Latest Review` relationを再設計しない。

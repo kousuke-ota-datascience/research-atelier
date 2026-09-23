@@ -71,6 +71,69 @@ class ReviewProjectionRegressionTests(unittest.TestCase):
         self.assertEqual(outcomes["00_context"], "NG")
         self.assertEqual(outcomes["30_analysis"], "NG")
 
+    def test_split_normalized_projection_uses_layer_verdicts_and_paths(self) -> None:
+        review = copy.deepcopy(self.review)
+        finding = review["transitions"][2]["findings"][0]
+        finding["repair_direction"]["mode"] = "new_investigation"
+        finding["repair_direction"]["affected_layer"] = "00_context"
+        normalized = {
+            "schema_version": review["schema_version"],
+            "report_type": "semantic_review_normalized",
+            "investigation_id": review["investigation_id"],
+            "review_seq": review["review_seq"],
+            "target": review["target"],
+            "reviewed_at": review["reviewed_at"],
+            "layers": {
+                "00_context": {
+                    "layer": "00_context",
+                    "review_kind": "context_semantic_validity",
+                    "target_blob_sha": review["target"]["artifact_blob_shas"]["00_context"],
+                    "assessment": "Context is semantically coherent.",
+                    "findings": [],
+                    "verdict": "PASS",
+                },
+                "10_evidence": {
+                    "layer": "10_evidence",
+                    "review_kind": review["transitions"][0]["transition"],
+                    "target_blob_sha": review["transitions"][0]["target_blob_sha"],
+                    "assessment": review["transitions"][0]["assessment"],
+                    "findings": review["transitions"][0]["findings"],
+                    "verdict": "PASS",
+                },
+                "20_synthesis": {
+                    "layer": "20_synthesis",
+                    "review_kind": review["transitions"][1]["transition"],
+                    "target_blob_sha": review["transitions"][1]["target_blob_sha"],
+                    "assessment": review["transitions"][1]["assessment"],
+                    "findings": review["transitions"][1]["findings"],
+                    "verdict": "PASS",
+                },
+                "30_analysis": {
+                    "layer": "30_analysis",
+                    "review_kind": review["transitions"][2]["transition"],
+                    "target_blob_sha": review["transitions"][2]["target_blob_sha"],
+                    "assessment": review["transitions"][2]["assessment"],
+                    "findings": review["transitions"][2]["findings"],
+                    "verdict": "FINDINGS",
+                },
+            },
+            "verdict": "FINDINGS",
+            "storage_format": "split_v2",
+            "canonical_paths": {
+                "manifest": "investigations/INV-000015/reviews/review-000001.json",
+                "00_context": "investigations/INV-000015/reviews/review_00_000001.json",
+                "10_evidence": "investigations/INV-000015/reviews/review_10_000001.json",
+                "20_synthesis": "investigations/INV-000015/reviews/review_20_000001.json",
+                "30_analysis": "investigations/INV-000015/reviews/review_30_000001.json",
+            },
+        }
+        projection = build_review_projection(normalized)
+        self.assertEqual(projection.properties["00 Context"], "NG")
+        self.assertEqual(projection.properties["30 Analysis"], "NG")
+        self.assertEqual(projection.next_action.workflow, "Workflow 00")
+        self.assertIn("Storage format: split_v2", projection.body_markdown)
+        self.assertIn("review_00_000001.json", projection.body_markdown)
+
     def test_new_investigation_finding_hands_off_to_workflow_00(self) -> None:
         review = copy.deepcopy(self.review)
         finding = review["transitions"][2]["findings"][0]

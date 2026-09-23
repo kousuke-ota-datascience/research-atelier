@@ -1,0 +1,105 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://research-atelier.local/schemas/v2/review_manifest.schema.json",
+  "title": "Research Atelier Semantic Review Cycle Manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "report_type",
+    "investigation_id",
+    "review_seq",
+    "target",
+    "reviewed_at",
+    "layer_files",
+    "verdict"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "report_type": {
+      "const": "semantic_review_manifest"
+    },
+    "investigation_id": {
+      "type": "string",
+      "pattern": "^(?:INV-(?!000000)[0-9]{6}|RQ-[0-9]{4}-v(?!000)[0-9]{3})$"
+    },
+    "review_seq": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "target": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "commit_sha",
+        "artifact_blob_shas"
+      ],
+      "properties": {
+        "commit_sha": {
+          "$ref": "review_common.schema.json#/$defs/sha"
+        },
+        "artifact_blob_shas": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "00_context",
+            "10_evidence",
+            "20_synthesis",
+            "30_analysis"
+          ],
+          "properties": {
+            "00_context": {
+              "$ref": "review_common.schema.json#/$defs/sha"
+            },
+            "10_evidence": {
+              "$ref": "review_common.schema.json#/$defs/sha"
+            },
+            "20_synthesis": {
+              "$ref": "review_common.schema.json#/$defs/sha"
+            },
+            "30_analysis": {
+              "$ref": "review_common.schema.json#/$defs/sha"
+            }
+          }
+        }
+      }
+    },
+    "reviewed_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "layer_files": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "00_context",
+        "10_evidence",
+        "20_synthesis",
+        "30_analysis"
+      ],
+      "properties": {
+        "00_context": {
+          "type": "string",
+          "pattern": "^review_00_[0-9]{6}\\.json$"
+        },
+        "10_evidence": {
+          "type": "string",
+          "pattern": "^review_10_[0-9]{6}\\.json$"
+        },
+        "20_synthesis": {
+          "type": "string",
+          "pattern": "^review_20_[0-9]{6}\\.json$"
+        },
+        "30_analysis": {
+          "type": "string",
+          "pattern": "^review_30_[0-9]{6}\\.json$"
+        }
+      }
+    },
+    "verdict": {
+      "$ref": "review_common.schema.json#/$defs/verdict"
+    }
+  }
+}

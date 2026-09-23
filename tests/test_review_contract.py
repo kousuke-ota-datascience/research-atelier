@@ -35,16 +35,20 @@ BLOBS = {
     "30_analysis": SHA_D,
 }
 
-PASS_BODIES = {
-    "source_evidence_note_to_10_evidence": {
+PASS_LAYERS = {
+    "00_context": {
+        "assessment": "Frozen Investigation Context is semantically coherent.",
+        "findings": [],
+    },
+    "10_evidence": {
         "assessment": "Evidence provenance is semantically sound.",
         "findings": [],
     },
-    "10_evidence_to_20_synthesis": {
+    "20_synthesis": {
         "assessment": "Synthesis preserves support and uncertainty.",
         "findings": [],
     },
-    "20_synthesis_plus_00_context_to_30_analysis": {
+    "30_analysis": {
         "assessment": "Analysis is supported within the frozen context.",
         "findings": [],
     },
@@ -79,19 +83,26 @@ class ReviewContractTest(unittest.TestCase):
             target_commit_sha=SHA_E,
             artifact_blob_shas=BLOBS,
         )
-        bodies = json.loads(json.dumps(PASS_BODIES))
+        layers = json.loads(json.dumps(PASS_LAYERS))
         if findings:
-            bodies["20_synthesis_plus_00_context_to_30_analysis"]["findings"] = [FINDING]
-        path = save_review_cycle(
+            layers["30_analysis"]["findings"] = [FINDING]
+        save_review_cycle(
             prepared,
             reviewed_at="2026-09-23T00:00:00Z",
-            transition_bodies=bodies,
+            layer_bodies=layers,
             current_target_commit_sha=SHA_E,
             current_artifact_blob_shas=BLOBS,
             review_dir=self.review_dir,
             schema_path=SCHEMA,
         )
-        return json.loads(path.read_text(encoding="utf-8"))
+        history = load_review_history(
+            INVESTIGATION_ID,
+            review_dir=self.review_dir,
+            schema_path=SCHEMA,
+        )
+        self.assertEqual(history.issues, ())
+        assert history.latest is not None
+        return dict(history.latest)
 
     def test_pass_cycle_is_saved_append_only_and_seq_increments(self) -> None:
         first = self._save()
@@ -101,13 +112,24 @@ class ReviewContractTest(unittest.TestCase):
         self.assertEqual(second["review_seq"], 2)
         self.assertEqual(
             sorted(p.name for p in self.review_dir.glob("*.json")),
-            ["review-000001.json", "review-000002.json"],
+            [
+                "review-000001.json",
+                "review-000002.json",
+                "review_00_000001.json",
+                "review_00_000002.json",
+                "review_10_000001.json",
+                "review_10_000002.json",
+                "review_20_000001.json",
+                "review_20_000002.json",
+                "review_30_000001.json",
+                "review_30_000002.json",
+            ],
         )
 
     def test_verdict_and_finding_id_are_deterministic(self) -> None:
         record = self._save(findings=True)
         self.assertEqual(record["verdict"], "FINDINGS")
-        findings = record["transitions"][2]["findings"]
+        findings = record["layers"]["30_analysis"]["findings"]
         self.assertEqual(findings[0]["finding_id"], "F001")
 
     def test_target_change_after_prepare_fails(self) -> None:
@@ -124,7 +146,7 @@ class ReviewContractTest(unittest.TestCase):
             save_review_cycle(
                 prepared,
                 reviewed_at="2026-09-23T00:00:00Z",
-                transition_bodies=PASS_BODIES,
+                layer_bodies=PASS_LAYERS,
                 current_target_commit_sha=SHA_E,
                 current_artifact_blob_shas=changed,
                 review_dir=self.review_dir,
@@ -140,6 +162,64 @@ class ReviewContractTest(unittest.TestCase):
             schema_path=SCHEMA,
         )
         self.assertTrue(history.issues)
+
+    def test_legacy_seq1_and_split_seq2_load_as_one_history(self) -> None:
+        legacy_source = (
+            REPO_ROOT
+            / "investigations"
+            / "INV-000015"
+            / "reviews"
+            / "review-000001.json"
+        )
+        legacy = json.loads(legacy_source.read_text(encoding="utf-8"))
+        self.review_dir.mkdir(parents=True)
+        (self.review_dir / "review-000001.json").write_text(
+            json.dumps(legacy, ensure_ascii=False, indent=2) + "\n",
+            encoding="utf-8",
+        )
+
+        prepared = prepare_review_cycle(
+            "INV-000015",
+            review_dir=self.review_dir,
+            schema_path=SCHEMA,
+            target_commit_sha=legacy["target"]["commit_sha"],
+            artifact_blob_shas=legacy["target"]["artifact_blob_shas"],
+        )
+        self.assertEqual(prepared.review_seq, 2)
+        save_review_cycle(
+            prepared,
+            reviewed_at="2026-09-23T06:00:00Z",
+            layer_bodies=PASS_LAYERS,
+            current_target_commit_sha=legacy["target"]["commit_sha"],
+            current_artifact_blob_shas=legacy["target"]["artifact_blob_shas"],
+            review_dir=self.review_dir,
+            schema_path=SCHEMA,
+        )
+        history = load_review_history(
+            "INV-000015",
+            review_dir=self.review_dir,
+            schema_path=SCHEMA,
+        )
+        self.assertEqual(history.issues, ())
+        self.assertEqual(
+            [record["storage_format"] for record in history.records],
+            ["legacy_single", "split_v2"],
+        )
+
+    def test_orphan_split_layer_blocks_history(self) -> None:
+        self.review_dir.mkdir(parents=True)
+        (self.review_dir / "review_00_000001.json").write_text(
+            "{}\n",
+            encoding="utf-8",
+        )
+        history = load_review_history(
+            INVESTIGATION_ID,
+            review_dir=self.review_dir,
+            schema_path=SCHEMA,
+        )
+        self.assertTrue(
+            any(issue.startswith("orphan_review_layer:") for issue in history.issues)
+        )
 
     def test_initial_request_becomes_review_waiting(self) -> None:
         result = reconcile_review_state(
