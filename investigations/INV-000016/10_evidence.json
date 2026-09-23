@@ -3,7 +3,7 @@
   "artifact_type": "10_evidence",
   "investigation_id": "INV-000016",
   "rq_id": "RQ-0020",
-  "snapshot_at": "2026-09-23T06:59:23.413Z",
+  "snapshot_at": "2026-09-23T18:37:06.000Z",
   "evidence_items": [
     {
       "evidence_id": "E0001",
@@ -241,6 +241,74 @@
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e4e5855be3981748dbec2b9f23aa724",
           "title": "EV-0174"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0015",
+      "content": "第4回帝国議会の境域変更法案委員長報告は、三多摩の境域変更について希望側の請願が11通667人、反対側が19通3552人であったと報告しており、移管そのものに対して組織化された賛否双方の意思表明が存在した。",
+      "source_locator": "第4回帝国議会 衆議院 本会議 第46号、境域変更法案委員長報告の請願集計",
+      "selection_reason": "Frozen Contextが要求する移管そのものへの直接的な賛否を、同時代の議会記録に残る請願集計からcaptureするため。",
+      "note_type": "Data",
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e4e5855be398188b180ff47b6187bcc",
+          "title": "SRC-0107"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e4e5855be39818b96c0f120e6272aa6",
+          "title": "EV-0199"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0016",
+      "content": "法案審議で楠本正隆は、三多摩移管が神奈川県側に一定の財政的不便を生じさせる点を認めながらも、東京市水道上の必要性を重視して法案賛成を述べた。これは、不利益を否定せずに移管を容認・支持する立場の存在を示す。",
+      "source_locator": "第4回帝国議会 衆議院 本会議 第46号・楠本正隆発言（033）",
+      "selection_reason": "神奈川県側の不利益を認識しつつ行政上の必要を優先する条件付き賛成・容認の論理を区別するため。",
+      "note_type": "Result",
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e4e5855be398188b180ff47b6187bcc",
+          "title": "SRC-0107"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e4e5855be398111ad60d2a69f9aa65f",
+          "title": "EV-0200"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0017",
+      "content": "1893年3月5日、青梅町初音座で移管反対運動者750名が集会し、代議士瀬戸岡為一郎が来会した。8名が境域変更反対を演説し、村役場閉鎖・役場員の不就職による行政機関運転の妨害、管轄引継ぎ延期の請願作成、3月7日の八王子集会を決議したと東京府の同時代報告は記録する。",
+      "source_locator": "東京府文書「神奈川県西多摩郡不穏の景況上申及通知」1893-03-06、東京都公文書館解読文",
+      "selection_reason": "移管反対の主体・規模・具体的戦術を、既に利用していた東京都公文書館Sourceから直接captureするため。",
+      "note_type": "Result",
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be3981129356c8924a2b45ba",
+          "title": "SRC-0097"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e4e5855be39813ba211efdb4e5e04da",
+          "title": "EV-0201"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0018",
+      "content": "法案可決後も神奈川県側の反対は続き、1893年3月15日の神奈川県自由党大会では山田東次・石阪昌孝ら代議士、岡部芳太郎・土方房五郎ら県議を含む250余名が参加し、境域復旧の陳情などを決定した。3月17日の神奈川県会では、境域復旧法案を第五議会へ提出するよう内務大臣へ建議することが満場一致で可決されたと『多摩市史』は叙述する。",
+      "source_locator": "『多摩市史 通史編2 近現代』「移管後の状況と知事襲撃事件」pp.240-243",
+      "selection_reason": "移管反対が地域運動だけでなく神奈川県自由党と県会の制度的意思表明として継続したことを、既に利用していた『多摩市史』Sourceからcaptureするため。",
+      "note_type": "Result",
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be3981e89190c5df7e3de208",
+          "title": "SRC-0095"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e4e5855be398142af01cc3e9b6577d4",
+          "title": "EV-0203"
         }
       }
     }
