@@ -356,7 +356,8 @@ BKL-0021でdeferしていたpersistent Review infrastructureは、BKL-0027で次
 - target commit / blob freeze
 - prepare後target変更fail-stop
 - deterministic Verdict aggregation
-- Investigation rowの `Review Status / Latest Review Seq`
+- Investigation rowの `Review Status / Latest Review` と `Latest Review Seq` compatibility pointer
+- Notion `Reviews` DBへのhuman-facing operational projection
 - Python reconcilerによるcurrent state mutation plan
 
 canonical implementation:
@@ -368,7 +369,7 @@ canonical implementation:
 ### 引き続き採用しない / defer
 
 - global first-class `REV-NNNN` identity
-- Review専用Notion DB
+- Reviewをcore first-class domain entity / canonical authorityとするNotion DB
 - artifactごとのNotion Status row
 - Notion上のpre-SHA / post-SHA / target SHA property
 - Markdown Reviewをcanonical authorityとすること
@@ -380,3 +381,70 @@ Workflow 20は引き続きoptionalであり、通常のWorkflow 10 completionを
 ## 14. Invariant
 
 Workflow 20は**Investigationに対する独立semantic assessment**であり、Research Questionの意味を所有せず、canonical artifact chainを迂回せず、deterministic validatorやControl Planeを再実装せず、findingとrepair executionを混同しない。
+
+
+## 15. Notion Reviews operational projection / BKL-0032
+
+BKL-0032では、BKL-0027でdeferしていた**human-facing Review DB**をoperational projectionとして導入する。ただしReview cycleのdomain positionとauthorityは変更しない。
+
+- Review cycleはInvestigationに従属するpersistent assessment recordであり、独立したcore domain entityではない。
+- logical identityは引き続き `(Investigation ID, Review Seq)` とする。global `REV-NNNN` は導入しない。
+- canonical authorityはGit `review-XXXXXX.json` のままである。
+- Notion `Reviews` DBはGit canonical Review JSONからdeterministically生成・更新するderived operational surfaceである。
+- Notion上のhuman editをGit canonical Review JSONへreverse applyしない。
+
+### Reviews DB projection
+
+1 canonical Review cycleにつき1 rowをprojectionする。
+
+主要property:
+
+- `Review`: `<Investigation ID> / Review <6桁Seq>`
+- `Investigation`: Investigations DB relation
+- `Review Seq`
+- `Verdict = PASS / FINDINGS`
+- `00 Context / 10 Evidence / 20 Synthesis / 30 Analysis = OK / NG`
+- `Highest Severity = Minor / Moderate / Major / empty`
+- `Reviewed At`
+
+artifact-level OK / NGは独立した手入力判定にしない。canonical Findingからdeterministically導出する。
+
+- transitionにFindingがあれば、そのtransition target artifactをNGとする。
+- Findingの `repair_direction.affected_layer` もNGとする。
+- このため、既存schemaへ別の手入力verdictを追加せず `00_context` のNGも表現できる。
+- FindingがないartifactはOKとする。
+
+Review page bodyは少なくとも次をdeterministically renderする。
+
+1. `Summary`
+2. `Next Action — Quick Reference`
+3. `Review Details`
+4. `Provenance`
+
+Next ActionはFindingの `repair_direction.mode / affected_layer / instruction` とWorkflow 10 invalidation ruleから導出する。Reviewerやconnectorがad hocに次手を作文してcanonical ruleを上書きしない。
+
+### Investigation pointer
+
+Investigations DBには次を保持する。
+
+- `Review Status`: BKL-0027のprocess state
+- `Latest Review`: latest projected Review rowへのrelation
+- `Latest Review Seq`: compatibility pointerとして当面維持
+
+human navigationは `Latest Review` relationを優先する。`Latest Review Seq` はBKL-0032で削除せず、既存contractとの互換性のため保持する。
+
+### Deterministic adapter / fail-stop
+
+canonical helperは `src/research_atelier/projection/review.py` とする。
+
+adapterは少なくとも次を満たす。
+
+- Git Review historyをvalidationしlatest cycleを解決する。
+- Investigation IDがNotion Investigations DBでexactly one rowへ解決することを確認する。
+- `(Investigation ID, Review Seq)` がReviews DBで0または1 rowへ解決することを確認する。
+- 0 rowならcreate、1 rowならcanonical renderingへupdate / NOOP、2 row以上ならBLOCKED。
+- Review row成立後に `Latest Review` relationを同期する。
+- 同一Git factsで再実行した場合は追加rowを作らずNOOPへ収束する。
+- canonical history invalid、Investigation binding不明/重複、Review projection row重複では推測してmutationしない。
+
+Review Status transitionは引き続き `src/research_atelier/reviewing/reconcile.py` が所有し、Review DB導入を理由にstate machineを二重実装しない。
