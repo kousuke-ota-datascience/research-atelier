@@ -221,6 +221,45 @@ class ReviewContractTest(unittest.TestCase):
             any(issue.startswith("orphan_review_layer:") for issue in history.issues)
         )
 
+    def test_legacy_schema_paths_are_explicitly_deprecated(self) -> None:
+        schema_dir = REPO_ROOT / "schemas" / "v2"
+        for name in ("review_common.schema.json", "review_cycle.schema.json"):
+            schema = json.loads((schema_dir / name).read_text(encoding="utf-8"))
+            self.assertTrue(schema.get("deprecated"), name)
+            self.assertIn("DEPRECATED", schema.get("title", ""))
+            self.assertIn("Do not use", schema.get("description", ""))
+
+        current_schema_names = (
+            "review_manifest.schema.json",
+            "review_00_context.schema.json",
+            "review_10_evidence.schema.json",
+            "review_20_synthesis.schema.json",
+            "review_30_analysis.schema.json",
+        )
+        for name in current_schema_names:
+            text = (schema_dir / name).read_text(encoding="utf-8")
+            self.assertIn("review_layer_common.schema.json", text)
+            self.assertNotIn('"$ref": "review_common.schema.json', text)
+
+    def test_legacy_schema_compatibility_redirect_validates_historical_review(self) -> None:
+        historical = json.loads(
+            (
+                REPO_ROOT
+                / "investigations"
+                / "INV-000015"
+                / "reviews"
+                / "review-000001.json"
+            ).read_text(encoding="utf-8")
+        )
+        from research_atelier.validation.schema_validator import validate_data
+
+        result = validate_data(
+            historical,
+            REPO_ROOT / "schemas" / "v2" / "review_cycle.schema.json",
+            artifact="legacy-review-compat",
+        )
+        self.assertTrue(result.ok, result.errors)
+
     def test_initial_request_becomes_review_waiting(self) -> None:
         result = reconcile_review_state(
             current_status="未",
