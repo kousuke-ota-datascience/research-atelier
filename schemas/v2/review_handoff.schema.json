@@ -1,0 +1,99 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://research-atelier.local/schemas/v2/review_handoff.schema.json",
+  "title": "Research Atelier Review Repair Handoff",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "report_type",
+    "source_investigation_id",
+    "source_review_seq",
+    "finding_ids",
+    "handoff_mode",
+    "successor_investigation_id",
+    "successor_exists",
+    "successor_rq_binding",
+    "versioning_decision",
+    "handoff_at"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "report_type": {"const": "review_repair_handoff"},
+    "source_investigation_id": {
+      "type": "string",
+      "pattern": "^(?:INV-(?!000000)[0-9]{6}|RQ-[0-9]{4}-v(?!000)[0-9]{3})$"
+    },
+    "source_review_seq": {"type": "integer", "minimum": 1},
+    "finding_ids": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {"type": "string", "pattern": "^F[0-9]{3}$"}
+    },
+    "handoff_mode": {"const": "new_investigation"},
+    "successor_investigation_id": {
+      "type": "string",
+      "pattern": "^INV-(?!000000)[0-9]{6}$"
+    },
+    "successor_exists": {"const": true},
+    "successor_rq_binding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["expected_rq_id", "actual_rq_ids", "exact"],
+      "properties": {
+        "expected_rq_id": {"type": "string", "pattern": "^RQ-[0-9]{4}$"},
+        "actual_rq_ids": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 1,
+          "items": {"type": "string", "pattern": "^RQ-[0-9]{4}$"}
+        },
+        "exact": {"const": true}
+      }
+    },
+    "versioning_decision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "decision",
+        "selected_existing_investigation",
+        "new_investigation_allocated",
+        "semantic_differences",
+        "explicit_new_execution_intent",
+        "reason_codes"
+      ],
+      "properties": {
+        "decision": {"const": "allocate_new"},
+        "selected_existing_investigation": {
+          "type": "string",
+          "pattern": "^(?:INV-(?!000000)[0-9]{6}|RQ-[0-9]{4}-v(?!000)[0-9]{3})$"
+        },
+        "new_investigation_allocated": {"const": true},
+        "semantic_differences": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["field", "existing", "requested", "material", "reason"],
+            "properties": {
+              "field": {"type": "string", "minLength": 1},
+              "existing": {},
+              "requested": {},
+              "material": {"type": "boolean"},
+              "reason": {"type": "string", "minLength": 1}
+            }
+          }
+        },
+        "explicit_new_execution_intent": {"type": "boolean"},
+        "reason_codes": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "handoff_at": {"type": "string", "format": "date-time"}
+  },
+  "description": "Append-only provenance for a valid Workflow 00 handoff from a FINDINGS Review to a persisted successor Investigation. The source Review verdict remains unchanged."
+}
