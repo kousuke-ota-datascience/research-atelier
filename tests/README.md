@@ -75,7 +75,7 @@ v2 testは以下を追加で確認する。
 - repair開始にはexplicit eventが必要
 - stale Review、duplicate / malformed history、idempotent reconciliation
 - BKL-0036: `new_investigation` Findingだけではterminalにせず、valid successor handoff + canonical provenanceでのみ `引継済` へ遷移
-- BKL-0036: allocation / persistence / exact RQ binding失敗時のfail-stop、handoff record schema validation、rerun idempotency、source Review `FINDINGS` preservation
+- BKL-0036: allocation / persistence / exact RQ binding失敗時のfail-stop、handoff record schema validation、allocation前preflightによるexisting successor reuse、rerun idempotency、source Review `FINDINGS` preservation
 
 
 ## Review DB projection regression
