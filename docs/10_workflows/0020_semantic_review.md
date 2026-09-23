@@ -324,12 +324,14 @@ findingのrepair開始位置:
 
 | Finding target | Repair start | Downstream handling |
 | --- | --- | --- |
-| `00_context` semantic condition | versioning contractに従い、freeze後なら原則new Investigation | new INVで10/20/30を構築 |
-| Source / Evidence / `10_evidence` | Workflow 10 Evidence stage | 20 / 30をinvalidate |
-| `20_synthesis` | Workflow 10 Synthesis stage | 30をinvalidate |
-| `30_analysis` のみ | Workflow 10 Analysis stage | 30をrepair / revalidate |
+| `00_context` semantic condition | versioning contractに従い、freeze後のContext-defining changeならnew Investigation | successor INVで10/20/30を構築 |
+| Source / Evidence / `10_evidence` | Workflow 10 Evidence stage。frozen Context不変ならsame Investigation | 20 / 30をinvalidate |
+| `20_synthesis` | Workflow 10 Synthesis stage。frozen Context不変ならsame Investigation | 30をinvalidate |
+| `30_analysis` のみ | Workflow 10 Analysis stage。frozen Context不変ならsame Investigation | 30をrepair / revalidate |
 
-ただしaccepted Investigationのsubstantive repairは `0002_investigation_versioning.md` を優先する。historical accepted resultを書き換える必要があるrepairなら、新Investigationを作る。
+accepted Investigationであること自体はnew Investigation triggerではない。Review Findingが、既存Contextで要求済みのEvidence selection omission、同一source boundary内の取りこぼし、Evidence -> Synthesis lineage誤り、Evidence support boundaryを超えたAnalysis表現、またはそのdownstream rebuildで解消できる場合はsame-Investigation repairとする。
+
+Workflow 20の `repair_direction.mode` はversioning contractを迂回して独立executionを新設する権限ではない。Workflow 00はrepair handoff時に `src/research_atelier/orchestration/investigation_allocation.py` のallocation guardを適用し、Context-defining semantic differenceまたはHumanのexplicit independent execution intentがある場合だけnew Investigationへhandoffする。
 
 repair後は新しいtarget SHA / blobをfreezeし、old Review outcomeを流用せずreReviewする。
 
