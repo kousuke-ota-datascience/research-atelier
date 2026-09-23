@@ -1,8 +1,9 @@
-"""Deterministic Git Review JSON -> Notion Reviews projection helpers.
+"""Deterministic Git Review -> Notion Reviews projection helpers.
 
-Git Review JSON remains the canonical Review authority. This module renders a
-human-facing Notion projection and provides identity/pointer helpers for the
-connector adapter. It never writes canonical Review facts back from Notion.
+Git Review files remain the canonical Review authority. This module renders a
+human-facing Notion projection from the storage-neutral Review Cycle model and
+provides identity/pointer helpers for the connector adapter. It never writes
+canonical Review facts back from Notion.
 """
 
 from __future__ import annotations
@@ -10,6 +11,8 @@ from __future__ import annotations
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from typing import Any, Mapping, Sequence
+
+from research_atelier.reviewing.review_state import ensure_normalized_review
 
 
 ARTIFACT_LAYERS = ("00_context", "10_evidence", "20_synthesis", "30_analysis")
@@ -63,6 +66,13 @@ class ReviewRowPlan:
     body_markdown: str
 
 
+def _normalized(review: Mapping[str, Any]) -> dict[str, Any]:
+    try:
+        return ensure_normalized_review(review)
+    except ValueError as exc:
+        raise ReviewProjectionError(str(exc)) from exc
+
+
 def _nonempty_text(value: Any, *, field: str) -> str:
     if not isinstance(value, str) or not value.strip():
         raise ReviewProjectionError(f"{field} must be a non-empty string")
@@ -87,80 +97,68 @@ def _notion_datetime(value: str) -> str:
 
 
 def _identity(review: Mapping[str, Any]) -> tuple[str, int]:
-    investigation_id = _nonempty_text(review.get("investigation_id"), field="investigation_id")
-    review_seq = review.get("review_seq")
+    normalized = _normalized(review)
+    investigation_id = _nonempty_text(
+        normalized.get("investigation_id"), field="investigation_id"
+    )
+    review_seq = normalized.get("review_seq")
     if not isinstance(review_seq, int) or review_seq < 1:
         raise ReviewProjectionError("review_seq must be an integer >= 1")
     return investigation_id, review_seq
 
 
-def _transitions(review: Mapping[str, Any]) -> list[Mapping[str, Any]]:
-    value = review.get("transitions")
-    if not isinstance(value, list) or not value:
-        raise ReviewProjectionError("transitions must be a non-empty array")
-    transitions: list[Mapping[str, Any]] = []
-    for index, item in enumerate(value):
+def _layers(review: Mapping[str, Any]) -> Mapping[str, Mapping[str, Any]]:
+    normalized = _normalized(review)
+    value = normalized.get("layers")
+    if not isinstance(value, Mapping):
+        raise ReviewProjectionError("layers must be an object")
+    layers: dict[str, Mapping[str, Any]] = {}
+    for layer in ARTIFACT_LAYERS:
+        item = value.get(layer)
         if not isinstance(item, Mapping):
-            raise ReviewProjectionError(f"transitions[{index}] must be an object")
-        transitions.append(item)
-    return transitions
+            raise ReviewProjectionError(f"layers.{layer} must be an object")
+        layers[layer] = item
+    return layers
 
 
 def _findings(review: Mapping[str, Any]) -> list[Mapping[str, Any]]:
     findings: list[Mapping[str, Any]] = []
-    for transition_index, transition in enumerate(_transitions(review)):
-        transition_findings = transition.get("findings", [])
-        if not isinstance(transition_findings, list):
-            raise ReviewProjectionError(
-                f"transitions[{transition_index}].findings must be an array"
-            )
-        for finding_index, finding in enumerate(transition_findings):
+    for layer, layer_record in _layers(review).items():
+        layer_findings = layer_record.get("findings", [])
+        if not isinstance(layer_findings, list):
+            raise ReviewProjectionError(f"layers.{layer}.findings must be an array")
+        for finding_index, finding in enumerate(layer_findings):
             if not isinstance(finding, Mapping):
                 raise ReviewProjectionError(
-                    f"transitions[{transition_index}].findings[{finding_index}] must be an object"
+                    f"layers.{layer}.findings[{finding_index}] must be an object"
                 )
             findings.append(finding)
     return findings
 
 
 def derive_artifact_outcomes(review: Mapping[str, Any]) -> dict[str, str]:
-    """Derive Notion OK/NG properties from canonical Review facts.
+    """Derive Notion OK/NG from direct layer verdicts plus repair ownership."""
 
-    10/20/30 are NG when their semantic transition has findings. Any finding's
-    explicit repair_direction.affected_layer also marks that layer NG.
-    Therefore 00_context can be represented independently without adding a
-    second manually maintained verdict field to historical Review JSON.
-    """
-
-    outcomes = {layer: "OK" for layer in ARTIFACT_LAYERS}
-    for transition_index, transition in enumerate(_transitions(review)):
-        target_artifact = transition.get("target_artifact")
-        findings = transition.get("findings", [])
-        if not isinstance(findings, list):
+    outcomes: dict[str, str] = {}
+    layers = _layers(review)
+    for layer in ARTIFACT_LAYERS:
+        verdict = layers[layer].get("verdict")
+        if verdict not in {"PASS", "FINDINGS"}:
             raise ReviewProjectionError(
-                f"transitions[{transition_index}].findings must be an array"
+                f"unexpected layer verdict for {layer}: {verdict!r}"
             )
-        if findings:
-            if target_artifact not in {"10_evidence", "20_synthesis", "30_analysis"}:
-                raise ReviewProjectionError(
-                    f"unexpected transition target_artifact: {target_artifact!r}"
-                )
-            outcomes[str(target_artifact)] = "NG"
+        outcomes[layer] = "NG" if verdict == "FINDINGS" else "OK"
 
-        for finding_index, finding in enumerate(findings):
-            if not isinstance(finding, Mapping):
-                raise ReviewProjectionError(
-                    f"transitions[{transition_index}].findings[{finding_index}] must be an object"
-                )
-            repair_direction = finding.get("repair_direction")
-            if not isinstance(repair_direction, Mapping):
-                raise ReviewProjectionError("finding.repair_direction must be an object")
-            affected_layer = repair_direction.get("affected_layer")
-            if affected_layer not in ARTIFACT_LAYERS:
-                raise ReviewProjectionError(
-                    f"unexpected affected_layer: {affected_layer!r}"
-                )
-            outcomes[str(affected_layer)] = "NG"
+    for finding in _findings(review):
+        repair_direction = finding.get("repair_direction")
+        if not isinstance(repair_direction, Mapping):
+            raise ReviewProjectionError("finding.repair_direction must be an object")
+        affected_layer = repair_direction.get("affected_layer")
+        if affected_layer not in ARTIFACT_LAYERS:
+            raise ReviewProjectionError(
+                f"unexpected affected_layer: {affected_layer!r}"
+            )
+        outcomes[str(affected_layer)] = "NG"
     return outcomes
 
 
@@ -175,11 +173,14 @@ def highest_severity(review: Mapping[str, Any]) -> str | None:
     return highest
 
 
-def _validate_verdict(review: Mapping[str, Any]) -> tuple[str, list[Mapping[str, Any]]]:
-    verdict = review.get("verdict")
+def _validate_verdict(
+    review: Mapping[str, Any],
+) -> tuple[str, list[Mapping[str, Any]]]:
+    normalized = _normalized(review)
+    verdict = normalized.get("verdict")
     if verdict not in {"PASS", "FINDINGS"}:
         raise ReviewProjectionError(f"unexpected verdict: {verdict!r}")
-    findings = _findings(review)
+    findings = _findings(normalized)
     expected = "FINDINGS" if findings else "PASS"
     if verdict != expected:
         raise ReviewProjectionError(
@@ -195,7 +196,8 @@ def _unique_instructions(findings: Sequence[Mapping[str, Any]]) -> str:
         if not isinstance(repair_direction, Mapping):
             raise ReviewProjectionError("finding.repair_direction must be an object")
         instruction = _line_text(
-            repair_direction.get("instruction"), field="finding.repair_direction.instruction"
+            repair_direction.get("instruction"),
+            field="finding.repair_direction.instruction",
         )
         if instruction not in values:
             values.append(instruction)
@@ -203,8 +205,9 @@ def _unique_instructions(findings: Sequence[Mapping[str, Any]]) -> str:
 
 
 def derive_next_action(review: Mapping[str, Any]) -> NextAction:
-    investigation_id, _ = _identity(review)
-    verdict, findings = _validate_verdict(review)
+    normalized = _normalized(review)
+    investigation_id, _ = _identity(normalized)
+    verdict, findings = _validate_verdict(normalized)
 
     if verdict == "PASS":
         return NextAction(
@@ -281,7 +284,10 @@ def derive_next_action(review: Mapping[str, Any]) -> NextAction:
     )
 
 
-def _render_summary(review: Mapping[str, Any], outcomes: Mapping[str, str]) -> list[str]:
+def _render_summary(
+    review: Mapping[str, Any],
+    outcomes: Mapping[str, str],
+) -> list[str]:
     verdict, findings = _validate_verdict(review)
     severity = highest_severity(review)
     if findings:
@@ -320,24 +326,38 @@ def _render_next_action(action: NextAction) -> list[str]:
 
 def _render_review_details(review: Mapping[str, Any]) -> list[str]:
     lines = ["# Review Details"]
-    for transition_index, transition in enumerate(_transitions(review)):
-        transition_name = _nonempty_text(
-            transition.get("transition"),
-            field=f"transitions[{transition_index}].transition",
+    for layer, layer_record in _layers(review).items():
+        review_kind = _nonempty_text(
+            layer_record.get("review_kind"),
+            field=f"layers.{layer}.review_kind",
         )
         assessment = _line_text(
-            transition.get("assessment"),
-            field=f"transitions[{transition_index}].assessment",
+            layer_record.get("assessment"),
+            field=f"layers.{layer}.assessment",
         )
-        lines.extend([f"## {transition_name}", f"**Assessment:** {assessment}"])
-        findings = transition.get("findings", [])
+        verdict = layer_record.get("verdict")
+        if verdict not in {"PASS", "FINDINGS"}:
+            raise ReviewProjectionError(f"unexpected layer verdict: {verdict!r}")
+        lines.extend(
+            [
+                f"## {layer}",
+                f"- Review kind: {review_kind}",
+                f"- Layer verdict: {verdict}",
+                f"**Assessment:** {assessment}",
+            ]
+        )
+        findings = layer_record.get("findings", [])
         if not findings:
             lines.append("**Findings:** none.")
             continue
         for finding_index, finding in enumerate(findings):
+            if not isinstance(finding, Mapping):
+                raise ReviewProjectionError(
+                    f"layers.{layer}.findings[{finding_index}] must be an object"
+                )
             finding_id = _nonempty_text(
                 finding.get("finding_id"),
-                field=f"transitions[{transition_index}].findings[{finding_index}].finding_id",
+                field=f"layers.{layer}.findings[{finding_index}].finding_id",
             )
             severity = finding.get("severity")
             if severity not in SEVERITY_RANK:
@@ -353,12 +373,17 @@ def _render_review_details(review: Mapping[str, Any]) -> list[str]:
             repair_direction = finding.get("repair_direction")
             if not isinstance(repair_direction, Mapping):
                 raise ReviewProjectionError("finding.repair_direction must be an object")
-            mode = _nonempty_text(repair_direction.get("mode"), field="repair_direction.mode")
-            layer = _nonempty_text(
-                repair_direction.get("affected_layer"), field="repair_direction.affected_layer"
+            mode = _nonempty_text(
+                repair_direction.get("mode"),
+                field="repair_direction.mode",
+            )
+            affected_layer = _nonempty_text(
+                repair_direction.get("affected_layer"),
+                field="repair_direction.affected_layer",
             )
             instruction = _line_text(
-                repair_direction.get("instruction"), field="repair_direction.instruction"
+                repair_direction.get("instruction"),
+                field="repair_direction.instruction",
             )
             lines.extend(
                 [
@@ -368,28 +393,47 @@ def _render_review_details(review: Mapping[str, Any]) -> list[str]:
                     f"- Evidence: {evidence_text}",
                     f"- Impact: {impact}",
                     f"- Repair mode: {mode}",
-                    f"- Affected layer: {layer}",
+                    f"- Affected layer: {affected_layer}",
                     f"- Repair direction: {instruction}",
                 ]
             )
     return lines
 
 
-def _render_provenance(review: Mapping[str, Any], *, canonical_path: str) -> list[str]:
-    target = review.get("target")
+def _render_provenance(
+    review: Mapping[str, Any],
+    *,
+    canonical_path: str | None = None,
+) -> list[str]:
+    normalized = _normalized(review)
+    target = normalized.get("target")
     if not isinstance(target, Mapping):
         raise ReviewProjectionError("target must be an object")
     commit_sha = _nonempty_text(target.get("commit_sha"), field="target.commit_sha")
     blob_shas = target.get("artifact_blob_shas")
     if not isinstance(blob_shas, Mapping):
         raise ReviewProjectionError("target.artifact_blob_shas must be an object")
-    reviewed_at = _nonempty_text(review.get("reviewed_at"), field="reviewed_at")
+    reviewed_at = _nonempty_text(normalized.get("reviewed_at"), field="reviewed_at")
+    paths = normalized.get("canonical_paths")
+    if not isinstance(paths, Mapping):
+        raise ReviewProjectionError("canonical_paths must be an object")
+    manifest_path = canonical_path or _nonempty_text(
+        paths.get("manifest"),
+        field="canonical_paths.manifest",
+    )
 
     lines = [
         "# Provenance",
-        f"- Canonical Review JSON: {canonical_path}",
+        f"- Canonical Review manifest: {manifest_path}",
+        f"- Storage format: {_nonempty_text(normalized.get('storage_format'), field='storage_format')}",
         f"- Review target commit SHA: {commit_sha}",
     ]
+    if normalized.get("storage_format") == "split_v2":
+        for layer in ARTIFACT_LAYERS:
+            lines.append(
+                f"- {layer} Review JSON: "
+                f"{_nonempty_text(paths.get(layer), field=f'canonical_paths.{layer}')}"
+            )
     for layer in ARTIFACT_LAYERS:
         lines.append(
             f"- {layer} blob SHA: "
@@ -408,16 +452,21 @@ def build_review_projection(
 
     if not isinstance(review, Mapping):
         raise ReviewProjectionError("review must be an object")
-    investigation_id, review_seq = _identity(review)
-    verdict, _ = _validate_verdict(review)
-    outcomes = derive_artifact_outcomes(review)
-    severity = highest_severity(review)
-    reviewed_at = _nonempty_text(review.get("reviewed_at"), field="reviewed_at")
-    canonical_path = canonical_path or (
-        f"investigations/{investigation_id}/reviews/review-{review_seq:06d}.json"
+    normalized = _normalized(review)
+    investigation_id, review_seq = _identity(normalized)
+    verdict, _ = _validate_verdict(normalized)
+    outcomes = derive_artifact_outcomes(normalized)
+    severity = highest_severity(normalized)
+    reviewed_at = _nonempty_text(normalized.get("reviewed_at"), field="reviewed_at")
+    paths = normalized.get("canonical_paths")
+    if not isinstance(paths, Mapping):
+        raise ReviewProjectionError("canonical_paths must be an object")
+    canonical_path = canonical_path or _nonempty_text(
+        paths.get("manifest"),
+        field="canonical_paths.manifest",
     )
     title = f"{investigation_id} / Review {review_seq:06d}"
-    action = derive_next_action(review)
+    action = derive_next_action(normalized)
 
     properties: dict[str, Any] = {
         "Review": title,
@@ -432,10 +481,10 @@ def build_review_projection(
 
     body_markdown = "\n".join(
         [
-            *_render_summary(review, outcomes),
+            *_render_summary(normalized, outcomes),
             *_render_next_action(action),
-            *_render_review_details(review),
-            *_render_provenance(review, canonical_path=canonical_path),
+            *_render_review_details(normalized),
+            *_render_provenance(normalized, canonical_path=canonical_path),
         ]
     ).rstrip()
 
@@ -492,11 +541,7 @@ def plan_review_row(
     existing_rows: Sequence[Mapping[str, Any]],
     canonical_path: str | None = None,
 ) -> ReviewRowPlan:
-    """Plan CREATE/UPDATE/NOOP for one logical Review projection row.
-
-    existing_rows are adapter-normalized rows with investigation_id, review_seq,
-    url, properties, and body_markdown. Duplicate logical identities fail-stop.
-    """
+    """Plan CREATE/UPDATE/NOOP for one logical Review projection row."""
 
     projection = build_review_projection(review, canonical_path=canonical_path)
     existing = resolve_unique_review_row(
@@ -596,14 +641,12 @@ def reconcile_latest_review_relation(
     latest_review_url: str | None,
     latest_review_exists: bool,
 ) -> dict[str, Any]:
-    """Derive the Notion Latest Review relation mutation.
-
-    The adapter must first resolve/create the logical Review row. A canonical
-    latest Review without a unique Notion row is unsafe and therefore blocks.
-    """
+    """Derive the Notion Latest Review relation mutation."""
 
     if latest_review_exists and not latest_review_url:
-        raise ReviewProjectionError("latest canonical Review exists but Review row URL is missing")
+        raise ReviewProjectionError(
+            "latest canonical Review exists but Review row URL is missing"
+        )
     desired = latest_review_url if latest_review_exists else None
     if current_latest_review_url == desired:
         return {}
