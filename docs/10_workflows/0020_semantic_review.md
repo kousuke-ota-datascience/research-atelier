@@ -63,11 +63,31 @@ Reviewを実行しなかったことだけを理由に、Workflow 00の通常の
 最低条件:
 
 - `00_context / 10_evidence / 20_synthesis / 30_analysis` が存在する。
-- `validate_investigation <ID> --through 30` がPASSしている。
+- Review対象chainがcurrent deterministic contract上でvalidと扱える。
 - canonical artifactがGitへcommitされている。
 - Review対象版を一意に固定できる。
 
-deterministic validationがFAIL / ERRORの場合、Semantic Reviewで補完してPass扱いにしない。先にWorkflow 10 / validator boundaryで修復する。
+### Validation freshness
+
+Workflow 20開始のたびに `validate_investigation <ID> --through 30` を**機械的に再実行することは要求しない**。
+
+再実行不要の典型例:
+
+- Workflow 10 / Workflow 00で既にthrough-30 PASSとして成立したcurrent targetを、そのartifactを変更せずReviewする。
+- Review開始後も対象artifactに変更がなく、applicable schema / validator contractにもReview可否を左右するknown changeがない。
+- BKL-0021のようにworkflow contractだけを変更し、review対象Investigation artifact自体は変更していない。
+
+再validationが必要な条件:
+
+1. review target artifactが変更された。
+2. upstream changeによりdownstream invalidationが発生した、またはその疑いがある。
+3. applicable JSON Schema / Research-specific validator contractが変更され、旧PASSをcurrent validityの根拠として扱えない。
+4. targetのdeterministic validityが不明・矛盾・疑義ありである。
+5. repair後のnew targetをreReviewする。
+
+deterministic validationが既知のFAIL / ERRORである場合、Semantic Reviewで補完してPass扱いにしない。先にWorkflow 10 / validator boundaryで修復する。
+
+したがって、Workflow 20のpreconditionは「**Review開始時に毎回CLIを叩くこと**」ではなく、「**semantic Review対象がdeterministically validなcanonical chainであること**」である。
 
 ## 4. Review target freeze
 
