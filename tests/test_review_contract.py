@@ -475,6 +475,19 @@ class ReviewContractTest(unittest.TestCase):
         self.assertEqual(result.changes, {"Review Status": "引継済"})
         self.assertEqual(record["verdict"], "FINDINGS")
 
+    def test_handoff_record_matches_current_schema(self) -> None:
+        from research_atelier.validation.schema_validator import validate_data
+
+        record = self._save(findings=True, new_investigation=True)
+        plan = self._valid_handoff(record)
+        assert plan.record is not None
+        result = validate_data(
+            plan.record,
+            REPO_ROOT / "schemas" / "v2" / "review_handoff.schema.json",
+            artifact="review-handoff",
+        )
+        self.assertTrue(result.ok, result.errors)
+
     def test_handoff_plan_is_idempotent_and_preserves_original_timestamp(self) -> None:
         record = self._save(findings=True, new_investigation=True)
         first = self._valid_handoff(record)
