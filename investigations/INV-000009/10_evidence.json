@@ -1,5 +1,5 @@
 {
-  "schema_version": "2.0.0",
+  "schema_version": "2.1.0",
   "artifact_type": "10_evidence",
   "investigation_id": "INV-000009",
   "rq_id": "RQ-0020",
@@ -12,10 +12,7 @@
       "selection_reason": "RQ-0019から引き継いだstarting hypothesisを、独立検証の対象として保持するため。",
       "note_type": "Claim",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be398139ac7afa013f49cdaa",
-          "title": "SRC-0081"
-        },
+        "source_id": "SRC-0081",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be39814d8312d5c48bbf829d",
           "title": "EV-0142"
@@ -29,10 +26,7 @@
       "selection_reason": "政府が公的に提示した移管理由を一次史料から確定するため。",
       "note_type": "Claim",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be39816bbcbafa8d4c643ddf",
-          "title": "SRC-0094"
-        },
+        "source_id": "SRC-0094",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be3981fd8957d5d39690a8f0",
           "title": "EV-0159"
@@ -46,10 +40,7 @@
       "selection_reason": "南多摩を含む三郡一括移管の公式説明に、行政的一体性と選挙区再編上の便宜が含まれていたことを示すため。",
       "note_type": "Claim",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be39816bbcbafa8d4c643ddf",
-          "title": "SRC-0094"
-        },
+        "source_id": "SRC-0094",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be398169b548d814cf0e1931",
           "title": "EV-0160"
@@ -63,10 +54,7 @@
       "selection_reason": "移管が住民請願起点ではなく政府側の行政判断として説明されていたことを確認するため。",
       "note_type": "Claim",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be39816bbcbafa8d4c643ddf",
-          "title": "SRC-0094"
-        },
+        "source_id": "SRC-0094",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be398190be33c69051af1b2a",
           "title": "EV-0161"
@@ -80,10 +68,7 @@
       "selection_reason": "神奈川県側の財政的不利益について政府がどのように説明したかを確認するため。",
       "note_type": "Claim",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be39816bbcbafa8d4c643ddf",
-          "title": "SRC-0094"
-        },
+        "source_id": "SRC-0094",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be398173a99fcf41b4d7f1ed",
           "title": "EV-0162"
@@ -97,10 +82,7 @@
       "selection_reason": "神奈川県知事による正式な移管意思表明の時期と公的理由を把握するため。",
       "note_type": "Result",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be3981e89190c5df7e3de208",
-          "title": "SRC-0095"
-        },
+        "source_id": "SRC-0095",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be3981b3af3cd6519fba2aa1",
           "title": "EV-0163"
@@ -114,10 +96,7 @@
       "selection_reason": "自由党勢力と県政運営上の困難を移管に接続する同時代報道の存在を保持するため。",
       "note_type": "Claim",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be3981e89190c5df7e3de208",
-          "title": "SRC-0095"
-        },
+        "source_id": "SRC-0095",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be3981058efce9bf1155b0d8",
           "title": "EV-0164"
@@ -131,10 +110,7 @@
       "selection_reason": "内海知事本人の私信に基づく政治的利害と、県会での正式追及前に移管準備が進んでいた時系列を検証するため。",
       "note_type": "Result",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be3981e89190c5df7e3de208",
-          "title": "SRC-0095"
-        },
+        "source_id": "SRC-0095",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be3981609ef7d9f6f152b11d",
           "title": "EV-0165"
@@ -148,10 +124,7 @@
       "selection_reason": "『自由党分断』という後世の歴史解釈を、同時代史料そのものと区別して保持するため。",
       "note_type": "Claim",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be3981e89190c5df7e3de208",
-          "title": "SRC-0095"
-        },
+        "source_id": "SRC-0095",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be39819c8d5cc56e9dabf6f1",
           "title": "EV-0166"
@@ -165,10 +138,7 @@
       "selection_reason": "1892年選挙干渉に内海知事自身が関与していたことを、本人報告に由来する記録で確認するため。",
       "note_type": "Result",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be39814688adda75a25c4bd9",
-          "title": "SRC-0091"
-        },
+        "source_id": "SRC-0091",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be3981db9706e7b9b9c04c6a",
           "title": "EV-0167"
@@ -182,10 +152,7 @@
       "selection_reason": "県会による正式な知事責任追及の時期を確定し、移管準備との前後関係を検証するため。",
       "note_type": "Result",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be39814688adda75a25c4bd9",
-          "title": "SRC-0091"
-        },
+        "source_id": "SRC-0091",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be39815eb296e1de7c78df20",
           "title": "EV-0168"
@@ -199,10 +166,7 @@
       "selection_reason": "移管意思形成の公文書上の時系列を公文書館の所蔵情報から独立確認するため。",
       "note_type": "Data",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be398170aac1f14ebdb2e5c9",
-          "title": "SRC-0096"
-        },
+        "source_id": "SRC-0096",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be3981d6aca7ed2c74fb2e39",
           "title": "EV-0169"
@@ -216,15 +180,68 @@
       "selection_reason": "1892年政治闘争以前から、水源管理をめぐる府県間の行政利害が存在したことを示すため。",
       "note_type": "Result",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be3981129356c8924a2b45ba",
-          "title": "SRC-0097"
-        },
+        "source_id": "SRC-0097",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be39815a87dbf3324c1a0afb",
           "title": "EV-0170"
         }
       }
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "SRC-0081",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "bb47f2f45fa7313d650b37889884f22a40ebf7c1"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e3e5855be398139ac7afa013f49cdaa"
+    },
+    {
+      "source_id": "SRC-0091",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "30faf36c6462fe3ccdb111395b1be52956084fcf"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e3e5855be39814688adda75a25c4bd9"
+    },
+    {
+      "source_id": "SRC-0094",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "77811d02f2d9a42e5833c97aec6f742d09022b2e"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e3e5855be39816bbcbafa8d4c643ddf"
+    },
+    {
+      "source_id": "SRC-0095",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "0c6c0567bab06209368db9b2f42e0130751eb3bc"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e3e5855be3981e89190c5df7e3de208"
+    },
+    {
+      "source_id": "SRC-0096",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "97986b1f888f2acfbb7a05b1495f5e6d3a2e3bcd"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e3e5855be398170aac1f14ebdb2e5c9"
+    },
+    {
+      "source_id": "SRC-0097",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "a89fabb0c645a2cab7d62d5c6b91f772d7495b73"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e3e5855be3981129356c8924a2b45ba"
     }
   ]
 }
