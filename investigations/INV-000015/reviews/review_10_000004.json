@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000015",
+  "review_seq": 4,
+  "layer": "10_evidence",
+  "review_kind": "source_evidence_note_to_10_evidence",
+  "target_blob_sha": "87972f0dc8e84b61e0bf8bf9ef4ba40509023cda",
+  "assessment": "All 19 frozen Evidence items were re-checked against their corresponding Notion Evidence Notes: Evidence text, Note Type, and Source relation match for every item. E0001 and E0002 differ only in the Notion Markdown escape form of the locator ('\\\\>' versus '>'), with no semantic change to the location. Key claims were also spot-checked against the identified official or scholarly Sources, including Machida City materials, NDL, municipal histories, Kanagawa Prefectural History, and the J-STAGE article. The frozen chain already preserves the material source limitations, including where an original archival image was not directly collated. No source-faithfulness, provenance, selection, or qualification defect was identified.",
+  "findings": [],
+  "verdict": "PASS"
+}

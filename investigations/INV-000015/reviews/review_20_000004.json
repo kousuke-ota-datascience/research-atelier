@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000015",
+  "review_seq": 4,
+  "layer": "20_synthesis",
+  "review_kind": "10_evidence_to_20_synthesis",
+  "target_blob_sha": "79c31423a205028cb3ccc7b25401b5e02b10fc61",
+  "assessment": "K0001-K0014 remain traceable to their declared Evidence references and do not require propositions outside the frozen Evidence snapshot. The Synthesis preserves material qualifications: nationwide election-interference evidence is not automatically projected onto District 3; the election result is not treated as proof of zero local effect; published transcriptions are distinguished from direct original-image collation; local leaders are not assigned murder instigation contrary to the preliminary-decision evidence; and the Tama-transfer linkage is retained as a later regional-historical interpretation rather than converted into a causal conclusion. No unsupported generalization, conflict suppression, or uncertainty loss was identified.",
+  "findings": [],
+  "verdict": "PASS"
+}

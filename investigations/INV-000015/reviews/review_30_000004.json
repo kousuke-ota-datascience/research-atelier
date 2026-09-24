@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000015",
+  "review_seq": 4,
+  "layer": "30_analysis",
+  "review_kind": "20_synthesis_plus_00_context_to_30_analysis",
+  "target_blob_sha": "bdc749e17c7f632921dd68cb9d40fb4b87b3a2b2",
+  "assessment": "The current 30_analysis remains an RQ-specific Descriptive inference from K0001-K0014 and stays within the frozen context. It reconstructs the transition from regional freedom-and-rights activity into party and electoral politics, identifies documented administrative/police election interference, and describes the continuation of conflict into detention, violence, and prefectural accountability without asserting that the observed election result proves no vote effect. It also preserves the evidentiary limit on murder-instigation attribution and explicitly defers any causal claim about the 1893 Tama transfer. No raw Source/Evidence bypass, unsupported causal inference, or material loss of limitations/alternative interpretations was identified.",
+  "findings": [],
+  "verdict": "PASS"
+}

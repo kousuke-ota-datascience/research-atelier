@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000015",
+  "review_seq": 4,
+  "layer": "00_context",
+  "review_kind": "context_semantic_validity",
+  "target_blob_sha": "ba394ad6150a18376b9977246f7b59b55bf39235",
+  "assessment": "Independent re-review of the current frozen 00_context finds the RQ-0019 question, Descriptive question type, scope, include/exclude boundaries, evidence cutoff, and assumptions semantically coherent with one another. The context explicitly separates descriptive reconstruction of political development, election interference, and regional conflict from any causal claim about the 1893 Tama transfer, which is deferred to a later RQ. No material contradiction or missing boundary requiring a context change was identified.",
+  "findings": [],
+  "verdict": "PASS"
+}
