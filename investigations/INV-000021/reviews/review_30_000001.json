@@ -9,7 +9,7 @@
   "assessment": "The Analysis otherwise answers the frozen Methodological question coherently: it preserves fast lower-level regulation, enforces supervisory constraints, retains fallback, uses staged commissioning, and leaves numerical limits/process dynamics target-specific. However, the Working Answer and J0002 inherit the upstream safety-allocation overgeneralization by reading as if all human/equipment/process safety functions necessarily belong in sufficiently independent SIS/SIF-type protection. That statement is stronger than the selected risk-assessment-dependent evidence.",
   "findings": [
     {
-      "finding_id": "F001",
+      "finding_id": "F002",
       "severity": "Moderate",
       "target": "30_analysis.working_answer,J0002",
       "evidence": [
