@@ -1,0 +1,133 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "30_analysis",
+  "investigation_id": "INV-000026",
+  "rq_id": "RQ-000026",
+  "analyzed_at": "2026-09-24T15:18:00.000Z",
+  "question_type": "Descriptive",
+  "profile": {
+    "target": "既存の因果推論文献で実際に用いられているclassification axes / taxonomies / organizing principles",
+    "constructs": [
+      "inferential task",
+      "data structure / data type",
+      "identification assumptions / assignment setting",
+      "target estimand / causal-effect granularity",
+      "methodological function / workflow stage",
+      "causal theory / formal framework",
+      "modeling / longitudinal complexity",
+      "algorithm construction principle",
+      "traditional statistical vs machine-learning-enhanced method family"
+    ],
+    "summary_statistics_or_patterns": [
+      "単一の共通taxonomyではなく、文献の目的に応じて異なる分類軸が使われている。",
+      "assumption/identification、estimand、data structure、framework、methodological functionは別々の文献で明示的な整理軸として現れる。",
+      "domain-specific surveyではpractical issueやcausal theoryのような用途依存のtaxonomyが採用される。",
+      "causal discovery内部ではalgorithm constructionによるsubtaxonomyが使われる。",
+      "monographの体系化原理はtaxonomyのEvidenceとして有用だが、普遍taxonomyの主張とは区別する必要がある。"
+    ],
+    "coverage_limits": [
+      "代表的なexplicit-classification文献の目的抽出であり、全分野のsystematic reviewではない。",
+      "recommendation、applied econometrics、causal discovery等のdomain-specific taxonomyを含む。",
+      "book chapter structureをclassification practiceとして扱う解釈を含む。",
+      "既存文献に存在しない統合軸は追加していない。"
+    ]
+  },
+  "working_answer": {
+    "text": "今回確認した既存文献では、因果推論方法論の整理に単一の共通分類軸は使われておらず、目的とscopeに応じて複数のclassification practiceが存在する。明示的に確認できた主な軸・体系化原理は、(1) inferential task（causal discovery / causal inference）、(2) data structure / data type（cross-sectional / time-series / longitudinal）、(3) identification assumptions / assignment setting（experiment、unconfounded observational、without-unconfoundedness、またはSUTVA・ignorability・positivityの充足）、(4) target estimand / causal-effect granularity（ITE、ATE、ATT、CATE等）、(5) methodological function / workflow stage（identification strategies、supplementary robustness/sensitivity analyses、ML-based causal-effect methods等）、(6) causal theory / formal framework（potential outcomes、SCM、general counterfactuals）、(7) modeling / longitudinal complexity（without models、with models、complex longitudinal data）、(8) algorithm construction principle（constraint-based、score-based、functional-model-based等）、(9) traditional statistical vs machine-learning-enhanced method family、である。これらは互いに同じ抽象レベルではなく、各文献が異なる研究目的・分野・対象範囲を反映して採用している。したがってRQ-000026のdescriptive conclusionは「既存分類は複数軸でpluralである」ことであり、どの軸を統合taxonomyへ採用・統合するかはRQ-000027のdesign judgmentとして別途評価すべきである。",
+    "knowledge_unit_refs": [
+      "K0001",
+      "K0002",
+      "K0003",
+      "K0004",
+      "K0005",
+      "K0006",
+      "K0007",
+      "K0008",
+      "K0009",
+      "K0010"
+    ]
+  },
+  "judgments": [
+    {
+      "judgment_id": "J0001",
+      "statement": "既存文献のclassification practiceはpluralであり、今回のEvidenceから単一の標準taxonomyを記述することはできない。",
+      "knowledge_unit_refs": [
+        "K0010"
+      ]
+    },
+    {
+      "judgment_id": "J0002",
+      "statement": "classification axisとmethodological entity typeは同一ではなく、assumption、estimand、framework、data type等はmethodを異なる観点から整理するdimensionとして現れる。",
+      "knowledge_unit_refs": [
+        "K0002",
+        "K0003",
+        "K0004",
+        "K0006"
+      ]
+    },
+    {
+      "judgment_id": "J0003",
+      "statement": "domain-specific taxonomyは既存practiceとして保持するが、因果推論全体へ無条件に一般化しない。",
+      "knowledge_unit_refs": [
+        "K0005",
+        "K0006",
+        "K0008",
+        "K0010"
+      ]
+    },
+    {
+      "judgment_id": "J0004",
+      "statement": "RQ-000026では既存文献に確認できない統合classification axisを追加せず、統合判断をRQ-000027へ送る。",
+      "knowledge_unit_refs": [
+        "K0010"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "text": "Source selectionはexplicit classificationを持つ代表文献の目的抽出で、systematic reviewではない。",
+      "knowledge_unit_refs": [
+        "K0010"
+      ]
+    },
+    {
+      "text": "分類軸の頻度や学術分野全体での普及度は推定していない。",
+      "knowledge_unit_refs": [
+        "K0010"
+      ]
+    },
+    {
+      "text": "domain-specific taxonomyとcross-disciplinary organizing principleの比較にはscope normalizationが必要である。",
+      "knowledge_unit_refs": [
+        "K0005",
+        "K0006",
+        "K0008"
+      ]
+    },
+    {
+      "text": "Hernán & Robinsの3部構成は教育的organizationであり、普遍taxonomyとして提示されたものとは限らない。",
+      "knowledge_unit_refs": [
+        "K0007"
+      ]
+    }
+  ],
+  "unresolved_questions": [
+    "各classification axisの適用範囲と相互独立性を、RQ-000027でどのように評価するか。",
+    "domain-specific axesを統合taxonomyへ取り込む際、どの粒度まで一般化するか。",
+    "今回未確認の他分野reviewに追加のclassification axisが存在するか。"
+  ],
+  "alternative_interpretations": [
+    {
+      "text": "分類practiceの多様性は一つのmulti-axis taxonomyを示唆するとも解釈できるが、それはdescriptive factではなくRQ-000027で検証すべきconstructive inferenceである。",
+      "knowledge_unit_refs": [
+        "K0010"
+      ]
+    },
+    {
+      "text": "教育的章立てはtaxonomyではないと厳格に定義する場合、modeling/longitudinal complexity軸のEvidenceは弱くなる。",
+      "knowledge_unit_refs": [
+        "K0007"
+      ]
+    }
+  ]
+}

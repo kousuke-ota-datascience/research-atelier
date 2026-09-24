@@ -1,0 +1,139 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "30_analysis",
+  "investigation_id": "INV-000025",
+  "rq_id": "RQ-000025",
+  "analyzed_at": "2026-09-24T15:18:00.000Z",
+  "question_type": "Conceptual",
+  "profile": {
+    "concept": "因果推論方法論における分類対象（methodological entity type）",
+    "proposed_definition": "taxonomyで分類される対象を、単なるmethod名ではなく、因果推論workflow内で異なる役割を担う方法論的entityとして捉える。今回のEvidenceからはframework/representation、target/estimand、study design/assignment structure、identification strategy/assumptions、estimation/adjustment/inference procedure、specialized problem setting/taskが主要候補として確認される。causal discoveryはeffect inferenceとは別taskとして境界上に置き、diagnostics/sensitivityは独立type候補だがEvidence不足とする。",
+    "dimensions": [
+      "causal framework / representation",
+      "target causal quantity / estimand",
+      "study design / assignment structure",
+      "identification strategy / identification assumptions",
+      "estimation / adjustment / statistical inference procedure",
+      "specialized problem setting / inferential task",
+      "causal discovery as a distinct inferential-task boundary",
+      "diagnostics / sensitivity as a provisional methodological component"
+    ],
+    "boundary_cases": [
+      "regression discontinuityのようにstudy designとidentification strategyを同時に担うmethod",
+      "mediationのようにdefinition・identification・estimation・sensitivityを一つのframeworkで扱う領域",
+      "longitudinal/interference/transportabilityのように独立methodというよりproblem settingとして他roleを変化させる領域",
+      "causal discoveryをcausal inference taxonomy内へ含めるかというscope boundary"
+    ],
+    "relations_to_adjacent_concepts": [
+      "classification axisはentity typeそのものではなく、entityを整理・比較するためのdimensionでありRQ-000026で扱う",
+      "統合taxonomyはentity typesとclassification axesを組み合わせるconstructive designでありRQ-000027で扱う"
+    ],
+    "ambiguities": [
+      "designとidentification strategyの境界は完全には排他的でない",
+      "specialized settingを独立entity typeとするかcontext/dimensionとするかは未確定",
+      "diagnostics/sensitivityをtop-level entity typeとするEvidence coverageは不足",
+      "causal discoveryの包含範囲は分野に依存し得る"
+    ]
+  },
+  "working_answer": {
+    "text": "今回のEvidenceからは、因果推論で分類対象となる方法論的entityは単一種類ではなく、少なくとも (1) causal framework / representation、(2) target causal quantity / estimand、(3) study design / assignment structure、(4) identification strategy / identification assumptions、(5) estimation / adjustment / statistical inference procedure、(6) specialized problem setting / inferential task、という異なるroleとして現れる。さらに、causal discoveryは既知・仮定されたcausal structureの下でeffectを識別・推定する問題とは別のinferential taskとして明示的に区別されるため、effect inferenceとのboundary entity/taskとして保持すべきである。diagnostics / sensitivity analysisも独立したmethodological component候補だが、今回の直接Evidenceは限定的である。これらのtypeは排他的とは限らず、regression discontinuityのようにdesignとidentificationを兼ねる例や、mediationのように複数roleを一つのframeworkで扱う例がある。したがってRQ-000025の回答は、固定された単一階層ではなく、複数のmethodological roleとその関係をontologyとして区別する必要がある、という水準までであり、どの分類軸・taxonomyを採用するかはRQ-000026/027へ委ねる。",
+    "knowledge_unit_refs": [
+      "K0001",
+      "K0002",
+      "K0003",
+      "K0004",
+      "K0005",
+      "K0006",
+      "K0007",
+      "K0008",
+      "K0009"
+    ]
+  },
+  "judgments": [
+    {
+      "judgment_id": "J0001",
+      "statement": "「因果推論手法」を単一のontological typeとして扱わず、framework、estimand、design、identification、estimation等のroleを区別する必要がある。",
+      "knowledge_unit_refs": [
+        "K0001",
+        "K0002",
+        "K0003",
+        "K0004",
+        "K0005",
+        "K0009"
+      ]
+    },
+    {
+      "judgment_id": "J0002",
+      "statement": "specialized settings/tasksは主要な分類対象候補だが、独立entity typeか他entityへのcontext/dimensionかをRQ-000025だけでは確定しない。",
+      "knowledge_unit_refs": [
+        "K0006",
+        "K0009"
+      ]
+    },
+    {
+      "judgment_id": "J0003",
+      "statement": "causal discoveryはeffect identification/estimationとは別inferential taskとして明示的に保持し、包含scopeの最終判断は統合taxonomy段階へ送る。",
+      "knowledge_unit_refs": [
+        "K0007",
+        "K0009"
+      ]
+    },
+    {
+      "judgment_id": "J0004",
+      "statement": "diagnostics/sensitivityをtop-level entity typeとして確定するには追加Evidenceが必要である。",
+      "knowledge_unit_refs": [
+        "K0008"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "text": "今回のEvidenceは代表的methodological literatureの目的抽出であり、因果推論方法論の完全なontology reviewではない。",
+      "knowledge_unit_refs": [
+        "K0009"
+      ]
+    },
+    {
+      "text": "study designとidentification strategyは重なる場合があり、entity typesは排他的classではない。",
+      "knowledge_unit_refs": [
+        "K0003",
+        "K0004"
+      ]
+    },
+    {
+      "text": "diagnostics/sensitivityの直接Evidence coverageが薄い。",
+      "knowledge_unit_refs": [
+        "K0008"
+      ]
+    },
+    {
+      "text": "specialized setting/taskの内部構造とcausal discoveryの包含境界は未確定である。",
+      "knowledge_unit_refs": [
+        "K0006",
+        "K0007"
+      ]
+    }
+  ],
+  "unresolved_questions": [
+    "specialized setting / inferential taskを独立entity typeとするか、data/assumption/targetのcontextとして分解するか。",
+    "diagnostics / sensitivity / falsificationを独立entity typeとして確立する追加Evidenceが必要か。",
+    "causal discoveryを統合taxonomyの同一root以下に置くか、隣接ontologyとして分離するか。"
+  ],
+  "alternative_interpretations": [
+    {
+      "text": "より粗いontologyではstudy designとidentification strategyを一つのentity typeに統合できるが、DiD等でidentificationとestimationが分離できるため少なくともestimationとは分ける必要がある。",
+      "knowledge_unit_refs": [
+        "K0003",
+        "K0004",
+        "K0005"
+      ]
+    },
+    {
+      "text": "specialized settingsをentity typeではなくclassification axisとして扱う設計も可能であり、これはRQ-000026/027で比較すべきである。",
+      "knowledge_unit_refs": [
+        "K0006",
+        "K0009"
+      ]
+    }
+  ]
+}
