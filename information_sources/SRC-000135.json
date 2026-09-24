@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000135",
+  "notion_url": "https://app.notion.com/p/3e5e5855be398157a2cce4d9a2151e4a",
+  "title": "Methods and tools for causal discovery and causal inference",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "WIREs Data Mining and Knowledge Discovery",
+  "authors": "Ana Rita Nogueira; Andrea Pugnana; Salvatore Ruggieri; Dino Pedreschi; João Gama",
+  "year": 2022,
+  "url": "https://doi.org/10.1002/widm.1449",
+  "doi": "10.1002/widm.1449",
+  "version_or_edition": null,
+  "reliability_note": "Peer-reviewed review article spanning causal discovery and causal inference; useful for explicit organizing dimensions, not a universal canonical taxonomy."
+}

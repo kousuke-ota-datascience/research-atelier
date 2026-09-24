@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000136",
+  "notion_url": "https://app.notion.com/p/3e5e5855be39813499b4dc11e7a84853",
+  "title": "A Survey on Causal Inference",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "ACM Transactions on Knowledge Discovery from Data",
+  "authors": "Liuyi Yao; Zhixuan Chu; Sheng Li; Yaliang Li; Jing Gao; Aidong Zhang",
+  "year": 2021,
+  "url": "https://doi.org/10.1145/3444944",
+  "doi": "10.1145/3444944",
+  "version_or_edition": null,
+  "reliability_note": "Peer-reviewed survey restricted mainly to treatment-effect estimation under the potential-outcomes framework; classification is scope-specific."
+}

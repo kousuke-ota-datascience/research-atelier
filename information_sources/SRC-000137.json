@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000137",
+  "notion_url": "https://app.notion.com/p/3e5e5855be3981538b0de08bcd288ba0",
+  "title": "The State of Applied Econometrics: Causality and Policy Evaluation",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "Journal of Economic Perspectives",
+  "authors": "Susan Athey; Guido W. Imbens",
+  "year": 2017,
+  "url": "https://www.aeaweb.org/articles?id=10.1257/jep.31.2.3",
+  "doi": "10.1257/jep.31.2.3",
+  "version_or_edition": null,
+  "reliability_note": "Peer-reviewed field review focused on applied econometrics and policy evaluation; organization reflects econometric use-cases and identification practice."
+}

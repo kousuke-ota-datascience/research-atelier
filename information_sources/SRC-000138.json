@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000138",
+  "notion_url": "https://app.notion.com/p/3e5e5855be398142a6faf6f73a3922a9",
+  "title": "A survey on causal inference for recommendation",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "The Innovation",
+  "authors": "Huishi Luo; Fuzhen Zhuang; Ruobing Xie; Hengshu Zhu; Deqing Wang; Zhulin An; Yongjun Xu",
+  "year": 2024,
+  "url": "https://doi.org/10.1016/j.xinn.2024.100590",
+  "doi": "10.1016/j.xinn.2024.100590",
+  "version_or_edition": null,
+  "reliability_note": "Peer-reviewed systematic review in recommender systems; theory-driven taxonomy is domain-specific and should not be generalized without qualification."
+}
