@@ -1,5 +1,5 @@
 {
-  "schema_version": "2.0.0",
+  "schema_version": "2.1.0",
   "artifact_type": "10_evidence",
   "investigation_id": "INV-000010",
   "rq_id": "RQ-0021",
@@ -12,10 +12,7 @@
       "selection_reason": "1892年以前に上水沿岸の管轄換を扱う文書が存在したことを確認しつつ、本文未読のため政策連続性を過大評価しないため。",
       "note_type": "Data",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be3981528974da77cebc099d",
-          "title": "SRC-0099"
-        },
+        "source_id": "SRC-0099",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be39812e9645ef1a17e43e64",
           "title": "EV-0174"
@@ -29,10 +26,7 @@
       "selection_reason": "1886年に西・北多摩の管轄替上申が存在したことを確認しつつ、本文未読のため1892年との政策的・理由上の連続性を断定しないため。",
       "note_type": "Data",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be3981dabfb5ea36d065ed4b",
-          "title": "SRC-0102"
-        },
+        "source_id": "SRC-0102",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be3981aa8cc4d0af80f6b254",
           "title": "EV-0175"
@@ -46,10 +40,7 @@
       "selection_reason": "1892年の移管上申直前に、水源管理をめぐる具体的な府県間摩擦が存在したことを確認するため。",
       "note_type": "Result",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be3981129356c8924a2b45ba",
-          "title": "SRC-0097"
-        },
+        "source_id": "SRC-0097",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be39815a87dbf3324c1a0afb",
           "title": "EV-0170"
@@ -63,10 +54,7 @@
       "selection_reason": "富田知事の直近の行政判断と、当初の移管対象が水路・水源地に対応していたことを確認するため。",
       "note_type": "Result",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be3981129356c8924a2b45ba",
-          "title": "SRC-0097"
-        },
+        "source_id": "SRC-0097",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be39815cbb11edc995ed62ca",
           "title": "EV-0176"
@@ -80,10 +68,7 @@
       "selection_reason": "東京府側の当初の西・北多摩要求から三郡一括案への拡張過程を確認するため。",
       "note_type": "Result",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be3981129356c8924a2b45ba",
-          "title": "SRC-0097"
-        },
+        "source_id": "SRC-0097",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be39818ebaabe9274e431901",
           "title": "EV-0177"
@@ -97,10 +82,7 @@
       "selection_reason": "1892年の両府県上申と政府処理の公文書上の時系列を独立確認するため。",
       "note_type": "Data",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be398170aac1f14ebdb2e5c9",
-          "title": "SRC-0096"
-        },
+        "source_id": "SRC-0096",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be3981d6aca7ed2c74fb2e39",
           "title": "EV-0169"
@@ -114,10 +96,7 @@
       "selection_reason": "東京府・東京市側で水道・衛生問題が近代都市インフラ計画へ転換した時期と背景を確認するため。",
       "note_type": "Result",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be3981689a8adfb752724533",
-          "title": "SRC-0100"
-        },
+        "source_id": "SRC-0100",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be39818c8623d79bd71f32ef",
           "title": "EV-0178"
@@ -131,10 +110,7 @@
       "selection_reason": "近代水道計画において多摩川・玉川上水が東京市の都市インフラへ直接組み込まれていたことを確認するため。",
       "note_type": "Result",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be3981689a8adfb752724533",
-          "title": "SRC-0100"
-        },
+        "source_id": "SRC-0100",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be398177924dfed340bd1db8",
           "title": "EV-0179"
@@ -148,10 +124,7 @@
       "selection_reason": "1893年法案について政府が公的に提示した水道・水源・衛生上の理由を一次史料から確認するため。",
       "note_type": "Claim",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be39816bbcbafa8d4c643ddf",
-          "title": "SRC-0094"
-        },
+        "source_id": "SRC-0094",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be3981fd8957d5d39690a8f0",
           "title": "EV-0159"
@@ -165,10 +138,7 @@
       "selection_reason": "三郡一括移管の説明が水源論だけでは完結していなかったことを示す公式説明を保持するため。",
       "note_type": "Claim",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be39816bbcbafa8d4c643ddf",
-          "title": "SRC-0094"
-        },
+        "source_id": "SRC-0094",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be398169b548d814cf0e1931",
           "title": "EV-0160"
@@ -182,10 +152,7 @@
       "selection_reason": "移管が住民請願起点ではなく行政側の政策判断として公的に説明されていたことを確認するため。",
       "note_type": "Claim",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be39816bbcbafa8d4c643ddf",
-          "title": "SRC-0094"
-        },
+        "source_id": "SRC-0094",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be398190be33c69051af1b2a",
           "title": "EV-0161"
@@ -199,10 +166,7 @@
       "selection_reason": "移管後に玉川上水管理が東京府へ一元化されたという制度上の帰結を確認するため。",
       "note_type": "Result",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be3981feb696c54d4394ad37",
-          "title": "SRC-0101"
-        },
+        "source_id": "SRC-0101",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be39810dbeb5f7e503a0aad2",
           "title": "EV-0180"
@@ -216,10 +180,7 @@
       "selection_reason": "水源保全・衛生問題・近代水道整備を一連の東京水道史として位置づける公式事業史の整理を保持するため。",
       "note_type": "Result",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be3981feb696c54d4394ad37",
-          "title": "SRC-0101"
-        },
+        "source_id": "SRC-0101",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be39815a88d9f783f9050767",
           "title": "EV-0181"
@@ -233,10 +194,7 @@
       "selection_reason": "1886年の衛生事件を1893年移管の単独原因として扱わず、政府自身の位置づけを一次史料で限定するため。",
       "note_type": "Claim",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be39816bbcbafa8d4c643ddf",
-          "title": "SRC-0094"
-        },
+        "source_id": "SRC-0094",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be39815bbe93efeafbac9401",
           "title": "EV-0182"
@@ -250,10 +208,7 @@
       "selection_reason": "政府の水道保護必要論が同時代の議会審査で争われ、必要性が自明ではなかったことを一次史料で保持するため。",
       "note_type": "Counterargument",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be39816a9d80ec58ada919bf",
-          "title": "SRC-0103"
-        },
+        "source_id": "SRC-0103",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be39819b9c93ef2cc83dcd0f",
           "title": "EV-0183"
@@ -267,15 +222,86 @@
       "selection_reason": "公的な水源・衛生理由の存在と、その政策手段として境域変更が必要かという争点を分離するため。",
       "note_type": "Counterargument",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be39816a9d80ec58ada919bf",
-          "title": "SRC-0103"
-        },
+        "source_id": "SRC-0103",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be3981afadb4e605e27d7ef8",
           "title": "EV-0184"
         }
       }
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "SRC-0094",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "77811d02f2d9a42e5833c97aec6f742d09022b2e"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e3e5855be39816bbcbafa8d4c643ddf"
+    },
+    {
+      "source_id": "SRC-0096",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "97986b1f888f2acfbb7a05b1495f5e6d3a2e3bcd"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e3e5855be398170aac1f14ebdb2e5c9"
+    },
+    {
+      "source_id": "SRC-0097",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "a89fabb0c645a2cab7d62d5c6b91f772d7495b73"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e3e5855be3981129356c8924a2b45ba"
+    },
+    {
+      "source_id": "SRC-0099",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "7b44b79e35b63e4757e5a1ce8855a8e9b01953f7"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e3e5855be3981528974da77cebc099d"
+    },
+    {
+      "source_id": "SRC-0100",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "5b8718291c40e3599750a0b3f6e8ef93e7376047"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e3e5855be3981689a8adfb752724533"
+    },
+    {
+      "source_id": "SRC-0101",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "0045a1adf7e0af267a46b4d83a01db0825a363a2"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e3e5855be3981feb696c54d4394ad37"
+    },
+    {
+      "source_id": "SRC-0102",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "ed2a8f784cfd560ce5c0ba15acccdb204fd32006"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e3e5855be3981dabfb5ea36d065ed4b"
+    },
+    {
+      "source_id": "SRC-0103",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "42a891d2af8217eaa77493b112b6c4160233544b"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e3e5855be39816a9d80ec58ada919bf"
     }
   ]
 }
