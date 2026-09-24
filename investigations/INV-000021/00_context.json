@@ -1,0 +1,18 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "00_context",
+  "investigation_id": "INV-000021",
+  "rq_id": "RQ-0011",
+  "context_state": "frozen",
+  "question": {
+    "text": "製造プロセスにおいて、品質予測モデルに基づいて算出された制御パラメータをPLCへ自動反映する際、プロセスの安全性と制御の安定性を担保するためには、どのようなシステムアーキテクチャと安全機構が必要か？",
+    "notion_url": "https://app.notion.com/p/3e1e5855be39818aaf8dcdc72f889ad7"
+  },
+  "question_type": "Methodological",
+  "scope": "品質予測モデルおよびoptimizerをsupervisory / setpoint-generation layerとして用い、概ね5〜10分程度の時間軸で算出された制御パラメータをPLCへ自動反映する製造プロセスを対象とする。安全性は人身安全・設備保護・工程安全・製品品質上のconstraint violation防止を含む。制御安定性は数学的closed-loop stabilityに限定せず、oscillation、過大なparameter変化、constraint violation、unsafe transient等の抑制を含む。batch / lot / continuousには限定しないが、直近の適用先はcontinuous processである。MLがPLCの高速・deterministic inner-loopを直接代替する方式、品質予測モデル自体の精度改善・再学習、特定PLCメーカー固有実装、cybersecurity一般は主対象外とする。通信断等の非悪意的なfailure handlingは安全設計として対象に含む。Sourceはfunctional safety、industrial automation、process control、ML-enabled supervisory controlに関する標準・規格、公的資料、原著論文、公式技術資料を優先する。",
+  "significance": null,
+  "investigation_boundary": {
+    "evidence_cutoff": "2026-09-20T23:59:59+09:00"
+  },
+  "frozen_at": "2026-09-24T03:24:54.559Z"
+}
