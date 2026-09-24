@@ -1,0 +1,368 @@
+{
+  "schema_version": "2.1.0",
+  "artifact_type": "10_evidence",
+  "investigation_id": "INV-000025",
+  "rq_id": "RQ-000025",
+  "snapshot_at": "2026-09-24T15:14:00.000Z",
+  "sources": [
+    {
+      "source_id": "SRC-000121",
+      "source_revision": {
+        "commit_sha": "76a0c6366d9c8714610da12b44962167f55870de",
+        "blob_sha": "4ae1612173213b64fed9158a5fc30e0011834c25"
+      },
+      "accessed_at": "2026-09-24T12:23:21.393Z",
+      "notion_url": "https://app.notion.com/p/3e5e5855be3981c8a8b0c98e106b0c32"
+    },
+    {
+      "source_id": "SRC-000123",
+      "source_revision": {
+        "commit_sha": "76a0c6366d9c8714610da12b44962167f55870de",
+        "blob_sha": "e87ac0f24423574053c5d295b6b48adde0fb1f1a"
+      },
+      "accessed_at": "2026-09-24T12:23:21.393Z",
+      "notion_url": "https://app.notion.com/p/3e5e5855be398161951bfdaa87501d62"
+    },
+    {
+      "source_id": "SRC-000124",
+      "source_revision": {
+        "commit_sha": "76a0c6366d9c8714610da12b44962167f55870de",
+        "blob_sha": "ecfe373c745ec0f1bd2ba1503be467d0c6d8be5a"
+      },
+      "accessed_at": "2026-09-24T12:23:21.393Z",
+      "notion_url": "https://app.notion.com/p/3e5e5855be398116a49bea3541680ad3"
+    },
+    {
+      "source_id": "SRC-000125",
+      "source_revision": {
+        "commit_sha": "76a0c6366d9c8714610da12b44962167f55870de",
+        "blob_sha": "45cc8baeb8a9be449fba4ec678ddba153b2aff48"
+      },
+      "accessed_at": "2026-09-24T12:23:21.393Z",
+      "notion_url": "https://app.notion.com/p/3e5e5855be39819c8b9af07202b4307f"
+    },
+    {
+      "source_id": "SRC-000127",
+      "source_revision": {
+        "commit_sha": "76a0c6366d9c8714610da12b44962167f55870de",
+        "blob_sha": "a8bb1bcf9291abd49263a248124a94896c723d86"
+      },
+      "accessed_at": "2026-09-24T12:23:21.393Z",
+      "notion_url": "https://app.notion.com/p/3e5e5855be398144849af90730f85154"
+    },
+    {
+      "source_id": "SRC-000128",
+      "source_revision": {
+        "commit_sha": "76a0c6366d9c8714610da12b44962167f55870de",
+        "blob_sha": "45c770ad3107c9943ba9895bed1425c742b01b65"
+      },
+      "accessed_at": "2026-09-24T12:23:21.393Z",
+      "notion_url": "https://app.notion.com/p/3e5e5855be39814db18cf0736e858876"
+    },
+    {
+      "source_id": "SRC-000129",
+      "source_revision": {
+        "commit_sha": "76a0c6366d9c8714610da12b44962167f55870de",
+        "blob_sha": "7fd6e3084ba971c75f5462120f6c525cb6651375"
+      },
+      "accessed_at": "2026-09-24T12:23:21.393Z",
+      "notion_url": "https://app.notion.com/p/3e5e5855be3981309b31e647d7b418d2"
+    },
+    {
+      "source_id": "SRC-000130",
+      "source_revision": {
+        "commit_sha": "76a0c6366d9c8714610da12b44962167f55870de",
+        "blob_sha": "357e37f30096bd33903ede8eb4e4525e45aad6c9"
+      },
+      "accessed_at": "2026-09-24T12:23:21.393Z",
+      "notion_url": "https://app.notion.com/p/3e5e5855be3981f08f9cf7700e137e4b"
+    },
+    {
+      "source_id": "SRC-000131",
+      "source_revision": {
+        "commit_sha": "76a0c6366d9c8714610da12b44962167f55870de",
+        "blob_sha": "564e7496e14cd04cf18b59dd54bfea1bb62c2fbd"
+      },
+      "accessed_at": "2026-09-24T12:23:21.393Z",
+      "notion_url": "https://app.notion.com/p/3e5e5855be39819d9678c96258e3ecc8"
+    },
+    {
+      "source_id": "SRC-000132",
+      "source_revision": {
+        "commit_sha": "76a0c6366d9c8714610da12b44962167f55870de",
+        "blob_sha": "56c0ca52d68747ff9be67c65ba5f4defeadd77d3"
+      },
+      "accessed_at": "2026-09-24T12:23:21.393Z",
+      "notion_url": "https://app.notion.com/p/3e5e5855be398155bb17faa16e78b85e"
+    },
+    {
+      "source_id": "SRC-000133",
+      "source_revision": {
+        "commit_sha": "76a0c6366d9c8714610da12b44962167f55870de",
+        "blob_sha": "78bea2e5e4078480ea0c1fe2384ef505b9f8e429"
+      },
+      "accessed_at": "2026-09-24T12:23:21.393Z",
+      "notion_url": "https://app.notion.com/p/3e5e5855be39813f9babda273b39d1a7"
+    },
+    {
+      "source_id": "SRC-000134",
+      "source_revision": {
+        "commit_sha": "76a0c6366d9c8714610da12b44962167f55870de",
+        "blob_sha": "371fbd20c0509c8ea503a4d55de0a50c4021fe4b"
+      },
+      "accessed_at": "2026-09-24T12:23:21.393Z",
+      "notion_url": "https://app.notion.com/p/3e5e5855be3981a28917e7fe82fbc4f7"
+    },
+    {
+      "source_id": "SRC-000135",
+      "source_revision": {
+        "commit_sha": "f77e00c51d996bd2d235557ebc5444a67f0c8112",
+        "blob_sha": "5558fde9d7d332da1aabd6e0dfeabf7ecb644754"
+      },
+      "accessed_at": "2026-09-24T15:12:27.486Z",
+      "notion_url": "https://app.notion.com/p/3e5e5855be398157a2cce4d9a2151e4a"
+    }
+  ],
+  "evidence_items": [
+    {
+      "evidence_id": "E0001",
+      "content": "Pearlはcausal graphical modelを、統計情報とsubject-matter informationを統合する数学的言語として位置づけ、nonparametric causal inferenceの枠組みを提示している。",
+      "source_locator": "Abstract",
+      "selection_reason": "方法論的entity typeまたはroleの存在・境界を直接示すため。",
+      "note_type": "Theory",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000121",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e5e5855be3981b6a946ea40017f2027",
+          "title": "EV-000218"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0002",
+      "content": "causal diagramは、与えられた仮定から非実験データでcausal effectが識別可能かを判定し、可能ならobserved distributionからcausal effectを表す式を導出するために使える。",
+      "source_locator": "Abstract",
+      "selection_reason": "方法論的entity typeまたはroleの存在・境界を直接示すため。",
+      "note_type": "Method",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000121",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e5e5855be3981ef9e69ea53a47d64aa",
+          "title": "EV-000219"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0003",
+      "content": "instrumental-variable estimandは、一定の仮定の下でcomplier subgroupのaverage causal effectとして解釈でき、仮定がなければ単なるintention-to-treat estimandの比に留まる。",
+      "source_locator": "Abstract",
+      "selection_reason": "方法論的entity typeまたはroleの存在・境界を直接示すため。",
+      "note_type": "Method",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000123",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e5e5855be3981808c65efdeaa7dcb16",
+          "title": "EV-000222"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0004",
+      "content": "regression-discontinuity designは、1つ以上のrunning variableの関数としてtreatmentを受ける確率が不連続に変化するquasi-experimental designであり、その不連続性をtreatment effectのidentifying informationとして利用する。",
+      "source_locator": "Abstract",
+      "selection_reason": "方法論的entity typeまたはroleの存在・境界を直接示すため。",
+      "note_type": "Definition",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000124",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e5e5855be3981768059e8e300b22150",
+          "title": "EV-000223"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0005",
+      "content": "CallawayとSant'Annaは、multiple time periodsとtreatment timingのばらつきがあるDifference-in-Differencesで、parallel trends assumptionの下に複数のcausal effect parameterを識別する枠組みを提示している。",
+      "source_locator": "Abstract",
+      "selection_reason": "方法論的entity typeまたはroleの存在・境界を直接示すため。",
+      "note_type": "Method",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000125",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e5e5855be39810bbbc1fca64466da36",
+          "title": "EV-000224"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0006",
+      "content": "同論文では、同じDiD identification setupに対してoutcome regression、inverse probability weighting、doubly robust estimandを用いる推定方法を提示している。",
+      "source_locator": "Abstract",
+      "selection_reason": "方法論的entity typeまたはroleの存在・境界を直接示すため。",
+      "note_type": "Method",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000125",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e5e5855be3981069c62f3d7945ebcf5",
+          "title": "EV-000225"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0007",
+      "content": "time-varying treatmentのobservational studyでは、過去のtreatmentの影響を受けるtime-dependent confounderが存在するとstandard confounding adjustmentはbiasedになり得る。",
+      "source_locator": "Abstract",
+      "selection_reason": "方法論的entity typeまたはroleの存在・境界を直接示すため。",
+      "note_type": "Limitation",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000127",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e5e5855be398111ad0ddaf03a19be1f",
+          "title": "EV-000227"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0008",
+      "content": "Imaiらのcausal mediation frameworkは、mediation effectのdefinition、identification、estimation、sensitivity analysisを特定のstatistical modelに依存せず一つの枠組みで結び付ける。",
+      "source_locator": "Abstract",
+      "selection_reason": "方法論的entity typeまたはroleの存在・境界を直接示すため。",
+      "note_type": "Method",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000128",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e5e5855be3981e2a801dd1a5a467953",
+          "title": "EV-000228"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0009",
+      "content": "通常のcausal inferenceでは、あるunitのpotential outcomeが他unitのtreatment assignmentに影響されないno-interference assumptionが置かれることが多いが、本論文はinterferenceが存在する場合のcausal inferenceを対象とする。",
+      "source_locator": "Abstract",
+      "selection_reason": "方法論的entity typeまたはroleの存在・境界を直接示すため。",
+      "note_type": "Theory",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000129",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e5e5855be39817f8382feafaf404650",
+          "title": "EV-000229"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0010",
+      "content": "Double/Debiased Machine Learningは、高次元nuisance parameterをMLで推定する際のregularization biasとoverfittingの影響を、Neyman-orthogonal scoreとcross-fittingによって抑え、低次元causal/treatment parameterの推定・推論を行う。",
+      "source_locator": "Summary / Abstract",
+      "selection_reason": "方法論的entity typeまたはroleの存在・境界を直接示すため。",
+      "note_type": "Method",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000130",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e5e5855be39812ba357ec66cff9dc2e",
+          "title": "EV-000230"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0011",
+      "content": "causal discoveryまたはcausal structure searchは、純粋なobservational dataのstatistical propertiesからcausal relationsを探索する問題として定義され、causal relationsが既知または部分的に既知の下でintervention effectを識別する問題とは別クラスである。",
+      "source_locator": "Abstract / Introduction",
+      "selection_reason": "方法論的entity typeまたはroleの存在・境界を直接示すため。",
+      "note_type": "Definition",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000131",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e5e5855be39816c92c1eacdf606bf45",
+          "title": "EV-000231"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0012",
+      "content": "causal forestはpotential outcomes frameworkとunconfoundednessの下でheterogeneous treatment effectをnonparametrically推定するrandom-forest-based methodとして提案されている。",
+      "source_locator": "Abstract",
+      "selection_reason": "方法論的entity typeまたはroleの存在・境界を直接示すため。",
+      "note_type": "Method",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000132",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e5e5855be398111b2aaf0b25ee860ae",
+          "title": "EV-000233"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0013",
+      "content": "transportabilityは、source populationのexperimental informationを、観測情報しか得られないtarget populationへ移送する問題として定義され、population間の共通点・相違点に関する仮定からtransportの可否とformulaを決定する。",
+      "source_locator": "Abstract",
+      "selection_reason": "方法論的entity typeまたはroleの存在・境界を直接示すため。",
+      "note_type": "Method",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000133",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e5e5855be398184a420fba935fba8e1",
+          "title": "EV-000234"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0014",
+      "content": "Targeted Maximum Likelihood Estimationは、特定のpathwise differentiable parameterに対してefficient influence curveを用いて初期density estimatorをtargetingし、regularity conditions下でlocally efficient estimatorを構成する推定枠組みである。",
+      "source_locator": "Abstract",
+      "selection_reason": "方法論的entity typeまたはroleの存在・境界を直接示すため。",
+      "note_type": "Method",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000134",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e5e5855be398127b0f4c28e54dccca9",
+          "title": "EV-000235"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0015",
+      "content": "Nogueiraらはcausality研究を大きくcausal discoveryとcausal inferenceの2 taskに分け、前者を観測データからcausal relationを学習する問題、後者を変数の変更がoutcomeへ与えるimpactを推定する問題として区別している。",
+      "source_locator": "Abstract / Introduction",
+      "selection_reason": "inferential task自体が区別されることを示すため。",
+      "note_type": "Definition",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000135",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e5e5855be39812ca776d8f1788400bf",
+          "title": "EV-000236"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0016",
+      "content": "同reviewはcausal effectをgranularityに応じてITE、ATE、ATT、CATE等として区別しており、target estimand自体が整理軸として用いられている。",
+      "source_locator": "Section 4.1 Causal effects",
+      "selection_reason": "target estimandが独立して記述される方法論的対象であることを示すため。",
+      "note_type": "Definition",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000135",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e5e5855be3981d9ba6bf4f93d714273",
+          "title": "EV-000239"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,200 @@
+{
+  "schema_version": "2.1.0",
+  "artifact_type": "10_evidence",
+  "investigation_id": "INV-000026",
+  "rq_id": "RQ-000026",
+  "snapshot_at": "2026-09-24T15:14:00.000Z",
+  "sources": [
+    {
+      "source_id": "SRC-000120",
+      "source_revision": {
+        "commit_sha": "76a0c6366d9c8714610da12b44962167f55870de",
+        "blob_sha": "0b91492f0a445e50925767b6cab34f7125d352e4"
+      },
+      "accessed_at": "2026-09-24T12:23:21.393Z",
+      "notion_url": "https://app.notion.com/p/3e5e5855be398124b0acd620cd616481"
+    },
+    {
+      "source_id": "SRC-000135",
+      "source_revision": {
+        "commit_sha": "f77e00c51d996bd2d235557ebc5444a67f0c8112",
+        "blob_sha": "5558fde9d7d332da1aabd6e0dfeabf7ecb644754"
+      },
+      "accessed_at": "2026-09-24T15:12:27.486Z",
+      "notion_url": "https://app.notion.com/p/3e5e5855be398157a2cce4d9a2151e4a"
+    },
+    {
+      "source_id": "SRC-000136",
+      "source_revision": {
+        "commit_sha": "f77e00c51d996bd2d235557ebc5444a67f0c8112",
+        "blob_sha": "6e0a880fa6881c55c1b798d6531bc743a82186ab"
+      },
+      "accessed_at": "2026-09-24T15:12:27.486Z",
+      "notion_url": "https://app.notion.com/p/3e5e5855be39813499b4dc11e7a84853"
+    },
+    {
+      "source_id": "SRC-000137",
+      "source_revision": {
+        "commit_sha": "f77e00c51d996bd2d235557ebc5444a67f0c8112",
+        "blob_sha": "a1e846de120cbbf0c299d82d30516111deb425a3"
+      },
+      "accessed_at": "2026-09-24T15:12:27.486Z",
+      "notion_url": "https://app.notion.com/p/3e5e5855be3981538b0de08bcd288ba0"
+    },
+    {
+      "source_id": "SRC-000138",
+      "source_revision": {
+        "commit_sha": "f77e00c51d996bd2d235557ebc5444a67f0c8112",
+        "blob_sha": "98890792f71a3eb30f6a3c12ca07baae07e2b669"
+      },
+      "accessed_at": "2026-09-24T15:12:27.486Z",
+      "notion_url": "https://app.notion.com/p/3e5e5855be398142a6faf6f73a3922a9"
+    },
+    {
+      "source_id": "SRC-000131",
+      "source_revision": {
+        "commit_sha": "76a0c6366d9c8714610da12b44962167f55870de",
+        "blob_sha": "564e7496e14cd04cf18b59dd54bfea1bb62c2fbd"
+      },
+      "accessed_at": "2026-09-24T12:23:21.393Z",
+      "notion_url": "https://app.notion.com/p/3e5e5855be39819d9678c96258e3ecc8"
+    }
+  ],
+  "evidence_items": [
+    {
+      "evidence_id": "E0001",
+      "content": "著者は因果推論の方法を、モデルを用いない因果推論、モデルを用いる因果推論、複雑なlongitudinal dataからの因果推論という段階に分けて本書を構成している。",
+      "source_locator": "Book landing page / structure",
+      "selection_reason": "既存monographが採用する体系化原理を記録するため。",
+      "note_type": "Method",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000120",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e5e5855be3981d789aecc059c0c2106",
+          "title": "EV-000216"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0002",
+      "content": "Nogueiraらはcausality研究を大きくcausal discoveryとcausal inferenceの2 taskに分け、前者を観測データからcausal relationを学習する問題、後者を変数の変更がoutcomeへ与えるimpactを推定する問題として区別している。",
+      "source_locator": "Abstract / Introduction",
+      "selection_reason": "既存文献が明示的に採用するclassification axis / taxonomyを記録するため。",
+      "note_type": "Definition",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000135",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e5e5855be39812ca776d8f1788400bf",
+          "title": "EV-000236"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0003",
+      "content": "同reviewはcausal discoveryをdata type（cross-sectional、time-series、longitudinal）で整理し、さらにalgorithm constructionとしてconstraint-based / score-based等を区別している。",
+      "source_locator": "Sections 3 and 3.1",
+      "selection_reason": "既存文献が明示的に採用するclassification axis / taxonomyを記録するため。",
+      "note_type": "Method",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000135",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e5e5855be398155be1afe16e8af6faa",
+          "title": "EV-000237"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0004",
+      "content": "causal inference側では、causal effectの種類を示した後、利用可能なdataとassumptionsに基づき experiments、observational with unconfoundedness、observational without unconfoundedness の3 settingを区別している。",
+      "source_locator": "Section 4.1",
+      "selection_reason": "既存文献が明示的に採用するclassification axis / taxonomyを記録するため。",
+      "note_type": "Method",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000135",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e5e5855be398104a15fe53f81866968",
+          "title": "EV-000238"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0005",
+      "content": "同reviewはcausal effectをgranularityに応じてITE、ATE、ATT、CATE等として区別しており、target estimand自体が整理軸として用いられている。",
+      "source_locator": "Section 4.1 Causal effects",
+      "selection_reason": "既存文献が明示的に採用するclassification axis / taxonomyを記録するため。",
+      "note_type": "Definition",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000135",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e5e5855be3981d9ba6bf4f93d714273",
+          "title": "EV-000239"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0006",
+      "content": "Yaoらのsurveyはpotential-outcomes framework内のcausal inference methodsを、SUTVA・ignorability・positivityの3 assumptionsをすべて要求するか否かで大別し、各群でtraditional statistical methodsとmachine-learning-enhanced methodsを比較している。",
+      "source_locator": "Abstract / Survey organization",
+      "selection_reason": "既存文献が明示的に採用するclassification axis / taxonomyを記録するため。",
+      "note_type": "Method",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000136",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e5e5855be398180abddde57efeea2eb",
+          "title": "EV-000240"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0007",
+      "content": "AtheyとImbensのreviewはpolicy evaluationの方法論を、(1) identification strategies、(2) placebo・sensitivity・robustness等のsupplementary analyses、(3) causal effectsに対するmachine-learning advances、という3領域に整理している。",
+      "source_locator": "Abstract",
+      "selection_reason": "既存文献が明示的に採用するclassification axis / taxonomyを記録するため。",
+      "note_type": "Method",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000137",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e5e5855be398181990aef16129990cd",
+          "title": "EV-000241"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0008",
+      "content": "Luoらはrecommender systemsの既存研究について、practical issue別分類と対比してcausal theoryを分類軸とするtheory-driven taxonomyを提案し、potential outcome framework、structural causal model、general counterfactualsの3群に整理している。",
+      "source_locator": "Abstract",
+      "selection_reason": "既存文献が明示的に採用するclassification axis / taxonomyを記録するため。",
+      "note_type": "Method",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000138",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e5e5855be3981b3bff4c468b0d2a4d4",
+          "title": "EV-000242"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0009",
+      "content": "graphical causal discoveryの代表的方法群として、constraint-based methods、score-based methods、functional causal model based methodsが区別される。",
+      "source_locator": "Abstract / Sections 3–4",
+      "selection_reason": "causal discovery内部で用いられるmethod-family classificationの例を記録するため。",
+      "note_type": "Method",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000131",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e5e5855be3981d4a51be6b29bd42e4d",
+          "title": "EV-000232"
+        }
+      }
+    }
+  ]
+}
