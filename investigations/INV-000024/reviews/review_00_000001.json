@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000024",
+  "review_seq": 1,
+  "layer": "00_context",
+  "review_kind": "context_semantic_validity",
+  "target_blob_sha": "9caa11e172be42c89e3e27ea7fcb94c4db7fd621",
+  "assessment": "The frozen Research Question, Methodological question type, scope, investigation boundaries, and assumptions are semantically coherent for a cross-disciplinary causal-inference taxonomy investigation. The context explicitly avoids assuming that framework, design, identification, estimation, and diagnostics are one ontological category and explicitly permits hierarchical plus multi-axis classification. No contradiction or missing context condition was identified that would require changing the frozen context.",
+  "findings": [],
+  "verdict": "PASS"
+}

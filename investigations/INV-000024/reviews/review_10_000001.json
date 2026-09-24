@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000024",
+  "review_seq": 1,
+  "layer": "10_evidence",
+  "review_kind": "source_evidence_note_to_10_evidence",
+  "target_blob_sha": "8e0dfb426704a2710841824ac68fd48bc34043ee",
+  "assessment": "EV-000216 through EV-000235 were checked against the frozen 10_evidence snapshot: Evidence text, locator, note type, and Source relation are preserved without material change. The cited source metadata and available source/abstract material are consistent with the substantive paraphrases used for the reviewed evidence items. No material source-faithfulness, provenance, or qualification defect was identified at this layer.",
+  "findings": [],
+  "verdict": "PASS"
+}

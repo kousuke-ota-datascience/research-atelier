@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000024",
+  "review_seq": 1,
+  "layer": "20_synthesis",
+  "review_kind": "10_evidence_to_20_synthesis",
+  "target_blob_sha": "764c9bda4cbd1bb5a82f90e7f35b45d5488cca44",
+  "assessment": "Most item-level synthesis preserves the methodological role supported by its Evidence, and K0015 is reasonably supported as an argument for separating identification, estimation, and other non-exclusive roles. The central K0016/K0017 construction, however, gives the specific seven-axis / six-branch architecture stronger methodological warrant than the purposive, non-exhaustive Source set establishes. U0001/U0002 partially qualify this, but the synthesis should more clearly distinguish source-supported observations from the Investigation's own provisional taxonomy design.",
+  "findings": [
+    {
+      "finding_id": "F001",
+      "severity": "Moderate",
+      "target": "20_synthesis.K0016-K0017",
+      "evidence": [
+        "20_synthesis.U0001 states that no single cross-disciplinary standard taxonomy was confirmed and that the result is a working taxonomy.",
+        "20_synthesis.U0002 states that the Source set is purposive rather than exhaustive and lists multiple method families not individually verified.",
+        "20_synthesis.K0016-K0017 construct seven classification axes and six branches from illustrative method families; the reviewed Evidence does not provide an explicit completeness criterion, competing-taxonomy comparison, or source that establishes this exact architecture as privileged."
+      ],
+      "impact": "The central taxonomy can be read as methodologically privileged or sufficiently complete even though the reviewed Evidence supports it only as a provisional synthesis. This overstates the support boundary and propagates an unwarranted degree of authority into the Working Answer.",
+      "repair_direction": {
+        "mode": "same_investigation",
+        "affected_layer": "20_synthesis",
+        "instruction": "Recast K0016/K0017 as a provisional, non-exhaustive cross-classification proposal. Explicitly distinguish source-supported methodological distinctions from analytical design choices used to assemble the seven axes and six branches, avoid completeness or uniqueness implications, preserve U0001/U0002, and rebuild downstream 30_analysis."
+      }
+    }
+  ],
+  "verdict": "FINDINGS"
+}
