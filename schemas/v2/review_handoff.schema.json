@@ -26,7 +26,7 @@
       "pattern": "^(?:INV-(?!000000)[0-9]{6}|RQ-[0-9]{4}-v(?!000)[0-9]{3})$"
     },
     "source_review_seq": {"type": "integer", "minimum": 1},
-    "source_rq_id": {"type": "string", "pattern": "^RQ-[0-9]{4}$"},
+    "source_rq_id": {"type": "string", "pattern": "^RQ-(?:[0-9]{4}|[0-9]{6})$"},
     "finding_ids": {
       "type": "array",
       "minItems": 1,
@@ -44,12 +44,12 @@
       "additionalProperties": false,
       "required": ["expected_rq_id", "actual_rq_ids", "exact"],
       "properties": {
-        "expected_rq_id": {"type": "string", "pattern": "^RQ-[0-9]{4}$"},
+        "expected_rq_id": {"type": "string", "pattern": "^RQ-(?:[0-9]{4}|[0-9]{6})$"},
         "actual_rq_ids": {
           "type": "array",
           "minItems": 1,
           "maxItems": 1,
-          "items": {"type": "string", "pattern": "^RQ-[0-9]{4}$"}
+          "items": {"type": "string", "pattern": "^RQ-(?:[0-9]{4}|[0-9]{6})$"}
         },
         "exact": {"const": true}
       }
