@@ -1,5 +1,5 @@
 {
-  "schema_version": "2.0.0",
+  "schema_version": "2.1.0",
   "artifact_type": "10_evidence",
   "investigation_id": "INV-000003",
   "rq_id": "RQ-0014",
@@ -12,8 +12,11 @@
       "selection_reason": "すでに価値の高い魔剣と、その価値評価を反転させる鞘の明示的比較を示す古典例。",
       "note_type": "Claim",
       "provenance": {
-        "source": {"notion_url": "https://app.notion.com/p/3e2e5855be3981b3987ff353d1223ced", "title": "Le Morte D’Arthur, Volume I (Project Gutenberg text)"},
-        "evidence_note": {"notion_url": "https://app.notion.com/p/3e2e5855be398195ba06ef1b3e517617", "title": "EV-0048"}
+        "source_id": "SRC-0035",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e2e5855be398195ba06ef1b3e517617",
+          "title": "EV-0048"
+        }
       }
     },
     {
@@ -23,8 +26,11 @@
       "selection_reason": "一つの指輪について初期に認識される表層機能を固定する。",
       "note_type": "Claim",
       "provenance": {
-        "source": {"notion_url": "https://app.notion.com/p/3e2e5855be3981f0b52ee7936ca4bea5", "title": "Letter to Milton Waldman, publisher, 1951"},
-        "evidence_note": {"notion_url": "https://app.notion.com/p/3e2e5855be3981c99846db585d60d6a0", "title": "EV-0049"}
+        "source_id": "SRC-0036",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e2e5855be3981c99846db585d60d6a0",
+          "title": "EV-0049"
+        }
       }
     },
     {
@@ -34,8 +40,11 @@
       "selection_reason": "表層機能とより本質的な支配機能の明示的な位置づけ差を示す。",
       "note_type": "Claim",
       "provenance": {
-        "source": {"notion_url": "https://app.notion.com/p/3e2e5855be398190a4a6cf779c3ea934", "title": "Letter to Eileen Elgar, September 1963"},
-        "evidence_note": {"notion_url": "https://app.notion.com/p/3e2e5855be3981c1888ac64a2b98eac5", "title": "EV-0050"}
+        "source_id": "SRC-0037",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e2e5855be3981c1888ac64a2b98eac5",
+          "title": "EV-0050"
+        }
       }
     },
     {
@@ -45,8 +54,11 @@
       "selection_reason": "道具の真価が使用者の能力・意志とのcouplingに依存する例として選択。",
       "note_type": "Theory",
       "provenance": {
-        "source": {"notion_url": "https://app.notion.com/p/3e2e5855be398190a4a6cf779c3ea934", "title": "Letter to Eileen Elgar, September 1963"},
-        "evidence_note": {"notion_url": "https://app.notion.com/p/3e2e5855be3981888900e1661d9849f2", "title": "EV-0051"}
+        "source_id": "SRC-0037",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e2e5855be3981888900e1661d9849f2",
+          "title": "EV-0051"
+        }
       }
     },
     {
@@ -56,8 +68,11 @@
       "selection_reason": "強い魔剣という期待から、作用原理が『Truth』へずれる明示的な再解釈を示す。",
       "note_type": "Claim",
       "provenance": {
-        "source": {"notion_url": "https://app.notion.com/p/3e2e5855be398117a4aaf1401376fba2", "title": "The Sword of Shannara Trilogy — Teacher's Guide"},
-        "evidence_note": {"notion_url": "https://app.notion.com/p/3e2e5855be3981c69cc9e8c8143fe177", "title": "EV-0052"}
+        "source_id": "SRC-0038",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e2e5855be3981c69cc9e8c8143fe177",
+          "title": "EV-0052"
+        }
       }
     },
     {
@@ -67,8 +82,11 @@
       "selection_reason": "非戦闘的に見える原理が敵の成立条件に対して決定的になることを示す。",
       "note_type": "Theory",
       "provenance": {
-        "source": {"notion_url": "https://app.notion.com/p/3e2e5855be398117a4aaf1401376fba2", "title": "The Sword of Shannara Trilogy — Teacher's Guide"},
-        "evidence_note": {"notion_url": "https://app.notion.com/p/3e2e5855be398197af41ef567dc24d77", "title": "EV-0053"}
+        "source_id": "SRC-0038",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e2e5855be398197af41ef567dc24d77",
+          "title": "EV-0053"
+        }
       }
     },
     {
@@ -78,8 +96,11 @@
       "selection_reason": "物質を切る鋭利さが世界間の境界を切る機能まで拡張されるscope-extension例。",
       "note_type": "Claim",
       "provenance": {
-        "source": {"notion_url": "https://app.notion.com/p/3e2e5855be398162b7d4ddf9e831e13a", "title": "Philip Pullman — His Dark Materials: Parallel Worlds"},
-        "evidence_note": {"notion_url": "https://app.notion.com/p/3e2e5855be39818b939bf20cc38696ec", "title": "EV-0054"}
+        "source_id": "SRC-0039",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e2e5855be39818b939bf20cc38696ec",
+          "title": "EV-0054"
+        }
       }
     },
     {
@@ -89,8 +110,11 @@
       "selection_reason": "初期価値が明確に非常に高い道具であることと、忠誠という条件を同時に示す。",
       "note_type": "Claim",
       "provenance": {
-        "source": {"notion_url": "https://app.notion.com/p/3e2e5855be3981d9b61fde92b8789780", "title": "The Elder Wand | Official Harry Potter Encyclopedia"},
-        "evidence_note": {"notion_url": "https://app.notion.com/p/3e2e5855be39818bb0b2d0c61162632d", "title": "EV-0055"}
+        "source_id": "SRC-0040",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e2e5855be39818bb0b2d0c61162632d",
+          "title": "EV-0055"
+        }
       }
     },
     {
@@ -100,8 +124,11 @@
       "selection_reason": "武器性能ではなくmastery/ownership ruleの理解が決戦上重要になる例。",
       "note_type": "Claim",
       "provenance": {
-        "source": {"notion_url": "https://app.notion.com/p/3e2e5855be39811d8c3fd5c7f75a86ef", "title": "The Elder Wand — Everything We Know"},
-        "evidence_note": {"notion_url": "https://app.notion.com/p/3e2e5855be3981e08398c11fd948da9a", "title": "EV-0056"}
+        "source_id": "SRC-0041",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e2e5855be3981e08398c11fd948da9a",
+          "title": "EV-0056"
+        }
       }
     },
     {
@@ -111,8 +138,11 @@
       "selection_reason": "ownership ruleが見かけの所持と一致しないことを示す補助Evidence。",
       "note_type": "Claim",
       "provenance": {
-        "source": {"notion_url": "https://app.notion.com/p/3e2e5855be39811d8c3fd5c7f75a86ef", "title": "The Elder Wand — Everything We Know"},
-        "evidence_note": {"notion_url": "https://app.notion.com/p/3e2e5855be3981808b5eeaa48f92b25a", "title": "EV-0057"}
+        "source_id": "SRC-0041",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e2e5855be3981808b5eeaa48f92b25a",
+          "title": "EV-0057"
+        }
       }
     },
     {
@@ -122,8 +152,11 @@
       "selection_reason": "既に特別な神鉄が適格な使用者の要求に応じて可変武器として機能する古典例。",
       "note_type": "Result",
       "provenance": {
-        "source": {"notion_url": "https://app.notion.com/p/3e2e5855be3981d2bd8fe95a9f2a8673", "title": "西遊記 第三回 — Chinese Text Project"},
-        "evidence_note": {"notion_url": "https://app.notion.com/p/3e2e5855be3981849731c6357c83ac1f", "title": "EV-0058"}
+        "source_id": "SRC-0042",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e2e5855be3981849731c6357c83ac1f",
+          "title": "EV-0058"
+        }
       }
     },
     {
@@ -133,8 +166,11 @@
       "selection_reason": "戦闘用分身として見える能力に情報・経験回収という別軸の機構があることを示す。",
       "note_type": "Definition",
       "provenance": {
-        "source": {"notion_url": "https://app.notion.com/p/3e2e5855be39815a9169c60eaeb76101", "title": "NARUTO公式 誕生日コラム — 千手扉間（影分身の術）"},
-        "evidence_note": {"notion_url": "https://app.notion.com/p/3e2e5855be39811d9afde6386764061a", "title": "EV-0062"}
+        "source_id": "SRC-0046",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e2e5855be39811d9afde6386764061a",
+          "title": "EV-0062"
+        }
       }
     },
     {
@@ -144,8 +180,11 @@
       "selection_reason": "経験回収の機構が並列学習として実用化されたことを示す。",
       "note_type": "Result",
       "provenance": {
-        "source": {"notion_url": "https://app.notion.com/p/3e2e5855be3981d5ae8ae13424fd42e6", "title": "NARUTO公式 誕生日コラム — うずまきナルト前編"},
-        "evidence_note": {"notion_url": "https://app.notion.com/p/3e2e5855be3981d08251c17f37d69b09", "title": "EV-0064"}
+        "source_id": "SRC-0047",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e2e5855be3981d08251c17f37d69b09",
+          "title": "EV-0064"
+        }
       }
     },
     {
@@ -155,8 +194,11 @@
       "selection_reason": "影分身が真価開示以前にも十分強力な戦闘能力として機能することを固定する。",
       "note_type": "Result",
       "provenance": {
-        "source": {"notion_url": "https://app.notion.com/p/3e2e5855be39814fa2dbff9d075a87dd", "title": "NARUTO 20th Anniversary Column — Retracing the Anime's Ninja Way No.2"},
-        "evidence_note": {"notion_url": "https://app.notion.com/p/3e2e5855be3981b596d2ed93af84e512", "title": "EV-0065"}
+        "source_id": "SRC-0048",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e2e5855be3981b596d2ed93af84e512",
+          "title": "EV-0065"
+        }
       }
     },
     {
@@ -166,8 +208,11 @@
       "selection_reason": "既知の魔剣が使用履歴によって機能的価値を獲得する原理を示す。",
       "note_type": "Definition",
       "provenance": {
-        "source": {"notion_url": "https://app.notion.com/p/3e2e5855be3981d8b042e201e248de32", "title": "The Sword of Gryffindor | Official Harry Potter Encyclopedia"},
-        "evidence_note": {"notion_url": "https://app.notion.com/p/3e2e5855be3981849d42c0b33736e9dc", "title": "EV-0066"}
+        "source_id": "SRC-0049",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e2e5855be3981849d42c0b33736e9dc",
+          "title": "EV-0066"
+        }
       }
     },
     {
@@ -177,8 +222,11 @@
       "selection_reason": "初期の武器使用が後に別の勝利条件を満たす能力へ転化することを示す。",
       "note_type": "Claim",
       "provenance": {
-        "source": {"notion_url": "https://app.notion.com/p/3e2e5855be3981e8afa6cc52cd388323", "title": "What if Ginny Weasley had never possessed Tom Riddle's diary?"},
-        "evidence_note": {"notion_url": "https://app.notion.com/p/3e2e5855be39813cbf45de8ee857a22e", "title": "EV-0067"}
+        "source_id": "SRC-0050",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e2e5855be39813cbf45de8ee857a22e",
+          "title": "EV-0067"
+        }
       }
     },
     {
@@ -188,8 +236,11 @@
       "selection_reason": "真目的開示前にも対象が強大な兵器として認識されていることを固定する。",
       "note_type": "Claim",
       "provenance": {
-        "source": {"notion_url": "https://app.notion.com/p/3e2e5855be39814c818dded924a3c605", "title": "That's So Raven | Halo — Official Site"},
-        "evidence_note": {"notion_url": "https://app.notion.com/p/3e2e5855be39813e8838fa66009757cd", "title": "EV-0068"}
+        "source_id": "SRC-0051",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e2e5855be39813e8838fa66009757cd",
+          "title": "EV-0068"
+        }
       }
     },
     {
@@ -199,8 +250,11 @@
       "selection_reason": "性能向上ではなく目的・作用対象が反転する『真目的』型の比較例。",
       "note_type": "Claim",
       "provenance": {
-        "source": {"notion_url": "https://app.notion.com/p/3e2e5855be39814c818dded924a3c605", "title": "That's So Raven | Halo — Official Site"},
-        "evidence_note": {"notion_url": "https://app.notion.com/p/3e2e5855be3981ddb5c9ecf8f205ec9f", "title": "EV-0069"}
+        "source_id": "SRC-0051",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e2e5855be3981ddb5c9ecf8f205ec9f",
+          "title": "EV-0069"
+        }
       }
     },
     {
@@ -210,8 +264,11 @@
       "selection_reason": "正体再定義型の境界例として、公式資料で確認できる範囲のみ採択する。",
       "note_type": "Claim",
       "provenance": {
-        "source": {"notion_url": "https://app.notion.com/p/3e2e5855be3981b3a3eeee0ec8c18644", "title": "BLEACH: Thousand-Year Blood War — Episode 13 THE BLADE IS ME"},
-        "evidence_note": {"notion_url": "https://app.notion.com/p/3e2e5855be3981de8d19ec97d1b0e125", "title": "EV-0059"}
+        "source_id": "SRC-0043",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e2e5855be3981de8d19ec97d1b0e125",
+          "title": "EV-0059"
+        }
       }
     },
     {
@@ -221,9 +278,158 @@
       "selection_reason": "能力の再解釈と新identity/追加能力の境界を検討するための比較Evidence。",
       "note_type": "Claim",
       "provenance": {
-        "source": {"notion_url": "https://app.notion.com/p/3e2e5855be3981ffb891df9040f61056", "title": "ONE PIECE.com — Hito Hito no Mi, Mythical Zoan Model Nika announcement"},
-        "evidence_note": {"notion_url": "https://app.notion.com/p/3e2e5855be398127a59fde225fea9d65", "title": "EV-0060"}
+        "source_id": "SRC-0044",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e2e5855be398127a59fde225fea9d65",
+          "title": "EV-0060"
+        }
       }
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "SRC-0035",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "3aa923065ee1b8b63aadd6e3fbd2bddb45b105ab"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e2e5855be3981b3987ff353d1223ced"
+    },
+    {
+      "source_id": "SRC-0036",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "c4a3b9e6445a0cbb4b9dfc5c65c8006389309c40"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e2e5855be3981f0b52ee7936ca4bea5"
+    },
+    {
+      "source_id": "SRC-0037",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "289a56473faca2f5a3d6b51ac729fa95d5d75d19"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e2e5855be398190a4a6cf779c3ea934"
+    },
+    {
+      "source_id": "SRC-0038",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "99ede7573942bc1526486c32404255ee92b43d67"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e2e5855be398117a4aaf1401376fba2"
+    },
+    {
+      "source_id": "SRC-0039",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "694bf08c087bf8f4151ed91a998af559be0cf5cd"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e2e5855be398162b7d4ddf9e831e13a"
+    },
+    {
+      "source_id": "SRC-0040",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "b34ff5935f74fdc6388423f950927d4ab559cab9"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e2e5855be3981d9b61fde92b8789780"
+    },
+    {
+      "source_id": "SRC-0041",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "e330d19fb452c34d2952b85e051ac4a83cdefe69"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e2e5855be39811d8c3fd5c7f75a86ef"
+    },
+    {
+      "source_id": "SRC-0042",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "0ddc54dd559fff2ddde28510d754ec641c1fd0e6"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e2e5855be3981d2bd8fe95a9f2a8673"
+    },
+    {
+      "source_id": "SRC-0043",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "357ea44d719450da6c90dfbf455d4fe95aea4574"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e2e5855be3981b3a3eeee0ec8c18644"
+    },
+    {
+      "source_id": "SRC-0044",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "8376fc985ec77cd1069ee2f9e934285ee44c86bf"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e2e5855be3981ffb891df9040f61056"
+    },
+    {
+      "source_id": "SRC-0046",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "825d8026b9ed48a4e4332768c443c330eb64fe7d"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e2e5855be39815a9169c60eaeb76101"
+    },
+    {
+      "source_id": "SRC-0047",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "f607e0ab076bf3ee4a8fa8eb39d734bb48ed79c0"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e2e5855be3981d5ae8ae13424fd42e6"
+    },
+    {
+      "source_id": "SRC-0048",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "edb8b12144e5c0a8d44528fb15e498b59c3f9075"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e2e5855be39814fa2dbff9d075a87dd"
+    },
+    {
+      "source_id": "SRC-0049",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "6caf2d4fce3a020ce00cacb427d12a7f959af1a4"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e2e5855be3981d8b042e201e248de32"
+    },
+    {
+      "source_id": "SRC-0050",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "c6544ce7b4c3c4d0d387c9abbe23233e13f957ca"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e2e5855be3981e8afa6cc52cd388323"
+    },
+    {
+      "source_id": "SRC-0051",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "864bee175247b5543ef4beae5412cfe80ac69ceb"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e2e5855be39814c818dded924a3c605"
     }
   ]
 }
