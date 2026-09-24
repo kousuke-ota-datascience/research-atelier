@@ -1,0 +1,332 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "10_evidence",
+  "investigation_id": "INV-000023",
+  "rq_id": "RQ-0023",
+  "snapshot_at": "2026-09-24T03:35:24.000Z",
+  "evidence_items": [
+    {
+      "evidence_id": "E0001",
+      "content": "融貫社は1881年11月、武蔵・相模の国境周辺の民権家を統合する政治結社として設立され、石阪昌孝・村野常右衛門・細野喜代四郎らのほか都筑・鎌倉郡の有力者も参加した。演説会・討論会を開き、自由党結成後は社員らが大挙して入党した。",
+      "selection_reason": "RQ-0018 accepted INV-000013 E0006から、1890年代政治対立の長期背景となる広域人的・政党ネットワークのみを再選択。",
+      "note_type": "Result",
+      "direct_quote": null,
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be39813ab37ac6973e8e5b13",
+          "title": "町田の民権家と結社"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be39818884f9db6060826dd0",
+          "title": "EV-0127"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0002",
+      "content": "『多摩市史 通史編2』が引用する1892年2月12日付の内海忠勝神奈川県知事から松方正義への報告では、八王子方面に巡査を約100名繰り出したこと、旧議員の石阪昌孝・瀬戸岡為一郎をともに落選させ「味方」の全勝を見込んでいることが述べられている。",
+      "selection_reason": "RQ-0019 accepted INV-000015 E0006から、県知事と三多摩自由党勢力の直接的政治対立を示すEvidenceとして再選択。",
+      "note_type": "Result",
+      "direct_quote": null,
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be39814688adda75a25c4bd9",
+          "title": "SRC-0091"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be3981df9496cbcefa162eee",
+          "title": "EV-0151"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0003",
+      "content": "『多摩市史 通史編2』は、第2回総選挙後も神奈川県内で選挙干渉への抗議が続き、1892年12月12日の神奈川県会で県知事と警部長の罷免建議案が可決され、その後県会が解散されたと記述する。",
+      "selection_reason": "RQ-0019 accepted INV-000015 E0017から、県知事と県会の対立が年末まで継続したことを示す時系列Evidenceとして再選択。",
+      "note_type": "Result",
+      "direct_quote": null,
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be39814688adda75a25c4bd9",
+          "title": "SRC-0091"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be39816f8d88d21ab7fcbe22",
+          "title": "EV-0153"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0004",
+      "content": "東京都公文書館の史料解説は、1891年11月に神奈川県が西多摩郡民の上申を受けて水源涵養林の伐採禁止を解除し、東京府側の水源管理上の懸念と神奈川県側の地域行政判断が衝突していたと説明する。",
+      "selection_reason": "RQ-0021 accepted INV-000017 E0003から、1892年政治対立より前に水源管理問題が存在したことを示すEvidenceとして再選択。",
+      "note_type": "Result",
+      "direct_quote": null,
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be3981129356c8924a2b45ba",
+          "title": "SRC-0097"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be39815a87dbf3324c1a0afb",
+          "title": "EV-0170"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0005",
+      "content": "東京都公文書館の史料解説は、1891年11月の水源涵養林伐採禁止解除を受け、東京府知事富田鉄之助が水源管理を東京府に一元化するため多摩地域の移管を目指し、当初は玉川上水路と水源地に対応する西多摩・北多摩二郡の移管を求めたと説明している。",
+      "selection_reason": "RQ-0021 accepted INV-000017 E0004から、東京府側の初期政策入力と当初対象範囲を示すEvidenceとして再選択。",
+      "note_type": "Result",
+      "direct_quote": null,
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be3981129356c8924a2b45ba",
+          "title": "SRC-0097"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be39815cbb11edc995ed62ca",
+          "title": "EV-0176"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0006",
+      "content": "東京都公文書館の史料解説は、南多摩郡が神奈川県知事内海忠勝の要請で移管対象に追加され、1892年9月20日に東京府知事と神奈川県知事がそれぞれ西南北三多摩郡移管の上申書を政府へ提出したと説明している。",
+      "selection_reason": "RQ-0021 accepted INV-000017 E0005から、西・北多摩案が三郡一括案へ変化する政策過程を示すEvidenceとして再選択。",
+      "note_type": "Result",
+      "direct_quote": null,
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be3981129356c8924a2b45ba",
+          "title": "SRC-0097"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be39818ebaabe9274e431901",
+          "title": "EV-0177"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0007",
+      "content": "1892年9月20日付の内海忠勝内申は、東京市の飲用水路をめぐる府県間の行政上の紛議・困難を述べ、水源山林から水路までを同一管轄に置くことが将来の困難回避に有効だと説明している。また南多摩郡について、多摩川の治水上の連関、三郡の地勢・風俗人情・従来の結合、衆議院議員選挙区が三郡で一体であることを理由に、西・北多摩だけでなく三郡を同一管轄とするのが適当だと内申している。",
+      "selection_reason": "RQ-0020 accepted INV-000016 E0005から、神奈川県知事の公式な三郡一括理由を直接示すEvidenceとして再選択。",
+      "note_type": "Result",
+      "direct_quote": null,
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e4e5855be3981d6aba4dcb9e0c1438f",
+          "title": "SRC-0104"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e4e5855be39813a80c7dacb181e8876",
+          "title": "EV-0171"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0008",
+      "content": "1892年10月19日付の内海忠勝から井上馨への書簡では、内海は三多摩で春以来知事排斥運動が続き、その年の県会で一層の攻撃が予想されると認識していた。内海は自分が放逐されるより三多摩を管轄外へ移す方がよいと考え、準備を進め、県会前の発表を求めていた旨を記している。",
+      "selection_reason": "RQ-0020 accepted INV-000016 E0007から、内海本人の私信に政治的利害が移管準備の判断文脈として現れる直接Evidenceとして再選択。",
+      "note_type": "Result",
+      "direct_quote": null,
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e4e5855be398155a4dac2edc1a47e99",
+          "title": "SRC-0105"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e4e5855be3981b9b2eedb4be492f285",
+          "title": "EV-0172"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0009",
+      "content": "帝国議会で内務省県治局長の大森鍾一は、三多摩移管の必要は東京市の飲用水道と新水道計画に由来し、水源涵養、森林保護、衛生警察上の取締を同一管轄で行う必要があると政府理由を説明した。",
+      "selection_reason": "RQ-0020 accepted INV-000016 E0001から、中央政府が法案提出時に採用した公式理由を示すEvidenceとして再選択。",
+      "note_type": "Result",
+      "direct_quote": null,
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be39816bbcbafa8d4c643ddf",
+          "title": "SRC-0094"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be3981fd8957d5d39690a8f0",
+          "title": "EV-0159"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0010",
+      "content": "大森鍾一は、水道との直接関係が薄い南多摩郡も含める理由として、三多摩の歴史的・地理的・交通上の一体性に加え、南多摩だけを神奈川県に残すと衆議院選挙区を作り直す不便が生じることを挙げた。",
+      "selection_reason": "RQ-0020 accepted INV-000016 E0002から、三郡一括範囲が水道理由だけでは説明されないことを示すEvidenceとして再選択。",
+      "note_type": "Result",
+      "direct_quote": null,
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be39816bbcbafa8d4c643ddf",
+          "title": "SRC-0094"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be398169b548d814cf0e1931",
+          "title": "EV-0160"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0011",
+      "content": "1893年2月28日の衆議院本会議で特別委員長工藤行幹は、委員会が三多摩を東京府へ移さなければ東京市の用水保護ができないかを主要論点として調査し、管轄替をしなくても水道保護の目的は達成可能と判断して法案を否決した旨を報告した。",
+      "selection_reason": "RQ-0021 accepted INV-000017 E0015から、水源目的の存在と境域変更の必要性を区別する同時代反証として再選択。",
+      "note_type": "Result",
+      "direct_quote": null,
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be39816a9d80ec58ada919bf",
+          "title": "SRC-0103"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be39819b9c93ef2cc83dcd0f",
+          "title": "EV-0183"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0012",
+      "content": "第4回帝国議会の境域変更法案委員長報告は、三多摩の境域変更について希望側の請願が11通667人、反対側が19通3552人であったと報告しており、移管そのものに対して組織化された賛否双方の意思表明が存在した。",
+      "selection_reason": "RQ-0020 accepted INV-000016 E0015から、住民・地域側の賛否が併存したことを示すEvidenceとして再選択。請願数は支持率として扱わない。",
+      "note_type": "Result",
+      "direct_quote": null,
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e4e5855be398188b180ff47b6187bcc",
+          "title": "SRC-0107"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e4e5855be39818b96c0f120e6272aa6",
+          "title": "EV-0199"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0013",
+      "content": "東京都公文書館の史料解説は、三多摩の東京府移管をめぐり地域側が賛成派と反対派に分かれ、演説会や帝国議会・内務大臣への請願を行ったと説明する。とりわけ西多摩・南多摩では町村長・助役の辞職や役場封鎖も生じたとしており、地域側を単一意思として扱えないこと、反対が行政的抵抗の形も取ったことを示す。",
+      "selection_reason": "RQ-0022 accepted INV-000019 E0001から、地域側の内部差異と行政的抵抗を示すEvidenceとして再選択。",
+      "note_type": "Result",
+      "direct_quote": null,
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be3981129356c8924a2b45ba",
+          "title": "東京都公文書館「第13回 西南北多摩郡東京府移管反対運動」"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e4e5855be3981bdafc1cd528629ab82",
+          "title": "EV-0185"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0014",
+      "content": "『多摩市史 通史編2』は、法案可決後の1893年3月3日、神奈川県議らから第五議会への境域復旧議案提出を求められた石阪昌孝が、その要望を自由党代議士総会へ提出して賛成を求めたが、党中央の代議士は不可としたと叙述する。地域側の境域復旧要求と自由党中央の判断が一致していなかったことを示す。",
+      "selection_reason": "RQ-0022 accepted INV-000019 E0003から、移管後の地域政治が旧県域の要求と党中央の不一致を含んだことを示すEvidenceとして再選択。",
+      "note_type": "Result",
+      "direct_quote": null,
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be3981e89190c5df7e3de208",
+          "title": "『多摩市史 通史編2 近現代』第四章第四節「三多摩の東京府編入問題」"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e4e5855be39816f8838c6f230f28033",
+          "title": "EV-0187"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0015",
+      "content": "1893年4月5日、三郡交渉会の代表委員である土方篠三郎（七生村）、富沢政賢（多摩村）、大平安三（八王子町）、井上吉之助（鶴川村）らは、八王子の東京府知事富田鉄之助の宿所を訪れ、境域復旧を請願する予定であるため諸制度を神奈川県方式のまま据え置くよう申し入れた。この史料から、井上吉之助が鶴川村の代表として具体的な復旧運動・交渉行動に参加したことを確認できる。",
+      "selection_reason": "RQ-0022 accepted INV-000019 E0006から、現在の町田市域に属する具体的主体の移管後交渉を示すEvidenceとして再選択。",
+      "note_type": "Result",
+      "direct_quote": null,
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be3981e89190c5df7e3de208",
+          "title": "『多摩市史 通史編2 近現代』第四章第四節「三多摩の東京府編入問題」"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e4e5855be3981c29aacebaf3188567a",
+          "title": "EV-0190"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0016",
+      "content": "1893年3月15日の神奈川県自由党大会には山田東次、石阪昌孝ら県選出代議士、県議、森久保作蔵ら250余人が参加し、三多摩を含む神奈川県域を網羅する自由党武相支部を従来どおり維持すること、総理大臣・内務大臣へ境域復旧の陳情書を提出することを決めたと『多摩市史』は記す。反対・復旧運動が村単位だけでなく旧神奈川県域の党組織ネットワークで継続されたことを示す。",
+      "selection_reason": "RQ-0022 accepted INV-000019 E0007から、新しい府県境を越えて旧神奈川県域の政治ネットワークが継続したことを示すEvidenceとして再選択。",
+      "note_type": "Result",
+      "direct_quote": null,
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be3981e89190c5df7e3de208",
+          "title": "『多摩市史 通史編2 近現代』第四章第四節「三多摩の東京府編入問題」"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e4e5855be3981e4b939cf4dd72f8ed3",
+          "title": "EV-0191"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0017",
+      "content": "東京都水道局の玉川上水史年表は、1893年の三多摩地域東京府編入と同年の「東京府が上水道として玉川上水を一元管理」を同一項目で記載している。",
+      "selection_reason": "RQ-0021 accepted INV-000017 E0012から、移管後に水源・上水管理の制度的一元化が実現したことを示すEvidenceとして再選択。",
+      "note_type": "Result",
+      "direct_quote": null,
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be3981feb696c54d4394ad37",
+          "title": "SRC-0101"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be39810dbeb5f7e503a0aad2",
+          "title": "EV-0180"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0018",
+      "content": "町田市公式ページは、町田市が1958年2月1日に町田町・鶴川村・忠生村・堺村の1町3村の合併により成立したと説明する。したがって、歴史上の鶴川村は現在の町田市域を構成した地域の一つとして位置づけられる。",
+      "selection_reason": "RQ-0022 accepted INV-000019 E0011から、1893年の地域主体と現在の町田市域との地理的連続性を確認するために再選択。",
+      "note_type": "Result",
+      "direct_quote": null,
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e4e5855be39815b875ded5183bd8c03",
+          "title": "まちだってこんなまち"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e4e5855be398135b747c50f83fc0df8",
+          "title": "EV-0204"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0019",
+      "content": "1893年3月6日の東京府文書では、羽村の玉川上水取入口にいた東京府第二課出張員から反対運動の動向報告を受けた東京府知事富田鉄之助が、その「不穏の景況」を内務大臣へ内申し、警視総監および神奈川県知事にも同内容を通知した。これは、東京府が取水口周辺の反対運動を行政的に把握し、その情報を中央政府・警察・隣県との間で共有していたことを直接示す。",
+      "selection_reason": "RQ-0021 accepted INV-000017 E0018から、法案可決後の実施段階で東京府・中央政府・警察・神奈川県間の情報共有が行われたことを示すEvidenceとして再選択。初期動機には遡及させない。",
+      "note_type": "Result",
+      "direct_quote": null,
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be3981129356c8924a2b45ba",
+          "title": "SRC-0097"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e4e5855be3981cb83bfd34401bdc8c0",
+          "title": "EV-0205"
+        }
+      }
+    }
+  ]
+}
