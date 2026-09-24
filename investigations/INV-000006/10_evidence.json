@@ -1,5 +1,5 @@
 {
-  "schema_version": "2.0.0",
+  "schema_version": "2.1.0",
   "artifact_type": "10_evidence",
   "investigation_id": "INV-000006",
   "rq_id": "RQ-0017",
@@ -13,10 +13,7 @@
       "note_type": "Data",
       "direct_quote": null,
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be39818eb4eced92d18837a6",
-          "title": "絹の道"
-        },
+        "source_id": "SRC-0077",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be3981799378d157a3f5b374",
           "title": "EV-0103"
@@ -31,10 +28,7 @@
       "note_type": "Data",
       "direct_quote": null,
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be3981d49c81fd79c1d26eff",
-          "title": "製糸―明治期の生糸検査・商標資料"
-        },
+        "source_id": "SRC-0072",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be398168aab6d482ab1098da",
           "title": "EV-0104"
@@ -49,10 +43,7 @@
       "note_type": "Data",
       "direct_quote": null,
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be3981d49c81fd79c1d26eff",
-          "title": "製糸―明治期の生糸検査・商標資料"
-        },
+        "source_id": "SRC-0072",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be398114806bdf8cbece38fe",
           "title": "EV-0105"
@@ -67,10 +58,7 @@
       "note_type": "Claim",
       "direct_quote": null,
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be3981b095d8c718edcb0e79",
-          "title": "商標―横浜開港資料館所蔵 生糸商標"
-        },
+        "source_id": "SRC-0070",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be39817384c0f727c174cbff",
           "title": "EV-0106"
@@ -85,10 +73,7 @@
       "note_type": "Claim",
       "direct_quote": null,
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be3981b095d8c718edcb0e79",
-          "title": "商標―横浜開港資料館所蔵 生糸商標"
-        },
+        "source_id": "SRC-0070",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be3981c3bcc3e0975d13fcdf",
           "title": "EV-0107"
@@ -103,10 +88,7 @@
       "note_type": "Claim",
       "direct_quote": null,
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be398116a422c42d64cf8d11",
-          "title": "明治初期横浜居留地の生糸取引における制度とその形成過程―『連合生糸荷預所事件』の経済的意義"
-        },
+        "source_id": "SRC-0069",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be3981dfa8a6eb557eab184a",
           "title": "EV-0108"
@@ -121,10 +103,7 @@
       "note_type": "Claim",
       "direct_quote": null,
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be398116a422c42d64cf8d11",
-          "title": "明治初期横浜居留地の生糸取引における制度とその形成過程―『連合生糸荷預所事件』の経済的意義"
-        },
+        "source_id": "SRC-0069",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be3981ac85f8ddaa7df1f279",
           "title": "EV-0109"
@@ -139,10 +118,7 @@
       "note_type": "Data",
       "direct_quote": null,
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be3981948039f7461a2756d6",
-          "title": "横浜生糸改会社創立（1873年）―横浜歴史年表"
-        },
+        "source_id": "SRC-0075",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be39818cae4cc4dacdf9fe6f",
           "title": "EV-0110"
@@ -157,10 +133,7 @@
       "note_type": "Claim",
       "direct_quote": null,
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be398120a1c5dd85739fa08f",
-          "title": "大規模製糸工場の成立とアメリカ市場―合資岡谷製糸会社における経営発展と商標の確立"
-        },
+        "source_id": "SRC-0071",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be39815085d2e8bbddfe0601",
           "title": "EV-0111"
@@ -175,10 +148,7 @@
       "note_type": "Data",
       "direct_quote": null,
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be39816489eac1d1a5f45348",
-          "title": "長野市誌 第五巻 歴史編 近代1―製糸業と生糸出荷"
-        },
+        "source_id": "SRC-0073",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be398172a920c7fc5c1653e8",
           "title": "EV-0114"
@@ -193,10 +163,7 @@
       "note_type": "Data",
       "direct_quote": null,
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be39816c9426c908f8f996f4",
-          "title": "アメリカ市場で日本産生糸はどのようにして取引されていたのか"
-        },
+        "source_id": "SRC-0076",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be3981a2ada8c9e2612f3cca",
           "title": "EV-0116"
@@ -211,10 +178,7 @@
       "note_type": "Claim",
       "direct_quote": null,
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be39816c9426c908f8f996f4",
-          "title": "アメリカ市場で日本産生糸はどのようにして取引されていたのか"
-        },
+        "source_id": "SRC-0076",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be3981ae9eb1c860c082180f",
           "title": "EV-0117"
@@ -229,10 +193,7 @@
       "note_type": "Data",
       "direct_quote": null,
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be398133b695d73273e232cd",
-          "title": "詐欺取財ノ件（明治29年第558号）"
-        },
+        "source_id": "SRC-0067",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be3981deb2fddeee11c1d80b",
           "title": "EV-0096"
@@ -247,10 +208,7 @@
       "note_type": "Data",
       "direct_quote": null,
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be39818aa69fd0be04839e1c",
-          "title": "アメリカ市場で日本産生糸が躍進した理由について"
-        },
+        "source_id": "SRC-0078",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be39812cb7ece7d3ff855ef3",
           "title": "EV-0118"
@@ -265,10 +223,7 @@
       "note_type": "Data",
       "direct_quote": null,
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be39818aa69fd0be04839e1c",
-          "title": "アメリカ市場で日本産生糸が躍進した理由について"
-        },
+        "source_id": "SRC-0078",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be398198b4abde6bcadd1689",
           "title": "EV-0119"
@@ -283,10 +238,7 @@
       "note_type": "Claim",
       "direct_quote": null,
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be39818aa69fd0be04839e1c",
-          "title": "アメリカ市場で日本産生糸が躍進した理由について"
-        },
+        "source_id": "SRC-0078",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be3981bf83dfd63142aed50b",
           "title": "EV-0120"
@@ -301,15 +253,104 @@
       "note_type": "Data",
       "direct_quote": null,
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be398133b695d73273e232cd",
-          "title": "詐欺取財ノ件（明治29年第558号）"
-        },
+        "source_id": "SRC-0067",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be3981b9ad43ca3a6d6d0d69",
           "title": "EV-0121"
         }
       }
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "SRC-0067",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "b473d31bac56e88af0c2a8ab1926827845f11532"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e3e5855be398133b695d73273e232cd"
+    },
+    {
+      "source_id": "SRC-0069",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "9188294c483b7c61574d6471f5bedd27b52e12c4"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e3e5855be398116a422c42d64cf8d11"
+    },
+    {
+      "source_id": "SRC-0070",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "95e666ccd24268b2c7aef19f042a489ac82a54cc"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e3e5855be3981b095d8c718edcb0e79"
+    },
+    {
+      "source_id": "SRC-0071",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "80761073e9db3be6dd34773ea0dc1405c9694df6"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e3e5855be398120a1c5dd85739fa08f"
+    },
+    {
+      "source_id": "SRC-0072",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "0600e6d689b97cdae41fc860fd7e378ebf8ae955"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e3e5855be3981d49c81fd79c1d26eff"
+    },
+    {
+      "source_id": "SRC-0073",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "8410a0e498f5f510550458cd7b9023a93c0745cf"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e3e5855be39816489eac1d1a5f45348"
+    },
+    {
+      "source_id": "SRC-0075",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "cde493b2735ff8a8791a37929993950c445b4e10"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e3e5855be3981948039f7461a2756d6"
+    },
+    {
+      "source_id": "SRC-0076",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "21b252c8ad56249708fe79ac84b4363d8b1d8c83"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e3e5855be39816c9426c908f8f996f4"
+    },
+    {
+      "source_id": "SRC-0077",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "b7b932420bea91be0ff50684c4c1485d31a76ddd"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e3e5855be39818eb4eced92d18837a6"
+    },
+    {
+      "source_id": "SRC-0078",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "df84021d32fe0ed8f8f3fcbef2b2809787636055"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e3e5855be39818aa69fd0be04839e1c"
     }
   ]
 }
