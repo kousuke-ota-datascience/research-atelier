@@ -1,0 +1,77 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "10_evidence",
+  "investigation_id": "INV-000022",
+  "rq_id": "RQ-0012",
+  "snapshot_at": "2026-09-24T03:33:36.578Z",
+  "evidence_items": [
+    {
+      "evidence_id": "E0001",
+      "content": "Concept drift refers to an online supervised-learning setting in which the relationship between input data and the target variable changes over time; adaptation methods therefore address changing predictive relationships rather than prediction-error magnitude alone.",
+      "source_locator": "Abstract",
+      "selection_reason": "Defines the semantic condition that distinguishes relationship change from a generic increase in observed error.",
+      "note_type": "Definition",
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e5e5855be398173b45beceaadb55345",
+          "title": "SRC-0116"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e5e5855be3981a8b267cfe69655b3cb",
+          "title": "EV-0212"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0002",
+      "content": "Adaptive data-driven soft-sensor methods can be classified into moving-window, recursive-adaptation, and ensemble-based approaches. The review treats concept drift as a model-maintenance problem and shows that adaptation is not restricted to complete replacement or retraining of the base model.",
+      "source_locator": "Abstract",
+      "selection_reason": "Shows that model maintenance has multiple adaptation levels, so full base-model retraining is not the default response to every degradation signal.",
+      "note_type": "Theory",
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e5e5855be3981a1a921ecce7be5738d",
+          "title": "SRC-0117"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e5e5855be39812fb71bf4c5bdf4715d",
+          "title": "EV-0213"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0003",
+      "content": "An industrial soft-sensor maintenance method used a Kalman-filter-based model-mismatch index together with T² and SPE process-monitoring indices to monitor prediction performance and guide model-update timing; the subsequent PLS update incorporated new process-condition samples.",
+      "source_locator": "Abstract",
+      "selection_reason": "Provides industrial evidence that update timing can be based on persistent model mismatch together with process-state monitoring rather than error magnitude alone.",
+      "note_type": "Method",
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e5e5855be39810d91a7ddae10180289",
+          "title": "SRC-0118"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e5e5855be398105b301f5aec1a68925",
+          "title": "EV-0214"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0004",
+      "content": "For production ML systems, testing and monitoring are central to production readiness and technical-debt reduction; the paper presents 28 concrete tests and monitoring needs derived from production experience, supporting explicit monitoring before maintenance actions are automated.",
+      "source_locator": "Abstract",
+      "selection_reason": "Supports treating retraining as a monitored lifecycle action rather than a reflexive response to a single metric excursion.",
+      "note_type": "Claim",
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e5e5855be398167832ed278b9f35a87",
+          "title": "SRC-0119"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e5e5855be398178bea0e0bc22e86c06",
+          "title": "EV-0215"
+        }
+      }
+    }
+  ]
+}
