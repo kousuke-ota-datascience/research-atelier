@@ -1,5 +1,5 @@
 {
-  "schema_version": "2.0.0",
+  "schema_version": "2.1.0",
   "artifact_type": "10_evidence",
   "investigation_id": "INV-000015",
   "rq_id": "RQ-0019",
@@ -12,10 +12,7 @@
       "selection_reason": "民権運動から全国政党への組織的接続を示す。",
       "note_type": "Claim",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be398139ac7afa013f49cdaa",
-          "title": "SRC-0081"
-        },
+        "source_id": "SRC-0081",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be39815590e9e4769d0f390e",
           "title": "EV-0138"
@@ -29,10 +26,7 @@
       "selection_reason": "自由党解党後の再組織化と派閥分化を示す。",
       "note_type": "Claim",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be398139ac7afa013f49cdaa",
-          "title": "SRC-0081"
-        },
+        "source_id": "SRC-0081",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be3981c4ab5ee13bbd8ac9b7",
           "title": "EV-0139"
@@ -46,10 +40,7 @@
       "selection_reason": "選挙政治以前から多摩地域で壮士活動が存在した背景を保持する。",
       "note_type": "Claim",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be398139ac7afa013f49cdaa",
-          "title": "SRC-0081"
-        },
+        "source_id": "SRC-0081",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be398168a8e8e00b7c17f249",
           "title": "EV-0143"
@@ -63,10 +54,7 @@
       "selection_reason": "1890年前後の吉野・石阪・瀬戸岡の党派関係が固定的ではなく再編されたことを示す。",
       "note_type": "Claim",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be3981e290adffd7915ede8e",
-          "title": "SRC-0092"
-        },
+        "source_id": "SRC-0092",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be3981e2ad6cf8080ccc279d",
           "title": "EV-0154"
@@ -80,10 +68,7 @@
       "selection_reason": "第2回総選挙時点の候補者ブロックを具体化する。",
       "note_type": "Claim",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be39814688adda75a25c4bd9",
-          "title": "SRC-0091"
-        },
+        "source_id": "SRC-0091",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be39811cac67eecb3b6499ac",
           "title": "EV-0150"
@@ -97,10 +82,7 @@
       "selection_reason": "神奈川県知事自身の報告を通じ、県第3区における警察動員と自由党候補敗北の意図を示す。",
       "note_type": "Data",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be39814688adda75a25c4bd9",
-          "title": "SRC-0091"
-        },
+        "source_id": "SRC-0091",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be3981df9496cbcefa162eee",
           "title": "EV-0151"
@@ -114,10 +96,7 @@
       "selection_reason": "選挙区内での拘束と選挙結果の関係を記述する。",
       "note_type": "Claim",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be39814688adda75a25c4bd9",
-          "title": "SRC-0091"
-        },
+        "source_id": "SRC-0091",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be3981e3b37ee3e31d603819",
           "title": "EV-0152"
@@ -131,10 +110,7 @@
       "selection_reason": "第3区の得票結果を定量的に確認する。",
       "note_type": "Data",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be3981f8b8fad2094537ddac",
-          "title": "SRC-0087"
-        },
+        "source_id": "SRC-0087",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be3981d79db0f62342873a38",
           "title": "EV-0146"
@@ -148,10 +124,7 @@
       "selection_reason": "神奈川県史による第3区固有の選挙干渉・衝突の叙述を保持する。",
       "note_type": "Claim",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be3981f8b8fad2094537ddac",
-          "title": "SRC-0087"
-        },
+        "source_id": "SRC-0087",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be3981dd90dae3385a1e5013",
           "title": "EV-0157"
@@ -165,10 +138,7 @@
       "selection_reason": "第3区の出来事を全国的な政府の候補者分類・選挙干渉の文脈に位置づける。",
       "note_type": "Data",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be398129a165f60b65228a10",
-          "title": "SRC-0088"
-        },
+        "source_id": "SRC-0088",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be3981d29dcdf6763ce55975",
           "title": "EV-0147"
@@ -182,10 +152,7 @@
       "selection_reason": "第2回総選挙における全国的な干渉の強度を示す。",
       "note_type": "Claim",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be398129a165f60b65228a10",
-          "title": "SRC-0088"
-        },
+        "source_id": "SRC-0088",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be39813ba9facc06afb98af5",
           "title": "EV-0148"
@@ -199,10 +166,7 @@
       "selection_reason": "選挙干渉の全国レベルの効果を第3区の局地的結果と区別して比較する。",
       "note_type": "Result",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be3981b9ab33c8cb1e9a402d",
-          "title": "SRC-0089"
-        },
+        "source_id": "SRC-0089",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be39813c9487e785998c1785",
           "title": "EV-0149"
@@ -216,10 +180,7 @@
       "selection_reason": "大須賀明殺害事件と地域の選挙対立の直接的関係を、裁判史料翻刻から確認する。",
       "note_type": "Data",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be398104b5bde8d128b9623a",
-          "title": "SRC-0098"
-        },
+        "source_id": "SRC-0098",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be39818fa8d2e23b5e98ccea",
           "title": "EV-0171"
@@ -233,10 +194,7 @@
       "selection_reason": "地域指導者への謀殺教唆帰責をSourceの範囲内に限定するため。",
       "note_type": "Data",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be398104b5bde8d128b9623a",
-          "title": "SRC-0098"
-        },
+        "source_id": "SRC-0098",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be3981c3a175f2340b919ca6",
           "title": "EV-0172"
@@ -250,10 +208,7 @@
       "selection_reason": "凌霜館が事件関係者の政治・文武活動の集会空間だったことを裁判史料翻刻から確認する。",
       "note_type": "Data",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be398104b5bde8d128b9623a",
-          "title": "SRC-0098"
-        },
+        "source_id": "SRC-0098",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be3981e08109e08a1bd22a8c",
           "title": "EV-0173"
@@ -267,10 +222,7 @@
       "selection_reason": "裁判史料翻刻から得た事件構造を県史叙述で独立に照合する。",
       "note_type": "Claim",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be3981f8b8fad2094537ddac",
-          "title": "SRC-0087"
-        },
+        "source_id": "SRC-0087",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be3981cbb99eec51b43edaf4",
           "title": "EV-0158"
@@ -284,10 +236,7 @@
       "selection_reason": "選挙干渉が投票後も県政上の責任追及へ続いたことを示す。",
       "note_type": "Claim",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be39814688adda75a25c4bd9",
-          "title": "SRC-0091"
-        },
+        "source_id": "SRC-0091",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be39816f8d88d21ab7fcbe22",
           "title": "EV-0153"
@@ -301,10 +250,7 @@
       "selection_reason": "吉野を第2回総選挙時点から後発の国民協会員として扱う時系列誤認を防ぐ。",
       "note_type": "Data",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be39812588f5ec265745697a",
-          "title": "SRC-0093"
-        },
+        "source_id": "SRC-0093",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be398136b710eea691b703b0",
           "title": "EV-0155"
@@ -318,15 +264,86 @@
       "selection_reason": "1892年選挙闘争と三多摩移管を結ぶ後世の地域史解釈を、RQ-0020へ渡す検証対象として保持する。",
       "note_type": "Claim",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be398139ac7afa013f49cdaa",
-          "title": "SRC-0081"
-        },
+        "source_id": "SRC-0081",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be39814d8312d5c48bbf829d",
           "title": "EV-0142"
         }
       }
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "SRC-0081",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "bb47f2f45fa7313d650b37889884f22a40ebf7c1"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e3e5855be398139ac7afa013f49cdaa"
+    },
+    {
+      "source_id": "SRC-0087",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "f75c60e3754ee96a7edbb80947eb797f9475afbd"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e3e5855be3981f8b8fad2094537ddac"
+    },
+    {
+      "source_id": "SRC-0088",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "d1f13e56c8fed41a993e6e0ac3ba19a4ec9253e1"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e3e5855be398129a165f60b65228a10"
+    },
+    {
+      "source_id": "SRC-0089",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "6f99b51efed26736dc4adbb85031bbcbff67ee95"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e3e5855be3981b9ab33c8cb1e9a402d"
+    },
+    {
+      "source_id": "SRC-0091",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "30faf36c6462fe3ccdb111395b1be52956084fcf"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e3e5855be39814688adda75a25c4bd9"
+    },
+    {
+      "source_id": "SRC-0092",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "b78325c03c0dce319a3a85bfabede3a835bb5464"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e3e5855be3981e290adffd7915ede8e"
+    },
+    {
+      "source_id": "SRC-0093",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "7ca777700c9946bcf595162434a75cb36e45e7a6"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e3e5855be39812588f5ec265745697a"
+    },
+    {
+      "source_id": "SRC-0098",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "aaca26213598090f289bc5ce00a5ceb16f9eafbe"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e3e5855be398104b5bde8d128b9623a"
     }
   ]
 }
