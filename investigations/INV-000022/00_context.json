@@ -1,0 +1,18 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "00_context",
+  "investigation_id": "INV-000022",
+  "rq_id": "RQ-0012",
+  "context_state": "frozen",
+  "question": {
+    "text": "製造プロセスにおいて、品質予測モデル本体を固定した逐次的な予測誤差補正を継続するよりも、品質予測モデル自体の再学習へ移行することが妥当と判断される条件は何か？",
+    "notion_url": "https://app.notion.com/p/3e1e5855be398117a2cac053e6e3e876"
+  },
+  "question_type": "Methodological",
+  "scope": "新しい実績データを用いてbase prediction modelのparameterを変更する行為全般をretrainingと定義し、外部補正の継続、モデル以外の原因（sensor / process / actuation / data pipeline等）の調査・是正、base model再学習の3選択肢のうち、再学習へ移行することが妥当と判断される条件を対象とする。prediction error増加のみを再学習triggerとはせず、補正後性能、bias、error distribution、補正量、drift / OOD、operating region変化等を候補signalとして扱う。再学習アルゴリズム、hyperparameter optimization、自動training、自動validation、自動deploymentは主対象外とする。特定の数値thresholdは事前固定しない。batch / lot / continuousには限定せず、直近の適用先はcontinuous processである。Sourceはmodel monitoring、concept drift、soft sensor / quality prediction、statistical process monitoring、industrial ML lifecycleに関する原著論文、標準・公的資料、公式技術資料を優先する。",
+  "significance": null,
+  "investigation_boundary": {
+    "evidence_cutoff": "2026-09-20T23:59:59+09:00"
+  },
+  "frozen_at": "2026-09-24T03:24:54.559Z"
+}
