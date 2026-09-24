@@ -1,0 +1,182 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "30_analysis",
+  "investigation_id": "INV-000024",
+  "rq_id": "RQ-000024",
+  "analyzed_at": "2026-09-24T12:31:12.440Z",
+  "question_type": "Methodological",
+  "profile": {
+    "method_or_procedure": "因果推論方法論を、ontology上のmethodological roleを先に分離し、その後に複数の分類軸でcross-classifyするcross-disciplinary taxonomy construction。",
+    "intended_use": "因果推論の方法・framework・design・identification strategy・estimator・specialized inferential taskを抽象レベルを混同せず俯瞰し、学習・方法選択・追加調査のナビゲーションに用いる。",
+    "assumptions": [
+      "「因果推論手法」は単一の排他的categoryではなく、複数のmethodological roleを含む。",
+      "一つの方法が複数のclassification axis上の属性を同時に持つことを許容する。",
+      "taxonomyはbest-method rankingではなくmethodological spaceの構造化を目的とする。"
+    ],
+    "evaluation_criteria": [
+      "framework / design / identification / estimation / diagnosticを混同しないこと",
+      "各方法のidentification assumptionsを表現できること",
+      "target estimandとestimation procedureを区別できること",
+      "study/data structureとspecial settingを表現できること",
+      "異分野の用語差を越えてmethodological principleで対応付けられること",
+      "新しい方法familyを追加できる拡張性があること"
+    ],
+    "comparators": [
+      "因果推論手法を一段のflat listとして並べる分類",
+      "experimental / quasi-experimental / observationalだけで分けるdesign-first tree",
+      "potential outcomes / structural causal model等のframeworkだけで分けるframework-first tree"
+    ],
+    "tradeoffs": [
+      "multi-axis taxonomyはflat listより構造的に正確だが、表示・管理するmetadataが増える。",
+      "categoryを非排他的属性として扱うため、単一treeより視覚的に単純ではない。",
+      "各軸の粒度を細かくしすぎるとtaxonomy自体の運用コストが増える。"
+    ],
+    "applicability_limits": [
+      "今回のSource集合は主要familyを横断する目的抽出であり、因果推論全手法のsystematic reviewではない。",
+      "diagnostics / sensitivity analysisのSource coverageは他layerより薄い。",
+      "causal discoveryをcausal inference全体へ含める範囲は分野により異なり得る。",
+      "このtaxonomyは個別研究で必要なidentification proofやmethod choiceを代替しない。"
+    ]
+  },
+  "working_answer": {
+    "text": "因果推論方法論は、RCT・IV・DiD・propensity score・DML・DAGなどを一段の「手法一覧」として並べるのではなく、まず異なるmethodological roleを分離し、その上でmulti-axisに分類するのが整合的である。分類対象のworking ontologyは、A) causal representation / framework、B) study design・identification strategy、C) estimation / adjustment procedure、D) specialized targets / settings、E) causal discovery、F) diagnostics / sensitivity の6 branchとする。主要な分類軸は、1) inferential task、2) methodological role / layer、3) study / data structure、4) identification assumptions / strategy、5) target estimand、6) estimation procedure / model class、7) special setting / validity extension の7軸である。したがって各方法は単一nodeではなく複数軸の属性として表す。例えばDiDはidentification strategyとしてparallel-trends等に依存しつつ、同じidentification setupにoutcome regression・IPW・doubly robust estimatorを組み合わせられる。DMLやTMLEは主としてestimation / inference layerであり、IV・RD・DiDのようなidentification strategyと同列に置くべきではない。causal discoveryもeffect identification / estimationとは別のinferential taskとして独立branchに置く。この構造を基礎taxonomyとし、各branch内で個別familyを階層化するのが現時点の最も一貫した体系化である。",
+    "knowledge_unit_refs": [
+      "K0001",
+      "K0002",
+      "K0003",
+      "K0004",
+      "K0005",
+      "K0006",
+      "K0007",
+      "K0008",
+      "K0009",
+      "K0010",
+      "K0011",
+      "K0012",
+      "K0013",
+      "K0014",
+      "K0015",
+      "K0016",
+      "K0017"
+    ]
+  },
+  "judgments": [
+    {
+      "judgment_id": "J0001",
+      "statement": "因果推論方法論をflatな「手法一覧」として分類すると、framework、identification strategy、estimator、specialized taskという異なる抽象レベルが混在するため、taxonomyとして不十分である。",
+      "knowledge_unit_refs": [
+        "K0001",
+        "K0002",
+        "K0006",
+        "K0014"
+      ]
+    },
+    {
+      "judgment_id": "J0002",
+      "statement": "全体taxonomyは単一の排他的treeより、methodological roleを分けたontologyと7つのclassification axisを組み合わせたmulti-axis構造にするのが妥当である。",
+      "knowledge_unit_refs": [
+        "K0015",
+        "K0016",
+        "K0017"
+      ]
+    },
+    {
+      "judgment_id": "J0003",
+      "statement": "identification strategyとestimation procedureは独立に管理すべきであり、DML・TMLE等のestimation frameworkをIV・RD・DiD等と同じidentification familyとして扱わない。",
+      "knowledge_unit_refs": [
+        "K0004",
+        "K0005",
+        "K0006",
+        "K0014"
+      ]
+    },
+    {
+      "judgment_id": "J0004",
+      "statement": "longitudinal treatment、mediation、heterogeneous effects、interference、transportabilityは、単純なmethod-name familyというより、data structure・estimand・unit interaction・target population等が変わるspecialized inferential settingとして分類する方が整合的である。",
+      "knowledge_unit_refs": [
+        "K0008",
+        "K0009",
+        "K0010",
+        "K0011",
+        "K0012"
+      ]
+    },
+    {
+      "judgment_id": "J0005",
+      "statement": "causal discoveryは、既知または仮定されたcausal structureの下でeffectをidentification / estimationする問題とは異なるため、同一taxonomy内に含める場合でも独立branchとして扱う。",
+      "knowledge_unit_refs": [
+        "K0013",
+        "K0017"
+      ]
+    },
+    {
+      "judgment_id": "J0006",
+      "statement": "個別methodの選択はtaxonomy上のfamily名から直接決めるのではなく、inferential task、estimand、data structure、identification assumptionsを先に定め、その後にcompatibleなestimatorを選ぶ順序が合理的である。",
+      "knowledge_unit_refs": [
+        "K0004",
+        "K0006",
+        "K0008",
+        "K0011",
+        "K0012",
+        "K0014",
+        "K0016"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "text": "今回のSource集合は主要な方法論レイヤーを横断する目的抽出であり、因果推論全手法を列挙するsystematic reviewではない。front-door identification、negative controls、principal stratification、dynamic treatment regimes、proximal causal inference等は個別にSource-level検証していない。",
+      "knowledge_unit_refs": [
+        "K0017"
+      ]
+    },
+    {
+      "text": "diagnostics / sensitivity analysisはmediation sensitivity等を除きSource coverageが薄く、F branchの内部taxonomyは未成熟である。",
+      "knowledge_unit_refs": [
+        "K0009",
+        "K0017"
+      ]
+    },
+    {
+      "text": "propensity-score methodsやsynthetic controlなど、design・adjustment・estimationの境界をまたぐ用語があり、methodological roleを排他的categoryとして固定すると誤分類が生じる。",
+      "knowledge_unit_refs": [
+        "K0003",
+        "K0007",
+        "K0015"
+      ]
+    },
+    {
+      "text": "causal discoveryを「因果推論」の内側に含めるかは分野・文献により境界が異なり得るため、本結果ではeffect inferenceと混ぜず独立branchとして扱う。",
+      "knowledge_unit_refs": [
+        "K0013",
+        "K0017"
+      ]
+    }
+  ],
+  "unresolved_questions": [
+    "7つのclassification axisをNotion / Git上の正式ontology schemaとしてどの粒度で実装するか。",
+    "各branchのsubfamilyをどこまで分割するか。特にg-methods、DiD variants、IV estimators、causal discovery algorithmsの粒度を追加調査する必要がある。",
+    "diagnostics / sensitivity / falsification / negative-control methodsを独立branchとしてどこまで体系化するか。",
+    "causal discoveryをこのTopicの恒常的な下位branchとするか、独立Research Topicとして分離するか。"
+  ],
+  "alternative_interpretations": [
+    {
+      "text": "実務ナビゲーションだけを目的にするならexperimental / quasi-experimental / observationalを最上位に置くdesign-first taxonomyの方が単純である。ただしframework・estimand・estimatorの抽象レベルを十分に表現できない。",
+      "knowledge_unit_refs": [
+        "K0004",
+        "K0005",
+        "K0006",
+        "K0007",
+        "K0015"
+      ]
+    },
+    {
+      "text": "理論体系を最優先するならpotential outcomesとstructural causal / graphical frameworkを最上位に置くframework-first taxonomyも可能である。ただし多くのdesignやestimatorは複数frameworkで表現可能であり、全method spaceを排他的に分ける軸としては弱い。",
+      "knowledge_unit_refs": [
+        "K0002",
+        "K0015",
+        "K0016"
+      ]
+    }
+  ]
+}
