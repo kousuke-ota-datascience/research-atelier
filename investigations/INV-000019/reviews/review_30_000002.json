@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000019",
+  "review_seq": 2,
+  "layer": "30_analysis",
+  "review_kind": "20_synthesis_plus_00_context_to_30_analysis",
+  "target_blob_sha": "f3dc0c2223309ae41aebf7a878e2f65bcd95c225",
+  "assessment": "Working AnswerとJ0001-J0007はQuestion Type=Descriptiveに従い、三多摩・町田市域を単一意思主体として扱わず、確認できる人物・組織・行動形態を記述している。井上吉之助を現在の町田市域の主体として扱うJ0003は、repair後のK0003を介してE0006/E0009/E0011へtraceできる。賛成主体のcoverage不足、参加人数を住民全体へ一般化できないこと、一般住民・女性・非有権者・商工業者の不足、因果効果を同定しないこと、alternative interpretationsも保持されており、20_synthesis bypassやsupport boundaryを越えるoverclaimは確認しなかった。",
+  "findings": [],
+  "verdict": "PASS"
+}

@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000019",
+  "review_seq": 2,
+  "layer": "10_evidence",
+  "review_kind": "source_evidence_note_to_10_evidence",
+  "target_blob_sha": "c71507d01b869caeae77423d1f2ddcee9e922b6e",
+  "assessment": "11件のfrozen Evidenceを確認した。E0001-E0010の既存provenance chainと重要なqualificationは保持され、repairされたE0006は『井上吉之助（鶴川村）』と1893年4月5日の復旧交渉というSRC-0095で直接支えられる範囲に限定された。新規E0011はEV-0204 / SRC-0110を通じ、町田市公式ページが1958年の町田町・鶴川村・忠生村・堺村の合併による町田市成立を明示するため、鶴川村→現在の町田市域という地理対応を独立したauthoritative provenanceで支える。前回F001のtraceability gapは解消され、重要な反証・qualification・uncertaintyの不当な脱落や新たなsource-faithfulness defectは確認しなかった。",
+  "findings": [],
+  "verdict": "PASS"
+}

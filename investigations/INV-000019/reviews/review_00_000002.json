@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000019",
+  "review_seq": 2,
+  "layer": "00_context",
+  "review_kind": "context_semantic_validity",
+  "target_blob_sha": "ec5aa77ae5667f2b2571c81c18b48978f7bff09a",
+  "assessment": "Frozen Research Question、Scope、include / exclude、assumptions、Question Type=Descriptiveは相互に整合している。地域住民を単一意思主体として扱わないこと、同時代の立場と後世の地域記憶を区別すること、現在の町田市域と南多摩全体を自動的に同一視しないことが明示され、current downstream interpretationに必要なunit of analysisとtemporal boundaryも保持されている。repairでは00_context自体は変更されておらず、frozen Contextを変更しなければ解消できないsemantic defectは確認しなかった。",
+  "findings": [],
+  "verdict": "PASS"
+}

@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000019",
+  "review_seq": 2,
+  "layer": "20_synthesis",
+  "review_kind": "10_evidence_to_20_synthesis",
+  "target_blob_sha": "fee3605ff64d2a6e71675b995b85becfab8f4c45",
+  "assessment": "K0003は井上吉之助の行動をE0006/E0009で、鶴川村の現在町田市域への対応をE0011でそれぞれ支え、前回のprovenance gapをSynthesisで越境補完せずcanonical Evidence chain内で解消している。K0001-K0008は賛否併存、南多摩の反対・復旧行動、石阪昌孝の行動、広域ネットワーク、党中央との不一致、法案成立後の要求変化を参照Evidenceのsupport boundary内で表現し、賛成主体のcoverage不足、参加人数を支持率へ変換しない限定、演説内容未復元のuncertaintyも保持している。unsupported proposition、過剰一般化、conflict / uncertainty消失は確認しなかった。",
+  "findings": [],
+  "verdict": "PASS"
+}
