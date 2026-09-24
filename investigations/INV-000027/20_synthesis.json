@@ -1,0 +1,138 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "20_synthesis",
+  "investigation_id": "INV-000027",
+  "rq_id": "RQ-000027",
+  "synthesized_at": "2026-09-24T15:45:00.000Z",
+  "knowledge_units": [
+    {
+      "knowledge_unit_id": "K0001",
+      "statement": "RQ-000025のaccepted resultでは、因果推論方法論の分類対象は単一種類ではなく、framework/representation、estimand、study design、identification、estimation/inference、specialized task/setting等の異なるroleとして現れる。",
+      "evidence_refs": [
+        "E0001"
+      ],
+      "qualifiers": [
+        "roleは排他的とは限らない。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0002",
+      "statement": "RQ-000026のaccepted resultでは、既存分類practiceはpluralで、task、data structure、assumptions、estimand、methodological function、formal framework、complexity、algorithm construction、statistical-vs-ML等の複数軸が使われている。",
+      "evidence_refs": [
+        "E0003"
+      ],
+      "qualifiers": [
+        "各軸は同じ抽象レベルではない。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0003",
+      "statement": "upstream結果には非排他的role、boundary ambiguity、domain-specific axisが含まれるため、単一flat listや単一排他的treeへ直接統合すると情報損失または抽象レベル混在が生じる。",
+      "evidence_refs": [
+        "E0002",
+        "E0004"
+      ],
+      "qualifiers": []
+    },
+    {
+      "knowledge_unit_id": "K0004",
+      "statement": "Nickersonらのtaxonomy developmentでは、purposeに沿うmeta-characteristicを定め、dimensions/characteristicsを反復的に構成し、dimension内characteristicsのmutual exclusivityとcollective exhaustivenessを確認する。",
+      "evidence_refs": [
+        "E0005",
+        "E0006"
+      ],
+      "qualifiers": []
+    },
+    {
+      "knowledge_unit_id": "K0005",
+      "statement": "Kundischらはtaxonomy building processとevaluationの透明化を重視し、usefulness、comprehensiveness、applicability等を評価基準として扱う必要性を示している。",
+      "evidence_refs": [
+        "E0007",
+        "E0008"
+      ],
+      "qualifiers": []
+    },
+    {
+      "knowledge_unit_id": "K0006",
+      "statement": "統合taxonomyは、何を分類するかというontologyと、各対象をどのdimensionでcharacterizeするかというfaceted classificationを分離して設計し、両者の関係を明示する必要がある。",
+      "evidence_refs": [
+        "E0001",
+        "E0002",
+        "E0003",
+        "E0004",
+        "E0005",
+        "E0007"
+      ],
+      "qualifiers": [
+        "これはEvidenceを制約として構成したsynthesisであり、単一文献の既存taxonomyではない。"
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "relation_id": "R0001",
+      "relation_type": "dependency",
+      "knowledge_unit_refs": [
+        "K0001",
+        "K0002",
+        "K0006"
+      ],
+      "description": "ontologyとclassification axesを別入力として扱うことが統合設計の前提になる。",
+      "evidence_refs": [
+        "E0001",
+        "E0003"
+      ]
+    },
+    {
+      "relation_id": "R0002",
+      "relation_type": "qualification",
+      "knowledge_unit_refs": [
+        "K0003",
+        "K0004",
+        "K0006"
+      ],
+      "description": "非排他的roleをそのまま一つのMECE dimensionへ押し込まず、ontology側に保持する必要がある。",
+      "evidence_refs": [
+        "E0002",
+        "E0005"
+      ]
+    }
+  ],
+  "uncertainties": [
+    {
+      "uncertainty_id": "U0001",
+      "description": "RQ-000025/026はsystematic reviewではないため、entity rolesとclassification axesの網羅性は保証されない。",
+      "knowledge_unit_refs": [
+        "K0001",
+        "K0002"
+      ],
+      "evidence_refs": [
+        "E0001",
+        "E0003"
+      ]
+    },
+    {
+      "uncertainty_id": "U0002",
+      "description": "diagnostics/sensitivity、specialized settings、causal discoveryの最終配置にはboundary ruleが必要である。",
+      "knowledge_unit_refs": [
+        "K0001",
+        "K0003"
+      ],
+      "evidence_refs": [
+        "E0002"
+      ]
+    },
+    {
+      "uncertainty_id": "U0003",
+      "description": "facets内のcharacteristicsが実際のmethod corpusでMECEになるかは今後のempirical iterationで検証が必要である。",
+      "knowledge_unit_refs": [
+        "K0004",
+        "K0006"
+      ],
+      "evidence_refs": [
+        "E0005",
+        "E0006"
+      ]
+    }
+  ]
+}
