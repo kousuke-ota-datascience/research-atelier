@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000022",
+  "review_seq": 2,
+  "layer": "10_evidence",
+  "review_kind": "source_evidence_note_to_10_evidence",
+  "target_blob_sha": "dcb6add7e5f5397287587af516ec23ba1e5151a2",
+  "assessment": "The Evidence snapshot is unchanged and remains source-faithful. It supports concept-drift semantics, broad adaptation categories, monitored model-update timing, and production testing/monitoring while not asserting that all adaptation categories preserve a frozen base model.",
+  "findings": [],
+  "verdict": "PASS"
+}

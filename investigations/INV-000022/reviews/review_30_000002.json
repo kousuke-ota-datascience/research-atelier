@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000022",
+  "review_seq": 2,
+  "layer": "30_analysis",
+  "review_kind": "20_synthesis_plus_00_context_to_30_analysis",
+  "target_blob_sha": "96d4f9a1df1f8635cc22ca89f1d396935f2a015d",
+  "assessment": "The repaired analysis resolves Review 1 F002. The comparators now match the frozen scope: fixed base model plus external correction; investigation/correction of non-model causes; and base-parameter update/retraining. Parameter-changing moving-window/recursive/ensemble methods are no longer presented as a fourth fixed-base alternative. Remaining thresholds, diagnostics, sample sufficiency, and comparative advantage are explicitly left unresolved.",
+  "findings": [],
+  "verdict": "PASS"
+}

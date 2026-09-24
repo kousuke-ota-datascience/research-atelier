@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000022",
+  "review_seq": 2,
+  "layer": "20_synthesis",
+  "review_kind": "10_evidence_to_20_synthesis",
+  "target_blob_sha": "91c5cc92d8e6e5272587444db7dea2fd30705574",
+  "assessment": "The repaired synthesis resolves Review 1 F001. K0002 now treats moving-window/recursive/ensemble as broad background categories and explicitly defers fixed-base versus parameter-updating classification to the frozen Investigation definition. K0005 now frames escalation around persistent post-correction mismatch and changed predictive/process conditions, and preserves the absence of a direct external-correction-versus-retraining comparison.",
+  "findings": [],
+  "verdict": "PASS"
+}

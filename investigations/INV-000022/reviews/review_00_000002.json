@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000022",
+  "review_seq": 2,
+  "layer": "00_context",
+  "review_kind": "context_semantic_validity",
+  "target_blob_sha": "935cc420a620cb9e91f3e21bdcd7dee64d422f6d",
+  "assessment": "The frozen Methodological Context remains semantically coherent and unchanged. Its retraining definition and three-way decision boundary are explicit enough to constrain the repaired downstream artifacts.",
+  "findings": [],
+  "verdict": "PASS"
+}
