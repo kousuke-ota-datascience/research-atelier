@@ -14,7 +14,7 @@
   ],
   "properties": {
     "schema_version": {
-      "const": "2.0.0"
+      "enum": ["2.0.0", "2.1.0"]
     },
     "artifact_type": {
       "const": "10_evidence"
@@ -32,15 +32,199 @@
       "type": "string",
       "format": "date-time"
     },
-    "evidence_items": {
+    "sources": {
       "type": "array",
       "items": {
-        "$ref": "#/$defs/evidence_item"
+        "$ref": "#/$defs/source_snapshot"
       }
+    },
+    "evidence_items": {
+      "type": "array"
     }
   },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "schema_version": {
+            "const": "2.0.0"
+          }
+        },
+        "required": ["schema_version"]
+      },
+      "then": {
+        "not": {
+          "required": ["sources"]
+        },
+        "properties": {
+          "evidence_items": {
+            "items": {
+              "$ref": "#/$defs/evidence_item_v20"
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "schema_version": {
+            "const": "2.1.0"
+          }
+        },
+        "required": ["schema_version"]
+      },
+      "then": {
+        "required": ["sources"],
+        "properties": {
+          "evidence_items": {
+            "items": {
+              "$ref": "#/$defs/evidence_item_v21"
+            }
+          }
+        }
+      }
+    }
+  ],
   "$defs": {
-    "evidence_item": {
+    "source_id": {
+      "type": "string",
+      "pattern": "^SRC-(?:[0-9]{4}|[0-9]{6})$"
+    },
+    "source_revision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "commit_sha",
+        "blob_sha"
+      ],
+      "properties": {
+        "commit_sha": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{40}$"
+        },
+        "blob_sha": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{40}$"
+        }
+      }
+    },
+    "source_snapshot": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_id",
+        "source_revision",
+        "accessed_at",
+        "notion_url"
+      ],
+      "properties": {
+        "source_id": {
+          "$ref": "#/$defs/source_id"
+        },
+        "source_revision": {
+          "$ref": "#/$defs/source_revision"
+        },
+        "accessed_at": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "string",
+              "format": "date-time"
+            }
+          ],
+          "description": "Investigation-specific Source access event. null is reserved for historical migration when the actual access time cannot be reconstructed without fabrication."
+        },
+        "notion_url": {
+          "type": "string",
+          "format": "uri",
+          "description": "Human navigation pointer to the Notion Sources catalog row; not Source metadata authority."
+        }
+      }
+    },
+    "evidence_note_ref": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "notion_url"
+          ],
+          "properties": {
+            "notion_url": {
+              "type": "string",
+              "format": "uri"
+            },
+            "title": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "minLength": 1
+            }
+          }
+        }
+      ]
+    },
+    "evidence_common_properties": {
+      "type": "object",
+      "properties": {
+        "evidence_id": {
+          "type": "string",
+          "pattern": "^E[0-9]{4}$"
+        },
+        "content": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_locator": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "selection_reason": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "note_type": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "Claim",
+            "Result",
+            "Method",
+            "Definition",
+            "Theory",
+            "Data",
+            "Limitation",
+            "Counterargument",
+            "Open Question",
+            "Other",
+            null
+          ]
+        },
+        "direct_quote": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        }
+      }
+    },
+    "evidence_item_v20": {
       "type": "object",
       "additionalProperties": false,
       "required": [
@@ -126,31 +310,82 @@
               }
             },
             "evidence_note": {
-              "oneOf": [
-                {
-                  "type": "null"
-                },
-                {
-                  "type": "object",
-                  "additionalProperties": false,
-                  "required": [
-                    "notion_url"
-                  ],
-                  "properties": {
-                    "notion_url": {
-                      "type": "string",
-                      "format": "uri"
-                    },
-                    "title": {
-                      "type": [
-                        "string",
-                        "null"
-                      ],
-                      "minLength": 1
-                    }
-                  }
-                }
-              ]
+              "$ref": "#/$defs/evidence_note_ref"
+            }
+          }
+        }
+      }
+    },
+    "evidence_item_v21": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "evidence_id",
+        "content",
+        "provenance"
+      ],
+      "properties": {
+        "evidence_id": {
+          "type": "string",
+          "pattern": "^E[0-9]{4}$"
+        },
+        "content": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_locator": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "selection_reason": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "note_type": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "Claim",
+            "Result",
+            "Method",
+            "Definition",
+            "Theory",
+            "Data",
+            "Limitation",
+            "Counterargument",
+            "Open Question",
+            "Other",
+            null
+          ]
+        },
+        "direct_quote": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "provenance": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "source_id",
+            "evidence_note"
+          ],
+          "properties": {
+            "source_id": {
+              "$ref": "#/$defs/source_id"
+            },
+            "evidence_note": {
+              "$ref": "#/$defs/evidence_note_ref"
             }
           }
         }
