@@ -1,0 +1,196 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "20_synthesis",
+  "investigation_id": "INV-000026",
+  "rq_id": "RQ-000026",
+  "synthesized_at": "2026-09-24T15:16:00.000Z",
+  "knowledge_units": [
+    {
+      "knowledge_unit_id": "K0001",
+      "statement": "既存文献はcausalityをinferential taskで分類しており、causal discoveryとcausal inferenceを別taskとして区別する例がある。",
+      "evidence_refs": [
+        "E0002"
+      ],
+      "qualifiers": []
+    },
+    {
+      "knowledge_unit_id": "K0002",
+      "statement": "data structure / data typeは既存の分類軸として用いられ、causal discovery methodsがcross-sectional、time-series、longitudinalで整理される例がある。",
+      "evidence_refs": [
+        "E0003"
+      ],
+      "qualifiers": [
+        "これは主としてcausal discoveryのreview内の分類。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0003",
+      "statement": "identification assumptions / assignment settingは既存の主要分類軸である。experiments、observational with unconfoundedness、observational without unconfoundednessという区分や、SUTVA・ignorability・positivityを満たすか否かによる区分が使われている。",
+      "evidence_refs": [
+        "E0004",
+        "E0006"
+      ],
+      "qualifiers": [
+        "各文献のscopeは異なる。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0004",
+      "statement": "target estimand / causal effectのgranularityも整理軸として用いられ、ITE、ATE、ATT、CATE等が区別される。",
+      "evidence_refs": [
+        "E0005"
+      ],
+      "qualifiers": []
+    },
+    {
+      "knowledge_unit_id": "K0005",
+      "statement": "methodological function / workflow stageを分類原理とする文献があり、identification strategies、supplementary robustness/sensitivity analyses、machine-learning advancesという区分が示されている。",
+      "evidence_refs": [
+        "E0007"
+      ],
+      "qualifiers": [
+        "applied econometrics / policy evaluationという分野固有のreview構造。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0006",
+      "statement": "causal theory / formal framework自体を分類軸にするtaxonomyがあり、potential outcomes、structural causal model、general counterfactualsを区別する例がある。",
+      "evidence_refs": [
+        "E0008"
+      ],
+      "qualifiers": [
+        "recommender systemsを対象にしたdomain-specific taxonomyである。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0007",
+      "statement": "modeling complexity / longitudinal complexityを体系化原理とするmonographがあり、causal inference without models、with models、complex longitudinal dataという段階構成が採用されている。",
+      "evidence_refs": [
+        "E0001"
+      ],
+      "qualifiers": [
+        "book structureであり、著者が普遍taxonomyとして主張しているとは限らない。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0008",
+      "statement": "algorithm construction / computational principleはmethod familyの分類に使われ、causal discoveryではconstraint-based、score-based、functional-causal-model-based等が区別される。",
+      "evidence_refs": [
+        "E0003",
+        "E0009"
+      ],
+      "qualifiers": [
+        "主にcausal discovery内部のsubtaxonomy。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0009",
+      "statement": "traditional statistical methodsとmachine-learning-enhanced methodsのように、estimation/modeling technologyを軸とする分類も既存surveyで用いられている。",
+      "evidence_refs": [
+        "E0006",
+        "E0007"
+      ],
+      "qualifiers": [
+        "identification axisとは別の分類次元として現れる。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0010",
+      "statement": "今回確認した既存文献では、単一の共通taxonomyではなく、task、data structure、assumptions、estimand、methodological function、causal theory、modeling complexity、algorithm construction、statistical/ML familyなど複数の異なる分類軸が目的に応じて使われている。",
+      "evidence_refs": [
+        "E0001",
+        "E0002",
+        "E0003",
+        "E0004",
+        "E0005",
+        "E0006",
+        "E0007",
+        "E0008",
+        "E0009"
+      ],
+      "qualifiers": [
+        "これは今回の選択Source範囲でのdescriptive synthesisであり、因果推論全分野のsystematic reviewではない。"
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "relation_id": "R0001",
+      "relation_type": "association",
+      "knowledge_unit_refs": [
+        "K0003",
+        "K0004"
+      ],
+      "description": "assumption/settingとestimandは同じmethodを異なる観点から整理する別軸として併用され得る。",
+      "evidence_refs": [
+        "E0004",
+        "E0005",
+        "E0006"
+      ]
+    },
+    {
+      "relation_id": "R0002",
+      "relation_type": "association",
+      "knowledge_unit_refs": [
+        "K0006",
+        "K0007",
+        "K0009"
+      ],
+      "description": "framework、modeling complexity、statistical/ML familyは理論・実装・教育上の異なる目的を反映した分類原理である。",
+      "evidence_refs": [
+        "E0001",
+        "E0006",
+        "E0008"
+      ]
+    },
+    {
+      "relation_id": "R0003",
+      "relation_type": "qualification",
+      "knowledge_unit_refs": [
+        "K0010",
+        "K0005",
+        "K0006"
+      ],
+      "description": "分野固有reviewのtaxonomyを因果推論全体へ直接一般化してはならない。",
+      "evidence_refs": [
+        "E0007",
+        "E0008"
+      ]
+    }
+  ],
+  "uncertainties": [
+    {
+      "uncertainty_id": "U0001",
+      "description": "今回のSource selectionは明示的classificationを持つ代表文献を目的抽出したもので、全既存taxonomyのsystematic reviewではない。",
+      "knowledge_unit_refs": [
+        "K0010"
+      ],
+      "evidence_refs": []
+    },
+    {
+      "uncertainty_id": "U0002",
+      "description": "book chapter structureをtaxonomyとしてどこまで扱うかには解釈余地がある。",
+      "knowledge_unit_refs": [
+        "K0007"
+      ],
+      "evidence_refs": [
+        "E0001"
+      ]
+    },
+    {
+      "uncertainty_id": "U0003",
+      "description": "domain-specific taxonomy（recommendation、applied econometrics、causal discovery）とcross-disciplinary taxonomyを同じ粒度で比較するにはscope normalizationが必要。",
+      "knowledge_unit_refs": [
+        "K0005",
+        "K0006",
+        "K0008",
+        "K0010"
+      ],
+      "evidence_refs": [
+        "E0007",
+        "E0008",
+        "E0009"
+      ]
+    }
+  ]
+}

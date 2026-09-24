@@ -1,0 +1,206 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "20_synthesis",
+  "investigation_id": "INV-000025",
+  "rq_id": "RQ-000025",
+  "synthesized_at": "2026-09-24T15:16:00.000Z",
+  "knowledge_units": [
+    {
+      "knowledge_unit_id": "K0001",
+      "statement": "causal framework / representation は独立した方法論的対象として現れる。causal graphical modelは因果仮定を表現し、identification判断に用いられるため、個別estimatorとは異なるroleを持つ。",
+      "evidence_refs": [
+        "E0001",
+        "E0002"
+      ],
+      "qualifiers": [
+        "今回のEvidenceはgraphical frameworkを直接確認したもので、全frameworkの網羅列挙ではない。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0002",
+      "statement": "target causal quantity / estimand は独立して明示される方法論的対象である。IVでは仮定によりcomplier average causal effectが定まり、reviewではITE・ATE・ATT・CATE等が区別されている。",
+      "evidence_refs": [
+        "E0003",
+        "E0012",
+        "E0016"
+      ],
+      "qualifiers": []
+    },
+    {
+      "knowledge_unit_id": "K0003",
+      "statement": "study design / assignment structure は方法論的対象として区別される。regression discontinuityはtreatment assignment probabilityの不連続性を利用するquasi-experimental designとして定義される。",
+      "evidence_refs": [
+        "E0004"
+      ],
+      "qualifiers": [
+        "designとidentification strategyの境界は重なる場合がある。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0004",
+      "statement": "identification strategy / identification assumptions はestimation procedureとは区別可能な方法論的対象である。causal diagram、IV、DiDはいずれも観測分布からcausal quantityへ接続するための仮定・識別構造を持つ。",
+      "evidence_refs": [
+        "E0002",
+        "E0003",
+        "E0005"
+      ],
+      "qualifiers": []
+    },
+    {
+      "knowledge_unit_id": "K0005",
+      "statement": "estimation / adjustment / statistical inference procedure はidentification後の別の方法論的対象として現れる。同じDiD identification setupに複数estimatorを組み合わせられ、DMLやTMLEは推定・推論のためのprocedureとして記述される。",
+      "evidence_refs": [
+        "E0006",
+        "E0010",
+        "E0014"
+      ],
+      "qualifiers": []
+    },
+    {
+      "knowledge_unit_id": "K0006",
+      "statement": "一部の方法論は、標準的なpoint-treatment effect estimationとは異なるproblem settingまたはspecialized inferential taskを定義する。longitudinal treatment、mediation、interference、heterogeneous effects、transportabilityがその例である。",
+      "evidence_refs": [
+        "E0007",
+        "E0008",
+        "E0009",
+        "E0012",
+        "E0013"
+      ],
+      "qualifiers": [
+        "これらを一つのontological typeにまとめるか、data structure・target・validity problem等へ分解するかは追加検討が必要。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0007",
+      "statement": "causal discoveryは、既知・仮定されたcausal structureの下でeffectを識別・推定するcausal inferenceとは異なるinferential taskとして明示的に区別される。",
+      "evidence_refs": [
+        "E0011",
+        "E0015"
+      ],
+      "qualifiers": [
+        "因果推論methodology全体の内側に含めるかはscope上のboundary decisionである。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0008",
+      "statement": "diagnostics / sensitivity analysis は、一部のcausal framework内でdefinition・identification・estimationとは別のmethodological componentとして現れる。",
+      "evidence_refs": [
+        "E0008"
+      ],
+      "qualifiers": [
+        "今回のEvidenceではmediation frameworkのsensitivity analysisが主な直接根拠であり、独立typeとしてのcoverageは弱い。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0009",
+      "statement": "「method」と呼ばれる対象は単一階層ではなく、framework、estimand、design、identification、estimation、problem setting/task等の異なるroleを含む。したがってmethodological entity typeの同定では、名前ではなくroleとrelationを区別する必要がある。",
+      "evidence_refs": [
+        "E0001",
+        "E0003",
+        "E0004",
+        "E0005",
+        "E0006",
+        "E0010",
+        "E0011",
+        "E0016"
+      ],
+      "qualifiers": [
+        "これは複数Evidenceの関係を統合したontology-level synthesisであり、単一Sourceが同一分類を提示しているわけではない。"
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "relation_id": "R0001",
+      "relation_type": "dependency",
+      "knowledge_unit_refs": [
+        "K0002",
+        "K0004",
+        "K0005"
+      ],
+      "description": "causal targetを定義し、仮定の下でidentifyし、その後estimateするという役割分離が可能である。",
+      "evidence_refs": [
+        "E0003",
+        "E0005",
+        "E0006"
+      ]
+    },
+    {
+      "relation_id": "R0002",
+      "relation_type": "qualification",
+      "knowledge_unit_refs": [
+        "K0003",
+        "K0004"
+      ],
+      "description": "study designとidentification strategyは実務上重なる場合があり、完全に排他的なtypeとは限らない。",
+      "evidence_refs": [
+        "E0004",
+        "E0005"
+      ]
+    },
+    {
+      "relation_id": "R0003",
+      "relation_type": "qualification",
+      "knowledge_unit_refs": [
+        "K0006",
+        "K0009"
+      ],
+      "description": "specialized problem settingsは独立method typeというより、他entity typeに作用するcontext/dimensionである可能性がある。",
+      "evidence_refs": [
+        "E0007",
+        "E0008",
+        "E0009",
+        "E0012",
+        "E0013"
+      ]
+    },
+    {
+      "relation_id": "R0004",
+      "relation_type": "qualification",
+      "knowledge_unit_refs": [
+        "K0007",
+        "K0009"
+      ],
+      "description": "causal discoveryは近接領域だが、effect inferenceとはtaskが異なる。",
+      "evidence_refs": [
+        "E0011",
+        "E0015"
+      ]
+    }
+  ],
+  "uncertainties": [
+    {
+      "uncertainty_id": "U0001",
+      "description": "methodological entity typesの完全なontologyは今回のEvidenceだけでは確定できず、少なくとも確認できたtypesを提示する段階である。",
+      "knowledge_unit_refs": [
+        "K0009"
+      ],
+      "evidence_refs": []
+    },
+    {
+      "uncertainty_id": "U0002",
+      "description": "designとidentification strategy、specialized settingとmethod type、diagnosticsの独立性には境界曖昧性が残る。",
+      "knowledge_unit_refs": [
+        "K0003",
+        "K0004",
+        "K0006",
+        "K0008"
+      ],
+      "evidence_refs": [
+        "E0004",
+        "E0008"
+      ]
+    },
+    {
+      "uncertainty_id": "U0003",
+      "description": "causal discoveryを因果推論methodologyの同一ontologyへ含めるかは文献上・分野上のscope差があり得る。",
+      "knowledge_unit_refs": [
+        "K0007"
+      ],
+      "evidence_refs": [
+        "E0011",
+        "E0015"
+      ]
+    }
+  ]
+}
