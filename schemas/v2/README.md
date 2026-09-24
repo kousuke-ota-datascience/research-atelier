@@ -11,6 +11,19 @@ v2はTask 17で確定したcanonical domain modelを実装する。
 - 1つのartifact chainでは全artifactの `investigation_id` と `rq_id` が一致しなければならない。
 - `00_context` はResearch Context entityではなく **Investigation Context** である。
 
+## Information Source / Evidence provenance
+
+BKL-0037以降、Information Source metadataは `information_sources/<Source ID>.json` がGit canonical artifactである。
+
+- schema: `information_source.schema.json`
+- Source ID: historical `SRC-NNNN` or post-BKL-0030 `SRC-NNNNNN`
+- Notion SourcesはSource UID / Source ID allocation、Git materialization前のdraft input、human-facing projectionを担う。
+- new `10_evidence` は `schema_version = 2.1.0` を使用し、top-level `sources[]` に `source_id + source_revision.commit_sha + source_revision.blob_sha + accessed_at + notion_url` をfreezeする。
+- Evidence itemは `provenance.source_id` でtop-level Source snapshotを参照する。
+- `commit_sha` が指すcommitの `information_sources/<Source ID>.json` blobが `blob_sha` と一致することをPython validatorが検証する。
+- `10_evidence` 2.0.0はhistorical compatibilityのため読取可能なまま保持し、新規作成には使用しない。
+- Source JSONを先にcommitしてrevisionを確定してから `10_evidence` をauthor / commitする。commit SHAの自己参照を作らない。
+
 ## Compatibility
 
 - 新規Investigationはv2を使用する。
