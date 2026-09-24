@@ -1,5 +1,5 @@
 {
-  "schema_version": "2.0.0",
+  "schema_version": "2.1.0",
   "artifact_type": "10_evidence",
   "investigation_id": "INV-000023",
   "rq_id": "RQ-0023",
@@ -12,10 +12,7 @@
       "note_type": "Result",
       "direct_quote": null,
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be39813ab37ac6973e8e5b13",
-          "title": "町田の民権家と結社"
-        },
+        "source_id": "SRC-0079",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be39818884f9db6060826dd0",
           "title": "EV-0127"
@@ -29,10 +26,7 @@
       "note_type": "Result",
       "direct_quote": null,
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be39814688adda75a25c4bd9",
-          "title": "SRC-0091"
-        },
+        "source_id": "SRC-0091",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be3981df9496cbcefa162eee",
           "title": "EV-0151"
@@ -46,10 +40,7 @@
       "note_type": "Result",
       "direct_quote": null,
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be39814688adda75a25c4bd9",
-          "title": "SRC-0091"
-        },
+        "source_id": "SRC-0091",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be39816f8d88d21ab7fcbe22",
           "title": "EV-0153"
@@ -63,10 +54,7 @@
       "note_type": "Result",
       "direct_quote": null,
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be3981129356c8924a2b45ba",
-          "title": "SRC-0097"
-        },
+        "source_id": "SRC-0097",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be39815a87dbf3324c1a0afb",
           "title": "EV-0170"
@@ -80,10 +68,7 @@
       "note_type": "Result",
       "direct_quote": null,
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be3981129356c8924a2b45ba",
-          "title": "SRC-0097"
-        },
+        "source_id": "SRC-0097",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be39815cbb11edc995ed62ca",
           "title": "EV-0176"
@@ -97,10 +82,7 @@
       "note_type": "Result",
       "direct_quote": null,
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be3981129356c8924a2b45ba",
-          "title": "SRC-0097"
-        },
+        "source_id": "SRC-0097",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be39818ebaabe9274e431901",
           "title": "EV-0177"
@@ -114,10 +96,7 @@
       "note_type": "Result",
       "direct_quote": null,
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e4e5855be3981d6aba4dcb9e0c1438f",
-          "title": "SRC-0104"
-        },
+        "source_id": "SRC-0104",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e4e5855be39813a80c7dacb181e8876",
           "title": "EV-0171"
@@ -131,10 +110,7 @@
       "note_type": "Result",
       "direct_quote": null,
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e4e5855be398155a4dac2edc1a47e99",
-          "title": "SRC-0105"
-        },
+        "source_id": "SRC-0105",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e4e5855be3981b9b2eedb4be492f285",
           "title": "EV-0172"
@@ -148,10 +124,7 @@
       "note_type": "Result",
       "direct_quote": null,
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be39816bbcbafa8d4c643ddf",
-          "title": "SRC-0094"
-        },
+        "source_id": "SRC-0094",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be3981fd8957d5d39690a8f0",
           "title": "EV-0159"
@@ -165,10 +138,7 @@
       "note_type": "Result",
       "direct_quote": null,
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be39816bbcbafa8d4c643ddf",
-          "title": "SRC-0094"
-        },
+        "source_id": "SRC-0094",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be398169b548d814cf0e1931",
           "title": "EV-0160"
@@ -182,10 +152,7 @@
       "note_type": "Result",
       "direct_quote": null,
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be39816a9d80ec58ada919bf",
-          "title": "SRC-0103"
-        },
+        "source_id": "SRC-0103",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be39819b9c93ef2cc83dcd0f",
           "title": "EV-0183"
@@ -199,10 +166,7 @@
       "note_type": "Result",
       "direct_quote": null,
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e4e5855be398188b180ff47b6187bcc",
-          "title": "SRC-0107"
-        },
+        "source_id": "SRC-0107",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e4e5855be39818b96c0f120e6272aa6",
           "title": "EV-0199"
@@ -216,10 +180,7 @@
       "note_type": "Result",
       "direct_quote": null,
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be3981129356c8924a2b45ba",
-          "title": "東京都公文書館「第13回 西南北多摩郡東京府移管反対運動」"
-        },
+        "source_id": "SRC-0097",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e4e5855be3981bdafc1cd528629ab82",
           "title": "EV-0185"
@@ -233,10 +194,7 @@
       "note_type": "Result",
       "direct_quote": null,
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be3981e89190c5df7e3de208",
-          "title": "『多摩市史 通史編2 近現代』第四章第四節「三多摩の東京府編入問題」"
-        },
+        "source_id": "SRC-0095",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e4e5855be39816f8838c6f230f28033",
           "title": "EV-0187"
@@ -250,10 +208,7 @@
       "note_type": "Result",
       "direct_quote": null,
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be3981e89190c5df7e3de208",
-          "title": "『多摩市史 通史編2 近現代』第四章第四節「三多摩の東京府編入問題」"
-        },
+        "source_id": "SRC-0095",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e4e5855be3981c29aacebaf3188567a",
           "title": "EV-0190"
@@ -267,10 +222,7 @@
       "note_type": "Result",
       "direct_quote": null,
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be3981e89190c5df7e3de208",
-          "title": "『多摩市史 通史編2 近現代』第四章第四節「三多摩の東京府編入問題」"
-        },
+        "source_id": "SRC-0095",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e4e5855be3981e4b939cf4dd72f8ed3",
           "title": "EV-0191"
@@ -284,10 +236,7 @@
       "note_type": "Result",
       "direct_quote": null,
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be3981feb696c54d4394ad37",
-          "title": "SRC-0101"
-        },
+        "source_id": "SRC-0101",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be39810dbeb5f7e503a0aad2",
           "title": "EV-0180"
@@ -301,10 +250,7 @@
       "note_type": "Result",
       "direct_quote": null,
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e4e5855be39815b875ded5183bd8c03",
-          "title": "まちだってこんなまち"
-        },
+        "source_id": "SRC-0110",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e4e5855be398135b747c50f83fc0df8",
           "title": "EV-0204"
@@ -318,15 +264,113 @@
       "note_type": "Result",
       "direct_quote": null,
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be3981129356c8924a2b45ba",
-          "title": "SRC-0097"
-        },
+        "source_id": "SRC-0097",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e4e5855be3981cb83bfd34401bdc8c0",
           "title": "EV-0205"
         }
       }
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "SRC-0079",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "615ebdad3f8b68b5a370ea5250817330c66c8cbd"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e3e5855be39813ab37ac6973e8e5b13"
+    },
+    {
+      "source_id": "SRC-0091",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "30faf36c6462fe3ccdb111395b1be52956084fcf"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e3e5855be39814688adda75a25c4bd9"
+    },
+    {
+      "source_id": "SRC-0094",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "77811d02f2d9a42e5833c97aec6f742d09022b2e"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e3e5855be39816bbcbafa8d4c643ddf"
+    },
+    {
+      "source_id": "SRC-0095",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "0c6c0567bab06209368db9b2f42e0130751eb3bc"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e3e5855be3981e89190c5df7e3de208"
+    },
+    {
+      "source_id": "SRC-0097",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "a89fabb0c645a2cab7d62d5c6b91f772d7495b73"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e3e5855be3981129356c8924a2b45ba"
+    },
+    {
+      "source_id": "SRC-0101",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "0045a1adf7e0af267a46b4d83a01db0825a363a2"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e3e5855be3981feb696c54d4394ad37"
+    },
+    {
+      "source_id": "SRC-0103",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "42a891d2af8217eaa77493b112b6c4160233544b"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e3e5855be39816a9d80ec58ada919bf"
+    },
+    {
+      "source_id": "SRC-0104",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "95246434b256e0f0cb819973b9dbcff645fac2ea"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e4e5855be3981d6aba4dcb9e0c1438f"
+    },
+    {
+      "source_id": "SRC-0105",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "74564ca668bd10f83225ce8ffd72a78ea359e38c"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e4e5855be398155a4dac2edc1a47e99"
+    },
+    {
+      "source_id": "SRC-0107",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "9aaa425c225fde410cdee40e8b3db35e25079ec9"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e4e5855be398188b180ff47b6187bcc"
+    },
+    {
+      "source_id": "SRC-0110",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "ab2c6f4a60b942690bb01f9a2bb72b66953ffe94"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e4e5855be39815b875ded5183bd8c03"
     }
   ]
 }
