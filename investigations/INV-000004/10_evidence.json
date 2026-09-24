@@ -1,5 +1,5 @@
 {
-  "schema_version": "2.0.0",
+  "schema_version": "2.1.0",
   "artifact_type": "10_evidence",
   "investigation_id": "INV-000004",
   "rq_id": "RQ-0015",
@@ -13,8 +13,11 @@
       "note_type": "Data",
       "direct_quote": null,
       "provenance": {
-        "source": {"notion_url": "https://app.notion.com/p/3e3e5855be39810fad79cbb4006751ae", "title": "道中駄賃帳"},
-        "evidence_note": {"notion_url": "https://app.notion.com/p/3e3e5855be39812e81e3edc7ad69370a", "title": "EV-0070"}
+        "source_id": "SRC-0052",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be39812e81e3edc7ad69370a",
+          "title": "EV-0070"
+        }
       }
     },
     {
@@ -25,8 +28,11 @@
       "note_type": "Method",
       "direct_quote": null,
       "provenance": {
-        "source": {"notion_url": "https://app.notion.com/p/3e3e5855be39810fad79cbb4006751ae", "title": "道中駄賃帳"},
-        "evidence_note": {"notion_url": "https://app.notion.com/p/3e3e5855be39815d982afbc4e0dc90ec", "title": "EV-0071"}
+        "source_id": "SRC-0052",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be39815d982afbc4e0dc90ec",
+          "title": "EV-0071"
+        }
       }
     },
     {
@@ -37,8 +43,11 @@
       "note_type": "Claim",
       "direct_quote": null,
       "provenance": {
-        "source": {"notion_url": "https://app.notion.com/p/3e3e5855be3981f3aff5c8a98d3db888", "title": "平成22年度収蔵資料展1「街道をいきかう人々と宿場のくらし」"},
-        "evidence_note": {"notion_url": "https://app.notion.com/p/3e3e5855be39816eba67c34ccde41e51", "title": "EV-0072"}
+        "source_id": "SRC-0053",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be39816eba67c34ccde41e51",
+          "title": "EV-0072"
+        }
       }
     },
     {
@@ -49,8 +58,11 @@
       "note_type": "Method",
       "direct_quote": null,
       "provenance": {
-        "source": {"notion_url": "https://app.notion.com/p/3e3e5855be3981f3aff5c8a98d3db888", "title": "平成22年度収蔵資料展1「街道をいきかう人々と宿場のくらし」"},
-        "evidence_note": {"notion_url": "https://app.notion.com/p/3e3e5855be398124a161e6b9f3085db8", "title": "EV-0073"}
+        "source_id": "SRC-0053",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be398124a161e6b9f3085db8",
+          "title": "EV-0073"
+        }
       }
     },
     {
@@ -61,8 +73,11 @@
       "note_type": "Method",
       "direct_quote": null,
       "provenance": {
-        "source": {"notion_url": "https://app.notion.com/p/3e3e5855be3981f3aff5c8a98d3db888", "title": "平成22年度収蔵資料展1「街道をいきかう人々と宿場のくらし」"},
-        "evidence_note": {"notion_url": "https://app.notion.com/p/3e3e5855be3981e0b680e7b2fc330e34", "title": "EV-0074"}
+        "source_id": "SRC-0053",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be3981e0b680e7b2fc330e34",
+          "title": "EV-0074"
+        }
       }
     },
     {
@@ -73,8 +88,11 @@
       "note_type": "Data",
       "direct_quote": null,
       "provenance": {
-        "source": {"notion_url": "https://app.notion.com/p/3e3e5855be39816d957bc1b7b42f0861", "title": "公事録"},
-        "evidence_note": {"notion_url": "https://app.notion.com/p/3e3e5855be398114b973fc233b0f7367", "title": "EV-0075"}
+        "source_id": "SRC-0054",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be398114b973fc233b0f7367",
+          "title": "EV-0075"
+        }
       }
     },
     {
@@ -85,8 +103,11 @@
       "note_type": "Data",
       "direct_quote": null,
       "provenance": {
-        "source": {"notion_url": "https://app.notion.com/p/3e3e5855be3981f38761ee01c4b699c4", "title": "332条（明治商法・明治32年）"},
-        "evidence_note": {"notion_url": "https://app.notion.com/p/3e3e5855be398182a320e063ad94b31b", "title": "EV-0076"}
+        "source_id": "SRC-0055",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be398182a320e063ad94b31b",
+          "title": "EV-0076"
+        }
       }
     },
     {
@@ -97,8 +118,11 @@
       "note_type": "Claim",
       "direct_quote": null,
       "provenance": {
-        "source": {"notion_url": "https://app.notion.com/p/3e3e5855be3981f38761ee01c4b699c4", "title": "332条（明治商法・明治32年）"},
-        "evidence_note": {"notion_url": "https://app.notion.com/p/3e3e5855be39819b944ded9e24d802a9", "title": "EV-0077"}
+        "source_id": "SRC-0055",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be39819b944ded9e24d802a9",
+          "title": "EV-0077"
+        }
       }
     },
     {
@@ -109,8 +133,11 @@
       "note_type": "Data",
       "direct_quote": null,
       "provenance": {
-        "source": {"notion_url": "https://app.notion.com/p/3e3e5855be3981a785baf370d0b37e95", "title": "333条（明治商法・明治32年）"},
-        "evidence_note": {"notion_url": "https://app.notion.com/p/3e3e5855be3981ada9b2fe5791ed5271", "title": "EV-0078"}
+        "source_id": "SRC-0056",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be3981ada9b2fe5791ed5271",
+          "title": "EV-0078"
+        }
       }
     },
     {
@@ -121,8 +148,11 @@
       "note_type": "Claim",
       "direct_quote": null,
       "provenance": {
-        "source": {"notion_url": "https://app.notion.com/p/3e3e5855be3981a785baf370d0b37e95", "title": "333条（明治商法・明治32年）"},
-        "evidence_note": {"notion_url": "https://app.notion.com/p/3e3e5855be398115ab7cf7dabab6b3bd", "title": "EV-0079"}
+        "source_id": "SRC-0056",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be398115ab7cf7dabab6b3bd",
+          "title": "EV-0079"
+        }
       }
     },
     {
@@ -133,8 +163,11 @@
       "note_type": "Data",
       "direct_quote": null,
       "provenance": {
-        "source": {"notion_url": "https://app.notion.com/p/3e3e5855be398120bf08e07bad46ee78", "title": "339条（明治商法・明治32年）"},
-        "evidence_note": {"notion_url": "https://app.notion.com/p/3e3e5855be3981a3a9b8e5030301fd6a", "title": "EV-0080"}
+        "source_id": "SRC-0057",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be3981a3a9b8e5030301fd6a",
+          "title": "EV-0080"
+        }
       }
     },
     {
@@ -145,8 +178,11 @@
       "note_type": "Data",
       "direct_quote": null,
       "provenance": {
-        "source": {"notion_url": "https://app.notion.com/p/3e3e5855be3981c293f2c4f0bb886722", "title": "飛脚問屋井野口屋記録"},
-        "evidence_note": {"notion_url": "https://app.notion.com/p/3e3e5855be398172bc69d54611c28d79", "title": "EV-0081"}
+        "source_id": "SRC-0058",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be398172bc69d54611c28d79",
+          "title": "EV-0081"
+        }
       }
     },
     {
@@ -157,8 +193,11 @@
       "note_type": "Data",
       "direct_quote": null,
       "provenance": {
-        "source": {"notion_url": "https://app.notion.com/p/3e3e5855be3981cba626f0293c01e338", "title": "荷物送状"},
-        "evidence_note": {"notion_url": "https://app.notion.com/p/3e3e5855be39819c9fcbeb864cca5d20", "title": "EV-0082"}
+        "source_id": "SRC-0059",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be39819c9fcbeb864cca5d20",
+          "title": "EV-0082"
+        }
       }
     },
     {
@@ -169,8 +208,11 @@
       "note_type": "Data",
       "direct_quote": null,
       "provenance": {
-        "source": {"notion_url": "https://app.notion.com/p/3e3e5855be3981afa766c378de85f6b3", "title": "商法（明治32年法律第48号）— 法令データベース"},
-        "evidence_note": {"notion_url": "https://app.notion.com/p/3e3e5855be398117a90ed9844e51dacc", "title": "EV-0083"}
+        "source_id": "SRC-0060",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be398117a90ed9844e51dacc",
+          "title": "EV-0083"
+        }
       }
     },
     {
@@ -181,8 +223,11 @@
       "note_type": "Data",
       "direct_quote": null,
       "provenance": {
-        "source": {"notion_url": "https://app.notion.com/p/3e3e5855be3981afa766c378de85f6b3", "title": "商法（明治32年法律第48号）— 法令データベース"},
-        "evidence_note": {"notion_url": "https://app.notion.com/p/3e3e5855be39819fabcbdf2100f13639", "title": "EV-0084"}
+        "source_id": "SRC-0060",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be39819fabcbdf2100f13639",
+          "title": "EV-0084"
+        }
       }
     },
     {
@@ -193,8 +238,11 @@
       "note_type": "Claim",
       "direct_quote": null,
       "provenance": {
-        "source": {"notion_url": "https://app.notion.com/p/3e3e5855be398115823bf39fe2e42338", "title": "『福井県史』通史編3 近世一—江戸幕府の宿駅制度"},
-        "evidence_note": {"notion_url": "https://app.notion.com/p/3e3e5855be3981d3b410fa5e56e76310", "title": "EV-0085"}
+        "source_id": "SRC-0061",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be3981d3b410fa5e56e76310",
+          "title": "EV-0085"
+        }
       }
     },
     {
@@ -205,8 +253,11 @@
       "note_type": "Claim",
       "direct_quote": null,
       "provenance": {
-        "source": {"notion_url": "https://app.notion.com/p/3e3e5855be398115823bf39fe2e42338", "title": "『福井県史』通史編3 近世一—江戸幕府の宿駅制度"},
-        "evidence_note": {"notion_url": "https://app.notion.com/p/3e3e5855be398160a068f338924d62f2", "title": "EV-0086"}
+        "source_id": "SRC-0061",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be398160a068f338924d62f2",
+          "title": "EV-0086"
+        }
       }
     },
     {
@@ -217,9 +268,113 @@
       "note_type": "Data",
       "direct_quote": null,
       "provenance": {
-        "source": {"notion_url": "https://app.notion.com/p/3e3e5855be398130bd50ccc462d98aa0", "title": "『福井県史』通史編3 近世一—馬借と駄賃"},
-        "evidence_note": {"notion_url": "https://app.notion.com/p/3e3e5855be398160a358c71f8cfe209a", "title": "EV-0087"}
+        "source_id": "SRC-0062",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e3e5855be398160a358c71f8cfe209a",
+          "title": "EV-0087"
+        }
       }
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "SRC-0052",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "5ca400c3b3854d561d837386d996965b7d7b3262"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e3e5855be39810fad79cbb4006751ae"
+    },
+    {
+      "source_id": "SRC-0053",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "aee1d358c9c62637bbd8a1f9ae6163b1107df00d"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e3e5855be3981f3aff5c8a98d3db888"
+    },
+    {
+      "source_id": "SRC-0054",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "3730eab95f556a952f06c577668c5dc702e5ac7f"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e3e5855be39816d957bc1b7b42f0861"
+    },
+    {
+      "source_id": "SRC-0055",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "0f79b7c6325507b5cb1ec7947ff3ac45d9cc74d2"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e3e5855be3981f38761ee01c4b699c4"
+    },
+    {
+      "source_id": "SRC-0056",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "e40c158ecebe5a17b2578c701e0191091e045bd8"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e3e5855be3981a785baf370d0b37e95"
+    },
+    {
+      "source_id": "SRC-0057",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "1050ff30e4aa3783ff5773e1f6e67a14147e8f6f"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e3e5855be398120bf08e07bad46ee78"
+    },
+    {
+      "source_id": "SRC-0058",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "af2c5691075a9151fd46a3ada4cfb3199b6b6c54"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e3e5855be3981c293f2c4f0bb886722"
+    },
+    {
+      "source_id": "SRC-0059",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "4f442a940cb8d2ed3f48dbc7c358fcad77d0446b"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e3e5855be3981cba626f0293c01e338"
+    },
+    {
+      "source_id": "SRC-0060",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "f154d9727f757fcba2881c558e7674094e3b6358"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e3e5855be3981afa766c378de85f6b3"
+    },
+    {
+      "source_id": "SRC-0061",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "280558376fc219c0b0754542ba4157b85522afc5"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e3e5855be398115823bf39fe2e42338"
+    },
+    {
+      "source_id": "SRC-0062",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "3570f843ea0d5c786d8aa977b72330b03c2d61fd"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e3e5855be398130bd50ccc462d98aa0"
     }
   ]
 }
