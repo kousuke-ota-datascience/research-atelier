@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000022",
+  "review_seq": 1,
+  "layer": "00_context",
+  "review_kind": "context_semantic_validity",
+  "target_blob_sha": "935cc420a620cb9e91f3e21bdcd7dee64d422f6d",
+  "assessment": "The frozen Methodological RQ and scope clearly define the decision boundary: continue a fixed base model with external correction, investigate non-model causes, or update/retrain the base model. The scope also explicitly defines retraining as parameter-changing use of new actual data. No defect in the frozen Context itself was identified.",
+  "findings": [],
+  "verdict": "PASS"
+}

@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000022",
+  "review_seq": 1,
+  "layer": "10_evidence",
+  "review_kind": "source_evidence_note_to_10_evidence",
+  "target_blob_sha": "dcb6add7e5f5397287587af516ec23ba1e5151a2",
+  "assessment": "E0001-E0004 are traceable and source-faithful: Gama defines concept drift as change in the input-target relation; Kadlec et al. summarize broad soft-sensor adaptation categories; Chen et al. report mismatch/process monitoring for update timing; Breck et al. support explicit production testing/monitoring. The Evidence itself does not claim that all adaptation categories preserve a frozen base model.",
+  "findings": [],
+  "verdict": "PASS"
+}
