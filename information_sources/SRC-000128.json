@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000128",
+  "notion_url": "https://app.notion.com/p/3e5e5855be39814db18cf0736e858876",
+  "title": "A general approach to causal mediation analysis",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "Psychological Methods",
+  "authors": "Kosuke Imai; Luke Keele; Dustin Tingley",
+  "year": 2010,
+  "url": "https://pubmed.ncbi.nlm.nih.gov/20954780/",
+  "doi": "10.1037/a0020761",
+  "version_or_edition": null,
+  "reliability_note": null
+}

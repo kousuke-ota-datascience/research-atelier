@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000132",
+  "notion_url": "https://app.notion.com/p/3e5e5855be398155bb17faa16e78b85e",
+  "title": "Estimation and Inference of Heterogeneous Treatment Effects using Random Forests",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "Journal of the American Statistical Association",
+  "authors": "Stefan Wager; Susan Athey",
+  "year": 2018,
+  "url": "https://doi.org/10.1080/01621459.2017.1319839",
+  "doi": "10.1080/01621459.2017.1319839",
+  "version_or_edition": null,
+  "reliability_note": null
+}

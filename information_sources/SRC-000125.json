@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000125",
+  "notion_url": "https://app.notion.com/p/3e5e5855be39819c8b9af07202b4307f",
+  "title": "Difference-in-Differences with multiple time periods",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "Journal of Econometrics",
+  "authors": "Brantly Callaway; Pedro H. C. Sant'Anna",
+  "year": 2021,
+  "url": "https://www.sciencedirect.com/science/article/pii/S0304407620303948",
+  "doi": "10.1016/j.jeconom.2020.12.001",
+  "version_or_edition": null,
+  "reliability_note": null
+}

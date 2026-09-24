@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000133",
+  "notion_url": "https://app.notion.com/p/3e5e5855be39813f9babda273b39d1a7",
+  "title": "A General Algorithm for Deciding Transportability of Experimental Results",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "Journal of Causal Inference",
+  "authors": "Elias Bareinboim; Judea Pearl",
+  "year": 2013,
+  "url": "https://www.degruyter.com/document/doi/10.1515/jci-2012-0004/html",
+  "doi": "10.1515/jci-2012-0004",
+  "version_or_edition": null,
+  "reliability_note": null
+}

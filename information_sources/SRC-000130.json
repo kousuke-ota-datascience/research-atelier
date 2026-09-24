@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000130",
+  "notion_url": "https://app.notion.com/p/3e5e5855be3981f08f9cf7700e137e4b",
+  "title": "Double/debiased machine learning for treatment and structural parameters",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "The Econometrics Journal",
+  "authors": "Victor Chernozhukov; Denis Chetverikov; Mert Demirer; Esther Duflo; Christian Hansen; Whitney Newey; James Robins",
+  "year": 2018,
+  "url": "https://academic.oup.com/ectj/article/21/1/C1/5056401",
+  "doi": "10.1111/ectj.12097",
+  "version_or_edition": null,
+  "reliability_note": null
+}

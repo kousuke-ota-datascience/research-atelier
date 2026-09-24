@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000126",
+  "notion_url": "https://app.notion.com/p/3e5e5855be3981dabca5fccc71f07b91",
+  "title": "Synthetic Control Methods for Comparative Case Studies: Estimating the Effect of California’s Tobacco Control Program",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "Journal of the American Statistical Association",
+  "authors": "Alberto Abadie; Alexis Diamond; Jens Hainmueller",
+  "year": 2010,
+  "url": "https://doi.org/10.1198/jasa.2009.ap08746",
+  "doi": "10.1198/jasa.2009.ap08746",
+  "version_or_edition": null,
+  "reliability_note": null
+}

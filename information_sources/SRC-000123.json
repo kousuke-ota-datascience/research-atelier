@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000123",
+  "notion_url": "https://app.notion.com/p/3e5e5855be398161951bfdaa87501d62",
+  "title": "Identification of Causal Effects Using Instrumental Variables",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "Journal of the American Statistical Association",
+  "authors": "Joshua D. Angrist; Guido W. Imbens; Donald B. Rubin",
+  "year": 1996,
+  "url": "https://www.tandfonline.com/doi/abs/10.1080/01621459.1996.10476902",
+  "doi": "10.1080/01621459.1996.10476902",
+  "version_or_edition": null,
+  "reliability_note": "Publisher page and Harvard repository describe the same JASA article; JSTOR also assigns 10.2307/2291629."
+}

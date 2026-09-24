@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000129",
+  "notion_url": "https://app.notion.com/p/3e5e5855be3981309b31e647d7b418d2",
+  "title": "Toward Causal Inference With Interference",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "Journal of the American Statistical Association",
+  "authors": "Michael G. Hudgens; M. Elizabeth Halloran",
+  "year": 2008,
+  "url": "https://pubmed.ncbi.nlm.nih.gov/19081744/",
+  "doi": "10.1198/016214508000000292",
+  "version_or_edition": null,
+  "reliability_note": null
+}

@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000131",
+  "notion_url": "https://app.notion.com/p/3e5e5855be39819d9678c96258e3ecc8",
+  "title": "Review of Causal Discovery Methods Based on Graphical Models",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "Frontiers in Genetics",
+  "authors": "Clark Glymour; Kun Zhang; Peter Spirtes",
+  "year": 2019,
+  "url": "https://www.frontiersin.org/journals/genetics/articles/10.3389/fgene.2019.00524/full",
+  "doi": "10.3389/fgene.2019.00524",
+  "version_or_edition": null,
+  "reliability_note": "Peer-reviewed review article; used here to map causal-discovery method families, not as a primary source for every algorithm."
+}

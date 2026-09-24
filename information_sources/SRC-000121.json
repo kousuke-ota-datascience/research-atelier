@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000121",
+  "notion_url": "https://app.notion.com/p/3e5e5855be3981c8a8b0c98e106b0c32",
+  "title": "Causal diagrams for empirical research",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "Biometrika",
+  "authors": "Judea Pearl",
+  "year": 1995,
+  "url": "https://academic.oup.com/biomet/article-abstract/82/4/669/251647",
+  "doi": "10.1093/biomet/82.4.669",
+  "version_or_edition": null,
+  "reliability_note": null
+}

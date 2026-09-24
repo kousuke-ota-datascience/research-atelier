@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000124",
+  "notion_url": "https://app.notion.com/p/3e5e5855be398116a49bea3541680ad3",
+  "title": "Identification and Estimation of Treatment Effects with a Regression-Discontinuity Design",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "Econometrica",
+  "authors": "Jinyong Hahn; Petra Todd; Wilbert Van der Klaauw",
+  "year": 2001,
+  "url": "https://onlinelibrary.wiley.com/doi/10.1111/1468-0262.00183",
+  "doi": "10.1111/1468-0262.00183",
+  "version_or_edition": null,
+  "reliability_note": null
+}

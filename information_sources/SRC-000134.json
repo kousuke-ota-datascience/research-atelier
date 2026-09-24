@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000134",
+  "notion_url": "https://app.notion.com/p/3e5e5855be3981a28917e7fe82fbc4f7",
+  "title": "Targeted Maximum Likelihood Learning",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "The International Journal of Biostatistics",
+  "authors": "Mark J. van der Laan; Daniel Rubin",
+  "year": 2006,
+  "url": "https://www.degruyter.com/document/doi/10.2202/1557-4679.1043/html",
+  "doi": "10.2202/1557-4679.1043",
+  "version_or_edition": null,
+  "reliability_note": null
+}

@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000122",
+  "notion_url": "https://app.notion.com/p/3e5e5855be39815e8954c3f0fd0861e9",
+  "title": "The central role of the propensity score in observational studies for causal effects",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "Biometrika",
+  "authors": "Paul R. Rosenbaum; Donald B. Rubin",
+  "year": 1983,
+  "url": "https://academic.oup.com/biomet/article-abstract/70/1/41/240879",
+  "doi": "10.1093/biomet/70.1.41",
+  "version_or_edition": null,
+  "reliability_note": null
+}

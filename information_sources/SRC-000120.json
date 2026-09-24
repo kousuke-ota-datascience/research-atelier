@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000120",
+  "notion_url": "https://app.notion.com/p/3e5e5855be398124b0acd620cd616481",
+  "title": "Causal Inference: What If",
+  "source_type": "Book",
+  "journal_or_publisher": "Chapman & Hall/CRC",
+  "authors": "Miguel A. Hernán; James M. Robins",
+  "year": 2020,
+  "url": "https://miguelhernan.org/whatifbook",
+  "doi": null,
+  "version_or_edition": "Online version; revised 2024-04-26",
+  "reliability_note": "Author-maintained online book; the authors state it is a synthesis rather than a systematic review and may be revised."
+}
