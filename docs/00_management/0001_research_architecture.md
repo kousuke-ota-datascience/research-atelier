@@ -23,7 +23,7 @@
 | 対象 | System / actor | 責務 | Authority |
 | --- | --- | --- | --- |
 | Research intent / semantic commitment | Human / Researcher | Research Questionの意味の定義・採択、調査実行の意図、Scope / assumptions / cutoff等の意味論的条件の決定・確認 | 「何を・どの意味で調べるか」のdecision authority |
-| Discovery、capture、reusable catalog | Notion | Research Topics、Research Questions、Sources、Evidence Notes、task state | mutableなreusable catalog record / operational task stateの正本 |
+| Discovery、capture、reusable catalog | Notion | Research Topics、Research Questions、Source ID allocation / draft capture、Evidence Notes、task state | mutableなcatalog / operational inputの正本。Information Source metadataはGit materialization後にGit authorityへ移る |
 | Investigation operational representation | Notion Investigations DB | 1 Investigation = 1 row、explicit RQ binding、freeze前のQuestion Type / Scope / Include / Exclude / Evidence Cutoff / Assumptions、Review current pointer | freeze前のInvestigation Context inputとmutable operational stateの正本。freeze後のContext semantic authorityはGit `00_context`へ移る |
 | Frozen Investigation artifact | Git JSON | Investigation Context、Evidence snapshot、Synthesis、Analysis | 特定Investigationの正本 |
 | Semantic assistance / materialization | LLM | RQ wording整理、条件候補提示、Investigation Context / Evidence / Synthesis / Analysisのmaterialization支援 | semantic proposalを作れるが、RQのsemantic ownership、research intent、未確認conditionを単独で確定しない |
@@ -142,7 +142,7 @@ derived copyはprojection、snapshot、cache、renderingとしてのみ存在で
 - Research Question catalogとmutable RQ-level metadata
 - Investigation rowのidentity / explicit RQ binding、およびfreeze前のQuestion Type / Scope / Include / Exclude / Evidence Cutoff / Assumptions
 - Investigation Reviewのcurrent operational pointer（Review Status / Latest Review Seq）
-- Source identityとbibliographic metadata
+- Source UID / Source ID allocation、Git materialization前のSource draft input、human-facing Source catalog / projection
 - source-faithfulなreusable Evidence Note
 - Backlog / workflow statusなどのoperational current state
 
@@ -150,8 +150,9 @@ derived copyはprojection、snapshot、cache、renderingとしてのみ存在で
 
 1つのfrozen Investigationについて:
 
+- Information Source metadata (`information_sources/<Source ID>.json`)
 - Investigation Context
-- そのversionで選択したEvidence snapshot
+- そのversionで選択したEvidence snapshotと使用Source revision
 - evidence-faithful Synthesis
 - RQ-specific AnalysisとWorking Answer
 - canonical artifact内のlineage / version identifiers
@@ -179,8 +180,9 @@ derived copyはprojection、snapshot、cache、renderingとしてのみ存在で
 3. Git canonical analysisはNotionのoperational current stateへprojectionしてよいが、別のsync contractがauthority transferを明示しない限りderivedである。
 4. projection / backfillにはsource Investigation identityを識別できるprovenanceを残す。
 5. 既存InvestigationのNotion rowが欠落している場合、frozen Git `00_context` をauthorityとしてoperational rowをbackfillしてよい。current RQ metadataからhistorical conditionを逆算しない。
-6. 同一fieldをNotionとGitの双方でauthoritativeに手動管理してはならない。
-7. upstream canonical artifactが変更された場合、依存するdownstream artifactは再validationまたは再生成されるまでinvalidとする。
+6. SourceはNotionでUID / Source IDをallocateし、draft metadataをcaptureした後、`information_sources/<Source ID>.json` をvalidation / commitしてGitへauthority transferする。以後Notion Source metadataはGitからreconcile可能なhuman-facing projectionであり、独立した第二authorityにしない。
+7. 同一fieldをNotionとGitの双方でauthoritativeに手動管理してはならない。
+8. upstream canonical artifactが変更された場合、依存するdownstream artifactは再validationまたは再生成されるまでinvalidとする.
 8. Workflow 20 Review content / Findings / VerdictはGit Review JSONがauthorityであり、Notion Investigations DBには `Review Status / Latest Review Seq` というderived current pointerだけを保持する。
 9. Review Status mutationは `src/research_atelier/reviewing/reconcile.py` のdeterministic planを介し、Workflow 20やconnectorが独自に書き換えない。
 
