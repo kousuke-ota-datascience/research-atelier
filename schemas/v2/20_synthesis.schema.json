@@ -28,7 +28,7 @@
     },
     "rq_id": {
       "type": "string",
-      "pattern": "^RQ-[0-9]{4}$"
+      "pattern": "^RQ-(?:[0-9]{4}|[0-9]{6})$"
     },
     "synthesized_at": {
       "type": "string",
