@@ -1,5 +1,5 @@
 {
-  "schema_version": "2.0.0",
+  "schema_version": "2.1.0",
   "artifact_type": "10_evidence",
   "investigation_id": "INV-000013",
   "rq_id": "RQ-0018",
@@ -12,10 +12,7 @@
       "selection_reason": "町田市域の主要民権家について、地域行政・教育活動・県会を接続する経歴を示すため。",
       "note_type": "Claim",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be39813ab37ac6973e8e5b13",
-          "title": "町田の民権家と結社"
-        },
+        "source_id": "SRC-0079",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be398114ae6bd049acdac5ff",
           "title": "EV-0122"
@@ -29,10 +26,7 @@
       "selection_reason": "地域自治と次世代育成を担う人物ネットワークの再生産を示すため。",
       "note_type": "Claim",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be39813ab37ac6973e8e5b13",
-          "title": "町田の民権家と結社"
-        },
+        "source_id": "SRC-0079",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be3981f0b9d0ebe46ffcb228",
           "title": "EV-0123"
@@ -46,10 +40,7 @@
       "selection_reason": "民権政治結社に先行する地域的な討論・学習インフラの存在を示すため。",
       "note_type": "Data",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be39813ab37ac6973e8e5b13",
-          "title": "町田の民権家と結社"
-        },
+        "source_id": "SRC-0079",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be3981f6be77ee04295ba853",
           "title": "EV-0124"
@@ -63,10 +54,7 @@
       "selection_reason": "町田周辺の結社が郡境を越え、演説・討論を通じて民権思想を学んだことを示すため。",
       "note_type": "Data",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be39813ab37ac6973e8e5b13",
-          "title": "町田の民権家と結社"
-        },
+        "source_id": "SRC-0079",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be39818b89bac920c5f3efd1",
           "title": "EV-0125"
@@ -80,10 +68,7 @@
       "selection_reason": "原町田が広域の地域指導層と東京の言論人を結ぶ集会拠点になった具体例を示すため。",
       "note_type": "Data",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be39813ab37ac6973e8e5b13",
-          "title": "町田の民権家と結社"
-        },
+        "source_id": "SRC-0079",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be3981668117e0aab5b803dd",
           "title": "EV-0126"
@@ -97,10 +82,7 @@
       "selection_reason": "武蔵・相模境界を越える政治結社と、自由党への組織的接続を示すため。",
       "note_type": "Data",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be39813ab37ac6973e8e5b13",
-          "title": "町田の民権家と結社"
-        },
+        "source_id": "SRC-0079",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be39818884f9db6060826dd0",
           "title": "EV-0127"
@@ -114,10 +96,7 @@
       "selection_reason": "運動を担った地域指導層の社会的・行政的背景を示すため。",
       "note_type": "Claim",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be398124938dc9e10a39741a",
-          "title": "自由民権資料館常設展示「自由民権運動と町田」その2"
-        },
+        "source_id": "SRC-0080",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be398165bb3ec23389eacea8",
           "title": "EV-0128"
@@ -131,10 +110,7 @@
       "selection_reason": "横浜・生糸流通との接続が思想・情報接触の条件だったとする地域史上の説明を保持するため。",
       "note_type": "Claim",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be398124938dc9e10a39741a",
-          "title": "自由民権資料館常設展示「自由民権運動と町田」その2"
-        },
+        "source_id": "SRC-0080",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be398118b9e0cf94cf64c390",
           "title": "EV-0129"
@@ -148,10 +124,7 @@
       "selection_reason": "県会という制度的場が地域指導者間の広域ネットワーク形成に関与したという説明を示すため。",
       "note_type": "Claim",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be398139ac7afa013f49cdaa",
-          "title": "自由民権資料館常設展示「自由民権運動と町田」その3"
-        },
+        "source_id": "SRC-0081",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be398116a34de92e49d84f9b",
           "title": "EV-0130"
@@ -165,10 +138,7 @@
       "selection_reason": "結社が思想学習と演説・討論の反復的な場として機能したことを示すため。",
       "note_type": "Claim",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be398139ac7afa013f49cdaa",
-          "title": "自由民権資料館常設展示「自由民権運動と町田」その3"
-        },
+        "source_id": "SRC-0081",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be3981acb6fbcfcd5bcf9324",
           "title": "EV-0131"
@@ -182,10 +152,7 @@
       "selection_reason": "運動拡大を支えた言論・メディア経路を示すため。",
       "note_type": "Claim",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be398139ac7afa013f49cdaa",
-          "title": "自由民権資料館常設展示「自由民権運動と町田」その3"
-        },
+        "source_id": "SRC-0081",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be398133a6c7e86cf8822d68",
           "title": "EV-0132"
@@ -199,10 +166,7 @@
       "selection_reason": "旧神奈川県域で国会開設運動が大規模に組織され、地域行政層が担い手だったことを示すため。",
       "note_type": "Data",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be3981e29f48dee9a19da278",
-          "title": "公文書館だより 創刊号―寄稿「神奈川の自由民権運動」"
-        },
+        "source_id": "SRC-0082",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be398145b18ce907de0b677e",
           "title": "EV-0133"
@@ -216,10 +180,7 @@
       "selection_reason": "武相・神奈川県域の運動の社会経済的担い手に関する研究上の説明を保持するため。",
       "note_type": "Claim",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be3981e29f48dee9a19da278",
-          "title": "公文書館だより 創刊号―寄稿「神奈川の自由民権運動」"
-        },
+        "source_id": "SRC-0082",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be39819f8495e09f134eaa7f",
           "title": "EV-0134"
@@ -233,10 +194,7 @@
       "selection_reason": "南多摩の結社形成を、県域全体の結社拡大の中に位置づけるため。",
       "note_type": "Data",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be3981e29f48dee9a19da278",
-          "title": "公文書館だより 創刊号―寄稿「神奈川の自由民権運動」"
-        },
+        "source_id": "SRC-0082",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be3981619f6bff55f9500bb8",
           "title": "EV-0135"
@@ -250,10 +208,7 @@
       "selection_reason": "町田市域の主要民権家が県会中枢に位置した事実を公式記録で確認するため。",
       "note_type": "Data",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be3981338b93e61878d6a529",
-          "title": "神奈川県議会 県議会の歴史 歴代議長・副議長一覧"
-        },
+        "source_id": "SRC-0083",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be3981de871eec58a8c91bf7",
           "title": "EV-0136"
@@ -267,15 +222,68 @@
       "selection_reason": "生糸流通と横浜への地理的・経済的接続自体を、思想伝播の解釈とは独立に確認するため。",
       "note_type": "Claim",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be39812e8fa4ffdc1a5c36de",
-          "title": "町田市の商業の沿革"
-        },
+        "source_id": "SRC-0084",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be3981479a24f1acf3c6228c",
           "title": "EV-0137"
         }
       }
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "SRC-0079",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "615ebdad3f8b68b5a370ea5250817330c66c8cbd"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e3e5855be39813ab37ac6973e8e5b13"
+    },
+    {
+      "source_id": "SRC-0080",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "ac1e82bfb00e9f43dddf9a87e505357cf2697727"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e3e5855be398124938dc9e10a39741a"
+    },
+    {
+      "source_id": "SRC-0081",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "bb47f2f45fa7313d650b37889884f22a40ebf7c1"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e3e5855be398139ac7afa013f49cdaa"
+    },
+    {
+      "source_id": "SRC-0082",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "6a6e29b8fc6b27d4f25d02e0bd2995301428c2f3"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e3e5855be3981e29f48dee9a19da278"
+    },
+    {
+      "source_id": "SRC-0083",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "223c95e463717e136d2e76230827e6e2d0c8a70e"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e3e5855be3981338b93e61878d6a529"
+    },
+    {
+      "source_id": "SRC-0084",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "151c503decc6ae7faa72888852f1c9fd0d8c9335"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e3e5855be39812e8fa4ffdc1a5c36de"
     }
   ]
 }
