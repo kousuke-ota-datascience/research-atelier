@@ -5,8 +5,25 @@
   "review_seq": 1,
   "layer": "30_analysis",
   "review_kind": "20_synthesis_plus_00_context_to_30_analysis",
-  "target_blob_sha": "96d4f9a1df1f8635cc22ca89f1d396935f2a015d",
-  "assessment": "The Analysis answers the frozen Methodological question without exceeding the Synthesis. It treats raw error increase as an investigation signal rather than a sufficient retraining condition, requires persistent post-correction mismatch plus evidence of changed process/predictive conditions, keeps non-model causes as a separate diagnostic branch required by the frozen scope, and classifies parameter-changing moving-window/recursive/ensemble approaches on the model-update side under this Investigation's explicit definition. It does not invent universal thresholds, sample sizes, or a complete diagnostic algorithm, and requires testing/monitoring of a retrained candidate. No material bypass or unsupported judgment was identified.",
-  "findings": [],
-  "verdict": "PASS"
+  "target_blob_sha": "ccc5db49c205a44357a8c54f55d765c061a6dda7",
+  "assessment": "Most of the analysis is appropriately cautious about raw-error triggers, non-model alternative causes, target-specific thresholds, data sufficiency, and candidate validation. But J0003 and the Working Answer inherit the upstream taxonomy ambiguity and can classify parameter-changing adaptation as a non-retraining alternative despite the frozen scope.",
+  "findings": [
+    {
+      "finding_id": "F002",
+      "severity": "Moderate",
+      "target": "30_analysis.working_answer / J0003: use of moving-window, recursive, and ensemble adaptation as lower-impact alternatives before full base-model retraining",
+      "evidence": [
+        "00_context.scope fixes the base model on the external-correction branch and defines parameter-changing updates as retraining.",
+        "20_synthesis.K0002 / K0005 inherit a broader adaptation taxonomy than the frozen decision boundary permits.",
+        "30_analysis.J0003 explicitly uses moving-window, recursive, and ensemble methods as alternatives to full base-model retraining."
+      ],
+      "impact": "The Working Answer may advise postponing retraining in favor of an adaptation mechanism that, by the frozen Investigation definition, is itself a base-model update/retraining action. The central decision rule is therefore semantically ambiguous.",
+      "repair_direction": {
+        "mode": "same_investigation",
+        "affected_layer": "20_synthesis",
+        "instruction": "After repairing 20_synthesis, rebuild 30_analysis so the comparators are exactly: fixed base model plus external correction; investigation/correction of non-model causes; and base-model parameter update/retraining. Do not present a parameter-changing adaptive model as a fourth fixed-base alternative."
+      }
+    }
+  ],
+  "verdict": "FINDINGS"
 }

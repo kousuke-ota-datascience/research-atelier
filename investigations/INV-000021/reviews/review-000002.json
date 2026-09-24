@@ -4,20 +4,20 @@
   "investigation_id": "INV-000021",
   "review_seq": 2,
   "target": {
-    "commit_sha": "21fb4111dacf2d62150a5419287a365c41297c43",
+    "commit_sha": "52aebbaeb0043f0da5ca085335a9ce1d3a5d91e0",
     "artifact_blob_shas": {
       "00_context": "a80b937b996379a3ecd0e36c49462b18af874b5d",
       "10_evidence": "346bef65afc1095fd5346d60d24c1945164b7f0f",
-      "20_synthesis": "cc168bd5cc5f859c7f68789bc62a0de99f08c837",
-      "30_analysis": "2412ce7db85654dcf9a82678c26a5771658af539"
+      "20_synthesis": "ea41d4b86f770761d9e676b630d343aa5ea8b059",
+      "30_analysis": "077acc92d6dec4698cecc7532e1b13b16318d85b"
     }
   },
-  "reviewed_at": "2026-09-24T05:02:19.230841Z",
+  "reviewed_at": "2026-09-24T05:00:09.773960Z",
   "layer_files": {
     "00_context": "review_00_000002.json",
     "10_evidence": "review_10_000002.json",
     "20_synthesis": "review_20_000002.json",
     "30_analysis": "review_30_000002.json"
   },
-  "verdict": "PASS"
+  "verdict": "FINDINGS"
 }

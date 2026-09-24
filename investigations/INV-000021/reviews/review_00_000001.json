@@ -6,7 +6,7 @@
   "layer": "00_context",
   "review_kind": "context_semantic_validity",
   "target_blob_sha": "a80b937b996379a3ecd0e36c49462b18af874b5d",
-  "assessment": "The frozen Methodological Context is coherent with RQ-0011. It defines a supervisory/setpoint-generation use case on an approximately 5–10 minute timescale, keeps fast deterministic PLC inner-loop control out of scope for ML replacement, explicitly includes safety, constraint-violation prevention, stability-related transients, and non-malicious failure handling, and leaves vendor-specific implementation and general cybersecurity outside the main scope. No semantic contradiction or missing boundary was identified that would require changing the frozen Context.",
+  "assessment": "Frozen RQ, Methodological Question Type, scope, target process class, exclusions, evidence cutoff, and assumptions boundary are semantically coherent for the downstream architecture/safety analysis. No context contradiction or missing context element was identified that would require changing the frozen Investigation Context.",
   "findings": [],
   "verdict": "PASS"
 }

@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000021",
+  "review_seq": 3,
+  "layer": "30_analysis",
+  "review_kind": "20_synthesis_plus_00_context_to_30_analysis",
+  "target_blob_sha": "2412ce7db85654dcf9a82678c26a5771658af539",
+  "assessment": "The rebuilt Analysis resolves cycle-2 F002 and is aligned with the repaired Synthesis. It keeps the optimizer as a bounded supervisory setpoint layer, retains deterministic lower-level regulation, fallback and staged commissioning, and now states that hazard/risk analysis determines required risk reduction and which safety functions require independence from the supervisory/BPCS path. The Working Answer and J0002 no longer prescribe universal SIS/SIF allocation. Numerical constraints, timeout/fallback semantics, and target-process safety allocation remain explicitly unresolved/process-specific.",
+  "findings": [],
+  "verdict": "PASS"
+}

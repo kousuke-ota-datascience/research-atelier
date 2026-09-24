@@ -6,7 +6,7 @@
   "layer": "10_evidence",
   "review_kind": "source_evidence_note_to_10_evidence",
   "target_blob_sha": "dcb6add7e5f5397287587af516ec23ba1e5151a2",
-  "assessment": "E0001-E0004 were checked against Notion EV-0212-EV-0215: Evidence text, locator, Note Type, and Source relation match the frozen snapshot. Source spot checks support the represented boundaries: concept drift concerns change in the input-target relationship; soft-sensor adaptation includes moving-window, recursive and ensemble approaches; the industrial maintenance case combines model-mismatch and process-monitoring indices to guide model updating; and production-ML practice emphasizes explicit testing and monitoring. No provenance or source-faithfulness defect was identified.",
+  "assessment": "E0001-E0004 are traceable and source-faithful: Gama defines concept drift as change in the input-target relation; Kadlec et al. summarize broad soft-sensor adaptation categories; Chen et al. report mismatch/process monitoring for update timing; Breck et al. support explicit production testing/monitoring. The Evidence itself does not claim that all adaptation categories preserve a frozen base model.",
   "findings": [],
   "verdict": "PASS"
 }

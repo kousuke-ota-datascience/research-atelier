@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000021",
+  "review_seq": 3,
+  "layer": "20_synthesis",
+  "review_kind": "10_evidence_to_20_synthesis",
+  "target_blob_sha": "cc168bd5cc5f859c7f68789bc62a0de99f08c837",
+  "assessment": "The repaired Synthesis resolves cycle-2 F001. K0001 now distinguishes the SIS/SIF safe-state role from the separate hazard/risk-analysis decision about which safety functions require that allocation and what BPCS independence is necessary. K0006 and R0001 preserve the layered supervisory architecture while making safety-function allocation and separation target-process risk-analysis decisions. K0002-K0005 remain supported and their qualifications are unchanged. No unsupported universal safety-allocation rule remains.",
+  "findings": [],
+  "verdict": "PASS"
+}

@@ -6,7 +6,7 @@
   "layer": "10_evidence",
   "review_kind": "source_evidence_note_to_10_evidence",
   "target_blob_sha": "346bef65afc1095fd5346d60d24c1945164b7f0f",
-  "assessment": "E0001-E0006 were checked against Notion EV-0206-EV-0211: Evidence text, locator, Note Type, and Source relation match the frozen snapshot. Publisher/primary-source spot checks support the represented claims: IEC 61511 defines the SIS safe-state lifecycle role; the HSE notice documents a BPCS-dependent overfill-protection failure and risk-assessment-dependent independence guidance; reference-governor and constrained-MPC literature support explicit command/state constraint handling; and the Tata Steel case documents Level 1 PLC/PID control with safety interlocks, Level 2 supervisory MPC setpoints, manual fallback, and staged commissioning. No provenance or source-faithfulness defect was identified.",
+  "assessment": "E0001-E0006 are traceable to the registered Source and Evidence Note records and preserve the relevant source boundaries: IEC/HSE support SIS safe-state and independence/common-cause considerations; control literature supports constrained supervisory commands; the Tata Steel case supports a Level-2 supervisory pattern, manual fallback, and staged commissioning. The evidence snapshot does not claim universal numeric limits or universal architecture sufficiency.",
   "findings": [],
   "verdict": "PASS"
 }

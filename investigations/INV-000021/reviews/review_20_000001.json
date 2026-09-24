@@ -6,25 +6,7 @@
   "layer": "20_synthesis",
   "review_kind": "10_evidence_to_20_synthesis",
   "target_blob_sha": "ea41d4b86f770761d9e676b630d343aa5ea8b059",
-  "assessment": "K0002-K0005 are supported by their declared Evidence and preserve their main qualifications. K0006 correctly synthesizes the supervisory/constraint/fallback architecture at a high level, but K0001/K0006 can be read as universally assigning process safety functions to an independent SIS/SIF-type layer. The selected functional-safety evidence supports independence where hazard/risk analysis and required risk reduction make it necessary; it does not establish a universal allocation rule for every safety function.",
-  "findings": [
-    {
-      "finding_id": "F001",
-      "severity": "Moderate",
-      "target": "20_synthesis:K0001,K0006",
-      "evidence": [
-        "10_evidence:E0001",
-        "10_evidence:E0002",
-        "20_synthesis:K0001",
-        "20_synthesis:K0006"
-      ],
-      "impact": "The wording can overgeneralize the functional-safety evidence into a universal requirement that all process safety functions be assigned to independent SIS/SIF or equivalent protection. IEC establishes the safe-state role of SIS when used, while the HSE material makes the required separation/independence dependent on hazard/risk assessment and the safety functions/risk reduction involved. This does not overturn the layered supervisory architecture, but it affects the methodological validity of safety-function allocation in a high-stakes design context.",
-      "repair_direction": {
-        "mode": "same_investigation",
-        "affected_layer": "20_synthesis",
-        "instruction": "Qualify K0001/K0006 so hazard/risk analysis determines which safety functions require SIS/SIF or other independent protection and the necessary degree of BPCS/supervisory-path independence. Preserve the common-dangerous-failure/dependency principle, then rebuild 30_analysis from the repaired Synthesis."
-      }
-    }
-  ],
-  "verdict": "FINDINGS"
+  "assessment": "K0001-K0006 remain within the support boundary of E0001-E0006. K0006 is explicitly marked as cross-source engineering synthesis, while uncertainty items preserve target-process-specific limits and the single-case nature of the industrial implementation. No unsupported proposition or material qualification loss was identified.",
+  "findings": [],
+  "verdict": "PASS"
 }
