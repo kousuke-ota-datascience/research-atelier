@@ -5,25 +5,8 @@
   "review_seq": 1,
   "layer": "20_synthesis",
   "review_kind": "10_evidence_to_20_synthesis",
-  "target_blob_sha": "974f6e36c9b6725ec205ca9febeebc22c8a2b46b",
-  "assessment": "The synthesis correctly preserves the concept-drift definition, monitoring limits, lack of universal thresholds, and lack of a direct controlled comparison. However, K0002/K0005 use a broad adaptive-soft-sensor taxonomy as though it were wholly distinct from base-model retraining, which conflicts with the frozen scope whenever those mechanisms change model parameters.",
-  "findings": [
-    {
-      "finding_id": "F001",
-      "severity": "Moderate",
-      "target": "20_synthesis.K0002 / K0005: classification of moving-window, recursive-adaptation, and ensemble methods as lighter-weight alternatives to base-model retraining",
-      "evidence": [
-        "00_context.scope defines retraining as any use of new actual data that changes base prediction model parameters.",
-        "10_evidence.E0002 / SRC-0117 describes moving-window, recursive-adaptation, and ensemble approaches as broad soft-sensor adaptation categories.",
-        "20_synthesis.K0002 and K0005 use those broad categories to frame an alternative to base-model updating."
-      ],
-      "impact": "The synthesis can place methods that change the predictive model or its fitted parameters on the fixed-base-model side of the decision boundary. That blurs the frozen scope's three-way distinction and can distort the retraining gate in 30_analysis.",
-      "repair_direction": {
-        "mode": "same_investigation",
-        "affected_layer": "20_synthesis",
-        "instruction": "Rebuild the maintenance taxonomy around the frozen scope. Treat moving-window/recursive/ensemble methods only as background adaptation categories; any method that changes base-model parameters must be classified as model update/retraining under this Investigation. Keep only genuinely external post-prediction correction on the fixed-base comparator side, then rebuild 30_analysis."
-      }
-    }
-  ],
-  "verdict": "FINDINGS"
+  "target_blob_sha": "91c5cc92d8e6e5272587444db7dea2fd30705574",
+  "assessment": "K0001-K0005 are supported by their declared Evidence and preserve the relevant qualifications. The Synthesis correctly distinguishes concept drift from a raw error excursion, treats broad soft-sensor adaptation categories as background rather than assuming that they preserve a frozen base model, limits the industrial maintenance method to a case-specific example, and states that persistent post-correction mismatch should be interpreted together with process/predictive-condition evidence. It explicitly preserves the gap that the selected Evidence does not provide a complete non-model diagnostic procedure, universal thresholds, or a direct controlled comparison of frozen-base correction versus retraining.",
+  "findings": [],
+  "verdict": "PASS"
 }

@@ -6,7 +6,7 @@
   "layer": "00_context",
   "review_kind": "context_semantic_validity",
   "target_blob_sha": "935cc420a620cb9e91f3e21bdcd7dee64d422f6d",
-  "assessment": "The frozen Methodological RQ and scope clearly define the decision boundary: continue a fixed base model with external correction, investigate non-model causes, or update/retrain the base model. The scope also explicitly defines retraining as parameter-changing use of new actual data. No defect in the frozen Context itself was identified.",
+  "assessment": "The frozen Methodological Context is coherent with RQ-0012. It explicitly defines retraining/model update as use of new actual data to change base-model parameters, frames the decision among continued external correction, investigation/correction of non-model causes, and base-model retraining, rejects prediction-error increase alone as a retraining trigger, leaves numerical thresholds unfixed, and excludes retraining-algorithm and automated deployment design from the main scope. No Context defect was identified.",
   "findings": [],
   "verdict": "PASS"
 }
