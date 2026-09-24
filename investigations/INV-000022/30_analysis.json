@@ -3,10 +3,10 @@
   "artifact_type": "30_analysis",
   "investigation_id": "INV-000022",
   "rq_id": "RQ-0012",
-  "analyzed_at": "2026-09-24T03:38:00Z",
+  "analyzed_at": "2026-09-24T04:42:29Z",
   "question_type": "Methodological",
   "profile": {
-    "method_or_procedure": "Treat base-model retraining as an escalation step in model maintenance. Monitor post-correction predictive performance and model mismatch together with process-condition indicators, compare lighter-weight adaptation against requirements, investigate alternative causes of degradation, and require validation of a retrained candidate before replacement.",
+    "method_or_procedure": "Treat base-model retraining as an escalation step in a three-branch maintenance decision defined by the frozen scope: (1) continue or redesign external post-prediction correction while keeping the base model parameters frozen, (2) investigate and correct non-model causes of degradation, or (3) update/retrain the base prediction model. Monitor post-correction performance, model mismatch, and process-condition indicators, and validate any retrained candidate before replacement.",
     "intended_use": "Decide when a frozen quality-prediction model plus external/online correction is no longer an adequate maintenance strategy and escalation to base-model retraining is justified.",
     "assumptions": [
       "Prediction performance can be monitored on delayed but traceable ground-truth quality labels.",
@@ -14,19 +14,21 @@
       "Process-condition or input-distribution monitoring is available at sufficient fidelity to distinguish at least some operating-regime changes from transient prediction errors."
     ],
     "evaluation_criteria": [
-      "Persistence and operational significance of prediction degradation after the existing correction layer is applied.",
+      "Persistence and operational significance of prediction degradation after the existing external correction layer is applied.",
       "Evidence that current process/predictive conditions differ materially from those under which the frozen model was adequate.",
-      "Whether lower-impact adaptation mechanisms can still maintain required performance.",
+      "Whether a genuinely external correction that leaves base-model parameters frozen still satisfies the required prediction performance and operational constraints.",
+      "Whether plausible sensor, process, actuation, or data-pipeline causes have been investigated sufficiently before attributing degradation to the base predictive relation.",
       "Availability of testing and monitoring sufficient to evaluate a retrained candidate before replacement."
     ],
     "comparators": [
-      "Continue the frozen base model with the existing external correction.",
-      "Strengthen or change the external/lightweight adaptation mechanism without retraining the base model.",
-      "Retrain or update the base prediction model using data representative of current conditions."
+      "Continue the frozen base model with the existing external post-prediction correction.",
+      "Redesign or strengthen an external post-prediction correction while keeping the base-model parameters frozen, and/or correct identified non-model causes.",
+      "Retrain or otherwise update base-model parameters using data representative of current conditions."
     ],
     "tradeoffs": [
-      "Earlier retraining may restore fit to a changed regime sooner but risks reacting to transient noise or a non-model fault and increases validation/deployment burden.",
-      "Continuing external correction preserves the validated base model and reduces change scope but can become inadequate when mismatch is persistent or structurally linked to changed operating conditions.",
+      "Earlier base-model retraining may restore fit to a changed regime sooner but risks reacting to transient noise or a non-model fault and increases validation/deployment burden.",
+      "Continuing a strictly external correction preserves the validated base model and reduces change scope but can become inadequate when post-correction mismatch remains persistent or structurally linked to changed operating conditions.",
+      "Broad moving-window, recursive, or ensemble adaptation methods cannot be assumed to belong to the fixed-base branch: if they change base-model parameters under this Investigation's definition, they are model update/retraining actions.",
       "More monitoring and diagnostic gating delays maintenance action but reduces the risk of treating one error excursion as proof that the predictive relationship has changed."
     ],
     "applicability_limits": [
@@ -36,7 +38,7 @@
     ]
   },
   "working_answer": {
-    "text": "base model再学習へ移行する判断は、prediction errorが一時的に増えたことだけでは行わず、少なくとも「外部補正後にもmodel mismatch／性能劣化が持続する」「process-condition monitoring等からcurrent regimeと旧modelの関係が変化した疑いが強い」「moving-window、recursive adaptation、ensemble等のより軽いadaptationでは要求性能を維持できない」「retrained candidateをproduction changeとして試験・監視できる」という複数条件で評価するのが妥当である。concept driftはinput-target関係の変化であり、raw error threshold超過だけでは同定できないため、error増加をtriggerではなくinvestigation signalとして扱うべきである。さらに、error増加はmodel-relation change以外でも説明可能なので、実装上はsensor/process/actuation/data-pipeline等の代替原因を調べたうえで再学習へ進むgateを設けるべきである。ただし、この非model原因の完全な切り分け手順、普遍的なthreshold、再学習に必要な最小データ量は選択Evidenceから確定できない。したがって、最終的な運用ruleは対象processでbacktest/validationし、post-correction performance、regime/mismatch indicators、原因調査、retrained-candidate validationの組合せとして校正する必要がある。",
+    "text": "base model再学習へ移行する判断は、prediction errorの一時的増加だけでは行わず、少なくとも「base modelを固定した外部補正を適用した後にもmodel mismatch／性能劣化が持続し、運用上無視できない」「process-condition monitoringやmismatch指標から、current regimeと旧modelのpredictive relationが変化した疑いが強い」「sensor/process/actuation/data-pipeline等の非model原因を調べても、劣化をそれだけでは説明・是正できない」「retrained candidateをproduction changeとして試験・監視できる」という複数条件で評価するのが妥当である。concept driftはinput-target関係の変化であり、raw error threshold超過だけでは同定できないため、error増加はretrainingの十分条件ではなくinvestigation signalとして扱うべきである。また、moving-window、recursive adaptation、ensemble等はsoft-sensor文献上の広いadaptation categoryであり、本Investigationでは、その方法が新しい実績データを用いてbase model parameterを変更するならretraining/model update側に分類する。したがって『固定base modelを維持する代替案』として残せるのは、base parameterを変えない外部補正と非model原因の是正である。ただし、普遍的なthreshold、非model原因の完全な切り分け手順、再学習に必要な最小データ量、外部補正継続とretrainingの直接比較優位はselected Evidenceから確定できない。最終的な運用ruleは対象processでbacktest/validationし、post-correction performance、regime/mismatch indicators、原因調査、retrained-candidate validationを組み合わせて校正する必要がある。",
     "knowledge_unit_refs": [
       "K0001",
       "K0002",
@@ -66,7 +68,7 @@
     },
     {
       "judgment_id": "J0003",
-      "statement": "moving-window、recursive、ensemble等のlighter-weight adaptationで要求性能を維持できる間は、full base-model retrainingだけを唯一のmaintenance actionとみなす根拠はない。",
+      "statement": "moving-window、recursive、ensemble等は広いadaptation categoryであり、その方法が新しい実績データを用いてbase-model parameterを変更するなら、本Investigationの定義ではretraining/model update側に分類する。固定base model側の代替案として扱えるのは、base parameterを変えない外部補正である。",
       "knowledge_unit_refs": [
         "K0002",
         "K0005"
@@ -82,7 +84,7 @@
     },
     {
       "judgment_id": "J0005",
-      "statement": "sensor/process/actuation/data-pipeline等の代替原因を調べずにprediction degradationをmodel driftへ一意に帰属するのは不十分であり、原因調査をretraining gateへ含めるのが安全側のengineering judgmentである。",
+      "statement": "frozen scopeはsensor/process/actuation/data-pipeline等の非model原因の調査・是正を独立branchとして含む。selected Evidenceは完全なdiagnostic procedureを与えないため、実装上は原因調査をretraining gateに含めるengineering judgmentとして扱い、その手順を対象processで別途設計する必要がある。",
       "knowledge_unit_refs": [
         "K0001",
         "K0004",
@@ -123,7 +125,7 @@
   ],
   "alternative_interpretations": [
     {
-      "text": "driftが局所的で外部補正またはrecursive adaptationが安定して要求性能を満たす場合、base-model retrainingを延期する方が変更範囲を小さくできる。一方、複数regimeで構造的なmismatchが続く場合は、補正層の複雑化よりbase-model更新の方が保守しやすい可能性があるが、後者の比較優位は今回のEvidenceだけでは確定できない。",
+      "text": "driftが局所的で、base-model parameterを変えない外部補正が安定して要求性能を満たす場合は、base-model retrainingを延期して変更範囲を小さくできる。一方、複数regimeでpost-correction mismatchが構造的に残る場合はbase-model更新の合理性が高まるが、その比較優位を直接定量化するcontrolled evidenceは今回のsnapshotにない。",
       "knowledge_unit_refs": [
         "K0002",
         "K0003",

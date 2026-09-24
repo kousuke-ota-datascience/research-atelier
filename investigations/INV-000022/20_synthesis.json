@@ -3,7 +3,7 @@
   "artifact_type": "20_synthesis",
   "investigation_id": "INV-000022",
   "rq_id": "RQ-0012",
-  "synthesized_at": "2026-09-24T03:36:00Z",
+  "synthesized_at": "2026-09-24T04:42:29Z",
   "knowledge_units": [
     {
       "knowledge_unit_id": "K0001",
@@ -17,12 +17,13 @@
     },
     {
       "knowledge_unit_id": "K0002",
-      "statement": "Data-driven soft-sensor maintenance includes moving-window, recursive-adaptation, and ensemble approaches, so adaptation is a continuum and complete base-model retraining is not the only possible response to changing process behavior.",
+      "statement": "Data-driven soft-sensor maintenance includes moving-window, recursive-adaptation, and ensemble approaches, but these are broad adaptation categories rather than a one-to-one taxonomy of fixed-base external correction versus base-model retraining.",
       "evidence_refs": [
         "E0002"
       ],
       "qualifiers": [
-        "The review classifies adaptation mechanisms broadly; which mechanism is sufficient depends on the target process and performance requirements."
+        "Under this frozen Investigation, any method that uses new actual data to change base-model parameters belongs to model update/retraining. Only a post-prediction or otherwise external correction that leaves the base model parameters unchanged remains on the fixed-base branch.",
+        "The source review establishes the breadth of adaptation mechanisms; it does not establish that moving-window, recursive, or ensemble methods all preserve a frozen base model."
       ]
     },
     {
@@ -47,7 +48,7 @@
     },
     {
       "knowledge_unit_id": "K0005",
-      "statement": "Across the selected evidence, escalation from a frozen model plus lighter-weight adaptation toward base-model updating is best framed as a monitored model-maintenance decision: persistent mismatch should be interpreted together with evidence of changed process/predictive conditions and the adequacy of lower-impact adaptation, rather than by raw prediction error alone.",
+      "statement": "Across the selected evidence, escalation from a frozen base model plus external correction toward base-model updating is best treated as a monitored model-maintenance decision: persistent post-correction mismatch should be interpreted together with evidence of changed process/predictive conditions rather than by raw prediction error alone. Broad adaptive-model categories are background context, not a separate fixed-base comparator when they change base-model parameters.",
       "evidence_refs": [
         "E0001",
         "E0002",
@@ -55,7 +56,9 @@
         "E0004"
       ],
       "qualifiers": [
-        "This is a methodological synthesis, not a universally published AND-rule or numerical trigger. The selected evidence does not supply a complete diagnostic procedure for excluding sensor, actuation, process, or data-pipeline faults."
+        "This is a methodological synthesis, not a universally published AND-rule or numerical trigger.",
+        "The frozen scope separately requires non-model causes (sensor/process/actuation/data pipeline) to be considered before attributing degradation to the base predictive relation; the selected evidence does not supply a complete diagnostic procedure for that branch.",
+        "The selected evidence does not directly compare a strictly frozen base model plus external post-prediction correction against retraining on the same industrial process."
       ]
     }
   ],
@@ -80,7 +83,7 @@
         "K0002",
         "K0003"
       ],
-      "description": "Both the soft-sensor review and industrial case treat maintenance as graded adaptation rather than an automatic jump from a fixed model to complete replacement.",
+      "description": "The soft-sensor review and industrial case show that model maintenance can use multiple adaptation/update mechanisms and that update timing can be monitoring-driven; they do not define those mechanisms as fixed-base alternatives to retraining.",
       "evidence_refs": [
         "E0002",
         "E0003"
@@ -94,7 +97,7 @@
         "K0004",
         "K0005"
       ],
-      "description": "A defensible escalation decision depends on monitoring sufficient to distinguish persistent model mismatch from a transient metric excursion and to validate the subsequent maintenance action.",
+      "description": "A defensible base-model update decision depends on monitoring sufficient to distinguish persistent mismatch from a transient metric excursion and to validate the subsequent maintenance action; the fixed-base versus parameter-updating classification remains governed by the frozen Investigation scope.",
       "evidence_refs": [
         "E0003",
         "E0004"
@@ -135,7 +138,7 @@
     },
     {
       "uncertainty_id": "U0004",
-      "description": "The selected evidence does not provide a controlled head-to-head comparison, on the same target process, between continuing external compensation and performing a full base-model retraining.",
+      "description": "The selected evidence does not provide a controlled head-to-head comparison, on the same target process, between continuing a strictly frozen base model with external post-prediction correction and performing a base-model parameter update/retraining.",
       "knowledge_unit_refs": [
         "K0002",
         "K0005"
