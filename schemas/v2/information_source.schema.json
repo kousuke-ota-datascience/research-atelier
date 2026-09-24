@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/kousuke-ota-datascience/research-atelier/schemas/v2/information_source.schema.json",
+  "title": "Research Atelier Information Source v2",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "artifact_type",
+    "source_id",
+    "notion_url",
+    "title"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "2.0.0"
+    },
+    "artifact_type": {
+      "const": "information_source"
+    },
+    "source_id": {
+      "type": "string",
+      "pattern": "^SRC-(?:[0-9]{4}|[0-9]{6})$"
+    },
+    "notion_url": {
+      "type": "string",
+      "format": "uri",
+      "description": "Human-facing Notion catalog / ID-allocation page. Not the metadata authority after Git materialization."
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_type": {
+      "type": ["string", "null"],
+      "enum": [
+        "Journal Article",
+        "Book",
+        "Book Chapter",
+        "Conference Paper",
+        "Preprint",
+        "Report",
+        "Thesis",
+        "Dataset",
+        "Documentation",
+        "Web Page",
+        "Other",
+        null
+      ]
+    },
+    "journal_or_publisher": {
+      "type": ["string", "null"],
+      "minLength": 1
+    },
+    "authors": {
+      "type": ["string", "null"],
+      "minLength": 1
+    },
+    "year": {
+      "type": ["integer", "null"],
+      "minimum": 0
+    },
+    "url": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "string",
+          "format": "uri"
+        }
+      ]
+    },
+    "doi": {
+      "type": ["string", "null"],
+      "minLength": 1
+    },
+    "version_or_edition": {
+      "type": ["string", "null"],
+      "minLength": 1,
+      "description": "Edition or externally meaningful resource version. This is Source-level metadata, not an Investigation access timestamp."
+    },
+    "reliability_note": {
+      "type": ["string", "null"],
+      "minLength": 1
+    }
+  }
+}
