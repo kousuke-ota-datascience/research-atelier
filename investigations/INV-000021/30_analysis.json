@@ -1,0 +1,137 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "30_analysis",
+  "investigation_id": "INV-000021",
+  "rq_id": "RQ-0011",
+  "analyzed_at": "2026-09-24T03:38:00Z",
+  "question_type": "Methodological",
+  "profile": {
+    "method_or_procedure": "Use the quality-prediction/optimization system as a supervisory setpoint-generation layer above an already stabilized PLC/PID control layer. Enforce admissible command/state constraints before setpoint application, retain independent safety protection, preserve a fallback operating path, and commission automatic operation progressively.",
+    "intended_use": "Apply quality-model-derived control-parameter updates on an approximately 5–10 minute supervisory timescale without replacing the PLC's deterministic fast closed-loop regulation or the process safety layer.",
+    "assumptions": [
+      "The Level 1 PLC/PID control layer is already capable of stable baseline regulation within its validated operating envelope.",
+      "Process hazards and safety functions can be identified independently of the quality optimizer, and required safety functions are allocated to an appropriately independent SIS/SIF or equivalent protection architecture.",
+      "The supervisory optimizer can be prevented from writing commands that violate configured admissible bounds."
+    ],
+    "evaluation_criteria": [
+      "No loss of required safety function when the supervisory optimizer, its communication path, or the BPCS experiences a relevant failure.",
+      "No violation of configured state, actuator-magnitude, actuator-rate, or process-variable constraints by accepted supervisory commands.",
+      "Stable lower-level closed-loop behavior without unacceptable oscillation or transient excursions after supervisory setpoint changes.",
+      "Defined and tested fallback/manual operation when the supervisory layer is disconnected or rejected.",
+      "Progressive commissioning demonstrates acceptable behavior before longer-duration automatic operation."
+    ],
+    "comparators": [
+      "Direct optimizer output to the fast inner control loop without a supervisory constraint boundary.",
+      "Supervisory setpoint generation without explicit command/state constraint enforcement.",
+      "Manual-only setpoint operation with no supervisory optimizer."
+    ],
+    "tradeoffs": [
+      "Tighter setpoint/rate/state constraints reduce the optimizer's feasible action space and may reduce short-term optimization benefit while increasing operational robustness.",
+      "Architectural separation and independent safety protection increase implementation and validation complexity but reduce the risk that one control-path failure defeats both regulation and protection.",
+      "More conservative or slower supervisory command changes can reduce transient risk at the cost of slower response to changing operating objectives."
+    ],
+    "applicability_limits": [
+      "The selected evidence does not provide universal numerical setpoint bounds, rate limits, watchdog times, or optimizer update intervals.",
+      "The selected industrial example is continuous steel annealing; exact hierarchy and fallback semantics must be revalidated for the target manufacturing process.",
+      "The analysis does not establish that a separate reference-governor component is always required; constrained MPC or another validated constraint-enforcement mechanism may implement the same boundary."
+    ]
+  },
+  "working_answer": {
+    "text": "品質予測モデル／optimizerはPLCの高速inner-loopや安全保護層そのものにせず、既存の安定化済みBPCS/PLCの上位に置くsupervisory setpoint-generation layerとするのが、選択Evidenceに最も整合する構成である。optimizerが生成した候補setpointは、reference governor、constrained MPC、または同等のconstraint-enforcement機構により、少なくともsetpoint/actuatorのabsolute limit、rate/Δsetpoint、必要なstate/process boundsを満たす場合だけLevel 1へ渡す。Level 1のPID/PLCはdeterministicなfast closed-loop regulationと既存interlockを保持し、人身・設備・工程の安全機能はoptimizer/BPCSとの共通故障で失われないよう十分に独立したSIS/SIF等がsafe stateを担う。supervisory layerを切断・拒否してもbaseline controlまたはmanual setpoint operationへ戻れるfallback pathを残し、自動運転は短時間trialから段階的に連続運転時間を伸ばしてcommissioningするのが妥当である。一方、通信timeout時にhold-lastかfallbackか、許容setpoint範囲、rate limit、5〜10分更新周期が妥当かは、対象processのdynamic response、hazard analysis、既存control designで決める必要があり、選択Evidenceだけから普遍値は決められない。",
+    "knowledge_unit_refs": [
+      "K0001",
+      "K0002",
+      "K0003",
+      "K0004",
+      "K0005",
+      "K0006"
+    ]
+  },
+  "judgments": [
+    {
+      "judgment_id": "J0001",
+      "statement": "品質予測・最適化層はfast regulatory controlを置換せず、bounded setpointを供給するsupervisory layerとして分離するべきである。",
+      "knowledge_unit_refs": [
+        "K0002",
+        "K0003",
+        "K0004",
+        "K0006"
+      ]
+    },
+    {
+      "judgment_id": "J0002",
+      "statement": "安全機能はoptimizer/BPCSと共通故障で同時に失われないよう、必要なindependenceとdependency/common-cause analysisを持つSIS/SIF等へ割り当てる必要がある。",
+      "knowledge_unit_refs": [
+        "K0001",
+        "K0006"
+      ]
+    },
+    {
+      "judgment_id": "J0003",
+      "statement": "supervisory commandは直接PLCへ無制約に反映せず、state/control/setpoint magnitude/rate等の明示的constraintを通過させる必要がある。",
+      "knowledge_unit_refs": [
+        "K0002",
+        "K0003",
+        "K0006"
+      ]
+    },
+    {
+      "judgment_id": "J0004",
+      "statement": "supervisory layerのdisconnect/rejection時にもbaseline/manual operationへ移行可能なfallback pathを設け、automatic operationは段階的にcommissioningするのが妥当である。",
+      "knowledge_unit_refs": [
+        "K0005",
+        "K0006"
+      ]
+    },
+    {
+      "judgment_id": "J0005",
+      "statement": "setpoint bounds、rate limit、watchdog/timeout、更新周期、fallback setpointは対象process固有であり、このInvestigationから普遍値として固定できない。",
+      "knowledge_unit_refs": [
+        "K0002",
+        "K0003",
+        "K0005",
+        "K0006"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "text": "functional-safety EvidenceはSIS/BPCS independenceとsafe-state責務を強く支持するが、ML optimizer固有のPLC接続方式を規定するものではない。",
+      "knowledge_unit_refs": [
+        "K0001",
+        "K0006"
+      ]
+    },
+    {
+      "text": "直接的なindustrial implementation Evidenceはcontinuous steel annealingの単一事例であり、異なるprocess dynamics・hazardsへの一般化には追加検証が必要である。",
+      "knowledge_unit_refs": [
+        "K0004",
+        "K0005"
+      ]
+    },
+    {
+      "text": "対象processのdynamic model、hazard analysis、existing interlock/SIS designが入力されていないため、数値的なconstraint、安定性margin、timeout、fallback値は評価できない。",
+      "knowledge_unit_refs": [
+        "K0002",
+        "K0003",
+        "K0006"
+      ]
+    }
+  ],
+  "unresolved_questions": [
+    "対象processで許容されるsetpoint magnitude、Δsetpoint/rate、settling、oscillationの定量基準は何か。",
+    "optimizer/communication loss時にhold-last、validated baseline setpoint、manual takeoverのどれを採るべきか。",
+    "PLCへ反映する前のdata freshness、command validity、watchdog、handshake、bumpless transferをどのように実装・検証するか。",
+    "対象processではreference governor、constrained MPC、またはより単純なhard-limit/rate-limit gateのどれが必要十分か。"
+  ],
+  "alternative_interpretations": [
+    {
+      "text": "対象processとcontrollerが十分にモデル化・検証されている場合、constraint enforcementを独立したreference-governor blockとして置かず、constrained MPC自体に統合してもよい。重要なのは個別component名ではなく、supervisory command boundaryでconstraintを保証することである。",
+      "knowledge_unit_refs": [
+        "K0002",
+        "K0003",
+        "K0006"
+      ]
+    }
+  ]
+}
