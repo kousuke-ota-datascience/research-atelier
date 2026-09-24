@@ -76,6 +76,22 @@ class ValidationContractV2Test(unittest.TestCase):
         result = self._validate("30")
         self.assertEqual(result["result"], "PASS", result)
 
+    def test_six_digit_rq_id_passes(self) -> None:
+        docs = self._valid_docs()
+        for doc in docs.values():
+            doc["rq_id"] = "RQ-000024"
+        self._write_docs(docs)
+        result = self._validate("30")
+        self.assertEqual(result["result"], "PASS", result)
+
+    def test_five_digit_rq_id_fails_schema(self) -> None:
+        docs = self._valid_docs()
+        for doc in docs.values():
+            doc["rq_id"] = "RQ-00024"
+        self._write_docs(docs, "00")
+        result = self._validate("00")
+        self.assertEqual(result["result"], "FAIL", result)
+
     def test_cross_artifact_rq_mismatch_fails(self) -> None:
         docs = self._valid_docs()
         docs["20"]["rq_id"] = "RQ-0008"
