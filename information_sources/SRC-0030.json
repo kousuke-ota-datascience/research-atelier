@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-0030",
+  "notion_url": "https://app.notion.com/p/3e1e5855be39814bb4a8e902b2ff7584",
+  "title": "Dynamic soft sensor modeling based on time series error compensation",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "CIESC Journal",
+  "authors": "DU Wenli; GUAN Zhenqiang; QIAN Feng",
+  "year": 2010,
+  "url": "https://hgxb.cip.com.cn/EN/Y2010/V61/I2/439",
+  "doi": null,
+  "version_or_edition": null,
+  "reliability_note": "Journal-hosted abstract was checked. Reported comparison is simulation-based for ethylene distillation and does not by itself establish performance in other processes."
+}

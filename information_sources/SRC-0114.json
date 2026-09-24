@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-0114",
+  "notion_url": "https://app.notion.com/p/3e5e5855be39810098c3dd11794070c8",
+  "title": "Constrained model predictive control: Stability and optimality",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "Automatica",
+  "authors": "D. Q. Mayne; J. B. Rawlings; C. V. Rao; P. O. M. Scokaert",
+  "year": 2000,
+  "url": "https://www.sciencedirect.com/science/article/pii/S0005109899002149",
+  "doi": "10.1016/S0005-1098(99)00214-9",
+  "version_or_edition": null,
+  "reliability_note": "Automaticaのsurvey paper。有限horizon最適化とhard state/control constraintsを扱うMPCの安定性・最適性を整理する。製造プロセスでconstraint-aware supervisory optimizationを設計する際の理論根拠として使用する。"
+}

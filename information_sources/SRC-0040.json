@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-0040",
+  "notion_url": "https://app.notion.com/p/3e2e5855be3981d9b61fde92b8789780",
+  "title": "The Elder Wand | Official Harry Potter Encyclopedia",
+  "source_type": "Web Page",
+  "journal_or_publisher": "HarryPotter.com",
+  "authors": "HarryPotter.com editorial",
+  "year": null,
+  "url": "https://www.harrypotter.com/fact-file/objects/the-elder-wand",
+  "doi": null,
+  "version_or_edition": null,
+  "reliability_note": "Official franchise encyclopedia; used for baseline claims that the Elder Wand is exceptionally powerful and loyal to a wizard who has won it."
+}

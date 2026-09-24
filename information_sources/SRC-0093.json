@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-0093",
+  "notion_url": "https://app.notion.com/p/3e3e5855be39812588f5ec265745697a",
+  "title": "『小平市史 近現代編』「国民協会の結成と小平」",
+  "source_type": "Book Chapter",
+  "journal_or_publisher": "小平市",
+  "authors": "小平市史編さん委員会 編",
+  "year": 2013,
+  "url": "https://adeac.jp/kodaira-lib/texthtml/d100030/mp000010-100030/ht000890",
+  "doi": null,
+  "version_or_edition": null,
+  "reliability_note": "小平市編纂の自治体史。吉野家文書等に基づき、1892年6月創立の政府支持政党・国民協会への吉野泰三らの加入過程を叙述する。加入は第2回総選挙後であるため、2月の選挙時点の党派を後知恵で国民協会員とみなさない。"
+}

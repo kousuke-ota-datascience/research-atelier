@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-0097",
+  "notion_url": "https://app.notion.com/p/3e3e5855be3981129356c8924a2b45ba",
+  "title": "東京都公文書館「第13回 西南北多摩郡東京府移管反対運動」",
+  "source_type": "Web Page",
+  "journal_or_publisher": "東京都公文書館",
+  "authors": "東京都公文書館",
+  "year": 2024,
+  "url": "https://www.soumu.metro.tokyo.lg.jp/01soumu-archives/07edo_tokyo/0703kaidoku/0703kaidoku_13",
+  "doi": null,
+  "version_or_edition": null,
+  "reliability_note": "東京都公文書館所蔵資料を用いた公式史料解説。水源涵養林の伐採禁止解除や移管反対運動の背景を確認するために使用する。史料原文と解説者の叙述を区別して扱う。"
+}

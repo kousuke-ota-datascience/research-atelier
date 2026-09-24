@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-0109",
+  "notion_url": "https://app.notion.com/p/3e4e5855be3981a2adc3f31530ffd136",
+  "title": "『小平市史 近現代編』「移管運動の開始と分裂」",
+  "source_type": "Book Chapter",
+  "journal_or_publisher": "小平市／小平市立図書館こだいらデジタルアーカイブ",
+  "authors": null,
+  "year": null,
+  "url": "https://adeac.jp/kodaira-lib/texthtml/d100030/mp000010-100030/ht000820",
+  "doi": null,
+  "version_or_edition": null,
+  "reliability_note": "小平市編纂の自治体史。比留間家日記を明示して1889年以降の移管推進運動、府中町長比留間雄亮・田無町長下田太郎右衛門・元北多摩郡長砂川源五右衛門らの賛成立場と背景を叙述する。一次史料そのものではなく自治体史の解釈を介するため、動機の評価は二次史料として扱う。"
+}

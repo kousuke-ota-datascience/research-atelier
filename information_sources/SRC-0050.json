@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-0050",
+  "notion_url": "https://app.notion.com/p/3e2e5855be3981e8afa6cc52cd388323",
+  "title": "What if Ginny Weasley had never possessed Tom Riddle's diary?",
+  "source_type": "Web Page",
+  "journal_or_publisher": "HarryPotter.com",
+  "authors": "HarryPotter.com editorial",
+  "year": null,
+  "url": "https://www.harrypotter.com/features/what-if-ginny-had-never-possessed-tom-riddles-diary",
+  "doi": null,
+  "version_or_edition": null,
+  "reliability_note": "Official franchise explanatory article. Explicitly connects the sword killing the Basilisk, absorbing its venom, and thereby becoming capable of destroying Horcruxes."
+}

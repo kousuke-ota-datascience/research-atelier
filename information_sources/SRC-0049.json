@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-0049",
+  "notion_url": "https://app.notion.com/p/3e2e5855be3981d8b042e201e248de32",
+  "title": "The Sword of Gryffindor | Official Harry Potter Encyclopedia",
+  "source_type": "Web Page",
+  "journal_or_publisher": "HarryPotter.com",
+  "authors": "HarryPotter.com editorial",
+  "year": null,
+  "url": "https://www.harrypotter.com/fact-file/objects/the-sword-of-gryffindor",
+  "doi": null,
+  "version_or_edition": null,
+  "reliability_note": "Official franchise encyclopedia. Used to verify the sword's goblin-made properties: it takes in only that which makes it stronger and became impregnated with Basilisk venom."
+}

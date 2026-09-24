@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-0102",
+  "notion_url": "https://app.notion.com/p/3e3e5855be3981dabfb5ea36d065ed4b",
+  "title": "東京市史稿 市街篇第84 目次",
+  "source_type": "Web Page",
+  "journal_or_publisher": "東京都公文書館",
+  "authors": "東京都公文書館",
+  "year": null,
+  "url": "https://www.soumu.metro.tokyo.lg.jp/01soumu-archives/06kanko_butsu/0601sisiko/0601shigai/0601shigai84",
+  "doi": null,
+  "version_or_edition": null,
+  "reliability_note": "東京都公文書館が公開する『東京市史稿 市街篇第84』の公式目次。1892年9月20日「神奈川県西北南多摩三郡管轄替ノ上申」と、その参考として掲げられた明治19年の西・北多摩管轄替上申書の史料項目・典拠を確認できる。各史料本文そのものではない。"
+}

@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-0105",
+  "notion_url": "https://app.notion.com/p/3e4e5855be398155a4dac2edc1a47e99",
+  "title": "「三多摩の東京府移管（1893年4月）」史料6 内務大臣井上馨宛ての神奈川県知事内海忠勝書簡",
+  "source_type": "Report",
+  "journal_or_publisher": "柿生郷土史料館公開資料",
+  "authors": null,
+  "year": 2019,
+  "url": "https://kakio-kyoudo.jpn.org/wp-content/uploads/2019/05/ecca89732697bda4066710dd2e2a173a.pdf",
+  "doi": null,
+  "version_or_edition": null,
+  "reliability_note": "『東京市史稿 市街篇第84』所収の1892年10月19日付内海忠勝書簡翻刻を再録する講演資料。東京都公文書館の同巻目次が内海書簡写真および井上馨関係文書を出典として掲げることも独立確認した。今回、PDF該当ページ画像を実読したが、原書簡画像との逐字照合は未実施。"
+}

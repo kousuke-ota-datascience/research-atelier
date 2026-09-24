@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-0065",
+  "notion_url": "https://app.notion.com/p/3e3e5855be398134be72e877ddc24022",
+  "title": "通馬渡方覚",
+  "source_type": "Other",
+  "journal_or_publisher": "県立長野図書館 / 信州デジタルコモンズ",
+  "authors": null,
+  "year": 1804,
+  "url": "https://shinshu-dcommons.pref.nagano.lg.jp/library/02OD5160520000",
+  "doi": "10.82680/02OD5160520000",
+  "version_or_edition": null,
+  "reliability_note": "県立長野図書館の1804年原史料。通し馬の分担帳で、親方別に渡し先、馬数、馬方個人名を記録する。Evidenceは公的アーカイブ解説に依拠する。"
+}

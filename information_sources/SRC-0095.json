@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-0095",
+  "notion_url": "https://app.notion.com/p/3e3e5855be3981e89190c5df7e3de208",
+  "title": "『多摩市史 通史編2 近現代』第四章第四節「三多摩の東京府編入問題」",
+  "source_type": "Book Chapter",
+  "journal_or_publisher": "多摩市",
+  "authors": "多摩市史編集委員会 編",
+  "year": 1999,
+  "url": "https://adeac.jp/lib-city-tama/text-list/d100020/ht011130",
+  "doi": null,
+  "version_or_edition": null,
+  "reliability_note": "多摩市編纂の自治体史。内海忠勝書簡、『松方正義関係文書』、同時代新聞等を明示して移管の公的理由と政治的背景を叙述する。原史料の翻刻・引用を含むが、自治体史による選択・解釈を介するため、原文書を直接確認していない箇所はその旨を留保する。"
+}

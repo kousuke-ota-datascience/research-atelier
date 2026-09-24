@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-0070",
+  "notion_url": "https://app.notion.com/p/3e3e5855be3981b095d8c718edcb0e79",
+  "title": "商標―横浜開港資料館所蔵 生糸商標",
+  "source_type": "Web Page",
+  "journal_or_publisher": "横浜開港資料館",
+  "authors": null,
+  "year": 2026,
+  "url": "https://yokohama-archives.jp/available-documents/art/paintings/trademarks",
+  "doi": null,
+  "version_or_edition": null,
+  "reliability_note": "横浜開港資料館の所蔵資料解説。約5000枚の生糸商標コレクションに基づき、商標と品位・製糸家信用、横浜での原商標剥離・輸出商社商標への貼替えを説明。"
+}

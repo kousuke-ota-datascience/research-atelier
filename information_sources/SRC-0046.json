@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-0046",
+  "notion_url": "https://app.notion.com/p/3e2e5855be39815a9169c60eaeb76101",
+  "title": "NARUTO公式 誕生日コラム — 千手扉間（影分身の術）",
+  "source_type": "Web Page",
+  "journal_or_publisher": "NARUTO OFFICIAL SITE",
+  "authors": "NARUTO OFFICIAL SITE editorial",
+  "year": 2024,
+  "url": "https://naruto-official.com/news/01_1694",
+  "doi": null,
+  "version_or_edition": null,
+  "reliability_note": "Official franchise article. Explicitly states that Shadow Clone creates physical clones and that their experience/information returns to the original when they disappear; also suggests reconnaissance as the technique's intended use."
+}

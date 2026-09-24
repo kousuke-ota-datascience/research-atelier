@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-0032",
+  "notion_url": "https://app.notion.com/p/3e1e5855be398137b4dfcdd148f3b83e",
+  "title": "Multi-Output Soft Sensor with a Multivariate Filter That Predicts Errors Applied to an Industrial Reactive Distillation Process",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "Mathematics / MDPI",
+  "authors": "Vladimir Klimchenko; Andrei Torgashov; Yuri A. W. Shardt; Fan Yang",
+  "year": 2021,
+  "url": "https://www.mdpi.com/2227-7390/9/16/1947",
+  "doi": "10.3390/math9161947",
+  "version_or_edition": null,
+  "reliability_note": "Open-access publisher page was checked. The method is demonstrated on an industrial reactive distillation soft-sensor problem; transfer to other processes requires re-validation."
+}

@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-0038",
+  "notion_url": "https://app.notion.com/p/3e2e5855be398117a4aaf1401376fba2",
+  "title": "The Sword of Shannara Trilogy — Teacher's Guide",
+  "source_type": "Web Page",
+  "journal_or_publisher": "Penguin Random House",
+  "authors": "Penguin Random House editorial/education material",
+  "year": null,
+  "url": "https://www.penguinrandomhouse.com/books/19046/the-sword-of-shannara-trilogy-by-terry-brooks/9780345453754/teachers-guide/",
+  "doi": null,
+  "version_or_edition": null,
+  "reliability_note": "Official publisher teaching guide summarizing the novel; secondary to the novel itself but explicitly states that the Sword's vaunted magic is unexpected and explains its Truth effect."
+}

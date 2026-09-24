@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-0081",
+  "notion_url": "https://app.notion.com/p/3e3e5855be398139ac7afa013f49cdaa",
+  "title": "自由民権資料館常設展示「自由民権運動と町田」その3",
+  "source_type": "Web Page",
+  "journal_or_publisher": "町田市立自由民権資料館",
+  "authors": "町田市立自由民権資料館",
+  "year": 2026,
+  "url": "https://www.city.machida.tokyo.jp/bunka/bunka_geijutsu/cul/cul03/tenji/jyousetuten/jiyuuminkenundou-machida/josetsu3.html",
+  "doi": null,
+  "version_or_edition": null,
+  "reliability_note": "旧神奈川県域（武相）の自由民権運動、県会・結社・国会開設運動・自由党参加を整理した公式展示解説。神奈川県会史や建白書等の一次資料を展示根拠に用いるが、Web本文自体は二次的な展示解説。"
+}

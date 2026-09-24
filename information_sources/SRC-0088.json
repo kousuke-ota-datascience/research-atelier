@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-0088",
+  "notion_url": "https://app.notion.com/p/3e3e5855be398129a165f60b65228a10",
+  "title": "史料にみる日本の近代 2-13 選挙干渉",
+  "source_type": "Web Page",
+  "journal_or_publisher": "国立国会図書館",
+  "authors": "国立国会図書館",
+  "year": null,
+  "url": "https://www.ndl.go.jp/modern/cha2/description13.html",
+  "doi": null,
+  "version_or_edition": null,
+  "reliability_note": "国立国会図書館の電子展示。品川弥二郎関係文書『衆議院選挙候補者名簿』を提示し、第2回総選挙に際する政府の候補者分類と地方官・警察官による選挙干渉を解説する。全国的背景を示す資料で、三多摩固有の実態は別Sourceで確認する。"
+}

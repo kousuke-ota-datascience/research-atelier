@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-0053",
+  "notion_url": "https://app.notion.com/p/3e3e5855be3981f3aff5c8a98d3db888",
+  "title": "平成22年度収蔵資料展1「街道をいきかう人々と宿場のくらし」",
+  "source_type": "Web Page",
+  "journal_or_publisher": "群馬県立文書館",
+  "authors": "群馬県立文書館",
+  "year": 2010,
+  "url": "https://www.pref.gunma.jp/site/monjyokan/130802.html",
+  "doi": null,
+  "version_or_edition": null,
+  "reliability_note": "群馬県立文書館の収蔵資料展解説。所蔵史料番号を伴う公的アーカイブ解説であるが、個々の原文全文を本Investigationでは未照合。"
+}

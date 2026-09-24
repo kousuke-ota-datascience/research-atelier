@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-0104",
+  "notion_url": "https://app.notion.com/p/3e4e5855be3981d6aba4dcb9e0c1438f",
+  "title": "『神奈川県史 資料編11 近代・現代（2）』多摩三郡の管轄替に関する神奈川県知事内海忠勝の内申",
+  "source_type": "Book Chapter",
+  "journal_or_publisher": "神奈川県（神奈川県立公文書館公開）",
+  "authors": null,
+  "year": null,
+  "url": "https://archives.pref.kanagawa.jp/2024/10/02/siryouhen11_2_2-1.pdf",
+  "doi": null,
+  "version_or_edition": null,
+  "reliability_note": "神奈川県立公文書館が公開する県史資料編に収録された1892年9月20日付内海忠勝内申の翻刻。神奈川県側の公式な移管理由を直接たどれる。今回のWeb取得では検索抽出テキストで本文を確認したが、PDFページ画像はcache missのため原画像との逐字照合は未実施。"
+}

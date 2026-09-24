@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-0044",
+  "notion_url": "https://app.notion.com/p/3e2e5855be3981ffb891df9040f61056",
+  "title": "ONE PIECE.com — Hito Hito no Mi, Mythical Zoan Model Nika announcement",
+  "source_type": "Web Page",
+  "journal_or_publisher": "ONE PIECE.com",
+  "authors": "ONE PIECE.com editorial",
+  "year": 2023,
+  "url": "https://one-piece.com/news/63423/index.html",
+  "doi": null,
+  "version_or_edition": null,
+  "reliability_note": "Official franchise site; explicitly states that the fruit Luffy ate, known as the Gomu Gomu no Mi, was revealed in the story to have another name: Hito Hito no Mi, Mythical Zoan, Model Nika."
+}

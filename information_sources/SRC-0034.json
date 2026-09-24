@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-0034",
+  "notion_url": "https://app.notion.com/p/3e1e5855be3981b683f2c7b53100166d",
+  "title": "An online soft sensor based on adaptive double Gaussian Bayesian network",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "Chemometrics and Intelligent Laboratory Systems / Elsevier",
+  "authors": "Haoyan Dong; Jintao Shi; Lei Chen; Kuangrong Hao",
+  "year": 2023,
+  "url": "https://www.sciencedirect.com/science/article/pii/S0169743923001454",
+  "doi": "10.1016/j.chemolab.2023.104895",
+  "version_or_edition": null,
+  "reliability_note": "Publisher abstract, introduction, method snippet, and conclusion were checked. The proposed system updates an auxiliary calibration model incrementally; it is therefore evidence for a frozen/offline predictor plus adaptive correction-layer architecture, not for a completely parameter-free correction scheme."
+}

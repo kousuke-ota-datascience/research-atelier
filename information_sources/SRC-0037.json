@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-0037",
+  "notion_url": "https://app.notion.com/p/3e2e5855be398190a4a6cf779c3ea934",
+  "title": "Letter to Eileen Elgar, September 1963",
+  "source_type": "Web Page",
+  "journal_or_publisher": "The Tolkien Estate",
+  "authors": "J. R. R. Tolkien",
+  "year": 1963,
+  "url": "https://www.tolkienestate.com/letters/letter-to-eileen-elgar-september-1963/",
+  "doi": null,
+  "version_or_edition": null,
+  "reliability_note": "Author letter reproduced by the Tolkien Estate; used as primary authorial evidence distinguishing invisibility as a subsidiary power from command/domination."
+}

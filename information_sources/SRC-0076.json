@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-0076",
+  "notion_url": "https://app.notion.com/p/3e3e5855be39816c9426c908f8f996f4",
+  "title": "アメリカ市場で日本産生糸はどのようにして取引されていたのか",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "人間文化研究 第43号",
+  "authors": "大野 彰",
+  "year": 2019,
+  "url": "https://kyotogakuen.repo.nii.ac.jp/record/1358/files/%E4%BA%BA%E9%96%93%E6%96%87%E5%8C%96%E7%A0%94%E7%A9%B643_02%E5%A4%A7%E9%87%8E%E5%85%88%E7%94%9F.pdf",
+  "doi": null,
+  "version_or_edition": null,
+  "reliability_note": "大学紀要論文。索引済みPDF本文を実読し、1895年の横浜164番館視察記録に原商標破棄・商館商標貼替えがあることを確認。所有権移転後の貼替えを問題なしとする議論は論文が引用する1919年の望月駒太郎論説に基づくため、RQ期間内の直接Evidenceではなく近接時期の回顧的Evidenceとして限定使用する。"
+}

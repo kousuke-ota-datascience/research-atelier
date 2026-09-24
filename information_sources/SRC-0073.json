@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-0073",
+  "notion_url": "https://app.notion.com/p/3e3e5855be39816489eac1d1a5f45348",
+  "title": "長野市誌 第五巻 歴史編 近代1―製糸業と生糸出荷",
+  "source_type": "Book Chapter",
+  "journal_or_publisher": "長野市 / ADEAC",
+  "authors": "長野市誌編さん委員会",
+  "year": 1997,
+  "url": "https://adeac.jp/nagano-city/texthtml/d100050/ct00000005/ht000740",
+  "doi": null,
+  "version_or_edition": null,
+  "reliability_note": "自治体史の公開本文を実読。六工社の直輸出・横浜売り、米国への製品特長の売込み、他の座繰製糸組織の生糸を六工社のものと一緒に出荷して荷口を大きくした事実を確認。旧Evidenceの『松代製糸会社が荷口の斉一で声価を得た』という記述は当該本文から確認できず訂正した。"
+}

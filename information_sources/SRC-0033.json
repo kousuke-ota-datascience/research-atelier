@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-0033",
+  "notion_url": "https://app.notion.com/p/3e1e5855be3981d8a58cfe193b972ce3",
+  "title": "Comparison of Composition Soft Sensor Correction Methods for a Kaibel Dividing-Wall Column",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "Industrial & Engineering Chemistry Research / American Chemical Society",
+  "authors": "Xing Qian; Shengkun Jia; Kejin Huang; Haisheng Chen; Yang Yuan; Xigang Yuan; Liang Zhang",
+  "year": 2021,
+  "url": "https://pubs.acs.org/doi/10.1021/acs.iecr.0c05111",
+  "doi": "10.1021/acs.iecr.0c05111",
+  "version_or_edition": null,
+  "reliability_note": "Publisher abstract was checked. The filter comparison is specific to the Kaibel dividing-wall column control setting and should be treated as evidence of method trade-offs, not a universal ranking."
+}

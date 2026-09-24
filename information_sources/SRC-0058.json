@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-0058",
+  "notion_url": "https://app.notion.com/p/3e3e5855be3981c293f2c4f0bb886722",
+  "title": "飛脚問屋井野口屋記録",
+  "source_type": "Web Page",
+  "journal_or_publisher": "文化庁 文化遺産オンライン",
+  "authors": "文化庁",
+  "year": null,
+  "url": "https://online.bunka.go.jp/db/heritages/detail/574875",
+  "doi": null,
+  "version_or_edition": null,
+  "reliability_note": "国指定重要文化財の公式データベース解説。史料群の性格・年代・業務範囲を確認するには高信頼だが、個別帳簿記載の実務手順まではこのページ単独では復元できない。"
+}

@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-0092",
+  "notion_url": "https://app.notion.com/p/3e3e5855be3981e290adffd7915ede8e",
+  "title": "『小平市史 近現代編』「正義派解散後の小平」",
+  "source_type": "Book Chapter",
+  "journal_or_publisher": "小平市",
+  "authors": "小平市史編さん委員会 編",
+  "year": 2013,
+  "url": "https://adeac.jp/kodaira-lib/texthtml/d100030/mp000010-100030/ht000860",
+  "doi": null,
+  "version_or_edition": null,
+  "reliability_note": "小平市編纂の自治体史を小平市立図書館が全文公開。吉野家文書・書簡等を用い、1890年第1回総選挙前後の吉野泰三、正義派、自由党候補選定、石阪・瀬戸岡との関係再編を復元している。"
+}

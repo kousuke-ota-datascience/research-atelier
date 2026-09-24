@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-0042",
+  "notion_url": "https://app.notion.com/p/3e2e5855be3981d2bd8fe95a9f2a8673",
+  "title": "西遊記 第三回 — Chinese Text Project",
+  "source_type": "Book Chapter",
+  "journal_or_publisher": "Chinese Text Project",
+  "authors": "呉承恩（伝）",
+  "year": null,
+  "url": "https://ctext.org/xiyouji/ch3",
+  "doi": null,
+  "version_or_edition": null,
+  "reliability_note": "Digital edition of the classical Chinese text with English rendering; used to verify that the sea-treasury iron pillar responds to Wukong's wishes by changing size."
+}

@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-0055",
+  "notion_url": "https://app.notion.com/p/3e3e5855be3981f38761ee01c4b699c4",
+  "title": "332条（明治商法・明治32年）",
+  "source_type": "Web Page",
+  "journal_or_publisher": "法律情報基盤",
+  "authors": null,
+  "year": 1899,
+  "url": "https://law-platform.jp/hist/132048d/132048_1_33/AQETAQEB",
+  "doi": null,
+  "version_or_edition": null,
+  "reliability_note": "明治商法332条の公布条文に加え、法典調査会議事・商法修正案理由書等を同一ページで提示する歴史法令データベース。制定過程資料の校訂状態には個別留保がある。"
+}

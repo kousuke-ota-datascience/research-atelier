@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-0087",
+  "notion_url": "https://app.notion.com/p/3e3e5855be3981f8b8fad2094537ddac",
+  "title": "『神奈川県史 通史編4 近代・現代(1) 政治・行政1』第2編第3章・第2回総選挙関連箇所",
+  "source_type": "Book Chapter",
+  "journal_or_publisher": "神奈川県",
+  "authors": "神奈川県県民部県史編集室 編",
+  "year": 1980,
+  "url": "https://archives.pref.kanagawa.jp/2024/09/30/tsushihen4_2_3-7.pdf",
+  "doi": null,
+  "version_or_edition": null,
+  "reliability_note": "神奈川県編纂の県史デジタル版。第2回総選挙の選挙区別結果を『政戦録』等から表として整理し、県内政党政治の展開を叙述する。1980年刊行であり、その後の研究は別Sourceで補完する。"
+}

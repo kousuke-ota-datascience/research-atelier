@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-0119",
+  "notion_url": "https://app.notion.com/p/3e5e5855be398167832ed278b9f35a87",
+  "title": "The ML Test Score: A Rubric for ML Production Readiness and Technical Debt Reduction",
+  "source_type": "Conference Paper",
+  "journal_or_publisher": "IEEE Big Data / Google Research",
+  "authors": "Eric Breck; Shanqing Cai; Eric Nielsen; Michael Salib; D. Sculley",
+  "year": 2017,
+  "url": "https://research.google/pubs/the-ml-test-score-a-rubric-for-ml-production-readiness-and-technical-debt-reduction/",
+  "doi": null,
+  "version_or_edition": null,
+  "reliability_note": "Google Research/IEEE Big Dataのproduction ML practice paper。testing/monitoringをproduction readinessの中心課題として具体的な監視項目を提示する。process control固有ではないため、再学習triggerそのものではなく原因切り分け・監視設計の補助根拠として使用する。"
+}

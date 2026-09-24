@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-0064",
+  "notion_url": "https://app.notion.com/p/3e3e5855be3981ada310de6f492b01c9",
+  "title": "江戸時代における宿駅と脇道往還交通との関係について",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "地理学評論 31巻5号 / 日本地理学会",
+  "authors": "原沢 文弥",
+  "year": 1958,
+  "url": "https://www.jstage.jst.go.jp/article/grj1925/31/5/31_5_277/_article/-char/ja/",
+  "doi": "10.4157/grj.31.277",
+  "version_or_edition": null,
+  "reliability_note": "宿駅・脇道交通に関する学術論文。宿駅文書・村絵図等を用い、宿継の積替えによる荷傷み・遅延・費用増と、通し運送・脇道交通の発達を論じる。"
+}

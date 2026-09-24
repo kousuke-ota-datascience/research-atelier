@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-0036",
+  "notion_url": "https://app.notion.com/p/3e2e5855be3981f0b52ee7936ca4bea5",
+  "title": "Letter to Milton Waldman, publisher, 1951",
+  "source_type": "Web Page",
+  "journal_or_publisher": "The Tolkien Estate",
+  "authors": "J. R. R. Tolkien",
+  "year": 1951,
+  "url": "https://www.tolkienestate.com/letters/letter-to-milton-waldman-publisher-1951/",
+  "doi": null,
+  "version_or_edition": null,
+  "reliability_note": "Author letter reproduced by the Tolkien Estate; used as primary authorial evidence for the Ring's initially obvious invisibility function and broader thematic/power framing."
+}

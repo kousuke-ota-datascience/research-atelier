@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-0060",
+  "notion_url": "https://app.notion.com/p/3e3e5855be3981afa766c378de85f6b3",
+  "title": "商法（明治32年法律第48号）— 法令データベース",
+  "source_type": "Documentation",
+  "journal_or_publisher": "名古屋大学 日本研究のための歴史情報・法令データベース",
+  "authors": null,
+  "year": 1899,
+  "url": "https://jahis.law.nagoya-u.ac.jp/lawdb/l/132a0048/compare/132a0048en",
+  "doi": null,
+  "version_or_edition": null,
+  "reliability_note": "明治32年法律第48号の公布本文を条文単位で提供し、公布日・改正沿革・官報/法令全書/御署名原本へのリンクを備える大学運営の歴史法令DB。条文確認に用いた。"
+}

@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-0031",
+  "notion_url": "https://app.notion.com/p/3e1e5855be3981d0afb1c3331ffcb2b6",
+  "title": "A novel calibration approach of soft sensor based on multirate data fusion technology",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "Journal of Process Control / Elsevier",
+  "authors": "Yao Wu; Xiong-Lin Luo",
+  "year": 2010,
+  "url": "https://www.sciencedirect.com/science/article/pii/S0959152410001836",
+  "doi": "10.1016/j.jprocont.2010.09.003",
+  "version_or_edition": null,
+  "reliability_note": "Publisher abstract and visible method/conclusion excerpts were checked. Improvement depends on including essential dynamics in the Kalman model and proper filter tuning."
+}

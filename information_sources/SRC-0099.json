@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-0099",
+  "notion_url": "https://app.notion.com/p/3e3e5855be3981528974da77cebc099d",
+  "title": "東京市史稿 上水篇第2 目次",
+  "source_type": "Web Page",
+  "journal_or_publisher": "東京都公文書館",
+  "authors": "東京都公文書館",
+  "year": null,
+  "url": "https://www.soumu.metro.tokyo.lg.jp/01soumu-archives/06kanko_butsu/0601sisiko/0601jousui02",
+  "doi": null,
+  "version_or_edition": null,
+  "reliability_note": "東京都公文書館が公開する『東京市史稿 上水篇第2』の公式目次。1873年の「上水沿岸諸村管轄換請議」等の史料項目・年代・典拠を確認できるが、各史料本文そのものではない。"
+}

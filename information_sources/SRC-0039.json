@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-0039",
+  "notion_url": "https://app.notion.com/p/3e2e5855be398162b7d4ddf9e831e13a",
+  "title": "Philip Pullman — His Dark Materials: Parallel Worlds",
+  "source_type": "Web Page",
+  "journal_or_publisher": "Philip Pullman official website",
+  "authors": "Philip Pullman",
+  "year": null,
+  "url": "https://www.philip-pullman.com/hdm?pageID=6",
+  "doi": null,
+  "version_or_edition": null,
+  "reliability_note": "Author's official site; primary authorial explanation of the subtle knife as a device for cutting openings between parallel worlds."
+}

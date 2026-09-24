@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-0059",
+  "notion_url": "https://app.notion.com/p/3e3e5855be3981cba626f0293c01e338",
+  "title": "荷物送状",
+  "source_type": "Other",
+  "journal_or_publisher": "江戸東京博物館 / Tokyo Museum Collection",
+  "authors": null,
+  "year": 1896,
+  "url": "https://museumcollection.tokyo/works/6557829/",
+  "doi": null,
+  "version_or_edition": null,
+  "reliability_note": "江戸東京博物館所蔵の1896年実物文書のコレクションメタデータ。文書種別の存在は直接確認できるが、記載欄の全文転写・運用手順まではメタデータからは確定できない。"
+}

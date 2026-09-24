@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-0052",
+  "notion_url": "https://app.notion.com/p/3e3e5855be39810fad79cbb4006751ae",
+  "title": "道中駄賃帳",
+  "source_type": "Other",
+  "journal_or_publisher": "山梨県立図書館 山梨デジタルアーカイブ",
+  "authors": "坂田源三郎手代／作, 手代坂内由兵衛／作",
+  "year": 1794,
+  "url": "https://digi.lib.pref.yamanashi.jp/da/detail?tilcod=0000000021-YMNS0121596",
+  "doi": null,
+  "version_or_edition": null,
+  "reliability_note": "山梨デジタルアーカイブが所蔵古文書の書誌情報・解説・画像を公開。Evidenceは同ページの詳細解説に依拠し、原文全丁の翻刻照合は未実施。"
+}

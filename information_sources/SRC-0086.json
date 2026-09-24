@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-0086",
+  "notion_url": "https://app.notion.com/p/3e3e5855be3981f7bb76f78e802ac2a0",
+  "title": "第31期町田市文化財保護審議会第7回会議 会議録",
+  "source_type": "Report",
+  "journal_or_publisher": "町田市教育委員会",
+  "authors": "町田市教育委員会",
+  "year": 2023,
+  "url": "https://www.city.machida.tokyo.jp/bunka/bunka_geijutsu/bunkazai/hogoshinngikai/kaigiroku/kaigiroku31.files/20230214_kaigiroku.pdf",
+  "doi": null,
+  "version_or_edition": null,
+  "reliability_note": "町田市文化財保護審議会の公式会議録。凌霜館跡の指定審議に際し、町田市側担当者が関連史料を説明しており、第2回総選挙後の大須賀明殺害事件と石阪昌孝・吉野泰三の対立を地域史料に基づき述べる。会議中の解説であり、引用された裁判史料そのものではない。"
+}

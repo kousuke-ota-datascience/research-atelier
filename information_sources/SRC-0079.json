@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-0079",
+  "notion_url": "https://app.notion.com/p/3e3e5855be39813ab37ac6973e8e5b13",
+  "title": "町田の民権家と結社",
+  "source_type": "Web Page",
+  "journal_or_publisher": "町田市立自由民権資料館",
+  "authors": "町田市立自由民権資料館",
+  "year": 2025,
+  "url": "https://www.city.machida.tokyo.jp/bunka/bunka_geijutsu/cul/cul03/tenji/jyousetuten/jiyuuminkenundou-machida/minkenka.html",
+  "doi": null,
+  "version_or_edition": null,
+  "reliability_note": "町田市立自由民権資料館による公式展示解説。人物・結社の概要と参加範囲を示す二次資料で、ページ上では責善会規則・琢磨会会員名簿・融貫社規則等の一次史料所在も示される。個々の因果関係の強度は別途検討が必要。"
+}

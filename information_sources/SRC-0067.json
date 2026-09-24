@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-0067",
+  "notion_url": "https://app.notion.com/p/3e3e5855be398133b695d73273e232cd",
+  "title": "詐欺取財ノ件（明治29年第558号）",
+  "source_type": "Other",
+  "journal_or_publisher": "名古屋大学 日本研究のための歴史情報・裁判例データベース（明治・大正編）",
+  "authors": "大審院",
+  "year": 1896,
+  "url": "https://jahis.law.nagoya-u.ac.jp/hanrei/docs/keiroku_02-06-0001",
+  "doi": null,
+  "version_or_edition": null,
+  "reliability_note": "大審院刑事判決録2輯6巻1頁の歴史裁判例。生糸荷と襤褸荷の掏り替えを含む具体的事件を示す。単一事件であり一般慣行の頻度を示すEvidenceとしては用いない。"
+}

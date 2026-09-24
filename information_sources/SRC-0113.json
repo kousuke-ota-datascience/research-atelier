@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-0113",
+  "notion_url": "https://app.notion.com/p/3e5e5855be3981749ecad5b67f3aa0c6",
+  "title": "Reference and command governors for systems with constraints: A survey on theory and applications",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "Automatica",
+  "authors": "Emanuele Garone; Stefano Di Cairano; Ilya V. Kolmanovsky",
+  "year": 2017,
+  "url": "https://www.sciencedirect.com/science/article/pii/S0005109816303715",
+  "doi": "10.1016/j.automatica.2016.08.013",
+  "version_or_edition": null,
+  "reliability_note": "Automaticaのsurvey paper。pre-stabilized systemへのadd-onとしてreference/commandを修正し、state/control constraintsを満たすreference governorの理論と応用を整理する。ML固有の論文ではないが、上位setpoint guardの制御理論的根拠として直接関連する。"
+}

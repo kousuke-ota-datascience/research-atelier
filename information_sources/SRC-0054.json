@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-0054",
+  "notion_url": "https://app.notion.com/p/3e3e5855be39816d957bc1b7b42f0861",
+  "title": "公事録",
+  "source_type": "Other",
+  "journal_or_publisher": "山梨県立図書館 山梨デジタルアーカイブ",
+  "authors": "高橋平右衛門／作, 問屋加藤源六郎／作, 問屋加藤溶作／作, 名主輿石宗三郎／作",
+  "year": 1870,
+  "url": "https://digi.lib.pref.yamanashi.jp/da/detail?tilcod=0000000021-YMNS0120830",
+  "doi": null,
+  "version_or_edition": null,
+  "reliability_note": "山梨デジタルアーカイブが所蔵古文書の書誌情報・解説・画像を公開。Evidenceは同ページの詳細解説に依拠し、原文全丁の翻刻照合は未実施。"
+}

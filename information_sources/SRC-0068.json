@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-0068",
+  "notion_url": "https://app.notion.com/p/3e3e5855be3981b486ade01100d45e8d",
+  "title": "近代日本における陸運企業の形成過程",
+  "source_type": "Thesis",
+  "journal_or_publisher": "東北大学",
+  "authors": "王 慧子",
+  "year": 2014,
+  "url": "https://tohoku.repo.nii.ac.jp/records/68873",
+  "doi": null,
+  "version_or_edition": null,
+  "reliability_note": "東北大学博士論文。小山五左衛門家文書等を用いて中牛馬会社の陸運実務を分析し、1874年会社規則および1876年彰真社との荷物運送約定を史料引用している。地域・会社事例として扱い全国一律慣行とはみなさない。"
+}

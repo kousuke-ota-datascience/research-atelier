@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-0110",
+  "notion_url": "https://app.notion.com/p/3e4e5855be39815b875ded5183bd8c03",
+  "title": "まちだってこんなまち",
+  "source_type": "Web Page",
+  "journal_or_publisher": "町田市",
+  "authors": "町田市",
+  "year": null,
+  "url": "https://www.city.machida.tokyo.jp/shisei/city_promotion/machidacp/index.html",
+  "doi": null,
+  "version_or_edition": null,
+  "reliability_note": "町田市公式Webページ。1958年の市制施行時に町田町・鶴川村・忠生村・堺村が合併して現在の町田市が成立したことを確認するために使用する。1893年当時の移管行動自体を示す史料ではない。"
+}

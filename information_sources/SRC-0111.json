@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-0111",
+  "notion_url": "https://app.notion.com/p/3e5e5855be3981119fdcf2f596b0bff6",
+  "title": "IEC 61511-1:2016+AMD1:2017 — Functional safety — Safety instrumented systems for the process industry sector — Part 1",
+  "source_type": "Documentation",
+  "journal_or_publisher": "International Electrotechnical Commission (IEC)",
+  "authors": "IEC",
+  "year": 2017,
+  "url": "https://webstore.iec.ch/en/publication/61289",
+  "doi": null,
+  "version_or_edition": null,
+  "reliability_note": "IECの公式規格ページ。process industryのSISについてspecification, design, installation, operation, maintenanceを規定し、安全状態の達成・維持を目的とする。規格本文の全条文は有償のため、公開ページとHSEによる条文引用を組み合わせて使用する。"
+}

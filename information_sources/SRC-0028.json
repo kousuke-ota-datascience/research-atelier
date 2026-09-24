@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-0028",
+  "notion_url": "https://app.notion.com/p/3e1e5855be39818f89dde71de0210ff1",
+  "title": "Tuning a Soft Sensor’s Bias Update Term. 1. The Open-Loop Case",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "Industrial & Engineering Chemistry Research / American Chemical Society",
+  "authors": "Yuri A. W. Shardt; Biao Huang",
+  "year": 2012,
+  "url": "https://pubs.acs.org/doi/10.1021/ie201456z",
+  "doi": "10.1021/ie201456z",
+  "version_or_edition": null,
+  "reliability_note": "Publisher abstract was checked; full article text was not available through the current access path. Method scope and claims below are limited to information stated in the abstract."
+}

@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-0116",
+  "notion_url": "https://app.notion.com/p/3e5e5855be398173b45beceaadb55345",
+  "title": "A survey on concept drift adaptation",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "ACM Computing Surveys",
+  "authors": "João Gama; Indrė Žliobaitė; Albert Bifet; Mykola Pechenizkiy; Abdelhamid Bouchachia",
+  "year": 2014,
+  "url": "https://doi.org/10.1145/2523813",
+  "doi": "10.1145/2523813",
+  "version_or_edition": null,
+  "reliability_note": "ACM Computing Surveysの包括的review。concept driftをinput-target関係の時間変化として整理し、detection/adaptationと評価方法を体系化する。製造固有ではないため、industrial applicabilityはsoft-sensor文献で補う。"
+}

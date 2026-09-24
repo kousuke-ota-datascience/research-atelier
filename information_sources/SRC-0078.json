@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-0078",
+  "notion_url": "https://app.notion.com/p/3e3e5855be39818aa69fd0be04839e1c",
+  "title": "アメリカ市場で日本産生糸が躍進した理由について",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "京都学園大学経済学部論集 19巻2号",
+  "authors": "大野 彰",
+  "year": 2010,
+  "url": "https://kyotogakuen.repo.nii.ac.jp/records/911",
+  "doi": null,
+  "version_or_edition": null,
+  "reliability_note": "大学機関リポジトリ収録論文。本文は1880〜81年の協力社申合規則・売込会計規則を『平野村誌 下巻』から引用し、生糸1把ごとの紙札・符号番号、横浜での鑑定等級・売込問屋証印・返送、等級別代金分配を記述する。公式リポジトリの書誌と索引済み本文を照合した。"
+}

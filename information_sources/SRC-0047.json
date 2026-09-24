@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-0047",
+  "notion_url": "https://app.notion.com/p/3e2e5855be3981d5ae8ae13424fd42e6",
+  "title": "NARUTO公式 誕生日コラム — うずまきナルト前編",
+  "source_type": "Web Page",
+  "journal_or_publisher": "NARUTO OFFICIAL SITE",
+  "authors": "NARUTO OFFICIAL SITE editorial",
+  "year": 2023,
+  "url": "https://naruto-official.com/news/01_1610",
+  "doi": null,
+  "version_or_edition": null,
+  "reliability_note": "Official franchise retrospective. States that Naruto used Multi Shadow Clone Jutsu to train at many times normal speed during development of his new technique."
+}

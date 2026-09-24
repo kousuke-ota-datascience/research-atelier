@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-0072",
+  "notion_url": "https://app.notion.com/p/3e3e5855be3981d49c81fd79c1d26eff",
+  "title": "製糸―明治期の生糸検査・商標資料",
+  "source_type": "Web Page",
+  "journal_or_publisher": "農林水産省",
+  "authors": null,
+  "year": 2018,
+  "url": "https://www.maff.go.jp/j/meiji150/you/03.html",
+  "doi": null,
+  "version_or_edition": null,
+  "reliability_note": "農林水産省の明治150年関連資料解説。輸出用生糸の商標が生産元を示し、会社名・所在地、品質差を表示したことを道具・実物資料とともに解説。"
+}

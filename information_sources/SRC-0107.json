@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-0107",
+  "notion_url": "https://app.notion.com/p/3e4e5855be398188b180ff47b6187bcc",
+  "title": "第4回帝国議会 衆議院 本会議 第46号 明治26年2月28日",
+  "source_type": "Web Page",
+  "journal_or_publisher": "国立国会図書館 帝国議会会議録検索システム",
+  "authors": "衆議院",
+  "year": 1893,
+  "url": "https://teikokugikai-i.ndl.go.jp/simple/detail?minId=000413242X04618930228",
+  "doi": null,
+  "version_or_edition": null,
+  "reliability_note": "帝国議会衆議院の公式速記録。境域変更法案委員長工藤行幹の報告から、移管による神奈川県財政への影響が政府当初説明と異なるとして争われたことを直接確認できる。委員会側の計算・評価であり、県決算資料による独立再計算ではない。"
+}

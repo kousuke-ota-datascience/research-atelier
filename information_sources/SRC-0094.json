@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-0094",
+  "notion_url": "https://app.notion.com/p/3e3e5855be39816bbcbafa8d4c643ddf",
+  "title": "第4回帝国議会 衆議院 本会議 第40号 明治26年2月21日",
+  "source_type": "Web Page",
+  "journal_or_publisher": "国立国会図書館 帝国議会会議録検索システム",
+  "authors": "衆議院",
+  "year": 1893,
+  "url": "https://teikokugikai-i.ndl.go.jp/simple/txt/000413242X04018930221",
+  "doi": null,
+  "version_or_edition": null,
+  "reliability_note": "帝国議会衆議院の公式速記録。政府提出法案と政府委員の公的説明を直接確認できる。公的理由を示す一次史料であり、神奈川県知事の私的動機を直接示すものではない。"
+}

@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-0106",
+  "notion_url": "https://app.notion.com/p/3e4e5855be3981b9924dc2d020ad3a88",
+  "title": "『神奈川県史 通史編4 近代・現代（1）政治・行政1』第3章「議会政治の発足と県政」",
+  "source_type": "Book Chapter",
+  "journal_or_publisher": "神奈川県（神奈川県立公文書館公開）",
+  "authors": null,
+  "year": null,
+  "url": "https://archives.pref.kanagawa.jp/2024/09/30/tsushihen4_2_3-7.pdf",
+  "doi": null,
+  "version_or_edition": null,
+  "reliability_note": "神奈川県立公文書館公開の県史通史編。1892年選挙干渉をめぐる自由党系県会議員による知事・警部長への責任追及と県会解散の経緯を確認する二次的公刊県史。1892年12月12日の県会逐語議事録・建議本文そのものではない。"
+}

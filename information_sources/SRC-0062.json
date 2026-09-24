@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-0062",
+  "notion_url": "https://app.notion.com/p/3e3e5855be398130bd50ccc462d98aa0",
+  "title": "『福井県史』通史編3 近世一—馬借と駄賃",
+  "source_type": "Book Chapter",
+  "journal_or_publisher": "福井県",
+  "authors": "福井県",
+  "year": 1994,
+  "url": "https://www.library-archives.pref.fukui.lg.jp/fukui/07/kenshi/T3/T3-4-01-03-02-03.htm",
+  "doi": null,
+  "version_or_edition": null,
+  "reliability_note": "福井県編纂の県史本文。1803年の津田周三家文書等を明示して商業荷物の馬借運送を叙述する。地域は若狭・近江接続部に限定される。"
+}

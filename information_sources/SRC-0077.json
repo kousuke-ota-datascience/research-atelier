@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-0077",
+  "notion_url": "https://app.notion.com/p/3e3e5855be39818eb4eced92d18837a6",
+  "title": "絹の道",
+  "source_type": "Web Page",
+  "journal_or_publisher": "八王子市",
+  "authors": null,
+  "year": 2016,
+  "url": "https://www.city.hachioji.tokyo.jp/kankobunka/003/003/001/003/p005200.html",
+  "doi": null,
+  "version_or_edition": null,
+  "reliability_note": "八王子市公式解説。1859年開港後、八王子周辺の生糸が八王子宿に集荷され、神奈川往還・浜街道を横浜へ運ばれたことを確認する地域ルートEvidence。"
+}

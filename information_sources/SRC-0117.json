@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-0117",
+  "notion_url": "https://app.notion.com/p/3e5e5855be3981a1a921ecce7be5738d",
+  "title": "Review of adaptation mechanisms for data-driven soft sensors",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "Computers & Chemical Engineering",
+  "authors": "Petr Kadlec; Ratko Grbić; Bogdan Gabrys",
+  "year": 2011,
+  "url": "https://www.sciencedirect.com/science/article/pii/S0098135410002838",
+  "doi": "10.1016/j.compchemeng.2010.07.034",
+  "version_or_edition": null,
+  "reliability_note": "Computers & Chemical Engineeringのreview。process-industry soft sensorsのadaptationをmoving-window, recursive, ensemble系に分類し、concept driftの観点からmodel maintenanceを整理する。再学習だけが唯一の適応手段ではないことの根拠に用いる。"
+}

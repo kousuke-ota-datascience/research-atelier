@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-0071",
+  "notion_url": "https://app.notion.com/p/3e3e5855be398120a1c5dd85739fa08f",
+  "title": "大規模製糸工場の成立とアメリカ市場―合資岡谷製糸会社における経営発展と商標の確立",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "社会経済史学 66巻6号",
+  "authors": "中林 真幸",
+  "year": 2001,
+  "url": "https://www.jstage.jst.go.jp/article/sehs/66/6/66_KJ00002475241/_pdf",
+  "doi": "10.20624/sehs.66.6_605",
+  "version_or_edition": null,
+  "reliability_note": "査読学術誌。PDF本文を実読し、1900年代の岡谷製糸会社について商標の信認、横浜到着後の荷口のままの販売を確認した。1910年代前半の低品質糸再荷造り記述は参照資料に1913年を含みRQ cutoff（1912年）外となるため、canonical selected Evidenceから除外する。"
+}

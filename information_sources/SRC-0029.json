@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-0029",
+  "notion_url": "https://app.notion.com/p/3e1e5855be398113af9eec7296209b87",
+  "title": "A Bayesian bias updating procedure for automatic adaptation of soft sensors",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "Computers & Chemical Engineering / Elsevier",
+  "authors": "Emmanuel Sangoi; Carlos I. Sanseverinatti; Luis A. Clementi; Jorge R. Vega",
+  "year": 2021,
+  "url": "https://www.sciencedirect.com/science/article/pii/S0098135421000284",
+  "doi": "10.1016/j.compchemeng.2021.107250",
+  "version_or_edition": null,
+  "reliability_note": "Publisher abstract, introduction excerpt, and conclusion excerpt were checked. Evaluation described by the article uses simulated examples of an industrial continuous SBR process rather than a live production deployment."
+}

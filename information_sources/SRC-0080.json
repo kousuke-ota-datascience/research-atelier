@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-0080",
+  "notion_url": "https://app.notion.com/p/3e3e5855be398124938dc9e10a39741a",
+  "title": "自由民権資料館常設展示「自由民権運動と町田」その2",
+  "source_type": "Web Page",
+  "journal_or_publisher": "町田市立自由民権資料館",
+  "authors": "町田市立自由民権資料館",
+  "year": 2026,
+  "url": "https://www.city.machida.tokyo.jp/bunka/bunka_geijutsu/cul/cul03/tenji/jyousetuten/jiyuuminkenundou-machida/jyosetu_2.html",
+  "doi": null,
+  "version_or_edition": null,
+  "reliability_note": "町田市域の民権家の社会的背景・地域条件・主要人物をまとめた公式展示解説。地域史の専門機関による二次資料。『絹の道』と思想接触の関係は解説的因果仮説として扱い、独立した因果証明とはみなさない。"
+}

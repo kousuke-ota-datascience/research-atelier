@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-0084",
+  "notion_url": "https://app.notion.com/p/3e3e5855be39812e8fa4ffdc1a5c36de",
+  "title": "町田市の商業の沿革",
+  "source_type": "Web Page",
+  "journal_or_publisher": "町田市",
+  "authors": "町田市",
+  "year": 2025,
+  "url": "https://www.city.machida.tokyo.jp/kanko/sangyo/shogyo/shogyo01.html",
+  "doi": null,
+  "version_or_edition": null,
+  "reliability_note": "町田市公式の商業史概説。原町田の市と、甲府・八王子―横浜間の生糸流通の中継点としての発展を確認する補助資料。政治思想への影響を直接実証する資料ではない。"
+}

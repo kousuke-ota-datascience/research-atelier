@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-0100",
+  "notion_url": "https://app.notion.com/p/3e3e5855be3981689a8adfb752724533",
+  "title": "東京近代水道125周年",
+  "source_type": "Web Page",
+  "journal_or_publisher": "東京都水道局",
+  "authors": "東京都水道局",
+  "year": null,
+  "url": "https://www.waterworks.metro.tokyo.lg.jp/suidojigyo/gaiyou/rekishi",
+  "doi": null,
+  "version_or_edition": null,
+  "reliability_note": "東京都水道局による公式の水道事業史。1886年コレラ流行、1888年からの近代水道調査設計、玉川上水を利用した導水計画の時系列確認に用いる。後世の制度史整理であり同時代一次史料ではない。"
+}

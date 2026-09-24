@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-0118",
+  "notion_url": "https://app.notion.com/p/3e5e5855be39810d91a7ddae10180289",
+  "title": "Soft Sensor Model Maintenance: A Case Study in Industrial Processes",
+  "source_type": "Conference Paper",
+  "journal_or_publisher": "IFAC-PapersOnLine",
+  "authors": "Kuilin Chen; Ivan Castillo; Leo Chiang; Jie Yu",
+  "year": 2015,
+  "url": "https://www.sciencedirect.com/science/article/pii/S2405896315010861",
+  "doi": "10.1016/j.ifacol.2015.09.005",
+  "version_or_edition": null,
+  "reliability_note": "IFAC-PapersOnLineのindustrial case study。Kalman-filter-based model mismatch indexとT²/SPEでsoft sensor性能を監視し、新しいprocess conditionを含めてmodel updateする方法を報告する。単一case studyでありthresholdの普遍性は示さない。"
+}

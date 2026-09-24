@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-0051",
+  "notion_url": "https://app.notion.com/p/3e2e5855be39814c818dded924a3c605",
+  "title": "That's So Raven | Halo — Official Site",
+  "source_type": "Web Page",
+  "journal_or_publisher": "Halo Studios / Halo Waypoint",
+  "authors": "Halo Waypoint editorial",
+  "year": null,
+  "url": "https://www.halowaypoint.com/news/thats-so-raven",
+  "doi": null,
+  "version_or_edition": null,
+  "reliability_note": "Official Halo franchise retrospective. In one narrative summary it first identifies Halo as a powerful ancient weapon and then states the revealed true purpose: eliminating all sentient life to stop the Flood infestation."
+}

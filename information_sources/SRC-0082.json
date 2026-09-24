@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-0082",
+  "notion_url": "https://app.notion.com/p/3e3e5855be3981e29f48dee9a19da278",
+  "title": "公文書館だより 創刊号―寄稿「神奈川の自由民権運動」",
+  "source_type": "Report",
+  "journal_or_publisher": "神奈川県立公文書館",
+  "authors": "大畑哲",
+  "year": 1994,
+  "url": "https://archives.pref.kanagawa.jp/publications/letter/vol01.html",
+  "doi": null,
+  "version_or_edition": null,
+  "reliability_note": "神奈川県立公文書館の公式刊行物に掲載された県史研究者による概説。1880年国会開設請願運動の署名数・組織主体、豪農層、結社拡大を一次史料・県史研究に基づき記述する。町田市域に限定した資料ではない。"
+}

@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-0091",
+  "notion_url": "https://app.notion.com/p/3e3e5855be39814688adda75a25c4bd9",
+  "title": "『多摩市史 通史編2 近現代』「選挙大干渉」",
+  "source_type": "Book Chapter",
+  "journal_or_publisher": "多摩市",
+  "authors": "多摩市史編集委員会 編",
+  "year": 1999,
+  "url": "https://adeac.jp/lib-city-tama/texthtml/d100020/mp000010-100020/ht011110",
+  "doi": null,
+  "version_or_edition": null,
+  "reliability_note": "多摩市編纂の自治体史を多摩市立図書館が全文公開。『松方正義関係文書』等の同時代史料を明示的に引用し、第2回総選挙の候補者配置、内海忠勝知事の選挙介入、村野・森久保の拘束、選挙結果、県会の知事・警部長罷免建議まで叙述する。移管との因果接続は自治体史の解釈として別レイヤーで扱う。"
+}

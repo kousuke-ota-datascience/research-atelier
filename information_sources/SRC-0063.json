@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-0063",
+  "notion_url": "https://app.notion.com/p/3e3e5855be3981b3a260e7d48cdf80cf",
+  "title": "中馬不当行為により荷物勝手附送り方願書",
+  "source_type": "Other",
+  "journal_or_publisher": "山梨県立図書館 山梨デジタルアーカイブ",
+  "authors": "六兵衛／ほか作",
+  "year": 1831,
+  "url": "https://digi.lib.pref.yamanashi.jp/da/detail?tilcod=0000000021-YMNS0121659",
+  "doi": null,
+  "version_or_edition": null,
+  "reliability_note": "山梨県立図書館所蔵の1831年古文書の書誌・解説・画像。中馬による受託荷放棄・売却への訴えを含む。Evidenceは公的アーカイブ解説に依拠し、全文翻刻照合は未実施。"
+}

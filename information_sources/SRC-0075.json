@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-0075",
+  "notion_url": "https://app.notion.com/p/3e3e5855be3981948039f7461a2756d6",
+  "title": "横浜生糸改会社創立（1873年）―横浜歴史年表",
+  "source_type": "Web Page",
+  "journal_or_publisher": "横浜市立図書館デジタルアーカイブ",
+  "authors": null,
+  "year": 1873,
+  "url": "https://archive.lib.city.yokohama.lg.jp/museweb/detail?cls=collect_02&pkey=00007490",
+  "doi": null,
+  "version_or_edition": null,
+  "reliability_note": "横浜市立図書館デジタルアーカイブの年表項目。生糸改会社が検査だけでなく技術指導を行い、製品に銘柄を与えたとする。"
+}

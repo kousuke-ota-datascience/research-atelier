@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-0115",
+  "notion_url": "https://app.notion.com/p/3e5e5855be3981cca3b9db947e7eb5a5",
+  "title": "Optimization of Continuous Steel Annealing Operations Using Model Predictive Control at Tata Steel, India",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "INFORMS Journal on Applied Analytics",
+  "authors": "Sujit A. Jagnade; Sachin C. Patwardhan; Kunal Kumar; Arup K. Dey; Sai K. Gudimetla; Manish K. Singh; Ajay K. Jha; Gyan Prakash; Jose M. Korath",
+  "year": 2025,
+  "url": "https://pubsonline.informs.org/doi/10.1287/inte.2024.0183",
+  "doi": "10.1287/inte.2024.0183",
+  "version_or_edition": null,
+  "reliability_note": "実製造ラインのpeer-reviewed industrial application。continuous annealingでMPCをLevel 2 supervisory layerとして既存PID/PLCのsetpointのみ操作し、constraintsとmanual fallbackを含む運用を報告する。単一工程事例のため一般化には制約がある。"
+}

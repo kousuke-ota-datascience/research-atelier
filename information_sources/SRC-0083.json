@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-0083",
+  "notion_url": "https://app.notion.com/p/3e3e5855be3981338b93e61878d6a529",
+  "title": "神奈川県議会 県議会の歴史 歴代議長・副議長一覧",
+  "source_type": "Web Page",
+  "journal_or_publisher": "神奈川県議会",
+  "authors": "神奈川県議会",
+  "year": 2026,
+  "url": "https://www.pref.kanagawa.jp/gikai/p80213.html",
+  "doi": null,
+  "version_or_edition": null,
+  "reliability_note": "神奈川県議会の公式記録。石坂昌孝が1879年3月から4月まで初代議長を務めたことを確認するために使用。運動の意味や因果を論じる資料ではない。"
+}

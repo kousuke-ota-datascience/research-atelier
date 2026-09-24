@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-0089",
+  "notion_url": "https://app.notion.com/p/3e3e5855be3981b9ab33c8cb1e9a402d",
+  "title": "第2回衆議院議員選挙の結果と議会運営―選挙干渉の有効性分析",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "選挙研究（日本選挙学会）",
+  "authors": "末木 孝典",
+  "year": 2011,
+  "url": "https://www.jstage.jst.go.jp/article/jaes/26/2/26_120/_article/-char/ja/",
+  "doi": "10.14854/jaes.26.2_120",
+  "version_or_edition": null,
+  "reliability_note": "日本選挙学会『選挙研究』掲載の研究論文。内務省候補者名簿と第三議会の議案賛否を用いて1892年選挙干渉の全国レベルの有効性を分析する。地域別三多摩の政治過程を直接扱う論文ではない。"
+}

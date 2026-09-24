@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-0035",
+  "notion_url": "https://app.notion.com/p/3e2e5855be3981b3987ff353d1223ced",
+  "title": "Le Morte D’Arthur, Volume I (Project Gutenberg text)",
+  "source_type": "Book",
+  "journal_or_publisher": "Project Gutenberg",
+  "authors": "Sir Thomas Malory",
+  "year": null,
+  "url": "https://www.gutenberg.org/files/1251/1251-h/1251-h.htm",
+  "doi": null,
+  "version_or_edition": null,
+  "reliability_note": "Public-domain text edition of Malory used to verify the sword/scabbard passage directly; edition/modernization details should be checked if philological wording matters."
+}

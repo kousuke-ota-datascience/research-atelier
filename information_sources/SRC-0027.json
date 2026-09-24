@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-0027",
+  "notion_url": "https://app.notion.com/p/3e1e5855be398137ba70cb030068e194",
+  "title": "Soft sensor models: Bias updating revisited",
+  "source_type": "Conference Paper",
+  "journal_or_publisher": "IFAC Proceedings Volumes / Elsevier",
+  "authors": "André D. Quelhas; José Carlos Pinto",
+  "year": 2009,
+  "url": "https://www.sciencedirect.com/science/article/pii/S1474667015303530",
+  "doi": "10.3182/20090712-4-TR-2008.00110",
+  "version_or_edition": null,
+  "reliability_note": "Publisher abstract and author-hosted full-text excerpt were checked. The statistical claim is specific to the bias-updating setup analyzed in the paper and should not be generalized to every correction scheme without qualification."
+}

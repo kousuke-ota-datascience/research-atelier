@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-0112",
+  "notion_url": "https://app.notion.com/p/3e5e5855be3981c8a695cc823828de27",
+  "title": "Overfill of vapour recovery units — HSE Safety Notice CEMHD02-2023",
+  "source_type": "Web Page",
+  "journal_or_publisher": "UK Health and Safety Executive",
+  "authors": "Health and Safety Executive",
+  "year": 2023,
+  "url": "https://www.hse.gov.uk/safetybulletins/vapour-recovery-overfill.htm",
+  "doi": null,
+  "version_or_edition": null,
+  "reliability_note": "英国Health and Safety Executiveの事故調査・安全通知。BPCSとoverfill prevention systemの非独立が共通故障を生じた具体例を示し、BS EN 61511のSIS/BPCS独立条項を引用する。一般設計の唯一の根拠ではなく、規格要求の実務上の意味を補強する。"
+}

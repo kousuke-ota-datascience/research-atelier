@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-0096",
+  "notion_url": "https://app.notion.com/p/3e3e5855be398170aac1f14ebdb2e5c9",
+  "title": "東京都公文書館企画展示「東京府文書にみる多摩と東京―多摩地域東京府移管130年―」展示資料リスト",
+  "source_type": "Web Page",
+  "journal_or_publisher": "東京都公文書館",
+  "authors": "東京都公文書館",
+  "year": 2023,
+  "url": "https://www.soumu.metro.tokyo.lg.jp/documents/d/soumu/2682_0403tenji_r5k2_list",
+  "doi": null,
+  "version_or_edition": null,
+  "reliability_note": "東京都公文書館による公式展示資料リスト。国立公文書館等に所蔵される移管関係公文書の資料名・日付・所蔵情報を確認するために使用する。個々の原文書本文そのものではない。"
+}

@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-0041",
+  "notion_url": "https://app.notion.com/p/3e2e5855be39811d8c3fd5c7f75a86ef",
+  "title": "The Elder Wand — Everything We Know",
+  "source_type": "Web Page",
+  "journal_or_publisher": "HarryPotter.com",
+  "authors": "HarryPotter.com editorial",
+  "year": null,
+  "url": "https://www.harrypotter.com/features/everything-we-know-about-the-elder-wand",
+  "doi": null,
+  "version_or_edition": null,
+  "reliability_note": "Official franchise explanatory article; used to verify misconceptions about ownership, including that killing the prior master is not required."
+}

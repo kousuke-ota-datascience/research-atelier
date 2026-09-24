@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-0066",
+  "notion_url": "https://app.notion.com/p/3e3e5855be398120820cf783f5015623",
+  "title": "明治初期における水谷久右衛門（旧飛脚問屋）による廻漕会社参加と内国通運松阪分社営業",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "郵政博物館 研究紀要 第16号",
+  "authors": "巻島 隆",
+  "year": 2025,
+  "url": "https://www.postalmuseum.jp/publication/research/images/research_16_02.pdf",
+  "doi": null,
+  "version_or_edition": null,
+  "reliability_note": "水谷家文書等の一次史料を用いた研究。1876年の内国通運会社規則を引用し、分社の輸送区間責任・弁償準備抵当品、継立規則、本道・枝道等の運用を示す。"
+}

@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-0061",
+  "notion_url": "https://app.notion.com/p/3e3e5855be398115823bf39fe2e42338",
+  "title": "『福井県史』通史編3 近世一—江戸幕府の宿駅制度",
+  "source_type": "Book Chapter",
+  "journal_or_publisher": "福井県",
+  "authors": "福井県",
+  "year": 1994,
+  "url": "https://www.library-archives.pref.fukui.lg.jp/fukui/07/kenshi/T3/T3-4-01-03-01-01.htm",
+  "doi": null,
+  "version_or_edition": null,
+  "reliability_note": "福井県編纂の県史本文。『資料編』各巻に基づく史料検討を踏まえた二次資料で、当該節は宿駅制度の一般構造を叙述している。全国一律の実態を直接示す一次史料ではない。"
+}

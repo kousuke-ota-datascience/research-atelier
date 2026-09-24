@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-0108",
+  "notion_url": "https://app.notion.com/p/3e4e5855be3981c28303e9238e3a4673",
+  "title": "町田市立自由民権資料館「町田の民権家と結社」",
+  "source_type": "Web Page",
+  "journal_or_publisher": "町田市立自由民権資料館",
+  "authors": "町田市立自由民権資料館",
+  "year": 2026,
+  "url": "https://www.city.machida.tokyo.jp/bunka/bunka_geijutsu/cul/cul03/tenji/jyousetuten/jiyuuminkenundou-machida/minkenka.html",
+  "doi": null,
+  "version_or_edition": null,
+  "reliability_note": "町田市立自由民権資料館による公式人物解説。石阪昌孝の出生地・地域政治上の位置づけを確認するために使用する。移管問題そのものの立場はこのページ単独では示さないため、移管行動は別史料と組み合わせて扱う。"
+}

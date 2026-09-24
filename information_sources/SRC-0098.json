@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-0098",
+  "notion_url": "https://app.notion.com/p/3e3e5855be398104b5bde8d128b9623a",
+  "title": "第31期町田市文化財保護審議会第7回会議 資料5 凌霜館関係文書",
+  "source_type": "Other",
+  "journal_or_publisher": "町田市教育委員会",
+  "authors": "町田市教育委員会 編",
+  "year": 2023,
+  "url": "https://www.city.machida.tokyo.jp/bunka/bunka_geijutsu/bunkazai/hogoshinngikai/kaigiroku/kaigiroku31.files/20230214_siryou5.pdf",
+  "doi": null,
+  "version_or_edition": null,
+  "reliability_note": "町田市文化財保護審議会の公式配布資料として、村野家・大沢家等所蔵の凌霜館関係一次文書を翻刻掲載。大須賀明殺害事件について予審終結決定・東京控訴院裁判言渡書等の本文を確認できる。原本そのものではなく自治体作成の翻刻資料であるため、厳密な文字校訂が必要な箇所は原本照合が望ましい。"
+}
