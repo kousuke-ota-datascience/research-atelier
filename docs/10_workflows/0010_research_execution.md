@@ -25,7 +25,8 @@ semantic constructionでは、Human / Researcherがresearch intentとsemantic co
 - 採番済みの `Investigation_ID` 1件。v2例: `INV-000001`
 - 対応するNotion Research Question
 - 対応するNotion Investigations DB row（newではWorkflow 00が作成、resumeでは既存rowをreuse）
-- reusable Notion Sources / Evidence Notes catalogへのaccess
+- Notion Sources / Evidence Notes catalogへのaccess
+- Git canonical Information Source store `information_sources/` へのaccess
 
 ### Canonical output
 
@@ -43,7 +44,9 @@ investigations/<Investigation_ID>/
 
 目的は、frozen Investigation Contextに関連するcandidate Sourceを探索すること。
 
-Source discoveryではNotion Sources / Evidence Notesへreusable recordを追加・refineしてよいが、analytical conclusionを直接作らない。
+Source discoveryではNotion SourcesへSourceをcaptureしてSource IDをallocateし、Evidence Notesへreusable recordを追加・refineしてよいが、analytical conclusionを直接作らない。
+
+新規またはmetadata更新されたSourceをInvestigationで使用する前に、exact Source IDで `information_sources/<Source ID>.json` をmaterializeし、`information_source.schema.json` でvalidateしてcommitする。commit後のGit Source JSONがmetadata authorityであり、Notion SourcesはID allocation / draft input / human-facing projectionとなる。
 
 Evidence classに応じて、primary evidence、original data、official specification、original paperなど、問いを直接規定・報告するSourceを優先する。
 
@@ -53,12 +56,14 @@ high-authority Sourceが見つからない場合、その不在を隠さず、lo
 
 Research AtelierにおけるEvidenceは、LLMが「根拠」として生成した文章ではない。
 
-Evidenceとは、**Sourceへtrace可能なsource-faithful observation / claim / result / method / definitionをcaptureし、必要なprovenanceを保持したもの**である。
+Evidenceとは、**canonical Source revisionへtrace可能なsource-faithful observation / claim / result / method / definitionをcaptureし、必要なprovenanceを保持したもの**である。
 
 - Sourceに存在しないclaimをEvidenceとして生成しない。
 - analyst inferenceやcross-source interpretationをEvidence layerへ混入しない。
 - Notion Evidence Noteを経由する場合、そのSource relationとlocation / quote等のprovenanceを保持する。
 - direct source observationを使う場合も、後からSourceへ戻れるlocatorを保持する。
+- 新規 `10_evidence` はschema 2.1.0を使用し、使用したSourceごとに `source_id` と `source_revision.commit_sha / blob_sha` をfreezeする。
+- `accessed_at` はInvestigation-specific access eventとしてSource revisionと分離して保存する。
 
 ### Evidence selection
 
@@ -124,12 +129,14 @@ python -m research_atelier.validation.validate_investigation <ID> --through 00 -
 ### Step 2 — Source探索とreusable Evidence Note capture
 
 1. frozen question、Scope、investigation boundaryに関連するEvidenceを探索する。
-2. ad hoc bibliographyをGitへ直接埋め込まず、reusable Source recordをNotionへ登録する。
-3. 必要に応じてLocation / quoteを付け、source-faithful Evidence Noteをcaptureする。
-4. contradictory Evidenceやnull resultも追跡し、confirming materialだけを選ばない。
-5. Source claimとanalyst inferenceを区別する。
-6. scoped questionへ答えるために十分なEvidenceが集まった場合、または追加探索のexpected information gainがresource costに見合わなくなった場合に探索を停止する。
-7. 重要なEvidence gapは推測で埋めず明示する。
+2. reusable Source recordをNotionへ登録し、Source UID / Source IDをallocateする。
+3. exact Source IDで `information_sources/<Source ID>.json` をmaterializeし、schema validation後にSource JSONを先にcommitする。
+4. commit済みSource JSONのcommit SHAとblob SHAを取得する。
+5. 必要に応じてLocation / quoteを付け、source-faithful Evidence Noteをcaptureする。
+6. contradictory Evidenceやnull resultも追跡し、confirming materialだけを選ばない。
+7. Source claimとanalyst inferenceを区別する。
+8. scoped questionへ答えるために十分なEvidenceが集まった場合、または追加探索のexpected information gainがresource costに見合わなくなった場合に探索を停止する。
+9. 重要なEvidence gapは推測で埋めず明示する。
 
 Source discoveryはiterativeである。Investigation accept前に新しいrelevant Sourceが見つかった場合、このStepへ戻ってよい。
 
@@ -138,12 +145,15 @@ Source discoveryはiterativeである。Investigation accept前に新しいrelev
 0. frozen `00_context.question_type` がnon-nullであることを確認する。nullのfrozen ContextはBKL-0031以前のhistorical compatibility artifactとして保存するが、そこから新たに10_evidenceを生成・再開しない。
 1. このInvestigationで実際に使用するEvidenceを選択する。
 2. Investigation-localな `E####` IDを付与する。
-3. projection contractに従ってNotion Source / Evidence Note provenanceを保持する。
-4. Sourceにあるuncertainty / qualificationを保持する。
-5. cross-source Synthesis、causal judgment、Working Answerを追加しない。
-6. through 10をvalidationする。
-7. FAIL / ERRORでは次へ進まない。
-8. `10_evidence.json` を独立commitする。
+3. 選択Evidenceが参照するSourceだけを `sources[]` に含める。
+4. 各Sourceについて `source_id`、確定済み `source_revision.commit_sha`、exact `source_revision.blob_sha`、Investigation-specific `accessed_at`、Notion navigation URLを記録する。
+5. Evidence itemは `provenance.source_id` でtop-level Source snapshotを参照し、Evidence Note provenanceを保持する。
+6. Sourceにあるuncertainty / qualificationを保持する。
+7. cross-source Synthesis、causal judgment、Working Answerを追加しない。
+8. `schema_version = 2.1.0` としてthrough 10をvalidationする。
+9. validatorはcommit存在、指定commit時点のSource JSON path、blob SHA一致、Source参照整合を検査する。
+10. FAIL / ERRORでは次へ進まない。
+11. `10_evidence.json` を独立commitする。
 
 selected Evidence setが後からsubstantively変わった場合、`20_synthesis` と `30_analysis` はinvalidateする。
 
