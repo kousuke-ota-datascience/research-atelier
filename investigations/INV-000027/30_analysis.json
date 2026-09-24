@@ -1,0 +1,156 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "30_analysis",
+  "investigation_id": "INV-000027",
+  "rq_id": "RQ-000027",
+  "analyzed_at": "2026-09-24T15:47:00.000Z",
+  "question_type": "Methodological",
+  "profile": {
+    "method_or_procedure": "accepted RQ-000025のmethodological-entity ontologyとRQ-000026の既存classification axesを、taxonomy-development criteriaの下で比較・正規化して統合するhybrid ontology + faceted taxonomy design。",
+    "intended_use": "因果推論方法論を、異なる抽象レベルを混同せずに理解・検索・比較し、個別methodをtask/assumption/estimand/estimation等の観点から位置づけるためのnavigation framework。",
+    "assumptions": [
+      "upstream accepted resultsをintegration inputとして扱い、元Evidenceを独立に再解釈しない。",
+      "entity roleとclassification facetは別概念として保持する。",
+      "単一methodological objectが複数roleを担う場合を許容する。",
+      "facet内characteristicsのMECE性は今後のmethod-corpus iterationで検証する。",
+      "統合taxonomyは既存標準の発見ではなくEvidence制約下のconstructive designである。"
+    ],
+    "evaluation_criteria": [
+      "entity roleとclassification dimensionを混同しないconceptual consistency",
+      "既存の主要entity/axesを保持できるcomprehensiveness",
+      "methodを実際に位置づけられるapplicability",
+      "学習・検索・method-selection navigationに使えるusefulness",
+      "新methodや新settingを追加できるextendibility",
+      "各category/facetの根拠とdesign judgmentを追跡できるtraceability/transparency"
+    ],
+    "comparators": [
+      "single hierarchical tree",
+      "pure multi-dimensional/faceted taxonomy without a separate entity ontology",
+      "hybrid methodological ontology + faceted classification"
+    ],
+    "tradeoffs": [
+      "hybridはsingle treeより表現力が高い一方、metadataと関係表現が増えて複雑になる。",
+      "facetを増やしすぎるとnavigationが難しくなるため、core facetsとextension subfacetsを分ける必要がある。",
+      "entity roleは非排他的なので、Nickerson型MECEはontology roleではなく各facetのcharacteristics側で検証する。",
+      "現段階はarchitecture-level taxonomyであり、全methodをleaf-levelまで分類した完成版ではない。"
+    ],
+    "applicability_limits": [
+      "RQ-000025/026はsystematic reviewではないため、coverageは暫定的である。",
+      "diagnostics/sensitivityの位置づけはprovisionalである。",
+      "causal discoveryを同一rootに含めるboundaryは利用目的により変更し得る。",
+      "各facetのcharacteristicsは代表method corpusへの適用・反復でMECE性を検証する必要がある。"
+    ]
+  },
+  "working_answer": {
+    "text": "RQ-000025/026を統合すると、因果推論方法論は単一のtreeではなく、**methodological ontology + faceted taxonomy** の二層hybridとして構成するのが最も整合的なworking designである。第一層のontologyでは『何を分類しているか』を区別し、core entity rolesを (O1) causal framework / representation、(O2) target causal quantity / estimand、(O3) study design / assignment structure、(O4) identification strategy / assumptions、(O5) estimation / adjustment / statistical inference procedure、(O6) specialized inferential task / problem setting とする。diagnostics / sensitivityはprovisional role、causal discoveryはeffect inferenceとは異なるinferential-task boundaryとして保持する。第二層では各objectを複数facetでcharacterizeする。core facetsは (F1) inferential task、(F2) formal causal framework、(F3) study / data structure、(F4) identification / assumption regime、(F5) target estimand、(F6) estimation / algorithm family とする。RQ-000026で確認したmodeling complexityやstatistical-vs-ML等はF3/F6へ正規化し、longitudinal、mediation、interference、transportability、heterogeneity等は一つの排他的categoryへまとめず、必要に応じ独立extension subfacetsとして表す。この構造ではDAGをframework、DiDをdesign/identification、DMLやTMLEをestimation/inferenceとして区別しつつ、各objectをtask・assumption・estimand・data structure等で横断比較できる。これは既存文献にそのまま存在する標準taxonomyではなく、accepted upstream Evidenceとtaxonomy-design criteriaに基づくproposed integrated taxonomyであり、次段階では代表method corpusを分類してfacet characteristicsのMECE性、coverage、usefulness、applicabilityを反復評価する必要がある。",
+    "knowledge_unit_refs": [
+      "K0001",
+      "K0002",
+      "K0003",
+      "K0004",
+      "K0005",
+      "K0006"
+    ]
+  },
+  "judgments": [
+    {
+      "judgment_id": "J0001",
+      "statement": "single hierarchical treeは、非排他的methodological roleと複数の独立classification axisを同時に保持しにくいため、統合構造として採用しない。",
+      "knowledge_unit_refs": [
+        "K0001",
+        "K0002",
+        "K0003"
+      ]
+    },
+    {
+      "judgment_id": "J0002",
+      "statement": "pure faceted taxonomyだけでは『framework・estimand・design・estimator等の何を分類しているか』というentity ontologyとfacetを混同しやすいため、ontology layerを別に持つ。",
+      "knowledge_unit_refs": [
+        "K0001",
+        "K0002",
+        "K0006"
+      ]
+    },
+    {
+      "judgment_id": "J0003",
+      "statement": "統合working designはontology + facetsのhybridとし、ontology roleでは非排他性を許容し、MECE性は各facetのcharacteristics側で反復検証する。",
+      "knowledge_unit_refs": [
+        "K0003",
+        "K0004",
+        "K0006"
+      ]
+    },
+    {
+      "judgment_id": "J0004",
+      "statement": "RQ-000026の9分類原理はそのまま9軸にせず、抽象レベル重複を減らして6 core facetsへ正規化し、specialized structuresはextension subfacetsへ分解する。",
+      "knowledge_unit_refs": [
+        "K0002",
+        "K0003",
+        "K0006"
+      ]
+    },
+    {
+      "judgment_id": "J0005",
+      "statement": "この結果は完成済み標準taxonomyではなくarchitecture-level proposalであり、representative method corpusへの適用と評価を次のiteration conditionとする。",
+      "knowledge_unit_refs": [
+        "K0004",
+        "K0005",
+        "K0006"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "text": "upstream RQのSource selectionはsystematic reviewではなく、未知のentity typeやclassification axisが残る可能性がある。",
+      "knowledge_unit_refs": [
+        "K0001",
+        "K0002"
+      ]
+    },
+    {
+      "text": "6 core facetsへの正規化はanalysis/design judgmentであり、既存文献が同じ6軸を標準として提示しているわけではない。",
+      "knowledge_unit_refs": [
+        "K0002",
+        "K0006"
+      ]
+    },
+    {
+      "text": "diagnostics/sensitivity、causal discovery、specialized settingsの境界はprovisionalである。",
+      "knowledge_unit_refs": [
+        "K0001",
+        "K0003"
+      ]
+    },
+    {
+      "text": "facet characteristicsのmutual exclusivity / collective exhaustivenessは実method corpusでまだ検証していない。",
+      "knowledge_unit_refs": [
+        "K0004",
+        "K0006"
+      ]
+    }
+  ],
+  "unresolved_questions": [
+    "代表的causal methodsをobject corpusとして割り当てたとき、各core facetのcharacteristicsはMECEになるか。",
+    "diagnostics / sensitivity / falsificationを独立ontology roleとするか、methodological-function facetへ置くか。",
+    "causal discoveryを同一root taxonomyに保持するか、隣接taxonomyとしてlinkするか。",
+    "extension subfacetsをどこまで分解すればusefulnessとconcisenessのバランスがよいか。"
+  ],
+  "alternative_interpretations": [
+    {
+      "text": "教育用途を最優先するならsingle treeをpresentation layerとして併設し、canonical data modelはhybrid taxonomyのままにする設計も可能である。",
+      "knowledge_unit_refs": [
+        "K0003",
+        "K0005",
+        "K0006"
+      ]
+    },
+    {
+      "text": "対象を『個別method名』だけに限定すればpure faceted taxonomyへ簡略化できるが、framework・estimand・design等を同一method objectとして扱う問題が再発する。",
+      "knowledge_unit_refs": [
+        "K0001",
+        "K0002",
+        "K0006"
+      ]
+    }
+  ]
+}
