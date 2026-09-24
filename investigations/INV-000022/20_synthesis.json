@@ -1,0 +1,145 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "20_synthesis",
+  "investigation_id": "INV-000022",
+  "rq_id": "RQ-0012",
+  "synthesized_at": "2026-09-24T03:36:00Z",
+  "knowledge_units": [
+    {
+      "knowledge_unit_id": "K0001",
+      "statement": "Concept drift is a change over time in the predictive relationship between inputs and the target; therefore an observed increase in prediction error is a monitoring signal but is not by itself an identification of concept drift.",
+      "evidence_refs": [
+        "E0001"
+      ],
+      "qualifiers": [
+        "Error can reveal degraded performance, but the selected definition does not make any single error threshold a proof of relationship change."
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0002",
+      "statement": "Data-driven soft-sensor maintenance includes moving-window, recursive-adaptation, and ensemble approaches, so adaptation is a continuum and complete base-model retraining is not the only possible response to changing process behavior.",
+      "evidence_refs": [
+        "E0002"
+      ],
+      "qualifiers": [
+        "The review classifies adaptation mechanisms broadly; which mechanism is sufficient depends on the target process and performance requirements."
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0003",
+      "statement": "An industrial soft-sensor case combines a model-mismatch index with process-monitoring statistics such as T² and SPE to monitor degradation and guide model-update timing, then incorporates samples from new process conditions into the updated model.",
+      "evidence_refs": [
+        "E0003"
+      ],
+      "qualifiers": [
+        "This is a case-specific maintenance method and does not establish universal thresholds for mismatch, T², SPE, or retraining."
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0004",
+      "statement": "Production ML practice treats testing and monitoring as prerequisites for reliable model operation and maintenance rather than treating model updates as an unmanaged reaction to one performance metric.",
+      "evidence_refs": [
+        "E0004"
+      ],
+      "qualifiers": [
+        "The production-readiness evidence is cross-domain and does not itself specify process-control retraining thresholds."
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0005",
+      "statement": "Across the selected evidence, escalation from a frozen model plus lighter-weight adaptation toward base-model updating is best framed as a monitored model-maintenance decision: persistent mismatch should be interpreted together with evidence of changed process/predictive conditions and the adequacy of lower-impact adaptation, rather than by raw prediction error alone.",
+      "evidence_refs": [
+        "E0001",
+        "E0002",
+        "E0003",
+        "E0004"
+      ],
+      "qualifiers": [
+        "This is a methodological synthesis, not a universally published AND-rule or numerical trigger. The selected evidence does not supply a complete diagnostic procedure for excluding sensor, actuation, process, or data-pipeline faults."
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "relation_id": "R0001",
+      "relation_type": "qualification",
+      "knowledge_unit_refs": [
+        "K0001",
+        "K0003"
+      ],
+      "description": "Performance degradation can motivate investigation, but model-mismatch/process-state evidence is needed to interpret whether the predictive relationship has actually changed.",
+      "evidence_refs": [
+        "E0001",
+        "E0003"
+      ]
+    },
+    {
+      "relation_id": "R0002",
+      "relation_type": "agreement",
+      "knowledge_unit_refs": [
+        "K0002",
+        "K0003"
+      ],
+      "description": "Both the soft-sensor review and industrial case treat maintenance as graded adaptation rather than an automatic jump from a fixed model to complete replacement.",
+      "evidence_refs": [
+        "E0002",
+        "E0003"
+      ]
+    },
+    {
+      "relation_id": "R0003",
+      "relation_type": "dependency",
+      "knowledge_unit_refs": [
+        "K0003",
+        "K0004",
+        "K0005"
+      ],
+      "description": "A defensible escalation decision depends on monitoring sufficient to distinguish persistent model mismatch from a transient metric excursion and to validate the subsequent maintenance action.",
+      "evidence_refs": [
+        "E0003",
+        "E0004"
+      ]
+    }
+  ],
+  "uncertainties": [
+    {
+      "uncertainty_id": "U0001",
+      "description": "No selected evidence establishes process-independent numerical thresholds, persistence windows, or alarm levels at which base-model retraining becomes mandatory.",
+      "knowledge_unit_refs": [
+        "K0001",
+        "K0003",
+        "K0005"
+      ],
+      "evidence_refs": [
+        "E0001",
+        "E0003"
+      ]
+    },
+    {
+      "uncertainty_id": "U0002",
+      "description": "The frozen evidence does not provide a complete validated diagnostic procedure for separating model-relation change from sensor faults, actuation faults, data-pipeline defects, or other non-model causes of degraded prediction.",
+      "knowledge_unit_refs": [
+        "K0005"
+      ],
+      "evidence_refs": [
+        "E0004"
+      ]
+    },
+    {
+      "uncertainty_id": "U0003",
+      "description": "The selected evidence does not determine the minimum amount, coverage, or labeling quality of new-regime data required before a retrained candidate can be accepted.",
+      "knowledge_unit_refs": [
+        "K0003",
+        "K0004"
+      ]
+    },
+    {
+      "uncertainty_id": "U0004",
+      "description": "The selected evidence does not provide a controlled head-to-head comparison, on the same target process, between continuing external compensation and performing a full base-model retraining.",
+      "knowledge_unit_refs": [
+        "K0002",
+        "K0005"
+      ]
+    }
+  ]
+}
