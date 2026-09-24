@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000026",
+  "review_seq": 1,
+  "layer": "10_evidence",
+  "review_kind": "source_evidence_note_to_10_evidence",
+  "target_blob_sha": "f1db9c345bb230b7517f2c2f4eeef270fb6d1b80",
+  "assessment": "E0001-E0009 preserve the corresponding Evidence Note text, locator, note type, and Source relation. Source-level checking confirms the recorded organizing practices: Hernán and Robins' three-part book structure; Nogueira et al.'s causal-discovery/causal-inference task split, data-type organization, algorithm-construction categories, causal-effect granularity, and experimental/unconfounded/confounded settings; Yao et al.'s assumption-based two-way division with traditional versus ML-enhanced methods; Athey and Imbens' three review areas; Luo et al.'s theory-driven recommendation taxonomy; and Glymour et al.'s constraint-, score-, and functional-model-based causal-discovery families. No material source-faithfulness, provenance, or locator defect was identified.",
+  "findings": [],
+  "verdict": "PASS"
+}

@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000026",
+  "review_seq": 1,
+  "layer": "20_synthesis",
+  "review_kind": "10_evidence_to_20_synthesis",
+  "target_blob_sha": "a4aebb20213b937e097bc3476ec31b005de8f9fd",
+  "assessment": "The Synthesis remains descriptive and traceable to the Evidence. It preserves the scopes of domain-specific sources, explicitly qualifies the Hernán-Robins organization as book structure rather than a universal taxonomy, and treats task, data structure, assumptions/assignment setting, estimand, methodological function, causal theory, modeling/longitudinal complexity, algorithm construction, and statistical-versus-ML family as heterogeneous organizing principles rather than a single common hierarchy. K0010 and U0001-U0003 correctly limit the conclusion to the selected Source set and prevent unconditional cross-domain generalization. No unsupported new axis or integrated-taxonomy design judgment requiring repair was identified.",
+  "findings": [],
+  "verdict": "PASS"
+}
