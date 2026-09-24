@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000025",
+  "review_seq": 1,
+  "layer": "30_analysis",
+  "review_kind": "20_synthesis_plus_00_context_to_30_analysis",
+  "target_blob_sha": "9f5a3885c9a70c6ff5368ba1e346c7ef5d6339b1",
+  "assessment": "The Analysis is traceable to the Synthesis and remains within the frozen Conceptual scope. The Working Answer uses 'at least' for the six principal role types, keeps diagnostics/sensitivity provisional, retains ambiguity around specialized settings/tasks and causal discovery, and explicitly defers classification-axis selection and integrated-taxonomy construction to RQ-000026/RQ-000027. Judgments and limitations preserve the non-exclusive and non-exhaustive nature of the ontology. No semantic overreach or context-boundary violation was identified.",
+  "findings": [],
+  "verdict": "PASS"
+}

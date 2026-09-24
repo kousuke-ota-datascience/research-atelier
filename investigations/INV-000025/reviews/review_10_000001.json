@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000025",
+  "review_seq": 1,
+  "layer": "10_evidence",
+  "review_kind": "source_evidence_note_to_10_evidence",
+  "target_blob_sha": "cdd170eef09402110b1374b0bca6fc92d841a196",
+  "assessment": "E0001-E0016 preserve the corresponding Evidence Note text, locator, note type, and Source relation. The reviewed primary/review literature supports the recorded distinctions: graphical framework/identification, IV estimand and assumptions, RD design, DiD identification versus estimation, longitudinal confounding, mediation components, interference, DML/TMLE estimation, causal discovery versus causal inference, heterogeneous-effect estimation, transportability, and ITE/ATE/ATT/CATE target distinctions. No material source-faithfulness, provenance, or qualification defect was identified.",
+  "findings": [],
+  "verdict": "PASS"
+}

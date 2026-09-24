@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000025",
+  "review_seq": 1,
+  "layer": "20_synthesis",
+  "review_kind": "10_evidence_to_20_synthesis",
+  "target_blob_sha": "7db53a236bfb2b5994236e43a39a3e5dc2270c0b",
+  "assessment": "The Synthesis appropriately derives distinct methodological roles/entities from the Evidence while preserving boundary uncertainty. K0001-K0005 are direct role distinctions; K0006 explicitly leaves specialized settings/tasks unresolved as a single ontological type; K0007 treats causal discovery as a distinct task with scope ambiguity; K0008 marks diagnostics/sensitivity coverage as weak; and K0009 is explicitly an ontology-level synthesis rather than a claim that one Source supplies a complete classification. U0001-U0003 correctly prevent the candidate entity types from being read as exhaustive or mutually exclusive. No unsupported completeness, uniqueness, or taxonomy-axis claim was identified.",
+  "findings": [],
+  "verdict": "PASS"
+}

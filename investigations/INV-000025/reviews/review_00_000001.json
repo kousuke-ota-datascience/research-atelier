@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000025",
+  "review_seq": 1,
+  "layer": "00_context",
+  "review_kind": "context_semantic_validity",
+  "target_blob_sha": "ed7611195095b8ffd0f86a19ee49f6207dc3ddde",
+  "assessment": "The frozen Conceptual Context is semantically coherent with RQ-000025. It asks which kinds of methodological entities should be treated as classification targets, explicitly separates entity-type identification from classification-axis comparison and integrated-taxonomy design, allows non-exclusive roles, and treats causal discovery as a boundary case without prejudging inclusion. No contradiction or missing context condition requiring repair was identified.",
+  "findings": [],
+  "verdict": "PASS"
+}
