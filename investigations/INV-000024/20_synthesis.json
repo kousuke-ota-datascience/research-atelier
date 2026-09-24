@@ -1,0 +1,333 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "20_synthesis",
+  "investigation_id": "INV-000024",
+  "rq_id": "RQ-000024",
+  "synthesized_at": "2026-09-24T12:25:48.780Z",
+  "knowledge_units": [
+    {
+      "knowledge_unit_id": "K0001",
+      "statement": "「因果推論手法」は単一の同質なcategoryではなく、causal representation/framework、identification/design、estimation、specialized inferential task/settingなど異なるmethodological roleを含むため、taxonomy作成前にontology layerを分ける必要がある。",
+      "evidence_refs": [
+        "E0003",
+        "E0004",
+        "E0009",
+        "E0010",
+        "E0015",
+        "E0016"
+      ],
+      "qualifiers": [
+        "これは複数Sourceを統合したsynthesisであり、単一Sourceがこの完全なlayeringを定義しているわけではない。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0002",
+      "statement": "causal representation/frameworkはestimatorとは別の層であり、graphical causal modelは因果仮定の表現とidentification判断に使われ、potential-outcomes frameworkもheterogeneous treatment effect等の定義・推論を支える。",
+      "evidence_refs": [
+        "E0003",
+        "E0004",
+        "E0018"
+      ],
+      "qualifiers": []
+    },
+    {
+      "knowledge_unit_id": "K0003",
+      "statement": "observational confounding adjustmentでは、propensity scoreはtreatment assignment mechanismの要約としてmatching、subclassification、covariance adjustment等に使われるため、研究designそのものというよりadjustment/estimationを構成する方法論的要素として位置づけるのが整合的である。",
+      "evidence_refs": [
+        "E0005",
+        "E0006"
+      ],
+      "qualifiers": [
+        "propensity-score-based designという用語法もあるため、design/adjustment境界は文脈依存である。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0004",
+      "statement": "instrumental variablesは特定の仮定によりcausal interpretationを得るidentification strategyであり、その仮定は識別されるestimand（例: compliersのaverage causal effect）にも関与する。",
+      "evidence_refs": [
+        "E0007"
+      ],
+      "qualifiers": []
+    },
+    {
+      "knowledge_unit_id": "K0005",
+      "statement": "regression discontinuityはrunning variableに対するtreatment assignment probabilityの不連続性をidentifying variationとして利用するquasi-experimental design / identification strategyである。",
+      "evidence_refs": [
+        "E0008"
+      ],
+      "qualifiers": []
+    },
+    {
+      "knowledge_unit_id": "K0006",
+      "statement": "Difference-in-Differencesではparallel trends等がidentificationを担い、その同じidentification setupにoutcome regression、IPW、doubly robustなど複数のestimation procedureを組み合わせられるため、identificationとestimationは別軸として扱うべきである。",
+      "evidence_refs": [
+        "E0009",
+        "E0010"
+      ],
+      "qualifiers": []
+    },
+    {
+      "knowledge_unit_id": "K0007",
+      "statement": "synthetic controlは少数のaggregate treated unitを扱うcomparative case settingでsynthetic comparison unitを構成する方法であり、data/design structureとcounterfactual constructionの双方にまたがる。",
+      "evidence_refs": [
+        "E0011"
+      ],
+      "qualifiers": [
+        "designとestimatorの境界にまたがる代表例である。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0008",
+      "statement": "time-varying treatmentとtreatment-confounder feedbackがあるlongitudinal settingではstandard adjustmentがbiasを生じ得るため、longitudinal data structureとtime-varying confoundingは独立した分類軸として必要である。",
+      "evidence_refs": [
+        "E0001",
+        "E0012"
+      ],
+      "qualifiers": []
+    },
+    {
+      "knowledge_unit_id": "K0009",
+      "statement": "causal mediationは単なるestimatorではなく、mediation effectのdefinition、identification、estimation、sensitivity analysisを含む専用のinferential taskである。",
+      "evidence_refs": [
+        "E0013"
+      ],
+      "qualifiers": []
+    },
+    {
+      "knowledge_unit_id": "K0010",
+      "statement": "interferenceはunit間相互作用により通常のno-interference assumptionを変更するproblem settingであり、unit dependence / interference structureをtaxonomyの軸として持つ必要がある。",
+      "evidence_refs": [
+        "E0014"
+      ],
+      "qualifiers": []
+    },
+    {
+      "knowledge_unit_id": "K0011",
+      "statement": "heterogeneous treatment effectはtarget/estimand側の問題であり、causal forestはunconfoundednessの下でそのheterogeneityを推定するestimatorであるため、targetとestimatorを分離して分類する必要がある。",
+      "evidence_refs": [
+        "E0018"
+      ],
+      "qualifiers": []
+    },
+    {
+      "knowledge_unit_id": "K0012",
+      "statement": "transportabilityはsource populationからtarget populationへcausal informationを移送する問題であり、target population / external validityを通常のwithin-population effect identificationとは別の分類軸として扱う必要がある。",
+      "evidence_refs": [
+        "E0019"
+      ],
+      "qualifiers": []
+    },
+    {
+      "knowledge_unit_id": "K0013",
+      "statement": "causal discovery / causal structure searchは、既知または仮定された因果構造の下でeffectを識別する問題とは別のinferential taskであり、内部にもconstraint-based、score-based、functional-causal-model-based等のmethod familyがある。",
+      "evidence_refs": [
+        "E0016",
+        "E0017"
+      ],
+      "qualifiers": [
+        "本Investigationではscope決定によりcausal discoveryを事前除外せず、別branchとしてtaxonomy内に保持する。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0014",
+      "statement": "DMLやTMLEは、特定のcausal/treatment parameterやpathwise differentiable targetに対するestimation/inferenceを改善するsemiparametric・machine-learning系の方法であり、それ自体をcausal identification strategyと同一視すべきではない。",
+      "evidence_refs": [
+        "E0015",
+        "E0020"
+      ],
+      "qualifiers": []
+    },
+    {
+      "knowledge_unit_id": "K0015",
+      "statement": "因果推論方法論のtaxonomyは単一treeよりmulti-axis classificationが適する。理由は、同一identification setupに複数estimatorを組み合わせられ、また一つの方法がdesign・identification・estimationの複数roleにまたがるためである。",
+      "evidence_refs": [
+        "E0009",
+        "E0010",
+        "E0011",
+        "E0015",
+        "E0020"
+      ],
+      "qualifiers": [
+        "階層構造は各軸内部のfamily整理には有用だが、全体を一つの排他的treeに押し込めるべきではない。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0016",
+      "statement": "主要な分類軸として、(1) inferential task、(2) methodological role/layer、(3) study/data structure、(4) identification assumptions/strategy、(5) target estimand、(6) estimation procedure/class、(7) special setting・validity extensionを分離すると、主要手法を矛盾少なく配置できる。",
+      "evidence_refs": [
+        "E0004",
+        "E0007",
+        "E0008",
+        "E0009",
+        "E0012",
+        "E0013",
+        "E0014",
+        "E0016",
+        "E0018",
+        "E0019"
+      ],
+      "qualifiers": [
+        "この7軸は本Investigationのevidenceから構成したworking taxonomyであり、既存文献の単一標準taxonomyを転載したものではない。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0017",
+      "statement": "working taxonomyは、A: causal representation/framework、B: study design・identification strategy、C: estimation/adjustment procedure、D: specialized targets/settings（longitudinal, mediation, heterogeneity, interference, transportability等）、E: causal discovery、F: diagnostics/sensitivityという層・branchに分け、その各要素をK0016の軸でcross-classifyする構成が妥当である。",
+      "evidence_refs": [
+        "E0003",
+        "E0004",
+        "E0006",
+        "E0007",
+        "E0008",
+        "E0009",
+        "E0010",
+        "E0012",
+        "E0013",
+        "E0014",
+        "E0015",
+        "E0016",
+        "E0017",
+        "E0018",
+        "E0019",
+        "E0020"
+      ],
+      "qualifiers": [
+        "diagnostics/sensitivityは今回のSource集合ではmediation sensitivity等の例に限られ、網羅性は低い。"
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "relation_id": "R0001",
+      "relation_type": "dependency",
+      "knowledge_unit_refs": [
+        "K0001",
+        "K0016"
+      ],
+      "description": "分類対象のontologyを分けることが分類軸設計の前提になる。",
+      "evidence_refs": [
+        "E0009",
+        "E0010",
+        "E0016"
+      ]
+    },
+    {
+      "relation_id": "R0002",
+      "relation_type": "dependency",
+      "knowledge_unit_refs": [
+        "K0016",
+        "K0017"
+      ],
+      "description": "分類軸を定義した後にworking taxonomyへ配置する。",
+      "evidence_refs": []
+    },
+    {
+      "relation_id": "R0003",
+      "relation_type": "association",
+      "knowledge_unit_refs": [
+        "K0004",
+        "K0005",
+        "K0006",
+        "K0007"
+      ],
+      "description": "いずれもobservational/quasi-experimental settingでidentifying variationまたはcounterfactual constructionを与える主要familyである。",
+      "evidence_refs": [
+        "E0007",
+        "E0008",
+        "E0009",
+        "E0011"
+      ]
+    },
+    {
+      "relation_id": "R0004",
+      "relation_type": "association",
+      "knowledge_unit_refs": [
+        "K0008",
+        "K0009",
+        "K0010",
+        "K0011",
+        "K0012"
+      ],
+      "description": "標準的point-treatment effect estimationを越えるdata structure・estimand・population・interactionの拡張群である。",
+      "evidence_refs": [
+        "E0012",
+        "E0013",
+        "E0014",
+        "E0018",
+        "E0019"
+      ]
+    },
+    {
+      "relation_id": "R0005",
+      "relation_type": "qualification",
+      "knowledge_unit_refs": [
+        "K0013",
+        "K0017"
+      ],
+      "description": "causal discoveryは因果推論に隣接・包含され得るが、effect identification/estimationとはproblem classが異なるため独立branchとして扱う。",
+      "evidence_refs": [
+        "E0016",
+        "E0017"
+      ]
+    },
+    {
+      "relation_id": "R0006",
+      "relation_type": "qualification",
+      "knowledge_unit_refs": [
+        "K0014",
+        "K0015"
+      ],
+      "description": "modern ML/semiparametric methodsを独立したidentification familyとして並べると抽象レベルが混在する。",
+      "evidence_refs": [
+        "E0015",
+        "E0020"
+      ]
+    }
+  ],
+  "uncertainties": [
+    {
+      "uncertainty_id": "U0001",
+      "description": "因果推論全体について分野横断で合意された単一の標準taxonomyは、今回のSource集合からは確認していない。本成果は複数の方法論文献を統合したworking taxonomyである。",
+      "knowledge_unit_refs": [
+        "K0001",
+        "K0015",
+        "K0016",
+        "K0017"
+      ],
+      "evidence_refs": []
+    },
+    {
+      "uncertainty_id": "U0002",
+      "description": "Source集合は主要な方法論familyを横断する目的抽出であり、front-door identification、negative controls、principal stratification、dynamic treatment regimes、proximal causal inference等を網羅的に個別検証していない。",
+      "knowledge_unit_refs": [
+        "K0017"
+      ],
+      "evidence_refs": []
+    },
+    {
+      "uncertainty_id": "U0003",
+      "description": "propensity-score methodsやsynthetic controlのようにdesign/adjustment/estimationの境界をまたぐ用語があり、methodological roleは排他的categoryではなく属性として保持する方が安全である。",
+      "knowledge_unit_refs": [
+        "K0003",
+        "K0007",
+        "K0015"
+      ],
+      "evidence_refs": [
+        "E0006",
+        "E0011"
+      ]
+    },
+    {
+      "uncertainty_id": "U0004",
+      "description": "causal discoveryを「因果推論手法」に含める範囲は分野・文献によって異なり得るため、本taxonomyではeffect inferenceと同列ではなく別branchとして扱う。",
+      "knowledge_unit_refs": [
+        "K0013",
+        "K0017"
+      ],
+      "evidence_refs": [
+        "E0016",
+        "E0017"
+      ]
+    }
+  ]
+}
