@@ -3,18 +3,18 @@
   "artifact_type": "30_analysis",
   "investigation_id": "INV-000021",
   "rq_id": "RQ-0011",
-  "analyzed_at": "2026-09-24T03:38:00Z",
+  "analyzed_at": "2026-09-24T05:03:00Z",
   "question_type": "Methodological",
   "profile": {
-    "method_or_procedure": "Use the quality-prediction/optimization system as a supervisory setpoint-generation layer above an already stabilized PLC/PID control layer. Enforce admissible command/state constraints before setpoint application, retain independent safety protection, preserve a fallback operating path, and commission automatic operation progressively.",
+    "method_or_procedure": "Use the quality-prediction/optimization system as a supervisory setpoint-generation layer above an already stabilized PLC/PID control layer. Enforce admissible command/state constraints before setpoint application, use hazard/risk analysis to allocate required safety functions and independence from the BPCS/supervisory path, preserve a fallback operating path, and commission automatic operation progressively.",
     "intended_use": "Apply quality-model-derived control-parameter updates on an approximately 5–10 minute supervisory timescale without replacing the PLC's deterministic fast closed-loop regulation or the process safety layer.",
     "assumptions": [
       "The Level 1 PLC/PID control layer is already capable of stable baseline regulation within its validated operating envelope.",
-      "Process hazards and safety functions can be identified independently of the quality optimizer, and required safety functions are allocated to an appropriately independent SIS/SIF or equivalent protection architecture.",
+      "Process hazards and required safety functions can be identified independently of the quality optimizer, and hazard/risk analysis can determine which functions require SIS/SIF or other independent protection and what separation from the BPCS/supervisory path is necessary.",
       "The supervisory optimizer can be prevented from writing commands that violate configured admissible bounds."
     ],
     "evaluation_criteria": [
-      "No loss of required safety function when the supervisory optimizer, its communication path, or the BPCS experiences a relevant failure.",
+      "No loss of any safety function identified by hazard/risk analysis as requiring independence when the supervisory optimizer, its communication path, or the BPCS experiences the relevant failure.",
       "No violation of configured state, actuator-magnitude, actuator-rate, or process-variable constraints by accepted supervisory commands.",
       "Stable lower-level closed-loop behavior without unacceptable oscillation or transient excursions after supervisory setpoint changes.",
       "Defined and tested fallback/manual operation when the supervisory layer is disconnected or rejected.",
@@ -37,7 +37,7 @@
     ]
   },
   "working_answer": {
-    "text": "品質予測モデル／optimizerはPLCの高速inner-loopや安全保護層そのものにせず、既存の安定化済みBPCS/PLCの上位に置くsupervisory setpoint-generation layerとするのが、選択Evidenceに最も整合する構成である。optimizerが生成した候補setpointは、reference governor、constrained MPC、または同等のconstraint-enforcement機構により、少なくともsetpoint/actuatorのabsolute limit、rate/Δsetpoint、必要なstate/process boundsを満たす場合だけLevel 1へ渡す。Level 1のPID/PLCはdeterministicなfast closed-loop regulationと既存interlockを保持し、人身・設備・工程の安全機能はoptimizer/BPCSとの共通故障で失われないよう十分に独立したSIS/SIF等がsafe stateを担う。supervisory layerを切断・拒否してもbaseline controlまたはmanual setpoint operationへ戻れるfallback pathを残し、自動運転は短時間trialから段階的に連続運転時間を伸ばしてcommissioningするのが妥当である。一方、通信timeout時にhold-lastかfallbackか、許容setpoint範囲、rate limit、5〜10分更新周期が妥当かは、対象processのdynamic response、hazard analysis、既存control designで決める必要があり、選択Evidenceだけから普遍値は決められない。",
+    "text": "品質予測モデル／optimizerはPLCの高速inner-loopや安全保護層そのものにせず、既存の安定化済みBPCS/PLCの上位に置くsupervisory setpoint-generation layerとするのが、選択Evidenceに最も整合する構成である。optimizerが生成した候補setpointは、reference governor、constrained MPC、または同等のconstraint-enforcement機構により、少なくともsetpoint/actuatorのabsolute limit、rate/Δsetpoint、必要なstate/process boundsを満たす場合だけLevel 1へ渡す。Level 1のPID/PLCはdeterministicなfast closed-loop regulationと既存interlockを保持する。一方、安全機能の割当は一律にSIS/SIFへ寄せるのではなく、対象processのhazard/risk analysisで必要なrisk reductionとBPCSからのindependenceを決め、その結果として独立保護が必要と判断された機能は、optimizer/BPCSとのdependencyやcommon dangerous failureで同時に失われないSIS/SIF等の保護層へ割り当てる。supervisory layerを切断・拒否してもbaseline controlまたはmanual setpoint operationへ戻れるfallback pathを残し、自動運転は短時間trialから段階的に連続運転時間を伸ばしてcommissioningするのが妥当である。一方、通信timeout時にhold-lastかfallbackか、許容setpoint範囲、rate limit、5〜10分更新周期が妥当か、どの安全機能にどの程度のindependenceが必要かは、対象processのdynamic response、hazard/risk analysis、既存control/safety designで決める必要があり、選択Evidenceだけから普遍値や普遍的な安全機能割当は決められない。",
     "knowledge_unit_refs": [
       "K0001",
       "K0002",
@@ -60,7 +60,7 @@
     },
     {
       "judgment_id": "J0002",
-      "statement": "安全機能はoptimizer/BPCSと共通故障で同時に失われないよう、必要なindependenceとdependency/common-cause analysisを持つSIS/SIF等へ割り当てる必要がある。",
+      "statement": "hazard/risk analysisにより必要な安全機能とrisk reductionを同定し、そのうちBPCS/supervisory pathからのindependenceが必要な機能は、dependency/common-cause failureで同時に失われないSIS/SIF等へ割り当てる必要がある。",
       "knowledge_unit_refs": [
         "K0001",
         "K0006"
@@ -96,7 +96,7 @@
   ],
   "limitations": [
     {
-      "text": "functional-safety EvidenceはSIS/BPCS independenceとsafe-state責務を強く支持するが、ML optimizer固有のPLC接続方式を規定するものではない。",
+      "text": "functional-safety EvidenceはSISのsafe-state責務と、risk assessmentに応じたSIS/BPCS dependency・independence検討を支持するが、すべての安全機能を一律に独立SIS/SIFへ割り当てることやML optimizer固有のPLC接続方式を規定するものではない。",
       "knowledge_unit_refs": [
         "K0001",
         "K0006"
