@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000021",
+  "review_seq": 1,
+  "layer": "20_synthesis",
+  "review_kind": "10_evidence_to_20_synthesis",
+  "target_blob_sha": "ea41d4b86f770761d9e676b630d343aa5ea8b059",
+  "assessment": "K0001-K0006 remain within the support boundary of E0001-E0006. K0006 is explicitly marked as cross-source engineering synthesis, while uncertainty items preserve target-process-specific limits and the single-case nature of the industrial implementation. No unsupported proposition or material qualification loss was identified.",
+  "findings": [],
+  "verdict": "PASS"
+}

@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000021",
+  "review_seq": 1,
+  "layer": "10_evidence",
+  "review_kind": "source_evidence_note_to_10_evidence",
+  "target_blob_sha": "346bef65afc1095fd5346d60d24c1945164b7f0f",
+  "assessment": "E0001-E0006 are traceable to the registered Source and Evidence Note records and preserve the relevant source boundaries: IEC/HSE support SIS safe-state and independence/common-cause considerations; control literature supports constrained supervisory commands; the Tata Steel case supports a Level-2 supervisory pattern, manual fallback, and staged commissioning. The evidence snapshot does not claim universal numeric limits or universal architecture sufficiency.",
+  "findings": [],
+  "verdict": "PASS"
+}

@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000021",
+  "review_seq": 1,
+  "layer": "00_context",
+  "review_kind": "context_semantic_validity",
+  "target_blob_sha": "a80b937b996379a3ecd0e36c49462b18af874b5d",
+  "assessment": "Frozen RQ, Methodological Question Type, scope, target process class, exclusions, evidence cutoff, and assumptions boundary are semantically coherent for the downstream architecture/safety analysis. No context contradiction or missing context element was identified that would require changing the frozen Investigation Context.",
+  "findings": [],
+  "verdict": "PASS"
+}
