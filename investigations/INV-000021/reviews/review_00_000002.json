@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000021",
+  "review_seq": 2,
+  "layer": "00_context",
+  "review_kind": "context_semantic_validity",
+  "target_blob_sha": "a80b937b996379a3ecd0e36c49462b18af874b5d",
+  "assessment": "The frozen Methodological Context is unchanged from cycle 1 and remains coherent with RQ-0011. The repair did not alter the RQ, scope, Question Type, boundary, or evidence cutoff. No Context finding exists.",
+  "findings": [],
+  "verdict": "PASS"
+}
