@@ -1,5 +1,5 @@
 {
-  "schema_version": "2.0.0",
+  "schema_version": "2.1.0",
   "artifact_type": "10_evidence",
   "investigation_id": "INV-000018",
   "rq_id": "RQ-0022",
@@ -12,10 +12,7 @@
       "selection_reason": "地域側の賛否併存と南多摩における行政的抵抗を、東京都公文書館の所蔵史料解説から確認するため。",
       "note_type": "Result",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be3981129356c8924a2b45ba",
-          "title": "SRC-0097"
-        },
+        "source_id": "SRC-0097",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e4e5855be3981bdafc1cd528629ab82",
           "title": "EV-0185"
@@ -29,10 +26,7 @@
       "selection_reason": "町村長層による移管反対陳情の一次史料が町田市立自由民権資料館に残ることを確認し、個別署名者未確認という境界も保持するため。",
       "note_type": "Data",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be398139ac7afa013f49cdaa",
-          "title": "SRC-0081"
-        },
+        "source_id": "SRC-0081",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e4e5855be39816eb24de6bf17d283d9",
           "title": "EV-0186"
@@ -46,10 +40,7 @@
       "selection_reason": "石阪昌孝による復旧要求の党内持込みと、地域運動と党中央の不一致を具体的に確認するため。",
       "note_type": "Result",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be3981e89190c5df7e3de208",
-          "title": "SRC-0095"
-        },
+        "source_id": "SRC-0095",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e4e5855be39816f8838c6f230f28033",
           "title": "EV-0187"
@@ -63,10 +54,7 @@
       "selection_reason": "南多摩の具体的な組織行動を、会場・参加構成・決議内容まで同定するため。",
       "note_type": "Result",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be3981e89190c5df7e3de208",
-          "title": "SRC-0095"
-        },
+        "source_id": "SRC-0095",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e4e5855be3981cebf25e701bc8934fd",
           "title": "EV-0188"
@@ -80,10 +68,7 @@
       "selection_reason": "南多摩で移管反対が公開演説という言論行動として大規模に表明されたことを確認しつつ、参加人数を住民一般の支持率へ一般化しないため。",
       "note_type": "Result",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be3981e89190c5df7e3de208",
-          "title": "SRC-0095"
-        },
+        "source_id": "SRC-0095",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e4e5855be3981c5b52ec7194e2c6ccb",
           "title": "EV-0189"
@@ -97,10 +82,7 @@
       "selection_reason": "現在の町田市域について、人物・村・立場・交渉行動を同時に特定できる最も直接的なEvidenceとして採用するため。",
       "note_type": "Result",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be3981e89190c5df7e3de208",
-          "title": "SRC-0095"
-        },
+        "source_id": "SRC-0095",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e4e5855be3981c29aacebaf3188567a",
           "title": "EV-0190"
@@ -114,10 +96,7 @@
       "selection_reason": "南多摩の民権家・政治家の行動を旧神奈川県域の自由党ネットワークへ接続し、地域組織レベルの抵抗を確認するため。",
       "note_type": "Result",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be3981e89190c5df7e3de208",
-          "title": "SRC-0095"
-        },
+        "source_id": "SRC-0095",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e4e5855be3981e4b939cf4dd72f8ed3",
           "title": "EV-0191"
@@ -131,10 +110,7 @@
       "selection_reason": "反対・抵抗のaction repertoireに行政職の辞職と行政麻痺が含まれたことを、請願・演説とは別の行動類型として保持するため。",
       "note_type": "Result",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be3981e89190c5df7e3de208",
-          "title": "SRC-0095"
-        },
+        "source_id": "SRC-0095",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e4e5855be3981ffb632f24cc8839251",
           "title": "EV-0192"
@@ -148,10 +124,7 @@
       "selection_reason": "現在の町田市域の地域政治家が移管問題を経済論点として公に論じたことを確認しつつ、演説本文未確認という限界を保持するため。",
       "note_type": "Result",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be3981e89190c5df7e3de208",
-          "title": "SRC-0095"
-        },
+        "source_id": "SRC-0095",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e4e5855be3981c7876cd52d7cc83305",
           "title": "EV-0193"
@@ -165,15 +138,50 @@
       "selection_reason": "石阪昌孝の復旧運動を現在の町田市域の主体に帰属させるため、人物の地理的・政治的identityを移管行動とは独立した公式Sourceで根拠化するため。",
       "note_type": "Data",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e4e5855be3981c28303e9238e3a4673",
-          "title": "SRC-0108"
-        },
+        "source_id": "SRC-0108",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e4e5855be3981c4a9f6c3fb85be5c19",
           "title": "EV-0194"
         }
       }
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "SRC-0081",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "bb47f2f45fa7313d650b37889884f22a40ebf7c1"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e3e5855be398139ac7afa013f49cdaa"
+    },
+    {
+      "source_id": "SRC-0095",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "0c6c0567bab06209368db9b2f42e0130751eb3bc"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e3e5855be3981e89190c5df7e3de208"
+    },
+    {
+      "source_id": "SRC-0097",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "a89fabb0c645a2cab7d62d5c6b91f772d7495b73"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e3e5855be3981129356c8924a2b45ba"
+    },
+    {
+      "source_id": "SRC-0108",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "681281e0872173d87b508fbab23e432bfbb600c7"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e4e5855be3981c28303e9238e3a4673"
     }
   ]
 }
