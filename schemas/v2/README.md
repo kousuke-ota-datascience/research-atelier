@@ -5,7 +5,8 @@ v2はTask 17で確定したcanonical domain modelを実装する。
 ## Identity
 
 - `investigation_id`: `INV-NNNNNN`
-- `rq_id`: `RQ-NNNN`
+- `rq_id`: historical `RQ-NNNN` or post-BKL-0030 `RQ-NNNNNN`
+- Existing 4-digit RQ IDs are immutable. New RQ allocation after the Notion cutover uses 6 digits; v2 accepts both widths because the semantic identity and artifact structure are unchanged.
 - Investigation IDはRQ IDをencodeしない。
 - 1つのartifact chainでは全artifactの `investigation_id` と `rq_id` が一致しなければならない。
 - `00_context` はResearch Context entityではなく **Investigation Context** である。
