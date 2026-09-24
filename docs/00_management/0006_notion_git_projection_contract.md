@@ -9,7 +9,11 @@
 ```text
 Notion reusable catalog / operational state
         |
-        | selected stateをfreeze
+        | Source ID allocation / draft capture
+        v
+Git canonical Information Source artifacts
+        |
+        | selected Source revision + Evidenceをfreeze
         v
 Git canonical Investigation artifacts
         |
@@ -26,7 +30,7 @@ authorityは常に `0001_research_architecture.md` に従う。
 
 - Research Topics catalog / topic relation
 - current Research Question catalog state
-- Source bibliographic identity / metadata
+- Source UID / Source ID allocationとGit materialization前のdraft Source input
 - reusable Evidence Notes
 - freeze前のInvestigations DB Context inputとReview current operational state
 - その他mutable operational workflow state
@@ -35,8 +39,9 @@ authorityは常に `0001_research_architecture.md` に従う。
 
 特定Investigationについて:
 
+- canonical Information Source metadata (`information_sources/<Source ID>.json`)
 - frozen `00_context`
-- frozen `10_evidence` snapshot
+- frozen `10_evidence` snapshotと使用Source revision
 - `20_synthesis`
 - `30_analysis`
 - そのInvestigationでacceptedされたWorking Answer
@@ -114,9 +119,11 @@ Notion Investigations rowが存在しないhistorical Investigationをoperationa
 
 ### Source / Evidence Noteの役割
 
-`Sources` と `Evidence Notes` はreusable Notion catalogである。
+Notion `Sources` はSource UID / Source ID allocation、Git materialization前のdraft capture、human-facing catalog / projectionを担う。Source metadataのcanonical authorityは、validation済み `information_sources/<Source ID>.json` をcommitした時点でGitへ移る。
 
-`10_evidence` はDB mirrorではない。そのInvestigationで選択したEvidenceのsnapshotである。
+`Evidence Notes` はreusable Notion catalogとして維持する。
+
+`10_evidence` はDB mirrorではない。そのInvestigationで選択したEvidenceと、実際に使用したcanonical Source revisionのsnapshotである。
 
 ### Evidence Note mapping
 
@@ -127,34 +134,36 @@ Notion Investigations rowが存在しないhistorical Investigationをoperationa
 | `Note Type` | `note_type` | classificationを保持 |
 | `Location` | `source_locator` | source locationを保持 |
 | `Direct Quote` | `direct_quote` | 存在する場合exact quoteを保持 |
-| `Source` relation target URL | `provenance.source.notion_url` | Source lineage |
+| `Source` relation target | `provenance.source_id` | canonical Source identity。Notion relation先のSource IDから解決 |
 
 `10_evidence.evidence_id` はInvestigation-localなlineage IDであり、`20_synthesis.evidence_refs` から参照される。Notionのformula `Evidence ID` を複製管理するものではない。
 
-### Source mapping
+### Source mapping / authority transition
 
-Gitには、Notion Sourceを特定するために必要な最小provenanceのみを保存する。
+Source creationは次の順序で行う。
 
-- Source page URL
-- 可読性のためのoptional Source title
+1. Notion SourcesでSource UID / Source IDをallocateし、必要なdraft metadataをcaptureする。
+2. exact Source IDで `information_sources/<Source ID>.json` をmaterializeする。
+3. `schemas/v2/information_source.schema.json` でvalidateし、Source JSONをcommitする。
+4. commit後はGit Source JSONがSource metadata authorityとなり、Notion Sourcesはhuman-facing catalog / projectionとしてreconcileする。
 
-以下はNotion-authoritativeのままとし、`10_evidence` へ一式copyしない。
+canonical Source JSONはbibliographic identity / metadataを保持する。代表fieldはSource title、Source Type、Journal / Publisher、Authors、Year、URL、DOI、Version / Edition、Reliability Noteである。Reading StatusやResearch Questions relation等のoperational catalog stateはNotionに残す。
 
-- `Source ID`
-- `Source Type`
-- `Journal / Publisher`
-- `Authors`
-- `Year`
-- `URL`
-- `DOI`
-- `PDF / File`
-- `Reading Status`
-- `Reliability Note`
-- `Research Questions` relation
+新規 `10_evidence` 2.1.0は、使用したSourceごとに `source_id`、`source_revision.commit_sha`、`source_revision.blob_sha`、Investigation-specific `accessed_at`、navigation用 `notion_url` をfreezeする。Evidence itemは `provenance.source_id` からこのSource snapshotを参照する。
 
-Investigationがfreezeするのは「実際に使用したEvidence」であり、第二のbibliographic DBではない。
+`accessed_at` はSource metadata revisionとは別のInvestigation-specific access eventである。Source JSONの更新で既存Investigationのrevision bindingやaccessed_atを自動追従させない。
 
-将来、厳密なhistorical bibliography snapshotが再現性上必要になった場合は、mutable Source fieldsをad hocに複製せず、citation snapshot contractを別途定義する。
+write orderは自己参照を避けるため次に固定する。
+
+```text
+1. create / update information_sources/<Source ID>.json
+2. validate and commit Source JSON
+3. obtain Source commit SHA + blob SHA
+4. author / freeze 10_evidence.json with that revision
+5. validate and commit Investigation artifact
+```
+
+historical `10_evidence` 2.0.0はBKL-0038 migrationまで互換読取する。新規Workflow 10は2.1.0を使用する。
 
 ## 4. writable relationを二重管理しない
 
