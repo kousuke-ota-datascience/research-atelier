@@ -1,0 +1,167 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "20_synthesis",
+  "investigation_id": "INV-000021",
+  "rq_id": "RQ-0011",
+  "synthesized_at": "2026-09-24T03:36:00Z",
+  "knowledge_units": [
+    {
+      "knowledge_unit_id": "K0001",
+      "statement": "Process-industry functional-safety practice assigns safe-state achievement and maintenance to a safety instrumented system, and safety integrity can be undermined when protection depends on the same basic process-control components whose failure creates the demand.",
+      "evidence_refs": [
+        "E0001",
+        "E0002"
+      ],
+      "qualifiers": [
+        "The IEC public page establishes the SIS lifecycle/safe-state role; the HSE notice supplies a concrete common-cause failure example and cites the relevant BS EN 61511 independence/dependency clauses."
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0002",
+      "statement": "A supervisory command layer can be added above an already stabilized lower-level controller and constrain the requested reference so that state/control bounds, actuator magnitude limits, actuator rate limits, and process-variable limits are respected.",
+      "evidence_refs": [
+        "E0003"
+      ],
+      "qualifiers": [
+        "Reference-governor theory assumes a pre-stabilized system; it does not by itself establish safety integrity for the supervisory computation."
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0003",
+      "statement": "Constrained MPC provides a second established framework for optimization under explicit hard state and control constraints rather than sending unconstrained optimizer outputs directly to the process.",
+      "evidence_refs": [
+        "E0004"
+      ],
+      "qualifiers": [
+        "Constraint satisfaction still depends on model adequacy, feasibility assumptions, implementation, and the target process; the evidence does not provide universal numerical bounds."
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0004",
+      "statement": "A directly relevant industrial implementation keeps conventional PID loops, PLC logic, and safety interlocks at Level 1 while a Level 2 MPC layer changes only temperature setpoints subject to process constraints.",
+      "evidence_refs": [
+        "E0005"
+      ],
+      "qualifiers": [
+        "This is one continuous-steel-annealing implementation and should be treated as an architecture example, not as proof that the same controller hierarchy is sufficient for every process."
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0005",
+      "statement": "The same industrial implementation preserves operation when supervisory MPC is disconnected by reverting to operator-set Level 1 setpoints, and introduced automatic operation gradually through progressively longer trials.",
+      "evidence_refs": [
+        "E0006"
+      ],
+      "qualifiers": [
+        "The evidence establishes fallback/manual operation and staged commissioning, but does not prescribe a universal hold-last, automatic fallback, or bumpless-transfer policy."
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0006",
+      "statement": "Taken together, the evidence supports a layered architecture in which the optimization/prediction layer is supervisory, constraint enforcement occurs before lower-level setpoint application, the established lower-level regulatory controller remains responsible for fast closed-loop regulation, and independent safety protection remains available when the supervisory layer fails or is disconnected.",
+      "evidence_refs": [
+        "E0001",
+        "E0002",
+        "E0003",
+        "E0004",
+        "E0005",
+        "E0006"
+      ],
+      "qualifiers": [
+        "This is a cross-source engineering synthesis. Exact layer boundaries, safety-function allocation, fallback state, watchdog behavior, and communication semantics require target-process hazard and control analysis."
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "relation_id": "R0001",
+      "relation_type": "dependency",
+      "knowledge_unit_refs": [
+        "K0001",
+        "K0006"
+      ],
+      "description": "The layered supervisory architecture is safety-credible only if failure or loss of the supervisory/BPCS path does not also remove the safety function.",
+      "evidence_refs": [
+        "E0001",
+        "E0002"
+      ]
+    },
+    {
+      "relation_id": "R0002",
+      "relation_type": "agreement",
+      "knowledge_unit_refs": [
+        "K0002",
+        "K0003"
+      ],
+      "description": "Reference-governor and constrained-MPC literature independently support explicit constraint enforcement at the command/optimization boundary.",
+      "evidence_refs": [
+        "E0003",
+        "E0004"
+      ]
+    },
+    {
+      "relation_id": "R0003",
+      "relation_type": "association",
+      "knowledge_unit_refs": [
+        "K0002",
+        "K0003",
+        "K0004"
+      ],
+      "description": "The control-theory mechanisms for constrained commands are consistent with the industrial pattern of a supervisory optimizer writing bounded setpoints to a lower-level PLC/PID layer.",
+      "evidence_refs": [
+        "E0003",
+        "E0004",
+        "E0005"
+      ]
+    },
+    {
+      "relation_id": "R0004",
+      "relation_type": "dependency",
+      "knowledge_unit_refs": [
+        "K0004",
+        "K0005",
+        "K0006"
+      ],
+      "description": "Operational robustness of the supervisory architecture depends not only on normal automatic operation but also on a defined fallback path and controlled commissioning.",
+      "evidence_refs": [
+        "E0005",
+        "E0006"
+      ]
+    }
+  ],
+  "uncertainties": [
+    {
+      "uncertainty_id": "U0001",
+      "description": "The selected evidence does not determine target-process numerical limits for setpoint magnitude, setpoint rate, optimizer update interval, state constraints, or acceptable settling/oscillation metrics.",
+      "knowledge_unit_refs": [
+        "K0002",
+        "K0003",
+        "K0006"
+      ],
+      "evidence_refs": [
+        "E0003",
+        "E0004"
+      ]
+    },
+    {
+      "uncertainty_id": "U0002",
+      "description": "The Tata Steel implementation is a single continuous-process example, so its exact Level 1/Level 2 decomposition and operational practices are not universal requirements.",
+      "knowledge_unit_refs": [
+        "K0004",
+        "K0005"
+      ],
+      "evidence_refs": [
+        "E0005",
+        "E0006"
+      ]
+    },
+    {
+      "uncertainty_id": "U0003",
+      "description": "The selected evidence does not specify a universal PLC communication watchdog, timeout action, hold-last policy, bumpless-transfer design, or safe fallback setpoint for the user's target process.",
+      "knowledge_unit_refs": [
+        "K0005",
+        "K0006"
+      ]
+    }
+  ]
+}
