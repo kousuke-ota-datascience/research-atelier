@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000141",
+  "notion_url": "https://app.notion.com/p/3e5e5855be3981d9a48cc64162285dd1",
+  "title": "A Method for Taxonomy Development and its Application in Information Systems",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "European Journal of Information Systems",
+  "authors": "Robert C. Nickerson; Upkar Varshney; Jan Muntermann",
+  "year": 2013,
+  "url": "https://doi.org/10.1057/ejis.2012.26",
+  "doi": "10.1057/ejis.2012.26",
+  "version_or_edition": null,
+  "reliability_note": "Peer-reviewed taxonomy-development method; used for taxonomy construction principles."
+}
