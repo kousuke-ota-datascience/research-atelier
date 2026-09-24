@@ -1,0 +1,41 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "00_context",
+  "investigation_id": "INV-000027",
+  "rq_id": "RQ-000027",
+  "context_state": "frozen",
+  "question": {
+    "text": "RQ1で同定した分類対象とRQ2で確認した分類軸・既存分類体系を踏まえると、因果推論方法論をどのような統合 taxonomy として構成できるか。",
+    "notion_url": "https://app.notion.com/p/3e5e5855be398180bb66f371eda89979"
+  },
+  "question_type": "Methodological",
+  "scope": "RQ-000025で同定・acceptedされたmethodological entity typesと、RQ-000026で同定・acceptedされた既存分類軸・分類体系を主要入力として、因果推論方法論を一貫して記述できる統合taxonomyを構成する。外部文献は、upstream結果間の矛盾・coverage gap・boundary caseを解消するためのtargeted supplementationに限定する。taxonomyの構成はEvidence-derived factsとanalysis/design judgmentを明示的に分離して行う。",
+  "significance": null,
+  "investigation_boundary": {
+    "include": [
+      "RQ-000025のaccepted Working Answer / canonical analysisとそのlineage",
+      "RQ-000026のaccepted Working Answer / canonical analysisとそのlineage",
+      "upstreamで確認されたentity types、classification axes、既存taxonomy/typology",
+      "hierarchical、faceted/multi-axis、hybrid等の候補構造の比較",
+      "coverage、抽象レベル整合性、traceability、拡張性、multi-membershipの扱い等のtaxonomy evaluation criteria",
+      "upstream結果の矛盾・不足を解消するための限定的な追加methodological source"
+    ],
+    "exclude": [
+      "RQ-000025/026を経ずに大量の個別手法を直接並べてtaxonomyを作ること",
+      "Evidence-backed factとtaxonomy design judgmentを区別せず結論化すること",
+      "最良の因果推論手法をランキングすること",
+      "特定応用分野だけに最適化したtaxonomy",
+      "upstreamのsemantic targetを変更すること"
+    ],
+    "evidence_cutoff": "2026-09-24T12:08:00.000Z"
+  },
+  "assumptions": [
+    "統合taxonomyは研究結果の単純な発見ではなく、Evidence制約下のconstructive designを含む",
+    "tree、multi-axis、hybridのいずれを採用するかは事前に固定しない",
+    "分類構造の各要素について、upstream Evidenceに由来する部分と分析者のdesign judgmentを区別する",
+    "一つのmethodが複数role/axis valueを持つ可能性を許容する",
+    "taxonomyの目的は方法論空間の理解・navigation・method selection支援であり、methodの優劣rankingではない",
+    "RQ-000025/026がacceptedされる前は最終Working Answerを確定しない"
+  ],
+  "frozen_at": "2026-09-24T15:10:09.871Z"
+}

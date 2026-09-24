@@ -1,0 +1,39 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "00_context",
+  "investigation_id": "INV-000026",
+  "rq_id": "RQ-000026",
+  "context_state": "frozen",
+  "question": {
+    "text": "因果推論の方法論を分類するために、既存文献ではどのような分類軸・分類体系が用いられているか。",
+    "notion_url": "https://app.notion.com/p/3e5e5855be39818aa4e8cad29cce78da"
+  },
+  "question_type": "Descriptive",
+  "scope": "因果推論方法論を整理するために、既存文献が実際に用いている分類軸、typology、taxonomy、ontology、method-selection framework、章立て・体系化原理を分野横断で記述・比較する。目的は新しい分類軸を発明することではなく、既存の分類practiceとその目的・粒度・前提をEvidenceとして抽出することである。Source boundaryは、分類体系を明示するmethodological monograph/textbook、review、framework/position paper、ontology/taxonomy paperを優先し、個別method原著は分類体系の根拠を補う場合に限定する。",
+  "significance": null,
+  "investigation_boundary": {
+    "include": [
+      "因果推論方法を明示的に分類・整理するtaxonomy、typology、ontology、framework、method-selection scheme",
+      "study design、identification assumptions、estimand、data structure、causal task、estimator等を分類軸として用いる既存文献",
+      "統計学、疫学、計量経済学、社会科学、機械学習での分類practice",
+      "各分類体系の目的、対象範囲、階層性、排他性、多軸性、粒度",
+      "causal discoveryを含む・除外する既存体系の扱い"
+    ],
+    "exclude": [
+      "Evidenceにない分類軸を分析者が新規に発明すること",
+      "個別手法の詳細な性能比較",
+      "統合taxonomyの最終構成（RQ-000027の対象）",
+      "単なる手法列挙で分類原理が示されない資料を分類体系のEvidenceとして扱うこと",
+      "特定softwareのmenu構成だけをmethodological taxonomyとして扱うこと"
+    ],
+    "evidence_cutoff": "2026-09-24T12:08:00.000Z"
+  },
+  "assumptions": [
+    "因果推論全体に単一の標準taxonomyが存在するとは仮定しない",
+    "分類体系は目的・分野・対象読者に依存し得るため、相互に非同型でも保持する",
+    "文献の章立てをtaxonomyとみなす場合は、分類原理が本文で明示または合理的に読解可能な場合に限定する",
+    "classification axisとmethodological entity typeを区別して抽出する",
+    "分析者の設計判断と既存文献の分類practiceを混同しない"
+  ],
+  "frozen_at": "2026-09-24T15:10:09.871Z"
+}

@@ -1,0 +1,39 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "00_context",
+  "investigation_id": "INV-000025",
+  "rq_id": "RQ-000025",
+  "context_state": "frozen",
+  "question": {
+    "text": "因果推論において、方法論として分類すべき対象にはどのような種類があるか。",
+    "notion_url": "https://app.notion.com/p/3e5e5855be3981f284b4dba4f6fd10ef"
+  },
+  "question_type": "Conceptual",
+  "scope": "因果推論において「方法」「手法」「framework」「design」「strategy」「estimator」等として扱われる方法論的対象の種類と、それらの相互関係・境界を同定する。特定の応用分野には限定せず、統計学、疫学、計量経済学、社会科学、機械学習を横断する。目的は統合taxonomyを構成することではなく、taxonomyのunitとなり得るmethodological entity typesを明確化することである。Source boundaryは、原著methodological paper、主要なmethodological monograph/textbook、高品質reviewのうち、方法論的構成要素の役割・定義・区別を明示する資料を優先する。",
+  "significance": null,
+  "investigation_boundary": {
+    "include": [
+      "経験的データから因果関係・因果効果について推論する方法論に現れる構成要素の種類",
+      "causal framework / representation、study design、identification、estimand、estimation、diagnostics等の候補概念。ただし最終的なentity typeはEvidenceから確定する",
+      "randomized、quasi-experimental、observational、longitudinal、mediation、interference、transportability、heterogeneity等で用いられる方法論的構成要素",
+      "causal discoveryはeffect inferenceとの境界を検討するboundary caseとして含める",
+      "異分野で異なる名称を持つ同型・近縁概念の対応関係"
+    ],
+    "exclude": [
+      "既存分類軸・taxonomyの比較そのもの（RQ-000026の対象）",
+      "統合taxonomyの設計・最適構造の決定（RQ-000027の対象）",
+      "causal interpretationを持たない純粋なprediction / association手法",
+      "特定応用への単なる適用例",
+      "software packageや実装差のみを独立methodological entityとして扱うこと"
+    ],
+    "evidence_cutoff": "2026-09-24T12:08:00.000Z"
+  },
+  "assumptions": [
+    "「因果推論手法」が単一のontological categoryであるとは仮定しない",
+    "同一名称でも分野によりmethodological roleが異なる可能性を許容する",
+    "一つの方法が複数のroleを持つ可能性を許容し、排他的分類を事前に要求しない",
+    "entity typeの同定とtaxonomy axisの設計を区別する",
+    "causal discoveryを内包するかは結論を先取りせずboundary evidenceで判断する"
+  ],
+  "frozen_at": "2026-09-24T15:10:09.871Z"
+}
