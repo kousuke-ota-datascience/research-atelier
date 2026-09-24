@@ -11,6 +11,7 @@ from typing import Any, Mapping
 
 from .reference_validator import ParsedArtifact, validate_references
 from .schema_validator import ValidationIssue, validate_artifact
+from .source_revision_validator import validate_source_revisions
 
 
 REPO_ROOT = Path(__file__).resolve().parents[3]
@@ -75,6 +76,7 @@ def validate_investigation(
     investigation_root: str | Path = DEFAULT_INVESTIGATION_ROOT,
     schema_root: str | Path | None = None,
     new_freeze: bool = False,
+    repository_root: str | Path = REPO_ROOT,
 ) -> dict[str, Any]:
     if through not in ARTIFACT_ORDER:
         raise ValueError(f"through must be one of {ARTIFACT_ORDER}: {through!r}")
@@ -132,6 +134,15 @@ def validate_investigation(
         if context is not None:
             issues.extend(validate_new_freeze_context(context.data))
 
+    evidence = parsed.get("10")
+    if evidence is not None and not legacy_id:
+        issues.extend(
+            validate_source_revisions(
+                evidence.data,
+                repository_root=repository_root,
+            )
+        )
+
     issues.extend(validate_references(investigation_id, parsed))
     issues = sorted(issues, key=ValidationIssue.sort_key)
     internal_errors = sorted(set(internal_errors))
@@ -175,6 +186,12 @@ def main(argv: list[str] | None = None) -> int:
         help="schema directory override; default auto-selects v2 for INV IDs and v1 for legacy IDs",
     )
     parser.add_argument(
+        "--repository-root",
+        type=Path,
+        default=REPO_ROOT,
+        help="Git repository root used to validate Information Source commit/blob bindings",
+    )
+    parser.add_argument(
         "--new-freeze",
         action="store_true",
         help=(
@@ -190,6 +207,7 @@ def main(argv: list[str] | None = None) -> int:
         investigation_root=args.root,
         schema_root=args.schema_root,
         new_freeze=args.new_freeze,
+        repository_root=args.repository_root,
     )
     print(json.dumps(result, ensure_ascii=False, indent=2, sort_keys=True))
     return {"PASS": 0, "FAIL": 1, "ERROR": 2}[result["result"]]
