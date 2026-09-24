@@ -19,7 +19,7 @@
     "schema_version": {"const": "2.0.0"},
     "report_type": {"const": "projection_log"},
     "target_rq_url": {"type": "string", "format": "uri"},
-    "rq_id": {"type": "string", "pattern": "^RQ-[0-9]{4}$"},
+    "rq_id": {"type": "string", "pattern": "^RQ-(?:[0-9]{4}|[0-9]{6})$"},
     "source_investigation_id": {
       "type": "string",
       "pattern": "^(?:INV-(?!000000)[0-9]{6}|RQ-[0-9]{4}-v[0-9]{3})$"
