@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000001",
+  "review_seq": 1,
+  "layer": "00_context",
+  "review_kind": "context_semantic_validity",
+  "target_blob_sha": "d1a8b6715dc417b961d534a15286fbf6f37d7ed5",
+  "assessment": "The frozen Methodological Context is coherent with RQ-0010: the base prediction model is fixed, the correction layer may adapt separately, base-model online/continual updating is excluded, and delay/rate/outlier/operating-condition constraints are within the intended method-selection problem. The live RQ wording is more explicit but does not create a material semantic difference from the frozen scope.",
+  "findings": [],
+  "verdict": "PASS"
+}

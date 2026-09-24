@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000001",
+  "review_seq": 1,
+  "layer": "30_analysis",
+  "review_kind": "20_synthesis_plus_00_context_to_30_analysis",
+  "target_blob_sha": "4060d0d7141aefb0f7dd43d50bbcb60689c14887",
+  "assessment": "The Analysis answers the frozen Methodological question through five external correction families and keeps the base-model/correction-layer boundary explicit. Recommendations such as starting with tuned/weighted bias correction are labeled engineering judgments and are bounded by the variance/noise, residual-structure, measurement-timing, outlier, and operating-condition evidence. Numerical tuning and cross-method ranking are correctly left target-process-specific.",
+  "findings": [],
+  "verdict": "PASS"
+}

@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000001",
+  "review_seq": 1,
+  "layer": "10_evidence",
+  "review_kind": "source_evidence_note_to_10_evidence",
+  "target_blob_sha": "6f5b966704c4cc42e694d89b91f79a1c7e492e45",
+  "assessment": "E0001-E0017 remain traceable to eight registered Sources/Evidence Notes and preserve the method-specific boundaries previously checked at publisher/primary-source level: bias-update variance trade-offs, delay/multirate conditions, Bayesian bias updating, residual ARMA correction, Kalman/data-fusion calibration, nonlinear-filter trade-offs, and a separately adaptive calibration model. The Evidence does not assert universal numeric settings or a universal best method.",
+  "findings": [],
+  "verdict": "PASS"
+}

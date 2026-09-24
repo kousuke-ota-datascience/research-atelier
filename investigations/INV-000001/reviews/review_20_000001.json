@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000001",
+  "review_seq": 1,
+  "layer": "20_synthesis",
+  "review_kind": "10_evidence_to_20_synthesis",
+  "target_blob_sha": "e5f8239df9717c0b195793a0f13f436aa390b7a6",
+  "assessment": "K0001-K0011 are supported by the selected Evidence and preserve relevant qualifications. In particular, K0008/U0003 explicitly require architectural and version separation between the frozen base predictor and an adaptive calibration layer, preventing correction-layer adaptation from being silently reclassified as base-model retraining. The taxonomy is presented as an engineering taxonomy, not mutually exclusive formal classes.",
+  "findings": [],
+  "verdict": "PASS"
+}
