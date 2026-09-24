@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000142",
+  "notion_url": "https://app.notion.com/p/3e5e5855be398172bb32da38ac347970",
+  "title": "An Update for Taxonomy Designers",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "Business & Information Systems Engineering",
+  "authors": "Dennis Kundisch et al.",
+  "year": 2022,
+  "url": "https://doi.org/10.1007/s12599-021-00723-x",
+  "doi": "10.1007/s12599-021-00723-x",
+  "version_or_edition": null,
+  "reliability_note": "Peer-reviewed methodological update for taxonomy construction and evaluation."
+}
