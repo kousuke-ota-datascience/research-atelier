@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000023",
+  "review_seq": 1,
+  "layer": "20_synthesis",
+  "review_kind": "10_evidence_to_20_synthesis",
+  "target_blob_sha": "b4d5589aeeccd9080c730d32dec75a96ea7e934b",
+  "assessment": "Within the current frozen Evidence set, K0001-K0013 generally preserve support boundaries: official/public reasons are separated from Utsumi's private political interest, the water-necessity counterargument is retained, petition counts are not treated as population preference, and long-term identity effects are explicitly left unidentified. No independent synthesis-only overclaim was identified. Because F001-F003 require a 10_evidence repair, this current synthesis must nevertheless be invalidated and rebuilt/revalidated after that upstream change.",
+  "findings": [],
+  "verdict": "PASS"
+}

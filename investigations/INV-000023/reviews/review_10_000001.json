@@ -1,0 +1,62 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000023",
+  "review_seq": 1,
+  "layer": "10_evidence",
+  "review_kind": "source_evidence_note_to_10_evidence",
+  "target_blob_sha": "d8cf9f4b12c364fd23ae80d40a723d4fd05d2536",
+  "assessment": "The selected Evidence is largely traceable and content-faithful, and it includes the principal water/administrative reasons, Utsumi's political letter, the House committee counterargument, local opposition/restoration activity, and post-transfer consequences. However, the frozen snapshot does not faithfully preserve several authoritative Evidence Note semantic/provenance fields and omits a registered-source event directly relevant to how the bill moved from committee rejection to final passage. Three findings are recorded in this layer; the downstream analytical consequence is separately recorded in 30_analysis.",
+  "findings": [
+    {
+      "finding_id": "F001",
+      "severity": "Moderate",
+      "target": "10_evidence.E0001/E0002/E0003/E0009/E0010/E0011/E0012/E0018.note_type",
+      "evidence": [
+        "All eight items are frozen as note_type = Result.",
+        "Authoritative Notion Evidence Notes classify EV-0127=Data, EV-0151=Data, EV-0153=Claim, EV-0159=Claim, EV-0160=Claim, EV-0183=Counterargument, EV-0199=Data, and EV-0204=Data.",
+        "The Evidence Notes operation contract defines Note Type as the note's primary information type, and schemas/v2/10_evidence.schema.json explicitly preserves these categories."
+      ],
+      "impact": "Flattening Data, Claim, and Counterargument records into Result erases epistemic role in the frozen Evidence snapshot and can overstate support strength or obscure rival evidence in causal interpretation. Downstream wording sometimes recovers the distinction, but downstream repair cannot heal an upstream Evidence defect.",
+      "repair_direction": {
+        "mode": "same_investigation",
+        "affected_layer": "10_evidence",
+        "instruction": "Rebuild 10_evidence from the authoritative Evidence Notes while preserving each Note Type exactly (or null only when the source Note Type is genuinely unset), then invalidate and rebuild/revalidate 20_synthesis and 30_analysis."
+      }
+    },
+    {
+      "finding_id": "F002",
+      "severity": "Minor",
+      "target": "10_evidence provenance: source_locator for E0001-E0019 and direct_quote for E0008",
+      "evidence": [
+        "Each of the 19 referenced Notion Evidence Notes has a non-empty Location value, but none of the frozen Evidence items carries source_locator.",
+        "EV-0172 contains the direct quote 「知事を放逐するより知事か三多摩を放逐する方可然」, while 10_evidence.E0008.direct_quote is null.",
+        "Workflow 10 requires Source relation and location/quote provenance to be preserved when a Notion Evidence Note is used."
+      ],
+      "impact": "The Evidence Note URL still permits two-hop recovery, so the statement content is not invalidated, but the frozen snapshot loses direct source-locus and quote auditability. This weakens reproducibility for the actor-level evidence used to support Utsumi's political-interest interpretation.",
+      "repair_direction": {
+        "mode": "same_investigation",
+        "affected_layer": "10_evidence",
+        "instruction": "Populate source_locator from each selected Evidence Note's Location and preserve non-empty Direct Quote values such as EV-0172/E0008; do not synthesize new prose into provenance fields. Then rebuild/revalidate downstream artifacts after the 10_evidence change."
+      }
+    },
+    {
+      "finding_id": "F003",
+      "severity": "Moderate",
+      "target": "10_evidence selection boundary for the 1893-02-28 legislative passage mechanism",
+      "evidence": [
+        "00_context explicitly includes the causal relations by which the 1893 transfer decision was realized, not only antecedent motives.",
+        "10_evidence.E0011 records that the House special committee rejected the bill on 1893-02-28 because water protection did not require a boundary change, while E0017 only records that the transfer and water-management unification subsequently occurred; the selected chain contains no Evidence explaining the transition from committee rejection to final passage.",
+        "Registered Source SRC-0097 (Tokyo Metropolitan Archives) states that the 1893-02-26 to 27 Hamura weir destruction became a major issue in the Diet and that many previously neutral members moved to support on 1893-02-28, after which the boundary-change bill passed.",
+        "The reported neutral-member shift is a retrospective archive interpretation and should not be upgraded to individually observed vote causation without corroboration."
+      ],
+      "impact": "The current chain explains why major actors supported transfer but omits a proximate enactment-stage mechanism, leaving a causal gap between committee rejection and enacted transfer. The Working Answer can therefore be materially incomplete and can overemphasize earlier converging motives as sufficient explanation of realization.",
+      "repair_direction": {
+        "mode": "same_investigation",
+        "affected_layer": "10_evidence",
+        "instruction": "Capture the Hamura-weir event and its reported legislative consequence as source-faithful Evidence from SRC-0097, explicitly preserving the retrospective-interpretation qualifier and adding primary Diet/newspaper corroboration if available. Then rebuild 20_synthesis and 30_analysis so the passage-stage reversal and its uncertainty are represented."
+      }
+    }
+  ],
+  "verdict": "FINDINGS"
+}

@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000023",
+  "review_seq": 1,
+  "layer": "00_context",
+  "review_kind": "context_semantic_validity",
+  "target_blob_sha": "5568e27b4bf8d20e40b22ea4aebdedf6922a97f4",
+  "assessment": "The frozen Causal RQ, scope, exclusions, and assumptions are semantically coherent. They require an integrated account of the transfer's causal structure and later Machida administrative, political, and identity effects; reject unsupported single-cause reduction and retrospective identity projection; and distinguish actor-stated reasons from inference. No context-level contradiction requiring a new Investigation was identified.",
+  "findings": [],
+  "verdict": "PASS"
+}

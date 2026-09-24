@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000023",
+  "review_seq": 1,
+  "layer": "30_analysis",
+  "review_kind": "20_synthesis_plus_00_context_to_30_analysis",
+  "target_blob_sha": "83231dec5397c9a06d923a00106fcb1209f9dfa6",
+  "assessment": "The analysis otherwise uses an appropriate Causal/process-tracing profile, distinguishes cause existence from relative contribution and necessity, preserves the rival water-protection explanation, and does not infer a long-term Machida identity effect from immediate post-transfer politics. However, the Working Answer inherits the Evidence-selection gap at the enactment stage and compresses committee rejection and final passage into an unsupported 'convergence to institutionalization' step.",
+  "findings": [
+    {
+      "finding_id": "F004",
+      "severity": "Moderate",
+      "target": "30_analysis.working_answer / J0004: causal account of enactment and institutionalization",
+      "evidence": [
+        "The frozen RQ asks how the transfer was realized.",
+        "20_synthesis.K0009 preserves the same-day committee rejection of boundary change as unnecessary for water protection.",
+        "30_analysis then states that the actors' reasons converged and were institutionalized, but it does not explain how the bill moved from committee rejection to final passage on 1893-02-28.",
+        "SRC-0097 contains the omitted Hamura-weir passage-stage account identified in F003."
+      ],
+      "impact": "The central Working Answer compresses antecedent motives and final enactment into a single 'convergence to institutionalization' step despite a documented committee rejection immediately before passage. That omission weakens the causal explanation of how the policy was actually enacted.",
+      "repair_direction": {
+        "mode": "same_investigation",
+        "affected_layer": "10_evidence",
+        "instruction": "After adding and qualifying the passage-stage Evidence required by F003, rebuild 20_synthesis and 30_analysis so the Working Answer explicitly distinguishes antecedent motives, committee rejection, the proximate passage-stage event, and the uncertainty in attributing vote changes."
+      }
+    }
+  ],
+  "verdict": "FINDINGS"
+}
