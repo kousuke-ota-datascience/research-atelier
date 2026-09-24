@@ -1,5 +1,5 @@
 {
-  "schema_version": "2.0.0",
+  "schema_version": "2.1.0",
   "artifact_type": "10_evidence",
   "investigation_id": "INV-000014",
   "rq_id": "RQ-0019",
@@ -12,10 +12,7 @@
       "selection_reason": "民権運動から政党加入・党方針に基づく活動への移行を示すため。",
       "note_type": "Claim",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be398139ac7afa013f49cdaa",
-          "title": "SRC-0081"
-        },
+        "source_id": "SRC-0081",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be39815590e9e4769d0f390e",
           "title": "EV-0138"
@@ -29,10 +26,7 @@
       "selection_reason": "1890年前後の組織再編と自由党系内部・北多摩正義派との政治的分化を示すため。",
       "note_type": "Claim",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be398139ac7afa013f49cdaa",
-          "title": "SRC-0081"
-        },
+        "source_id": "SRC-0081",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be3981c4ab5ee13bbd8ac9b7",
           "title": "EV-0139"
@@ -46,10 +40,7 @@
       "selection_reason": "民権運動が国政選挙での候補者・派閥対立へ接続した具体例を示すため。",
       "note_type": "Claim",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be398139ac7afa013f49cdaa",
-          "title": "SRC-0081"
-        },
+        "source_id": "SRC-0081",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be3981239aa6f2ed70ebdaac",
           "title": "EV-0140"
@@ -63,10 +54,7 @@
       "selection_reason": "第2回総選挙における三多摩固有の対立構図と官憲干渉を示すため。",
       "note_type": "Claim",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be398139ac7afa013f49cdaa",
-          "title": "SRC-0081"
-        },
+        "source_id": "SRC-0081",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be3981d992e7ef9d0819d94e",
           "title": "EV-0141"
@@ -80,10 +68,7 @@
       "selection_reason": "1892年政治闘争と翌年の三多摩移管を結びつける後続論点への接続を保持するため。",
       "note_type": "Claim",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be398139ac7afa013f49cdaa",
-          "title": "SRC-0081"
-        },
+        "source_id": "SRC-0081",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be39814d8312d5c48bbf829d",
           "title": "EV-0142"
@@ -97,10 +82,7 @@
       "selection_reason": "選挙期以前から多摩地域で若手活動家の急進化・暴力化が進んでいた背景を示すため。",
       "note_type": "Claim",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be398139ac7afa013f49cdaa",
-          "title": "SRC-0081"
-        },
+        "source_id": "SRC-0081",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be398168a8e8e00b7c17f249",
           "title": "EV-0143"
@@ -114,10 +96,7 @@
       "selection_reason": "町田市域で自由党系の若手活動家を育成する組織基盤が存在したことを示すため。",
       "note_type": "Claim",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be3981f7bb76f78e802ac2a0",
-          "title": "SRC-0086"
-        },
+        "source_id": "SRC-0086",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be3981a19c80e7b8d2428cfc",
           "title": "EV-0144"
@@ -131,10 +110,7 @@
       "selection_reason": "選挙対立が町田周辺で実際の暴力事件に接続した具体例を示すため。",
       "note_type": "Claim",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be3981f7bb76f78e802ac2a0",
-          "title": "SRC-0086"
-        },
+        "source_id": "SRC-0086",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be398112ba6fceeed33f3b5f",
           "title": "EV-0145"
@@ -148,10 +124,7 @@
       "selection_reason": "官憲干渉下でも石阪が当選し吉野が次点となった選挙結果を定量的に確認するため。",
       "note_type": "Data",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be3981f8b8fad2094537ddac",
-          "title": "SRC-0087"
-        },
+        "source_id": "SRC-0087",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be3981d79db0f62342873a38",
           "title": "EV-0146"
@@ -165,10 +138,7 @@
       "selection_reason": "1892年選挙干渉が政府による全国的な候補者把握・政治分類の下で行われたことを示すため。",
       "note_type": "Data",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be398129a165f60b65228a10",
-          "title": "SRC-0088"
-        },
+        "source_id": "SRC-0088",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be3981d29dcdf6763ce55975",
           "title": "EV-0147"
@@ -182,10 +152,7 @@
       "selection_reason": "三多摩の事件を全国的な第2回総選挙の選挙干渉の文脈に位置づけるため。",
       "note_type": "Claim",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be398129a165f60b65228a10",
-          "title": "SRC-0088"
-        },
+        "source_id": "SRC-0088",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be39813ba9facc06afb98af5",
           "title": "EV-0148"
@@ -199,15 +166,59 @@
       "selection_reason": "第2回総選挙の選挙干渉の全国レベルの政治的効果を、三多摩の局地的結果と混同せず比較するため。",
       "note_type": "Result",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be3981b9ab33c8cb1e9a402d",
-          "title": "SRC-0089"
-        },
+        "source_id": "SRC-0089",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be39813c9487e785998c1785",
           "title": "EV-0149"
         }
       }
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "SRC-0081",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "bb47f2f45fa7313d650b37889884f22a40ebf7c1"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e3e5855be398139ac7afa013f49cdaa"
+    },
+    {
+      "source_id": "SRC-0086",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "2dc7848e6aade2e79eae25443c586e92744fa0ad"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e3e5855be3981f7bb76f78e802ac2a0"
+    },
+    {
+      "source_id": "SRC-0087",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "f75c60e3754ee96a7edbb80947eb797f9475afbd"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e3e5855be3981f8b8fad2094537ddac"
+    },
+    {
+      "source_id": "SRC-0088",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "d1f13e56c8fed41a993e6e0ac3ba19a4ec9253e1"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e3e5855be398129a165f60b65228a10"
+    },
+    {
+      "source_id": "SRC-0089",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "6f99b51efed26736dc4adbb85031bbcbff67ee95"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e3e5855be3981b9ab33c8cb1e9a402d"
     }
   ]
 }
