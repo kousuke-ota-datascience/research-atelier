@@ -1,0 +1,167 @@
+{
+  "schema_version": "2.1.0",
+  "artifact_type": "10_evidence",
+  "investigation_id": "INV-000027",
+  "rq_id": "RQ-000027",
+  "snapshot_at": "2026-09-24T15:43:30.000Z",
+  "sources": [
+    {
+      "source_id": "SRC-000139",
+      "source_revision": {
+        "commit_sha": "72e2cfbe3337670b87cad70915bc3baa89d8e53e",
+        "blob_sha": "93ac6a05070e0bf6c8b29f27746c1bab6940d33b"
+      },
+      "accessed_at": "2026-09-24T15:43:09.422Z",
+      "notion_url": "https://app.notion.com/p/3e5e5855be3981b48f99ddf40e1a39b3"
+    },
+    {
+      "source_id": "SRC-000140",
+      "source_revision": {
+        "commit_sha": "da3527ffc26d2ee7a0bceea19ffddbd27eb56405",
+        "blob_sha": "ead45067c7adde3c25d0d2a8c5a6c5c3e139d645"
+      },
+      "accessed_at": "2026-09-24T15:43:09.422Z",
+      "notion_url": "https://app.notion.com/p/3e5e5855be3981a3bd77ce1bd65ffcd1"
+    },
+    {
+      "source_id": "SRC-000141",
+      "source_revision": {
+        "commit_sha": "638d3cf28bd1b600a3ef52284a757f9eb14edea7",
+        "blob_sha": "db40c194ecb9a4c276248b4cb252a56d6df68a67"
+      },
+      "accessed_at": "2026-09-24T15:43:09.422Z",
+      "notion_url": "https://app.notion.com/p/3e5e5855be3981d9a48cc64162285dd1"
+    },
+    {
+      "source_id": "SRC-000142",
+      "source_revision": {
+        "commit_sha": "3837cdc87ea04e06677a2e820d5d7e93460dafb9",
+        "blob_sha": "b967de33a727be094d179609a4b160d6f4244a73"
+      },
+      "accessed_at": "2026-09-24T15:43:09.422Z",
+      "notion_url": "https://app.notion.com/p/3e5e5855be398172bb32da38ac347970"
+    }
+  ],
+  "evidence_items": [
+    {
+      "evidence_id": "E0001",
+      "content": "accepted RQ-000025では、因果推論のmethodological entityは単一種類ではなく、framework/representation、target/estimand、study design/assignment structure、identification strategy/assumptions、estimation/adjustment/inference procedure、specialized problem setting/inferential taskという異なるroleとして現れると結論した。",
+      "source_locator": "30_analysis.working_answer",
+      "selection_reason": "統合taxonomyのobject ontologyをaccepted upstream resultから固定するため。",
+      "note_type": "Claim",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000139",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e5e5855be3981b48ccff7a1ca09e9b3",
+          "title": "EV-PENDING-243"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0002",
+      "content": "accepted RQ-000025では、entity typesは排他的とは限らず、designとidentificationを兼ねるmethodや、複数roleを一つのframeworkで扱う領域があるとした。またdiagnostics/sensitivityの独立type化とcausal discoveryの包含境界は未確定とした。",
+      "source_locator": "30_analysis.working_answer / limitations",
+      "selection_reason": "単一排他的treeの制約とboundary uncertaintyを保持するため。",
+      "note_type": "Limitation",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000139",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e5e5855be3981c79ff9ff22fb07ea99",
+          "title": "EV-PENDING-244"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0003",
+      "content": "accepted RQ-000026では、既存文献のclassification practiceは単一標準ではなくpluralであり、task、data structure、identification assumptions/assignment setting、estimand、methodological function、formal framework、modeling complexity、algorithm construction、statistical-vs-ML family等の軸が実際に使われていると結論した。",
+      "source_locator": "30_analysis.working_answer",
+      "selection_reason": "統合taxonomyのcandidate axesをaccepted upstream resultから固定するため。",
+      "note_type": "Claim",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000140",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e5e5855be3981e0afa3c364b6d2ec4b",
+          "title": "EV-PENDING-245"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0004",
+      "content": "accepted RQ-000026では、既存の分類軸は同じ抽象レベルではなく、domain-specific taxonomyを因果推論全体へ無条件に一般化すべきでないとした。統合軸の採否はRQ-000027のdesign judgmentへ送られている。",
+      "source_locator": "30_analysis.judgments / limitations",
+      "selection_reason": "軸の正規化とscope一般化をdesign judgmentとして分離するため。",
+      "note_type": "Limitation",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000140",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e5e5855be3981cbb9dbda06bb1e5a7f",
+          "title": "EV-PENDING-246"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0005",
+      "content": "Nickersonらはtaxonomyを複数のdimensionsと各dimension内のcharacteristicsからなる分類として定式化し、各dimension内のcharacteristicsにはmutually exclusiveかつcollectively exhaustiveであることを求める。",
+      "source_locator": "Taxonomy definition / method",
+      "selection_reason": "faceted/dimensional taxonomyのformal design constraintを外部方法論から導入するため。",
+      "note_type": "Method",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000141",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e5e5855be3981888b37d4f1bd01fd3b",
+          "title": "EV-PENDING-247"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0006",
+      "content": "Nickersonらのtaxonomy development methodは、taxonomyのpurposeに沿うmeta-characteristicを定め、conceptual-to-empiricalまたはempirical-to-conceptualの反復でdimensions/characteristicsを構成・改訂し、ending conditionsを満たすまで反復する。",
+      "source_locator": "Taxonomy development method",
+      "selection_reason": "統合taxonomyを一回の直観的分類ではなく目的依存・反復的constructive designとして扱うため。",
+      "note_type": "Method",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000141",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e5e5855be398165b544f2bb85d3fffe",
+          "title": "EV-PENDING-248"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0007",
+      "content": "Kundischらはtaxonomy designの透明性とevaluationを重視し、taxonomy building processとproductを明示し、ex-post evaluationを含む拡張されたdesign processを提案している。",
+      "source_locator": "Research method / design recommendations",
+      "selection_reason": "Evidence-derived factsとdesign decisionsを透明に分離し、taxonomy自体を評価対象にするため。",
+      "note_type": "Method",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000142",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e5e5855be3981208458e8828477fb96",
+          "title": "EV-PENDING-249"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0008",
+      "content": "Kundischらがtaxonomy研究を分析したところ、評価基準としてusefulness、comprehensiveness、applicabilityなどが用いられており、taxonomyの評価基準自体を明示する必要がある。",
+      "source_locator": "Status quo analysis / evaluation criteria",
+      "selection_reason": "candidate taxonomy比較のevaluation criteriaを明示するため。",
+      "note_type": "Claim",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000142",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e5e5855be3981699d1dedb8ec486f07",
+          "title": "EV-PENDING-250"
+        }
+      }
+    }
+  ]
+}
