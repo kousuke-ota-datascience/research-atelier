@@ -1,0 +1,43 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "00_context",
+  "investigation_id": "INV-000024",
+  "rq_id": "RQ-000024",
+  "context_state": "frozen",
+  "question": {
+    "text": "因果推論の方法論を体系的に整理するためには、何を分類対象とし、どのような分類軸を用い、それに基づいて既存手法をどのように体系化できるか。",
+    "notion_url": "https://app.notion.com/p/3e5e5855be3981879e8ecb90b9ebb1be"
+  },
+  "question_type": "Methodological",
+  "scope": "因果推論に用いられる方法論全体を対象として、まず「何を方法論上の分類対象とみなすべきか」を整理し、次にそれらを区別する分類軸を同定し、最終的に既存手法を体系的な taxonomy として構成する。特定の応用分野には限定せず、統計学、疫学、計量経済学、社会科学、機械学習などで発展してきた方法論を横断的に扱う。study design、causal framework / representation、identification strategy、estimation procedure、diagnostics / sensitivity analysis 等が同一種類の「手法」であるとは事前に仮定せず、それらの方法論的階層・関係自体を分類対象の検討に含める。Sourceは統計学・疫学・計量経済学・社会科学・機械学習を横断し、原著 methodological paper、主要な methodological monograph / textbook、高品質 review を中心とする。特定分野だけの慣習を因果推論全体の taxonomy として一般化しない。",
+  "significance": null,
+  "investigation_boundary": {
+    "include": [
+      "経験的データから因果関係・因果効果について推論することを目的とする方法論",
+      "causal identification、causal estimation、causal validity assessment に関与する方法論的構成要素",
+      "randomized、quasi-experimental、observational design に基づく方法",
+      "potential outcomes、structural causal models、causal graphs 等の方法論的 framework / representation",
+      "adjustment、identification strategy、estimation procedure、longitudinal methods、mediation、heterogeneous effects、interference、transportability / generalizability、sensitivity analysis 等の関連方法群",
+      "classical statistical methods に加えて semiparametric / machine-learning-based causal methods",
+      "causal discovery は事前に除外せず、「因果推論 taxonomy 内でどの位置を占めるか」を検討対象とする",
+      "分野ごとに異なる名称で扱われる同型・近縁手法を横断的に比較する"
+    ],
+    "exclude": [
+      "causal interpretation を持たない純粋な prediction / association 手法",
+      "既存手法を特定分野へ適用しただけで、新しい方法論的原理を導入しない application",
+      "empirical inference に接続しない純粋に哲学的・形而上学的な causation theory",
+      "software package やライブラリそのものを独立した因果推論手法として分類すること",
+      "単なる実装差・parameterization の違いであり、taxonomy 上の独立した方法論的差異を持たない variant"
+    ],
+    "evidence_cutoff": "2026-09-24T12:08:00.000Z"
+  },
+  "assumptions": [
+    "「因果推論手法」という語が単一の ontological category を指すとは仮定しない",
+    "study design、identification、estimation、diagnostics など複数の抽象レベルが存在し得る",
+    "一つの方法が複数の分類軸上の属性を持つことを許容する",
+    "最終 taxonomy が単一の階層 tree ではなく、hierarchical taxonomy と multi-axis classification の組合せになる可能性を許容する",
+    "分野間で用語が異なるため、名称ではなく方法論的原理を基準に同一性・差異を判断する",
+    "taxonomy の目的は「最良の手法を順位付けすること」ではなく、方法論空間を構造化することである"
+  ],
+  "frozen_at": "2026-09-24T12:09:20.530Z"
+}
