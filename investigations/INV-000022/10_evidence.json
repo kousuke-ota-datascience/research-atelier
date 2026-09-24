@@ -1,5 +1,5 @@
 {
-  "schema_version": "2.0.0",
+  "schema_version": "2.1.0",
   "artifact_type": "10_evidence",
   "investigation_id": "INV-000022",
   "rq_id": "RQ-0012",
@@ -12,10 +12,7 @@
       "selection_reason": "Defines the semantic condition that distinguishes relationship change from a generic increase in observed error.",
       "note_type": "Definition",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e5e5855be398173b45beceaadb55345",
-          "title": "SRC-0116"
-        },
+        "source_id": "SRC-0116",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e5e5855be3981a8b267cfe69655b3cb",
           "title": "EV-0212"
@@ -29,10 +26,7 @@
       "selection_reason": "Shows that model maintenance has multiple adaptation levels, so full base-model retraining is not the default response to every degradation signal.",
       "note_type": "Theory",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e5e5855be3981a1a921ecce7be5738d",
-          "title": "SRC-0117"
-        },
+        "source_id": "SRC-0117",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e5e5855be39812fb71bf4c5bdf4715d",
           "title": "EV-0213"
@@ -46,10 +40,7 @@
       "selection_reason": "Provides industrial evidence that update timing can be based on persistent model mismatch together with process-state monitoring rather than error magnitude alone.",
       "note_type": "Method",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e5e5855be39810d91a7ddae10180289",
-          "title": "SRC-0118"
-        },
+        "source_id": "SRC-0118",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e5e5855be398105b301f5aec1a68925",
           "title": "EV-0214"
@@ -63,15 +54,50 @@
       "selection_reason": "Supports treating retraining as a monitored lifecycle action rather than a reflexive response to a single metric excursion.",
       "note_type": "Claim",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e5e5855be398167832ed278b9f35a87",
-          "title": "SRC-0119"
-        },
+        "source_id": "SRC-0119",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e5e5855be398178bea0e0bc22e86c06",
           "title": "EV-0215"
         }
       }
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "SRC-0116",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "bea8f7f30bb0d3df2ce7c784d98d3f67f930ea95"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e5e5855be398173b45beceaadb55345"
+    },
+    {
+      "source_id": "SRC-0117",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "7609dcbf543ee21099c16646b066008c0fb0f629"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e5e5855be3981a1a921ecce7be5738d"
+    },
+    {
+      "source_id": "SRC-0118",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "cd959d6b98ffd508fcaa1cbd0da4a2740418c60b"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e5e5855be39810d91a7ddae10180289"
+    },
+    {
+      "source_id": "SRC-0119",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "507518aaf6bd16eecb85311729bf189d4c8e60e3"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e5e5855be398167832ed278b9f35a87"
     }
   ]
 }
