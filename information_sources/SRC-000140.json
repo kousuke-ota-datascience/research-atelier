@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000140",
+  "notion_url": "https://app.notion.com/p/3e5e5855be3981a3bd77ce1bd65ffcd1",
+  "title": "RQ-000026 accepted analysis (INV-000026)",
+  "source_type": "Other",
+  "journal_or_publisher": "research-atelier canonical artifact",
+  "authors": "Research Atelier",
+  "year": 2026,
+  "url": "https://github.com/kousuke-ota-datascience/research-atelier/blob/7ac502456f82dcaac0c556ca19d042bad4e5a572/investigations/INV-000026/30_analysis.json",
+  "doi": null,
+  "version_or_edition": "INV-000026 / 30_analysis @ 7ac502456f82dcaac0c556ca19d042bad4e5a572",
+  "reliability_note": "Accepted upstream canonical analysis for RQ-000026; derivative of its frozen evidence and synthesis."
+}
