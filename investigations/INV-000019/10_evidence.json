@@ -1,5 +1,5 @@
 {
-  "schema_version": "2.0.0",
+  "schema_version": "2.1.0",
   "artifact_type": "10_evidence",
   "investigation_id": "INV-000019",
   "rq_id": "RQ-0022",
@@ -13,10 +13,7 @@
       "note_type": "Result",
       "direct_quote": null,
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be3981129356c8924a2b45ba",
-          "title": "東京都公文書館「第13回 西南北多摩郡東京府移管反対運動」"
-        },
+        "source_id": "SRC-0097",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e4e5855be3981bdafc1cd528629ab82",
           "title": "EV-0185"
@@ -31,10 +28,7 @@
       "note_type": "Data",
       "direct_quote": null,
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be398139ac7afa013f49cdaa",
-          "title": "自由民権資料館常設展示「自由民権運動と町田」その3"
-        },
+        "source_id": "SRC-0081",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e4e5855be39816eb24de6bf17d283d9",
           "title": "EV-0186"
@@ -49,10 +43,7 @@
       "note_type": "Result",
       "direct_quote": null,
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be3981e89190c5df7e3de208",
-          "title": "『多摩市史 通史編2 近現代』第四章第四節「三多摩の東京府編入問題」"
-        },
+        "source_id": "SRC-0095",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e4e5855be39816f8838c6f230f28033",
           "title": "EV-0187"
@@ -67,10 +58,7 @@
       "note_type": "Result",
       "direct_quote": null,
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be3981e89190c5df7e3de208",
-          "title": "『多摩市史 通史編2 近現代』第四章第四節「三多摩の東京府編入問題」"
-        },
+        "source_id": "SRC-0095",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e4e5855be3981cebf25e701bc8934fd",
           "title": "EV-0188"
@@ -85,10 +73,7 @@
       "note_type": "Result",
       "direct_quote": null,
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be3981e89190c5df7e3de208",
-          "title": "『多摩市史 通史編2 近現代』第四章第四節「三多摩の東京府編入問題」"
-        },
+        "source_id": "SRC-0095",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e4e5855be3981c5b52ec7194e2c6ccb",
           "title": "EV-0189"
@@ -103,10 +88,7 @@
       "note_type": "Result",
       "direct_quote": null,
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be3981e89190c5df7e3de208",
-          "title": "『多摩市史 通史編2 近現代』第四章第四節「三多摩の東京府編入問題」"
-        },
+        "source_id": "SRC-0095",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e4e5855be3981c29aacebaf3188567a",
           "title": "EV-0190"
@@ -121,10 +103,7 @@
       "note_type": "Result",
       "direct_quote": null,
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be3981e89190c5df7e3de208",
-          "title": "『多摩市史 通史編2 近現代』第四章第四節「三多摩の東京府編入問題」"
-        },
+        "source_id": "SRC-0095",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e4e5855be3981e4b939cf4dd72f8ed3",
           "title": "EV-0191"
@@ -139,10 +118,7 @@
       "note_type": "Result",
       "direct_quote": null,
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be3981e89190c5df7e3de208",
-          "title": "『多摩市史 通史編2 近現代』第四章第四節「三多摩の東京府編入問題」"
-        },
+        "source_id": "SRC-0095",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e4e5855be3981ffb632f24cc8839251",
           "title": "EV-0192"
@@ -157,10 +133,7 @@
       "note_type": "Result",
       "direct_quote": null,
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be3981e89190c5df7e3de208",
-          "title": "『多摩市史 通史編2 近現代』第四章第四節「三多摩の東京府編入問題」"
-        },
+        "source_id": "SRC-0095",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e4e5855be3981c7876cd52d7cc83305",
           "title": "EV-0193"
@@ -175,10 +148,7 @@
       "note_type": "Data",
       "direct_quote": null,
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e4e5855be3981c28303e9238e3a4673",
-          "title": "町田市立自由民権資料館「町田の民権家と結社」"
-        },
+        "source_id": "SRC-0108",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e4e5855be3981c4a9f6c3fb85be5c19",
           "title": "EV-0194"
@@ -193,15 +163,59 @@
       "note_type": "Data",
       "direct_quote": null,
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e4e5855be39815b875ded5183bd8c03",
-          "title": "まちだってこんなまち"
-        },
+        "source_id": "SRC-0110",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e4e5855be398135b747c50f83fc0df8",
           "title": "EV-0204"
         }
       }
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "SRC-0081",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "bb47f2f45fa7313d650b37889884f22a40ebf7c1"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e3e5855be398139ac7afa013f49cdaa"
+    },
+    {
+      "source_id": "SRC-0095",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "0c6c0567bab06209368db9b2f42e0130751eb3bc"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e3e5855be3981e89190c5df7e3de208"
+    },
+    {
+      "source_id": "SRC-0097",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "a89fabb0c645a2cab7d62d5c6b91f772d7495b73"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e3e5855be3981129356c8924a2b45ba"
+    },
+    {
+      "source_id": "SRC-0108",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "681281e0872173d87b508fbab23e432bfbb600c7"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e4e5855be3981c28303e9238e3a4673"
+    },
+    {
+      "source_id": "SRC-0110",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "ab2c6f4a60b942690bb01f9a2bb72b66953ffe94"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e4e5855be39815b875ded5183bd8c03"
     }
   ]
 }
