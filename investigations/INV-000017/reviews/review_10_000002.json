@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000017",
+  "review_seq": 2,
+  "layer": "10_evidence",
+  "review_kind": "source_evidence_note_to_10_evidence",
+  "target_blob_sha": "147a707051f8456f452d5be8093241aa229faaa2",
+  "assessment": "18件のfrozen Evidenceについてcurrent Notion Evidence NoteのEvidence / Note Type / Source relationを再照合した。E0002は複数Source NoteからSRC-0102単独で直接支えられる範囲を意図的にfreezeしたものでselection_reasonと整合し、E0005/E0016の差は接続語の省略のみで意味変質はない。前回F001で不足していた東京府自身の直接EvidenceはE0017/E0018として追加され、東京都公文書館の解読文・資料解説ともsource-faithfulである。重要な反証・qualification・uncertaintyの不当な脱落、またはprovenanceのsemantic defectは確認しなかった。",
+  "findings": [],
+  "verdict": "PASS"
+}

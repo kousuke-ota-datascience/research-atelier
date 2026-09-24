@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000017",
+  "review_seq": 2,
+  "layer": "20_synthesis",
+  "review_kind": "10_evidence_to_20_synthesis",
+  "target_blob_sha": "b6dcdbe492bc80e4624499290d3094bc7f621b28",
+  "assessment": "K0014/K0015が追加Evidence E0017/E0018を直接参照し、R0010で反対運動把握と行政間情報共有を関連づけ、R0011でそれを法案可決後の実施段階に限定している。既存K0001-K0013のsupport boundary、一次史料未読・後世制度史・政府理由と議会反論のqualificationも保持されている。unsupported proposition、過剰一般化、conflict / uncertaintyの消失、Source claimとcross-source synthesisの混同は確認しなかった。",
+  "findings": [],
+  "verdict": "PASS"
+}

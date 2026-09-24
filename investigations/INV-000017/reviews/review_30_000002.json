@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000017",
+  "review_seq": 2,
+  "layer": "30_analysis",
+  "review_kind": "20_synthesis_plus_00_context_to_30_analysis",
+  "target_blob_sha": "1cae49baa6836a5e4bddba43dd3121ca8278651d",
+  "assessment": "Working Answer / J0009 / J0010は追加Synthesisを用いて、東京府が移管実施直前に反対運動を把握し内務大臣・警視総監・神奈川県知事へ情報共有した行政行動を記述している。同時に1893年3月6日文書を1892年の移管要求・法案提出の初期動機へ遡及させない限定を明示している。水源・衛生・近代水道を重要な行政利害・公式理由として扱いつつ単一原因・最大原因とは順位付けせず、議会の政策手段への反論、coverage limits、alternative interpretationsも保持する。Descriptive RQのsupport boundaryを越えるoverclaimや20_synthesis bypassは確認しなかった。",
+  "findings": [],
+  "verdict": "PASS"
+}
