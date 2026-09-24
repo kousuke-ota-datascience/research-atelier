@@ -7,13 +7,13 @@
   "knowledge_units": [
     {
       "knowledge_unit_id": "K0001",
-      "statement": "Process-industry functional-safety practice assigns safe-state achievement and maintenance to a safety instrumented system, and safety integrity can be undermined when protection depends on the same basic process-control components whose failure creates the demand.",
+      "statement": "Process-industry functional-safety practice assigns SIS/SIF safety functions to achieve or maintain a safe state, while hazard/risk analysis determines which safety functions require that allocation and what independence from the BPCS is necessary; safety integrity can be undermined when a protection function depends on basic-control components whose failure both creates the demand and disables the protection.",
       "evidence_refs": [
         "E0001",
         "E0002"
       ],
       "qualifiers": [
-        "The IEC public page establishes the SIS lifecycle/safe-state role; the HSE notice supplies a concrete common-cause failure example and cites the relevant BS EN 61511 independence/dependency clauses."
+        "The IEC public page establishes the SIS lifecycle/safe-state role. The HSE notice supplies a common-cause failure example and states that risk assessment should identify safety functions within or dependent on the BPCS and determine where additional independence/protection is required."
       ]
     },
     {
@@ -58,7 +58,7 @@
     },
     {
       "knowledge_unit_id": "K0006",
-      "statement": "Taken together, the evidence supports a layered architecture in which the optimization/prediction layer is supervisory, constraint enforcement occurs before lower-level setpoint application, the established lower-level regulatory controller remains responsible for fast closed-loop regulation, and independent safety protection remains available when the supervisory layer fails or is disconnected.",
+      "statement": "Taken together, the evidence supports a layered architecture in which the optimization/prediction layer is supervisory, constraint enforcement occurs before lower-level setpoint application, and the established lower-level regulatory controller remains responsible for fast closed-loop regulation; hazard/risk analysis must separately determine which safety functions require SIS/SIF or other independent protection and the necessary degree of separation from the supervisory/BPCS path.",
       "evidence_refs": [
         "E0001",
         "E0002",
@@ -68,7 +68,7 @@
         "E0006"
       ],
       "qualifiers": [
-        "This is a cross-source engineering synthesis. Exact layer boundaries, safety-function allocation, fallback state, watchdog behavior, and communication semantics require target-process hazard and control analysis."
+        "This is a cross-source engineering synthesis. Exact layer boundaries, safety-function allocation, required risk reduction, degree of independence, fallback state, watchdog behavior, and communication semantics require target-process hazard/risk and control analysis."
       ]
     }
   ],
@@ -80,7 +80,7 @@
         "K0001",
         "K0006"
       ],
-      "description": "The layered supervisory architecture is safety-credible only if failure or loss of the supervisory/BPCS path does not also remove the safety function.",
+      "description": "The layered supervisory architecture is safety-credible only if hazard/risk analysis identifies the required safety functions and the design prevents relevant dependency/common-cause failures from defeating any protection functions that require independence from the supervisory/BPCS path.",
       "evidence_refs": [
         "E0001",
         "E0002"
@@ -157,7 +157,7 @@
     },
     {
       "uncertainty_id": "U0003",
-      "description": "The selected evidence does not specify a universal PLC communication watchdog, timeout action, hold-last policy, bumpless-transfer design, or safe fallback setpoint for the user's target process.",
+      "description": "The selected evidence does not specify a universal PLC communication watchdog, timeout action, hold-last policy, bumpless-transfer design, safe fallback setpoint, or universal allocation of safety functions to independent SIS/SIF protection for the user's target process.",
       "knowledge_unit_refs": [
         "K0005",
         "K0006"
