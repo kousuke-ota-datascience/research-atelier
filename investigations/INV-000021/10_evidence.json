@@ -1,0 +1,111 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "10_evidence",
+  "investigation_id": "INV-000021",
+  "rq_id": "RQ-0011",
+  "snapshot_at": "2026-09-24T03:33:36.578Z",
+  "evidence_items": [
+    {
+      "evidence_id": "E0001",
+      "content": "IEC 61511-1:2016+A1:2017 specifies requirements for specification, design, installation, operation and maintenance of a safety instrumented system (SIS) so that it can achieve or maintain a safe state of a process; it is the process-sector implementation of IEC 61508:2010.",
+      "source_locator": "IEC official publication page / Scope",
+      "selection_reason": "Establishes the safety-system lifecycle and safe-state responsibility that must remain outside a non-safety optimization layer.",
+      "note_type": "Claim",
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e5e5855be3981119fdcf2f596b0bff6",
+          "title": "SRC-0111"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e5e5855be3981aea021db9c84c06c22",
+          "title": "EV-0206"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0002",
+      "content": "HSE reported a gasoline overfill in which the overfill prevention system was not independent of the BPCS; when the BPCS failed, the overfill prevention system also failed. HSE cites BS EN 61511 clauses requiring SIS separation/independence where needed, consideration of SIS/BPCS dependencies, and analysis before sharing devices that can create a common dangerous failure.",
+      "source_locator": "HSE Safety Notice CEMHD02-2023 — Issue / Guidance",
+      "selection_reason": "Provides a regulator-documented common-cause failure example and explicit SIS/BPCS independence guidance.",
+      "note_type": "Result",
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e5e5855be3981c8a695cc823828de27",
+          "title": "SRC-0112"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e5e5855be398109beb1da5d0810ab02",
+          "title": "EV-0207"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0003",
+      "content": "Reference and command governors are add-on schemes for pre-stabilized systems that modify the reference when necessary to enforce pointwise state and control constraints. Industrially relevant constraints include actuator magnitude and rate limits and bounds on process variables for safe and efficient operation.",
+      "source_locator": "Abstract and Introduction",
+      "selection_reason": "Directly supports a bounded setpoint-gating layer above an already stabilized controller.",
+      "note_type": "Theory",
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e5e5855be3981749ecad5b67f3aa0c6",
+          "title": "SRC-0113"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e5e5855be3981aca9f0dae4a433b4c4",
+          "title": "EV-0208"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0004",
+      "content": "Constrained MPC obtains each control action from a finite-horizon optimization and can explicitly handle hard constraints on controls and states; this capability is a major reason for its use in petrochemical and related process industries.",
+      "source_locator": "Abstract",
+      "selection_reason": "Supports explicit constraint handling rather than unconstrained optimizer outputs being written directly to PLC setpoints.",
+      "note_type": "Theory",
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e5e5855be39810098c3dd11794070c8",
+          "title": "SRC-0114"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e5e5855be3981849614e1c2a7b258ca",
+          "title": "EV-0209"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0005",
+      "content": "In Tata Steel's continuous annealing implementation, conventional PID loops and PLCs remain the Level 1 closed-loop control layer with safety interlocks, while MPC is implemented as a Level 2 supervisory layer that changes only furnace-temperature setpoints subject to process constraints.",
+      "source_locator": "CAL Furnace Control / MPC-Based Supervisory Control Solution",
+      "selection_reason": "Provides a directly relevant continuous-process implementation of layered supervisory optimization over legacy PLC/PID control.",
+      "note_type": "Result",
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e5e5855be3981cca3b9db947e7eb5a5",
+          "title": "SRC-0115"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e5e5855be3981b0abd9fa7952bef21a",
+          "title": "EV-0210"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0006",
+      "content": "The Tata Steel implementation retained a fallback path: when the MPC was disconnected, operators reverted to manually changing the Level 1 setpoints. Automatic operation was introduced gradually through short trials and progressively longer uninterrupted runs.",
+      "source_locator": "MPC-Based Supervisory Control Solution / Change Management",
+      "selection_reason": "Provides a concrete fallback and staged-commissioning pattern for supervisory automatic setpoint generation.",
+      "note_type": "Result",
+      "provenance": {
+        "source": {
+          "notion_url": "https://app.notion.com/p/3e5e5855be3981cca3b9db947e7eb5a5",
+          "title": "SRC-0115"
+        },
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e5e5855be3981129d57cc464064ccb5",
+          "title": "EV-0211"
+        }
+      }
+    }
+  ]
+}
