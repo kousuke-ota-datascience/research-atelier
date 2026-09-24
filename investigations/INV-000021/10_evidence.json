@@ -1,5 +1,5 @@
 {
-  "schema_version": "2.0.0",
+  "schema_version": "2.1.0",
   "artifact_type": "10_evidence",
   "investigation_id": "INV-000021",
   "rq_id": "RQ-0011",
@@ -12,10 +12,7 @@
       "selection_reason": "Establishes the safety-system lifecycle and safe-state responsibility that must remain outside a non-safety optimization layer.",
       "note_type": "Claim",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e5e5855be3981119fdcf2f596b0bff6",
-          "title": "SRC-0111"
-        },
+        "source_id": "SRC-0111",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e5e5855be3981aea021db9c84c06c22",
           "title": "EV-0206"
@@ -29,10 +26,7 @@
       "selection_reason": "Provides a regulator-documented common-cause failure example and explicit SIS/BPCS independence guidance.",
       "note_type": "Result",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e5e5855be3981c8a695cc823828de27",
-          "title": "SRC-0112"
-        },
+        "source_id": "SRC-0112",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e5e5855be398109beb1da5d0810ab02",
           "title": "EV-0207"
@@ -46,10 +40,7 @@
       "selection_reason": "Directly supports a bounded setpoint-gating layer above an already stabilized controller.",
       "note_type": "Theory",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e5e5855be3981749ecad5b67f3aa0c6",
-          "title": "SRC-0113"
-        },
+        "source_id": "SRC-0113",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e5e5855be3981aca9f0dae4a433b4c4",
           "title": "EV-0208"
@@ -63,10 +54,7 @@
       "selection_reason": "Supports explicit constraint handling rather than unconstrained optimizer outputs being written directly to PLC setpoints.",
       "note_type": "Theory",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e5e5855be39810098c3dd11794070c8",
-          "title": "SRC-0114"
-        },
+        "source_id": "SRC-0114",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e5e5855be3981849614e1c2a7b258ca",
           "title": "EV-0209"
@@ -80,10 +68,7 @@
       "selection_reason": "Provides a directly relevant continuous-process implementation of layered supervisory optimization over legacy PLC/PID control.",
       "note_type": "Result",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e5e5855be3981cca3b9db947e7eb5a5",
-          "title": "SRC-0115"
-        },
+        "source_id": "SRC-0115",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e5e5855be3981b0abd9fa7952bef21a",
           "title": "EV-0210"
@@ -97,15 +82,59 @@
       "selection_reason": "Provides a concrete fallback and staged-commissioning pattern for supervisory automatic setpoint generation.",
       "note_type": "Result",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e5e5855be3981cca3b9db947e7eb5a5",
-          "title": "SRC-0115"
-        },
+        "source_id": "SRC-0115",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e5e5855be3981129d57cc464064ccb5",
           "title": "EV-0211"
         }
       }
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "SRC-0111",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "37f6b15e14e3b433efa1b2440e8eb22b61ebe5db"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e5e5855be3981119fdcf2f596b0bff6"
+    },
+    {
+      "source_id": "SRC-0112",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "3a555e2c1f01c5c9e4bb46fa8f4dc8d27717e886"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e5e5855be3981c8a695cc823828de27"
+    },
+    {
+      "source_id": "SRC-0113",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "a400f0bb7f21429e63135613ce6ea955821c2829"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e5e5855be3981749ecad5b67f3aa0c6"
+    },
+    {
+      "source_id": "SRC-0114",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "e261d18832b43576695a07cc3bd1542f09096c93"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e5e5855be39810098c3dd11794070c8"
+    },
+    {
+      "source_id": "SRC-0115",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "5cf3140210213360d9db94681be1a6f8b5759c08"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e5e5855be3981cca3b9db947e7eb5a5"
     }
   ]
 }
