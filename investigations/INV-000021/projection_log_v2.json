@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "report_type": "projection_log",
+  "target_rq_url": "https://app.notion.com/p/3e1e5855be39818aaf8dcdc72f889ad7",
+  "rq_id": "RQ-0011",
+  "source_investigation_id": "INV-000021",
+  "source_30_analysis_commit_sha": "21fb4111dacf2d62150a5419287a365c41297c43",
+  "projection_timestamp": "2026-09-24T06:33:41.006Z",
+  "projection_target": {
+    "surface": "page_body",
+    "section_heading": "# Working Answer"
+  },
+  "result": "SUCCESS",
+  "note": "Projected the current accepted INV-000021/30_analysis.json to the unique Research Question body # Working Answer section using the deterministic renderer, then refetched RQ-0011 and verified the body rendering. Legacy Working Answer property was not dual-written."
+}
