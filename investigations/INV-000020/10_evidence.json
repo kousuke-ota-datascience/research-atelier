@@ -1,5 +1,5 @@
 {
-  "schema_version": "2.0.0",
+  "schema_version": "2.1.0",
   "artifact_type": "10_evidence",
   "investigation_id": "INV-000020",
   "rq_id": "RQ-0020",
@@ -12,10 +12,7 @@
       "selection_reason": "政府が公的に提示した移管理由を一次史料から確定するため。",
       "note_type": "Claim",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be39816bbcbafa8d4c643ddf",
-          "title": "SRC-0094"
-        },
+        "source_id": "SRC-0094",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be3981fd8957d5d39690a8f0",
           "title": "EV-0159"
@@ -29,10 +26,7 @@
       "selection_reason": "南多摩を含む三郡一括移管の公的説明に、区域的一体性と選挙区再編上の便宜が含まれていたことを確認するため。",
       "note_type": "Claim",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be39816bbcbafa8d4c643ddf",
-          "title": "SRC-0094"
-        },
+        "source_id": "SRC-0094",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be398169b548d814cf0e1931",
           "title": "EV-0160"
@@ -46,10 +40,7 @@
       "selection_reason": "移管が住民請願を直接の起点とする措置ではないという政府説明を確認するため。",
       "note_type": "Claim",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be39816bbcbafa8d4c643ddf",
-          "title": "SRC-0094"
-        },
+        "source_id": "SRC-0094",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be398190be33c69051af1b2a",
           "title": "EV-0161"
@@ -63,10 +54,7 @@
       "selection_reason": "神奈川県側の財政的不利益について政府がどのように説明したかを確認するため。",
       "note_type": "Claim",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be39816bbcbafa8d4c643ddf",
-          "title": "SRC-0094"
-        },
+        "source_id": "SRC-0094",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be398173a99fcf41b4d7f1ed",
           "title": "EV-0162"
@@ -80,10 +68,7 @@
       "selection_reason": "神奈川県知事自身の公式な移管理由を、県史資料編所収の同時代内申翻刻から確認するため。",
       "note_type": "Result",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e4e5855be3981d6aba4dcb9e0c1438f",
-          "title": "SRC-0104"
-        },
+        "source_id": "SRC-0104",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e4e5855be39813a80c7dacb181e8876",
           "title": "EV-0171"
@@ -97,10 +82,7 @@
       "selection_reason": "神奈川県知事の正式な移管内申が12月の県会責任追及より前に成立していた時系列を公文書館所蔵情報で確認するため。",
       "note_type": "Data",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be398170aac1f14ebdb2e5c9",
-          "title": "SRC-0096"
-        },
+        "source_id": "SRC-0096",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be3981d6aca7ed2c74fb2e39",
           "title": "EV-0169"
@@ -115,10 +97,7 @@
       "note_type": "Result",
       "direct_quote": "知事を放逐するより知事か三多摩を放逐する方可然",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e4e5855be398155a4dac2edc1a47e99",
-          "title": "SRC-0105"
-        },
+        "source_id": "SRC-0105",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e4e5855be3981b9b2eedb4be492f285",
           "title": "EV-0172"
@@ -132,10 +111,7 @@
       "selection_reason": "1892年選挙干渉に内海知事自身が関与し、三多摩の自由党系政治家を具体的な対立対象としていたことを本人報告由来の引用から確認するため。",
       "note_type": "Result",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be39814688adda75a25c4bd9",
-          "title": "SRC-0091"
-        },
+        "source_id": "SRC-0091",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be3981db9706e7b9b9c04c6a",
           "title": "EV-0167"
@@ -149,10 +125,7 @@
       "selection_reason": "県会側と知事・警察行政の政治的対立が移管検討期を通じて継続していたことを、神奈川県側の公刊県史から確認するため。",
       "note_type": "Result",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e4e5855be3981b9924dc2d020ad3a88",
-          "title": "SRC-0106"
-        },
+        "source_id": "SRC-0106",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e4e5855be3981cd9d23d86ee04b0c17",
           "title": "EV-0173"
@@ -166,10 +139,7 @@
       "selection_reason": "県会による正式な知事責任追及の時期を把握し、移管内申・内海書簡との前後関係を検証するため。逐語議事録・建議本文は今回未取得。",
       "note_type": "Result",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be39814688adda75a25c4bd9",
-          "title": "SRC-0091"
-        },
+        "source_id": "SRC-0091",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be39815eb296e1de7c78df20",
           "title": "EV-0168"
@@ -183,10 +153,7 @@
       "selection_reason": "同時代新聞に政治的説明が存在したことを保持するため。ただし今回『国会』原紙は直接実読できず、自治体史を介した間接確認にとどめる。",
       "note_type": "Claim",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be3981e89190c5df7e3de208",
-          "title": "SRC-0095"
-        },
+        "source_id": "SRC-0095",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be3981058efce9bf1155b0d8",
           "title": "EV-0164"
@@ -200,10 +167,7 @@
       "selection_reason": "「神奈川自由党の分断」という後世の歴史解釈を、内海本人の同時代文書で直接確認できる事実と分離して保持するため。",
       "note_type": "Claim",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be3981e89190c5df7e3de208",
-          "title": "SRC-0095"
-        },
+        "source_id": "SRC-0095",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be39819c8d5cc56e9dabf6f1",
           "title": "EV-0166"
@@ -217,10 +181,7 @@
       "selection_reason": "1892年の選挙・県会対立以前から、水源管理をめぐる府県間の行政利害が存在したことを確認するため。",
       "note_type": "Result",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be3981129356c8924a2b45ba",
-          "title": "SRC-0097"
-        },
+        "source_id": "SRC-0097",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e3e5855be39815a87dbf3324c1a0afb",
           "title": "EV-0170"
@@ -234,10 +195,7 @@
       "selection_reason": "神奈川県財政への影響について、政府の「困難なし」という説明が同時代の法案審査で争われていたことを一次史料で保持するため。",
       "note_type": "Counterargument",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e4e5855be398188b180ff47b6187bcc",
-          "title": "SRC-0107"
-        },
+        "source_id": "SRC-0107",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e4e5855be3981748dbec2b9f23aa724",
           "title": "EV-0174"
@@ -251,10 +209,7 @@
       "selection_reason": "Review F001で欠落とされた、移管そのものへの直接的な賛否を同時代の議会記録からcaptureするため。",
       "note_type": "Data",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e4e5855be398188b180ff47b6187bcc",
-          "title": "SRC-0107"
-        },
+        "source_id": "SRC-0107",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e4e5855be39818b96c0f120e6272aa6",
           "title": "EV-0199"
@@ -268,10 +223,7 @@
       "selection_reason": "移管を無条件に利益とみなす立場だけでなく、不利益を認識した上で行政上の必要性を優先する条件付き賛成・容認の立場を区別するため。",
       "note_type": "Result",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e4e5855be398188b180ff47b6187bcc",
-          "title": "SRC-0107"
-        },
+        "source_id": "SRC-0107",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e4e5855be398111ad60d2a69f9aa65f",
           "title": "EV-0200"
@@ -285,10 +237,7 @@
       "selection_reason": "移管反対の主体・規模・具体的戦術を同時代公文書から直接captureし、神奈川県側の反対立場をEvidence layerに明示するため。",
       "note_type": "Result",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be3981129356c8924a2b45ba",
-          "title": "SRC-0097"
-        },
+        "source_id": "SRC-0097",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e4e5855be39813ba211efdb4e5e04da",
           "title": "EV-0201"
@@ -302,10 +251,7 @@
       "selection_reason": "神奈川県知事以外の地域政治・町村主体による移管推進の立場と、その地域・政治上の利害をcaptureするため。",
       "note_type": "Result",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e4e5855be3981a2adc3f31530ffd136",
-          "title": "SRC-0109"
-        },
+        "source_id": "SRC-0109",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e4e5855be3981ecbe19f7f78a227967",
           "title": "EV-0202"
@@ -319,15 +265,104 @@
       "selection_reason": "移管反対が三多摩住民運動だけでなく、神奈川県自由党と神奈川県会の制度的意思表明としても継続したことをcaptureするため。",
       "note_type": "Result",
       "provenance": {
-        "source": {
-          "notion_url": "https://app.notion.com/p/3e3e5855be3981e89190c5df7e3de208",
-          "title": "SRC-0095"
-        },
+        "source_id": "SRC-0095",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e4e5855be398142af01cc3e9b6577d4",
           "title": "EV-0203"
         }
       }
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "SRC-0091",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "30faf36c6462fe3ccdb111395b1be52956084fcf"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e3e5855be39814688adda75a25c4bd9"
+    },
+    {
+      "source_id": "SRC-0094",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "77811d02f2d9a42e5833c97aec6f742d09022b2e"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e3e5855be39816bbcbafa8d4c643ddf"
+    },
+    {
+      "source_id": "SRC-0095",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "0c6c0567bab06209368db9b2f42e0130751eb3bc"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e3e5855be3981e89190c5df7e3de208"
+    },
+    {
+      "source_id": "SRC-0096",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "97986b1f888f2acfbb7a05b1495f5e6d3a2e3bcd"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e3e5855be398170aac1f14ebdb2e5c9"
+    },
+    {
+      "source_id": "SRC-0097",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "a89fabb0c645a2cab7d62d5c6b91f772d7495b73"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e3e5855be3981129356c8924a2b45ba"
+    },
+    {
+      "source_id": "SRC-0104",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "95246434b256e0f0cb819973b9dbcff645fac2ea"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e4e5855be3981d6aba4dcb9e0c1438f"
+    },
+    {
+      "source_id": "SRC-0105",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "74564ca668bd10f83225ce8ffd72a78ea359e38c"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e4e5855be398155a4dac2edc1a47e99"
+    },
+    {
+      "source_id": "SRC-0106",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "75650730be8642219e4daf3331931d1eac6c896a"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e4e5855be3981b9924dc2d020ad3a88"
+    },
+    {
+      "source_id": "SRC-0107",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "9aaa425c225fde410cdee40e8b3db35e25079ec9"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e4e5855be398188b180ff47b6187bcc"
+    },
+    {
+      "source_id": "SRC-0109",
+      "source_revision": {
+        "commit_sha": "eb07455cae407f48e0c2d567826dbe056f93d726",
+        "blob_sha": "439fc1e8038ee750ebfdc0d4f9bcfa29b8e82747"
+      },
+      "accessed_at": null,
+      "notion_url": "https://app.notion.com/p/3e4e5855be3981a2adc3f31530ffd136"
     }
   ]
 }
