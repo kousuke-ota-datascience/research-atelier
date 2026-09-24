@@ -1,0 +1,134 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "30_analysis",
+  "investigation_id": "INV-000022",
+  "rq_id": "RQ-0012",
+  "analyzed_at": "2026-09-24T03:38:00Z",
+  "question_type": "Methodological",
+  "profile": {
+    "method_or_procedure": "Treat base-model retraining as an escalation step in model maintenance. Monitor post-correction predictive performance and model mismatch together with process-condition indicators, compare lighter-weight adaptation against requirements, investigate alternative causes of degradation, and require validation of a retrained candidate before replacement.",
+    "intended_use": "Decide when a frozen quality-prediction model plus external/online correction is no longer an adequate maintenance strategy and escalation to base-model retraining is justified.",
+    "assumptions": [
+      "Prediction performance can be monitored on delayed but traceable ground-truth quality labels.",
+      "The currently deployed correction mechanism and its residual performance can be evaluated separately from the frozen base model.",
+      "Process-condition or input-distribution monitoring is available at sufficient fidelity to distinguish at least some operating-regime changes from transient prediction errors."
+    ],
+    "evaluation_criteria": [
+      "Persistence and operational significance of prediction degradation after the existing correction layer is applied.",
+      "Evidence that current process/predictive conditions differ materially from those under which the frozen model was adequate.",
+      "Whether lower-impact adaptation mechanisms can still maintain required performance.",
+      "Availability of testing and monitoring sufficient to evaluate a retrained candidate before replacement."
+    ],
+    "comparators": [
+      "Continue the frozen base model with the existing external correction.",
+      "Strengthen or change the external/lightweight adaptation mechanism without retraining the base model.",
+      "Retrain or update the base prediction model using data representative of current conditions."
+    ],
+    "tradeoffs": [
+      "Earlier retraining may restore fit to a changed regime sooner but risks reacting to transient noise or a non-model fault and increases validation/deployment burden.",
+      "Continuing external correction preserves the validated base model and reduces change scope but can become inadequate when mismatch is persistent or structurally linked to changed operating conditions.",
+      "More monitoring and diagnostic gating delays maintenance action but reduces the risk of treating one error excursion as proof that the predictive relationship has changed."
+    ],
+    "applicability_limits": [
+      "No process-independent numerical error threshold or persistence window for mandatory retraining is supported by the selected evidence.",
+      "The selected evidence does not provide a complete diagnostic algorithm for separating sensor, actuation, process, and data-pipeline faults from model-relation change.",
+      "The selected evidence does not define the minimum new-regime sample size, coverage, or label quality needed for retraining acceptance."
+    ]
+  },
+  "working_answer": {
+    "text": "base model再学習へ移行する判断は、prediction errorが一時的に増えたことだけでは行わず、少なくとも「外部補正後にもmodel mismatch／性能劣化が持続する」「process-condition monitoring等からcurrent regimeと旧modelの関係が変化した疑いが強い」「moving-window、recursive adaptation、ensemble等のより軽いadaptationでは要求性能を維持できない」「retrained candidateをproduction changeとして試験・監視できる」という複数条件で評価するのが妥当である。concept driftはinput-target関係の変化であり、raw error threshold超過だけでは同定できないため、error増加をtriggerではなくinvestigation signalとして扱うべきである。さらに、error増加はmodel-relation change以外でも説明可能なので、実装上はsensor/process/actuation/data-pipeline等の代替原因を調べたうえで再学習へ進むgateを設けるべきである。ただし、この非model原因の完全な切り分け手順、普遍的なthreshold、再学習に必要な最小データ量は選択Evidenceから確定できない。したがって、最終的な運用ruleは対象processでbacktest/validationし、post-correction performance、regime/mismatch indicators、原因調査、retrained-candidate validationの組合せとして校正する必要がある。",
+    "knowledge_unit_refs": [
+      "K0001",
+      "K0002",
+      "K0003",
+      "K0004",
+      "K0005"
+    ]
+  },
+  "judgments": [
+    {
+      "judgment_id": "J0001",
+      "statement": "raw prediction errorの単発threshold超過を、それだけでbase-model retrainingの十分条件として扱うべきではない。",
+      "knowledge_unit_refs": [
+        "K0001",
+        "K0003",
+        "K0005"
+      ]
+    },
+    {
+      "judgment_id": "J0002",
+      "statement": "retraining判断では、外部補正後にも持続するmodel mismatchとcurrent process/predictive conditionの変化を併せて監視する必要がある。",
+      "knowledge_unit_refs": [
+        "K0001",
+        "K0003",
+        "K0005"
+      ]
+    },
+    {
+      "judgment_id": "J0003",
+      "statement": "moving-window、recursive、ensemble等のlighter-weight adaptationで要求性能を維持できる間は、full base-model retrainingだけを唯一のmaintenance actionとみなす根拠はない。",
+      "knowledge_unit_refs": [
+        "K0002",
+        "K0005"
+      ]
+    },
+    {
+      "judgment_id": "J0004",
+      "statement": "base-model retrainingはproduction model maintenanceの変更として明示的なtesting/monitoringの下で評価し、候補モデルを検証してから置換するべきである。",
+      "knowledge_unit_refs": [
+        "K0004",
+        "K0005"
+      ]
+    },
+    {
+      "judgment_id": "J0005",
+      "statement": "sensor/process/actuation/data-pipeline等の代替原因を調べずにprediction degradationをmodel driftへ一意に帰属するのは不十分であり、原因調査をretraining gateへ含めるのが安全側のengineering judgmentである。",
+      "knowledge_unit_refs": [
+        "K0001",
+        "K0004",
+        "K0005"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "text": "selected Evidenceには普遍的なretraining threshold、persistence window、minimum sample sizeがないため、数値ruleは対象processで校正する必要がある。",
+      "knowledge_unit_refs": [
+        "K0001",
+        "K0003",
+        "K0005"
+      ]
+    },
+    {
+      "text": "sensor、actuation、data-pipeline faultとtrue model-relation changeを完全に切り分ける統一的なdiagnostic procedureは今回のfrozen Evidenceに含まれない。",
+      "knowledge_unit_refs": [
+        "K0004",
+        "K0005"
+      ]
+    },
+    {
+      "text": "external correction継続とfull retrainingを同一industrial datasetで直接比較したcontrolled evidenceは今回のsnapshotにない。",
+      "knowledge_unit_refs": [
+        "K0002",
+        "K0005"
+      ]
+    }
+  ],
+  "unresolved_questions": [
+    "対象processではpost-correction errorのどのmetricとpersistence windowをmaintenance alarmに使うべきか。",
+    "operating-region/drift指標としてどのprocess variables、T²/SPE、OOD指標、residual diagnosticsを組み合わせるべきか。",
+    "sensor/process/actuation/data-pipelineの代替原因をどの順序・testで除外するか。",
+    "retrained candidateを採用するために必要な新regimeのlabel数、coverage、held-out期間、acceptance criteriaは何か。",
+    "external correctionを維持する場合とbase modelを更新する場合の変更管理・rollback条件をどう分けるか。"
+  ],
+  "alternative_interpretations": [
+    {
+      "text": "driftが局所的で外部補正またはrecursive adaptationが安定して要求性能を満たす場合、base-model retrainingを延期する方が変更範囲を小さくできる。一方、複数regimeで構造的なmismatchが続く場合は、補正層の複雑化よりbase-model更新の方が保守しやすい可能性があるが、後者の比較優位は今回のEvidenceだけでは確定できない。",
+      "knowledge_unit_refs": [
+        "K0002",
+        "K0003",
+        "K0005"
+      ]
+    }
+  ]
+}
