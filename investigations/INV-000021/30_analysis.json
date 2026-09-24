@@ -3,7 +3,7 @@
   "artifact_type": "30_analysis",
   "investigation_id": "INV-000021",
   "rq_id": "RQ-0011",
-  "analyzed_at": "2026-09-24T05:03:00Z",
+  "analyzed_at": "2026-09-24T05:01:49.911198Z",
   "question_type": "Methodological",
   "profile": {
     "method_or_procedure": "Use the quality-prediction/optimization system as a supervisory setpoint-generation layer above an already stabilized PLC/PID control layer. Enforce admissible command/state constraints before setpoint application, use hazard/risk analysis to allocate required safety functions and independence from the BPCS/supervisory path, preserve a fallback operating path, and commission automatic operation progressively.",
