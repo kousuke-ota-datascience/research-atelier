@@ -148,9 +148,12 @@ derived copyはprojection、snapshot、cache、renderingとしてのみ存在で
 
 ### Git artifact-authoritative
 
-1つのfrozen Investigationについて:
+global reusable artifact:
 
 - Information Source metadata (`information_sources/<Source ID>.json`)
+
+1つのfrozen Investigationについて:
+
 - Investigation Context
 - そのversionで選択したEvidence snapshotと使用Source revision
 - evidence-faithful Synthesis
@@ -182,9 +185,9 @@ derived copyはprojection、snapshot、cache、renderingとしてのみ存在で
 5. 既存InvestigationのNotion rowが欠落している場合、frozen Git `00_context` をauthorityとしてoperational rowをbackfillしてよい。current RQ metadataからhistorical conditionを逆算しない。
 6. SourceはNotionでUID / Source IDをallocateし、draft metadataをcaptureした後、`information_sources/<Source ID>.json` をvalidation / commitしてGitへauthority transferする。以後Notion Source metadataはGitからreconcile可能なhuman-facing projectionであり、独立した第二authorityにしない。
 7. 同一fieldをNotionとGitの双方でauthoritativeに手動管理してはならない。
-8. upstream canonical artifactが変更された場合、依存するdownstream artifactは再validationまたは再生成されるまでinvalidとする.
-8. Workflow 20 Review content / Findings / VerdictはGit Review JSONがauthorityであり、Notion Investigations DBには `Review Status / Latest Review Seq` というderived current pointerだけを保持する。
-9. Review Status mutationは `src/research_atelier/reviewing/reconcile.py` のdeterministic planを介し、Workflow 20やconnectorが独自に書き換えない。
+8. upstream canonical artifactが変更された場合、依存するdownstream artifactは再validationまたは再生成されるまでinvalidとする。
+9. Workflow 20 Review content / Findings / VerdictはGit Review JSONがauthorityであり、Notion Investigations DBには `Review Status / Latest Review Seq` というderived current pointerだけを保持する。
+10. Review Status mutationは `src/research_atelier/reviewing/reconcile.py` のdeterministic planを介し、Workflow 20やconnectorが独自に書き換えない。
 
 ## docs/98_reusable_artifact の位置付け
 
