@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000027",
+  "review_seq": 1,
+  "layer": "00_context",
+  "review_kind": "context_semantic_validity",
+  "target_blob_sha": "2a3dc99849542762e455a9d1c11c19ebc5a01e92",
+  "assessment": "The frozen Methodological Context is semantically coherent with RQ-000027. It explicitly treats the integrated taxonomy as an evidence-constrained constructive design, fixes accepted RQ-000025/026 results as the primary inputs, allows hierarchical/faceted/hybrid candidates to be compared without prejudging the result, requires evidence-derived facts to be separated from design judgment, allows multi-membership, and prohibits method-performance ranking. No contradiction or missing context condition requiring repair was identified.",
+  "findings": [],
+  "verdict": "PASS"
+}

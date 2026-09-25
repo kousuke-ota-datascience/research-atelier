@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000027",
+  "review_seq": 1,
+  "layer": "20_synthesis",
+  "review_kind": "10_evidence_to_20_synthesis",
+  "target_blob_sha": "e38aeb7e9c72ee087ce986fea9a86e0c84283029",
+  "assessment": "The Synthesis is traceable to the upstream accepted results and targeted taxonomy-design literature. It correctly preserves non-exclusive methodological roles, heterogeneous classification axes, and domain/boundary uncertainty; it does not collapse these into a single existing standard. K0006 is explicitly marked as an evidence-constrained synthesis rather than a taxonomy claimed to exist in one source. The ontology-versus-facet separation is a legitimate constructive integration of the upstream constraints, while U0001-U0003 retain non-systematic coverage and the need for empirical iteration/MECE testing. No unsupported factual claim or concealed design judgment requiring repair was identified.",
+  "findings": [],
+  "verdict": "PASS"
+}

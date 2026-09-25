@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000027",
+  "review_seq": 1,
+  "layer": "10_evidence",
+  "review_kind": "source_evidence_note_to_10_evidence",
+  "target_blob_sha": "3f4096abd4bc4b0693e7ff0bdaa6e4f01af2fddd",
+  "assessment": "E0001-E0008 preserve the corresponding Evidence Note text, locator, note type, and Source relation. SRC-000139/140 correctly snapshot the accepted canonical 30_analysis artifacts for RQ-000025/026 and the Evidence paraphrases preserve their conclusions and limitations. External targeted supplementation is source-faithful: Nickerson et al. define a taxonomy as dimensions containing mutually exclusive and collectively exhaustive characteristics and prescribe a purpose/meta-characteristic plus iterative conceptual-to-empirical or empirical-to-conceptual development with ending conditions; Kundisch et al. emphasize transparent taxonomy-building decisions, extended evaluation including ex-post evaluation, and report usefulness, comprehensiveness, and applicability among prominent evaluation criteria. No material provenance, locator, or source-faithfulness defect was identified.",
+  "findings": [],
+  "verdict": "PASS"
+}
