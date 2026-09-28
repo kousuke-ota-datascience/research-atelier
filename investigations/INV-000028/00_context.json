@@ -1,0 +1,36 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "00_context",
+  "investigation_id": "INV-000028",
+  "rq_id": "RQ-000028",
+  "context_state": "frozen",
+  "question": {
+    "text": "豊橋の歴史・地理・文化・社会現象を現実アンカーとして、豊橋に固有性を持つ都市伝説・現代伝承モデルをどのように構成できるか？",
+    "notion_url": "https://app.notion.com/p/3e9e5855be398157bbdcf73b88b74400"
+  },
+  "question_type": "Exploratory",
+  "scope": "RQ-000029〜RQ-000033のaccepted resultと、それらが依拠するEvidence lineageを主要入力として、豊橋の歴史・地理・文化・社会現象を現実アンカーとする新規都市伝説・現代伝承モデルの構成可能性を統合的に整理する。個別候補の史実探索、地域固有性評価、伝承モデル生成、D01–D21比較、現実アンカー統合分析は各child RQの責務とし、本Investigationではそれらを統合してParent RQへのWorking Answerを構成する。",
+  "significance": null,
+  "investigation_boundary": {
+    "include": [
+      "RQ-000029〜RQ-000033のaccepted canonical analysisとそのlineage",
+      "child RQ間で一致・競合する判断の統合",
+      "豊橋固有の現実アンカーと生成伝承モデルの対応関係",
+      "必要な場合に限るchild間のgap解消のための限定的な追加Source確認"
+    ],
+    "exclude": [
+      "child RQを経ずに独立して大量の新規史実候補を探索すること",
+      "個別伝承候補のD01–D21 codingをParent RQ側で再実施すること",
+      "実在地域・組織・文化に架空の犯罪・邪教・隠蔽を付与すること",
+      "創作本文そのものの執筆"
+    ],
+    "evidence_cutoff": "2026-09-28T05:00:57.000Z"
+  },
+  "assumptions": [
+    "Parent RQはchild RQ群を統合する上位問いとして扱う",
+    "child RQのanalysisを無条件に真とせず、canonical lineageとsupport boundaryを確認する",
+    "豊橋固有性・D21・創作品質を同一概念として扱わない",
+    "新規伝承候補は創作モデルであり、実在する伝承として主張しない"
+  ],
+  "frozen_at": "2026-09-28T05:00:57.000Z"
+}
