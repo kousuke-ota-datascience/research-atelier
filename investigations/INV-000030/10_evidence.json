@@ -6,73 +6,73 @@
   "snapshot_at": "2026-09-28T09:18:41Z",
   "sources": [
     {
-      "source_id": "SRC-0143",
+      "source_id": "SRC-000143",
       "source_revision": {
-        "commit_sha": "8d6e4cc58aa748023de6d1d3c01ae2333a269ed2",
-        "blob_sha": "dc154b4c89f53c0446d94f31420b033df71c0d52"
+        "commit_sha": "25cc35ca05820a028396988723ff22b324175615",
+        "blob_sha": "f4215ddea7f285913e29c45f77337c1a81844c40"
       },
       "accessed_at": "2026-09-28T05:22:33.377Z",
       "notion_url": "https://app.notion.com/p/3e9e5855be398106b898e984d10cf100"
     },
     {
-      "source_id": "SRC-0144",
+      "source_id": "SRC-000144",
       "source_revision": {
-        "commit_sha": "9a9582836941fda05dc3e0762f496e4a6661670d",
-        "blob_sha": "e5ceb87e25fef6805de40904a75b180e48f0441d"
+        "commit_sha": "f464c33312d721b9a92ab8ee7aa03f796cb857f3",
+        "blob_sha": "f4d09f685623f3abd5536f017f585f9b0d2d1ee0"
       },
       "accessed_at": "2026-09-28T05:22:33.377Z",
       "notion_url": "https://app.notion.com/p/3e9e5855be39811299aff11603223dec"
     },
     {
-      "source_id": "SRC-0145",
+      "source_id": "SRC-000145",
       "source_revision": {
-        "commit_sha": "eb31fa3d54ebea353c14098c0ef8c6e1230194ff",
-        "blob_sha": "fa1c5c7055f937f636242f950b2efc3431ee1ba8"
+        "commit_sha": "8f1872a79f7c8e050c8d486852f8d4a0ada60bbd",
+        "blob_sha": "4b68d8c0f944d562b4e9aecccd541c2b7b44ccfb"
       },
       "accessed_at": "2026-09-28T05:22:33.377Z",
       "notion_url": "https://app.notion.com/p/3e9e5855be39819999a3cf7a9e57b584"
     },
     {
-      "source_id": "SRC-0146",
+      "source_id": "SRC-000146",
       "source_revision": {
-        "commit_sha": "4b3cb810f83fd24f508b9b066dbb85a7ebcfded2",
-        "blob_sha": "1b57c91b8ebdfa49469ae6599c11dd55c2cc79b7"
+        "commit_sha": "db4a4fabaebad6fb31036e82dc978ba41e59eb1a",
+        "blob_sha": "6693f376977236eac656bef5fda384cd1ac354ee"
       },
       "accessed_at": "2026-09-28T05:22:33.377Z",
       "notion_url": "https://app.notion.com/p/3e9e5855be3981e0be3bd713b9f705ff"
     },
     {
-      "source_id": "SRC-0147",
+      "source_id": "SRC-000147",
       "source_revision": {
-        "commit_sha": "2388abc9da9033502b241ca46faed7d80656095d",
-        "blob_sha": "df18b5e6860256a815749573b24f33010403c14f"
+        "commit_sha": "8e729f591da9ee2105537983246caeb47291ba57",
+        "blob_sha": "9f47cf828f039e7f2e89821d77abd4ff60b764b8"
       },
       "accessed_at": "2026-09-28T05:22:33.377Z",
       "notion_url": "https://app.notion.com/p/3e9e5855be39818f8c0bd9d0605f3d5c"
     },
     {
-      "source_id": "SRC-0148",
+      "source_id": "SRC-000148",
       "source_revision": {
-        "commit_sha": "9f627ba9376921f2f7b3e032a5c276d3949011b8",
-        "blob_sha": "735eea8ef34de7aba8fa1a67ea4abcfdb748b7b7"
+        "commit_sha": "f7a23bccd51377fe8411397d4e8648dd0122b458",
+        "blob_sha": "6186245ff2bcd84a39d058f41953e11809ccf37c"
       },
       "accessed_at": "2026-09-28T05:22:33.377Z",
       "notion_url": "https://app.notion.com/p/3e9e5855be398198afdafed5176a9872"
     },
     {
-      "source_id": "SRC-0149",
+      "source_id": "SRC-000149",
       "source_revision": {
-        "commit_sha": "03bcfc5899cd652be9255861e5104f3d0f30492d",
-        "blob_sha": "edaf54e1456a419cc0dad283dbfd88711e159b54"
+        "commit_sha": "878a93e1cf0965d0179efcdf1b690e394ac5de16",
+        "blob_sha": "81a372f562f0167535bb22926605da21b407cfb4"
       },
       "accessed_at": "2026-09-28T05:22:33.377Z",
       "notion_url": "https://app.notion.com/p/3e9e5855be39819fa4b9d910b568a48f"
     },
     {
-      "source_id": "SRC-0150",
+      "source_id": "SRC-000150",
       "source_revision": {
-        "commit_sha": "ee2f54bff2b29c90a483c522c6b698eed801bec9",
-        "blob_sha": "9d4b9bdfc4916c75c7cc0fc5e343a3653065e60b"
+        "commit_sha": "8949c4feae97e3fd482d3d694772ee1157051362",
+        "blob_sha": "5d8c8fb1e31fefc43e7ae2c4f420f750d5d4931d"
       },
       "accessed_at": "2026-09-28T05:22:33.377Z",
       "notion_url": "https://app.notion.com/p/3e9e5855be39818bb165e7b754bc3ab4"
@@ -87,7 +87,7 @@
       "note_type": "Claim",
       "direct_quote": null,
       "provenance": {
-        "source_id": "SRC-0143",
+        "source_id": "SRC-000143",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e9e5855be3981209195c33472d7f78b",
           "title": "EV-000251"
@@ -102,7 +102,7 @@
       "note_type": "Claim",
       "direct_quote": null,
       "provenance": {
-        "source_id": "SRC-0144",
+        "source_id": "SRC-000144",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e9e5855be3981f189c7c1ffe4506da4",
           "title": "EV-000252"
@@ -117,7 +117,7 @@
       "note_type": "Claim",
       "direct_quote": null,
       "provenance": {
-        "source_id": "SRC-0145",
+        "source_id": "SRC-000145",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e9e5855be3981078346c4169c4d680a",
           "title": "EV-000253"
@@ -132,7 +132,7 @@
       "note_type": "Claim",
       "direct_quote": null,
       "provenance": {
-        "source_id": "SRC-0146",
+        "source_id": "SRC-000146",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e9e5855be3981a8b162e1eaa28da838",
           "title": "EV-000254"
@@ -147,7 +147,7 @@
       "note_type": "Claim",
       "direct_quote": null,
       "provenance": {
-        "source_id": "SRC-0147",
+        "source_id": "SRC-000147",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e9e5855be398186a159ff2e013d7cf5",
           "title": "EV-000255"
@@ -162,7 +162,7 @@
       "note_type": "Claim",
       "direct_quote": null,
       "provenance": {
-        "source_id": "SRC-0148",
+        "source_id": "SRC-000148",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e9e5855be398123aa97da5602e80266",
           "title": "EV-000256"
@@ -177,7 +177,7 @@
       "note_type": "Claim",
       "direct_quote": null,
       "provenance": {
-        "source_id": "SRC-0149",
+        "source_id": "SRC-000149",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e9e5855be39818cbabac78e41634c18",
           "title": "EV-000257"
@@ -192,7 +192,7 @@
       "note_type": "Claim",
       "direct_quote": null,
       "provenance": {
-        "source_id": "SRC-0150",
+        "source_id": "SRC-000150",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e9e5855be398123b88cdd0fbb70cb41",
           "title": "EV-000258"
@@ -207,7 +207,7 @@
       "note_type": "Claim",
       "direct_quote": null,
       "provenance": {
-        "source_id": "SRC-0150",
+        "source_id": "SRC-000150",
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/3e9e5855be39810791aecd760412a822",
           "title": "EV-000259"
