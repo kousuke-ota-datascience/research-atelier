@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-0144",
+  "notion_url": "https://app.notion.com/p/3e9e5855be39811299aff11603223dec",
+  "title": "二川宿景観形成地区整備計画（平成28年11月改訂版）",
+  "source_type": "Report",
+  "journal_or_publisher": "豊橋市",
+  "authors": null,
+  "year": null,
+  "url": "https://www.city.toyohashi.lg.jp/secure/83983/futagawakeikaku_all.pdf",
+  "doi": null,
+  "version_or_edition": "平成28年11月改訂版",
+  "reliability_note": "豊橋市公式計画。二川・大岩の本郷→元屋敷→現所在地への移転史と二川宿成立の確認に使用。"
+}
