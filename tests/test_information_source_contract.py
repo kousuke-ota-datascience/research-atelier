@@ -81,6 +81,32 @@ class InformationSourceContractTest(unittest.TestCase):
         )
         self.assertTrue(result.ok, result.errors)
 
+    def test_post_cutover_four_digit_source_id_fails_in_evidence_21(self) -> None:
+        data = {
+            "schema_version": "2.1.0",
+            "artifact_type": "10_evidence",
+            "investigation_id": "INV-000001",
+            "rq_id": "RQ-0007",
+            "snapshot_at": "2026-09-24T09:00:00Z",
+            "sources": [{
+                "source_id": "SRC-0120",
+                "source_revision": {"commit_sha": "a" * 40, "blob_sha": "b" * 40},
+                "accessed_at": "2026-09-24T08:50:00Z",
+                "notion_url": "https://www.notion.so/11111111111111111111111111111111"
+            }],
+            "evidence_items": [{
+                "evidence_id": "E0001",
+                "content": "Source-faithful observation.",
+                "provenance": {"source_id": "SRC-0120", "evidence_note": None}
+            }]
+        }
+        result = validate_data(
+            data,
+            SCHEMA_ROOT / "10_evidence.schema.json",
+            artifact="10",
+        )
+        self.assertFalse(result.ok)
+
     def test_new_10_evidence_21_requires_source_snapshot(self) -> None:
         data = {
             "schema_version": "2.1.0",
