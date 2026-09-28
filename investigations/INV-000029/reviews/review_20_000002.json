@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000029",
+  "review_seq": 2,
+  "layer": "20_synthesis",
+  "review_kind": "10_evidence_to_20_synthesis",
+  "target_blob_sha": "5394345501c7ed6897baf2fe1621c53aa9a2c524",
+  "assessment": "The 20_synthesis blob is unchanged from Review 000001. K0001-K0009, R0001-R0003, and U0001-U0003 remain traceable to the unchanged Evidence and retain the same qualifications and uncertainty boundaries. The repair did not alter Synthesis or introduce a downstream statement that requires upstream healing. No Synthesis-layer finding is identified.",
+  "findings": [],
+  "verdict": "PASS"
+}

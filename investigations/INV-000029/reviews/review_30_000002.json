@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000029",
+  "review_seq": 2,
+  "layer": "30_analysis",
+  "review_kind": "20_synthesis_plus_00_context_to_30_analysis",
+  "target_blob_sha": "99d629c1b8b7132926101160d586586ed9962493",
+  "assessment": "The Review 000001 F001 wording in working_answer and J0002 has been repaired as directed: the comparative '特に/離れやすい/接続しやすい' wording was replaced by non-comparative structural-connectability wording, while the knowledge-unit lineage and main answer were preserved. Re-reading the full Analysis, however, shows the same Context-boundary issue remains in two other phrases: candidate_hypotheses[2] calls Kanno Shinden '有望', and J0004 calls the Oni Festival/Suseno Jana pair '有力な地域アンカー'. These are evaluative suitability terms despite the frozen assumption and Analysis limitation stating that creative superiority is not evaluated.",
+  "findings": [
+    {
+      "finding_id": "F001",
+      "severity": "Minor",
+      "target": "30_analysis.profile.candidate_hypotheses[2]; 30_analysis.judgments[J0004].statement",
+      "evidence": [
+        "00_context.assumptions[0] states that 'available as a real-world anchor' does not mean creative superiority; it means that a verifiable fact connectable to a legend model exists.",
+        "30_analysis.profile.candidate_hypotheses[2] describes Kanno Shinden as '人工的土地・水利システムとして有望'.",
+        "30_analysis.judgments[J0004].statement describes the Oni Festival and Suseno Jana as '有力な地域アンカー'.",
+        "30_analysis.limitations[2] states that this Investigation does not evaluate the candidates' creative superiority."
+      ],
+      "impact": "These residual adjectives reintroduce an unsupported suitability-strength judgment into an Analysis whose frozen scope is limited to factual availability/connectability. They do not alter the nine-candidate inventory, provenance, or main historical conclusions, so the defect remains local to 30_analysis wording.",
+      "repair_direction": {
+        "mode": "same_investigation",
+        "affected_layer": "30_analysis",
+        "instruction": "Replace '有望' and '有力な地域アンカー' with neutral availability/connectability wording supported by the existing Synthesis (for example, '人工的土地・水利システムとして現実アンカー候補になる' and '地域アンカー候補だが'). Do not add comparative or strength-of-suitability claims unless an explicit evaluation criterion and supporting analysis are introduced."
+      }
+    }
+  ],
+  "verdict": "FINDINGS"
+}

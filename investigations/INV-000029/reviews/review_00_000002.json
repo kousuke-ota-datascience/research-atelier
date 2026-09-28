@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000029",
+  "review_seq": 2,
+  "layer": "00_context",
+  "review_kind": "context_semantic_validity",
+  "target_blob_sha": "e190ba141b96a0e3ab56a944c2572d4af5835809",
+  "assessment": "The frozen Context is unchanged from Review 000001 and remains semantically coherent with RQ-000029. It defines 'available as a real-world anchor' as the existence of a verifiable fact that can connect to a legend model, explicitly not as creative superiority, and its scope, exclusions, assumptions, temporal boundary, and Exploratory Question Type remain internally consistent. No Context repair is required.",
+  "findings": [],
+  "verdict": "PASS"
+}

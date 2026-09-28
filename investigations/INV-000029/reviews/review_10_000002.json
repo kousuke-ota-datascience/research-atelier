@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000029",
+  "review_seq": 2,
+  "layer": "10_evidence",
+  "review_kind": "source_evidence_note_to_10_evidence",
+  "target_blob_sha": "83cccda1a8073d34da670867cccba86220d400fa",
+  "assessment": "The 10_evidence blob is unchanged from Review 000001. The previously reviewed E0001-E0009 provenance, Evidence Note fidelity, Source relations, and SRC-0143-SRC-0150 revision bindings therefore remain applicable to this target; the 30_analysis-only repair introduced no new Evidence dependency or bypass. No Evidence-layer finding is identified.",
+  "findings": [],
+  "verdict": "PASS"
+}
