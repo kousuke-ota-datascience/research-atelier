@@ -1,0 +1,128 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "20_synthesis",
+  "investigation_id": "INV-000031",
+  "rq_id": "RQ-000031",
+  "synthesized_at": "2026-09-28T05:38:33.000Z",
+  "knowledge_units": [
+    {
+      "knowledge_unit_id": "K0001",
+      "statement": "吉田大橋／とよばしでは、歴史上の「吉田大橋」の名称・位置と、現在の「とよばし」「吉田大橋」の位置関係が再配置され、物流中心も旧橋側から現在の吉田大橋側へ移った。",
+      "evidence_refs": [
+        "E0001"
+      ],
+      "qualifiers": [
+        "確認できるのは名称・位置・物流中心の歴史的再配置であり、怪異的な意味や因果はSourceには存在しない。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0002",
+      "statement": "二川村・大岩村は本郷から元屋敷を経て現在地へ複数段階で移転し、現在地で一続きの二川宿を形成した。",
+      "evidence_refs": [
+        "E0002"
+      ],
+      "qualifiers": [
+        "Evidenceは移転段階と宿場形成を支持するが、各旧地点の精密な地理座標や現地対応はこのEvidence setには含まれない。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0003",
+      "statement": "神野新田は築堤による新田開発と、新城市一鍬田から神野新田まで約23kmを結ぶ牟呂用水によって成立した、造成地と長距離水利が結合する地域構造を持つ。",
+      "evidence_refs": [
+        "E0003"
+      ],
+      "qualifiers": [
+        "Evidenceは造成・用水整備を支持するが、土地状態の反転や超自然的な土地依存性は支持しない。"
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "relation_id": "R0001",
+      "relation_type": "association",
+      "knowledge_unit_refs": [
+        "K0001",
+        "K0002",
+        "K0003"
+      ],
+      "description": "3アンカーはいずれも、現在の場所を静的な一点としてではなく、歴史的な移動・再配置・造成・接続の結果として理解できるという共通構造を持つ。",
+      "evidence_refs": [
+        "E0001",
+        "E0002",
+        "E0003"
+      ]
+    },
+    {
+      "relation_id": "R0002",
+      "relation_type": "contrast",
+      "knowledge_unit_refs": [
+        "K0001",
+        "K0002",
+        "K0003"
+      ],
+      "description": "吉田大橋／とよばしは名称・橋位置・物流中心の再配置、二川・大岩は集落identityの段階的移転、神野新田＋牟呂用水は造成地と長距離インフラ接続という異なる現実構造である。",
+      "evidence_refs": [
+        "E0001",
+        "E0002",
+        "E0003"
+      ]
+    },
+    {
+      "relation_id": "R0003",
+      "relation_type": "qualification",
+      "knowledge_unit_refs": [
+        "K0001",
+        "K0002",
+        "K0003"
+      ],
+      "description": "これらの史実から怪異構造は一意に導出されない。伝承設計では、事実アンカーと創作上の因果モデルを分離して扱う必要がある。",
+      "evidence_refs": [
+        "E0001",
+        "E0002",
+        "E0003"
+      ]
+    }
+  ],
+  "uncertainties": [
+    {
+      "uncertainty_id": "U0001",
+      "description": "吉田大橋／とよばしについて、近世から現代までの名称継承・改称の全時系列はこのEvidence setでは復元していない。",
+      "knowledge_unit_refs": [
+        "K0001"
+      ],
+      "evidence_refs": [
+        "E0001"
+      ]
+    },
+    {
+      "uncertainty_id": "U0002",
+      "description": "二川・大岩の本郷・元屋敷・現在地の精密な地理対応はこのEvidence setでは確認していないため、伝承モデルで具体的な旧地点を断定してはならない。",
+      "knowledge_unit_refs": [
+        "K0002"
+      ],
+      "evidence_refs": [
+        "E0002"
+      ]
+    },
+    {
+      "uncertainty_id": "U0003",
+      "description": "神野新田について、予備的に想定され得る土地状態の反転や決壊・再築の詳細はこのEvidence setでは支持されていない。",
+      "knowledge_unit_refs": [
+        "K0003"
+      ],
+      "evidence_refs": [
+        "E0003"
+      ]
+    },
+    {
+      "uncertainty_id": "U0004",
+      "description": "3アンカーの豊橋固有性はupstream RQ-000030で比較されたが、本Synthesis自体は選定済みSource Evidenceの事実構造のみを表現し、地域固有性の再評価や創作上の優劣付けは行わない。",
+      "knowledge_unit_refs": [
+        "K0001",
+        "K0002",
+        "K0003"
+      ],
+      "evidence_refs": []
+    }
+  ]
+}
