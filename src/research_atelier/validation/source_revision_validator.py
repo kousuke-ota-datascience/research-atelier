@@ -10,7 +10,7 @@ from .schema_validator import ValidationIssue
 
 
 REPO_ROOT = Path(__file__).resolve().parents[3]
-SOURCE_ID_RE = re.compile(r"^SRC-(?:[0-9]{4}|[0-9]{6})$")
+SOURCE_ID_RE = re.compile(r"^SRC-(?:00[0-9]{2}|01[01][0-9]|[0-9]{6})$")
 
 
 def _issue(
