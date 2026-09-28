@@ -1,0 +1,92 @@
+{
+  "schema_version": "2.1.0",
+  "artifact_type": "10_evidence",
+  "investigation_id": "INV-000032",
+  "rq_id": "RQ-000032",
+  "snapshot_at": "2026-09-28T05:49:00.000Z",
+  "sources": [
+    {
+      "source_id": "SRC-0151",
+      "source_revision": {
+        "commit_sha": "ec1f2189d918629fedd2e0c2dc0726c6fb60486d",
+        "blob_sha": "1c3cd087713cbe2f0e1a3c83ab0b1b967ce0e220"
+      },
+      "accessed_at": "2026-09-28T05:49:00.000Z",
+      "notion_url": "https://app.notion.com/p/3e9e5855be39816994bcdb04436bc2f6"
+    }
+  ],
+  "evidence_items": [
+    {
+      "evidence_id": "E0001",
+      "content": "Entry 0180『きさらぎ駅』は、D07で空間・経路異常（SPATIAL_ROUTE_ANOMALY）と隠れた／消失した場所、D13でSPATIAL_DISTORTION、D16でSEQUENTIAL_EPISODE、D18でL1、D21でA2を持つ。したがって、通常地理から別の位置体系へ接続される空間異常・段階進行・実在地アンカーという構造は既存corpusに存在する。",
+      "source_locator": "workspace/articles/f8fe59b49c2e1e/docs/10_each_lore/0180_kisaragi_station/0180_20_analysis.json D07,D13,D16,D18,D21",
+      "selection_reason": "候補A/C/E/Fの位置・経路再解釈構造と比較するため",
+      "note_type": "Data",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-0151",
+        "evidence_note": null
+      }
+    },
+    {
+      "evidence_id": "E0002",
+      "content": "Entry 0060『幽霊タクシー』は、D07=UNKNOWN_EXISTENCE、D10=GHOST_SPIRIT、D11=RIDE_BOARD、D13=MANIFEST_ONLY、D16=SINGLE_EPISODE、D17=OBSERVATIONAL_ONLY、D18=L1、D21=A2である。実在地アンカー＋単一エピソード＋超自然主体という構成は既存corpusに存在する。",
+      "source_locator": "workspace/articles/f8fe59b49c2e1e/docs/10_each_lore/0060_ghost_taxi/0060_20_analysis.json D07-D18,D21",
+      "selection_reason": "候補A/B/Dの単一エピソード・実在地依存構造との対照に使うため",
+      "note_type": "Data",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-0151",
+        "evidence_note": null
+      }
+    },
+    {
+      "evidence_id": "E0003",
+      "content": "Entry 0319『戦場ヶ原大蛇大百足』は、D07で地名由来・地名語源を直接表すChild不足をtaxonomy gapとして明示し、D08=PLACE_NAME_RUIN、D09=EVENT_ORIGIN、D11=LOCATION_STATE、D18=L1+L3、D21=A2を持つ。地名・場所identityそのものを意味形成対象にする場合、現行D07 taxonomyに不足が生じうる。",
+      "source_locator": "workspace/articles/f8fe59b49c2e1e/docs/10_each_lore/0319_senjogahara_daija_oomukade/0319_20_analysis.json D07-D11,D18,D21",
+      "selection_reason": "候補A/C/Dの名称・場所identity再配置が既存taxonomyでどう扱われるか比較するため",
+      "note_type": "Data",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-0151",
+        "evidence_note": null
+      }
+    },
+    {
+      "evidence_id": "E0004",
+      "content": "Entry 0362『豊川信用金庫取付け騒ぎ』は、D12=READER_LISTENER、D13=INFORMATION_INDUCED_ACTION、D15=MARKET_SOCIAL_BEHAVIOR、D16=SEQUENTIAL_EPISODE、D17=VERIFY_DEBUNK、D18=L3、D21=A4を持つ。実在史実を因果構造へ統合するA4と、情報が現実行動へ作用するL3の組合せは既存corpusに存在する。",
+      "source_locator": "workspace/articles/f8fe59b49c2e1e/docs/10_each_lore/0362_toyokawa_shinkin_bank_run/0362_20_analysis.json D12-D18,D21",
+      "selection_reason": "候補B/E/Fの現実インフラ・史実統合がA2かA4か、L1/L3のどちらに相当するかを比較するため",
+      "note_type": "Data",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-0151",
+        "evidence_note": null
+      }
+    },
+    {
+      "evidence_id": "E0005",
+      "content": "Entry 0198『ひとりかくれんぼ』は、実行手順・参加者・終了法を持つ実行儀式型ネットロアとしてcodingされており、D11-D17に発動条件・対象・作用・帰結・解除規則を明示的に持つ。したがって、解除規則を持つこと自体は既存corpusで一般に表現可能である。",
+      "source_locator": "workspace/articles/f8fe59b49c2e1e/docs/10_each_lore/0198_hitori_kakurenbo/0198_20_analysis.json D11-D17",
+      "selection_reason": "RQ-000031候補のD17解除規則がtaxonomy上特異かを比較するため",
+      "note_type": "Data",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-0151",
+        "evidence_note": null
+      }
+    },
+    {
+      "evidence_id": "E0006",
+      "content": "Corpus内にはD07の既存Childで空間・経路異常を表現できるEntryがある一方、Entry 0319では『地名由来・地名語源』がD07 taxonomy gapと判定されている。これは、空間異常そのものと、名称・場所identityの意味形成を区別する必要があることを示す。",
+      "source_locator": "0180_20_analysis.json D07 と 0319_20_analysis.json D07 の比較",
+      "selection_reason": "候補A/C/Dの新規性が単なる空間異常ではなくidentity再配置にあるかを評価するため",
+      "note_type": "Result",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-0151",
+        "evidence_note": null
+      }
+    }
+  ]
+}
