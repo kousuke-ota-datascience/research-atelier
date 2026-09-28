@@ -1,0 +1,1846 @@
+{
+  "schema_version": "1.0",
+  "artifact_type": "corpus_comparison_snapshot",
+  "investigation_id": "INV-000032",
+  "source_id": "SRC-0151",
+  "source_commit": "8f69a1aec1955229cc1c3b6c2591a07c3b657265",
+  "generated_at": "2026-09-28T10:50:00Z",
+  "complete": false,
+  "entries": [
+    {
+      "entry_id": "0001",
+      "path": "workspace/articles/f8fe59b49c2e1e/docs/10_each_lore/0001_kuchisake_onna/0001_20_analysis.json",
+      "blob_sha": "3a64c3bb211607662e2c3dc0375460e95b6dd73a",
+      "dimensions": [
+        {
+          "dimension_id": "D01",
+          "status": "I",
+          "primary": "D01.G3",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D02",
+          "status": "U",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D03",
+          "status": "I",
+          "primary": "D03.ORL.PEER_ORAL",
+          "secondary": [
+            "D03.PRT.MAGAZINE",
+            "D03.PRT.NEWSPAPER"
+          ]
+        },
+        {
+          "dimension_id": "D04",
+          "status": "I",
+          "primary": "D04.MIG.MEDIUM_SHIFT",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D05",
+          "status": "D",
+          "primary": "D05.PRP.FACT_CLAIM",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D06",
+          "status": "U",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D07",
+          "status": "D",
+          "primary": "D07.ICT.ABDUCTION_ASSAULT",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D08",
+          "status": "I",
+          "primary": "D08.STY.COMMUNITY_REPETITION",
+          "secondary": [
+            "D08.CLM.UNSUPPORTED_ASSERTION"
+          ]
+        },
+        {
+          "dimension_id": "D09",
+          "status": "I",
+          "primary": "D09.CAT.NAMING",
+          "secondary": [
+            "D09.AGN.AGENCY_ATTRIBUTION"
+          ]
+        },
+        {
+          "dimension_id": "D10",
+          "status": "U",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D11",
+          "status": "U",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D12",
+          "status": "D",
+          "primary": "D12.GRP.DEMOGRAPHIC_GROUP",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D13",
+          "status": "D",
+          "primary": "D13.PHY.PHYSICAL_ATTACK",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D14",
+          "status": "D",
+          "primary": "D14.NEG",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D15",
+          "status": "U",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D16",
+          "status": "U",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D17",
+          "status": "U",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D18",
+          "status": "I",
+          "primary": "D18.L1",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D19",
+          "status": "I",
+          "primary": "D19.KIN.SCHOOL_YOUTH",
+          "secondary": [
+            "D19.LOC.REGIONAL"
+          ]
+        },
+        {
+          "dimension_id": "D20",
+          "status": "U",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D21",
+          "status": "I",
+          "primary": "D21.A1",
+          "secondary": []
+        }
+      ]
+    },
+    {
+      "entry_id": "0003",
+      "path": "workspace/articles/f8fe59b49c2e1e/docs/10_each_lore/0003_akai_kami_aoi_kami/0003_20_analysis.json",
+      "blob_sha": "aed4a24e9ee44b7501f23bfec3e6b1719533d4ab",
+      "dimensions": [
+        {
+          "dimension_id": "D01",
+          "status": "U",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D02",
+          "status": "U",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D03",
+          "status": "U",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D04",
+          "status": "U",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D05",
+          "status": "I",
+          "primary": "D05.HRS.SCHOOL_WORK_HEARSAY",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D06",
+          "status": "I",
+          "primary": "D06.T3",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D07",
+          "status": "I",
+          "primary": "D07.ANO.UNKNOWN_EXISTENCE",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D08",
+          "status": "I",
+          "primary": "D08.STY.COMMUNITY_REPETITION",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D09",
+          "status": "D",
+          "primary": "D09.AGN.AGENCY_ATTRIBUTION",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D10",
+          "status": "D",
+          "primary": "D10.SUP.YOKAI_ENTITY",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D11",
+          "status": "D",
+          "primary": "D11.MOV.ENTER_PASS_CROSS",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D12",
+          "status": "I",
+          "primary": "D12.FOC.PROTAGONIST_EXPERIENCER",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D13",
+          "status": "I",
+          "primary": "D13.MAN.MANIFEST_ONLY",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D14",
+          "status": "U",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D15",
+          "status": "U",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D16",
+          "status": "I",
+          "primary": "D16.EVT.SINGLE_EPISODE",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D17",
+          "status": "U",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D18",
+          "status": "D",
+          "primary": "D18.L1",
+          "secondary": [
+            "D18.L3"
+          ]
+        },
+        {
+          "dimension_id": "D19",
+          "status": "D",
+          "primary": "D19.KIN.SCHOOL_YOUTH",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D20",
+          "status": "U",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D21",
+          "status": "I",
+          "primary": "D21.A1",
+          "secondary": []
+        }
+      ]
+    },
+    {
+      "entry_id": "0005",
+      "path": "workspace/articles/f8fe59b49c2e1e/docs/10_each_lore/0005_murasaki_no_kagami/0005_20_analysis.json",
+      "blob_sha": "234aa987928b36e4fd5777757a8465f7ef6e1949",
+      "dimensions": [
+        {
+          "dimension_id": "D01",
+          "status": "U",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D02",
+          "status": "U",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D03",
+          "status": "U",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D04",
+          "status": "I",
+          "primary": "D04.VAR.ORAL_VARIATION",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D05",
+          "status": "I",
+          "primary": "D05.RUL.JINX_RULE",
+          "secondary": [
+            "D05.PRP.PREDICTIVE_CLAIM"
+          ]
+        },
+        {
+          "dimension_id": "D06",
+          "status": "I",
+          "primary": "D06.T5",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D07",
+          "status": "I",
+          "primary": "D07.DCF.FATE_OMEN",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D08",
+          "status": "I",
+          "primary": "D08.CLM.UNSUPPORTED_ASSERTION",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D09",
+          "status": "I",
+          "primary": "D09.PPR.CORRELATION_RULE",
+          "secondary": [
+            "D09.NOR.TABOOIZATION"
+          ]
+        },
+        {
+          "dimension_id": "D10",
+          "status": "I",
+          "primary": "D10.OBJ.SYMBOL_NAME_IMAGE",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D11",
+          "status": "I",
+          "primary": "D11.INF.SAY_NAME_REMEMBER",
+          "secondary": [
+            "D11.CON.AGE_LIFESTAGE"
+          ]
+        },
+        {
+          "dimension_id": "D12",
+          "status": "I",
+          "primary": "D12.AUD.READER_LISTENER",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D13",
+          "status": "I",
+          "primary": "D13.COG.COGNITION_TRIGGERED_HARM",
+          "secondary": [
+            "D13.FAT.CURSE_MISFORTUNE"
+          ]
+        },
+        {
+          "dimension_id": "D14",
+          "status": "I",
+          "primary": "D14.NEG",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D15",
+          "status": "I",
+          "primary": "D15.BOD.DEATH",
+          "secondary": [
+            "D15.OPP.LUCK_MISFORTUNE"
+          ]
+        },
+        {
+          "dimension_id": "D16",
+          "status": "I",
+          "primary": "D16.DLY.DEADLINE",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D17",
+          "status": "I",
+          "primary": "D17.RUL.OBEY_TABOO",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D18",
+          "status": "I",
+          "primary": "D18.L2",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D19",
+          "status": "I",
+          "primary": "D19.KIN.SCHOOL_YOUTH",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D20",
+          "status": "I",
+          "primary": "D20.HAZ.DANGEROUS_TO_KNOW",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D21",
+          "status": "I",
+          "primary": "D21.A0",
+          "secondary": []
+        }
+      ]
+    },
+    {
+      "entry_id": "0006",
+      "path": "workspace/articles/f8fe59b49c2e1e/docs/10_each_lore/0006_merry_san_no_denwa/0006_20_analysis.json",
+      "blob_sha": "2b96e74419ca307008fdbfc9ffd085571e7b2a66",
+      "dimensions": [
+        {
+          "dimension_id": "D01",
+          "status": "U",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D02",
+          "status": "U",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D03",
+          "status": "I",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D04",
+          "status": "U",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D05",
+          "status": "I",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D06",
+          "status": "U",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D07",
+          "status": "I",
+          "primary": "D07.ANO.UNKNOWN_EXISTENCE",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D08",
+          "status": "I",
+          "primary": "D08.DEX.DIRECT_EVENT",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D09",
+          "status": "I",
+          "primary": "D09.AGN.AGENCY_ATTRIBUTION",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D10",
+          "status": "I",
+          "primary": "D10.SUP.YOKAI_ENTITY",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D11",
+          "status": "D",
+          "primary": "D11.INF.RECEIVE_MESSAGE",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D12",
+          "status": "D",
+          "primary": "D12.FOC.PROTAGONIST_EXPERIENCER",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D13",
+          "status": "D",
+          "primary": "D13.REL.PURSUIT",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D14",
+          "status": "D",
+          "primary": "D14.NEU",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D15",
+          "status": "I",
+          "primary": "D15.KNW.REVELATION_KNOWLEDGE",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D16",
+          "status": "D",
+          "primary": "D16.EVT.SEQUENTIAL_EPISODE",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D17",
+          "status": "U",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D18",
+          "status": "D",
+          "primary": "D18.L1",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D19",
+          "status": "U",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D20",
+          "status": "U",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D21",
+          "status": "D",
+          "primary": "D21.A1",
+          "secondary": []
+        }
+      ]
+    },
+    {
+      "entry_id": "0011",
+      "path": "workspace/articles/f8fe59b49c2e1e/docs/10_each_lore/0011_kokkuri_san/0011_20_analysis.json",
+      "blob_sha": "fae11fef6727b3529a481b7dff0acfb7b080cf52",
+      "dimensions": [
+        {
+          "dimension_id": "D01",
+          "status": "I",
+          "primary": "D01.G1",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D02",
+          "status": "U",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D03",
+          "status": "U",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D04",
+          "status": "U",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D05",
+          "status": "I",
+          "primary": "D05.RUL.RITUAL_PROCEDURE",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D06",
+          "status": "I",
+          "primary": "D06.T5",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D07",
+          "status": "I",
+          "primary": "D07.ISU.INFORMATION_VOID",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D08",
+          "status": "U",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D09",
+          "status": "I",
+          "primary": "D09.CTL.RITUAL_RULE",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D10",
+          "status": "I",
+          "primary": "D10.SUP.GHOST_SPIRIT",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D11",
+          "status": "I",
+          "primary": "D11.MAN.PERFORM_RITUAL",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D12",
+          "status": "C",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D13",
+          "status": "C",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D14",
+          "status": "U",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D15",
+          "status": "I",
+          "primary": "D15.KNW.REVELATION_KNOWLEDGE",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D16",
+          "status": "I",
+          "primary": "D16.EVT.SEQUENTIAL_EPISODE",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D17",
+          "status": "U",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D18",
+          "status": "I",
+          "primary": "D18.L1",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D19",
+          "status": "I",
+          "primary": "D19.MAS.NATIONAL_PUBLIC",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D20",
+          "status": "U",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D21",
+          "status": "I",
+          "primary": "D21.A0",
+          "secondary": []
+        }
+      ]
+    },
+    {
+      "entry_id": "0019",
+      "path": "workspace/articles/f8fe59b49c2e1e/docs/10_each_lore/0019_chiisai_ojisan/0019_20_analysis.json",
+      "blob_sha": "002da1f26e7a97f222baf3e1a28792e12944138e",
+      "dimensions": [
+        {
+          "dimension_id": "D01",
+          "status": "U",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D02",
+          "status": "U",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D03",
+          "status": "D",
+          "primary": "D03.WEB.WEBSITE",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D04",
+          "status": "U",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D05",
+          "status": "D",
+          "primary": "D05.HYB.MULTI_TESTIMONY",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D06",
+          "status": "I",
+          "primary": "D06.T1",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D07",
+          "status": "D",
+          "primary": "D07.ANO.UNKNOWN_EXISTENCE",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D08",
+          "status": "D",
+          "primary": "D08.STY.WITNESS_REPORT",
+          "secondary": [
+            "D08.TRC.PHOTO_VIDEO_AUDIO",
+            "D08.TRC.PHYSICAL_TRACE"
+          ]
+        },
+        {
+          "dimension_id": "D09",
+          "status": "I",
+          "primary": "D09.CAT.TYPE_ASSIGNMENT",
+          "secondary": [
+            "D09.HST.HISTORICAL_ANCHOR"
+          ]
+        },
+        {
+          "dimension_id": "D10",
+          "status": "U",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D11",
+          "status": "D",
+          "primary": "D11.SEN.VISUAL_EXPOSURE",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D12",
+          "status": "D",
+          "primary": "D12.FOC.PROTAGONIST_EXPERIENCER",
+          "secondary": [
+            "D12.OTD.OBJECT_PRODUCT"
+          ]
+        },
+        {
+          "dimension_id": "D13",
+          "status": "I",
+          "primary": "D13.MAN.MANIFEST_ONLY",
+          "secondary": [
+            "D13.PHY.BODY_TRANSFORMATION",
+            "D13.PHY.ENV_OBJECT_MANIPULATION"
+          ]
+        },
+        {
+          "dimension_id": "D14",
+          "status": "I",
+          "primary": "D14.NEU",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D15",
+          "status": "I",
+          "primary": "D15.KNW.UNCERTAINTY_PRESERVED",
+          "secondary": [
+            "D15.BOD.BODY_CHANGE_CONTAMINATION"
+          ]
+        },
+        {
+          "dimension_id": "D16",
+          "status": "I",
+          "primary": "D16.EVT.SINGLE_OBSERVATION",
+          "secondary": [
+            "D16.REC.PERIODIC"
+          ]
+        },
+        {
+          "dimension_id": "D17",
+          "status": "I",
+          "primary": "D17.NON.OBSERVATIONAL_ONLY",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D18",
+          "status": "I",
+          "primary": "D18.L1",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D19",
+          "status": "U",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D20",
+          "status": "U",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D21",
+          "status": "D",
+          "primary": "D21.A1",
+          "secondary": []
+        }
+      ]
+    },
+    {
+      "entry_id": "0024",
+      "path": "workspace/articles/f8fe59b49c2e1e/docs/10_each_lore/0024_kofuku_no_tegami/0024_20_analysis.json",
+      "blob_sha": "2f0a7d8a50cd3c54fb7ddcbcfd145e807aa2c017",
+      "dimensions": [
+        {
+          "dimension_id": "D01",
+          "status": "D",
+          "primary": "D01.G1",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D02",
+          "status": "I",
+          "primary": "D02.PRT.CHAIN_LETTER",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D03",
+          "status": "I",
+          "primary": "D03.PRT.CHAIN_LETTER",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D04",
+          "status": "U",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D05",
+          "status": "I",
+          "primary": "D05.RUL.CHAIN_INSTRUCTION",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D06",
+          "status": "I",
+          "primary": "D06.T5",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D07",
+          "status": "I",
+          "primary": "D07.DCF.FATE_OMEN",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D08",
+          "status": "I",
+          "primary": "D08.TRC.TEXT_DOCUMENT",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D09",
+          "status": "I",
+          "primary": "D09.PPR.OMEN_FORECAST",
+          "secondary": [
+            "D09.CTL.TRANSMISSION_RULE"
+          ]
+        },
+        {
+          "dimension_id": "D10",
+          "status": "I",
+          "primary": "D10.OBJ.INFORMATION_CONTENT",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D11",
+          "status": "I",
+          "primary": "D11.INF.RECEIVE_MESSAGE",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D12",
+          "status": "I",
+          "primary": "D12.AUD.READER_LISTENER",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D13",
+          "status": "I",
+          "primary": "D13.FAT.LUCK_BENEFIT",
+          "secondary": [
+            "D13.FAT.CURSE_MISFORTUNE"
+          ]
+        },
+        {
+          "dimension_id": "D14",
+          "status": "I",
+          "primary": "D14.MIX",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D15",
+          "status": "I",
+          "primary": "D15.OPP.LUCK_MISFORTUNE",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D16",
+          "status": "I",
+          "primary": "D16.DLY.DEADLINE",
+          "secondary": [
+            "D16.TRN.CHAIN_SPREAD"
+          ]
+        },
+        {
+          "dimension_id": "D17",
+          "status": "I",
+          "primary": "D17.USE.LUCK_EXPLOITATION",
+          "secondary": [
+            "D17.RUL.PROCEDURAL_RULE"
+          ]
+        },
+        {
+          "dimension_id": "D18",
+          "status": "I",
+          "primary": "D18.L1",
+          "secondary": [
+            "D18.L2",
+            "D18.L3"
+          ]
+        },
+        {
+          "dimension_id": "D19",
+          "status": "U",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D20",
+          "status": "U",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D21",
+          "status": "I",
+          "primary": "D21.A1",
+          "secondary": []
+        }
+      ]
+    },
+    {
+      "entry_id": "0025",
+      "path": "workspace/articles/f8fe59b49c2e1e/docs/10_each_lore/0025_fuko_no_tegami/0025_20_analysis.json",
+      "blob_sha": "03fb7dcec984ea065a9899af993aee38890b02c3",
+      "dimensions": [
+        {
+          "dimension_id": "D01",
+          "status": "I",
+          "primary": "D01.G3",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D02",
+          "status": "I",
+          "primary": "D02.PRT.CHAIN_LETTER",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D03",
+          "status": "D",
+          "primary": "D03.PRT.CHAIN_LETTER",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D04",
+          "status": "I",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D05",
+          "status": "D",
+          "primary": "D05.RUL.CHAIN_INSTRUCTION",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D06",
+          "status": "D",
+          "primary": "D06.T5",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D07",
+          "status": "I",
+          "primary": "D07.DCF.FATE_OMEN",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D08",
+          "status": "D",
+          "primary": "D08.TRC.TEXT_DOCUMENT",
+          "secondary": [
+            "D08.CLM.UNSUPPORTED_ASSERTION"
+          ]
+        },
+        {
+          "dimension_id": "D09",
+          "status": "I",
+          "primary": "D09.PPR.OMEN_FORECAST",
+          "secondary": [
+            "D09.CTL.TRANSMISSION_RULE"
+          ]
+        },
+        {
+          "dimension_id": "D10",
+          "status": "I",
+          "primary": "D10.OBJ.INFORMATION_CONTENT",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D11",
+          "status": "D",
+          "primary": "D11.INF.RECEIVE_MESSAGE",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D12",
+          "status": "D",
+          "primary": "D12.AUD.READER_LISTENER",
+          "secondary": [
+            "D12.AUD.NEXT_RECIPIENT"
+          ]
+        },
+        {
+          "dimension_id": "D13",
+          "status": "D",
+          "primary": "D13.FAT.CURSE_MISFORTUNE",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D14",
+          "status": "D",
+          "primary": "D14.NEG",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D15",
+          "status": "D",
+          "primary": "D15.OPP.LUCK_MISFORTUNE",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D16",
+          "status": "D",
+          "primary": "D16.DLY.DEADLINE",
+          "secondary": [
+            "D16.TRN.CHAIN_SPREAD"
+          ]
+        },
+        {
+          "dimension_id": "D17",
+          "status": "I",
+          "primary": "D17.CST.TRANSFER_SUBSTITUTE",
+          "secondary": [
+            "D17.RUL.PROCEDURAL_RULE"
+          ]
+        },
+        {
+          "dimension_id": "D18",
+          "status": "D",
+          "primary": "D18.L1",
+          "secondary": [
+            "D18.L2",
+            "D18.L3"
+          ]
+        },
+        {
+          "dimension_id": "D19",
+          "status": "I",
+          "primary": "D19.KIN.SCHOOL_YOUTH",
+          "secondary": [
+            "D19.MAS.NATIONAL_PUBLIC",
+            "D19.LOC.REGIONAL"
+          ]
+        },
+        {
+          "dimension_id": "D20",
+          "status": "I",
+          "primary": "D20.NON.NO_HIDDEN_TRUTH",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D21",
+          "status": "I",
+          "primary": "D21.A1",
+          "secondary": []
+        }
+      ]
+    },
+    {
+      "entry_id": "0060",
+      "path": "workspace/articles/f8fe59b49c2e1e/docs/10_each_lore/0060_ghost_taxi/0060_20_analysis.json",
+      "blob_sha": "6e20d653984261244b9be413190cbba9aa84a99d",
+      "dimensions": [
+        {
+          "dimension_id": "D01",
+          "status": "U",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D02",
+          "status": "I",
+          "primary": "D02.ORL.WORKPLACE_ORAL",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D03",
+          "status": "I",
+          "primary": "D03.ORL.WORKPLACE_ORAL",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D04",
+          "status": "U",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D05",
+          "status": "I",
+          "primary": "D05.HRS.FOAF",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D06",
+          "status": "I",
+          "primary": "D06.T2",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D07",
+          "status": "I",
+          "primary": "D07.ANO.UNKNOWN_EXISTENCE",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D08",
+          "status": "I",
+          "primary": "D08.DEX.DIRECT_EVENT",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D09",
+          "status": "I",
+          "primary": "D09.AGN.AGENCY_ATTRIBUTION",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D10",
+          "status": "I",
+          "primary": "D10.SUP.GHOST_SPIRIT",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D11",
+          "status": "I",
+          "primary": "D11.MOV.RIDE_BOARD",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D12",
+          "status": "I",
+          "primary": "D12.FOC.PROTAGONIST_EXPERIENCER",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D13",
+          "status": "I",
+          "primary": "D13.MAN.MANIFEST_ONLY",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D14",
+          "status": "I",
+          "primary": "D14.NEU",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D15",
+          "status": "I",
+          "primary": "D15.KNW.REVELATION_KNOWLEDGE",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D16",
+          "status": "I",
+          "primary": "D16.EVT.SINGLE_EPISODE",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D17",
+          "status": "I",
+          "primary": "D17.NON.OBSERVATIONAL_ONLY",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D18",
+          "status": "I",
+          "primary": "D18.L1",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D19",
+          "status": "I",
+          "primary": "D19.PRO.OCCUPATIONAL",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D20",
+          "status": "I",
+          "primary": "D20.PER.FAMILY_BLOODLINE",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D21",
+          "status": "I",
+          "primary": "D21.A2",
+          "secondary": []
+        }
+      ]
+    },
+    {
+      "entry_id": "0178",
+      "path": "workspace/articles/f8fe59b49c2e1e/docs/10_each_lore/0178_saruyume/0178_20_analysis.json",
+      "blob_sha": "c559fb854e19fa0a69ec37bd01d18f0ac869de71",
+      "dimensions": [
+        {
+          "dimension_id": "D01",
+          "status": "U",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D02",
+          "status": "I",
+          "primary": "D02.WEB.FORUM",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D03",
+          "status": "I",
+          "primary": "D03.WEB.FORUM",
+          "secondary": [
+            "D03.WEB.WEBSITE"
+          ]
+        },
+        {
+          "dimension_id": "D04",
+          "status": "I",
+          "primary": "D04.VAR.ACCRETION",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D05",
+          "status": "I",
+          "primary": "D05.EXP.RETROSPECTIVE_1P",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D06",
+          "status": "I",
+          "primary": "D06.T1",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D07",
+          "status": "I",
+          "primary": "D07.ANO.DREAM_SLEEP_ANOMALY",
+          "secondary": [
+            "D07.ANO.UNEXPLAINED_EVENT"
+          ]
+        },
+        {
+          "dimension_id": "D08",
+          "status": "I",
+          "primary": "D08.DEX.DREAM_SLEEP_EVENT",
+          "secondary": [
+            "D08.DEX.PERCEPTUAL_ANOMALY"
+          ]
+        },
+        {
+          "dimension_id": "D09",
+          "status": "I",
+          "primary": "D09.UNK.DELIBERATE_NONRESOLUTION",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D10",
+          "status": "I",
+          "primary": "D10.PHN.DREAM_SLEEP_PHENOMENON",
+          "secondary": [
+            "D10.PHN.ANOMALOUS_EXPERIENCE"
+          ]
+        },
+        {
+          "dimension_id": "D11",
+          "status": "I",
+          "primary": "D11.MOV.RIDE_BOARD",
+          "secondary": [
+            "D11.PAS.SLEEP_DREAM"
+          ]
+        },
+        {
+          "dimension_id": "D12",
+          "status": "I",
+          "primary": "D12.FOC.PROTAGONIST_EXPERIENCER",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D13",
+          "status": "I",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D14",
+          "status": "I",
+          "primary": "D14.NEG",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D15",
+          "status": "I",
+          "primary": "D15.KNW.UNCERTAINTY_PRESERVED",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D16",
+          "status": "I",
+          "primary": "D16.REC.RECURRENT",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D17",
+          "status": "I",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D18",
+          "status": "I",
+          "primary": "D18.L1",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D19",
+          "status": "I",
+          "primary": "D19.NET.OPEN_FORUM_WEB",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D20",
+          "status": "U",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D21",
+          "status": "I",
+          "primary": "D21.A1",
+          "secondary": []
+        }
+      ]
+    },
+    {
+      "entry_id": "0179",
+      "path": "workspace/articles/f8fe59b49c2e1e/docs/10_each_lore/0179_kunekune/0179_20_analysis.json",
+      "blob_sha": "910618e914d440d57ae34383a9bd5c43ce0d7993",
+      "dimensions": [
+        {
+          "dimension_id": "D01",
+          "status": "U",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D02",
+          "status": "I",
+          "primary": "D02.WEB.FORUM",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D03",
+          "status": "I",
+          "primary": "D03.WEB.FORUM",
+          "secondary": [
+            "D03.WEB.WEBSITE"
+          ]
+        },
+        {
+          "dimension_id": "D04",
+          "status": "I",
+          "primary": "D04.VAR.ACCRETION",
+          "secondary": [
+            "D04.VAR.RETELLING"
+          ]
+        },
+        {
+          "dimension_id": "D05",
+          "status": "I",
+          "primary": "D05.EXP.RETROSPECTIVE_1P",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D06",
+          "status": "C",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D07",
+          "status": "I",
+          "primary": "D07.ANO.UNKNOWN_EXISTENCE",
+          "secondary": [
+            "D07.ANO.ANOMALOUS_PERCEPTION"
+          ]
+        },
+        {
+          "dimension_id": "D08",
+          "status": "I",
+          "primary": "D08.DEX.DIRECT_EVENT",
+          "secondary": [
+            "D08.DEX.PERCEPTUAL_ANOMALY"
+          ]
+        },
+        {
+          "dimension_id": "D09",
+          "status": "I",
+          "primary": "D09.UNK.FORBIDDEN_INQUIRY",
+          "secondary": [
+            "D09.UNK.DELIBERATE_NONRESOLUTION"
+          ]
+        },
+        {
+          "dimension_id": "D10",
+          "status": "U",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D11",
+          "status": "I",
+          "primary": "D11.INF.UNDERSTAND_RECOGNIZE",
+          "secondary": [
+            "D11.SEN.VISUAL_EXPOSURE"
+          ]
+        },
+        {
+          "dimension_id": "D12",
+          "status": "I",
+          "primary": "D12.OTH.SPECIFIC_OTHER",
+          "secondary": [
+            "D12.FOC.PROTAGONIST_EXPERIENCER"
+          ]
+        },
+        {
+          "dimension_id": "D13",
+          "status": "I",
+          "primary": "D13.COG.COGNITION_TRIGGERED_HARM",
+          "secondary": [
+            "D13.COG.MENTAL_INFLUENCE"
+          ]
+        },
+        {
+          "dimension_id": "D14",
+          "status": "I",
+          "primary": "D14.NEG",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D15",
+          "status": "I",
+          "primary": "D15.MND.SELF_IDENTITY_DISRUPTION",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D16",
+          "status": "I",
+          "primary": "D16.EVT.SEQUENTIAL_EPISODE",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D17",
+          "status": "I",
+          "primary": "D17.AVO.DO_NOT_ENGAGE",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D18",
+          "status": "I",
+          "primary": "D18.L1",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D19",
+          "status": "I",
+          "primary": "D19.NET.OPEN_FORUM_WEB",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D20",
+          "status": "I",
+          "primary": "D20.PER.FAMILY_BLOODLINE",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D21",
+          "status": "I",
+          "primary": "D21.A1",
+          "secondary": []
+        }
+      ]
+    },
+    {
+      "entry_id": "0180",
+      "path": "workspace/articles/f8fe59b49c2e1e/docs/10_each_lore/0180_kisaragi_station/0180_20_analysis.json",
+      "blob_sha": "035f2a9612e8359e71ab7c54d756a5f5256cdb27",
+      "dimensions": [
+        {
+          "dimension_id": "D01",
+          "status": "D",
+          "primary": "D01.G6",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D02",
+          "status": "D",
+          "primary": "D02.WEB.FORUM",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D03",
+          "status": "D",
+          "primary": "D03.WEB.FORUM",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D04",
+          "status": "D",
+          "primary": "D04.COL.LIVE_COCREATION",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D05",
+          "status": "D",
+          "primary": "D05.HYB.COLLAB_THREAD",
+          "secondary": [
+            "D05.EXP.LIVE_1P"
+          ]
+        },
+        {
+          "dimension_id": "D06",
+          "status": "D",
+          "primary": "D06.T1",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D07",
+          "status": "D",
+          "primary": "D07.PSE.SPATIAL_ROUTE_ANOMALY",
+          "secondary": [
+            "D07.PSE.HIDDEN_VANISHED_PLACE"
+          ]
+        },
+        {
+          "dimension_id": "D08",
+          "status": "D",
+          "primary": "D08.DEX.DIRECT_EVENT",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D09",
+          "status": "I",
+          "primary": "D09.UNK.DELIBERATE_NONRESOLUTION",
+          "secondary": [
+            "D09.CAT.TYPE_ASSIGNMENT"
+          ]
+        },
+        {
+          "dimension_id": "D10",
+          "status": "U",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D11",
+          "status": "I",
+          "primary": "D11.PAS.ACCIDENT_INVOLVEMENT",
+          "secondary": [
+            "D11.MOV.RIDE_BOARD"
+          ]
+        },
+        {
+          "dimension_id": "D12",
+          "status": "D",
+          "primary": "D12.FOC.PROTAGONIST_EXPERIENCER",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D13",
+          "status": "I",
+          "primary": "D13.RST.SPATIAL_DISTORTION",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D14",
+          "status": "I",
+          "primary": "D14.NEG",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D15",
+          "status": "D",
+          "primary": "D15.KNW.UNCERTAINTY_PRESERVED",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D16",
+          "status": "D",
+          "primary": "D16.EVT.SEQUENTIAL_EPISODE",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D17",
+          "status": "I",
+          "primary": "D17.UNA.NO_KNOWN_ESCAPE",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D18",
+          "status": "I",
+          "primary": "D18.L1",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D19",
+          "status": "D",
+          "primary": "D19.NET.OPEN_FORUM_WEB",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D20",
+          "status": "U",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D21",
+          "status": "D",
+          "primary": "D21.A2",
+          "secondary": []
+        }
+      ]
+    },
+    {
+      "entry_id": "0181",
+      "path": "workspace/articles/f8fe59b49c2e1e/docs/10_each_lore/0181_kotoribako/0181_20_analysis.json",
+      "blob_sha": "62deb6d6c5929172034355dffbe4e85194494c8a",
+      "dimensions": [
+        {
+          "dimension_id": "D01",
+          "status": "D",
+          "primary": "D01.G6",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D02",
+          "status": "D",
+          "primary": "D02.WEB.FORUM",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D03",
+          "status": "D",
+          "primary": "D03.WEB.FORUM",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D04",
+          "status": "I",
+          "primary": "D04.VAR.ACCRETION",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D05",
+          "status": "I",
+          "primary": "D05.EXP.EXPERIENCE_SUMMARY",
+          "secondary": [
+            "D05.HYB.COLLAB_THREAD"
+          ]
+        },
+        {
+          "dimension_id": "D06",
+          "status": "I",
+          "primary": "D06.T6",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D07",
+          "status": "D",
+          "primary": "D07.ANO.UNKNOWN_EXISTENCE",
+          "secondary": [
+            "D07.DCF.UNEXPLAINED_DEATH_LOSS"
+          ]
+        },
+        {
+          "dimension_id": "D08",
+          "status": "I",
+          "primary": "D08.STY.WITNESS_REPORT",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D09",
+          "status": "D",
+          "primary": "D09.CAU.HIDDEN_CAUSE",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D10",
+          "status": "D",
+          "primary": "D10.OBJ.CURSED_OBJECT",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D11",
+          "status": "I",
+          "primary": "D11.MAN.TAKE_OWN_CARRY",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D12",
+          "status": "D",
+          "primary": "D12.GRP.DEMOGRAPHIC_GROUP",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D13",
+          "status": "D",
+          "primary": "D13.FAT.CURSE_MISFORTUNE",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D14",
+          "status": "D",
+          "primary": "D14.NEG",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D15",
+          "status": "I",
+          "primary": "D15.BOD.DEATH",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D16",
+          "status": "I",
+          "primary": "D16.EVT.SEQUENTIAL_EPISODE",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D17",
+          "status": "I",
+          "primary": "D17.RIT.RITUAL_CLOSURE",
+          "secondary": [
+            "D17.RIT.RELIGIOUS_SPECIALIST",
+            "D17.CST.ONGOING_MANAGEMENT"
+          ]
+        },
+        {
+          "dimension_id": "D18",
+          "status": "D",
+          "primary": "D18.L1",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D19",
+          "status": "D",
+          "primary": "D19.NET.OPEN_FORUM_WEB",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D20",
+          "status": "I",
+          "primary": "D20.INS.LOCAL_RESIDENT",
+          "secondary": [
+            "D20.EXP.RELIGIOUS_FOLKLORE"
+          ]
+        },
+        {
+          "dimension_id": "D21",
+          "status": "I",
+          "primary": "D21.A4",
+          "secondary": []
+        }
+      ]
+    }
+  ],
+  "aggregate": null
+}
