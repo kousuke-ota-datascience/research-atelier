@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000029",
+  "review_seq": 3,
+  "layer": "00_context",
+  "review_kind": "context_semantic_validity",
+  "target_blob_sha": "e190ba141b96a0e3ab56a944c2572d4af5835809",
+  "assessment": "The frozen Context is unchanged from Reviews 000001/000002 and remains semantically coherent with RQ-000029. It defines real-world-anchor availability as the existence of a verifiable fact connectable to a legend model rather than as creative superiority, preserves the distinction between verified history and unverified tradition, and keeps scope, exclusions, temporal boundary, assumptions, and Exploratory Question Type mutually consistent. No Context defect requiring repair is identified.",
+  "findings": [],
+  "verdict": "PASS"
+}

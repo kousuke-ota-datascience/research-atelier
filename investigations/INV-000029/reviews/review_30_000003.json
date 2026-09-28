@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000029",
+  "review_seq": 3,
+  "layer": "30_analysis",
+  "review_kind": "20_synthesis_plus_00_context_to_30_analysis",
+  "target_blob_sha": "8bfb980fcb86d4ed82b54167e6700ff7f5974cfe",
+  "assessment": "Review 000002 F001 is repaired as directed: candidate_hypotheses[2] now describes Kanno Shinden neutrally as a possible real-world-anchor candidate, and J0004 now describes the Oni Festival/Suseno Jana pair simply as regional anchor candidates. Re-reviewing the complete Analysis finds the Working Answer, profile, judgments, limitations, unresolved questions, and alternative interpretations traceable to the unchanged Synthesis and consistent with the frozen Context. Structural-connectability statements remain non-comparative; the unsupported Kanno land-state inversion is still explicitly withheld; existing folklore is kept distinct from history-first candidates; and non-exhaustiveness plus primary-source gaps remain visible. No residual creative-superiority claim, unsupported factual overreach, or Synthesis bypass is identified.",
+  "findings": [],
+  "verdict": "PASS"
+}
