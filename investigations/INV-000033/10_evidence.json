@@ -1,0 +1,152 @@
+{
+  "schema_version": "2.1.0",
+  "artifact_type": "10_evidence",
+  "investigation_id": "INV-000033",
+  "rq_id": "RQ-000033",
+  "snapshot_at": "2026-09-28T07:05:26.919Z",
+  "sources": [
+    {
+      "source_id": "SRC-0143",
+      "source_revision": {
+        "commit_sha": "8d6e4cc58aa748023de6d1d3c01ae2333a269ed2",
+        "blob_sha": "dc154b4c89f53c0446d94f31420b033df71c0d52"
+      },
+      "accessed_at": "2026-09-28T07:05:26.919Z",
+      "notion_url": "https://app.notion.com/p/3e9e5855be398106b898e984d10cf100"
+    },
+    {
+      "source_id": "SRC-0144",
+      "source_revision": {
+        "commit_sha": "9a9582836941fda05dc3e0762f496e4a6661670d",
+        "blob_sha": "e5ceb87e25fef6805de40904a75b180e48f0441d"
+      },
+      "accessed_at": "2026-09-28T07:05:26.919Z",
+      "notion_url": "https://app.notion.com/p/3e9e5855be39811299aff11603223dec"
+    },
+    {
+      "source_id": "SRC-0146",
+      "source_revision": {
+        "commit_sha": "4b3cb810f83fd24f508b9b066dbb85a7ebcfded2",
+        "blob_sha": "1b57c91b8ebdfa49469ae6599c11dd55c2cc79b7"
+      },
+      "accessed_at": "2026-09-28T07:05:26.919Z",
+      "notion_url": "https://app.notion.com/p/3e9e5855be3981e0be3bd713b9f705ff"
+    },
+    {
+      "source_id": "SRC-0152",
+      "source_revision": {
+        "commit_sha": "512c37465d624446b9fa3aad6f1b8eacb3a5ef45",
+        "blob_sha": "5647668dabedd0bd737a26d1b306a8b55c52e213"
+      },
+      "accessed_at": "2026-09-28T07:05:26.919Z",
+      "notion_url": "https://app.notion.com/p/3e9e5855be3981cf9139ea8738d55f81"
+    }
+  ],
+  "evidence_items": [
+    {
+      "evidence_id": "E0001",
+      "content": "INV-000031/30_analysis.json は吉田大橋／とよばしから2候補を設計している。候補A『名前が旧橋へ戻る』は名称・位置再配置を意味形成核とし、誤った橋名で指示することを発動条件、歴史上の対応地点への経路認識の引き戻しを作用として置く。候補B『物流だけが橋を移る』は物流中心の移動を意味形成核とし、旧橋側から物を運び始めることを発動条件、持ち物や経路情報の現在橋への再対応を作用として置く。",
+      "source_locator": "investigations/INV-000031/30_analysis.json profile.candidate_hypotheses[0:2] @ research-atelier ba9517431e28eb881587214e0adbef0954407f1d",
+      "selection_reason": "同一の橋アンカーから、名称・位置履歴と物流履歴を異なる因果規則へ変換した候補を比較するため",
+      "note_type": "Result",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-0152",
+        "evidence_note": null
+      }
+    },
+    {
+      "evidence_id": "E0002",
+      "content": "INV-000031/30_analysis.json は二川村・大岩村の移転・宿場形成から2候補を設計している。候補C『三つの二川』は本郷→元屋敷→現在地という複数段階移転を、過去の移転段階へ位置関係が順次切り替わる規則へ変換する。候補D『二つの村が一つの宿になる』は別々の村identityが現在地で一続きの宿場町を形成した履歴を、別々の目的地指定が収束・交換される規則へ変換する。",
+      "source_locator": "investigations/INV-000031/30_analysis.json profile.candidate_hypotheses[2:4] @ research-atelier ba9517431e28eb881587214e0adbef0954407f1d",
+      "selection_reason": "同一系統の集落移転史から、時間層の切替と境界統合という異なる因果モデルが構成されていることを比較するため",
+      "note_type": "Result",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-0152",
+        "evidence_note": null
+      }
+    },
+    {
+      "evidence_id": "E0003",
+      "content": "INV-000031/30_analysis.json は神野新田＋牟呂用水から2候補を設計している。候補E『二十三キロの近道』は約23kmの水利接続を、道路距離ではなく水路接続順で現在位置を再解釈する規則へ変換する。候補F『土地ではなく水路が住所を決める』は造成地のidentityを接続インフラが規定するというモデルを置き、地名・方角・距離表示を上流からの接続順へ置換する。",
+      "source_locator": "investigations/INV-000031/30_analysis.json profile.candidate_hypotheses[4:6] @ research-atelier ba9517431e28eb881587214e0adbef0954407f1d",
+      "selection_reason": "実在インフラを具体対象として利用する場合と、土地identityの成立条件へ組み込む場合の差を評価するため",
+      "note_type": "Result",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-0152",
+        "evidence_note": null
+      }
+    },
+    {
+      "evidence_id": "E0004",
+      "content": "INV-000032/30_analysis.json は、RQ-000031候補が正式なEntry analysisへmaterializeされておらず、D07-D18の最終code IDは未確定であると明記する。またD01-D06およびD19-D20は候補側で実証的に未確定であり、21次元全体の対称比較はできないとしている。",
+      "source_locator": "investigations/INV-000032/30_analysis.json limitations and profile.comparability_limits @ research-atelier ba9517431e28eb881587214e0adbef0954407f1d",
+      "selection_reason": "RQ-000033のfrozen contextが『RQ-000032で確定したD01–D21 coding』を含む一方、upstream artifactが実際には最終coding未確定であるため、その制約をEvidenceとして保持するため",
+      "note_type": "Limitation",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-0152",
+        "evidence_note": null
+      }
+    },
+    {
+      "evidence_id": "E0005",
+      "content": "INV-000032/30_analysis.json は、候補群と既存corpusの識別的差異が主としてD07-D10の組合せ、特に何を意味形成対象・因果源とするかに集中すると判断している。一方、D16の単一／段階進行、D17の解除、D18=L1、具体的実在地アンカーといった個別構造は既存corpusにも存在し、候補差を単独では説明しにくいとしている。",
+      "source_locator": "investigations/INV-000032/30_analysis.json profile.contrasts and judgments J0004-J0005 @ research-atelier ba9517431e28eb881587214e0adbef0954407f1d",
+      "selection_reason": "現実アンカー統合方法と他Dimension差の対応を、upstream comparative resultに照らして評価するため",
+      "note_type": "Result",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-0152",
+        "evidence_note": null
+      }
+    },
+    {
+      "evidence_id": "E0006",
+      "content": "江戸時代の「吉田大橋」は現在の「とよばし」の位置にあり、現在の「吉田大橋」はそのやや上流に新たに架けられた。国道1号の通過に伴い物流の中心も旧吉田大橋から現在の吉田大橋へ移った。",
+      "source_locator": "「新旧とよばし」節",
+      "selection_reason": "候補A/Bが変換している名称・位置・物流中心の歴史的再配置を、元Sourceへtrace可能に保つため",
+      "note_type": "Claim",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-0143",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e9e5855be3981209195c33472d7f78b",
+          "title": "EV-000251"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0007",
+      "content": "二川宿成立以前、二川村・大岩村は本郷から元屋敷へ移転した記録があり、正保元年（1644）には両村が現在地へ移転して一続きの宿場町となった。",
+      "source_locator": "「二川村・大岩村の移転と二川宿の成立」",
+      "selection_reason": "候補C/Dが変換している段階的移転と集落統合の史実を、元Sourceへtrace可能に保つため",
+      "note_type": "Claim",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-0144",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e9e5855be3981f189c7c1ffe4506da4",
+          "title": "EV-000252"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0008",
+      "content": "1893年に神野金之助が毛利新田を購入し、人造石工法を用いた築堤で新田開発を進めた。牟呂用水は新城市一鍬田から神野新田まで約23kmを引水し、1899年に完成した。",
+      "source_locator": "「神野新田と牟呂用水」",
+      "selection_reason": "候補E/Fが利用する造成史と長距離水利接続を、元Sourceへtrace可能に保つため",
+      "note_type": "Claim",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-0146",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e9e5855be3981a8b162e1eaa28da838",
+          "title": "EV-000254"
+        }
+      }
+    }
+  ]
+}
