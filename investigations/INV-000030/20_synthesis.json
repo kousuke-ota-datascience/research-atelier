@@ -3,7 +3,7 @@
   "artifact_type": "20_synthesis",
   "investigation_id": "INV-000030",
   "rq_id": "RQ-000030",
-  "synthesized_at": "2026-09-28T05:24:39.891Z",
+  "synthesized_at": "2026-09-28T09:19:31Z",
   "knowledge_units": [
     {
       "knowledge_unit_id": "K0001",
@@ -42,7 +42,8 @@
         "E0004"
       ],
       "qualifiers": [
-        "新田造成一般ではなく、固有の人物名・地名・水路接続が一体となった履歴が確認できる。"
+        "新田造成一般ではなく、固有の人物名・地名・水路接続が一体となった履歴が確認できる。",
+        "牟呂用水の完成年は同一Source内で1888年／1899年の異なる記載があり、本Evidenceでは確定しない。"
       ]
     },
     {
@@ -207,6 +208,16 @@
       ],
       "evidence_refs": [
         "E0006"
+      ]
+    },
+    {
+      "uncertainty_id": "U0004",
+      "description": "SRC-0146内で牟呂用水の完成年が1888年と1899年で一致しない。対象区間・工事段階の差か記載矛盾かは本Evidenceでは解消できず、完成年は確定しない。",
+      "knowledge_unit_refs": [
+        "K0004"
+      ],
+      "evidence_refs": [
+        "E0004"
       ]
     }
   ]
