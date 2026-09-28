@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000147",
+  "notion_url": "https://app.notion.com/p/3e9e5855be39818f8c0bd9d0605f3d5c",
+  "title": "豊橋ウェブ百科事典「牛川の渡し」",
+  "source_type": "Web Page",
+  "journal_or_publisher": "豊橋市",
+  "authors": null,
+  "year": null,
+  "url": "https://www.city.toyohashi.lg.jp/37153.htm",
+  "doi": null,
+  "version_or_edition": null,
+  "reliability_note": "豊橋市公式。渡船の現存、運航方式、対岸時の呼び板による合図の確認に使用。"
+}
