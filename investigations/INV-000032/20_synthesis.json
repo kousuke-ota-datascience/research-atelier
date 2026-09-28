@@ -3,7 +3,7 @@
   "artifact_type": "20_synthesis",
   "investigation_id": "INV-000032",
   "rq_id": "RQ-000032",
-  "synthesized_at": "2026-09-28T10:54:00.000Z",
+  "synthesized_at": "2026-09-28T11:43:00.000Z",
   "knowledge_units": [
     {
       "knowledge_unit_id": "K0001",
@@ -55,10 +55,14 @@
     },
     {
       "knowledge_unit_id": "K0006",
-      "statement": "候補A-Fはupstream自体がD01-D06,D19-D20を実証未確定としており、既存Entryとの対称比較が可能なのは主にprovisionalなD07-D18設計である。未確定次元を差異として数えた総合類似度は不適切である。",
+      "statement": "候補A-Fのupstream candidate_hypothesesでprovisionalに明示されるDimensionはD07,D09,D10,D11,D13,D15,D16,D17,D18である。D01–D06,D19–D20はevidence_gapsで実証未確定／現段階でcoding不能と明示され、D08,D12,D14,D21はcandidate_hypothesesにassignment自体がない。したがってcandidate-side比較はこの3状態（specified / explicitly unresolved / not explicitly assigned）を保持し、欠落Dimensionを推測で補ってはならない。",
       "evidence_refs": [
         "E0007",
         "E0008"
+      ],
+      "qualifiers": [
+        "specifiedは正式Entry codingではなく創作モデル上のprovisional descriptionである。",
+        "not explicitly assignedはU/NA/Cを意味せず、単にupstreamにassignmentが存在しない。"
       ]
     },
     {
@@ -118,7 +122,7 @@
   "uncertainties": [
     {
       "uncertainty_id": "U0001",
-      "description": "候補A-Fは創作モデルで正式Entry codingではないため、D07-D18 assignmentはprovisionalである。",
+      "description": "候補A-Fは創作モデルで正式Entry codingではない。candidate-sideはD07,D09,D10,D11,D13,D15,D16,D17,D18のみprovisional specified、D01–D06,D19–D20はexplicitly unresolved、D08,D12,D14,D21はnot explicitly assignedである。",
       "knowledge_unit_refs": [
         "K0002",
         "K0003",
