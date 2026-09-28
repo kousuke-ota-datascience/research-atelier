@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000032",
+  "review_seq": 4,
+  "layer": "20_synthesis",
+  "review_kind": "10_evidence_to_20_synthesis",
+  "target_blob_sha": "1832128947acb90ccf47c2251e3ea3f1724043c3",
+  "assessment": "The rebuilt synthesis remains within the repaired Evidence support boundary. Corpus-wide prevalence statements are based on E0008's complete 25-entry snapshot, candidate-side claims are routed through E0007, and K0006/U0001 explicitly preserve the three candidate dimension states: provisional specified D07/D09/D10/D11/D13/D15/D16/D17/D18, explicitly unresolved D01–D06/D19–D20, and not explicitly assigned D08/D12/D14/D21. K0003 and K0007 correctly distinguish corpus non-observation from taxonomy coverage and real-world novelty. No Synthesis-layer semantic finding is identified.",
+  "findings": [],
+  "verdict": "PASS"
+}

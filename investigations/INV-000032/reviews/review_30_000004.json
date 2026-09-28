@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000032",
+  "review_seq": 4,
+  "layer": "30_analysis",
+  "review_kind": "20_synthesis_plus_00_context_to_30_analysis",
+  "target_blob_sha": "1bdb926ddef129b31bccf17605fddc294ad3602c",
+  "assessment": "The Comparative analysis matches the frozen question type and the supported comparison envelope. comparison_dimensions, comparability_limits, the Working Answer, judgments, limitations, unresolved questions, and alternative interpretation consistently distinguish directly comparable provisional dimensions from unresolved and unassigned dimensions. The conclusions about D16/D18 overlap, D17 uncertainty, D07/D09/D10 structural differences, and high D07–D10 tuple diversity are supported by the synthesis and do not bypass Evidence. The analysis also preserves the limitation that corpus non-observation does not establish taxonomy impossibility or real-world novelty. No Analysis-layer semantic finding is identified.",
+  "findings": [],
+  "verdict": "PASS"
+}
