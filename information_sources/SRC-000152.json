@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000152",
+  "notion_url": "https://app.notion.com/p/3e9e5855be3981cf9139ea8738d55f81",
+  "title": "INV-000031 and INV-000032 canonical artifact snapshot",
+  "source_type": "Dataset",
+  "journal_or_publisher": "kousuke-ota-datascience / GitHub",
+  "authors": null,
+  "year": null,
+  "url": "https://github.com/kousuke-ota-datascience/research-atelier/tree/ba9517431e28eb881587214e0adbef0954407f1d/investigations",
+  "doi": null,
+  "version_or_edition": "research-atelier@ba9517431e28eb881587214e0adbef0954407f1d",
+  "reliability_note": "RQ-000033 upstream input. Fixed Git commit上のINV-000031/30_analysis.jsonおよびINV-000032/30_analysis.json等を参照する。INV-000032自身が候補codingを最終確定ではなく設計上の想定と明記しているため、その制約を保持する。"
+}
