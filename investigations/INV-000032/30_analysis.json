@@ -42,7 +42,7 @@
     "comparability_limits": [
       "RQ-000031候補は流通前の創作モデルであり、D07-D18もprovisional designである。",
       "D01-D06およびD19-D20は候補側upstreamで実証未確定のため、21次元全体の対称比較はできない。",
-      "Corpus comparisonはSRC-0151が固定するcutoff commitのcanonical 25 Entries全件を対象とし、各Entry blob SHAとD01-D21 status/primary/secondaryをcorpus_snapshot.jsonに保存した。",
+      "Corpus comparisonはSRC-000151が固定するcutoff commitのcanonical 25 Entries全件を対象とし、各Entry blob SHAとD01-D21 status/primary/secondaryをcorpus_snapshot.jsonに保存した。",
       "Corpus内未観測code/combinationは、taxonomy全体で表現不能であることや現実世界で新規であることを意味しない。"
     ]
   },
