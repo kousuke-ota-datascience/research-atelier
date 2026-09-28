@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000032",
+  "review_seq": 2,
+  "layer": "20_synthesis",
+  "review_kind": "10_evidence_to_20_synthesis",
+  "target_blob_sha": "4a9deb608565c500543a250a8fd448455aae7e2f",
+  "assessment": "The prior prevalence overgeneralization is repaired: K0005 now uses full-corpus counts, correctly separates D16/D18 frequency from D17 uncertainty, and K0003/K0007 preserve the distinction between corpus non-observation, taxonomy coverage, and real-world novelty. The synthesis also uses E0007 rather than bypassing the Evidence layer for candidate A–F. A remaining comparability defect concerns candidate-side Dimension coverage, however. The pinned upstream candidate hypotheses explicitly assign only a subset of D07–D18 and do not assign D08, D12, D14, or D21, while K0006 and downstream framing imply a broader D07–D18/D21 comparison envelope. The unassigned dimensions must be surfaced as unavailable/unresolved rather than silently included in the comparative range.",
+  "findings": [
+    {
+      "finding_id": "F002",
+      "severity": "Moderate",
+      "target": "20_synthesis.K0006 and candidate-side Dimension comparability carried into 30_analysis",
+      "evidence": [
+        "00_context explicitly includes D01–D21 status/primary/secondary and Dimension-by-Dimension commonality/difference in the Comparative boundary.",
+        "The pinned INV-000031 candidate hypotheses explicitly specify D07, D09, D10, D11, D13, D15, D16, D17, and D18 for A–F, while D01–D06 and D19–D20 are explicitly described as empirically unresolved.",
+        "Those candidate hypotheses do not explicitly assign D08, D12, D14, or D21; no repaired Evidence item supplies finalized or provisional values for those four dimensions.",
+        "K0006 says comparison is mainly possible over provisional D07–D18 design, and 30_analysis.profile.comparison_dimensions lists D07–D18 plus D21 while its comparability_limits identify only D01–D06 and D19–D20 as non-comparable. This overstates the candidate-side coverage actually supported by E0007."
+      ],
+      "impact": "The main D07–D10 and D16/D18 conclusions remain supported, but the Investigation does not yet give a faithful Dimension-wise account of which requested dimensions are comparable versus unassigned. D08, D12, D14, and D21 can be mistaken as having been compared when candidate-side assignments are absent, so the RQ-level comparison is methodologically incomplete.",
+      "repair_direction": {
+        "mode": "same_investigation",
+        "affected_layer": "20_synthesis",
+        "instruction": "Revise the synthesis to distinguish explicitly among (a) candidate dimensions provisionally specified upstream: D07/D09/D10/D11/D13/D15/D16/D17/D18, (b) candidate dimensions explicitly empirically unresolved upstream: D01–D06/D19–D20, and (c) candidate dimensions not explicitly assigned in the pinned hypotheses: D08/D12/D14/D21. Do not infer missing codes merely to complete the grid. If additional canonical candidate coding is created, route it through 10_evidence first. Then rebuild 30_analysis so its comparison_dimensions, limitations, and Working Answer reflect the actual comparison envelope."
+      }
+    }
+  ],
+  "verdict": "FINDINGS"
+}

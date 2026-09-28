@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000032",
+  "review_seq": 2,
+  "layer": "30_analysis",
+  "review_kind": "20_synthesis_plus_00_context_to_30_analysis",
+  "target_blob_sha": "c80e641aa01666c1f2c919de5e1853b441bafff1",
+  "assessment": "The rebuilt analysis is recognizably Comparative and its principal substantive claims are traceable to the repaired synthesis: full-corpus D16/D18 prevalence, D17 uncertainty, the 25/25 diversity of D07–D10 exact tuples, and the corpus-level non-observation of an infrastructure/network D10 code are all appropriately qualified. It avoids treating corpus non-observation as real-world novelty or as automatic taxonomy failure. No additional analysis-only finding is identified. However, the current analysis inherits F002: profile.comparison_dimensions and comparability_limits do not disclose that D08/D12/D14/D21 lack explicit candidate-side assignments, so the current Working Answer must be rebuilt after that synthesis repair rather than reused as a complete D01–D21 comparison.",
+  "findings": [],
+  "verdict": "PASS"
+}

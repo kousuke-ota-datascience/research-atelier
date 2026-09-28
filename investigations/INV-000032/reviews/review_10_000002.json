@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000032",
+  "review_seq": 2,
+  "layer": "10_evidence",
+  "review_kind": "source_evidence_note_to_10_evidence",
+  "target_blob_sha": "2af0d74d37dc328db746b74a4252612d4be8c710",
+  "assessment": "The repair resolves the prior corpus-coverage and Entry 0198 source-faithfulness findings. corpus_snapshot.json covers all 25 canonical *_20_analysis.json files at SRC-0151 commit 8f69a1e…, preserves each file's blob SHA, and its D16/D17/D18/D21 counts and 25/25 unique D07–D10 exact-tuple count reproduce from the stored per-Entry data. E0005 now preserves D14/D15 as U. Candidate-side Evidence E0007 is also substantively faithful to the A–F definitions. However, the new candidate-source pin is internally inconsistent: SRC-0153 and E0007 pair commit 9d37… with blob 291dd…, while the file at that commit is blob e87cbe…. This leaves the intended immutable upstream revision ambiguous and requires a traceability repair.",
+  "findings": [
+    {
+      "finding_id": "F001",
+      "severity": "Minor",
+      "target": "10_evidence.E0007 / SRC-0153 immutable upstream revision for INV-000031 candidate A–F definitions",
+      "evidence": [
+        "SRC-0153.url pins investigations/INV-000031/30_analysis.json at commit 9d37c184fefd2119693a7c2a9a82a933268bc48a, while SRC-0153.version_or_edition declares blob 291dd4f856f5882afe0716dcbdf893c78213a990.",
+        "Fetching investigations/INV-000031/30_analysis.json at commit 9d37c184fefd2119693a7c2a9a82a933268bc48a resolves to blob e87cbe0352710588c18d672cf09ce8a6c29c8c25, not blob 291dd4f856f5882afe0716dcbdf893c78213a990.",
+        "Blob 291dd4f856f5882afe0716dcbdf893c78213a990 is the later repaired INV-000031 30_analysis target recorded by INV-000031 Review 000002; E0007.source_locator nevertheless repeats the impossible pair research-atelier@9d37… plus blob 291dd….",
+        "The A–F candidate hypotheses used by E0007 are present in both revisions, so the substantive candidate descriptions are traceable even though the declared immutable revision pair is not."
+      ],
+      "impact": "The candidate-side claims are not shown to be substantively false, but the repair intended to provide immutable Evidence-layer lineage now contains a contradictory commit/blob identity. Auditors cannot deterministically resolve which upstream revision E0007 declares as its source, so provenance and reproducibility remain defective.",
+      "repair_direction": {
+        "mode": "same_investigation",
+        "affected_layer": "10_evidence",
+        "instruction": "Choose one canonical upstream INV-000031/30_analysis.json revision and make SRC-0153.url, SRC-0153.version_or_edition, and E0007.source_locator name the same exact commit/blob pair. Preserve the current provisional-candidate qualification. Because 10_evidence changes, invalidate and rebuild 20_synthesis and 30_analysis under Workflow 10 rules, then reReview the new target."
+      }
+    }
+  ],
+  "verdict": "FINDINGS"
+}

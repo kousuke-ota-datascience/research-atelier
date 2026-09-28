@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000032",
+  "review_seq": 2,
+  "layer": "00_context",
+  "review_kind": "context_semantic_validity",
+  "target_blob_sha": "f779a4dacedfcd75786107cf1a3c317e933f1160",
+  "assessment": "The frozen Comparative context remains semantically coherent. It defines the comparison population as the cutoff canonical 0015_zenn analysis corpus, requires D01–D21 status/primary/secondary and Dimension-wise commonality/difference, preserves U/NA/C semantics, rejects forced aggregate similarity scores, and explicitly limits corpus non-observation from being interpreted as real-world novelty. No context-defining contradiction or omission requiring a successor Investigation is identified.",
+  "findings": [],
+  "verdict": "PASS"
+}
