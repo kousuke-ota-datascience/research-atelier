@@ -15,7 +15,7 @@ from .schema_validator import ValidationIssue, validate_artifact
 REPO_ROOT = Path(__file__).resolve().parents[3]
 DEFAULT_SOURCE_ROOT = REPO_ROOT / "information_sources"
 DEFAULT_SCHEMA_PATH = REPO_ROOT / "schemas" / "v2" / "information_source.schema.json"
-SOURCE_ID_RE = re.compile(r"^SRC-(?:[0-9]{4}|[0-9]{6})$")
+SOURCE_ID_RE = re.compile(r"^SRC-(?:00[0-9]{2}|01[01][0-9]|[0-9]{6})$")
 
 
 def validate_information_source(
@@ -35,7 +35,7 @@ def validate_information_source(
                 "$.source_id",
                 "invalid Source ID format",
                 "validate_information_source",
-                "SRC-NNNN or SRC-NNNNNN",
+                "SRC-NNNN (legacy <= SRC-0119) or SRC-NNNNNN",
                 source_id,
             )
         )
@@ -87,7 +87,7 @@ def validate_information_source(
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("source_id", help="SRC-NNNN (historical) or SRC-NNNNNN (post-cutover)")
+    parser.add_argument("source_id", help="SRC-NNNN (historical <= SRC-0119) or SRC-NNNNNN (post-cutover)")
     parser.add_argument(
         "--root",
         type=Path,
