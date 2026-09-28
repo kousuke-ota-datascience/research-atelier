@@ -3,7 +3,7 @@
   "artifact_type": "10_evidence",
   "investigation_id": "INV-000032",
   "rq_id": "RQ-000032",
-  "snapshot_at": "2026-09-28T10:52:00.000Z",
+  "snapshot_at": "2026-09-28T11:42:00.000Z",
   "sources": [
     {
       "source_id": "SRC-000151",
@@ -17,10 +17,10 @@
     {
       "source_id": "SRC-000153",
       "source_revision": {
-        "commit_sha": "e5f044cd21bf62af7f65d68e6bc84b5074cb85c4",
-        "blob_sha": "b310a89fd3520ea22185020835cd7b2de7892a4f"
+        "commit_sha": "2f2d8eb3d4dee09d7a4c1eb05fd52af4e5e29b88",
+        "blob_sha": "4aa53537faaf9f417dc5ac010f2aedf8ab49d65a"
       },
-      "accessed_at": "2026-09-28T10:52:00.000Z",
+      "accessed_at": "2026-09-28T11:42:00.000Z",
       "notion_url": "https://app.notion.com/p/3e9e5855be3981b0b5e4e6644d6fa1b5"
     }
   ],
@@ -99,8 +99,8 @@
     },
     {
       "evidence_id": "E0007",
-      "content": "Pinned upstream INV-000031/30_analysis.json defines six provisional creative candidates A–F. A: bridge-name/location remapping; B: logistics/location-information remapping; C: three historical Futagawa location layers; D: merger of two village identities into one post-town space; E: ~23 km irrigation-network ordering as spatial rule; F: irrigation connectivity rather than land/address as location rule. Their proposed D07-D18 descriptions are design hypotheses, not observed folklore codings; INV-000031 explicitly leaves D01-D06 and D19-D20 empirically unresolved.",
-      "source_locator": "research-atelier@9d37c184fefd2119693a7c2a9a82a933268bc48a investigations/INV-000031/30_analysis.json blob 291dd4f856f5882afe0716dcbdf893c78213a990 profile.candidate_hypotheses + evidence_gaps",
+      "content": "Pinned upstream INV-000031/30_analysis.json defines six provisional creative candidates A–F. Candidate-side dimensions explicitly specified in candidate_hypotheses are D07, D09, D10, D11, D13, D15, D16, D17, D18. D01–D06 and D19–D20 are explicitly described in evidence_gaps as empirically unresolved/not currently codable. D08, D12, D14, D21 are not explicitly assigned in candidate_hypotheses; they must remain unassigned rather than inferred. The six candidate definitions and all dimension descriptions are design hypotheses, not observed folklore codings.",
+      "source_locator": "research-atelier@ff9b35430b3bb2c88016f3843af768ffd860e909 investigations/INV-000031/30_analysis.json blob d9088ccd885d908b2f05f5d2ad494b5d30b37a1a profile.candidate_hypotheses + profile.evidence_gaps",
       "selection_reason": "候補A-Fを比較の一方としてEvidence layerにimmutable provenance付きで固定するため",
       "note_type": "Data",
       "direct_quote": null,
