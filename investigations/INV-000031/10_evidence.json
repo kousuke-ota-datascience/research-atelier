@@ -1,0 +1,83 @@
+{
+  "schema_version": "2.1.0",
+  "artifact_type": "10_evidence",
+  "investigation_id": "INV-000031",
+  "rq_id": "RQ-000031",
+  "snapshot_at": "2026-09-28T05:38:33.000Z",
+  "sources": [
+    {
+      "source_id": "SRC-0143",
+      "source_revision": {
+        "commit_sha": "8d6e4cc58aa748023de6d1d3c01ae2333a269ed2",
+        "blob_sha": "dc154b4c89f53c0446d94f31420b033df71c0d52"
+      },
+      "accessed_at": "2026-09-28T05:38:33.000Z",
+      "notion_url": "https://app.notion.com/p/3e9e5855be398106b898e984d10cf100"
+    },
+    {
+      "source_id": "SRC-0144",
+      "source_revision": {
+        "commit_sha": "9a9582836941fda05dc3e0762f496e4a6661670d",
+        "blob_sha": "e5ceb87e25fef6805de40904a75b180e48f0441d"
+      },
+      "accessed_at": "2026-09-28T05:38:33.000Z",
+      "notion_url": "https://app.notion.com/p/3e9e5855be39811299aff11603223dec"
+    },
+    {
+      "source_id": "SRC-0146",
+      "source_revision": {
+        "commit_sha": "4b3cb810f83fd24f508b9b066dbb85a7ebcfded2",
+        "blob_sha": "1b57c91b8ebdfa49469ae6599c11dd55c2cc79b7"
+      },
+      "accessed_at": "2026-09-28T05:38:33.000Z",
+      "notion_url": "https://app.notion.com/p/3e9e5855be3981e0be3bd713b9f705ff"
+    }
+  ],
+  "evidence_items": [
+    {
+      "evidence_id": "E0001",
+      "content": "江戸時代の「吉田大橋」は現在の「とよばし」の位置にあり、現在の「吉田大橋」はそのやや上流に新たに架けられた。国道1号の通過に伴い物流の中心も旧吉田大橋から現在の吉田大橋へ移った。",
+      "source_locator": "「新旧とよばし」節",
+      "selection_reason": "名称・位置・物流中心が分離・再配置されたという現実構造を、新規伝承モデルの事実アンカーとして保持するため",
+      "note_type": "Claim",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-0143",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e9e5855be3981209195c33472d7f78b",
+          "title": "EV-000251"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0002",
+      "content": "二川宿成立以前、二川村・大岩村は本郷から元屋敷へ移転した記録があり、正保元年（1644）には両村が現在地へ移転して一続きの宿場町となった。",
+      "source_locator": "「二川村・大岩村の移転と二川宿の成立」",
+      "selection_reason": "同一地名・集落identityが複数地点を経て現在地へ移動した履歴を、新規伝承モデルの事実アンカーとして保持するため",
+      "note_type": "Claim",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-0144",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e9e5855be3981f189c7c1ffe4506da4",
+          "title": "EV-000252"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0003",
+      "content": "1893年に神野金之助が毛利新田を購入し、人造石工法を用いた築堤で新田開発を進めた。牟呂用水は新城市一鍬田から神野新田まで約23kmを引水し、1899年に完成した。",
+      "source_locator": "「神野新田と牟呂用水」",
+      "selection_reason": "造成地と長距離水利が一体となる人工的土地形成構造を、新規伝承モデルの事実アンカーとして保持するため",
+      "note_type": "Claim",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-0146",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e9e5855be3981a8b162e1eaa28da838",
+          "title": "EV-000254"
+        }
+      }
+    }
+  ]
+}
