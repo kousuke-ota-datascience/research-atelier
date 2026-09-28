@@ -1,0 +1,43 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "00_context",
+  "investigation_id": "INV-000032",
+  "rq_id": "RQ-000032",
+  "context_state": "frozen",
+  "question": {
+    "text": "生成した豊橋伝承候補は、既存のcanonical伝承corpusと比較して、D01–D21のどの次元・コード組合せにおいて共通し、または異なるか？",
+    "notion_url": "https://app.notion.com/p/3e9e5855be398128a744db3feb779028"
+  },
+  "question_type": "Comparative",
+  "scope": "RQ-000031で生成した伝承候補を、0015_zenn repositoryに保存されている既存伝承のcanonical <Entry_ID>_20_analysis.json と比較する。比較はD01–D21の同一次元間で行い、Notion上の横断要約ではなくcanonical analysis JSONを一次的な比較対象とする。",
+  "significance": null,
+  "investigation_boundary": {
+    "include": [
+      "RQ-000031で独立伝承エントリとして成立した候補",
+      "cutoff時点でcanonicalな <Entry_ID>_20_analysis.json",
+      "D01–D21のstatus / primary / secondary",
+      "Dimensionごとの共通性・相違",
+      "複数Dimensionの組合せとして現れる構造",
+      "既存corpusで観測されていない、または稀な組合せ",
+      "taxonomy gap"
+    ],
+    "exclude": [
+      "macro_categoryだけによる比較",
+      "Notion上の二次要約をcanonical coding resultの代替とすること",
+      "U / NA / Cを通常のコード値として扱うこと",
+      "Parent/Childの解像度を混同した比較",
+      "既存コードからRQ-000031候補のコードを逆算すること",
+      "「既存にない＝優れている」という評価"
+    ],
+    "evidence_cutoff": "2026-09-28T05:00:57.000Z"
+  },
+  "assumptions": [
+    "比較時点のcanonical corpus snapshotを固定して扱う",
+    "既存corpusは都市伝説全体の完全な母集団ではない",
+    "corpusで未観測のコード組合せは、現実世界で新規であることを意味しない",
+    "D01–D21 codingは現行coding rulesに従う",
+    "status Uは「その特徴がない」ことを意味しない",
+    "類似性・差異はDimensionごとに記述し、単一の総合類似度へ無理に圧縮しない"
+  ],
+  "frozen_at": "2026-09-28T05:00:57.000Z"
+}
