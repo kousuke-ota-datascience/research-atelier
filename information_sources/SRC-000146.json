@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000146",
+  "notion_url": "https://app.notion.com/p/3e9e5855be3981e0be3bd713b9f705ff",
+  "title": "豊橋市文化財保存活用地域計画（資料）",
+  "source_type": "Report",
+  "journal_or_publisher": "豊橋市",
+  "authors": null,
+  "year": null,
+  "url": "https://www.city.toyohashi.lg.jp/secure/116067/toyohashi_cp-plan_draft.pdf",
+  "doi": null,
+  "version_or_edition": null,
+  "reliability_note": "豊橋市公式文化財関連資料。神野新田・牟呂用水および近代史の確認に使用。"
+}
