@@ -142,7 +142,7 @@ Notion `Sources` はSource UID / Source ID allocation、Git materialization前�
 
 Source creationは次の順序で行う。
 
-1. Notion SourcesでSource UID / Source IDをallocateし、必要なdraft metadataをcaptureする。
+1. Notion SourcesでSource UID / Source IDをallocateし、必要なdraft metadataをcaptureする。Source IDはexact allocated valueを使用し、Source UIDからzero-padding幅を再計算しない。post-cutoverは6桁、4桁はlegacy `SRC-0119` 以前のみとする。
 2. exact Source IDで `information_sources/<Source ID>.json` をmaterializeする。
 3. `schemas/v2/information_source.schema.json` でvalidateし、Source JSONをcommitする。
 4. commit後はGit Source JSONがSource metadata authorityとなり、Notion Sourcesはhuman-facing catalog / projectionとしてreconcileする。
