@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000031",
+  "review_seq": 1,
+  "layer": "20_synthesis",
+  "review_kind": "10_evidence_to_20_synthesis",
+  "target_blob_sha": "6f39f12b54caf15c81bff75a39dbdf749f37e420",
+  "assessment": "K0001–K0003 remain traceable to E0001–E0003 and preserve the material factual boundaries needed for the creative task. K0001 limits the bridge anchor to historical name/location/logistics reconfiguration and explicitly denies a source basis for anomalous causality; K0002 preserves the missing precise old-site geolocation; K0003 uses the reclaimed-land plus long-distance irrigation structure while explicitly denying unsupported supernatural land-state claims. R0001–R0003 distinguish the shared transformation/connectivity pattern from the different anchor structures and state that the historical facts do not uniquely entail a legend mechanism. The upstream completion-year defect in F001 is not propagated as an independent synthesis defect because K0003 does not use a completion year, and no additional unsupported proposition or lost qualification was identified.",
+  "findings": [],
+  "verdict": "PASS"
+}

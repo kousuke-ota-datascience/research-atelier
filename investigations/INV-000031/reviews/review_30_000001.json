@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000031",
+  "review_seq": 1,
+  "layer": "30_analysis",
+  "review_kind": "20_synthesis_plus_00_context_to_30_analysis",
+  "target_blob_sha": "e87cbe0352710588c18d672cf09ce8a6c29c8c25",
+  "assessment": "The Exploratory analysis is RQ-specific and remains within the frozen context. It constructs six distinct candidate legend models from the three synthesized factual anchors, while repeatedly marking activation conditions, mechanisms, effects, release rules, and other anomalous elements as creative rather than historical claims. The Working Answer is supported by the existence of those six constructed candidates, and J0001–J0005 stay at the level of design judgments rather than asserting that the invented mechanisms are real traditions. The analysis also preserves the main evidence gaps, alternative interpretations, taxonomy-gap possibility, and restrictions on precise old-site locations or physical properties of the irrigation system. F001 does not create an independent analysis-layer defect because the disputed 1888/1899 completion year is not used to support the six candidate structures or the Working Answer; nevertheless, the cycle remains FINDINGS and an Evidence repair requires downstream rebuild under the canonical invalidation rule.",
+  "findings": [],
+  "verdict": "PASS"
+}

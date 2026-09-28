@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000031",
+  "review_seq": 1,
+  "layer": "00_context",
+  "review_kind": "context_semantic_validity",
+  "target_blob_sha": "ae413c1f0eeeb27c3f2b7d23977dcc5fd27a2cd8",
+  "assessment": "Frozen 00_context is semantically coherent with RQ-000031 and the Exploratory question type. It defines the task as constructing multiple independent legend-structure candidates from Toyohashi-specific factual anchors selected upstream, while explicitly excluding fabrication of historical facts and careless attribution of crimes, cults, concealment, or similar claims to real people, organizations, companies, religious facilities, or local communities. The scope also states that D01–D21 are a descriptive/checking framework rather than generation rules, that factual anchors and invented anomalous mechanisms must remain traceable and separated, and that Evidence does not uniquely determine a supernatural structure. These constraints are sufficient for interpreting the downstream synthesis and analysis, and no frozen-context contradiction or substantive omission requiring a new Investigation was identified.",
+  "findings": [],
+  "verdict": "PASS"
+}
