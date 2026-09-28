@@ -3,7 +3,7 @@
   "artifact_type": "30_analysis",
   "investigation_id": "INV-000032",
   "rq_id": "RQ-000032",
-  "analyzed_at": "2026-09-28T10:55:00.000Z",
+  "analyzed_at": "2026-09-28T11:44:00.000Z",
   "question_type": "Comparative",
   "profile": {
     "comparison_units": [
@@ -16,20 +16,10 @@
       "0015_zenn cutoff snapshotのcanonical <Entry_ID>_20_analysis.json"
     ],
     "comparison_dimensions": [
-      "D07 意味形成対象",
-      "D08 意味形成cue",
-      "D09 解釈操作",
-      "D10 因果源",
-      "D11 発動条件",
-      "D12 作用対象",
-      "D13 作用",
-      "D14 帰結方向",
-      "D15 終端結果",
-      "D16 時間構造",
-      "D17 制御・解除",
-      "D18 作用レイヤ",
-      "D21 現実アンカー",
-      "D01-D06,D19-D20の比較可能性"
+      "Candidate-side provisional specified: D07,D09,D10,D11,D13,D15,D16,D17,D18",
+      "Candidate-side explicitly unresolved: D01-D06,D19-D20",
+      "Candidate-side not explicitly assigned: D08,D12,D14,D21",
+      "Corpus-side: D01-D21 status / primary / secondary"
     ],
     "contrasts": [
       "候補A/C/Dは、既存corpusにもある空間異常ではなく、名称・地名・集落identityの歴史的再配置をD07の中心対象にする点で0319のtaxonomy gapに近い。",
@@ -40,14 +30,14 @@
       "status/primary/secondary込みのD07-D10 exact tupleは25/25で相互に異なり、corpus自体の組合せ多様性が高い。"
     ],
     "comparability_limits": [
-      "RQ-000031候補は流通前の創作モデルであり、D07-D18もprovisional designである。",
-      "D01-D06およびD19-D20は候補側upstreamで実証未確定のため、21次元全体の対称比較はできない。",
+      "RQ-000031候補は流通前の創作モデルであり、specified Dimensionも正式codingではなくprovisional designである。",
+      "Candidate-side specifiedはD07,D09,D10,D11,D13,D15,D16,D17,D18に限定される。D01-D06,D19-D20はexplicitly unresolved、D08,D12,D14,D21はnot explicitly assignedであり、後二者をU/NA/Cや任意codeとして補完しない。",
       "Corpus comparisonはSRC-000151が固定するcutoff commitのcanonical 25 Entries全件を対象とし、各Entry blob SHAとD01-D21 status/primary/secondaryをcorpus_snapshot.jsonに保存した。",
       "Corpus内未観測code/combinationは、taxonomy全体で表現不能であることや現実世界で新規であることを意味しない。"
     ]
   },
   "working_answer": {
-    "text": "Pinned canonical corpus 25件との全件比較では、RQ-000031の6候補はD16やD18では既存構造との重なりが大きい。D16は24/25がIまたはDでSEQUENTIAL_EPISODEが10/25、D18はL1 primaryが22/25である。一方、差異を記述しやすいのはD07-D10である。候補A/C/Dは名称・場所・集落identityの歴史的再配置を意味形成対象にし、既存0319で露出している地名系D07 taxonomy gapに近い。候補E/Fは水利・インフラネットワークをD10因果源にする設計で、pinned corpus 25件のD10 primary/secondaryには同種の観測codeがない。候補Bは史実統合という点ではA4既存例（6/25）と共通するが、伝承内部の位置・所有情報再対応という機構は別である。ただしD07-D10 exact tupleは既存25件自体が25通りに分散しており、未観測tupleだけを独自性の証明にはできない。したがって、候補群は単一の総合類似度ではなく、候補側のprovisional性を保持したうえでD07-D10を中心にDimension別の構造差として評価するのが妥当である。",
+    "text": "Pinned canonical corpus 25件との比較で、candidate-sideに直接比較可能なprovisional specified DimensionはD07,D09,D10,D11,D13,D15,D16,D17,D18である。D01–D06,D19–D20はupstreamでexplicitly unresolved、D08,D12,D14,D21はnot explicitly assignedなので、これらを候補側のcode/statusとして推測補完しない。指定済みDimensionでは、D16はcorpusの24/25がIまたはDでSEQUENTIAL_EPISODEが10/25、D18はL1 primaryが22/25であり、候補群との重なりが大きい。一方D07/D09/D10では、候補A/C/Dの名称・場所・集落identityの歴史的再配置や、候補E/Fの水利・インフラネットワーク因果源が既存corpusとの主要な構造差として現れる。候補Bは史実統合という点では既存A4型と部分的に共通するが、位置・所有情報再対応という作用機構は別である。ただしcorpus側D07-D10 exact tupleは25件すべて異なるため、未観測tupleだけを独自性の証明にはしない。比較結果は、specified Dimensionの構造差と、unresolved/unassigned Dimensionの境界を分けて読む必要がある。",
     "knowledge_unit_refs": [
       "K0001",
       "K0002",
@@ -90,7 +80,7 @@
     },
     {
       "judgment_id": "J0005",
-      "statement": "候補側の未確定次元を差異として扱わず、比較はprovisional D07-D18、特にD07-D10の構造対応へ限定するべきである。",
+      "statement": "候補側で直接比較可能なのはprovisional specifiedのD07,D09,D10,D11,D13,D15,D16,D17,D18である。D01-D06,D19-D20はexplicitly unresolved、D08,D12,D14,D21はnot explicitly assignedとして保持し、差異・一致の判定対象にしない。",
       "knowledge_unit_refs": [
         "K0006",
         "K0007"
@@ -99,7 +89,7 @@
   ],
   "limitations": [
     {
-      "text": "候補A-Fは正式Entryではなく、candidate-side D07-D18はINV-000031の設計仮説である。",
+      "text": "候補A-Fは正式Entryではなく、candidate-sideで明示されるD07,D09,D10,D11,D13,D15,D16,D17,D18もINV-000031のprovisional designである。D08,D12,D14,D21にはassignmentがない。",
       "knowledge_unit_refs": [
         "K0006"
       ]
@@ -120,7 +110,8 @@
   "unresolved_questions": [
     "候補E/Fを正式codingした場合、D10既存codebookに適合するChildがあるか、それともtaxonomy gapか？",
     "候補A/C/DのD07を0319の地名由来gapと共通の上位概念へ一般化できるか？",
-    "6候補を正式Entry化した際、provisional D07-D18 assignmentはどの程度維持されるか？"
+    "正式Entry化時にD08,D12,D14,D21を含む未割当DimensionをEvidenceに基づいてどのようにcodingするか？",
+    "6候補を正式Entry化した際、provisional specified Dimensionのassignmentはどの程度維持されるか？"
   ],
   "alternative_interpretations": [
     {
@@ -128,12 +119,6 @@
       "knowledge_unit_refs": [
         "K0001",
         "K0002"
-      ]
-    },
-    {
-      "text": "候補E/Fはインフラ接続をD10ではなくD21の現実アンカーとしてのみ保持し、D10をUにする保守的codingも可能である。",
-      "knowledge_unit_refs": [
-        "K0003"
       ]
     }
   ]
