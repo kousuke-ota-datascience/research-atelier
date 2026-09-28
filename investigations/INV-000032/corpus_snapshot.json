@@ -5,7 +5,7 @@
   "source_id": "SRC-0151",
   "source_commit": "8f69a1aec1955229cc1c3b6c2591a07c3b657265",
   "generated_at": "2026-09-28T10:50:00Z",
-  "complete": false,
+  "complete": true,
   "entries": [
     {
       "entry_id": "0001",
@@ -1840,7 +1840,2088 @@
           "secondary": []
         }
       ]
+    },
+    {
+      "entry_id": "0188",
+      "path": "workspace/articles/f8fe59b49c2e1e/docs/10_each_lore/0188_hasshakusama/0188_20_analysis.json",
+      "blob_sha": "d610430c51a624c12ebbdb69aacb47d207a2706f",
+      "dimensions": [
+        {
+          "dimension_id": "D01",
+          "status": "U",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D02",
+          "status": "D",
+          "primary": "D02.WEB.FORUM",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D03",
+          "status": "D",
+          "primary": "D03.WEB.FORUM",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D04",
+          "status": "U",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D05",
+          "status": "D",
+          "primary": "D05.EXP.RETROSPECTIVE_1P",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D06",
+          "status": "D",
+          "primary": "D06.T1",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D07",
+          "status": "D",
+          "primary": "D07.ANO.UNKNOWN_EXISTENCE",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D08",
+          "status": "D",
+          "primary": "D08.DEX.PERCEPTUAL_ANOMALY",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D09",
+          "status": "D",
+          "primary": "D09.CAU.HIDDEN_CAUSE",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D10",
+          "status": "D",
+          "primary": "D10.SUP.YOKAI_ENTITY",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D11",
+          "status": "D",
+          "primary": "D11.PAS.SPONTANEOUS_SELECTION",
+          "secondary": [
+            "D11.SEN.VISUAL_EXPOSURE"
+          ]
+        },
+        {
+          "dimension_id": "D12",
+          "status": "D",
+          "primary": "D12.FOC.PROTAGONIST_EXPERIENCER",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D13",
+          "status": "D",
+          "primary": "D13.REL.PURSUIT",
+          "secondary": [
+            "D13.REL.MIMICRY",
+            "D13.REL.LURING"
+          ]
+        },
+        {
+          "dimension_id": "D14",
+          "status": "D",
+          "primary": "D14.NEG",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D15",
+          "status": "D",
+          "primary": "D15.BOD.DEATH",
+          "secondary": [
+            "D15.LIF.FUTURE_CONSTRAINT"
+          ]
+        },
+        {
+          "dimension_id": "D16",
+          "status": "D",
+          "primary": "D16.DLY.DEADLINE",
+          "secondary": [
+            "D16.CON.PURSUIT_DURATION"
+          ]
+        },
+        {
+          "dimension_id": "D17",
+          "status": "D",
+          "primary": "D17.RUL.PROCEDURAL_RULE",
+          "secondary": [
+            "D17.CST.CONTAINMENT",
+            "D17.CST.TRANSFER_SUBSTITUTE"
+          ]
+        },
+        {
+          "dimension_id": "D18",
+          "status": "D",
+          "primary": "D18.L1",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D19",
+          "status": "D",
+          "primary": "D19.NET.OPEN_FORUM_WEB",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D20",
+          "status": "D",
+          "primary": "D20.INS.LOCAL_RESIDENT",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D21",
+          "status": "D",
+          "primary": "D21.A1",
+          "secondary": []
+        }
+      ]
+    },
+    {
+      "entry_id": "0198",
+      "path": "workspace/articles/f8fe59b49c2e1e/docs/10_each_lore/0198_hitori_kakurenbo/0198_20_analysis.json",
+      "blob_sha": "39c3637c298ff06249a6d0d125007514df27d601",
+      "dimensions": [
+        {
+          "dimension_id": "D01",
+          "status": "U",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D02",
+          "status": "I",
+          "primary": "D02.WEB.FORUM",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D03",
+          "status": "I",
+          "primary": "D03.WEB.FORUM",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D04",
+          "status": "I",
+          "primary": "D04.COL.LIVE_COCREATION",
+          "secondary": [
+            "D04.VAR.ACCRETION"
+          ]
+        },
+        {
+          "dimension_id": "D05",
+          "status": "I",
+          "primary": "D05.HYB.COLLAB_THREAD",
+          "secondary": [
+            "D05.RUL.RITUAL_PROCEDURE"
+          ]
+        },
+        {
+          "dimension_id": "D06",
+          "status": "I",
+          "primary": "D06.T1",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D07",
+          "status": "I",
+          "primary": "D07.ANO.UNEXPLAINED_EVENT",
+          "secondary": [
+            "D07.ANO.UNKNOWN_EXISTENCE"
+          ]
+        },
+        {
+          "dimension_id": "D08",
+          "status": "I",
+          "primary": "D08.DEX.PERCEPTUAL_ANOMALY",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D09",
+          "status": "I",
+          "primary": "D09.AGN.AGENCY_ATTRIBUTION",
+          "secondary": [
+            "D09.CAT.TYPE_ASSIGNMENT"
+          ]
+        },
+        {
+          "dimension_id": "D10",
+          "status": "I",
+          "primary": "D10.SUP.GHOST_SPIRIT",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D11",
+          "status": "I",
+          "primary": "D11.MAN.PERFORM_RITUAL",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D12",
+          "status": "I",
+          "primary": "D12.FOC.PRACTITIONER",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D13",
+          "status": "I",
+          "primary": "D13.REL.PURSUIT",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D14",
+          "status": "U",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D15",
+          "status": "U",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D16",
+          "status": "I",
+          "primary": "D16.EVT.SEQUENTIAL_EPISODE",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D17",
+          "status": "I",
+          "primary": "D17.RIT.RITUAL_CLOSURE",
+          "secondary": [
+            "D17.RUL.PROCEDURAL_RULE"
+          ]
+        },
+        {
+          "dimension_id": "D18",
+          "status": "I",
+          "primary": "D18.L1",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D19",
+          "status": "I",
+          "primary": "D19.NET.OPEN_FORUM_WEB",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D20",
+          "status": "U",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D21",
+          "status": "I",
+          "primary": "D21.A1",
+          "secondary": []
+        }
+      ]
+    },
+    {
+      "entry_id": "0225",
+      "path": "workspace/articles/f8fe59b49c2e1e/docs/10_each_lore/0225_jaguchi_kara_ponjuice/0225_20_analysis.json",
+      "blob_sha": "2cb9bcf27408250daa4c965b2eee70e706616d81",
+      "dimensions": [
+        {
+          "dimension_id": "D01",
+          "status": "I",
+          "primary": "D01.G3",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D02",
+          "status": "I",
+          "primary": "D02.ORL.PEER_ORAL",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D03",
+          "status": "I",
+          "primary": "D03.ORL.PEER_ORAL",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D04",
+          "status": "I",
+          "primary": "D04.CON.HOAX_REFRAMING",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D05",
+          "status": "D",
+          "primary": "D05.PRP.FACT_CLAIM",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D06",
+          "status": "I",
+          "primary": "D06.T7",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D07",
+          "status": "D",
+          "primary": "D07.ING.GROUP_STEREOTYPE",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D08",
+          "status": "I",
+          "primary": "D08.CLM.FICTION_MEDIA_SEED",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D09",
+          "status": "D",
+          "primary": "D09.SSI.GROUP_BOUNDARY",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D10",
+          "status": "D",
+          "primary": "D10.OBJ.ARTIFACT_DEVICE",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D11",
+          "status": "D",
+          "primary": "D11.CON.LOCATION_STATE",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D12",
+          "status": "D",
+          "primary": "D12.OTD.DEVICE_INFRA",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D13",
+          "status": "D",
+          "primary": "D13.PHY.ENV_OBJECT_MANIPULATION",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D14",
+          "status": "D",
+          "primary": "D14.NEU",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D15",
+          "status": "NA",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D16",
+          "status": "D",
+          "primary": "D16.STA.STATIC_ATTRIBUTE",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D17",
+          "status": "D",
+          "primary": "D17.NON.OBSERVATIONAL_ONLY",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D18",
+          "status": "D",
+          "primary": "D18.L1",
+          "secondary": [
+            "D18.L3"
+          ]
+        },
+        {
+          "dimension_id": "D19",
+          "status": "I",
+          "primary": "D19.KIN.FRIEND_PEER",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D20",
+          "status": "I",
+          "primary": "D20.NON.COMMON_KNOWLEDGE",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D21",
+          "status": "D",
+          "primary": "D21.A2",
+          "secondary": []
+        }
+      ]
+    },
+    {
+      "entry_id": "0250",
+      "path": "workspace/articles/f8fe59b49c2e1e/docs/10_each_lore/0250_shichinin_misaki/0250_20_analysis.json",
+      "blob_sha": "19b5884f9376476ead57572aebdcb204e4eb5d4a",
+      "dimensions": [
+        {
+          "dimension_id": "D01",
+          "status": "U",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D02",
+          "status": "D",
+          "primary": "D02.PRT.MAGAZINE",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D03",
+          "status": "D",
+          "primary": "D03.PRT.MAGAZINE",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D04",
+          "status": "U",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D05",
+          "status": "I",
+          "primary": "D05.HRS.LOCAL_HEARSAY",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D06",
+          "status": "I",
+          "primary": "D06.T3",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D07",
+          "status": "D",
+          "primary": "D07.DCF.UNEXPLAINED_DEATH_LOSS",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D08",
+          "status": "D",
+          "primary": "D08.CLM.INHERITED_SAYING",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D09",
+          "status": "D",
+          "primary": "D09.PPR.RECURRENCE_RULE",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D10",
+          "status": "I",
+          "primary": "D10.SUP.GHOST_SPIRIT",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D11",
+          "status": "U",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D12",
+          "status": "D",
+          "primary": "D12.OTH.VICTIM_TARGET",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D13",
+          "status": "I",
+          "primary": "D13.TRN.PERSON_TRANSFER",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D14",
+          "status": "D",
+          "primary": "D14.NEG",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D15",
+          "status": "I",
+          "primary": "D15.BOD.DEATH",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D16",
+          "status": "D",
+          "primary": "D16.TRN.SUCCESSIVE_VICTIMS",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D17",
+          "status": "U",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D18",
+          "status": "D",
+          "primary": "D18.L1",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D19",
+          "status": "D",
+          "primary": "D19.LOC.REGIONAL",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D20",
+          "status": "U",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D21",
+          "status": "D",
+          "primary": "D21.A2",
+          "secondary": []
+        }
+      ]
+    },
+    {
+      "entry_id": "0275",
+      "path": "workspace/articles/f8fe59b49c2e1e/docs/10_each_lore/0275_bandaisan_tenaga_ashinaga/0275_20_analysis.json",
+      "blob_sha": "adaff94d813b9813cecee2e8286eaba3d2fc3881",
+      "dimensions": [
+        {
+          "dimension_id": "D01",
+          "status": "U",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D02",
+          "status": "I",
+          "primary": "D02.PRT.MAGAZINE",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D03",
+          "status": "I",
+          "primary": "D03.PRT.MAGAZINE",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D04",
+          "status": "U",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D05",
+          "status": "I",
+          "primary": "D05.HRS.LOCAL_HEARSAY",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D06",
+          "status": "I",
+          "primary": "D06.T3",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D07",
+          "status": "I",
+          "primary": "D07.PSE.ENVIRONMENTAL_ANOMALY",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D08",
+          "status": "I",
+          "primary": "D08.CLM.INHERITED_SAYING",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D09",
+          "status": "I",
+          "primary": "D09.CAU.HIDDEN_CAUSE",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D10",
+          "status": "I",
+          "primary": "D10.SUP.YOKAI_ENTITY",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D11",
+          "status": "I",
+          "primary": "D11.NCR.AMBIENT_EFFECT",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D12",
+          "status": "I",
+          "primary": "D12.ENV.NATURAL_ENVIRONMENT",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D13",
+          "status": "I",
+          "primary": "D13.PHY.ENV_OBJECT_MANIPULATION",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D14",
+          "status": "I",
+          "primary": "D14.NEG",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D15",
+          "status": "I",
+          "primary": "D15.MAT.PROPERTY_DAMAGE",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D16",
+          "status": "I",
+          "primary": "D16.EVT.SEQUENTIAL_EPISODE",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D17",
+          "status": "I",
+          "primary": "D17.CST.CONTAINMENT",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D18",
+          "status": "I",
+          "primary": "D18.L1",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D19",
+          "status": "I",
+          "primary": "D19.LOC.LOCAL_TRADITION",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D20",
+          "status": "U",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D21",
+          "status": "I",
+          "primary": "D21.A2",
+          "secondary": []
+        }
+      ]
+    },
+    {
+      "entry_id": "0309",
+      "path": "workspace/articles/f8fe59b49c2e1e/docs/10_each_lore/0309_uryujima/0309_20_analysis.json",
+      "blob_sha": "eb3b7b92169971e0f49a50f61055487de0da8100",
+      "dimensions": [
+        {
+          "dimension_id": "D01",
+          "status": "U",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D02",
+          "status": "U",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D03",
+          "status": "D",
+          "primary": "D03.WEB.WEBSITE",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D04",
+          "status": "D",
+          "primary": "D04.MED.COMMERCIALIZATION",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D05",
+          "status": "I",
+          "primary": "D05.PRP.EXPLANATORY_CLAIM",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D06",
+          "status": "D",
+          "primary": "D06.T6",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D07",
+          "status": "D",
+          "primary": "D07.PSE.HIDDEN_VANISHED_PLACE",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D08",
+          "status": "D",
+          "primary": "D08.HIS.HISTORICAL_EVENT",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D09",
+          "status": "D",
+          "primary": "D09.HST.EVENT_ORIGIN",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D10",
+          "status": "D",
+          "primary": "D10.NAT.PHYSICAL_ENV_PROCESS",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D11",
+          "status": "D",
+          "primary": "D11.NCR.AMBIENT_EFFECT",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D12",
+          "status": "D",
+          "primary": "D12.ENV.NATURAL_ENVIRONMENT",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D13",
+          "status": "D",
+          "primary": "D13.PHY.ENV_OBJECT_MANIPULATION",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D14",
+          "status": "D",
+          "primary": "D14.NEG",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D15",
+          "status": "I",
+          "primary": null,
+          "secondary": [
+            "D15.COL.COMMUNITY_CHANGE"
+          ]
+        },
+        {
+          "dimension_id": "D16",
+          "status": "D",
+          "primary": "D16.EVT.SEQUENTIAL_EPISODE",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D17",
+          "status": "U",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D18",
+          "status": "D",
+          "primary": "D18.L1",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D19",
+          "status": "D",
+          "primary": "D19.LOC.LOCAL_TRADITION",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D20",
+          "status": "U",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D21",
+          "status": "D",
+          "primary": "D21.A4",
+          "secondary": []
+        }
+      ]
+    },
+    {
+      "entry_id": "0319",
+      "path": "workspace/articles/f8fe59b49c2e1e/docs/10_each_lore/0319_senjogahara_daija_oomukade/0319_20_analysis.json",
+      "blob_sha": "e126df03d0603f76901461c76ea6e9d0afb61feb",
+      "dimensions": [
+        {
+          "dimension_id": "D01",
+          "status": "D",
+          "primary": "D01.G0",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D02",
+          "status": "U",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D03",
+          "status": "D",
+          "primary": "D03.WEB.WEBSITE",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D04",
+          "status": "I",
+          "primary": "D04.MIG.FORMAT_TRANSLATION",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D05",
+          "status": "D",
+          "primary": "D05.HYB.NARRATIVE_EXPLANATION",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D06",
+          "status": "I",
+          "primary": "D06.T3",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D07",
+          "status": "D",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D08",
+          "status": "D",
+          "primary": "D08.HIS.PLACE_NAME_RUIN",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D09",
+          "status": "D",
+          "primary": "D09.HST.EVENT_ORIGIN",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D10",
+          "status": "D",
+          "primary": "D10.SUP.DEITY_DIVINE",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D11",
+          "status": "I",
+          "primary": "D11.CON.LOCATION_STATE",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D12",
+          "status": "D",
+          "primary": "D12.OTH.SPECIFIC_OTHER",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D13",
+          "status": "D",
+          "primary": "D13.PHY.PHYSICAL_ATTACK",
+          "secondary": [
+            "D13.PHY.BODY_TRANSFORMATION"
+          ]
+        },
+        {
+          "dimension_id": "D14",
+          "status": "D",
+          "primary": "D14.NEG",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D15",
+          "status": "D",
+          "primary": "D15.BOD.SEVERE_INJURY",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D16",
+          "status": "D",
+          "primary": "D16.EVT.SEQUENTIAL_EPISODE",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D17",
+          "status": "D",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D18",
+          "status": "D",
+          "primary": "D18.L1",
+          "secondary": [
+            "D18.L3"
+          ]
+        },
+        {
+          "dimension_id": "D19",
+          "status": "I",
+          "primary": "D19.LOC.LOCAL_TRADITION",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D20",
+          "status": "I",
+          "primary": "D20.NON.NO_HIDDEN_TRUTH",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D21",
+          "status": "D",
+          "primary": "D21.A2",
+          "secondary": []
+        }
+      ]
+    },
+    {
+      "entry_id": "0349",
+      "path": "workspace/articles/f8fe59b49c2e1e/docs/10_each_lore/0349_sony_timer/0349_20_analysis.json",
+      "blob_sha": "3a4a21f93e3294e678b0d302ad41333e7b5b109c",
+      "dimensions": [
+        {
+          "dimension_id": "D01",
+          "status": "U",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D02",
+          "status": "U",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D03",
+          "status": "U",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D04",
+          "status": "U",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D05",
+          "status": "D",
+          "primary": "D05.PRP.EXPLANATORY_CLAIM",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D06",
+          "status": "D",
+          "primary": "D06.T6",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D07",
+          "status": "D",
+          "primary": "D07.TPS.DEVICE_PRODUCT_FAILURE",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D08",
+          "status": "D",
+          "primary": "D08.PAT.TEMPORAL_ASSOCIATION",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D09",
+          "status": "D",
+          "primary": "D09.CAU.DIRECT_CAUSE",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D10",
+          "status": "D",
+          "primary": "D10.HUM.ORGANIZATION",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D11",
+          "status": "D",
+          "primary": "D11.CON.TIME_DATE",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D12",
+          "status": "D",
+          "primary": "D12.OTD.OBJECT_PRODUCT",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D13",
+          "status": "D",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D14",
+          "status": "D",
+          "primary": "D14.NEG",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D15",
+          "status": "D",
+          "primary": "D15.MAT.DEVICE_DATA_LOSS",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D16",
+          "status": "D",
+          "primary": "D16.DLY.DELAYED",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D17",
+          "status": "U",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D18",
+          "status": "D",
+          "primary": "D18.L1",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D19",
+          "status": "U",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D20",
+          "status": "U",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D21",
+          "status": "D",
+          "primary": "D21.A2",
+          "secondary": []
+        }
+      ]
+    },
+    {
+      "entry_id": "0356",
+      "path": "workspace/articles/f8fe59b49c2e1e/docs/10_each_lore/0356_colonel_sanders_no_noroi/0356_20_analysis.json",
+      "blob_sha": "17ccae6705b2ad83af5abf78617351898fb5679c",
+      "dimensions": [
+        {
+          "dimension_id": "D01",
+          "status": "U",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D02",
+          "status": "U",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D03",
+          "status": "D",
+          "primary": "D03.WEB.WEBSITE",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D04",
+          "status": "D",
+          "primary": "D04.REC.EVENT_ATTACHMENT",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D05",
+          "status": "D",
+          "primary": "D05.PRP.EXPLANATORY_CLAIM",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D06",
+          "status": "I",
+          "primary": "D06.T5",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D07",
+          "status": "D",
+          "primary": "D07.DCF.MISFORTUNE_STREAK",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D08",
+          "status": "D",
+          "primary": "D08.HIS.HISTORICAL_EVENT",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D09",
+          "status": "D",
+          "primary": "D09.CAU.HIDDEN_CAUSE",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D10",
+          "status": "I",
+          "primary": "D10.SUP.IMPERSONAL_CURSE",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D11",
+          "status": "D",
+          "primary": "D11.MAN.CREATE_ALTER_MANIPULATE",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D12",
+          "status": "D",
+          "primary": "D12.ORG.ORGANIZATION",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D13",
+          "status": "D",
+          "primary": "D13.FAT.CURSE_MISFORTUNE",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D14",
+          "status": "D",
+          "primary": "D14.NEG",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D15",
+          "status": "D",
+          "primary": "D15.LIF.LIFE_SUCCESS_FAILURE",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D16",
+          "status": "D",
+          "primary": "D16.CON.CONTINUOUS",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D17",
+          "status": "U",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D18",
+          "status": "D",
+          "primary": "D18.L1",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D19",
+          "status": "D",
+          "primary": "D19.NET.OPEN_FORUM_WEB",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D20",
+          "status": "D",
+          "primary": "D20.NON.COMMON_KNOWLEDGE",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D21",
+          "status": "D",
+          "primary": "D21.A4",
+          "secondary": []
+        }
+      ]
+    },
+    {
+      "entry_id": "0362",
+      "path": "workspace/articles/f8fe59b49c2e1e/docs/10_each_lore/0362_toyokawa_shinkin_bank_run/0362_20_analysis.json",
+      "blob_sha": "949a23d6de1be10f751251ee73cf1132716b4a96",
+      "dimensions": [
+        {
+          "dimension_id": "D01",
+          "status": "D",
+          "primary": "D01.G3",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D02",
+          "status": "U",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D03",
+          "status": "U",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D04",
+          "status": "U",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D05",
+          "status": "I",
+          "primary": "D05.PRP.FACT_CLAIM",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D06",
+          "status": "I",
+          "primary": "D06.T4",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D07",
+          "status": "I",
+          "primary": "D07.INO.SYSTEM_CAPACITY_FAILURE",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D08",
+          "status": "I",
+          "primary": "D08.CLM.UNSUPPORTED_ASSERTION",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D09",
+          "status": "I",
+          "primary": "D09.CAT.BOUNDARY_CLASSIFICATION",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D10",
+          "status": "D",
+          "primary": "D10.OBJ.INFORMATION_CONTENT",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D11",
+          "status": "D",
+          "primary": "D11.INF.RECEIVE_MESSAGE",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D12",
+          "status": "D",
+          "primary": "D12.AUD.READER_LISTENER",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D13",
+          "status": "D",
+          "primary": "D13.COG.INFORMATION_INDUCED_ACTION",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D14",
+          "status": "D",
+          "primary": "D14.NEG",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D15",
+          "status": "D",
+          "primary": "D15.COL.MARKET_SOCIAL_BEHAVIOR",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D16",
+          "status": "D",
+          "primary": "D16.EVT.SEQUENTIAL_EPISODE",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D17",
+          "status": "D",
+          "primary": "D17.INF.VERIFY_DEBUNK",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D18",
+          "status": "D",
+          "primary": "D18.L3",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D19",
+          "status": "U",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D20",
+          "status": "I",
+          "primary": "D20.ORG.INSTITUTION_AUTHORITY",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D21",
+          "status": "D",
+          "primary": "D21.A4",
+          "secondary": []
+        }
+      ]
+    },
+    {
+      "entry_id": "0363",
+      "path": "workspace/articles/f8fe59b49c2e1e/docs/10_each_lore/0363_1973_toilet_paper_shortage_rumor/0363_20_analysis.json",
+      "blob_sha": "4a87b514ff324ea123452fac923f48ab45b193ba",
+      "dimensions": [
+        {
+          "dimension_id": "D01",
+          "status": "D",
+          "primary": "D01.G3",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D02",
+          "status": "I",
+          "primary": "D02.ORL.PEER_ORAL",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D03",
+          "status": "I",
+          "primary": "D03.ORL.PEER_ORAL",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D04",
+          "status": "U",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D05",
+          "status": "I",
+          "primary": "D05.PRP.PREDICTIVE_CLAIM",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D06",
+          "status": "I",
+          "primary": "D06.T5",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D07",
+          "status": "I",
+          "primary": "D07.ISU.CRISIS_SCARCITY",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D08",
+          "status": "I",
+          "primary": "D08.HIS.RECENT_INCIDENT",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D09",
+          "status": "I",
+          "primary": "D09.PPR.OMEN_FORECAST",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D10",
+          "status": "U",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D11",
+          "status": "I",
+          "primary": "D11.NCR.AMBIENT_EFFECT",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D12",
+          "status": "U",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D13",
+          "status": "U",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D14",
+          "status": "I",
+          "primary": "D14.NEG",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D15",
+          "status": "I",
+          "primary": "D15.MAT.RESOURCE_SCARCITY",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D16",
+          "status": "I",
+          "primary": "D16.STA.STATIC_ASSOCIATION",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D17",
+          "status": "U",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D18",
+          "status": "D",
+          "primary": "D18.L3",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D19",
+          "status": "I",
+          "primary": "D19.MAS.NATIONAL_PUBLIC",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D20",
+          "status": "I",
+          "primary": "D20.NON.NO_HIDDEN_TRUTH",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D21",
+          "status": "I",
+          "primary": "D21.A4",
+          "secondary": []
+        }
+      ]
+    },
+    {
+      "entry_id": "0365",
+      "path": "workspace/articles/f8fe59b49c2e1e/docs/10_each_lore/0365_kanto_earthquake_poison_well_rumor/0365_20_analysis.json",
+      "blob_sha": "354da52f86fc4a5e310fba96eca30ae0fd083427",
+      "dimensions": [
+        {
+          "dimension_id": "D01",
+          "status": "D",
+          "primary": "D01.G1",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D02",
+          "status": "U",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D03",
+          "status": "U",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D04",
+          "status": "U",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D05",
+          "status": "D",
+          "primary": "D05.PRP.FACT_CLAIM",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D06",
+          "status": "D",
+          "primary": "D06.T4",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D07",
+          "status": "D",
+          "primary": "D07.ICT.OUTGROUP_THREAT",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D08",
+          "status": "D",
+          "primary": "D08.HIS.RECENT_INCIDENT",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D09",
+          "status": "D",
+          "primary": "D09.AGN.AGENCY_ATTRIBUTION",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D10",
+          "status": "D",
+          "primary": "D10.HUM.INFORMAL_GROUP",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D11",
+          "status": "U",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D12",
+          "status": "D",
+          "primary": "D12.OTD.DEVICE_INFRA",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D13",
+          "status": "D",
+          "primary": "D13.PHY.ENV_OBJECT_MANIPULATION",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D14",
+          "status": "D",
+          "primary": "D14.NEG",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D15",
+          "status": "U",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D16",
+          "status": "D",
+          "primary": "D16.STA.STATIC_ASSOCIATION",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D17",
+          "status": "U",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D18",
+          "status": "D",
+          "primary": "D18.L1",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D19",
+          "status": "U",
+          "primary": null,
+          "secondary": []
+        },
+        {
+          "dimension_id": "D20",
+          "status": "D",
+          "primary": "D20.NON.NO_HIDDEN_TRUTH",
+          "secondary": []
+        },
+        {
+          "dimension_id": "D21",
+          "status": "D",
+          "primary": "D21.A4",
+          "secondary": []
+        }
+      ]
     }
   ],
-  "aggregate": null
+  "aggregate": {
+    "entry_count": 25,
+    "status_frequency": {
+      "D01": {
+        "I": 4,
+        "U": 14,
+        "D": 7
+      },
+      "D02": {
+        "U": 12,
+        "I": 9,
+        "D": 4
+      },
+      "D03": {
+        "I": 10,
+        "U": 6,
+        "D": 9
+      },
+      "D04": {
+        "I": 9,
+        "U": 13,
+        "D": 3
+      },
+      "D05": {
+        "D": 10,
+        "I": 15
+      },
+      "D06": {
+        "U": 2,
+        "I": 16,
+        "D": 6,
+        "C": 1
+      },
+      "D07": {
+        "D": 12,
+        "I": 13
+      },
+      "D08": {
+        "I": 14,
+        "U": 1,
+        "D": 10
+      },
+      "D09": {
+        "I": 15,
+        "D": 10
+      },
+      "D10": {
+        "U": 5,
+        "D": 9,
+        "I": 11
+      },
+      "D11": {
+        "U": 3,
+        "D": 10,
+        "I": 12
+      },
+      "D12": {
+        "D": 15,
+        "I": 8,
+        "C": 1,
+        "U": 1
+      },
+      "D13": {
+        "D": 12,
+        "I": 11,
+        "C": 1,
+        "U": 1
+      },
+      "D14": {
+        "D": 13,
+        "U": 3,
+        "I": 9
+      },
+      "D15": {
+        "U": 4,
+        "I": 13,
+        "D": 7,
+        "NA": 1
+      },
+      "D16": {
+        "U": 1,
+        "I": 12,
+        "D": 12
+      },
+      "D17": {
+        "U": 10,
+        "I": 11,
+        "D": 4
+      },
+      "D18": {
+        "I": 11,
+        "D": 14
+      },
+      "D19": {
+        "I": 12,
+        "D": 7,
+        "U": 6
+      },
+      "D20": {
+        "U": 13,
+        "I": 9,
+        "D": 3
+      },
+      "D21": {
+        "I": 13,
+        "D": 12
+      }
+    },
+    "primary_frequency": {
+      "D01": {
+        "D01.G3": 5,
+        "D01.G1": 3,
+        "D01.G6": 2,
+        "D01.G0": 1
+      },
+      "D03": {
+        "D03.ORL.PEER_ORAL": 3,
+        "D03.WEB.WEBSITE": 4,
+        "D03.PRT.CHAIN_LETTER": 2,
+        "D03.ORL.WORKPLACE_ORAL": 1,
+        "D03.WEB.FORUM": 6,
+        "D03.PRT.MAGAZINE": 2
+      },
+      "D04": {
+        "D04.MIG.MEDIUM_SHIFT": 1,
+        "D04.VAR.ORAL_VARIATION": 1,
+        "D04.VAR.ACCRETION": 3,
+        "D04.COL.LIVE_COCREATION": 2,
+        "D04.CON.HOAX_REFRAMING": 1,
+        "D04.MED.COMMERCIALIZATION": 1,
+        "D04.MIG.FORMAT_TRANSLATION": 1,
+        "D04.REC.EVENT_ATTACHMENT": 1
+      },
+      "D05": {
+        "D05.PRP.FACT_CLAIM": 4,
+        "D05.HRS.SCHOOL_WORK_HEARSAY": 1,
+        "D05.RUL.JINX_RULE": 1,
+        "D05.RUL.RITUAL_PROCEDURE": 1,
+        "D05.HYB.MULTI_TESTIMONY": 1,
+        "D05.RUL.CHAIN_INSTRUCTION": 2,
+        "D05.HRS.FOAF": 1,
+        "D05.EXP.RETROSPECTIVE_1P": 3,
+        "D05.HYB.COLLAB_THREAD": 2,
+        "D05.EXP.EXPERIENCE_SUMMARY": 1,
+        "D05.HRS.LOCAL_HEARSAY": 2,
+        "D05.PRP.EXPLANATORY_CLAIM": 3,
+        "D05.HYB.NARRATIVE_EXPLANATION": 1,
+        "D05.PRP.PREDICTIVE_CLAIM": 1
+      },
+      "D07": {
+        "D07.ICT.ABDUCTION_ASSAULT": 1,
+        "D07.ANO.UNKNOWN_EXISTENCE": 7,
+        "D07.DCF.FATE_OMEN": 3,
+        "D07.ISU.INFORMATION_VOID": 1,
+        "D07.ANO.DREAM_SLEEP_ANOMALY": 1,
+        "D07.PSE.SPATIAL_ROUTE_ANOMALY": 1,
+        "D07.ANO.UNEXPLAINED_EVENT": 1,
+        "D07.ING.GROUP_STEREOTYPE": 1,
+        "D07.DCF.UNEXPLAINED_DEATH_LOSS": 1,
+        "D07.PSE.ENVIRONMENTAL_ANOMALY": 1,
+        "D07.PSE.HIDDEN_VANISHED_PLACE": 1,
+        "D07.TPS.DEVICE_PRODUCT_FAILURE": 1,
+        "D07.DCF.MISFORTUNE_STREAK": 1,
+        "D07.INO.SYSTEM_CAPACITY_FAILURE": 1,
+        "D07.ISU.CRISIS_SCARCITY": 1,
+        "D07.ICT.OUTGROUP_THREAT": 1
+      },
+      "D08": {
+        "D08.STY.COMMUNITY_REPETITION": 2,
+        "D08.CLM.UNSUPPORTED_ASSERTION": 2,
+        "D08.DEX.DIRECT_EVENT": 4,
+        "D08.STY.WITNESS_REPORT": 2,
+        "D08.TRC.TEXT_DOCUMENT": 2,
+        "D08.DEX.DREAM_SLEEP_EVENT": 1,
+        "D08.DEX.PERCEPTUAL_ANOMALY": 2,
+        "D08.CLM.FICTION_MEDIA_SEED": 1,
+        "D08.CLM.INHERITED_SAYING": 2,
+        "D08.HIS.HISTORICAL_EVENT": 2,
+        "D08.HIS.PLACE_NAME_RUIN": 1,
+        "D08.PAT.TEMPORAL_ASSOCIATION": 1,
+        "D08.HIS.RECENT_INCIDENT": 2
+      },
+      "D09": {
+        "D09.CAT.NAMING": 1,
+        "D09.AGN.AGENCY_ATTRIBUTION": 5,
+        "D09.PPR.CORRELATION_RULE": 1,
+        "D09.CTL.RITUAL_RULE": 1,
+        "D09.CAT.TYPE_ASSIGNMENT": 1,
+        "D09.PPR.OMEN_FORECAST": 3,
+        "D09.UNK.DELIBERATE_NONRESOLUTION": 2,
+        "D09.UNK.FORBIDDEN_INQUIRY": 1,
+        "D09.CAU.HIDDEN_CAUSE": 4,
+        "D09.SSI.GROUP_BOUNDARY": 1,
+        "D09.PPR.RECURRENCE_RULE": 1,
+        "D09.HST.EVENT_ORIGIN": 2,
+        "D09.CAU.DIRECT_CAUSE": 1,
+        "D09.CAT.BOUNDARY_CLASSIFICATION": 1
+      },
+      "D12": {
+        "D12.GRP.DEMOGRAPHIC_GROUP": 2,
+        "D12.FOC.PROTAGONIST_EXPERIENCER": 7,
+        "D12.AUD.READER_LISTENER": 4,
+        "D12.OTH.SPECIFIC_OTHER": 2,
+        "D12.FOC.PRACTITIONER": 1,
+        "D12.OTD.DEVICE_INFRA": 2,
+        "D12.OTH.VICTIM_TARGET": 1,
+        "D12.ENV.NATURAL_ENVIRONMENT": 2,
+        "D12.OTD.OBJECT_PRODUCT": 1,
+        "D12.ORG.ORGANIZATION": 1
+      },
+      "D13": {
+        "D13.PHY.PHYSICAL_ATTACK": 2,
+        "D13.MAN.MANIFEST_ONLY": 3,
+        "D13.COG.COGNITION_TRIGGERED_HARM": 2,
+        "D13.REL.PURSUIT": 3,
+        "D13.FAT.LUCK_BENEFIT": 1,
+        "D13.FAT.CURSE_MISFORTUNE": 3,
+        "D13.RST.SPATIAL_DISTORTION": 1,
+        "D13.PHY.ENV_OBJECT_MANIPULATION": 4,
+        "D13.TRN.PERSON_TRANSFER": 1,
+        "D13.COG.INFORMATION_INDUCED_ACTION": 1
+      },
+      "D14": {
+        "D14.NEG": 17,
+        "D14.NEU": 4,
+        "D14.MIX": 1
+      },
+      "D18": {
+        "D18.L1": 22,
+        "D18.L2": 1,
+        "D18.L3": 2
+      },
+      "D19": {
+        "D19.KIN.SCHOOL_YOUTH": 4,
+        "D19.MAS.NATIONAL_PUBLIC": 2,
+        "D19.PRO.OCCUPATIONAL": 1,
+        "D19.NET.OPEN_FORUM_WEB": 7,
+        "D19.KIN.FRIEND_PEER": 1,
+        "D19.LOC.REGIONAL": 1,
+        "D19.LOC.LOCAL_TRADITION": 3
+      },
+      "D21": {
+        "D21.A1": 10,
+        "D21.A0": 2,
+        "D21.A2": 7,
+        "D21.A4": 6
+      },
+      "D06": {
+        "D06.T3": 4,
+        "D06.T5": 6,
+        "D06.T1": 5,
+        "D06.T2": 1,
+        "D06.T6": 3,
+        "D06.T7": 1,
+        "D06.T4": 2
+      },
+      "D10": {
+        "D10.SUP.YOKAI_ENTITY": 4,
+        "D10.OBJ.SYMBOL_NAME_IMAGE": 1,
+        "D10.SUP.GHOST_SPIRIT": 4,
+        "D10.OBJ.INFORMATION_CONTENT": 3,
+        "D10.PHN.DREAM_SLEEP_PHENOMENON": 1,
+        "D10.OBJ.CURSED_OBJECT": 1,
+        "D10.OBJ.ARTIFACT_DEVICE": 1,
+        "D10.NAT.PHYSICAL_ENV_PROCESS": 1,
+        "D10.SUP.DEITY_DIVINE": 1,
+        "D10.HUM.ORGANIZATION": 1,
+        "D10.SUP.IMPERSONAL_CURSE": 1,
+        "D10.HUM.INFORMAL_GROUP": 1
+      },
+      "D11": {
+        "D11.MOV.ENTER_PASS_CROSS": 1,
+        "D11.INF.SAY_NAME_REMEMBER": 1,
+        "D11.INF.RECEIVE_MESSAGE": 4,
+        "D11.MAN.PERFORM_RITUAL": 2,
+        "D11.SEN.VISUAL_EXPOSURE": 1,
+        "D11.MOV.RIDE_BOARD": 2,
+        "D11.INF.UNDERSTAND_RECOGNIZE": 1,
+        "D11.PAS.ACCIDENT_INVOLVEMENT": 1,
+        "D11.MAN.TAKE_OWN_CARRY": 1,
+        "D11.PAS.SPONTANEOUS_SELECTION": 1,
+        "D11.CON.LOCATION_STATE": 2,
+        "D11.NCR.AMBIENT_EFFECT": 3,
+        "D11.CON.TIME_DATE": 1,
+        "D11.MAN.CREATE_ALTER_MANIPULATE": 1
+      },
+      "D16": {
+        "D16.EVT.SINGLE_EPISODE": 2,
+        "D16.DLY.DEADLINE": 4,
+        "D16.EVT.SEQUENTIAL_EPISODE": 10,
+        "D16.EVT.SINGLE_OBSERVATION": 1,
+        "D16.REC.RECURRENT": 1,
+        "D16.STA.STATIC_ATTRIBUTE": 1,
+        "D16.TRN.SUCCESSIVE_VICTIMS": 1,
+        "D16.DLY.DELAYED": 1,
+        "D16.CON.CONTINUOUS": 1,
+        "D16.STA.STATIC_ASSOCIATION": 2
+      },
+      "D15": {
+        "D15.BOD.DEATH": 4,
+        "D15.KNW.REVELATION_KNOWLEDGE": 3,
+        "D15.KNW.UNCERTAINTY_PRESERVED": 3,
+        "D15.OPP.LUCK_MISFORTUNE": 2,
+        "D15.MND.SELF_IDENTITY_DISRUPTION": 1,
+        "D15.MAT.PROPERTY_DAMAGE": 1,
+        "D15.BOD.SEVERE_INJURY": 1,
+        "D15.MAT.DEVICE_DATA_LOSS": 1,
+        "D15.LIF.LIFE_SUCCESS_FAILURE": 1,
+        "D15.COL.MARKET_SOCIAL_BEHAVIOR": 1,
+        "D15.MAT.RESOURCE_SCARCITY": 1
+      },
+      "D17": {
+        "D17.RUL.OBEY_TABOO": 1,
+        "D17.NON.OBSERVATIONAL_ONLY": 3,
+        "D17.USE.LUCK_EXPLOITATION": 1,
+        "D17.CST.TRANSFER_SUBSTITUTE": 1,
+        "D17.AVO.DO_NOT_ENGAGE": 1,
+        "D17.UNA.NO_KNOWN_ESCAPE": 1,
+        "D17.RIT.RITUAL_CLOSURE": 2,
+        "D17.RUL.PROCEDURAL_RULE": 1,
+        "D17.CST.CONTAINMENT": 1,
+        "D17.INF.VERIFY_DEBUNK": 1
+      },
+      "D20": {
+        "D20.HAZ.DANGEROUS_TO_KNOW": 1,
+        "D20.NON.NO_HIDDEN_TRUTH": 4,
+        "D20.PER.FAMILY_BLOODLINE": 2,
+        "D20.INS.LOCAL_RESIDENT": 2,
+        "D20.NON.COMMON_KNOWLEDGE": 2,
+        "D20.ORG.INSTITUTION_AUTHORITY": 1
+      },
+      "D02": {
+        "D02.PRT.CHAIN_LETTER": 2,
+        "D02.ORL.WORKPLACE_ORAL": 1,
+        "D02.WEB.FORUM": 6,
+        "D02.ORL.PEER_ORAL": 2,
+        "D02.PRT.MAGAZINE": 2
+      }
+    },
+    "secondary_frequency": {
+      "D03": {
+        "D03.PRT.MAGAZINE": 1,
+        "D03.PRT.NEWSPAPER": 1,
+        "D03.WEB.WEBSITE": 2
+      },
+      "D08": {
+        "D08.CLM.UNSUPPORTED_ASSERTION": 2,
+        "D08.TRC.PHOTO_VIDEO_AUDIO": 1,
+        "D08.TRC.PHYSICAL_TRACE": 1,
+        "D08.DEX.PERCEPTUAL_ANOMALY": 2
+      },
+      "D09": {
+        "D09.AGN.AGENCY_ATTRIBUTION": 1,
+        "D09.NOR.TABOOIZATION": 1,
+        "D09.HST.HISTORICAL_ANCHOR": 1,
+        "D09.CTL.TRANSMISSION_RULE": 2,
+        "D09.UNK.DELIBERATE_NONRESOLUTION": 1,
+        "D09.CAT.TYPE_ASSIGNMENT": 2
+      },
+      "D19": {
+        "D19.LOC.REGIONAL": 2,
+        "D19.MAS.NATIONAL_PUBLIC": 1
+      },
+      "D18": {
+        "D18.L3": 5,
+        "D18.L2": 2
+      },
+      "D05": {
+        "D05.PRP.PREDICTIVE_CLAIM": 1,
+        "D05.EXP.LIVE_1P": 1,
+        "D05.HYB.COLLAB_THREAD": 1,
+        "D05.RUL.RITUAL_PROCEDURE": 1
+      },
+      "D11": {
+        "D11.CON.AGE_LIFESTAGE": 1,
+        "D11.PAS.SLEEP_DREAM": 1,
+        "D11.SEN.VISUAL_EXPOSURE": 2,
+        "D11.MOV.RIDE_BOARD": 1
+      },
+      "D13": {
+        "D13.FAT.CURSE_MISFORTUNE": 2,
+        "D13.PHY.BODY_TRANSFORMATION": 2,
+        "D13.PHY.ENV_OBJECT_MANIPULATION": 1,
+        "D13.COG.MENTAL_INFLUENCE": 1,
+        "D13.REL.MIMICRY": 1,
+        "D13.REL.LURING": 1
+      },
+      "D15": {
+        "D15.OPP.LUCK_MISFORTUNE": 1,
+        "D15.BOD.BODY_CHANGE_CONTAMINATION": 1,
+        "D15.LIF.FUTURE_CONSTRAINT": 1,
+        "D15.COL.COMMUNITY_CHANGE": 1
+      },
+      "D12": {
+        "D12.OTD.OBJECT_PRODUCT": 1,
+        "D12.AUD.NEXT_RECIPIENT": 1,
+        "D12.FOC.PROTAGONIST_EXPERIENCER": 1
+      },
+      "D16": {
+        "D16.REC.PERIODIC": 1,
+        "D16.TRN.CHAIN_SPREAD": 2,
+        "D16.CON.PURSUIT_DURATION": 1
+      },
+      "D17": {
+        "D17.RUL.PROCEDURAL_RULE": 3,
+        "D17.RIT.RELIGIOUS_SPECIALIST": 1,
+        "D17.CST.ONGOING_MANAGEMENT": 1,
+        "D17.CST.CONTAINMENT": 1,
+        "D17.CST.TRANSFER_SUBSTITUTE": 1
+      },
+      "D07": {
+        "D07.ANO.UNEXPLAINED_EVENT": 1,
+        "D07.ANO.ANOMALOUS_PERCEPTION": 1,
+        "D07.PSE.HIDDEN_VANISHED_PLACE": 1,
+        "D07.DCF.UNEXPLAINED_DEATH_LOSS": 1,
+        "D07.ANO.UNKNOWN_EXISTENCE": 1
+      },
+      "D10": {
+        "D10.PHN.ANOMALOUS_EXPERIENCE": 1
+      },
+      "D04": {
+        "D04.VAR.RETELLING": 1,
+        "D04.VAR.ACCRETION": 1
+      },
+      "D20": {
+        "D20.EXP.RELIGIOUS_FOLKLORE": 1
+      }
+    },
+    "combination_D07_D10_frequency": {
+      "D07:D:D07.ICT.ABDUCTION_ASSAULT:|D08:I:D08.STY.COMMUNITY_REPETITION:D08.CLM.UNSUPPORTED_ASSERTION|D09:I:D09.CAT.NAMING:D09.AGN.AGENCY_ATTRIBUTION|D10:U:-:": 1,
+      "D07:I:D07.ANO.UNKNOWN_EXISTENCE:|D08:I:D08.STY.COMMUNITY_REPETITION:|D09:D:D09.AGN.AGENCY_ATTRIBUTION:|D10:D:D10.SUP.YOKAI_ENTITY:": 1,
+      "D07:I:D07.DCF.FATE_OMEN:|D08:I:D08.CLM.UNSUPPORTED_ASSERTION:|D09:I:D09.PPR.CORRELATION_RULE:D09.NOR.TABOOIZATION|D10:I:D10.OBJ.SYMBOL_NAME_IMAGE:": 1,
+      "D07:I:D07.ANO.UNKNOWN_EXISTENCE:|D08:I:D08.DEX.DIRECT_EVENT:|D09:I:D09.AGN.AGENCY_ATTRIBUTION:|D10:I:D10.SUP.YOKAI_ENTITY:": 1,
+      "D07:I:D07.ISU.INFORMATION_VOID:|D08:U:-:|D09:I:D09.CTL.RITUAL_RULE:|D10:I:D10.SUP.GHOST_SPIRIT:": 1,
+      "D07:D:D07.ANO.UNKNOWN_EXISTENCE:|D08:D:D08.STY.WITNESS_REPORT:D08.TRC.PHOTO_VIDEO_AUDIO,D08.TRC.PHYSICAL_TRACE|D09:I:D09.CAT.TYPE_ASSIGNMENT:D09.HST.HISTORICAL_ANCHOR|D10:U:-:": 1,
+      "D07:I:D07.DCF.FATE_OMEN:|D08:I:D08.TRC.TEXT_DOCUMENT:|D09:I:D09.PPR.OMEN_FORECAST:D09.CTL.TRANSMISSION_RULE|D10:I:D10.OBJ.INFORMATION_CONTENT:": 1,
+      "D07:I:D07.DCF.FATE_OMEN:|D08:D:D08.TRC.TEXT_DOCUMENT:D08.CLM.UNSUPPORTED_ASSERTION|D09:I:D09.PPR.OMEN_FORECAST:D09.CTL.TRANSMISSION_RULE|D10:I:D10.OBJ.INFORMATION_CONTENT:": 1,
+      "D07:I:D07.ANO.UNKNOWN_EXISTENCE:|D08:I:D08.DEX.DIRECT_EVENT:|D09:I:D09.AGN.AGENCY_ATTRIBUTION:|D10:I:D10.SUP.GHOST_SPIRIT:": 1,
+      "D07:I:D07.ANO.DREAM_SLEEP_ANOMALY:D07.ANO.UNEXPLAINED_EVENT|D08:I:D08.DEX.DREAM_SLEEP_EVENT:D08.DEX.PERCEPTUAL_ANOMALY|D09:I:D09.UNK.DELIBERATE_NONRESOLUTION:|D10:I:D10.PHN.DREAM_SLEEP_PHENOMENON:D10.PHN.ANOMALOUS_EXPERIENCE": 1,
+      "D07:I:D07.ANO.UNKNOWN_EXISTENCE:D07.ANO.ANOMALOUS_PERCEPTION|D08:I:D08.DEX.DIRECT_EVENT:D08.DEX.PERCEPTUAL_ANOMALY|D09:I:D09.UNK.FORBIDDEN_INQUIRY:D09.UNK.DELIBERATE_NONRESOLUTION|D10:U:-:": 1,
+      "D07:D:D07.PSE.SPATIAL_ROUTE_ANOMALY:D07.PSE.HIDDEN_VANISHED_PLACE|D08:D:D08.DEX.DIRECT_EVENT:|D09:I:D09.UNK.DELIBERATE_NONRESOLUTION:D09.CAT.TYPE_ASSIGNMENT|D10:U:-:": 1,
+      "D07:D:D07.ANO.UNKNOWN_EXISTENCE:D07.DCF.UNEXPLAINED_DEATH_LOSS|D08:I:D08.STY.WITNESS_REPORT:|D09:D:D09.CAU.HIDDEN_CAUSE:|D10:D:D10.OBJ.CURSED_OBJECT:": 1,
+      "D07:D:D07.ANO.UNKNOWN_EXISTENCE:|D08:D:D08.DEX.PERCEPTUAL_ANOMALY:|D09:D:D09.CAU.HIDDEN_CAUSE:|D10:D:D10.SUP.YOKAI_ENTITY:": 1,
+      "D07:I:D07.ANO.UNEXPLAINED_EVENT:D07.ANO.UNKNOWN_EXISTENCE|D08:I:D08.DEX.PERCEPTUAL_ANOMALY:|D09:I:D09.AGN.AGENCY_ATTRIBUTION:D09.CAT.TYPE_ASSIGNMENT|D10:I:D10.SUP.GHOST_SPIRIT:": 1,
+      "D07:D:D07.ING.GROUP_STEREOTYPE:|D08:I:D08.CLM.FICTION_MEDIA_SEED:|D09:D:D09.SSI.GROUP_BOUNDARY:|D10:D:D10.OBJ.ARTIFACT_DEVICE:": 1,
+      "D07:D:D07.DCF.UNEXPLAINED_DEATH_LOSS:|D08:D:D08.CLM.INHERITED_SAYING:|D09:D:D09.PPR.RECURRENCE_RULE:|D10:I:D10.SUP.GHOST_SPIRIT:": 1,
+      "D07:I:D07.PSE.ENVIRONMENTAL_ANOMALY:|D08:I:D08.CLM.INHERITED_SAYING:|D09:I:D09.CAU.HIDDEN_CAUSE:|D10:I:D10.SUP.YOKAI_ENTITY:": 1,
+      "D07:D:D07.PSE.HIDDEN_VANISHED_PLACE:|D08:D:D08.HIS.HISTORICAL_EVENT:|D09:D:D09.HST.EVENT_ORIGIN:|D10:D:D10.NAT.PHYSICAL_ENV_PROCESS:": 1,
+      "D07:D:-:|D08:D:D08.HIS.PLACE_NAME_RUIN:|D09:D:D09.HST.EVENT_ORIGIN:|D10:D:D10.SUP.DEITY_DIVINE:": 1,
+      "D07:D:D07.TPS.DEVICE_PRODUCT_FAILURE:|D08:D:D08.PAT.TEMPORAL_ASSOCIATION:|D09:D:D09.CAU.DIRECT_CAUSE:|D10:D:D10.HUM.ORGANIZATION:": 1,
+      "D07:D:D07.DCF.MISFORTUNE_STREAK:|D08:D:D08.HIS.HISTORICAL_EVENT:|D09:D:D09.CAU.HIDDEN_CAUSE:|D10:I:D10.SUP.IMPERSONAL_CURSE:": 1,
+      "D07:I:D07.INO.SYSTEM_CAPACITY_FAILURE:|D08:I:D08.CLM.UNSUPPORTED_ASSERTION:|D09:I:D09.CAT.BOUNDARY_CLASSIFICATION:|D10:D:D10.OBJ.INFORMATION_CONTENT:": 1,
+      "D07:I:D07.ISU.CRISIS_SCARCITY:|D08:I:D08.HIS.RECENT_INCIDENT:|D09:I:D09.PPR.OMEN_FORECAST:|D10:U:-:": 1,
+      "D07:D:D07.ICT.OUTGROUP_THREAT:|D08:D:D08.HIS.RECENT_INCIDENT:|D09:D:D09.AGN.AGENCY_ATTRIBUTION:|D10:D:D10.HUM.INFORMAL_GROUP:": 1
+    }
+  }
 }
