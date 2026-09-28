@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000031",
+  "review_seq": 2,
+  "layer": "20_synthesis",
+  "review_kind": "10_evidence_to_20_synthesis",
+  "target_blob_sha": "6fef242b3a8800186749316b9dd784564f70c34b",
+  "assessment": "K0001–K0003 remain traceable to E0001–E0003 and preserve the relevant qualifications. The repaired K0003 keeps the long-distance irrigation/reclaimed-land structure used by the downstream design while explicitly adding the unresolved 1888/1899 completion-year discrepancy as a qualifier, and U0005 separately preserves the same unresolved Source conflict without attempting to infer its cause. The synthesis does not use the disputed year to create the shared transformation/connectivity pattern, and no unsupported proposition, overgeneralization, or lost uncertainty is identified.",
+  "findings": [],
+  "verdict": "PASS"
+}

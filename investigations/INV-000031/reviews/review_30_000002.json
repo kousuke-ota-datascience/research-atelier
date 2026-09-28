@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000031",
+  "review_seq": 2,
+  "layer": "30_analysis",
+  "review_kind": "20_synthesis_plus_00_context_to_30_analysis",
+  "target_blob_sha": "291dd4f856f5882afe0716dcbdf893c78213a990",
+  "assessment": "The rebuilt Exploratory analysis remains within the frozen scope and uses the synthesized factual structures rather than bypassing them. The six candidate legend models clearly distinguish creative activation/mechanism/effect/release rules from historical facts. The repaired analysis explicitly carries the Muro-irrigation completion-year uncertainty into evidence_gaps, limitations, and unresolved_questions, and states that candidates E/F depend on the approximately 23 km connection structure rather than a single completion year. The Working Answer and J0001–J0005 do not require resolution of the disputed date and do not exceed the supported synthesis boundary. No independent analysis-layer finding is identified.",
+  "findings": [],
+  "verdict": "PASS"
+}

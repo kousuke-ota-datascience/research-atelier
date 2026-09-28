@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000031",
+  "review_seq": 2,
+  "layer": "00_context",
+  "review_kind": "context_semantic_validity",
+  "target_blob_sha": "ae413c1f0eeeb27c3f2b7d23977dcc5fd27a2cd8",
+  "assessment": "The frozen Exploratory context remains semantically coherent with RQ-000031. It constrains the task to constructing multiple legend-structure candidates from Evidence-supported Toyohashi-specific factual anchors, explicitly separates factual anchors from invented anomalous mechanisms, treats D01–D21 as a descriptive/checking framework rather than generation rules, and excludes fabrication of historical facts or careless harmful attribution to real entities. No context-defining contradiction or omission requiring a successor Investigation is identified.",
+  "findings": [],
+  "verdict": "PASS"
+}

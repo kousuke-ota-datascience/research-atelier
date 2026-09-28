@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000031",
+  "review_seq": 2,
+  "layer": "10_evidence",
+  "review_kind": "source_evidence_note_to_10_evidence",
+  "target_blob_sha": "a61c82c04c66d5a0dffb927e3988ee19ad2c95d4",
+  "assessment": "The repaired Evidence snapshot is source-faithful and aligned with the current Evidence Notes. EV-000251 and EV-000252 remain faithfully represented. EV-000254 and E0003 now both preserve the material SRC-0146 conflict: the Jinno Shinden/Muro irrigation section states 1887 start and 1899 completion, while the World Heritage Irrigation Structures section states 1888 completion. E0003 no longer resolves that discrepancy by assertion; it records that the completion year cannot be fixed from this Source alone, while retaining the supported approximately 23 km irrigation connection and reclamation/embankment facts. The prior provenance finding is therefore repaired, and no new source-to-Evidence semantic defect is identified.",
+  "findings": [],
+  "verdict": "PASS"
+}
