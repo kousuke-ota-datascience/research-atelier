@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000030",
+  "review_seq": 1,
+  "layer": "20_synthesis",
+  "review_kind": "10_evidence_to_20_synthesis",
+  "target_blob_sha": "724d6857b6c2152c412e7c8d336bcdf2bd32f7bd",
+  "assessment": "K0001-K0009 are traceable to E0001-E0009 and preserve the material qualifiers needed for the comparison: lack of national-rarity evidence, broad geographic propagation of eejanaika, unknown rarity of the Ushikawa call-board procedure, absence of cross-city reconstruction-road comparators, the pre-existing folklore status of the Oni Festival and Suse snake cave, and the cross-jurisdictional nature of the Hime Kaido network. K0004 deliberately does not propagate the disputed completion year identified upstream in F001, so no additional synthesis-layer overreach is introduced. The upstream Evidence finding remains unresolved and is not healed by this layer; no independent 10_evidence→20_synthesis finding was identified.",
+  "findings": [],
+  "verdict": "PASS"
+}

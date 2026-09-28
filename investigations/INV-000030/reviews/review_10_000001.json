@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000030",
+  "review_seq": 1,
+  "layer": "10_evidence",
+  "review_kind": "source_evidence_note_to_10_evidence",
+  "target_blob_sha": "1ba9af5d9a96adaacebd01c6133d8d52c45a0f61",
+  "assessment": "EV-000251 through EV-000259 preserve the Evidence text, locator, Note Type, and Source relation represented in the frozen 10_evidence snapshot, and the cited Toyohashi City materials support the substantive contents of E0001-E0009. One provenance defect remains in E0004: SRC-0146 itself contains incompatible completion years for Muro irrigation (1888 and 1899), while E0004/EV-000254 retain only 1899 without preserving that internal conflict. Because the disputed year is not used by the downstream structural comparison, this is a traceability/qualification defect rather than a defect that presently overturns the main conclusion.",
+  "findings": [
+    {
+      "finding_id": "F001",
+      "severity": "Minor",
+      "target": "10_evidence.E0004 / SRC-0146 provenance transition",
+      "evidence": [
+        "SRC-0146『豊橋市文化財保存活用地域計画（資料）』の「神野新田と牟呂用水」記述は、牟呂用水を明治20年（1887）着工・明治32年（1899）完成としている。",
+        "同一SRC-0146の「世界かんがい施設遺産：松原用水・牟呂用水」記述は、牟呂用水を明治21年（1888）完成としており、同一Source内で完成年が整合していない。",
+        "EV-000254および10_evidence.E0004は1899年のみを採用し、このSource内の年次差をconflict / qualification / uncertaintyとして保持していない。"
+      ],
+      "impact": "E0004の完成年を単一の確定事実として扱う provenance は不十分である。下流K0004と30_analysisの主要判断は完成年そのものに依存せず、土地・水利システムの結合構造を用いているため、現時点でWorking Answerを反転させる欠陥ではない。ただしSource-faithfulnessとuncertainty preservationの修正が必要である。",
+      "repair_direction": {
+        "mode": "same_investigation",
+        "affected_layer": "10_evidence",
+        "instruction": "SRC-0146内の1888年／1899年の差が対象区間・工事段階の差なのか記載矛盾なのかを追加資料で解消するか、解消できない場合はE0004で完成年を単一値として断定せず両記載を明示的なconflict / uncertaintyとして保持する。10_evidence修正後はWorkflow 10のinvalidation ruleに従い20_synthesisと30_analysisを再構築・再validationし、新targetで再Reviewする。"
+      }
+    }
+  ],
+  "verdict": "FINDINGS"
+}

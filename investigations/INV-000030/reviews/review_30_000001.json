@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000030",
+  "review_seq": 1,
+  "layer": "30_analysis",
+  "review_kind": "20_synthesis_plus_00_context_to_30_analysis",
+  "target_blob_sha": "10238722305d8ffd21b9799a589d1a5f616db32d",
+  "assessment": "The Comparative analysis is RQ-specific and remains within the frozen context. Its comparison dimensions operationalize criteria already fixed by the context—Toyohashi-specific names/locations, historical linkage, spatial/network dependence, and resistance to substitution—rather than introducing popularity or creative-value criteria. The Working Answer and J0001-J0006 are comparative judgments over the nine supported candidates, not claims of national uniqueness. The analysis explicitly retains the missing nationwide comparator, the lower precision of the reconstruction-road evidence, the existing-folklore status of the Oni Festival and Suse snake cave, the broad propagation of eejanaika, and the unresolved rarity of the Ushikawa call-board structure. F001 does not provide an independent analysis-layer defect because the disputed Muro-irrigation completion year is not used to support the structural ranking; nevertheless, the cycle remains FINDINGS and any Evidence repair requires downstream rebuild under the canonical invalidation rule.",
+  "findings": [],
+  "verdict": "PASS"
+}

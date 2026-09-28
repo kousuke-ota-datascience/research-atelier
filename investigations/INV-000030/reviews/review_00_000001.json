@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000030",
+  "review_seq": 1,
+  "layer": "00_context",
+  "review_kind": "context_semantic_validity",
+  "target_blob_sha": "dc11b2cf46e5d8810dc3ad2802a64b17b46a32c1",
+  "assessment": "The frozen Comparative context is semantically coherent with RQ-000030. It fixes the comparison population to Evidence-supported candidates from RQ-000029, defines regional specificity as dependence on Toyohashi-specific names, locations, historical chains, combinations, and substitution resistance, separates that construct from D21 and from popularity, tourism value, fear, or creative interest, and explicitly allows uncertainty or withholding where Evidence is insufficient. The assumptions also state that specificity is graded rather than binary and need not imply worldwide uniqueness. These constraints are sufficient for the downstream comparative interpretation, and no substantive frozen-context contradiction or omission requiring a new Investigation was identified.",
+  "findings": [],
+  "verdict": "PASS"
+}
