@@ -1,0 +1,45 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000032",
+  "review_seq": 1,
+  "layer": "20_synthesis",
+  "review_kind": "10_evidence_to_20_synthesis",
+  "target_blob_sha": "98b50d66feed1c3cb0340d9d069945ed03f6f389",
+  "assessment": "The synthesis preserves several important qualifications, especially that representative non-observation is not corpus-wide absence and that the candidate code assignments are not final. Nevertheless, two independent semantic defects remain. First, K0002-K0004 and K0006 compare detailed properties of candidates A-F even though 10_evidence contains no canonical Evidence item or immutable provenance for the candidate-side definitions from INV-000031; that comparison therefore bypasses the Evidence layer. Second, K0005 generalizes D16/D17/D18 elements as broadly present in the corpus from a small selected sample and uses that generalization to down-weight those dimensions as discriminators. Both defects affect the support boundary of the comparative synthesis.",
+  "findings": [
+    {
+      "finding_id": "F003",
+      "severity": "Major",
+      "target": "10_evidence -> 20_synthesis transition for RQ-000031 candidate A-F properties used in K0002-K0004 and K0006",
+      "evidence": [
+        "Every Evidence item in INV-000032/10_evidence.json is sourced through SRC-0151, the existing 0015_zenn corpus snapshot; there is no Evidence item snapshotting or citing the canonical RQ-000031 / INV-000031 candidate definitions.",
+        "20_synthesis K0002-K0004 and K0006 nevertheless assert specific candidate-side semantics such as A/C/D name or settlement identity relocation, B's logistics rule, and E/F infrastructure-as-causal-source designs.",
+        "INV-000031/30_analysis.json does contain those candidate hypotheses, but using that upstream artifact directly at synthesis time without representing it in INV-000032's Evidence layer violates the Workflow 20 no-bypass rule."
+      ],
+      "impact": "One side of the core comparison—the generated candidate set—has no canonical Evidence-layer lineage in INV-000032. The synthesis can therefore not be reproduced or audited solely through its declared Evidence references, and the main comparison lineage is not trustworthy even if the candidate descriptions happen to match INV-000031.",
+      "repair_direction": {
+        "mode": "same_investigation",
+        "affected_layer": "10_evidence",
+        "instruction": "Add canonical Evidence items for the candidate-side comparison units with immutable provenance to the relevant INV-000031 artifact revision (at minimum the candidate hypotheses in 30_analysis, or a later canonical materialization if available). Preserve the distinction between designed/provisional D07-D18 assignments and finalized coding. Then regenerate 20_synthesis and 30_analysis only from the repaired Evidence layer."
+      }
+    },
+    {
+      "finding_id": "F004",
+      "severity": "Moderate",
+      "target": "20_synthesis.K0005 and its prevalence/distinctiveness generalization",
+      "evidence": [
+        "K0005 states that D16 single/sequential structure, D17 release rules, and D18=L1 are broadly present in the existing corpus and therefore that candidate differences concentrate more strongly in D07-D10.",
+        "K0005 cites only E0001, E0002, and E0005; among these, the explicit ritual closure/release-rule example is Entry 0198, while Entries 0180 and 0060 have different D17 semantics.",
+        "No corpus-wide frequency counts or occurrence table are present in 10_evidence, and 20_synthesis.U0001 acknowledges that the selection is not exhaustive."
+      ],
+      "impact": "The synthesis moves from selected examples to a prevalence claim and then uses that claim to infer which dimensions are weak versus strong discriminators. That can materially shift the Comparative Working Answer even without changing any individual source coding.",
+      "repair_direction": {
+        "mode": "same_investigation",
+        "affected_layer": "20_synthesis",
+        "instruction": "After F001's corpus-wide Evidence repair, recompute the D16/D17/D18 prevalence and code-combination contrasts from the full pinned snapshot. If corpus-wide support is not added, narrow K0005 to the observed sample and do not use sample prevalence to infer corpus-level distinctiveness. Rebuild 30_analysis accordingly."
+      }
+    }
+  ],
+  "verdict": "FINDINGS"
+}

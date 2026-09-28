@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000032",
+  "review_seq": 1,
+  "layer": "00_context",
+  "review_kind": "context_semantic_validity",
+  "target_blob_sha": "f779a4dacedfcd75786107cf1a3c317e933f1160",
+  "assessment": "Frozen 00_context is semantically coherent with RQ-000032 and the Comparative question type. It defines the comparison population as the RQ-000031 generated candidates versus the cutoff snapshot of canonical <Entry_ID>_20_analysis.json artifacts, requires same-dimension D01-D21 comparison, preserves status/primary/secondary distinctions, excludes treating U/NA/C as ordinary code values, and explicitly warns that the corpus is not the complete population of urban legends and that corpus-unobserved combinations do not imply real-world novelty. It also rejects collapsing the result to a single similarity score and requires taxonomy-gap handling. These boundaries are sufficient to interpret downstream analysis, and no frozen-context contradiction or substantive defect requiring a new Investigation was identified.",
+  "findings": [],
+  "verdict": "PASS"
+}

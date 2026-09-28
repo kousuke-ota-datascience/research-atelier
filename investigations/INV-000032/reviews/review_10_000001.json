@@ -1,0 +1,45 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000032",
+  "review_seq": 1,
+  "layer": "10_evidence",
+  "review_kind": "source_evidence_note_to_10_evidence",
+  "target_blob_sha": "4c37ed07edbc4f0a5bdf5e141affb42dd9770d23",
+  "assessment": "The selected corpus examples are generally traceable to the pinned SRC-0151 snapshot, and spot-checking of Entries 0180, 0060, 0319, 0362, and 0198 confirms the main cited D07-D21 coding used by E0001-E0004 and the D16/D17 structure used from E0005. However, the Evidence set contains only five representative corpus entries even though the frozen Comparative RQ asks what is common, different, rare, or unobserved across the canonical corpus. The Evidence set therefore cannot support corpus-level prevalence or absence judgments. In addition, E0005 overstates Entry 0198 by saying D11-D17 explicitly contain a consequence/outcome, while the canonical analysis has D14=U and D15=U. These defects require Evidence-layer repair before downstream comparison can be relied on.",
+  "findings": [
+    {
+      "finding_id": "F001",
+      "severity": "Major",
+      "target": "10_evidence Evidence selection / corpus coverage for the RQ-000032 Comparative population",
+      "evidence": [
+        "00_context scopes the comparison to the cutoff snapshot of canonical <Entry_ID>_20_analysis.json artifacts and explicitly includes commonality/difference, multi-Dimension combinations, unobserved or rare combinations, and taxonomy gaps.",
+        "10_evidence contains only five representative corpus entries (0180, 0060, 0319, 0362, 0198), not a corpus-wide extraction or aggregation of D01-D21 status/primary/secondary combinations.",
+        "20_synthesis.U0001 itself states that the Evidence selection is representative and is not a mechanical exhaustive scan of all 0015_zenn entries, so it cannot establish corpus-wide non-observation."
+      ],
+      "impact": "The central Comparative result cannot be trusted as a statement about the existing canonical corpus: five selected examples cannot establish which code combinations are common, rare, or unobserved, nor whether D07-D10 are the principal distinguishing dimensions across the corpus. This affects the main Working Answer and the core methodological validity of the Investigation.",
+      "repair_direction": {
+        "mode": "same_investigation",
+        "affected_layer": "10_evidence",
+        "instruction": "Within the frozen context, add a corpus-wide, machine-derived Evidence snapshot from the pinned SRC-0151 / 0015_zenn cutoff covering every canonical Entry and D01-D21 status/primary/secondary values, with explicit handling of U/NA/C and code-combination frequency or occurrence. Preserve the pinned corpus revision and trace each aggregate back to canonical Entry analysis artifacts. Then rebuild 20_synthesis and 30_analysis under Workflow 10 invalidation rules, revalidate, and reReview on a new target."
+      }
+    },
+    {
+      "finding_id": "F002",
+      "severity": "Minor",
+      "target": "10_evidence.E0005 / Entry 0198 source-faithfulness",
+      "evidence": [
+        "E0005 states that Entry 0198 has activation condition, target, effect, consequence/outcome, and release rule explicitly across D11-D17.",
+        "The pinned canonical 0198_20_analysis.json has D11=PERFORM_RITUAL, D12=PRACTITIONER, D13=PURSUIT, D16=SEQUENTIAL_EPISODE, and D17=RITUAL_CLOSURE/PROCEDURAL_RULE, but D14 is U and D15 is U.",
+        "The canonical rationale for D14 and D15 explicitly says that final polarity and stable terminal consequence are not established in scope."
+      ],
+      "impact": "E0005 overstates what the source establishes by converting unresolved outcome dimensions into an explicit consequence. The downstream argument mainly uses D16/D17, so this does not by itself overturn the Working Answer, but it violates source-faithfulness and should not remain in the canonical Evidence layer.",
+      "repair_direction": {
+        "mode": "same_investigation",
+        "affected_layer": "10_evidence",
+        "instruction": "Revise E0005 so that it preserves D14/D15 as unresolved and only claims the supported D11-D13, D16, and D17 structure. Rebuild downstream artifacts after the Evidence repair and include the corrected boundary in the new Review target."
+      }
+    }
+  ],
+  "verdict": "FINDINGS"
+}

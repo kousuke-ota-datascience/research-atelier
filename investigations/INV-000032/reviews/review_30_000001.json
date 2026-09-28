@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000032",
+  "review_seq": 1,
+  "layer": "30_analysis",
+  "review_kind": "20_synthesis_plus_00_context_to_30_analysis",
+  "target_blob_sha": "4e14e0fa56ae466880695545b655631e42ab54c4",
+  "assessment": "The Comparative analysis is structurally RQ-specific and preserves important limitations: it states that D01-D06 and D19-D20 are not symmetrically comparable, that candidate D07-D18 codes are provisional, that the selected corpus Evidence is not exhaustive, and that taxonomy gaps require later coding review. Its alternative interpretations also avoid treating a taxonomy gap as certain. No additional analysis-only semantic defect was identified beyond the upstream Evidence and Synthesis findings F001-F004. Those upstream findings nevertheless invalidate reuse of the current Working Answer: corpus prevalence/commonness and the candidate-side comparison lineage must be repaired first, after which 30_analysis must be rebuilt rather than treated as independently passing evidence of correctness.",
+  "findings": [],
+  "verdict": "PASS"
+}
