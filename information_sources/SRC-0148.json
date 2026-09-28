@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-0148",
+  "notion_url": "https://app.notion.com/p/3e9e5855be398198afdafed5176a9872",
+  "title": "豊橋市中心市街地の戦後復興に関する市資料",
+  "source_type": "Report",
+  "journal_or_publisher": "豊橋市",
+  "authors": null,
+  "year": null,
+  "url": "https://www.city.toyohashi.lg.jp/secure/82311/R021225kennsetsubessatsu.pdf",
+  "doi": null,
+  "version_or_edition": null,
+  "reliability_note": "豊橋市公式資料。空襲後の復興土地区画整理による道路廃止・格子状新道整備の確認に使用。"
+}
