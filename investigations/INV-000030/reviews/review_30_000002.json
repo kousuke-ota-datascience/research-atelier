@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000030",
+  "review_seq": 2,
+  "layer": "30_analysis",
+  "review_kind": "20_synthesis_plus_00_context_to_30_analysis",
+  "target_blob_sha": "ab54362053614d1edd1beda097686170d4525741",
+  "assessment": "The rebuilt Analysis remains aligned with the frozen Comparative Context and the repaired Synthesis. The Working Answer and J0001 continue to rely on the structural linkage among Jinnoshinden, named locations, and the Muro irrigation system rather than on a single completion year. The Analysis now preserves the unresolved 1888/1899 conflict in comparability_limits, limitations, and unresolved_questions, while explicitly stating that the regional-specificity judgment does not depend on resolving that date. The existing restrictions on nationwide uniqueness, road-map precision, and pre-existing folklore remain visible. No Source/Evidence bypass, unsupported overclaim, or question-type defect is identified.",
+  "findings": [],
+  "verdict": "PASS"
+}

@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000030",
+  "review_seq": 2,
+  "layer": "10_evidence",
+  "review_kind": "source_evidence_note_to_10_evidence",
+  "target_blob_sha": "00afc2dec72987f4efd664998e422d8f1deb3dd0",
+  "assessment": "Review 000001 F001 is repaired as directed. EV-000254 and 10_evidence.E0004 now explicitly preserve the internal SRC-0146 conflict: the \"神野新田と牟呂用水\" section gives 1899 as the completion year, while the \"世界かんがい施設遺産：松原用水・牟呂用水\" section gives 1888. The locator now points to both sections and the Evidence states that the completion year cannot be determined from this Source alone. The frozen SRC-0146 revision is unchanged and the official source still contains both statements. E0001-E0003 and E0005-E0009, their Evidence Notes, Source relations, and frozen revisions are unchanged from Review 000001. No residual provenance, selection, or uncertainty-preservation defect is identified.",
+  "findings": [],
+  "verdict": "PASS"
+}

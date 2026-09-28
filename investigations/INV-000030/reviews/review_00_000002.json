@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000030",
+  "review_seq": 2,
+  "layer": "00_context",
+  "review_kind": "context_semantic_validity",
+  "target_blob_sha": "dc11b2cf46e5d8810dc3ad2802a64b17b46a32c1",
+  "assessment": "The frozen Context is unchanged from Review 000001 and remains semantically coherent with RQ-000030. The Comparative question, scope, include/exclude boundaries, evidence cutoff, and assumptions consistently define regional specificity as structural dependence on Toyohashi rather than nationwide uniqueness, popularity, fearfulness, or creative value. The repair did not alter Context and no Context defect requiring a new Investigation is identified.",
+  "findings": [],
+  "verdict": "PASS"
+}

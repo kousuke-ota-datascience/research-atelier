@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000030",
+  "review_seq": 2,
+  "layer": "20_synthesis",
+  "review_kind": "10_evidence_to_20_synthesis",
+  "target_blob_sha": "4f5a159de885ed81344e8c28136ee975fbe03d70",
+  "assessment": "The rebuilt Synthesis propagates the E0004 repair without healing or bypass. K0004 remains limited to the supported land-and-water linkage and adds a qualifier that the completion year is unresolved because SRC-0146 contains 1888/1899 variants. New U0004 records the conflict explicitly and does not invent a reason for the discrepancy. The remaining K0001-K0003 and K0005-K0009, relations R0001-R0004, and uncertainties U0001-U0003 preserve their prior support boundaries. No unsupported proposition, overgeneralization, conflict erasure, or Evidence-to-Synthesis defect is identified.",
+  "findings": [],
+  "verdict": "PASS"
+}
