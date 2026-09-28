@@ -3,7 +3,7 @@
   "artifact_type": "20_synthesis",
   "investigation_id": "INV-000031",
   "rq_id": "RQ-000031",
-  "synthesized_at": "2026-09-28T05:38:33.000Z",
+  "synthesized_at": "2026-09-28T09:40:48Z",
   "knowledge_units": [
     {
       "knowledge_unit_id": "K0001",
@@ -32,7 +32,8 @@
         "E0003"
       ],
       "qualifiers": [
-        "Evidenceは造成・用水整備を支持するが、土地状態の反転や超自然的な土地依存性は支持しない。"
+        "Evidenceは造成・用水整備を支持するが、土地状態の反転や超自然的な土地依存性は支持しない。",
+        "牟呂用水の完成年は同一Source内で1888年／1899年の異なる記載があり、本Evidenceでは確定しない。"
       ]
     }
   ],
@@ -123,6 +124,16 @@
         "K0003"
       ],
       "evidence_refs": []
+    },
+    {
+      "uncertainty_id": "U0005",
+      "description": "SRC-0146内で牟呂用水の完成年が1888年と1899年で一致しない。対象区間・工事段階の差か記載矛盾かは本Evidenceでは解消できず、完成年は確定しない。",
+      "knowledge_unit_refs": [
+        "K0003"
+      ],
+      "evidence_refs": [
+        "E0003"
+      ]
     }
   ]
 }
