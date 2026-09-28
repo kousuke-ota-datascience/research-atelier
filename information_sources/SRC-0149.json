@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-0149",
+  "notion_url": "https://app.notion.com/p/3e9e5855be39819fa4b9d910b568a48f",
+  "title": "天下の奇祭 豊橋鬼祭",
+  "source_type": "Web Page",
+  "journal_or_publisher": "豊橋市",
+  "authors": null,
+  "year": null,
+  "url": "https://www.city.toyohashi.lg.jp/49156.htm",
+  "doi": null,
+  "version_or_edition": null,
+  "reliability_note": "豊橋市公式観光情報。鬼祭の「からかい」、赤鬼の町内巡行、タンキリ飴・白粉と厄除け伝承の確認に使用。"
+}
