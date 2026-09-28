@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000143",
+  "notion_url": "https://app.notion.com/p/3e9e5855be398106b898e984d10cf100",
+  "title": "豊橋ウェブ百科事典「吉田宿」",
+  "source_type": "Web Page",
+  "journal_or_publisher": "豊橋市",
+  "authors": null,
+  "year": null,
+  "url": "https://www.city.toyohashi.lg.jp/33981.htm",
+  "doi": null,
+  "version_or_edition": null,
+  "reliability_note": "豊橋市公式。吉田宿・旧吉田大橋と現在の「とよばし／吉田大橋」の位置・名称関係の確認に使用。"
+}
