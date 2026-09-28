@@ -1,0 +1,14 @@
+{
+  "schema_version": "2.0.0",
+  "report_type": "projection_log",
+  "target_rq_url": "https://app.notion.com/p/3e9e5855be3981e19bc0f07be5d88890",
+  "rq_id": "RQ-000031",
+  "source_investigation_id": "INV-000031",
+  "source_30_analysis_commit_sha": "562a711e71d67bdde68a14df473b711be83b744f",
+  "projection_timestamp": "2026-09-28T09:51:55Z",
+  "projection_target": {
+    "surface": "page_body",
+    "section_heading": "# Working Answer"
+  },
+  "result": "SUCCESS"
+}
