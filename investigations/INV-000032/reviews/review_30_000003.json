@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000032",
+  "review_seq": 3,
+  "layer": "30_analysis",
+  "review_kind": "20_synthesis_plus_00_context_to_30_analysis",
+  "target_blob_sha": "ce20343078d6808751c2291ee0faf0885aeda6cc",
+  "assessment": "The rebuilt Comparative analysis now reflects the actual candidate comparison envelope. comparison_dimensions, comparability_limits, the Working Answer, J0005, limitations, and unresolved questions distinguish specified, explicitly unresolved, and unassigned dimensions without filling gaps by inference. The principal conclusions about D16/D18 overlap, D17 uncertainty, D07/D09/D10 structural differences, and the non-diagnostic nature of unobserved D07–D10 tuples remain within the synthesis support boundary and preserve the corpus-versus-real-world limitation. No analysis-only finding is identified. Because F001 requires an Evidence-layer change, this analysis must nevertheless be rebuilt after that repair rather than reused as the new target.",
+  "findings": [],
+  "verdict": "PASS"
+}

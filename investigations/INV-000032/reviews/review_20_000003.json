@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000032",
+  "review_seq": 3,
+  "layer": "20_synthesis",
+  "review_kind": "10_evidence_to_20_synthesis",
+  "target_blob_sha": "35cd4413fd94d2a077d3756874b32dae32f2c72b",
+  "assessment": "The Review 000002 Dimension-coverage finding is repaired. K0006 and U0001 now explicitly preserve three candidate-side states: provisional specified dimensions D07/D09/D10/D11/D13/D15/D16/D17/D18, explicitly unresolved D01–D06/D19–D20, and not-explicitly-assigned D08/D12/D14/D21. Missing dimensions are not inferred as U/NA/C or assigned arbitrary codes. The prior corpus-prevalence repair also remains supported by the full 25-Entry snapshot. No independent synthesis-layer finding is identified; the remaining F001 is an upstream auxiliary provenance defect requiring Evidence-layer repair and downstream rebuild.",
+  "findings": [],
+  "verdict": "PASS"
+}

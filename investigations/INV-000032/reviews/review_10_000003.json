@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000032",
+  "review_seq": 3,
+  "layer": "10_evidence",
+  "review_kind": "source_evidence_note_to_10_evidence",
+  "target_blob_sha": "b1fda047882cde6d9e4da41ae9070c20cc7ee729",
+  "assessment": "The Review 000002 candidate-provenance finding is repaired. SRC-000153 now pins INV-000031/30_analysis.json at commit ff9b35430b3bb2c88016f3843af768ffd860e909 and blob d9088ccd885d908b2f05f5d2ad494b5d30b37a1a, and E0007 names the same exact pair. The 10_evidence source_revision bindings for SRC-000151 and SRC-000153 also resolve to the recorded Source JSON blobs. E0007 now faithfully distinguishes provisional specified dimensions from explicitly unresolved and not-explicitly-assigned dimensions. The full-corpus snapshot remains internally complete at 25 Entries and reproduces the D16/D17/D18/D21 frequencies and 25 unique D07–D10 tuples used downstream. One traceability defect remains: corpus_snapshot.json still declares source_id=SRC-0151, but that four-digit Source artifact has been removed and the current canonical Source identity is SRC-000151. This stale auxiliary Source identity should be repaired even though the pinned external source_commit and aggregate values remain intact.",
+  "findings": [
+    {
+      "finding_id": "F001",
+      "severity": "Minor",
+      "target": "investigations/INV-000032/corpus_snapshot.json source identity used by 10_evidence.E0008",
+      "evidence": [
+        "Current 10_evidence declares and references the canonical corpus Source as SRC-000151; its recorded Source revision commit 934edd8625ff1d2cb0bdaab7cd732d1b3aec247b resolves to blob 32cd77650d017060fde2225a0408748ec7e71f27.",
+        "corpus_snapshot.json blob 74b6741df443057e7197ccae0a1112472b8f4f36 still contains source_id=SRC-0151 while retaining source_commit 8f69a1aec1955229cc1c3b6c2591a07c3b657265.",
+        "information_sources/SRC-0151.json no longer exists on the current branch after the post-cutover Source-ID cleanup; the current Source artifact is information_sources/SRC-000151.json.",
+        "The snapshot remains complete with 25 Entries and its aggregate counts reproduce the downstream claims, so the defect is Source identity traceability rather than a demonstrated error in the comparison values."
+      ],
+      "impact": "An auditor following the auxiliary corpus snapshot's declared source_id reaches a non-existent current Source identity, creating a stale provenance edge inside the Evidence support chain. The full-corpus statistics and main Working Answer are not shown to be wrong, so the defect does not presently overturn the substantive comparison.",
+      "repair_direction": {
+        "mode": "same_investigation",
+        "affected_layer": "10_evidence",
+        "instruction": "Update corpus_snapshot.json to use the current canonical Source identity SRC-000151 while preserving the same pinned external corpus commit and per-Entry data. Because the snapshot blob will change, update E0008.source_locator to the new snapshot blob and keep its provenance on SRC-000151. Rebuild 20_synthesis and 30_analysis under the normal invalidation rule, revalidate through 30, and reReview the new target."
+      }
+    }
+  ],
+  "verdict": "FINDINGS"
+}
