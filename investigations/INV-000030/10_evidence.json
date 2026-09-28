@@ -1,0 +1,218 @@
+{
+  "schema_version": "2.1.0",
+  "artifact_type": "10_evidence",
+  "investigation_id": "INV-000030",
+  "rq_id": "RQ-000030",
+  "snapshot_at": "2026-09-28T05:22:33.377Z",
+  "sources": [
+    {
+      "source_id": "SRC-0143",
+      "source_revision": {
+        "commit_sha": "8d6e4cc58aa748023de6d1d3c01ae2333a269ed2",
+        "blob_sha": "dc154b4c89f53c0446d94f31420b033df71c0d52"
+      },
+      "accessed_at": "2026-09-28T05:22:33.377Z",
+      "notion_url": "https://app.notion.com/p/3e9e5855be398106b898e984d10cf100"
+    },
+    {
+      "source_id": "SRC-0144",
+      "source_revision": {
+        "commit_sha": "9a9582836941fda05dc3e0762f496e4a6661670d",
+        "blob_sha": "e5ceb87e25fef6805de40904a75b180e48f0441d"
+      },
+      "accessed_at": "2026-09-28T05:22:33.377Z",
+      "notion_url": "https://app.notion.com/p/3e9e5855be39811299aff11603223dec"
+    },
+    {
+      "source_id": "SRC-0145",
+      "source_revision": {
+        "commit_sha": "eb31fa3d54ebea353c14098c0ef8c6e1230194ff",
+        "blob_sha": "fa1c5c7055f937f636242f950b2efc3431ee1ba8"
+      },
+      "accessed_at": "2026-09-28T05:22:33.377Z",
+      "notion_url": "https://app.notion.com/p/3e9e5855be39819999a3cf7a9e57b584"
+    },
+    {
+      "source_id": "SRC-0146",
+      "source_revision": {
+        "commit_sha": "4b3cb810f83fd24f508b9b066dbb85a7ebcfded2",
+        "blob_sha": "1b57c91b8ebdfa49469ae6599c11dd55c2cc79b7"
+      },
+      "accessed_at": "2026-09-28T05:22:33.377Z",
+      "notion_url": "https://app.notion.com/p/3e9e5855be3981e0be3bd713b9f705ff"
+    },
+    {
+      "source_id": "SRC-0147",
+      "source_revision": {
+        "commit_sha": "2388abc9da9033502b241ca46faed7d80656095d",
+        "blob_sha": "df18b5e6860256a815749573b24f33010403c14f"
+      },
+      "accessed_at": "2026-09-28T05:22:33.377Z",
+      "notion_url": "https://app.notion.com/p/3e9e5855be39818f8c0bd9d0605f3d5c"
+    },
+    {
+      "source_id": "SRC-0148",
+      "source_revision": {
+        "commit_sha": "9f627ba9376921f2f7b3e032a5c276d3949011b8",
+        "blob_sha": "735eea8ef34de7aba8fa1a67ea4abcfdb748b7b7"
+      },
+      "accessed_at": "2026-09-28T05:22:33.377Z",
+      "notion_url": "https://app.notion.com/p/3e9e5855be398198afdafed5176a9872"
+    },
+    {
+      "source_id": "SRC-0149",
+      "source_revision": {
+        "commit_sha": "03bcfc5899cd652be9255861e5104f3d0f30492d",
+        "blob_sha": "edaf54e1456a419cc0dad283dbfd88711e159b54"
+      },
+      "accessed_at": "2026-09-28T05:22:33.377Z",
+      "notion_url": "https://app.notion.com/p/3e9e5855be39819fa4b9d910b568a48f"
+    },
+    {
+      "source_id": "SRC-0150",
+      "source_revision": {
+        "commit_sha": "ee2f54bff2b29c90a483c522c6b698eed801bec9",
+        "blob_sha": "9d4b9bdfc4916c75c7cc0fc5e343a3653065e60b"
+      },
+      "accessed_at": "2026-09-28T05:22:33.377Z",
+      "notion_url": "https://app.notion.com/p/3e9e5855be39818bb165e7b754bc3ab4"
+    }
+  ],
+  "evidence_items": [
+    {
+      "evidence_id": "E0001",
+      "content": "江戸時代の「吉田大橋」は現在の「とよばし」の位置にあり、現在の「吉田大橋」はそのやや上流に新たに架けられた。国道1号の通過に伴い物流の中心も旧吉田大橋から現在の吉田大橋へ移った。",
+      "source_locator": "「新旧とよばし」節",
+      "selection_reason": "橋名・橋位置・物流中心の再配置が、豊橋の具体的な名称継承と位置関係に依存する候補か比較するため",
+      "note_type": "Claim",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-0143",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e9e5855be3981209195c33472d7f78b",
+          "title": "EV-000251"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0002",
+      "content": "二川宿成立以前、二川村・大岩村は本郷から元屋敷へ移転した記録があり、正保元年（1644）には両村が現在地へ移転して一続きの宿場町となった。",
+      "source_locator": "「二川村・大岩村の移転と二川宿の成立」",
+      "selection_reason": "二川・大岩の複数段階の移転と宿場形成という履歴連鎖の地域依存性を比較するため",
+      "note_type": "Claim",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-0144",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e9e5855be3981f189c7c1ffe4506da4",
+          "title": "EV-000252"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0003",
+      "content": "慶応3年（1867）7月、三河国渥美郡牟呂村（現豊橋市）で始まったとされる「ええじゃないか」は、東海道を媒体として東西へ、伊那・別所街道を経て信濃国へ伝播した。",
+      "source_locator": "幕末のええじゃないか説明",
+      "selection_reason": "牟呂村起点説と具体的街道ネットワークの組合せが、豊橋との結び付きの強さをどの程度生むか比較するため",
+      "note_type": "Claim",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-0145",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e9e5855be3981078346c4169c4d680a",
+          "title": "EV-000253"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0004",
+      "content": "1893年に神野金之助が毛利新田を購入し、人造石工法を用いた築堤で新田開発を進めた。牟呂用水は新城市一鍬田から神野新田まで約23kmを引水し、1899年に完成した。",
+      "source_locator": "「神野新田と牟呂用水」",
+      "selection_reason": "神野新田と牟呂用水の固有名・造成史・長距離水利接続の組合せが地域固有性をどの程度持つか比較するため",
+      "note_type": "Claim",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-0146",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e9e5855be3981a8b162e1eaa28da838",
+          "title": "EV-000254"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0005",
+      "content": "牛川の渡しは現在も運航される渡船で、対岸に船がいるときは「呼び板」を叩いて合図すると船頭が来る仕組みである。",
+      "source_locator": "「仕組み」節",
+      "selection_reason": "現存する牛川の渡しと呼び板という具体的運用の地点依存性と、呼び出し方式自体の一般化可能性を比較するため",
+      "note_type": "Claim",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-0147",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e9e5855be398186a159ff2e013d7cf5",
+          "title": "EV-000255"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0006",
+      "content": "1945年の豊橋空襲後、豊橋復興土地区画整理事業により、従来の蛇行・斜行道路の一部が廃止され、格子状の新道が整備された。一方で東海道など一部の旧来道路は残す計画とされた。",
+      "source_locator": "「(4) 戦後」",
+      "selection_reason": "豊橋固有の戦災復興履歴と道路残存・廃止の組合せが、一般的な戦後区画整理以上の地域依存性を持つか比較するため",
+      "note_type": "Claim",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-0148",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e9e5855be398123aa97da5602e80266",
+          "title": "EV-000256"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0007",
+      "content": "豊橋鬼祭のクライマックスでは赤鬼が天狗に挑み、敗れた赤鬼が町内を走ってタンキリ飴と白い粉を撒く。タンキリ飴には厄除け・夏病み除けの伝承がある。",
+      "source_locator": "豊橋鬼祭概要",
+      "selection_reason": "固有の祭礼名・行為・物品・効験の連鎖が高い地域依存性を持つかを比較しつつ、既存伝承である点を別制約として保持するため",
+      "note_type": "Claim",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-0149",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e9e5855be39818cbabac78e41634c18",
+          "title": "EV-000257"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0008",
+      "content": "嵩山蛇穴は約70mの鍾乳洞で縄文時代の洞窟遺跡として国史跡に指定され、「蛇穴」という名称は大蛇が住んでいたという伝説に由来すると豊橋市は説明している。",
+      "source_locator": "スポットの概要",
+      "selection_reason": "史跡・自然地形・固有名・既存大蛇伝説が同一点に重なることの地域依存性を比較するため",
+      "note_type": "Claim",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-0150",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e9e5855be398123b88cdd0fbb70cb41",
+          "title": "EV-000258"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0009",
+      "content": "嵩山は本坂峠を越えて三ヶ日へ結ぶ街道（通称・姫街道）が通る交通の要衝で、古くは宿場町として栄えた。",
+      "source_locator": "スポットの概要",
+      "selection_reason": "嵩山宿・本坂峠・三ヶ日を結ぶ交通地理が豊橋単独ではなく広域ネットワークに依存する点を比較するため",
+      "note_type": "Claim",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-0150",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3e9e5855be39810791aecd760412a822",
+          "title": "EV-000259"
+        }
+      }
+    }
+  ]
+}
