@@ -129,7 +129,7 @@ python -m research_atelier.validation.validate_investigation <ID> --through 00 -
 ### Step 2 — Source探索とreusable Evidence Note capture
 
 1. frozen question、Scope、investigation boundaryに関連するEvidenceを探索する。
-2. reusable Source recordをNotionへ登録し、Source UID / Source IDをallocateする。
+2. reusable Source recordをNotionへ登録し、Source UID / Source IDをallocateする。Source IDはallocation surfaceのexact valueを使用し、numeric Source UIDから桁数を再生成・短縮しない。post-cutover Sourceは `SRC-NNNNNN` を保持し、4桁形はlegacy `SRC-0119` 以前に限定する。
 3. exact Source IDで `information_sources/<Source ID>.json` をmaterializeし、schema validation後にSource JSONを先にcommitする。
 4. commit済みSource JSONのcommit SHAとblob SHAを取得する。
 5. 必要に応じてLocation / quoteを付け、source-faithful Evidence Noteをcaptureする。
