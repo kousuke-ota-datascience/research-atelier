@@ -5,7 +5,9 @@ This directory stores the Git-canonical metadata artifact for each reusable Info
 - One file per Source: `<Source ID>.json`
 - Historical Source IDs remain `SRC-NNNN`.
 - Sources allocated after BKL-0030 cutover use `SRC-NNNNNN`.
-- Existing IDs are never renamed only to normalize width.
+- Four-digit IDs are legacy-only and valid only through `SRC-0119`; `SRC-0120` and above must use six digits (for example `SRC-000120`).
+- Never derive or shorten a Source ID from numeric `Source UID`; preserve the exact allocated Source ID.
+- Existing historical IDs are never renamed only to normalize width.
 - The JSON filename must equal its `source_id`.
 - Schema: `schemas/v2/information_source.schema.json`
 - Validate with:
