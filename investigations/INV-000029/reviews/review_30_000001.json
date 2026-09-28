@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000029",
+  "review_seq": 1,
+  "layer": "30_analysis",
+  "review_kind": "20_synthesis_plus_00_context_to_30_analysis",
+  "target_blob_sha": "960cebcd6d5ea86a428cfeedbb7e86300fd44025",
+  "assessment": "The Analysis is otherwise traceable to the Synthesis and stays within the exploratory anchor-discovery task: it preserves the nine evidence-backed candidate structures, explicitly flags the unsupported Kanno land-state inversion, distinguishes existing folklore from history-first candidates, and records evidence gaps and non-exhaustiveness. One minor Context-boundary inconsistency remains: the Working Answer and J0002 move from 'connectable factual anchor' to comparative creative suitability/ease even though the frozen Context and the Analysis limitation disclaim creative-superiority evaluation.",
+  "findings": [
+    {
+      "finding_id": "F001",
+      "severity": "Minor",
+      "target": "30_analysis.working_answer.text; 30_analysis.judgments[J0002].statement",
+      "evidence": [
+        "00_context.assumptions[0] defines anchor availability as the existence of a verifiable fact connectable to a legend model and explicitly says it does not mean creative superiority.",
+        "30_analysis.working_answer.text says the identity/reconfiguration and transport-rule candidates are '特に' useful because they are '離れやすい' from a generic old-place apparition pattern.",
+        "30_analysis.judgments[J0002].statement says the Yoshida bridge/Futagawa/postwar-road group is '接続しやすい候補'.",
+        "30_analysis.limitations[2] states that the Investigation does not evaluate creative superiority among candidates."
+      ],
+      "impact": "The comparative ease/suitability wording adds a creative-fit evaluation that is not established by the frozen factual/synthesis lineage and is in tension with the Analysis's own stated limitation. The underlying nine-candidate inventory and the source-backed historical conclusions remain intact, so the defect is local to 30_analysis wording rather than the Evidence or Synthesis.",
+      "repair_direction": {
+        "mode": "same_investigation",
+        "affected_layer": "30_analysis",
+        "instruction": "Revise the comparative wording in the Working Answer and J0002 to a non-comparative description of structural connectability. Retain that these facts can be organized as candidates for non-place-residual legend mechanisms, but remove claims that they are 'particularly' better/easier, '離れやすい', or '接続しやすい' unless an explicit evaluation criterion and supporting analysis are added."
+      }
+    }
+  ],
+  "verdict": "FINDINGS"
+}

@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000029",
+  "review_seq": 1,
+  "layer": "10_evidence",
+  "review_kind": "source_evidence_note_to_10_evidence",
+  "target_blob_sha": "83cccda1a8073d34da670867cccba86220d400fa",
+  "assessment": "E0001-E0009 preserve the corresponding Notion Evidence Note text, locator, note type, and Source relation without material semantic drift. The eight Information Source revision bindings SRC-0143-SRC-0150 resolve to the recorded Git blobs. Targeted checks of the cited Toyohashi City pages/reports support the frozen claims on the Yoshida bridges, Futagawa/Oiwa relocation, ee-ja-nai-ka propagation, Kanno Shinden and Muro irrigation, Ushikawa ferry calling procedure, postwar street reorganization, Oni Festival practice, Suseno Jana, and the Himekaido/Suseno transport setting. Source-level caveats are preserved, including attribution of the ee-ja-nai-ka origin and the great-snake account rather than silently upgrading them to independently established fact. No provenance, locator, or source-faithfulness defect requiring repair was identified.",
+  "findings": [],
+  "verdict": "PASS"
+}

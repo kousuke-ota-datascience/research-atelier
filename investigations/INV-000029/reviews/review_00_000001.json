@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000029",
+  "review_seq": 1,
+  "layer": "00_context",
+  "review_kind": "context_semantic_validity",
+  "target_blob_sha": "e190ba141b96a0e3ab56a944c2572d4af5835809",
+  "assessment": "The frozen Context is semantically coherent with RQ-000029. It defines the task as an exploratory search for verifiable Toyohashi-specific facts or structures that can serve as real-world anchors, explicitly separates anchor availability from creative superiority, distinguishes unverified local tradition from historical fact, permits broad but non-exhaustive coverage, and excludes independent fiction or generic horror premises. The temporal/geographic scope, inclusion/exclusion boundary, and Question Type are mutually consistent. No Context defect requiring repair was identified.",
+  "findings": [],
+  "verdict": "PASS"
+}

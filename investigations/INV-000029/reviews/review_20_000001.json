@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000029",
+  "review_seq": 1,
+  "layer": "20_synthesis",
+  "review_kind": "10_evidence_to_20_synthesis",
+  "target_blob_sha": "5394345501c7ed6897baf2fe1621c53aa9a2c524",
+  "assessment": "K0001-K0009 remain traceable to E0001-E0009 and preserve the relevant qualifications. R0001 legitimately abstracts a shared pattern of historical spatial/name/road reconfiguration from K0001/K0002/K0006; R0002 is presented as an association grouping route-mediated propagation, an explicit ferry calling procedure, and transport connectivity rather than as an additional sourced historical fact; R0003 correctly separates already-folkloric candidates from primarily historical/geographic candidates. U0001-U0003 retain non-exhaustive coverage, the unsupported Kanno land-state inversion hypothesis, and the secondary-source-heavy evidence base. No synthesis-level factual overreach requiring repair was identified.",
+  "findings": [],
+  "verdict": "PASS"
+}
