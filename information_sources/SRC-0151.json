@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-0151",
+  "notion_url": "https://app.notion.com/p/3e9e5855be39816994bcdb04436bc2f6",
+  "title": "0015_zenn canonical <Entry_ID>_20_analysis.json corpus",
+  "source_type": "Dataset",
+  "journal_or_publisher": "kousuke-ota-datascience / GitHub",
+  "authors": null,
+  "year": null,
+  "url": "https://github.com/kousuke-ota-datascience/0015_zenn/tree/8f69a1aec1955229cc1c3b6c2591a07c3b657265/workspace/articles/f8fe59b49c2e1e/docs/10_each_lore",
+  "doi": null,
+  "version_or_edition": "main@8f69a1aec1955229cc1c3b6c2591a07c3b657265",
+  "reliability_note": "RQ-000032の比較対象。cutoff時点の0015_zenn main branchにあるcanonical <Entry_ID>_20_analysis.jsonを一次的比較資料として扱う。Notion横断要約は代替しない。"
+}
