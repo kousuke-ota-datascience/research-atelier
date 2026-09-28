@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-0153",
+  "notion_url": "https://app.notion.com/p/3e9e5855be3981b0b5e4e6644d6fa1b5",
+  "title": "INV-000031/30_analysis.json candidate A-F definitions",
+  "source_type": "Other",
+  "journal_or_publisher": "research-atelier / GitHub",
+  "authors": null,
+  "year": null,
+  "url": "https://github.com/kousuke-ota-datascience/research-atelier/blob/9d37c184fefd2119693a7c2a9a82a933268bc48a/investigations/INV-000031/30_analysis.json",
+  "doi": null,
+  "version_or_edition": "blob 291dd4f856f5882afe0716dcbdf893c78213a990",
+  "reliability_note": "INV-000032の比較対象候補A-Fのcanonical upstream定義。候補codingはprovisionalであり、実在伝承の観測値ではない。"
+}
