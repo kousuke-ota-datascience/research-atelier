@@ -1,0 +1,139 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "30_analysis",
+  "investigation_id": "INV-000032",
+  "rq_id": "RQ-000032",
+  "analyzed_at": "2026-09-28T05:51:00.000Z",
+  "question_type": "Comparative",
+  "profile": {
+    "comparison_units": [
+      "RQ-000031候補A『名前が旧橋へ戻る』",
+      "RQ-000031候補B『物流だけが橋を移る』",
+      "RQ-000031候補C『三つの二川』",
+      "RQ-000031候補D『二つの村が一つの宿になる』",
+      "RQ-000031候補E『二十三キロの近道』",
+      "RQ-000031候補F『土地ではなく水路が住所を決める』",
+      "0015_zenn cutoff snapshotのcanonical <Entry_ID>_20_analysis.json"
+    ],
+    "comparison_dimensions": [
+      "D07 意味形成対象",
+      "D08 意味形成cue",
+      "D09 解釈操作",
+      "D10 因果源",
+      "D11 発動条件",
+      "D12 作用対象",
+      "D13 作用",
+      "D14 帰結方向",
+      "D15 終端結果",
+      "D16 時間構造",
+      "D17 制御・解除",
+      "D18 作用レイヤ",
+      "D21 現実アンカー",
+      "D01-D06,D19-D20の比較可能性"
+    ],
+    "contrasts": [
+      "候補A/C/Dは、既存corpusにもある空間異常とは異なり、名称・地名・集落identityの歴史的再配置をD07の中心対象にする点が特徴である。",
+      "候補E/Fは、実在の長距離水利ネットワークを単なる舞台でなく因果源へ変換する点が、確認した既存代表例と異なる。",
+      "候補Bは史実を因果構造へ取り込む点でA4型既存例に近いが、社会現実L3ではなく伝承内部L1の位置・所有情報再対応として設計されている点が異なる。",
+      "D16の単一／段階進行、D17の解除、D18=L1、D21の実在地アンカーは既存corpusにも存在し、候補群の差異を単独では説明しにくい。",
+      "候補群の識別的差異は個別コードよりD07-D10の組合せ、特に『何を不可解な対象とし、何を因果源とするか』に集中する。"
+    ],
+    "comparability_limits": [
+      "RQ-000031候補はまだ流通前の創作モデルであり、既存corpus EntryとはEvidence maturityが異なる。",
+      "D01-D06およびD19-D20は候補側で実証的に未確定のため、21次元全体の対称比較はできない。",
+      "今回のEvidence selectionは代表的canonical Entryによる比較であり、corpus全件の機械的 exhaustive scanではない。",
+      "taxonomy gapは最終Entry coding時に再判定が必要であり、本Investigationの比較結果だけで新taxonomyを確定しない。"
+    ]
+  },
+  "working_answer": {
+    "text": "RQ-000031の6候補は、既存canonical corpusと比べて『空間異常』『段階進行』『解除規則』『L1作用』『実在地アンカー』といった個別要素では共通点が多い。一方、差異が最も明確なのはD07-D10の組合せである。候補A/C/Dは、単なる異常空間ではなく、橋名・地名・集落identityが歴史的に別地点へ再配置されたこと自体を意味形成対象にするため、既存Entry 0319で既に露出している地名・場所identity系のD07 taxonomy gapに近い。候補E/Fは、約23kmの用水という実在インフラ接続を因果源へ昇格させる点が特徴で、今回確認した既存代表例には同型を確認できず、D10 taxonomy gap候補である。候補Bは史実を因果規則へ組み込む点で既存A4型と近いが、社会現実L3ではなく伝承内部L1の位置・所有情報再対応として設計される。したがって、候補群の差異は単一の総合類似度ではなく、D07の意味形成対象とD10の因果源を中心にDimension別に評価するのが妥当である。",
+    "knowledge_unit_refs": [
+      "K0001",
+      "K0002",
+      "K0003",
+      "K0004",
+      "K0005",
+      "K0006"
+    ]
+  },
+  "judgments": [
+    {
+      "judgment_id": "J0001",
+      "statement": "候補A/C/Dの主な差異は、既存corpusにもある空間・経路異常そのものではなく、名称・場所・集落identityの歴史的再配置をD07の説明対象へ置く点にある。",
+      "knowledge_unit_refs": [
+        "K0001",
+        "K0002"
+      ]
+    },
+    {
+      "judgment_id": "J0002",
+      "statement": "候補E/Fは、実在インフラネットワークを中心因果源として扱うため、今回確認した既存代表例よりD10のontologyが特異であり、taxonomy gapの可能性がある。",
+      "knowledge_unit_refs": [
+        "K0003"
+      ]
+    },
+    {
+      "judgment_id": "J0003",
+      "statement": "候補Bは史実統合という点では既存corpusのA4型と共通するが、作用レイヤと因果機構が異なるため、単純な既存パターンの再利用とは言えない。",
+      "knowledge_unit_refs": [
+        "K0004"
+      ]
+    },
+    {
+      "judgment_id": "J0004",
+      "statement": "D16・D17・D18・D21の個別構造は既存corpusにも複数存在するため、候補群の独自性を主にこれらのDimensionへ帰属させる根拠は弱い。",
+      "knowledge_unit_refs": [
+        "K0005"
+      ]
+    },
+    {
+      "judgment_id": "J0005",
+      "statement": "現段階の比較はD07-D18中心に限定すべきで、D01-D06,D19-D20を含む全21次元の総合類似度を算出すると、未確定を差異として誤読する。",
+      "knowledge_unit_refs": [
+        "K0006"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "text": "0015_zenn corpus全件の自動集計を実施したわけではないため、『既存corpusに存在しない』ではなく『今回確認したcanonical比較Evidenceでは未観測』と表現する必要がある。",
+      "knowledge_unit_refs": [
+        "K0003"
+      ]
+    },
+    {
+      "text": "RQ-000031候補は正式なEntry analysisへmaterializeされていないため、D07-D18の最終code IDは未確定である。",
+      "knowledge_unit_refs": [
+        "K0002",
+        "K0005",
+        "K0006"
+      ]
+    },
+    {
+      "text": "候補側のD01-D06,D19-D20は実際の流通・成立・保持者情報がないため、既存伝承と対称に比較できない。",
+      "knowledge_unit_refs": [
+        "K0006"
+      ]
+    }
+  ],
+  "unresolved_questions": [
+    "候補E/Fを実際にcodingした場合、D10にインフラ・ネットワーク因果源を表す既存Childで十分か、それとも新taxonomyが必要か？",
+    "候補A/C/DのD07は、既存の地名由来gapを拡張して『identity/location mismatch』として一般化すべきか？",
+    "6候補を正式なEntryへmaterializeした後、corpus全件に対する機械的code-combination頻度を算出すると、今回の代表比較と結論は変わるか？"
+  ],
+  "alternative_interpretations": [
+    {
+      "text": "候補A/C/DをD07のtaxonomy gapではなく、既存のSPATIAL_ROUTE_ANOMALYやLOCATION_STATEへ近似codingすることも可能である。ただし、その場合は名称・identity再配置という意味形成核が失われる可能性がある。",
+      "knowledge_unit_refs": [
+        "K0001",
+        "K0002"
+      ]
+    },
+    {
+      "text": "候補E/Fのインフラ接続をD10の因果源ではなくD21の現実アンカーに留め、因果源をUとする保守的codingも可能である。この場合、taxonomy gapは回避できるが候補の設計意図は弱く表現される。",
+      "knowledge_unit_refs": [
+        "K0003"
+      ]
+    }
+  ]
+}
