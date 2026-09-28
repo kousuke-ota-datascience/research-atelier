@@ -54,7 +54,7 @@
     },
     {
       "relation_id": "R0002",
-      "relation_type": "contrast",
+      "relation_type": "association",
       "knowledge_unit_refs": [
         "K0001",
         "K0002",
