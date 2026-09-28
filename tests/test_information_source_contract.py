@@ -44,6 +44,14 @@ class InformationSourceContractTest(unittest.TestCase):
         )
         self.assertTrue(result.ok, result.errors)
 
+    def test_post_cutover_four_digit_source_id_fails(self) -> None:
+        result = validate_data(
+            self._source("SRC-0120"),
+            SCHEMA_ROOT / "information_source.schema.json",
+            artifact="information_source",
+        )
+        self.assertFalse(result.ok)
+
     def test_post_cutover_six_digit_source_id_passes(self) -> None:
         result = validate_data(
             self._source("SRC-000120"),
