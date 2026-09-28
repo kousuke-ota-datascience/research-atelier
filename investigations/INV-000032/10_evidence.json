@@ -3,7 +3,7 @@
   "artifact_type": "10_evidence",
   "investigation_id": "INV-000032",
   "rq_id": "RQ-000032",
-  "snapshot_at": "2026-09-28T05:49:00.000Z",
+  "snapshot_at": "2026-09-28T10:52:00.000Z",
   "sources": [
     {
       "source_id": "SRC-0151",
@@ -13,6 +13,15 @@
       },
       "accessed_at": "2026-09-28T05:49:00.000Z",
       "notion_url": "https://app.notion.com/p/3e9e5855be39816994bcdb04436bc2f6"
+    },
+    {
+      "source_id": "SRC-0153",
+      "source_revision": {
+        "commit_sha": "33a7c26b9e1a5e76a09945fc3c62d08054d28fa1",
+        "blob_sha": "27af375b04effc6733c12e8d0f341559fa0a93dd"
+      },
+      "accessed_at": "2026-09-28T10:52:00.000Z",
+      "notion_url": "https://app.notion.com/p/3e9e5855be3981b0b5e4e6644d6fa1b5"
     }
   ],
   "evidence_items": [
@@ -66,8 +75,8 @@
     },
     {
       "evidence_id": "E0005",
-      "content": "Entry 0198『ひとりかくれんぼ』は、実行手順・参加者・終了法を持つ実行儀式型ネットロアとしてcodingされており、D11-D17に発動条件・対象・作用・帰結・解除規則を明示的に持つ。したがって、解除規則を持つこと自体は既存corpusで一般に表現可能である。",
-      "source_locator": "workspace/articles/f8fe59b49c2e1e/docs/10_each_lore/0198_hitori_kakurenbo/0198_20_analysis.json D11-D17",
+      "content": "Entry 0198『ひとりかくれんぼ』は、D11=PERFORM_RITUAL、D12=PRACTITIONER、D13=PURSUIT、D16=SEQUENTIAL_EPISODE、D17=RITUAL_CLOSURE（secondary=PROCEDURAL_RULE）を持つ一方、D14とD15はUである。したがって発動条件・対象・作用・時間構造・終了規則は表現されるが、帰結方向と終端結果は未解決として保持される。",
+      "source_locator": "workspace/articles/f8fe59b49c2e1e/docs/10_each_lore/0198_hitori_kakurenbo/0198_20_analysis.json D11-D17 (D14/D15=U)",
       "selection_reason": "RQ-000031候補のD17解除規則がtaxonomy上特異かを比較するため",
       "note_type": "Data",
       "direct_quote": null,
@@ -81,6 +90,30 @@
       "content": "Corpus内にはD07の既存Childで空間・経路異常を表現できるEntryがある一方、Entry 0319では『地名由来・地名語源』がD07 taxonomy gapと判定されている。これは、空間異常そのものと、名称・場所identityの意味形成を区別する必要があることを示す。",
       "source_locator": "0180_20_analysis.json D07 と 0319_20_analysis.json D07 の比較",
       "selection_reason": "候補A/C/Dの新規性が単なる空間異常ではなくidentity再配置にあるかを評価するため",
+      "note_type": "Result",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-0151",
+        "evidence_note": null
+      }
+    },
+    {
+      "evidence_id": "E0007",
+      "content": "Pinned upstream INV-000031/30_analysis.json defines six provisional creative candidates A–F. A: bridge-name/location remapping; B: logistics/location-information remapping; C: three historical Futagawa location layers; D: merger of two village identities into one post-town space; E: ~23 km irrigation-network ordering as spatial rule; F: irrigation connectivity rather than land/address as location rule. Their proposed D07-D18 descriptions are design hypotheses, not observed folklore codings; INV-000031 explicitly leaves D01-D06 and D19-D20 empirically unresolved.",
+      "source_locator": "research-atelier@9d37c184fefd2119693a7c2a9a82a933268bc48a investigations/INV-000031/30_analysis.json blob 291dd4f856f5882afe0716dcbdf893c78213a990 profile.candidate_hypotheses + evidence_gaps",
+      "selection_reason": "候補A-Fを比較の一方としてEvidence layerにimmutable provenance付きで固定するため",
+      "note_type": "Data",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-0153",
+        "evidence_note": null
+      }
+    },
+    {
+      "evidence_id": "E0008",
+      "content": "Pinned 0015_zenn corpus snapshot contains 25 canonical *_20_analysis.json Entries. corpus_snapshot.json records, for every Entry, blob SHA plus D01-D21 status/primary/secondary and aggregates their frequencies. Key full-corpus results: D16 status U=1/I=12/D=12; primary SEQUENTIAL_EPISODE=10, DEADLINE=4, SINGLE_EPISODE=2. D17 status U=10/I=11/D=4, so control/escape is unresolved in 40% and heterogeneous when coded. D18 primary L1=22/L2=1/L3=2; D21 primary A0=2/A1=10/A2=7/A4=6. Exact D07-D10 tuples including status, primary and secondary are 25 unique combinations across 25 Entries. D07 primary UNKNOWN_EXISTENCE is the most frequent single D07 primary (7/25). No observed D10 primary/secondary code in this pinned corpus represents an infrastructure/network causal source.",
+      "source_locator": "investigations/INV-000032/corpus_snapshot.json blob 74b6741df443057e7197ccae0a1112472b8f4f36; source corpus commit 8f69a1aec1955229cc1c3b6c2591a07c3b657265; 25 per-Entry blob SHAs preserved in entries[]",
+      "selection_reason": "review F001/F004に対応し、population-level prevalence/distinctivenessを全pinned corpusから機械集計するため",
       "note_type": "Result",
       "direct_quote": null,
       "provenance": {
