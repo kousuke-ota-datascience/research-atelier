@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000033",
+  "review_seq": 1,
+  "layer": "00_context",
+  "review_kind": "context_semantic_validity",
+  "target_blob_sha": "a4b5cd1467d9456e14fe887862a992025e3af940",
+  "assessment": "Comparative question type, small-design-set boundary, non-generalization rule, and the prohibition on treating D21 as a quality score are semantically appropriate. However, the frozen scope and inclusion criteria presuppose that RQ-000032 produced finalized D01–D21 coding for the six generated candidates. The actual upstream canonical analysis explicitly states that D07–D18 final code IDs are not fixed and D01–D06/D19–D20 are empirically undetermined; INV-000033's own synthesis and analysis acknowledge the same mismatch and therefore substitute new provisional D21 inferences for the stated finalized coding input. This is a substantive frozen-context defect, not a downstream wording issue, so it cannot be repaired by silently weakening the scope inside the same Investigation.",
+  "findings": [
+    {
+      "finding_id": "F001",
+      "severity": "Major",
+      "target": "00_context.scope and investigation_boundary.include: finalized D01–D21 coding from RQ-000032 as a required comparison input",
+      "evidence": [
+        "00_context.scope says the target candidates were generated in RQ-000031 and coded in D01–D21 in RQ-000032; investigation_boundary.include more strongly requires 「RQ-000032で確定したD01–D21 coding」.",
+        "INV-000032/30_analysis.json states in profile.comparability_limits and limitations that the candidates have not been materialized as formal Entry analyses, their D07–D18 final code IDs are not fixed, and D01–D06/D19–D20 are empirically undetermined; a symmetric 21-dimension comparison therefore does not exist.",
+        "INV-000033/20_synthesis.json K0004/U0001/U0002 and INV-000033/30_analysis.json profile.comparability_limits explicitly acknowledge that the frozen-context wording is stronger than the available upstream coding and treat A/B/C/D=A4, E=A2, F=A3 as new provisional INV-000033 inferences."
+      ],
+      "impact": "The frozen Investigation Context presupposes a comparison object that does not exist. The downstream chain consequently answers a modified task—provisional D21 classification plus a limited structural comparison—rather than the frozen task based on finalized D01–D21 coding. That breaks the core methodological lineage of the Comparative Working Answer and cannot be accepted as a context-faithful result.",
+      "repair_direction": {
+        "mode": "new_investigation",
+        "affected_layer": "00_context",
+        "instruction": "Do not mutate or backfill the frozen INV-000033 context. Apply the allocation/versioning guard and create a successor Investigation whose context matches the actual available inputs: explicitly state that A–F are non-materialized design candidates with provisional D07–D18 structure and unresolved D01–D06/D19–D20, and define whether the task is provisional D21 classification plus bounded structural comparison or is deferred until formal coding exists. Rebuild 10_evidence, 20_synthesis, and 30_analysis in the successor and carry all findings from this Review through the canonical handoff process."
+      }
+    }
+  ],
+  "verdict": "FINDINGS"
+}

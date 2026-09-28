@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000033",
+  "review_seq": 1,
+  "layer": "30_analysis",
+  "review_kind": "20_synthesis_plus_00_context_to_30_analysis",
+  "target_blob_sha": "9be5cc4d73a83ec5e13036e2159b83e45241606d",
+  "assessment": "As an analysis artifact, 30_analysis is recognizably Comparative and preserves several important safeguards: A/B/C/D=A4, E=A2, and F=A3 are marked provisional rather than inherited finalized codes; D01–D06/D19–D20 are explicitly non-comparable; the small intentional design set is not generalized to urban legends; D21 is not treated as a quality score; alternative A2/A3/A4 interpretations for E/F are retained; and D11–D17 differences are not claimed to be causal effects of D21. No additional analysis-only finding was identified. However, this local PASS does not heal F001 or F002: the analysis is not context-faithful to the frozen finalized-coding premise and part of its D07–D10 distinctiveness argument depends on Evidence that must be repaired. The current Working Answer therefore must not be reused after handoff/rebuild merely because the 30 layer has no independent finding.",
+  "findings": [],
+  "verdict": "PASS"
+}

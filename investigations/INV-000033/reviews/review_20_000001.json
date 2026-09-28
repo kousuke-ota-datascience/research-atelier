@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000033",
+  "review_seq": 1,
+  "layer": "20_synthesis",
+  "review_kind": "10_evidence_to_20_synthesis",
+  "target_blob_sha": "b43660ae9970ecc272c0cb242e9a9707179f2588",
+  "assessment": "K0001–K0003 remain traceable to candidate definitions plus historical anchor Evidence and explicitly separate supported historical structure from invented legend mechanisms. K0004 correctly exposes the finalized-coding mismatch in the frozen context, and U0001–U0004 preserve provisional D21 status, unavailable dimensions, category-boundary ambiguity, and non-generalizability. No additional synthesis-only defect was identified beyond the upstream Evidence defect F002: K0005/K0006/R0004 inherit E0005 and therefore cannot be reused after Evidence repair, but recording the same support failure again as a new synthesis finding would duplicate rather than localize the defect. The layer is locally PASS; the cycle remains FINDINGS and this synthesis must be rebuilt after upstream repair.",
+  "findings": [],
+  "verdict": "PASS"
+}

@@ -1,0 +1,45 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000033",
+  "review_seq": 1,
+  "layer": "10_evidence",
+  "review_kind": "source_evidence_note_to_10_evidence",
+  "target_blob_sha": "6bf1a6de6f4355febd2aeacd451f0f86449037f3",
+  "assessment": "E0001–E0004 provide auditable pinned provenance to the INV-000031/INV-000032 canonical snapshot, and E0006–E0008 are traceable to Toyohashi City source records. E0006 and E0007 preserve the material historical boundaries used downstream. Two semantic defects remain. First, E0005 imports an upstream corpus-distinctiveness conclusion that the current canonical Review of INV-000032 has already found unsupported at the claimed population level; INV-000033 then uses it to privilege D07–D10 over other dimensions. Second, E0008 repeats 1899 as the Muro irrigation completion year without preserving an internal date conflict in SRC-0146 that was already exposed by the canonical INV-000031 Review. These are Evidence-layer defects and must not be healed by downstream qualifications.",
+  "findings": [
+    {
+      "finding_id": "F002",
+      "severity": "Moderate",
+      "target": "10_evidence.E0005 / reuse of INV-000032 corpus-distinctiveness result",
+      "evidence": [
+        "E0005 imports the INV-000032 claim that candidate distinctiveness is concentrated mainly in D07–D10 while D16, D17, D18=L1, and concrete real-world anchors are already present in the existing corpus and therefore explain the candidate differences less well.",
+        "INV-000032/reviews/review_10_000001.json F001 (Major) finds that its Evidence set contains only five representative corpus entries and cannot support corpus-level prevalence/absence or the central comparative claim; review_20_000001.json F004 (Moderate) separately finds that the D16/D17/D18 prevalence/distinctiveness generalization is unsupported without corpus-wide evidence.",
+        "INV-000033/20_synthesis.json K0005/K0006/R0004 and INV-000033/30_analysis.json J0004 and the Working Answer use E0005 to characterize D07–D10 as the clearest structural correspondence and to down-weight other dimensions."
+      ],
+      "impact": "A known-unsupported upstream population-level comparison is being treated as positive Evidence. This does not by itself negate the candidate descriptions in E0001–E0003 or the provisional D21 judgments, but it invalidates the support boundary for the claim that D07–D10 are uniquely or most clearly discriminative relative to D16–D18 and can materially change the Comparative interpretation.",
+      "repair_direction": {
+        "mode": "same_investigation",
+        "affected_layer": "10_evidence",
+        "instruction": "Do not reuse E0005 as a trusted corpus-level result until INV-000032 has been repaired and reReviewed on a valid target. Replace it with the repaired/reReviewed upstream result or with independently sufficient Evidence for the narrower candidate-set comparison. Then rebuild 20_synthesis and 30_analysis under the no-bypass/invalidation rules. Because F001 requires a successor Investigation, carry this Evidence repair into that successor through the handoff rather than treating the current frozen context as repaired."
+      }
+    },
+    {
+      "finding_id": "F003",
+      "severity": "Minor",
+      "target": "10_evidence.E0008 / SRC-0146 Muro irrigation completion-year provenance",
+      "evidence": [
+        "E0008 states that Muro irrigation was completed in 1899 and cites SRC-0146, section 「神野新田と牟呂用水」.",
+        "The cited SRC-0146 section supports an 1887 start and 1899 completion, but another section of the same pinned Toyohashi City source, 「世界かんがい施設遺産：松原用水・牟呂用水」, states that Muro irrigation was completed in 1888.",
+        "INV-000031/reviews/review_10_000001.json F001 already records this 1888/1899 internal-source discrepancy; E0008 carries only 1899 and does not preserve the conflict or qualification."
+      ],
+      "impact": "E0008 is faithful to its selected section but not to the source as a whole, so the provenance layer suppresses a material qualification. The Working Answer does not depend on the exact completion year, so this is not presently conclusion-reversing, but source-faithfulness and uncertainty preservation require correction.",
+      "repair_direction": {
+        "mode": "same_investigation",
+        "affected_layer": "10_evidence",
+        "instruction": "Resolve whether the 1888/1899 difference reflects different construction stages, channels, or terminology using an additional authoritative source. If it cannot be resolved, preserve both statements explicitly as a source conflict/uncertainty instead of asserting a single completion year. Rebuild downstream artifacts after the Evidence repair; with F001, apply this in the successor Investigation."
+      }
+    }
+  ],
+  "verdict": "FINDINGS"
+}
