@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "report_type": "projection_log",
+  "target_rq_url": "https://app.notion.com/p/3e9e5855be398128a744db3feb779028",
+  "rq_id": "RQ-000032",
+  "source_investigation_id": "INV-000032",
+  "source_30_analysis_commit_sha": "752b2012baffeca1514ab058e5023f6ae319e3d1",
+  "projection_timestamp": "2026-09-29T05:18:08Z",
+  "projection_target": {
+    "surface": "page_body",
+    "section_heading": "# Working Answer"
+  },
+  "result": "SUCCESS",
+  "note": "Accepted after INV-000032 / Review 000005 PASS; deterministic structured Working Answer projected to RQ page body and verified by refetch."
+}
