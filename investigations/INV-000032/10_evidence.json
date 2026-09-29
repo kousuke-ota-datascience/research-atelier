@@ -3,7 +3,7 @@
   "artifact_type": "10_evidence",
   "investigation_id": "INV-000032",
   "rq_id": "RQ-000032",
-  "snapshot_at": "2026-09-29T07:39:00.000Z",
+  "snapshot_at": "2026-09-29T07:45:00.000Z",
   "sources": [
     {
       "source_id": "SRC-000151",
@@ -108,7 +108,7 @@
     },
     {
       "evidence_id": "E0007",
-      "content": "Pinned upstream INV-000031/30_analysis.json defines six provisional creative candidates A–F. candidate_hypotheses explicitly describe D07,D09,D10,D11,D13,D15,D16,D17,D18 for each candidate. Its evidence_gaps states that D01–D06 and D19–D20 are not empirically codable at that stage. D08,D12,D14,D21 are not explicitly assigned in candidate_hypotheses. These are source facts about what INV-000031 did and did not specify; final status/code assignment for RQ-000032 is an Analysis task under the canonical coding rules.",
+      "content": "Pinned upstream INV-000031/30_analysis.json (analyzed_at 2026-09-28T09:40:48Z) defines six provisional creative candidates A–F. candidate_hypotheses explicitly describe D07,D09,D10,D11,D13,D15,D16,D17,D18 for each candidate. Its evidence_gaps states that D01–D06 and D19–D20 are not empirically codable at that stage. D08,D12,D14,D21 are not explicitly assigned in candidate_hypotheses. These are source facts about what INV-000031 did and did not specify; final status/code assignment for RQ-000032 is an Analysis task under the canonical coding rules.",
       "source_locator": "research-atelier@92611cbe651326b4bcc0e5d14cfdcbc2f453c833 investigations/INV-000031/30_analysis.json blob d9088ccd885d908b2f05f5d2ad494b5d30b37a1a profile.candidate_hypotheses + profile.evidence_gaps",
       "selection_reason": "候補A-Fのsource-defined model featuresと未指定Dimensionを固定し、formal D01-D21 codingの入力境界にするため",
       "note_type": "Data",
