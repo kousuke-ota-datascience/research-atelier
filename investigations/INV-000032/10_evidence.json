@@ -3,7 +3,7 @@
   "artifact_type": "10_evidence",
   "investigation_id": "INV-000032",
   "rq_id": "RQ-000032",
-  "snapshot_at": "2026-09-28T13:52:00.000Z",
+  "snapshot_at": "2026-09-29T07:36:00.000Z",
   "sources": [
     {
       "source_id": "SRC-000151",
@@ -11,17 +11,26 @@
         "commit_sha": "934edd8625ff1d2cb0bdaab7cd732d1b3aec247b",
         "blob_sha": "32cd77650d017060fde2225a0408748ec7e71f27"
       },
-      "accessed_at": "2026-09-28T05:49:00.000Z",
+      "accessed_at": "2026-09-29T07:36:00.000Z",
       "notion_url": "https://app.notion.com/p/3e9e5855be39816994bcdb04436bc2f6"
     },
     {
       "source_id": "SRC-000153",
       "source_revision": {
-        "commit_sha": "2f2d8eb3d4dee09d7a4c1eb05fd52af4e5e29b88",
-        "blob_sha": "4aa53537faaf9f417dc5ac010f2aedf8ab49d65a"
+        "commit_sha": "b414c004339912c139cd1c5b133fc70833eefb44",
+        "blob_sha": "4560ca8450d36f30f071f1c0ceb8c003de576d1b"
       },
-      "accessed_at": "2026-09-28T11:42:00.000Z",
+      "accessed_at": "2026-09-29T07:36:00.000Z",
       "notion_url": "https://app.notion.com/p/3e9e5855be3981b0b5e4e6644d6fa1b5"
+    },
+    {
+      "source_id": "SRC-000155",
+      "source_revision": {
+        "commit_sha": "6ec0e1bc73481c0da949335d2c9ec38388563d58",
+        "blob_sha": "bd114b0e7aac23b6899d994291a3c6127c78c421"
+      },
+      "accessed_at": "2026-09-29T07:36:00.000Z",
+      "notion_url": "https://app.notion.com/p/3eae5855be3981869712e25dd4bad9b3"
     }
   ],
   "evidence_items": [
@@ -99,9 +108,9 @@
     },
     {
       "evidence_id": "E0007",
-      "content": "Pinned upstream INV-000031/30_analysis.json defines six provisional creative candidates A–F. Candidate-side dimensions explicitly specified in candidate_hypotheses are D07, D09, D10, D11, D13, D15, D16, D17, D18. D01–D06 and D19–D20 are explicitly described in evidence_gaps as empirically unresolved/not currently codable. D08, D12, D14, D21 are not explicitly assigned in candidate_hypotheses; they must remain unassigned rather than inferred. The six candidate definitions and all dimension descriptions are design hypotheses, not observed folklore codings.",
-      "source_locator": "research-atelier@ff9b35430b3bb2c88016f3843af768ffd860e909 investigations/INV-000031/30_analysis.json blob d9088ccd885d908b2f05f5d2ad494b5d30b37a1a profile.candidate_hypotheses + profile.evidence_gaps",
-      "selection_reason": "候補A-Fを比較の一方としてEvidence layerにimmutable provenance付きで固定するため",
+      "content": "Pinned upstream INV-000031/30_analysis.json defines six provisional creative candidates A–F. candidate_hypotheses explicitly describe D07,D09,D10,D11,D13,D15,D16,D17,D18 for each candidate. Its evidence_gaps states that D01–D06 and D19–D20 are not empirically codable at that stage. D08,D12,D14,D21 are not explicitly assigned in candidate_hypotheses. These are source facts about what INV-000031 did and did not specify; final status/code assignment for RQ-000032 is an Analysis task under the canonical coding rules.",
+      "source_locator": "research-atelier@92611cbe651326b4bcc0e5d14cfdcbc2f453c833 investigations/INV-000031/30_analysis.json blob d9088ccd885d908b2f05f5d2ad494b5d30b37a1a profile.candidate_hypotheses + profile.evidence_gaps",
+      "selection_reason": "候補A-Fのsource-defined model featuresと未指定Dimensionを固定し、formal D01-D21 codingの入力境界にするため",
       "note_type": "Data",
       "direct_quote": null,
       "provenance": {
@@ -118,6 +127,18 @@
       "direct_quote": null,
       "provenance": {
         "source_id": "SRC-000151",
+        "evidence_note": null
+      }
+    },
+    {
+      "evidence_id": "E0009",
+      "content": "Canonical coding contract defines Dimension Status D/I/U/NA/C; U is used for insufficient evidence, NA for structurally not applicable, and C for competing values within the same Version Scope. Unknown values must not be filled with the most likely code. H3 primary is exactly one when status is D/I, with at most two secondary codes. D21 values are A0 anonymous/abstract, A1 general real-world background, A2 specific identifiable real target, A3 real institution/social history necessary to model existence, and A4 concrete historical fact/record/existing lore integrated into the causal structure. D21 coding must distinguish a source being real from the lore model itself depending on reality.",
+      "source_locator": "20_urban_legend_parent_child_code_system.md D01-D21 sections and 30_urban_legend_analysis_coding_rules.md sections 1,4,5,6,27 @ research-atelier 92611cbe651326b4bcc0e5d14cfdcbc2f453c833",
+      "selection_reason": "候補A-FをD01-D21全次元でfinal status/code化する際のcanonical coding contractをEvidenceとして固定するため",
+      "note_type": "Method",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000155",
         "evidence_note": null
       }
     }
