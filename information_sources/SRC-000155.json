@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000155",
+  "notion_url": "https://app.notion.com/p/3eae5855be3981869712e25dd4bad9b3",
+  "title": "D01–D21 taxonomy / coding rules",
+  "source_type": "Documentation",
+  "journal_or_publisher": "kousuke-ota-datascience / research-atelier",
+  "authors": null,
+  "year": null,
+  "url": "https://github.com/kousuke-ota-datascience/research-atelier/tree/92611cbe651326b4bcc0e5d14cfdcbc2f453c833/docs/98_reusable_artifact/00_research_overview",
+  "doi": null,
+  "version_or_edition": "research-atelier@92611cbe651326b4bcc0e5d14cfdcbc2f453c833",
+  "reliability_note": "RQ-000032 formal candidate coding contract. D01–D21 code/value definitions are taken from 20_urban_legend_parent_child_code_system.md blob 192c2f1593e29eb32292a31d564d21ad4aec2427. Dimension Status, coding order, tie-break, no-guess rules, and D21 coding rule are taken from 30_urban_legend_analysis_coding_rules.md blob 4fe19cc922840a46367bc6d0162271d2422996a9."
+}
