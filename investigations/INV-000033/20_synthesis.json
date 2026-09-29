@@ -3,86 +3,108 @@
   "artifact_type": "20_synthesis",
   "investigation_id": "INV-000033",
   "rq_id": "RQ-000033",
-  "synthesized_at": "2026-09-29T06:40:00.000Z",
+  "synthesized_at": "2026-09-29T07:56:00.000Z",
   "knowledge_units": [
     {
       "knowledge_unit_id": "K0001",
-      "statement": "吉田大橋／とよばしの同一アンカーから、候補Aは名称・位置の歴史的再配置を経路認識の引き戻し規則へ、候補Bは物流中心の移動を持ち物・経路情報の再対応規則へ変換している。",
+      "statement": "候補A/Bは同じ吉田大橋／とよばし系アンカーを使い、D21はいずれもA4だが、Aは名称・位置履歴を名称／場所・認知構造へ、Bは物流中心移動を経路接続・現実再対応構造へ変換している。",
       "evidence_refs": [
         "E0001",
         "E0006"
-      ],
-      "qualifiers": [
-        "史実が支持するのは名称・位置・物流中心の再配置であり、発動・作用・解除は創作上のprovisional designである。"
       ]
     },
     {
       "knowledge_unit_id": "K0002",
-      "statement": "二川村・大岩村の移転・宿場形成という同一系統アンカーから、候補Cは複数の移転段階を歴史的空間層の切替規則へ、候補Dは別々の集落identityの統合を境界・目的地の収束規則へ変換している。",
+      "statement": "候補C/Dは同じ二川・大岩の移転・宿場形成史を使い、D21はいずれもA4だが、Cは歴史的時空層の順次切替、Dは集落境界・目的地の統合へ異なる因果構造を与えている。",
       "evidence_refs": [
         "E0002",
         "E0007"
-      ],
-      "qualifiers": [
-        "史実が支持するのは段階的移転と宿場形成であり、空間層切替や目的地交換は創作上のprovisional designである。"
       ]
     },
     {
       "knowledge_unit_id": "K0003",
-      "statement": "神野新田＋牟呂用水のアンカーから、候補Eは約23kmの水利接続を位置・距離の再解釈規則へ、候補Fは造成地と水利接続の関係を土地identityの規定規則へ変換している。",
+      "statement": "候補E/Fは同じ神野新田＋牟呂用水系アンカーを使い、D10はいずれもROUTE_CONNECTIONだが、EはD21=A2として具体的実在インフラ接続を使い、FはD21=A3として造成地identityが実在インフラ関係に依存することをモデル成立条件にしている。",
       "evidence_refs": [
         "E0003",
         "E0008"
-      ],
-      "qualifiers": [
-        "造成・長距離水利接続はSourceに支持されるが、位置や住所が水路により置換される因果は創作上のprovisional designである。",
-        "牟呂用水の完成年はSource内で1888年／1899年が競合し、本比較は単一完成年に依存しない。"
       ]
     },
     {
       "knowledge_unit_id": "K0004",
-      "statement": "Fixed INV-000032では、候補側でprovisional specifiedなのはD07,D09,D10,D11,D13,D15,D16,D17,D18である。D01–D06,D19–D20はexplicitly unresolved、D08,D12,D14,D21はnot explicitly assignedであり、未割当Dimensionを推測補完してはならない。",
+      "statement": "Repaired INV-000032はcandidate-side D01–D21を全てfinal stateへ確定した。A–F共通でD01=G8、D02–D06/D19=NA、D08/D12/D14/D20=U、D18=L1であり、D21はA/B/C/D=A4、E=A2、F=A3である。",
       "evidence_refs": [
         "E0004"
-      ],
-      "qualifiers": [
-        "specifiedも正式Entry codingではなくcandidate design上の記述である。"
       ]
     },
     {
       "knowledge_unit_id": "K0005",
-      "statement": "D21はA0〜A4の5値で、具体的実在対象の利用、実在制度・社会史が成立条件であること、具体的史実・記録を因果構造へ組み込むことを段階的に区別する。ただしcoding rulesは、典拠の実在性と伝承内容の現実接続を分離し、unknownを推測で埋めることを禁止する。",
+      "statement": "D21のcanonical distinctionは、A2=具体的実在対象、A3=実在制度・社会史等がモデル成立条件、A4=具体的史実・記録・既存伝承を因果構造へ統合、である。",
       "evidence_refs": [
         "E0009"
       ]
     },
     {
       "knowledge_unit_id": "K0006",
-      "statement": "候補群で観察可能な構造差は主としてD07–D10に現れる。A/C/Dは名称・場所・集落identityの歴史的再配置、E/Fは水利・インフラネットワークの因果源化、Bは物流史を位置・所有情報の再対応へ変換する点で異なる。",
+      "statement": "A–DのA4 assignmentは、吉田橋の名称・位置・物流移動、二川・大岩の段階的移転・宿場形成という具体的史実の変化を、伝承内部の作用規則へ直接変換していることに対応する。",
       "evidence_refs": [
         "E0001",
         "E0002",
-        "E0003",
-        "E0005"
-      ],
-      "qualifiers": [
-        "これは小規模な意図的design set内のassociationであり、現実アンカー統合方法が他Dimensionを因果的に変えることを示さない。"
+        "E0005",
+        "E0006",
+        "E0007"
       ]
     },
     {
       "knowledge_unit_id": "K0007",
-      "statement": "候補A–FのD21はupstreamで未割当であり、canonical coding ruleも未割当値の推測を禁じるため、current Evidence chainから候補別A0–A4を確定することはできない。",
+      "statement": "EのA2とFのA3の差は、同じ実在水利接続を使いながら、Eでは特定インフラを具体的アンカーとして作用規則に用いるのに対し、Fでは土地identityそのものの成立を実在インフラ関係へ依存させる点にある。",
       "evidence_refs": [
-        "E0004",
-        "E0009"
-      ],
-      "qualifiers": [
-        "D21を正式比較するには、各候補についてVersion ScopeとD21 assignmentを明示的に成立させる追加coding stepが必要である。"
+        "E0003",
+        "E0005",
+        "E0008"
       ]
     },
     {
       "knowledge_unit_id": "K0008",
-      "statement": "Fixed INV-000032ではD16とD18=L1はpinned corpusで一般的で、候補群の強い識別子ではない。一方D17はUnknownが多くcoded casesも分散しており、解除規則の有無や型を一律比較するには保守性が必要である。",
+      "statement": "D21が同じA4であるA–Dの間でも、D07,D09,D10,D11,D13,D15,D16,D17には複数の差が残る。したがってD21は現実固定の型を粗く表現するが、伝承の因果構造全体を一意に決定しない。",
+      "evidence_refs": [
+        "E0001",
+        "E0002",
+        "E0004",
+        "E0005"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0009",
+      "statement": "E/FはD10=ROUTE_CONNECTIONを共有しながらD21がA2/A3に分かれ、D07,D09,D11,D13,D15,D16,D17も異なる。D10因果源とD21現実アンカーは同一概念ではなく、別の構造情報を持つ。",
+      "evidence_refs": [
+        "E0003",
+        "E0004",
+        "E0005"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0010",
+      "statement": "候補間で差がないDimensionとして、candidate-as-design Version ScopeではD01、D02–D06、D08、D12、D14、D18、D19、D20が共通stateを持つ。差が現れるのは主にD07,D09,D10,D11,D13,D15,D16,D17,D21である。",
+      "evidence_refs": [
+        "E0001",
+        "E0002",
+        "E0003",
+        "E0004"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0011",
+      "statement": "D07ではA/C/D/Fがidentity系taxonomy gapのためU、B/EがSPATIAL_ROUTE_ANOMALYである。D16ではA/Bがsource-level alternativesのためC、C/EがSEQUENTIAL_EPISODE、DがSINGLE_EPISODE、FがCONTINUOUSである。",
+      "evidence_refs": [
+        "E0001",
+        "E0002",
+        "E0003",
+        "E0004"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0012",
+      "statement": "D21のformal assignmentは現実アンカー統合方法とのdesign内対応を記述するが、D21や現実アンカー統合方法が他Dimensionを一般に因果的に変化させることは、この6候補designからは支持されない。",
       "evidence_refs": [
         "E0005"
       ]
@@ -95,54 +117,53 @@
       "knowledge_unit_refs": [
         "K0001",
         "K0002",
-        "K0003"
+        "K0006",
+        "K0008"
       ],
-      "description": "同一または近接した現実アンカーでも、どの歴史的変化・接続関係を伝承内の規則へ変換するかにより異なるモデルが構成される。",
+      "description": "A–DはD21=A4を共有しながら異なるD07–D17構造を持ち、同じ現実固定度の中に複数の因果設計が存在する。",
       "evidence_refs": [
         "E0001",
         "E0002",
-        "E0003",
-        "E0006",
-        "E0007",
-        "E0008"
+        "E0005"
       ]
     },
     {
       "relation_id": "R0002",
-      "relation_type": "dependency",
+      "relation_type": "association",
       "knowledge_unit_refs": [
-        "K0004",
-        "K0005",
-        "K0007"
+        "K0003",
+        "K0007",
+        "K0009"
       ],
-      "description": "候補別D21比較は、upstream assignmentの存在とD21 coding contractの双方に依存する。現状はassignmentが欠けるためA0–A4差を確定できない。",
+      "description": "E/Fは同じD10=ROUTE_CONNECTIONを共有するが、現実アンカーが具体対象に留まるかモデル成立条件になるかでD21=A2/A3が分かれる。",
       "evidence_refs": [
-        "E0004",
-        "E0009"
+        "E0003",
+        "E0005"
       ]
     },
     {
       "relation_id": "R0003",
-      "relation_type": "association",
+      "relation_type": "qualification",
       "knowledge_unit_refs": [
-        "K0006",
-        "K0008"
+        "K0004",
+        "K0010",
+        "K0011"
       ],
-      "description": "現実アンカー統合方法との対応が比較的明瞭なのはD07–D10であり、D16/D18は識別性が弱く、D17はheterogeneousである。",
+      "description": "全21次元でstateは確定したが、多くのDimensionは候補間共通のNA/Uであり、観察可能な差は限定されたDimensionに集中する。",
       "evidence_refs": [
-        "E0005"
+        "E0004"
       ]
     },
     {
       "relation_id": "R0004",
       "relation_type": "qualification",
       "knowledge_unit_refs": [
-        "K0004",
-        "K0006"
+        "K0008",
+        "K0009",
+        "K0012"
       ],
-      "description": "観察可能なD07–D10差を、未解決・未割当のD01–D06,D08,D12,D14,D19–D21へ外挿してはならない。",
+      "description": "D21と他Dimensionのassociationを、D21から他Dimensionへのcausal effectとして解釈してはならない。",
       "evidence_refs": [
-        "E0004",
         "E0005"
       ]
     }
@@ -150,52 +171,46 @@
   "uncertainties": [
     {
       "uncertainty_id": "U0001",
-      "description": "候補A–FのD21 A0–A4は未割当であり、現時点では候補間のD21差を確定できない。",
+      "description": "A/C/D/FのD07はformal final stateとしてUだが、meaning target不存在ではなくidentity再配置を十分表現するChildがないtaxonomy gapを含む。",
       "knowledge_unit_refs": [
-        "K0004",
-        "K0005",
-        "K0007"
+        "K0011"
       ],
       "evidence_refs": [
-        "E0004",
-        "E0009"
+        "E0001",
+        "E0002",
+        "E0003",
+        "E0004"
       ]
     },
     {
       "uncertainty_id": "U0002",
-      "description": "D01–D06およびD19–D20はcandidate-sideでexplicitly unresolvedであり、現実アンカー統合方法との対応を評価できない。",
+      "description": "A/BのD16はsource candidate definition自体が複数の時間構造候補を含むためCであり、追加model specificationなしには単一Primaryへ確定しない。",
       "knowledge_unit_refs": [
-        "K0004"
+        "K0011"
       ],
       "evidence_refs": [
+        "E0001",
         "E0004"
       ]
     },
     {
       "uncertainty_id": "U0003",
-      "description": "D08,D12,D14はcandidate-sideでnot explicitly assignedであり、比較対象へ推測補完できない。",
+      "description": "E=A2/F=A3はcanonical final codingだが、より強く歴史統合を読む場合にE=A3/F=A4とするalternative boundary interpretationは残る。",
       "knowledge_unit_refs": [
-        "K0004"
+        "K0005",
+        "K0007"
       ],
       "evidence_refs": [
-        "E0004"
+        "E0005",
+        "E0009"
       ]
     },
     {
       "uncertainty_id": "U0004",
-      "description": "候補E/Fのインフラ／ネットワーク因果源はpinned corpusのD10観測codeでは未観測だが、taxonomy全体で表現不能かどうかは未確定である。",
+      "description": "牟呂用水の完成年はSRC-000146内で1888年／1899年が競合しているが、E/FのD21および構造比較は約23kmの接続・造成地relationに依存し、単一完成年には依存しない。",
       "knowledge_unit_refs": [
-        "K0006"
-      ],
-      "evidence_refs": [
-        "E0005"
-      ]
-    },
-    {
-      "uncertainty_id": "U0005",
-      "description": "牟呂用水の完成年はSRC-000146内で1888年／1899年が一致せず、本Evidenceでは解消できない。",
-      "knowledge_unit_refs": [
-        "K0003"
+        "K0003",
+        "K0007"
       ],
       "evidence_refs": [
         "E0008"
