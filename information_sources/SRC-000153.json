@@ -8,8 +8,8 @@
   "journal_or_publisher": "research-atelier / GitHub",
   "authors": null,
   "year": null,
-  "url": "https://github.com/kousuke-ota-datascience/research-atelier/blob/ff9b35430b3bb2c88016f3843af768ffd860e909/investigations/INV-000031/30_analysis.json",
+  "url": "https://github.com/kousuke-ota-datascience/research-atelier/blob/92611cbe651326b4bcc0e5d14cfdcbc2f453c833/investigations/INV-000031/30_analysis.json",
   "doi": null,
-  "version_or_edition": "blob d9088ccd885d908b2f05f5d2ad494b5d30b37a1a",
-  "reliability_note": "INV-000032の比較対象候補A-Fのcanonical upstream定義。候補codingはprovisionalであり、実在伝承の観測値ではない。"
+  "version_or_edition": "research-atelier@92611cbe651326b4bcc0e5d14cfdcbc2f453c833 / blob d9088ccd885d908b2f05f5d2ad494b5d30b37a1a",
+  "reliability_note": "INV-000032の比較対象候補A-Fのcanonical upstream定義。INV-000031 Review 000003 PASS target commit 92611cbe651326b4bcc0e5d14cfdcbc2f453c833上の30_analysis.json blob d9088ccd885d908b2f05f5d2ad494b5d30b37a1aを固定する。候補定義はprovisional creative modelだが、INV-000032のformal coding対象として使用する。"
 }
