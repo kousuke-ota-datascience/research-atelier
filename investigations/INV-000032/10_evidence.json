@@ -3,7 +3,7 @@
   "artifact_type": "10_evidence",
   "investigation_id": "INV-000032",
   "rq_id": "RQ-000032",
-  "snapshot_at": "2026-09-29T07:36:00.000Z",
+  "snapshot_at": "2026-09-29T07:39:00.000Z",
   "sources": [
     {
       "source_id": "SRC-000151",
@@ -139,6 +139,78 @@
       "direct_quote": null,
       "provenance": {
         "source_id": "SRC-000155",
+        "evidence_note": null
+      }
+    },
+    {
+      "evidence_id": "E0010",
+      "content": "Candidate A『名前が旧橋へ戻る』uses the Yoshida Bridge/Toyobashi name-location re-placement anchor. INV-000031 describes D07 as the puzzling split of one bridge identity across two current locations; D09 as naming plus historicization; D10 as causalizing the name-place relation; D11 as referring to the two present bridges with the mismatched name; D13 as route recognition being pulled back to the historically corresponding point; D15 as disturbance of position/direction sense; D16 as single-to-continuous episode; D17 as recovery by stating current location rather than bridge name; D18 as L1-centered.",
+      "source_locator": "research-atelier@92611cbe651326b4bcc0e5d14cfdcbc2f453c833 investigations/INV-000031/30_analysis.json blob d9088ccd885d908b2f05f5d2ad494b5d30b37a1a profile.candidate_hypotheses[0]",
+      "selection_reason": "formal candidate-side D01-D21 codingの直接入力となるcandidate model featuresを固定するため",
+      "note_type": "Data",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000153",
+        "evidence_note": null
+      }
+    },
+    {
+      "evidence_id": "E0011",
+      "content": "Candidate B『物流だけが橋を移る』uses the historical shift of the logistics center from the old to the current Yoshida Bridge. INV-000031 describes D07 as the puzzle that only the proper flow moves; D09 as a hidden movement rule; D10 as causalizing traffic flow/place relation; D11 as starting to carry an object from the old-bridge side; D13 as belongings and route information being reassociated to the current bridge; D15 as mismatch of belongings and positional information; D16 as delayed or one-off; D17 as recovery by retracing the route in reverse; D18 as L1-centered.",
+      "source_locator": "research-atelier@92611cbe651326b4bcc0e5d14cfdcbc2f453c833 investigations/INV-000031/30_analysis.json blob d9088ccd885d908b2f05f5d2ad494b5d30b37a1a profile.candidate_hypotheses[1]",
+      "selection_reason": "formal candidate-side D01-D21 codingの直接入力となるcandidate model featuresを固定するため",
+      "note_type": "Data",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000153",
+        "evidence_note": null
+      }
+    },
+    {
+      "evidence_id": "E0012",
+      "content": "Candidate C『三つの二川』uses the relocation sequence 本郷→元屋敷→current site. INV-000031 describes D07 as one settlement identity having multiple historical locations; D09 as historicization plus boundary classification; D10 as place/spatiotemporal layer; D11 as searching for the 'original Futagawa' in current Futagawa; D13 as surrounding spatial relations switching sequentially through historical relocation stages; D15 as uncertainty of spatial belonging/self-location; D16 as staged progression; D17 as recovery by continuing to verify present-day landmarks; D18 as L1-centered.",
+      "source_locator": "research-atelier@92611cbe651326b4bcc0e5d14cfdcbc2f453c833 investigations/INV-000031/30_analysis.json blob d9088ccd885d908b2f05f5d2ad494b5d30b37a1a profile.candidate_hypotheses[2]",
+      "selection_reason": "formal candidate-side D01-D21 codingの直接入力となるcandidate model featuresを固定するため",
+      "note_type": "Data",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000153",
+        "evidence_note": null
+      }
+    },
+    {
+      "evidence_id": "E0013",
+      "content": "Candidate D『二つの村が一つの宿になる』uses the history in which Futagawa and Oiwa villages moved and formed one continuous post town. INV-000031 describes D07 as ambiguity of the boundary where two regional identities were integrated; D09 as boundary reclassification; D10 as place/settlement boundary; D11 as two people moving simultaneously toward different old-village destinations; D13 as routes converging and destination displays exchanging; D15 as disturbance of belonging/destination; D16 as a synchronized single episode; D17 as ending by specifying the current common name Futagawa-juku; D18 as L1-centered.",
+      "source_locator": "research-atelier@92611cbe651326b4bcc0e5d14cfdcbc2f453c833 investigations/INV-000031/30_analysis.json blob d9088ccd885d908b2f05f5d2ad494b5d30b37a1a profile.candidate_hypotheses[3]",
+      "selection_reason": "formal candidate-side D01-D21 codingの直接入力となるcandidate model featuresを固定するため",
+      "note_type": "Data",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000153",
+        "evidence_note": null
+      }
+    },
+    {
+      "evidence_id": "E0014",
+      "content": "Candidate E『二十三キロの近道』uses the approximately 23 km Muro irrigation connection from Ichikuwada to Kanno Shinden. INV-000031 describes D07 as remote points being directly connected as one water system; D09 as connection-rule formation; D10 as waterway/infrastructure network; D11 as continuously tracing the irrigation-channel continuity on a map; D13 as current position being reinterpreted by waterway connection order instead of road distance; D15 as disturbance of position/distance recognition; D16 as chained progression; D17 as recovery by leaving the waterway and choosing another route system; D18 as L1-centered.",
+      "source_locator": "research-atelier@92611cbe651326b4bcc0e5d14cfdcbc2f453c833 investigations/INV-000031/30_analysis.json blob d9088ccd885d908b2f05f5d2ad494b5d30b37a1a profile.candidate_hypotheses[4]",
+      "selection_reason": "formal candidate-side D01-D21 codingの直接入力となるcandidate model featuresを固定するため",
+      "note_type": "Data",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000153",
+        "evidence_note": null
+      }
+    },
+    {
+      "evidence_id": "E0015",
+      "content": "Candidate F『土地ではなく水路が住所を決める』uses Kanno Shinden development history plus the long-distance Muro irrigation connection. INV-000031 describes D07 as the puzzle that infrastructure connection rather than ground itself determines reclaimed-land identity; D09 as naming, boundary classification and causal attribution; D10 as infrastructure connection; D11 as checking position information while explaining place relative to the waterway; D13 as place-name/direction/distance displays being replaced by upstream connection order; D15 as disturbance of regional identity and position information; D16 as persistent; D17 as recovery by switching to another coordinate system such as roads/administrative addresses; D18 as L1-centered.",
+      "source_locator": "research-atelier@92611cbe651326b4bcc0e5d14cfdcbc2f453c833 investigations/INV-000031/30_analysis.json blob d9088ccd885d908b2f05f5d2ad494b5d30b37a1a profile.candidate_hypotheses[5]",
+      "selection_reason": "formal candidate-side D01-D21 codingの直接入力となるcandidate model featuresを固定するため",
+      "note_type": "Data",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000153",
         "evidence_note": null
       }
     }
