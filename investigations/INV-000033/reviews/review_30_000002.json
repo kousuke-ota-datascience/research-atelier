@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000033",
+  "review_seq": 2,
+  "layer": "30_analysis",
+  "review_kind": "20_synthesis_plus_00_context_to_30_analysis",
+  "target_blob_sha": "c156835ab101e927e656628756940e0a4d823027",
+  "assessment": "The rebuilt Analysis is methodologically conservative within the evidence actually available: it retracts the old guessed A2/A3/A4 candidate assignments, keeps unresolved/unassigned dimensions explicit, retains source uncertainty, and avoids generalizing the six-candidate design set. However, it also explicitly states that the frozen context's required finalized D01–D21 input does not exist and then proceeds with a D07–D10-centered partial comparison. This is a context-adherence/execution defect in the 20_synthesis + 00_context -> 30_analysis transition, not a semantic defect in 00_context.",
+  "findings": [
+    {
+      "finding_id": "F001",
+      "severity": "Major",
+      "target": "30_analysis: frozen 00_context adherence / execution of the required finalized D01–D21 comparison",
+      "evidence": [
+        "INV-000033/00_context.json scope says the target candidates were D01–D21 coded in RQ-000032, and investigation_boundary.include explicitly requires 「RQ-000032で確定したD01–D21 coding」; the question asks for differences in D21 and the other D01–D21 structure.",
+        "The current fixed INV-000032/30_analysis.json, accepted by INV-000032 Review 000005 PASS, explicitly preserves D01–D06/D19–D20 as unresolved and D08/D12/D14/D21 as not explicitly assigned; its PASS therefore confirms this as the valid upstream boundary, not as finalized candidate-side D01–D21 assignment.",
+        "Current INV-000033 E0004, K0004/K0007, 30_analysis.comparability_limits, J0003/J0005, and Working Answer acknowledge the same missing prerequisite and consequently exclude D21 and multiple other dimensions from the requested comparison rather than executing the frozen full comparison."
+      ],
+      "impact": "The rebuilt chain is more source-faithful than Review 000001's target, but it still completes a narrower partial comparison than the frozen Investigation requires. The D07–D10 observations may be supportable on their own, yet the core RQ asks about D21 and the broader D01–D21 structure using finalized RQ-000032 coding. Treating the present partial answer as context-faithful completion would silently redefine the frozen scope and leaves the core methodological lineage incomplete.",
+      "repair_direction": {
+        "mode": "same_investigation",
+        "affected_layer": "10_evidence",
+        "instruction": "Keep INV-000033/00_context.json frozen and unchanged. First establish the prerequisite that the frozen context actually requires: a canonical RQ-000032 result that constitutes finalized candidate-side D01–D21 coding, including an explicit D21 assignment and a finalized state for the other dimensions rather than merely documenting that they remain unresolved/unassigned. Then refresh INV-000033/10_evidence to pin that valid upstream result, invalidate and rebuild 20_synthesis and 30_analysis, and run Workflow 20 again. If the prerequisite cannot yet be established, leave INV-000033 pending/blocked rather than weakening its question inside the same Investigation; only an intentional change of the frozen question would require a separate Investigation."
+      }
+    }
+  ],
+  "verdict": "FINDINGS"
+}

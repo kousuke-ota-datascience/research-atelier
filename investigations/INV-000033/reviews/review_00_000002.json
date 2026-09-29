@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000033",
+  "review_seq": 2,
+  "layer": "00_context",
+  "review_kind": "context_semantic_validity",
+  "target_blob_sha": "a4b5cd1467d9456e14fe887862a992025e3af940",
+  "assessment": "The frozen Comparative context is semantically coherent. It intentionally requires the Toyohashi candidates generated in RQ-000031 and the D01–D21 coding finalized in RQ-000032, asks how reality-anchor integration corresponds to D21 and other D01–D21 structure, excludes quality ranking and broad causal generalization, and defines a small intentional design set. The current mismatch is not a defect in this frozen context itself; it arises because the downstream execution proceeded without the required finalized upstream coding input.",
+  "findings": [],
+  "verdict": "PASS"
+}

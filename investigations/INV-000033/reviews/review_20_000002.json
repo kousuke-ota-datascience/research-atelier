@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000033",
+  "review_seq": 2,
+  "layer": "20_synthesis",
+  "review_kind": "10_evidence_to_20_synthesis",
+  "target_blob_sha": "847dc53c50e593630dae4c5148d33ecd9fc3eea1",
+  "assessment": "The rebuilt Synthesis stays within the repaired Evidence support boundary. K0001–K0003 distinguish historical anchors from provisional creative mechanisms; K0004/K0007 preserve unresolved and unassigned candidate dimensions instead of inferring them; K0005 keeps D21 definitions separate from candidate assignment; K0006/K0008 restrict structural contrasts to the supported design-set/corpus comparison; and the Muro irrigation date conflict is retained. The synthesis itself does not overstate unavailable D21 or full D01–D21 coding, so no synthesis-only finding is identified.",
+  "findings": [],
+  "verdict": "PASS"
+}

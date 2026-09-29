@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000033",
+  "review_seq": 2,
+  "layer": "10_evidence",
+  "review_kind": "source_evidence_note_to_10_evidence",
+  "target_blob_sha": "1c7670bd35a4b829af4e38f40bc2ffc78d7dfef2",
+  "assessment": "The repaired Evidence layer is source-faithful within its stated boundaries. E0001–E0003 pin the fixed INV-000031 candidate definitions; E0004 accurately preserves the fixed INV-000032 boundary that D01–D06/D19–D20 are unresolved and D08/D12/D14/D21 are unassigned; E0005 is now supported by the full-corpus INV-000032 result that passed Review 000005; E0008 explicitly preserves the SRC-000146 1888/1899 completion-year conflict; and E0009 pins the D21 coding contract without guessing unknown assignments. No independent Evidence provenance finding remains.",
+  "findings": [],
+  "verdict": "PASS"
+}
