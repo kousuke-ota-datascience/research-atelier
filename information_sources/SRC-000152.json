@@ -8,8 +8,8 @@
   "journal_or_publisher": "kousuke-ota-datascience / GitHub",
   "authors": null,
   "year": null,
-  "url": "https://github.com/kousuke-ota-datascience/research-atelier/tree/ba9517431e28eb881587214e0adbef0954407f1d/investigations",
+  "url": "https://github.com/kousuke-ota-datascience/research-atelier/tree/92611cbe651326b4bcc0e5d14cfdcbc2f453c833/investigations",
   "doi": null,
-  "version_or_edition": "research-atelier@ba9517431e28eb881587214e0adbef0954407f1d",
-  "reliability_note": "RQ-000033 upstream input. Fixed Git commit上のINV-000031/30_analysis.jsonおよびINV-000032/30_analysis.json等を参照する。INV-000032自身が候補codingを最終確定ではなく設計上の想定と明記しているため、その制約を保持する。"
+  "version_or_edition": "research-atelier@92611cbe651326b4bcc0e5d14cfdcbc2f453c833",
+  "reliability_note": "RQ-000033 upstream input. INV-000031 Review 000003 PASS target commit 92611cbe651326b4bcc0e5d14cfdcbc2f453c833上で、INV-000031/30_analysis.json blob d9088ccd885d908b2f05f5d2ad494b5d30b37a1a と INV-000032/30_analysis.json blob 1bdb926ddef129b31bccf17605fddc294ad3602c を固定する。INV-000032はcandidate-sideでD07,D09,D10,D11,D13,D15,D16,D17,D18のみprovisional specified、D01-D06,D19-D20はexplicitly unresolved、D08,D12,D14,D21はnot explicitly assignedとしており、未割当Dimensionを推測補完しない。"
 }
