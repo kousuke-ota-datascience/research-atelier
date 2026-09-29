@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000029",
+  "review_seq": 4,
+  "layer": "30_analysis",
+  "review_kind": "20_synthesis_plus_00_context_to_30_analysis",
+  "target_blob_sha": "8bfb980fcb86d4ed82b54167e6700ff7f5974cfe",
+  "assessment": "The 30_analysis blob is unchanged from Review 000003 and no independent Analysis-layer semantic defect is identified. Its Kanno Shinden conclusions concern artificial land/water formation and explicitly withhold the unsupported land-state inversion; no Working Answer or judgment depends on choosing 1899 rather than 1888 as the Muro irrigation completion year. This PASS does not bypass or cure the upstream Evidence finding; after E0004 repair, 20_synthesis and 30_analysis must be rebuilt/revalidated before a new semantic review.",
+  "findings": [],
+  "verdict": "PASS"
+}

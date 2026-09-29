@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000029",
+  "review_seq": 4,
+  "layer": "10_evidence",
+  "review_kind": "source_evidence_note_to_10_evidence",
+  "target_blob_sha": "cb59d28cbca83cd1239ce59210d3f5df3d6d4706",
+  "assessment": "The changed 10_evidence blob is largely a provenance-identity normalization: SRC-0143-SRC-0150 were migrated to SRC-000143-SRC-000150, all nine Evidence item substantive fields other than provenance.source_id are unchanged, the eight new Source JSONs are metadata-equivalent to their predecessors apart from source_id, and every recorded Source revision commit/blob binding resolves exactly. However, current EV-000254 and its cited Toyohashi City source preserve a material internal date conflict that E0004 omits: one section states Muro irrigation was completed in 1899, while another section in the same source states 1888. E0004 still asserts 1899 as a settled completion year. This is a qualification/source-faithfulness defect in the current frozen Evidence.",
+  "findings": [
+    {
+      "finding_id": "F001",
+      "severity": "Minor",
+      "target": "10_evidence.evidence_items[E0004].content; 10_evidence.evidence_items[E0004].source_locator",
+      "evidence": [
+        "Current EV-000254 states that the same Toyohashi City source gives 1899 in the '神野新田と牟呂用水' section and 1888 in the '世界かんがい施設遺産：松原用水・牟呂用水' section, and therefore the completion year cannot be fixed from that source alone.",
+        "The Toyohashi City source states that Muro irrigation was begun in 1887 and completed in 1899 in the '神野新田と牟呂用水' passage.",
+        "The same Toyohashi City source separately states that Muro irrigation was completed in 1888 in the World Heritage Irrigation Structures passage.",
+        "Current E0004 retains the unqualified statement that Muro irrigation '1899年に完成した' and locates only the first section, omitting the contradictory qualification now present in EV-000254."
+      ],
+      "impact": "E0004 overstates a disputed year as established fact and no longer preserves the qualification carried by its Evidence Note and source. The downstream K0004/Working Answer rely on the existence of the artificial land-and-water system rather than the exact completion year, so the main conclusion is not reversed; nevertheless the Evidence layer is not source-faithful until the date conflict is represented.",
+      "repair_direction": {
+        "mode": "same_investigation",
+        "affected_layer": "10_evidence",
+        "instruction": "Revise E0004 to preserve the source's internal date conflict: retain the supported 1893 Kanno purchase/development and approximately 23 km Muro irrigation facts, but state that the cited Toyohashi City material gives both 1899 and 1888 as completion years and that the completion year cannot be fixed from this source alone. Update source_locator to cover both relevant sections. Then invalidate/rebuild 20_synthesis and 30_analysis under Workflow 10 and revalidate through 30 before re-review."
+      }
+    }
+  ],
+  "verdict": "FINDINGS"
+}

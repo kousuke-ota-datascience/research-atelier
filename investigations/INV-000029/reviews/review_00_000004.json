@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000029",
+  "review_seq": 4,
+  "layer": "00_context",
+  "review_kind": "context_semantic_validity",
+  "target_blob_sha": "e190ba141b96a0e3ab56a944c2572d4af5835809",
+  "assessment": "The frozen Context is unchanged from Review 000003 and remains semantically coherent with RQ-000029. Its Exploratory scope, inclusion/exclusion boundary, temporal cutoff, and assumption that real-world-anchor availability means verifiable connectability rather than creative superiority remain internally consistent. No Context defect requiring repair is identified.",
+  "findings": [],
+  "verdict": "PASS"
+}

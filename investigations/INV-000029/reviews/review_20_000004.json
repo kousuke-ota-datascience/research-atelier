@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000029",
+  "review_seq": 4,
+  "layer": "20_synthesis",
+  "review_kind": "10_evidence_to_20_synthesis",
+  "target_blob_sha": "5394345501c7ed6897baf2fe1621c53aa9a2c524",
+  "assessment": "The 20_synthesis blob is unchanged from Review 000003. No independent synthesis overreach is identified: K0004 abstracts the supported artificial land/water-system structure and does not depend on a specific Muro irrigation completion year, while the remaining knowledge units, relations, and uncertainties retain their prior support and qualifications. This PASS does not heal the upstream E0004 defect; repairing 10_evidence requires downstream invalidation/rebuild under Workflow 10.",
+  "findings": [],
+  "verdict": "PASS"
+}
