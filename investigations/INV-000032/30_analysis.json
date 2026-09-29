@@ -3,7 +3,7 @@
   "artifact_type": "30_analysis",
   "investigation_id": "INV-000032",
   "rq_id": "RQ-000032",
-  "analyzed_at": "2026-09-28T13:54:00.000Z",
+  "analyzed_at": "2026-09-29T07:49:00.000Z",
   "question_type": "Comparative",
   "profile": {
     "comparison_units": [
@@ -13,31 +13,37 @@
       "RQ-000031候補D『二つの村が一つの宿になる』",
       "RQ-000031候補E『二十三キロの近道』",
       "RQ-000031候補F『土地ではなく水路が住所を決める』",
-      "0015_zenn cutoff snapshotのcanonical <Entry_ID>_20_analysis.json"
+      "0015_zenn cutoff snapshotのcanonical <Entry_ID>_20_analysis.json 25件"
     ],
     "comparison_dimensions": [
-      "Candidate-side provisional specified: D07,D09,D10,D11,D13,D15,D16,D17,D18",
-      "Candidate-side explicitly unresolved: D01-D06,D19-D20",
-      "Candidate-side not explicitly assigned: D08,D12,D14,D21",
-      "Corpus-side: D01-D21 status / primary / secondary"
+      "Notation: D=Direct, I=Inferred, U=Unknown, NA=Not applicable, C=Conflict. H3 is recorded as status:primary(+secondary...). C records competing candidate values without forcing a primary.",
+      "A『名前が旧橋へ戻る』: D01=D:D01.G8; D02=NA; D03=NA; D04=NA; D05=NA; D06=NA; D07=U(taxonomy gap: name/place identity split); D08=U; D09=I:D09.HST.HISTORICAL_ANCHOR(+D09.CAT.NAMING); D10=I:D10.OBJ.SYMBOL_NAME_IMAGE(+D10.SPC.SPECIFIC_PLACE); D11=I:D11.INF.SAY_NAME_REMEMBER; D12=U; D13=I:D13.COG.MENTAL_INFLUENCE; D14=U; D15=I:D15.MND.PERCEPTUAL_DISTURBANCE; D16=C(single episode vs continuous); D17=I:D17.RUL.PROCEDURAL_RULE; D18=D:D18.L1; D19=NA; D20=U; D21=I:D21.A4.",
+      "B『物流だけが橋を移る』: D01=D:D01.G8; D02=NA; D03=NA; D04=NA; D05=NA; D06=NA; D07=I:D07.PSE.SPATIAL_ROUTE_ANOMALY; D08=U; D09=I:D09.PPR.CORRELATION_RULE; D10=I:D10.SPC.ROUTE_CONNECTION; D11=I:D11.MAN.TAKE_OWN_CARRY(+D11.CON.LOCATION_STATE); D12=U; D13=I:D13.RST.REALITY_ALTERATION; D14=U; D15=I:D15.KNW.REALITY_TRUST_LOSS; D16=C(delayed vs single episode); D17=I:D17.AVO.DISTANCE_ROUTE_CHANGE; D18=D:D18.L1; D19=NA; D20=U; D21=I:D21.A4.",
+      "C『三つの二川』: D01=D:D01.G8; D02=NA; D03=NA; D04=NA; D05=NA; D06=NA; D07=U(taxonomy gap: settlement identity across historical places); D08=U; D09=I:D09.HST.HISTORICAL_ANCHOR(+D09.CAT.BOUNDARY_CLASSIFICATION); D10=I:D10.SPC.SPATIOTEMPORAL_FIELD(+D10.SPC.SPECIFIC_PLACE); D11=I:D11.SOC.INVESTIGATE_INQUIRE(+D11.CON.LOCATION_STATE); D12=U; D13=I:D13.RST.SPATIAL_DISTORTION(+D13.RST.REALITY_REPLACEMENT); D14=U; D15=I:D15.KNW.REALITY_TRUST_LOSS; D16=I:D16.EVT.SEQUENTIAL_EPISODE; D17=I:D17.INF.VERIFY_DEBUNK; D18=D:D18.L1; D19=NA; D20=U; D21=I:D21.A4.",
+      "D『二つの村が一つの宿になる』: D01=D:D01.G8; D02=NA; D03=NA; D04=NA; D05=NA; D06=NA; D07=U(taxonomy gap: integrated settlement-boundary identity); D08=U; D09=I:D09.CAT.BOUNDARY_CLASSIFICATION; D10=I:D10.SPC.SPECIFIC_PLACE; D11=I:D11.MOV.FOLLOW_TURN_ROUTE(+D11.INF.SAY_NAME_REMEMBER); D12=U; D13=I:D13.RST.SPATIAL_DISTORTION(+D13.RST.REALITY_ALTERATION); D14=U; D15=I:D15.KNW.REALITY_TRUST_LOSS; D16=I:D16.EVT.SINGLE_EPISODE; D17=I:D17.RUL.CORRECT_ANSWER; D18=D:D18.L1; D19=NA; D20=U; D21=I:D21.A4.",
+      "E『二十三キロの近道』: D01=D:D01.G8; D02=NA; D03=NA; D04=NA; D05=NA; D06=NA; D07=I:D07.PSE.SPATIAL_ROUTE_ANOMALY; D08=U; D09=I:D09.PPR.CORRELATION_RULE; D10=I:D10.SPC.ROUTE_CONNECTION; D11=I:D11.SOC.INVESTIGATE_INQUIRE(+D11.INF.READ_VIEW_MEDIA); D12=U; D13=I:D13.COG.MENTAL_INFLUENCE; D14=U; D15=I:D15.MND.PERCEPTUAL_DISTURBANCE; D16=I:D16.EVT.SEQUENTIAL_EPISODE; D17=I:D17.AVO.DISTANCE_ROUTE_CHANGE; D18=D:D18.L1; D19=NA; D20=U; D21=I:D21.A2.",
+      "F『土地ではなく水路が住所を決める』: D01=D:D01.G8; D02=NA; D03=NA; D04=NA; D05=NA; D06=NA; D07=U(taxonomy gap: land identity defined by infrastructure relation); D08=U; D09=I:D09.CAT.BOUNDARY_CLASSIFICATION(+D09.CAT.NAMING,+D09.CAU.DIRECT_CAUSE); D10=I:D10.SPC.ROUTE_CONNECTION(+D10.SPC.SPECIFIC_PLACE); D11=I:D11.INF.UNDERSTAND_RECOGNIZE(+D11.CON.LOCATION_STATE); D12=U; D13=I:D13.RST.REALITY_ALTERATION; D14=U; D15=I:D15.KNW.REALITY_TRUST_LOSS; D16=I:D16.CON.CONTINUOUS; D17=I:D17.RUL.PROCEDURAL_RULE; D18=D:D18.L1; D19=NA; D20=U; D21=I:D21.A3."
     ],
     "contrasts": [
-      "候補A/C/Dは、既存corpusにもある空間異常ではなく、名称・地名・集落identityの歴史的再配置をD07の中心対象にする点で0319のtaxonomy gapに近い。",
-      "候補E/Fは水利ネットワークをD10因果源として設計するが、pinned corpus 25件のD10 primary/secondaryには同種の観測codeがない。",
-      "候補Bは史実を因果構造へ取り込む点ではA4既存例（6/25）と共通するが、提案される位置・所有情報再対応は既存Entryの直接再利用ではない。",
-      "D16は24/25がresolved寄り（I/D）でSEQUENTIAL_EPISODE=10/25、D18はL1 primary=22/25であり、これらは候補群の強い識別子ではない。",
-      "D17はU=10/25かつcoded casesが分散しており、解除規則の存在をcorpus一般の特徴として扱うことはできない。",
-      "status/primary/secondary込みのD07-D10 exact tupleは25/25で相互に異なり、corpus自体の組合せ多様性が高い。"
+      "Candidate-side D01–D21 is now finalized as status/code state rather than left unassigned: values unsupported by the creative-model scope are explicitly U/NA/C instead of being guessed.",
+      "D21 is A4 for A/B/C/D, A2 for E, and A3 for F. A–D integrate concrete historical change directly into the lore causal rule; E uses a specific real irrigation network as the concrete anchor without making its history itself the causal rule; F requires the real reclaimed-land/infrastructure relation as a condition of the model.",
+      "Pinned corpus D21 contains A0=2, A1=10, A2=7, A4=6 and no A3 among 25 entries. Thus E's A2 and A–D's A4 have corpus precedents, while F's A3 is unobserved in this pinned corpus; this is corpus-relative, not evidence of real-world novelty.",
+      "A/C/D/F retain D07=U because their central name/place/settlement/land identity target does not fit the existing D07 child taxonomy conservatively. B/E map to D07.PSE.SPATIAL_ROUTE_ANOMALY.",
+      "E/F map to D10.SPC.ROUTE_CONNECTION under the current codebook. The pinned corpus has no observed D10 primary/secondary representing infrastructure/network causation, so their difference is corpus-relative under an existing code rather than a D10 taxonomy gap.",
+      "D18=L1 is common to all six candidates and also common in the corpus (22/25 primary), so it is not a strong discriminator. D16 is fully resolved for C–F but A/B retain C because the source candidate definition itself supplies competing temporal alternatives.",
+      "D02–D06 and D19 are NA for the candidate-as-design Version Scope because these models have not yet circulated as folklore and no lore-to-recipient presentation/distribution state exists. D08,D12,D14,D20 remain U because the candidate definitions do not provide enough information for a conservative value."
     ],
     "comparability_limits": [
-      "RQ-000031候補は流通前の創作モデルであり、specified Dimensionも正式codingではなくprovisional designである。",
-      "Candidate-side specifiedはD07,D09,D10,D11,D13,D15,D16,D17,D18に限定される。D01-D06,D19-D20はexplicitly unresolved、D08,D12,D14,D21はnot explicitly assignedであり、後二者をU/NA/Cや任意codeとして補完しない。",
-      "Corpus comparisonはSRC-000151が固定するcutoff commitのcanonical 25 Entries全件を対象とし、各Entry blob SHAとD01-D21 status/primary/secondaryをcorpus_snapshot.jsonに保存した。",
-      "Corpus内未観測code/combinationは、taxonomy全体で表現不能であることや現実世界で新規であることを意味しない。"
+      "Candidate-side Version Scope is the creative model definition materialized in INV-000031, not later folklore circulation. D01.G8 therefore records research-time generation of the candidate model, not independently attested popular emergence.",
+      "NA for D02–D06/D19 is specific to the candidate-as-design Version Scope; if a candidate is later published or circulated as folklore, those dimensions must be recoded on that new Version Scope rather than inherited.",
+      "U at D07 for A/C/D/F is a finalized status reflecting a taxonomy gap/insufficient fitting child, not absence of a meaning-forming target.",
+      "C at D16 for A/B preserves the source-level competing temporal alternatives and does not force a primary code.",
+      "The pinned 25-entry corpus is the canonical project comparison population at cutoff, not the population of all real-world urban legends.",
+      "Corpus absence of a code or combination is not evidence that the structure is globally novel or superior."
     ]
   },
   "working_answer": {
-    "text": "Pinned canonical corpus 25件との比較で、candidate-sideに直接比較可能なprovisional specified DimensionはD07,D09,D10,D11,D13,D15,D16,D17,D18である。D01–D06,D19–D20はupstreamでexplicitly unresolved、D08,D12,D14,D21はnot explicitly assignedなので、これらを候補側のcode/statusとして推測補完しない。指定済みDimensionでは、D16はcorpusの24/25がIまたはDでSEQUENTIAL_EPISODEが10/25、D18はL1 primaryが22/25であり、候補群との重なりが大きい。一方D07/D09/D10では、候補A/C/Dの名称・場所・集落identityの歴史的再配置や、候補E/Fの水利・インフラネットワーク因果源が既存corpusとの主要な構造差として現れる。候補Bは史実統合という点では既存A4型と部分的に共通するが、位置・所有情報再対応という作用機構は別である。ただしcorpus側D07-D10 exact tupleは25件すべて異なるため、未観測tupleだけを独自性の証明にはしない。比較結果は、specified Dimensionの構造差と、unresolved/unassigned Dimensionの境界を分けて読む必要がある。",
+    "text": "RQ-000032について、候補A–Fのcandidate-side D01–D21をformal status/codeとして確定した。creative-model Version Scopeでは、D01は全候補D01.G8、流通前のためD02–D06とD19はNA、D08/D12/D14/D20はEvidence不足でU、D18は全候補L1である。D21はA/B/C/D=A4、E=A2、F=A3となる。A–Dは橋名・物流移動・集落移転・宿場形成という具体的史実を伝承内の因果規則へ直接組み込み、Eは具体的な牟呂用水ネットワークを現実対象として因果基盤に使い、Fは神野新田の造成地identityが実在インフラ接続に依存することをモデル成立条件にする。既存25件corpusではA2とA4には前例がある一方A3は未観測である。D07ではA/C/D/Fがidentity系taxonomy gapのためU、B/EはSPATIAL_ROUTE_ANOMALYとなる。D10ではE/Fを既存code D10.SPC.ROUTE_CONNECTIONへformal codingできるため、corpus内未観測ではあるがD10 taxonomy gapではない。したがって候補差は単一の総合類似度ではなく、D21、D07–D10、D11–D17の組合せ、およびU/NA/Cを含むDimension stateとして比較するのが妥当である。",
     "knowledge_unit_refs": [
       "K0001",
       "K0002",
@@ -45,80 +51,143 @@
       "K0004",
       "K0005",
       "K0006",
-      "K0007"
+      "K0007",
+      "K0008",
+      "K0009",
+      "K0010",
+      "K0011",
+      "K0012"
     ]
   },
   "judgments": [
     {
       "judgment_id": "J0001",
-      "statement": "候補A/C/Dの主な構造差は空間異常一般ではなく、名称・場所identityの歴史的再配置をD07対象へ置く点にある。",
+      "statement": "候補A–FについてD01–D21の各DimensionをD/I/U/NA/Cを含むfinal stateへ確定でき、旧resultの『未割当のまま比較対象外』という状態は解消された。",
       "knowledge_unit_refs": [
-        "K0001",
-        "K0002"
+        "K0002",
+        "K0003",
+        "K0004",
+        "K0005",
+        "K0006",
+        "K0007",
+        "K0008",
+        "K0009"
       ]
     },
     {
       "judgment_id": "J0002",
-      "statement": "候補E/Fのインフラネットワーク因果源はpinned corpusのD10観測codeでは未観測だが、これだけでtaxonomy gapとは確定できない。",
+      "statement": "D21はA/B/C/D=A4、E=A2、F=A3とformal codingする。A–Dは具体的史実の変化を因果規則へ統合し、Eは具体的実在インフラをアンカーとして使い、Fは実在の造成地・インフラ関係をモデル成立条件にする。",
       "knowledge_unit_refs": [
-        "K0003"
+        "K0002",
+        "K0003",
+        "K0004",
+        "K0005",
+        "K0006",
+        "K0007",
+        "K0010"
       ]
     },
     {
       "judgment_id": "J0003",
-      "statement": "候補BはA4型史実統合と部分的に共通する一方、提案される作用機構は既存A4例と同一ではない。",
+      "statement": "候補A/C/D/FのD07は既存Childへ保守的に一意対応できないためUとしてtaxonomy gapを保持し、B/EのみD07.PSE.SPATIAL_ROUTE_ANOMALYへI codingする。",
       "knowledge_unit_refs": [
-        "K0004"
+        "K0002",
+        "K0003",
+        "K0004",
+        "K0005",
+        "K0006",
+        "K0007",
+        "K0009",
+        "K0011"
       ]
     },
     {
       "judgment_id": "J0004",
-      "statement": "D16の段階進行とD18=L1はcorpusで高頻度であり、候補群のdistinctivenessを主にそこへ帰属させる根拠は弱い。D17はUnknown率が高いため別扱いが必要である。",
+      "statement": "候補E/FのD10はD10.SPC.ROUTE_CONNECTIONで表現できるため、pinned corpus内で同種の因果源が未観測でもD10 taxonomy gapとは判定しない。",
       "knowledge_unit_refs": [
-        "K0005"
+        "K0006",
+        "K0007",
+        "K0009",
+        "K0012"
       ]
     },
     {
       "judgment_id": "J0005",
-      "statement": "候補側で直接比較可能なのはprovisional specifiedのD07,D09,D10,D11,D13,D15,D16,D17,D18である。D01-D06,D19-D20はexplicitly unresolved、D08,D12,D14,D21はnot explicitly assignedとして保持し、差異・一致の判定対象にしない。",
+      "statement": "D18=L1は候補全件共通かつcorpusでも高頻度であり強い識別子ではない。A/BのD16はsource-level ambiguityをCとして保持する方が単一値への過剰確定より妥当である。",
       "knowledge_unit_refs": [
-        "K0006",
-        "K0007"
+        "K0001",
+        "K0002",
+        "K0003",
+        "K0009"
+      ]
+    },
+    {
+      "judgment_id": "J0006",
+      "statement": "D02–D06/D19のNAは流通前creative designというVersion Scopeに由来し、将来の公開・流通後Entryへそのまま継承してはならない。",
+      "knowledge_unit_refs": [
+        "K0008",
+        "K0009"
       ]
     }
   ],
   "limitations": [
     {
-      "text": "候補A-Fは正式Entryではなく、candidate-sideで明示されるD07,D09,D10,D11,D13,D15,D16,D17,D18もINV-000031のprovisional designである。D08,D12,D14,D21にはassignmentがない。",
+      "text": "Candidate codingはRQ-000031のcreative model definitionをVersion Scopeとしており、実際に社会流通した都市伝説の観測codingではない。",
       "knowledge_unit_refs": [
-        "K0006"
+        "K0008",
+        "K0009"
       ]
     },
     {
-      "text": "Pinned corpus 25件は本プロジェクトのcanonical比較母集団であり、現実世界の都市伝説全体を代表するとは限らない。",
+      "text": "D01.G8はcandidate modelの研究上の生成時期を表す。後に独立流通した場合の『最古確認伝承形』とは区別する必要がある。",
       "knowledge_unit_refs": [
-        "K0007"
+        "K0008",
+        "K0009"
       ]
     },
     {
-      "text": "D10でインフラ／ネットワーク因果源がcorpus内未観測でも、codebookに未使用codeがある可能性があるためtaxonomy gap判定は別途必要である。",
+      "text": "D07=UのA/C/D/Fはmeaning target不在ではなく、現行taxonomyでidentity再配置を十分表現できないことを示す。",
       "knowledge_unit_refs": [
-        "K0003"
+        "K0011",
+        "K0009"
+      ]
+    },
+    {
+      "text": "D21 A3がpinned corpusで未観測であることは、この25件比較母集団に限った事実であり、現実世界での新規性を意味しない。",
+      "knowledge_unit_refs": [
+        "K0001",
+        "K0010"
+      ]
+    },
+    {
+      "text": "D08,D12,D14,D20はcandidate definitionだけでは保守的に確定できずUとした。Uは特徴不存在を意味しない。",
+      "knowledge_unit_refs": [
+        "K0008",
+        "K0009"
       ]
     }
   ],
   "unresolved_questions": [
-    "候補E/Fを正式codingした場合、D10既存codebookに適合するChildがあるか、それともtaxonomy gapか？",
-    "候補A/C/DのD07を0319の地名由来gapと共通の上位概念へ一般化できるか？",
-    "正式Entry化時にD08,D12,D14,D21を含む未割当DimensionをEvidenceに基づいてどのようにcodingするか？",
-    "6候補を正式Entry化した際、provisional specified Dimensionのassignmentはどの程度維持されるか？"
+    "候補A/C/D/Fのidentity再配置を表現するD07 Childを新設するか、既存SPATIAL_ROUTE_ANOMALY等へ近似するか？",
+    "候補A/BのD16 conflictを解消するには、candidate model自体をより具体化すべきか、それとも複数stable variantとして分離すべきか？",
+    "候補が実際に公開・流通した後、D02–D06,D19,D20はどのように再codingされるか？",
+    "候補FのD21.A3は他corpus拡張時にも稀か、それともcurrent 25-entry snapshot固有の未観測か？"
   ],
   "alternative_interpretations": [
     {
-      "text": "候補A/C/Dは新D07を設けず、既存SPATIAL_ROUTE_ANOMALY等へ近似codingすることも可能だが、identity再配置の意味形成核を弱く表現する可能性がある。",
+      "text": "D21について、候補EをA3、候補FをA4へ一段高くcodingする解釈もあり得る。しかしEは具体的水路接続自体が中心で歴史・制度を成立条件化しておらず、Fは造成史を背景に持つものの直接の因果源はインフラ接続であるため、追加の未確認前提を要求しない保守的codingとしてE=A2、F=A3を採用した。",
       "knowledge_unit_refs": [
-        "K0001",
-        "K0002"
+        "K0006",
+        "K0007",
+        "K0009",
+        "K0010"
+      ]
+    },
+    {
+      "text": "D02–D06をNAではなくUとする運用もあり得るが、今回のVersion Scopeは『まだ流通していないcreative model definition』であり、流通媒体・提示・truth stanceを実在伝承のように推定しないためNAを採用した。",
+      "knowledge_unit_refs": [
+        "K0008",
+        "K0009"
       ]
     }
   ]
