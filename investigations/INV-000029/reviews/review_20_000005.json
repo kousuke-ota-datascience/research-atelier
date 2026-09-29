@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000029",
+  "review_seq": 5,
+  "layer": "20_synthesis",
+  "review_kind": "10_evidence_to_20_synthesis",
+  "target_blob_sha": "5514460d563e454f7bbbd5da46e8d583f03e235a",
+  "assessment": "The Synthesis has been rebuilt after the Evidence repair. K0004 continues to state only the supported artificial land/water-system proposition and now explicitly carries the Muro irrigation completion-year conflict as a qualifier, while retaining the separate qualification that the proposed sea-to-land reversal history is not directly supported. K0001-K0009, R0001-R0003, and U0001-U0003 remain traceable to the Evidence without unsupported generalization or loss of material uncertainty. No Synthesis-layer finding is identified.",
+  "findings": [],
+  "verdict": "PASS"
+}

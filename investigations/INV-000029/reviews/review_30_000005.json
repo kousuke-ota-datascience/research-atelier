@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000029",
+  "review_seq": 5,
+  "layer": "30_analysis",
+  "review_kind": "20_synthesis_plus_00_context_to_30_analysis",
+  "target_blob_sha": "a67e0adb0868e6f575c5b84d322b261c9d123563",
+  "assessment": "The Analysis has been rebuilt after the Evidence/Synthesis repair and preserves the new uncertainty by adding the conflicting 1888/1899 Muro irrigation completion dates to evidence_gaps. The Working Answer and judgments do not depend on selecting either date; they remain focused on the supported artificial land/water formation structure, continue to withhold the unsupported land-state inversion, and stay within the frozen Context's non-comparative real-world-anchor scope. The prior wording repairs remain intact, and no Synthesis bypass, unsupported factual overreach, or material uncertainty loss is identified.",
+  "findings": [],
+  "verdict": "PASS"
+}

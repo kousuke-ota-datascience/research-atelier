@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000029",
+  "review_seq": 5,
+  "layer": "10_evidence",
+  "review_kind": "source_evidence_note_to_10_evidence",
+  "target_blob_sha": "c4a621fad383b210539f086121c5e7be88e87d69",
+  "assessment": "Review 000004 F001 is repaired as directed. E0004 now matches EV-000254 in substance and locator: it preserves the supported 1893 Kanno purchase/development and approximately 23 km Muro irrigation facts, explicitly records the same-source conflict between 1899 and 1888 completion-year statements, and states that the completion year cannot be fixed from that source alone. The remaining Evidence items are unchanged in substantive content, the normalized SRC-000143-SRC-000150 identities remain correctly bound, and all eight recorded Source revision commit/blob bindings resolve exactly. No remaining Source/Evidence Note fidelity, provenance, qualification, or selection defect is identified.",
+  "findings": [],
+  "verdict": "PASS"
+}
