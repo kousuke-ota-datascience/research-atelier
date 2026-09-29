@@ -3,7 +3,7 @@
   "artifact_type": "10_evidence",
   "investigation_id": "INV-000033",
   "rq_id": "RQ-000033",
-  "snapshot_at": "2026-09-28T07:05:26.919Z",
+  "snapshot_at": "2026-09-29T06:38:00.000Z",
   "sources": [
     {
       "source_id": "SRC-000143",
@@ -11,7 +11,7 @@
         "commit_sha": "25cc35ca05820a028396988723ff22b324175615",
         "blob_sha": "f4215ddea7f285913e29c45f77337c1a81844c40"
       },
-      "accessed_at": "2026-09-28T07:05:26.919Z",
+      "accessed_at": "2026-09-29T06:38:00.000Z",
       "notion_url": "https://app.notion.com/p/3e9e5855be398106b898e984d10cf100"
     },
     {
@@ -20,7 +20,7 @@
         "commit_sha": "f464c33312d721b9a92ab8ee7aa03f796cb857f3",
         "blob_sha": "f4d09f685623f3abd5536f017f585f9b0d2d1ee0"
       },
-      "accessed_at": "2026-09-28T07:05:26.919Z",
+      "accessed_at": "2026-09-29T06:38:00.000Z",
       "notion_url": "https://app.notion.com/p/3e9e5855be39811299aff11603223dec"
     },
     {
@@ -29,26 +29,35 @@
         "commit_sha": "db4a4fabaebad6fb31036e82dc978ba41e59eb1a",
         "blob_sha": "6693f376977236eac656bef5fda384cd1ac354ee"
       },
-      "accessed_at": "2026-09-28T07:05:26.919Z",
+      "accessed_at": "2026-09-29T06:38:00.000Z",
       "notion_url": "https://app.notion.com/p/3e9e5855be3981e0be3bd713b9f705ff"
     },
     {
       "source_id": "SRC-000152",
       "source_revision": {
-        "commit_sha": "1d7273c7561ff492aeb861f3aa50fec7d80fe256",
-        "blob_sha": "071af10d79ba5f1692965fd7f30a6ba72ec6a535"
+        "commit_sha": "1e00005b0de436a4e424a617e277871c476764d5",
+        "blob_sha": "80358857fb44f8e20c808e01a9d36616d3b6712a"
       },
-      "accessed_at": "2026-09-28T07:05:26.919Z",
+      "accessed_at": "2026-09-29T06:38:00.000Z",
       "notion_url": "https://app.notion.com/p/3e9e5855be3981cf9139ea8738d55f81"
+    },
+    {
+      "source_id": "SRC-000154",
+      "source_revision": {
+        "commit_sha": "ba3a95bf5cc77790d5d4ba9a9c397e3fefd22f1d",
+        "blob_sha": "12e2c6690bee83bb971859544a7b0d6c973374a4"
+      },
+      "accessed_at": "2026-09-29T06:38:00.000Z",
+      "notion_url": "https://app.notion.com/p/3eae5855be39818b9063fa7128d319d3"
     }
   ],
   "evidence_items": [
     {
       "evidence_id": "E0001",
-      "content": "INV-000031/30_analysis.json は吉田大橋／とよばしから2候補を設計している。候補A『名前が旧橋へ戻る』は名称・位置再配置を意味形成核とし、誤った橋名で指示することを発動条件、歴史上の対応地点への経路認識の引き戻しを作用として置く。候補B『物流だけが橋を移る』は物流中心の移動を意味形成核とし、旧橋側から物を運び始めることを発動条件、持ち物や経路情報の現在橋への再対応を作用として置く。",
-      "source_locator": "investigations/INV-000031/30_analysis.json profile.candidate_hypotheses[0:2] @ research-atelier ba9517431e28eb881587214e0adbef0954407f1d",
-      "selection_reason": "同一の橋アンカーから、名称・位置履歴と物流履歴を異なる因果規則へ変換した候補を比較するため",
-      "note_type": "Result",
+      "content": "Fixed upstream INV-000031/30_analysis.json defines candidate A『名前が旧橋へ戻る』 and B『物流だけが橋を移る』. A transforms the historical name/location re-placement of 吉田大橋／とよばし into a route-recognition rule; B transforms the historical shift of the logistics center into a reassociation rule for belongings and route information. These are provisional creative designs, not observed folklore codings.",
+      "source_locator": "research-atelier@92611cbe651326b4bcc0e5d14cfdcbc2f453c833 investigations/INV-000031/30_analysis.json blob d9088ccd885d908b2f05f5d2ad494b5d30b37a1a profile.candidate_hypotheses[0:2]",
+      "selection_reason": "同一の橋アンカーから異なる現実構造を因果化した2候補を比較するため",
+      "note_type": "Data",
       "direct_quote": null,
       "provenance": {
         "source_id": "SRC-000152",
@@ -57,10 +66,10 @@
     },
     {
       "evidence_id": "E0002",
-      "content": "INV-000031/30_analysis.json は二川村・大岩村の移転・宿場形成から2候補を設計している。候補C『三つの二川』は本郷→元屋敷→現在地という複数段階移転を、過去の移転段階へ位置関係が順次切り替わる規則へ変換する。候補D『二つの村が一つの宿になる』は別々の村identityが現在地で一続きの宿場町を形成した履歴を、別々の目的地指定が収束・交換される規則へ変換する。",
-      "source_locator": "investigations/INV-000031/30_analysis.json profile.candidate_hypotheses[2:4] @ research-atelier ba9517431e28eb881587214e0adbef0954407f1d",
-      "selection_reason": "同一系統の集落移転史から、時間層の切替と境界統合という異なる因果モデルが構成されていることを比較するため",
-      "note_type": "Result",
+      "content": "Fixed upstream INV-000031/30_analysis.json defines candidate C『三つの二川』 and D『二つの村が一つの宿になる』. C transforms the staged relocation 本郷→元屋敷→現在地 into sequential switching among historical spatial layers; D transforms the merger of two village identities into one continuous post town into convergence/exchange of destinations. These are provisional creative designs.",
+      "source_locator": "research-atelier@92611cbe651326b4bcc0e5d14cfdcbc2f453c833 investigations/INV-000031/30_analysis.json blob d9088ccd885d908b2f05f5d2ad494b5d30b37a1a profile.candidate_hypotheses[2:4]",
+      "selection_reason": "同一系統の集落移転史から時間層切替と境界統合を分離して比較するため",
+      "note_type": "Data",
       "direct_quote": null,
       "provenance": {
         "source_id": "SRC-000152",
@@ -69,10 +78,10 @@
     },
     {
       "evidence_id": "E0003",
-      "content": "INV-000031/30_analysis.json は神野新田＋牟呂用水から2候補を設計している。候補E『二十三キロの近道』は約23kmの水利接続を、道路距離ではなく水路接続順で現在位置を再解釈する規則へ変換する。候補F『土地ではなく水路が住所を決める』は造成地のidentityを接続インフラが規定するというモデルを置き、地名・方角・距離表示を上流からの接続順へ置換する。",
-      "source_locator": "investigations/INV-000031/30_analysis.json profile.candidate_hypotheses[4:6] @ research-atelier ba9517431e28eb881587214e0adbef0954407f1d",
-      "selection_reason": "実在インフラを具体対象として利用する場合と、土地identityの成立条件へ組み込む場合の差を評価するため",
-      "note_type": "Result",
+      "content": "Fixed upstream INV-000031/30_analysis.json defines candidate E『二十三キロの近道』 and F『土地ではなく水路が住所を決める』. E transforms the approximately 23 km water-network connection into reinterpretation of position/distance by channel connection order; F transforms the reclaimed-land/infrastructure relation into a rule where infrastructure connection determines place identity. These are provisional creative designs.",
+      "source_locator": "research-atelier@92611cbe651326b4bcc0e5d14cfdcbc2f453c833 investigations/INV-000031/30_analysis.json blob d9088ccd885d908b2f05f5d2ad494b5d30b37a1a profile.candidate_hypotheses[4:6]",
+      "selection_reason": "具体的インフラ接続を位置規則として使う場合と土地identityの規定条件にする場合を比較するため",
+      "note_type": "Data",
       "direct_quote": null,
       "provenance": {
         "source_id": "SRC-000152",
@@ -81,9 +90,9 @@
     },
     {
       "evidence_id": "E0004",
-      "content": "INV-000032/30_analysis.json は、RQ-000031候補が正式なEntry analysisへmaterializeされておらず、D07-D18の最終code IDは未確定であると明記する。またD01-D06およびD19-D20は候補側で実証的に未確定であり、21次元全体の対称比較はできないとしている。",
-      "source_locator": "investigations/INV-000032/30_analysis.json limitations and profile.comparability_limits @ research-atelier ba9517431e28eb881587214e0adbef0954407f1d",
-      "selection_reason": "RQ-000033のfrozen contextが『RQ-000032で確定したD01–D21 coding』を含む一方、upstream artifactが実際には最終coding未確定であるため、その制約をEvidenceとして保持するため",
+      "content": "Fixed INV-000032 establishes the candidate-side comparability boundary: D07,D09,D10,D11,D13,D15,D16,D17,D18 are only provisional specified dimensions; D01–D06 and D19–D20 are explicitly unresolved; D08,D12,D14,D21 are not explicitly assigned. It explicitly requires the unassigned dimensions, including D21, to remain unassigned rather than be inferred.",
+      "source_locator": "research-atelier@92611cbe651326b4bcc0e5d14cfdcbc2f453c833 investigations/INV-000032/30_analysis.json blob 1bdb926ddef129b31bccf17605fddc294ad3602c profile.comparison_dimensions + comparability_limits + judgment J0005",
+      "selection_reason": "RQ-000033で候補側D21を推測補完せず、比較可能Dimensionの境界を固定するため",
       "note_type": "Limitation",
       "direct_quote": null,
       "provenance": {
@@ -93,9 +102,9 @@
     },
     {
       "evidence_id": "E0005",
-      "content": "INV-000032/30_analysis.json は、候補群と既存corpusの識別的差異が主としてD07-D10の組合せ、特に何を意味形成対象・因果源とするかに集中すると判断している。一方、D16の単一／段階進行、D17の解除、D18=L1、具体的実在地アンカーといった個別構造は既存corpusにも存在し、候補差を単独では説明しにくいとしている。",
-      "source_locator": "investigations/INV-000032/30_analysis.json profile.contrasts and judgments J0004-J0005 @ research-atelier ba9517431e28eb881587214e0adbef0954407f1d",
-      "selection_reason": "現実アンカー統合方法と他Dimension差の対応を、upstream comparative resultに照らして評価するため",
+      "content": "Fixed INV-000032 finds the main candidate/corpus contrasts in D07–D10 structure: A/C/D center historical re-placement of name/place/settlement identity; E/F use water/infrastructure network as a D10 causal source not observed in the pinned 25-entry corpus; B partially resembles existing A4 historical integration but proposes a different reassociation mechanism. D16 and D18=L1 are common in the corpus, while D17 is heterogeneous and frequently unresolved.",
+      "source_locator": "research-atelier@92611cbe651326b4bcc0e5d14cfdcbc2f453c833 investigations/INV-000032/30_analysis.json blob 1bdb926ddef129b31bccf17605fddc294ad3602c profile.contrasts + judgments J0001-J0004",
+      "selection_reason": "現実アンカー統合方法との対応がどのDimensionで観察可能かをupstream比較結果から固定するため",
       "note_type": "Result",
       "direct_quote": null,
       "provenance": {
@@ -107,7 +116,7 @@
       "evidence_id": "E0006",
       "content": "江戸時代の「吉田大橋」は現在の「とよばし」の位置にあり、現在の「吉田大橋」はそのやや上流に新たに架けられた。国道1号の通過に伴い物流の中心も旧吉田大橋から現在の吉田大橋へ移った。",
       "source_locator": "「新旧とよばし」節",
-      "selection_reason": "候補A/Bが変換している名称・位置・物流中心の歴史的再配置を、元Sourceへtrace可能に保つため",
+      "selection_reason": "候補A/Bが変換する名称・位置・物流中心の歴史的再配置を元Sourceへtrace可能に保つため",
       "note_type": "Claim",
       "direct_quote": null,
       "provenance": {
@@ -122,7 +131,7 @@
       "evidence_id": "E0007",
       "content": "二川宿成立以前、二川村・大岩村は本郷から元屋敷へ移転した記録があり、正保元年（1644）には両村が現在地へ移転して一続きの宿場町となった。",
       "source_locator": "「二川村・大岩村の移転と二川宿の成立」",
-      "selection_reason": "候補C/Dが変換している段階的移転と集落統合の史実を、元Sourceへtrace可能に保つため",
+      "selection_reason": "候補C/Dが変換する段階的移転と集落統合の史実を元Sourceへtrace可能に保つため",
       "note_type": "Claim",
       "direct_quote": null,
       "provenance": {
@@ -135,9 +144,9 @@
     },
     {
       "evidence_id": "E0008",
-      "content": "1893年に神野金之助が毛利新田を購入し、人造石工法を用いた築堤で新田開発を進めた。牟呂用水は新城市一鍬田から神野新田まで約23kmを引水し、1899年に完成した。",
-      "source_locator": "「神野新田と牟呂用水」",
-      "selection_reason": "候補E/Fが利用する造成史と長距離水利接続を、元Sourceへtrace可能に保つため",
+      "content": "1893年に神野金之助が毛利新田を購入し、人造石工法を用いた築堤で新田開発を進めた。牟呂用水は新城市一鍬田から神野新田まで約23kmを引水する。同一資料内で完成年は1899年と1888年の異なる記載があり、このEvidenceだけでは単一の完成年を確定できない。",
+      "source_locator": "「神野新田と牟呂用水」／「世界かんがい施設遺産：松原用水・牟呂用水」",
+      "selection_reason": "候補E/Fが利用する造成史と長距離水利接続を保持しつつ、完成年不整合を落とさないため",
       "note_type": "Claim",
       "direct_quote": null,
       "provenance": {
@@ -146,6 +155,18 @@
           "notion_url": "https://app.notion.com/p/3e9e5855be3981a8b162e1eaa28da838",
           "title": "EV-000254"
         }
+      }
+    },
+    {
+      "evidence_id": "E0009",
+      "content": "Canonical D21 defines A0=特定可能な実在対象へほぼ依存しない匿名・抽象、A1=学校・病院・工場等の一般的現実背景、A2=特定地点・企業・商品・人物等の具体的実在対象、A3=実在制度・社会史がモデル成立に必要、A4=具体的史実・記録・既存伝承を因果構造へ組み込む、の5値である。Coding rules require separating a source being real from the lore itself connecting to reality, using higher D21 only when real institutions/history are necessary to the claim/model, and not filling unknown values by guess.",
+      "source_locator": "20_urban_legend_parent_child_code_system.md lines 1380-1390; 30_urban_legend_analysis_coding_rules.md sections 1,4,27 @ research-atelier 92611cbe651326b4bcc0e5d14cfdcbc2f453c833",
+      "selection_reason": "D21 A0–A4の意味と未割当値を推測補完しないcoding boundaryをRQ-000033内に明示するため",
+      "note_type": "Definition",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000154",
+        "evidence_note": null
       }
     }
   ]
