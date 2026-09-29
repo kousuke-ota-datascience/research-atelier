@@ -3,72 +3,92 @@
   "artifact_type": "20_synthesis",
   "investigation_id": "INV-000032",
   "rq_id": "RQ-000032",
-  "synthesized_at": "2026-09-28T13:53:00.000Z",
+  "synthesized_at": "2026-09-29T07:42:00.000Z",
   "knowledge_units": [
     {
       "knowledge_unit_id": "K0001",
-      "statement": "Pinned corpus 25件には、実在地アンカーを伴う空間・経路異常（0180）や隠れた／消失した場所（0309）が既に存在する。したがって候補A/C/E/Fの『位置がずれる／経路が再解釈される』という表層構造だけではcorpus差異にならない。",
+      "statement": "Pinned canonical corpus 25件では、D16は24/25がIまたはDでSEQUENTIAL_EPISODEが10/25、D17はU=10/25でcoded casesが分散、D18 primaryはL1=22/25、D21 primaryはA0=2/A1=10/A2=7/A4=6である。D07-D10 exact tupleは25件すべて異なる。",
       "evidence_refs": [
-        "E0001",
         "E0008"
       ]
     },
     {
       "knowledge_unit_id": "K0002",
-      "statement": "候補A/C/Dはupstreamで名称・地名・集落identityの歴史的再配置をD07中心対象として設計されている。Pinned corpusでは0319が地名由来をD07 taxonomy gapとして保持しており、A/C/Dは既存の空間異常よりこのgapに近い。",
+      "statement": "候補Aは、吉田大橋／とよばしの名称・位置再配置を、名称と場所の対応および経路認識のずれへ変換するcreative modelである。",
       "evidence_refs": [
-        "E0003",
-        "E0006",
-        "E0007"
-      ],
-      "qualifiers": [
-        "候補codingはprovisionalであり、正式Entry化時に再判定が必要。"
+        "E0010"
       ]
     },
     {
       "knowledge_unit_id": "K0003",
-      "statement": "候補E/Fはupstreamで水路・インフラネットワークをD10因果源として設計されている。Pinned corpus 25件のD10 primary/secondaryにはインフラ／ネットワーク因果源を表す観測codeがなく、このcorpusに対しては未観測の因果源設計である。",
+      "statement": "候補Bは、旧吉田大橋から現在の吉田大橋へ物流中心が移った史実を、持ち物・経路情報の再対応規則へ変換するcreative modelである。",
       "evidence_refs": [
-        "E0007",
-        "E0008"
-      ],
-      "qualifiers": [
-        "corpus内未観測はtaxonomy全体に該当codeが存在しないことを意味しないため、taxonomy gap確定にはcodebook照合が別途必要。"
+        "E0011"
       ]
     },
     {
       "knowledge_unit_id": "K0004",
-      "statement": "候補Bはupstreamで史実上の物流中心移動を伝承内部の位置・所有情報再対応へ変換する。Pinned corpusにはA4が6/25あり、0362のような史実因果統合は既存だが、Bの提案機構そのものはD07-D10 exact tupleとして既存Entryから直接再利用できるものではない。",
+      "statement": "候補Cは、本郷→元屋敷→現在地という二川の複数段階移転を、歴史的空間層が順次切り替わる規則へ変換するcreative modelである。",
       "evidence_refs": [
-        "E0004",
-        "E0007",
-        "E0008"
+        "E0012"
       ]
     },
     {
       "knowledge_unit_id": "K0005",
-      "statement": "D16は24/25がIまたはDで、SEQUENTIAL_EPISODEが10/25と最頻であるため、段階進行自体は強い識別子ではない。D18もL1 primaryが22/25であり、候補A-FのL1中心設計はcorpus内で一般的である。一方D17はUが10/25で、coded casesも複数codeへ分散しているため、『解除規則があること』を一律に一般的とみなすべきではない。",
+      "statement": "候補Dは、二川村・大岩村が現在地で一続きの宿場町となった履歴を、境界・目的地の収束／交換規則へ変換するcreative modelである。",
       "evidence_refs": [
-        "E0005",
-        "E0008"
+        "E0013"
       ]
     },
     {
       "knowledge_unit_id": "K0006",
-      "statement": "候補A-Fのupstream candidate_hypothesesでprovisionalに明示されるDimensionはD07,D09,D10,D11,D13,D15,D16,D17,D18である。D01–D06,D19–D20はevidence_gapsで実証未確定／現段階でcoding不能と明示され、D08,D12,D14,D21はcandidate_hypothesesにassignment自体がない。したがってcandidate-side比較はこの3状態（specified / explicitly unresolved / not explicitly assigned）を保持し、欠落Dimensionを推測で補ってはならない。",
+      "statement": "候補Eは、一鍬田から神野新田まで約23kmを結ぶ牟呂用水の接続を、道路距離ではなく水路接続順で位置を再解釈する規則へ変換するcreative modelである。",
       "evidence_refs": [
-        "E0007",
-        "E0008"
-      ],
-      "qualifiers": [
-        "specifiedは正式Entry codingではなく創作モデル上のprovisional descriptionである。",
-        "not explicitly assignedはU/NA/Cを意味せず、単にupstreamにassignmentが存在しない。"
+        "E0014"
       ]
     },
     {
       "knowledge_unit_id": "K0007",
-      "statement": "Pinned corpusではstatus/primary/secondaryを含むD07-D10 exact tupleが25件すべて異なる。したがってD07-D10は組合せ多様性が高く、候補のdistinctivenessは単一codeの希少性より、候補定義と既存tupleの構造対応をDimension別に記述する方が妥当である。",
+      "statement": "候補Fは、神野新田の造成史と牟呂用水の長距離接続を、インフラ接続が土地identity・位置表示を規定する規則へ変換するcreative modelである。",
       "evidence_refs": [
+        "E0015"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0008",
+      "statement": "INV-000031のcandidate_hypothesesはD07,D09,D10,D11,D13,D15,D16,D17,D18を候補ごとに記述する一方、D08,D12,D14,D21は明示assignしておらず、D01–D06,D19–D20は当時のevidence_gapsで実証coding不能とされていた。",
+      "evidence_refs": [
+        "E0007"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0009",
+      "statement": "Canonical coding contractはDimension StatusをD/I/U/NA/Cで保持し、資料不足を推測値で埋めることを禁じる。H3はD/I時にPrimary exactly 1、Secondary 0–2である。",
+      "evidence_refs": [
+        "E0009"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0010",
+      "statement": "D21はA0=匿名・抽象、A1=一般的現実背景、A2=具体的実在対象、A3=実在制度・社会史が成立条件、A4=具体的史実・記録・既存伝承を因果構造へ統合、の5値であり、sourceの実在性と伝承モデル自体の現実依存を区別してcodeする。",
+      "evidence_refs": [
+        "E0009"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0011",
+      "statement": "既存corpusには空間・経路異常をD07既存Childで表現するEntryがある一方、地名由来・地名identityをD07 taxonomy gapとして保持するEntryもある。",
+      "evidence_refs": [
+        "E0001",
+        "E0003",
+        "E0006"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0012",
+      "statement": "既存corpusにはA4の史実因果統合例があり、史実統合それ自体はcorpus内で未観測ではない。一方、pinned corpusのD10 primary/secondaryにはインフラ／ネットワーク因果源として明示された観測codeがない。",
+      "evidence_refs": [
+        "E0004",
         "E0008"
       ]
     }
@@ -76,81 +96,135 @@
   "relations": [
     {
       "relation_id": "R0001",
-      "relation_type": "qualification",
+      "relation_type": "association",
       "knowledge_unit_refs": [
-        "K0001",
-        "K0002"
+        "K0002",
+        "K0003",
+        "K0004",
+        "K0005",
+        "K0006",
+        "K0007"
       ],
-      "description": "空間異常は既存だが、名称・場所identityの歴史的再配置は別の意味形成問題として扱う必要がある。",
+      "description": "6候補はいずれも実在アンカーを用いるが、同一・近接アンカーから異なる規則へ変換するpair構造（A/B、C/D、E/F）を持つ。",
       "evidence_refs": [
-        "E0001",
-        "E0003",
-        "E0006",
-        "E0007"
+        "E0010",
+        "E0011",
+        "E0012",
+        "E0013",
+        "E0014",
+        "E0015"
       ]
     },
     {
       "relation_id": "R0002",
-      "relation_type": "association",
+      "relation_type": "dependency",
       "knowledge_unit_refs": [
-        "K0003",
-        "K0004",
-        "K0007"
+        "K0008",
+        "K0009"
       ],
-      "description": "候補B/E/Fはいずれも現実アンカーを因果規則へ組み込むが、corpusのD07-D10自体が高多様性なので、未観測tupleだけをnovelty証明とはしない。",
+      "description": "source artifactで未指定だったDimensionは、formal coding stageでcoding contractに従いD/I/U/NA/Cのいずれかへ確定する必要があり、既存corpus codeから逆算してはならない。",
       "evidence_refs": [
-        "E0004",
         "E0007",
-        "E0008"
+        "E0009"
       ]
     },
     {
       "relation_id": "R0003",
+      "relation_type": "dependency",
+      "knowledge_unit_refs": [
+        "K0002",
+        "K0003",
+        "K0004",
+        "K0005",
+        "K0006",
+        "K0007",
+        "K0010"
+      ],
+      "description": "候補別D21 assignmentは、各candidate modelがどの程度具体的実在対象・社会史・史実をモデル成立／因果構造へ組み込むかをD21定義に照らして判定する必要がある。",
+      "evidence_refs": [
+        "E0009",
+        "E0010",
+        "E0011",
+        "E0012",
+        "E0013",
+        "E0014",
+        "E0015"
+      ]
+    },
+    {
+      "relation_id": "R0004",
       "relation_type": "qualification",
       "knowledge_unit_refs": [
-        "K0005",
-        "K0006"
+        "K0001",
+        "K0011",
+        "K0012"
       ],
-      "description": "D16/L1は候補側と比較しやすくcorpus頻度も高いが、D17はUnknown率が高く、候補のprovisional解除規則との比較には保守性が必要。",
+      "description": "corpus内頻度・未観測はformal candidate codingの補助比較材料であり、candidate codeをcorpusから逆算する根拠にはしない。",
       "evidence_refs": [
-        "E0005",
-        "E0007",
-        "E0008"
+        "E0001",
+        "E0003",
+        "E0004",
+        "E0006",
+        "E0008",
+        "E0009"
       ]
     }
   ],
   "uncertainties": [
     {
       "uncertainty_id": "U0001",
-      "description": "候補A-Fは創作モデルで正式Entry codingではない。candidate-sideはD07,D09,D10,D11,D13,D15,D16,D17,D18のみprovisional specified、D01–D06,D19–D20はexplicitly unresolved、D08,D12,D14,D21はnot explicitly assignedである。",
+      "description": "候補A/C/D/Fのidentity関連D07は既存Childへ完全には一致しない可能性があり、formal codingではtaxonomy gapをUとして保持する選択肢を含めて判定する必要がある。",
       "knowledge_unit_refs": [
         "K0002",
-        "K0003",
         "K0004",
-        "K0006"
+        "K0005",
+        "K0007",
+        "K0011"
       ],
       "evidence_refs": [
-        "E0007"
+        "E0006",
+        "E0010",
+        "E0012",
+        "E0013",
+        "E0015"
       ]
     },
     {
       "uncertainty_id": "U0002",
-      "description": "Pinned corpusでインフラ／ネットワークD10が未観測でも、taxonomy codebookに未使用Childが存在する可能性は残る。",
+      "description": "候補AのD16はsource記述が「単一〜連続エピソード」、候補Bは「遅延または一回性」であり、単一codeへ無理に潰すとsourceの競合を失う。",
       "knowledge_unit_refs": [
-        "K0003"
+        "K0002",
+        "K0003",
+        "K0009"
       ],
       "evidence_refs": [
-        "E0008"
+        "E0010",
+        "E0011",
+        "E0009"
       ]
     },
     {
       "uncertainty_id": "U0003",
-      "description": "25件はcutoff時点のcanonical corpus全件だが、現実世界の都市伝説一般の母集団ではない。corpus内distinctivenessを現実世界の新規性へ外挿しない。",
+      "description": "候補はcreative modelで実在流通伝承ではないため、流通・提示・社会分布に関するDimensionはcandidate-as-designというVersion Scopeに対してNAまたはUを明示的に選ぶ必要がある。",
       "knowledge_unit_refs": [
-        "K0007"
+        "K0008",
+        "K0009"
       ],
       "evidence_refs": [
-        "E0008"
+        "E0007",
+        "E0009"
+      ]
+    },
+    {
+      "uncertainty_id": "U0004",
+      "description": "Pinned corpusでインフラ／ネットワーク因果源がD10観測codeとして未出でも、canonical codebookにはD10.SPC.ROUTE_CONNECTION等が存在するため、corpus未観測だけでtaxonomy gapとはできない。",
+      "knowledge_unit_refs": [
+        "K0009",
+        "K0012"
+      ],
+      "evidence_refs": [
+        "E0008",
+        "E0009"
       ]
     }
   ]
