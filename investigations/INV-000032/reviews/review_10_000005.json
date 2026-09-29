@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000032",
+  "review_seq": 5,
+  "layer": "10_evidence",
+  "review_kind": "source_evidence_note_to_10_evidence",
+  "target_blob_sha": "d87f676fb5e7cc73f7f395e9ee3e390a0c559d9a",
+  "assessment": "The Evidence layer remains source-faithful and traceable. SRC-000151 and SRC-000153 retain exact source_revision bindings, E0007 keeps candidate A–F as provisional creative definitions with specified/unresolved/unassigned Dimension boundaries, and E0008 pins corpus_snapshot.json blob 47152d86f265092e42318ec3c389c7f8986e3b22 with source_id SRC-000151 and the fixed external corpus commit. The full-corpus snapshot is the same complete 25-entry support base previously checked against the canonical corpus. No Evidence-layer semantic finding is identified.",
+  "findings": [],
+  "verdict": "PASS"
+}

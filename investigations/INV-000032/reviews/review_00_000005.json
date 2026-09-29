@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000032",
+  "review_seq": 5,
+  "layer": "00_context",
+  "review_kind": "context_semantic_validity",
+  "target_blob_sha": "f779a4dacedfcd75786107cf1a3c317e933f1160",
+  "assessment": "The frozen Comparative context remains semantically coherent. The question, scope, cutoff, assumptions, and inclusion/exclusion rules jointly define a Dimension-wise D01–D21 comparison without treating U/NA/C as ordinary codes, without collapsing the comparison to one aggregate similarity score, and without equating corpus non-observation with real-world novelty. No context-defining semantic defect is identified.",
+  "findings": [],
+  "verdict": "PASS"
+}
