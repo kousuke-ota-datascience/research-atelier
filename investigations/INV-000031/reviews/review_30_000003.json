@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000031",
+  "review_seq": 3,
+  "layer": "30_analysis",
+  "review_kind": "20_synthesis_plus_00_context_to_30_analysis",
+  "target_blob_sha": "d9088ccd885d908b2f05f5d2ad494b5d30b37a1a",
+  "assessment": "The Exploratory analysis remains within the frozen RQ and continues to infer from 20_synthesis rather than bypassing it. The six candidate models, Working Answer, and J0001–J0005 are semantically unchanged. Source ID normalization is reflected only in references to SRC-000146 within evidence_gaps, limitations, and unresolved_questions; the analysis still states that candidates E/F depend on the approximately 23 km connection structure rather than on a single completion year and retains the unresolved date conflict. The factual/creative boundary, limitations, alternatives, and evidence gaps remain explicit. No new analysis-layer semantic defect is identified.",
+  "findings": [],
+  "verdict": "PASS"
+}

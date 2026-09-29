@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000031",
+  "review_seq": 3,
+  "layer": "10_evidence",
+  "review_kind": "source_evidence_note_to_10_evidence",
+  "target_blob_sha": "82510379c93b95583fe20a4c8626cd4427c3504b",
+  "assessment": "The current Evidence snapshot remains source-faithful after Source ID normalization. SRC-000143, SRC-000144, and SRC-000146 resolve to the same Notion Source pages and external Toyohashi City materials as before, and the recorded source_revision blob SHAs exactly match the current canonical Information Source files. EV-000251, EV-000252, and EV-000254 remain semantically identical to E0001–E0003. E0003 continues to preserve the material SRC-000146 internal conflict between 1899 and 1888 completion-year statements instead of asserting one as settled. No new provenance, selection, quotation/paraphrase, or uncertainty-preservation defect is identified.",
+  "findings": [],
+  "verdict": "PASS"
+}

@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000031",
+  "review_seq": 3,
+  "layer": "20_synthesis",
+  "review_kind": "10_evidence_to_20_synthesis",
+  "target_blob_sha": "3e4924f5217ae00df4630ebe442870c6c7eab0c4",
+  "assessment": "K0001–K0003 remain supported by E0001–E0003 with the same material qualifiers and uncertainty boundaries as the prior reviewed target. The only semantic-surface change relevant here is normalization of the Source identifier in U0005 from SRC-0146 to SRC-000146; the unresolved 1888/1899 conflict, its non-resolution, and its relation to K0003 are preserved. No unsupported proposition, overgeneralization, lost conflict, or source-claim/cross-source-synthesis confusion is identified.",
+  "findings": [],
+  "verdict": "PASS"
+}
