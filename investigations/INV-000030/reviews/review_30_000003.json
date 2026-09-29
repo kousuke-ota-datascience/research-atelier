@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000030",
+  "review_seq": 3,
+  "layer": "30_analysis",
+  "review_kind": "20_synthesis_plus_00_context_to_30_analysis",
+  "target_blob_sha": "9b971ec7aff3f1082588d8d92ce4e88b362da2c7",
+  "assessment": "The Analysis is substantively unchanged from Review 000002 except that the limitation concerning the Muro irrigation completion-year conflict now refers to canonical Source identity SRC-000146. The Working Answer and judgments remain traceable to the Synthesis and consistent with the frozen Comparative Context. The main regional-specificity judgment for Jinnoshinden plus Muro irrigation still depends on the land-and-water linkage rather than on a single completion year, while the unresolved 1888/1899 conflict remains explicit. Existing limits on nationwide uniqueness, road-map precision, and pre-existing folklore remain visible. No Source/Evidence bypass, unsupported overclaim, or question-type defect is identified.",
+  "findings": [],
+  "verdict": "PASS"
+}

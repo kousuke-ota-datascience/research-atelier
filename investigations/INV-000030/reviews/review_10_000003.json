@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000030",
+  "review_seq": 3,
+  "layer": "10_evidence",
+  "review_kind": "source_evidence_note_to_10_evidence",
+  "target_blob_sha": "c4cb3452279ce021c145ac09a398390045696ed5",
+  "assessment": "The changed 10_evidence blob is a provenance-identity normalization from SRC-0143-SRC-0150 to SRC-000143-SRC-000150. All nine Evidence item substantive fields remain aligned with EV-000251-EV-000259, including the repaired E0004/EV-000254 preservation of the same-source 1888/1899 Muro irrigation completion-year conflict and the two-section locator. The eight normalized Source JSON payloads are metadata-equivalent to their predecessor snapshots apart from source_id, and every recorded normalized Source revision commit/blob binding resolves exactly to the declared canonical Source path and blob. Evidence Note Source relations continue to point to the corresponding Source catalog pages. No source-faithfulness, provenance, selection, qualification, or uncertainty-preservation defect is identified.",
+  "findings": [],
+  "verdict": "PASS"
+}

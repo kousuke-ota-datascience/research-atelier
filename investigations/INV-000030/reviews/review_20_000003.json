@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000030",
+  "review_seq": 3,
+  "layer": "20_synthesis",
+  "review_kind": "10_evidence_to_20_synthesis",
+  "target_blob_sha": "ec40d946c26d2a3cf11aaab1b18d976ca8577d6a",
+  "assessment": "The Synthesis is substantively unchanged from Review 000002 except that U0004 now names the canonical normalized Source identity SRC-000146. K0001-K0009 remain supported by E0001-E0009; K0004 retains the completion-year qualification; U0004 continues to preserve the unresolved 1888/1899 conflict without inventing an explanation; and R0001-R0004 plus U0001-U0003 retain their prior support boundaries. The identity normalization introduces no unsupported proposition, overgeneralization, conflict erasure, or Evidence-to-Synthesis bypass.",
+  "findings": [],
+  "verdict": "PASS"
+}
