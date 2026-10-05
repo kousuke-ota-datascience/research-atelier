@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000159",
+  "notion_url": "https://app.notion.com/p/3f0e5855be39819faa14fdc90c79f948",
+  "title": "Dynamic pricing and learning: Historical origins, current research, and new directions",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "Surveys in Operations Research and Management Science",
+  "authors": "Arnoud V. den Boer",
+  "year": 2015,
+  "url": "https://www.sciencedirect.com/science/article/pii/S1876735415000021",
+  "doi": "10.1016/j.sorms.2015.03.001",
+  "version_or_edition": null,
+  "reliability_note": "Peer-reviewed review article. Evidence used in this Investigation is limited to the abstract/introduction text available on the publisher/indexed page."
+}
