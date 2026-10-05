@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000156",
+  "notion_url": "https://app.notion.com/p/3f0e5855be39819c8f8cf376d1b0c3d7",
+  "title": "Optimal Dynamic Pricing of Inventories with Stochastic Demand over Finite Horizons",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "Management Science",
+  "authors": "Guillermo Gallego; Garrett van Ryzin",
+  "year": 1994,
+  "url": "https://pubsonline.informs.org/doi/abs/10.1287/mnsc.40.8.999",
+  "doi": "10.1287/mnsc.40.8.999",
+  "version_or_edition": null,
+  "reliability_note": "Peer-reviewed journal article. Evidence used in this Investigation is limited to statements directly verified on the publisher abstract page."
+}
