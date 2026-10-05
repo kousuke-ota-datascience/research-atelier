@@ -1,0 +1,184 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "20_synthesis",
+  "investigation_id": "INV-000034",
+  "rq_id": "RQ-000034",
+  "synthesized_at": "2026-10-05T14:20:08Z",
+  "knowledge_units": [
+    {
+      "knowledge_unit_id": "K0001",
+      "statement": "Dynamic pricing is fundamentally a repeated or state-contingent price-setting problem: the seller can revise selling prices over time or as relevant demand conditions change.",
+      "evidence_refs": [
+        "E0007",
+        "E0008",
+        "E0010"
+      ],
+      "qualifiers": [
+        "The selected sources differ in how broadly they define the relevant state: some emphasize intertemporal inventory settings, while a recent retail definition includes people, product configurations, periods, and places."
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0002",
+      "statement": "In canonical operations-research formulations, the pricing objective is typically seller-side revenue maximization over a finite selling horizon.",
+      "evidence_refs": [
+        "E0001",
+        "E0005"
+      ],
+      "qualifiers": [
+        "This describes the objective in the selected canonical OR formulations and should not be read as evidence that every practical dynamic-pricing system has revenue as its only objective."
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0003",
+      "statement": "The price decision can depend on the current state and information set, including remaining inventory or capacity, remaining time, and demand-context variables.",
+      "evidence_refs": [
+        "E0002",
+        "E0004",
+        "E0007",
+        "E0010"
+      ],
+      "qualifiers": [
+        "Inventory and time are explicit in classic finite-horizon models; broader demand-context dimensions appear in later conceptual treatments."
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0004",
+      "statement": "A core decision input is how demand responds to price under uncertainty: classic models explicitly assume price-sensitive stochastic demand.",
+      "evidence_refs": [
+        "E0001",
+        "E0004"
+      ],
+      "qualifiers": [
+        "The exact demand model is method-specific and is outside this Investigation's scope."
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0005",
+      "statement": "Operational constraints materially shape the pricing decision; examples include finite or perishable inventory, allowable price sets, time-varying demand, holding costs, discounting, reordering, overbooking, and cancellations.",
+      "evidence_refs": [
+        "E0003",
+        "E0004",
+        "E0007"
+      ],
+      "qualifiers": [
+        "These constraints are examples from inventory-oriented formulations, not a claim that all dynamic-pricing applications share the same constraints."
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0006",
+      "statement": "Dynamic pricing may include a feedback loop in which observed sales data update beliefs about consumer price response and thereby inform later pricing decisions.",
+      "evidence_refs": [
+        "E0006",
+        "E0009"
+      ],
+      "qualifiers": [
+        "Learning is an important extension of dynamic pricing, but the selected evidence does not establish it as a necessary condition for every dynamic-pricing policy."
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0007",
+      "statement": "Frequent repricing becomes operationally feasible when relevant demand data are available, prices can be changed with low friction, and decision-support capability exists.",
+      "evidence_refs": [
+        "E0006",
+        "E0008"
+      ],
+      "qualifiers": [
+        "This is an implementation-enabling condition rather than the definition of a specific pricing algorithm."
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "relation_id": "R0001",
+      "relation_type": "dependency",
+      "knowledge_unit_refs": [
+        "K0002",
+        "K0003",
+        "K0004"
+      ],
+      "description": "The seller's objective is pursued by choosing prices conditional on the information state and expected demand response.",
+      "evidence_refs": [
+        "E0001",
+        "E0002",
+        "E0004",
+        "E0005"
+      ]
+    },
+    {
+      "relation_id": "R0002",
+      "relation_type": "qualification",
+      "knowledge_unit_refs": [
+        "K0001",
+        "K0005"
+      ],
+      "description": "Inventory-oriented constraints are central in classic models but qualify, rather than exhaust, the broader concept of dynamic pricing.",
+      "evidence_refs": [
+        "E0003",
+        "E0007",
+        "E0008",
+        "E0010"
+      ]
+    },
+    {
+      "relation_id": "R0003",
+      "relation_type": "dependency",
+      "knowledge_unit_refs": [
+        "K0003",
+        "K0006"
+      ],
+      "description": "When learning is present, observed outcomes alter the information state used for subsequent price decisions.",
+      "evidence_refs": [
+        "E0009"
+      ]
+    },
+    {
+      "relation_id": "R0004",
+      "relation_type": "association",
+      "knowledge_unit_refs": [
+        "K0001",
+        "K0007"
+      ],
+      "description": "Low-friction price changes and data/decision-support availability are associated with the practical feasibility of repeated price adjustment.",
+      "evidence_refs": [
+        "E0006",
+        "E0008"
+      ]
+    }
+  ],
+  "uncertainties": [
+    {
+      "uncertainty_id": "U0001",
+      "description": "The selected canonical OR sources emphasize revenue maximization. They do not establish that revenue is the sole objective across all practical dynamic-pricing deployments.",
+      "knowledge_unit_refs": [
+        "K0002"
+      ],
+      "evidence_refs": [
+        "E0001",
+        "E0005"
+      ]
+    },
+    {
+      "uncertainty_id": "U0002",
+      "description": "The exact universal boundary of the state-information set is not fixed by the selected evidence: classic models emphasize inventory and time, whereas broader recent definitions include multiple demand-context dimensions.",
+      "knowledge_unit_refs": [
+        "K0001",
+        "K0003"
+      ],
+      "evidence_refs": [
+        "E0002",
+        "E0007",
+        "E0010"
+      ]
+    },
+    {
+      "uncertainty_id": "U0003",
+      "description": "Learning from sales feedback is well supported as an important dynamic-pricing setting, but it is not shown here to be a definitional requirement for dynamic pricing in general.",
+      "knowledge_unit_refs": [
+        "K0006"
+      ],
+      "evidence_refs": [
+        "E0009"
+      ]
+    }
+  ]
+}
