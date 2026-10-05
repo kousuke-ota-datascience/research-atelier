@@ -1,0 +1,35 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "00_context",
+  "investigation_id": "INV-000034",
+  "rq_id": "RQ-000034",
+  "context_state": "frozen",
+  "question": {
+    "text": "ダイナミックプライシングの基本的な意思決定原理は何か",
+    "notion_url": "https://app.notion.com/p/3f0e5855be3981b1a9d6c08817ab4d4f"
+  },
+  "question_type": "Conceptual",
+  "scope": "ダイナミックプライシングを、需要・供給／在庫・時間・市場環境等の情報に応じて価格を更新する意思決定問題として捉え、その目的、利用する状態・情報、価格という意思決定変数、価格更新の基本ロジック、および主要な制約から、その基本原理を明らかにする。業界横断的な原理を対象とし、個別アルゴリズムの詳細や旅行業界固有の適用は対象外とする。",
+  "investigation_boundary": {
+    "include": [
+      "pricing objective：何を最適化しようとする意思決定なのか",
+      "決定入力・state：需要、供給・在庫、時間、価格反応、市場環境など何を観測するのか",
+      "decision variable：何を価格決定として操作するのか",
+      "decision rule：入力・状態の変化をどのように価格変更へ結びつけるのか",
+      "price response / demand response：価格と需要反応の関係を意思決定にどう取り込むのか",
+      "constraints / uncertainty：在庫、容量、時間、不確実性等が価格決定をどう制約するのか",
+      "dynamicであることの意味：固定価格ではなく、状態や時間の変化に応じて再決定する構造"
+    ],
+    "exclude": [
+      "Revenue Management、Yield Management、personalized pricing等との体系的な比較（RQ2）",
+      "demand forecasting、optimization、ML、reinforcement learning等の具体的技術・アルゴリズム詳細（RQ3）",
+      "旅行代理店・OTAでの導入形態、企業事例、実務フロー（RQ4）",
+      "dynamic pricing導入による売上・利益への因果効果の推定",
+      "法制度・倫理・consumer fairnessの詳細分析",
+      "個別企業のpricing strategyそのもの"
+    ],
+    "evidence_cutoff": null
+  },
+  "assumptions": [],
+  "frozen_at": "2026-10-05T08:19:00Z"
+}
