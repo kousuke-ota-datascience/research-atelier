@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000160",
+  "notion_url": "https://app.notion.com/p/3f0e5855be3981888293e253551c3bb6",
+  "title": "Dynamic pricing: Definition, implications for managers, and future research directions",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "Journal of Retailing",
+  "authors": "Praveen K. Kopalle; Koen Pauwels; Laxminarayana Yashaswy Akella; Manish Gangwar",
+  "year": 2023,
+  "url": "https://www.sciencedirect.com/science/article/pii/S0022435923000544",
+  "doi": "10.1016/j.jretai.2023.11.003",
+  "version_or_edition": null,
+  "reliability_note": "Peer-reviewed conceptual/review article. Evidence used in this Investigation is limited to the abstract/highlights text available on the publisher page."
+}
