@@ -1,0 +1,196 @@
+{
+  "schema_version": "2.1.0",
+  "artifact_type": "10_evidence",
+  "investigation_id": "INV-000034",
+  "rq_id": "RQ-000034",
+  "snapshot_at": "2026-10-05T14:18:48Z",
+  "sources": [
+    {
+      "source_id": "SRC-000156",
+      "source_revision": {
+        "commit_sha": "fe29a5ba40a0512080737035b2c153cb2c6803fc",
+        "blob_sha": "6bf5f8432f20a06d67d1c17a13c400089817683f"
+      },
+      "accessed_at": "2026-10-05T14:15:14Z",
+      "notion_url": "https://app.notion.com/p/3f0e5855be39819c8f8cf376d1b0c3d7"
+    },
+    {
+      "source_id": "SRC-000157",
+      "source_revision": {
+        "commit_sha": "1e76a107d89e8cc37ba87c0054066bc3449a4c31",
+        "blob_sha": "d5436e36073a97edc79dd8658a051ff71f1381b9"
+      },
+      "accessed_at": "2026-10-05T14:15:14Z",
+      "notion_url": "https://app.notion.com/p/3f0e5855be39810db52bc723d2c32c7f"
+    },
+    {
+      "source_id": "SRC-000158",
+      "source_revision": {
+        "commit_sha": "e292b146f8d5d69f5a7e3252b0341c057cd5c433",
+        "blob_sha": "b1146e8cc40eeeb598df85bb2d9e1c2dffe89c88"
+      },
+      "accessed_at": "2026-10-05T14:15:14Z",
+      "notion_url": "https://app.notion.com/p/3f0e5855be3981928a51c1f91306a1f0"
+    },
+    {
+      "source_id": "SRC-000159",
+      "source_revision": {
+        "commit_sha": "023b020d7e2916236a34e107d231b7fdc98dc126",
+        "blob_sha": "04bdf0ed93cd26ea45b490e4afa4c3337bba160e"
+      },
+      "accessed_at": "2026-10-05T14:15:14Z",
+      "notion_url": "https://app.notion.com/p/3f0e5855be39819faa14fdc90c79f948"
+    },
+    {
+      "source_id": "SRC-000160",
+      "source_revision": {
+        "commit_sha": "4da69107247f100bfc183b7124e37212976e5f02",
+        "blob_sha": "ec2586e29e27fde2ec833fff6a74b997521eceaa"
+      },
+      "accessed_at": "2026-10-05T14:15:14Z",
+      "notion_url": "https://app.notion.com/p/3f0e5855be3981888293e253551c3bb6"
+    }
+  ],
+  "evidence_items": [
+    {
+      "evidence_id": "E0001",
+      "content": "Gallego and van Ryzin formulate a dynamic-pricing problem in which a fixed stock must be sold by a deadline, demand is price-sensitive and stochastic, and the firm's objective is to maximize expected revenue.",
+      "source_locator": "Abstract",
+      "selection_reason": "Directly identifies objective, demand response, uncertainty, inventory state, and time horizon in a canonical dynamic-pricing model.",
+      "note_type": "Theory",
+      "provenance": {
+        "source_id": "SRC-000156",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3f0e5855be39814baf43ec2a95b40412",
+          "title": "EV-000260"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0002",
+      "content": "In Gallego and van Ryzin's model, the optimal pricing policy depends on the inventory stock level and the remaining selling horizon.",
+      "source_locator": "Abstract",
+      "selection_reason": "Direct evidence that state variables such as inventory and time can determine the price decision.",
+      "note_type": "Result",
+      "provenance": {
+        "source_id": "SRC-000156",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3f0e5855be398180b9b2e78fe7e9ccec",
+          "title": "EV-000261"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0003",
+      "content": "The Gallego–van Ryzin framework can be extended to time-varying demand, a finite allowable price set, holding costs, discounted cash flows, reordering, overbooking, and random cancellations.",
+      "source_locator": "Abstract",
+      "selection_reason": "Shows that dynamic pricing decisions can be conditioned by operational constraints, time variation, and additional state transitions.",
+      "note_type": "Result",
+      "provenance": {
+        "source_id": "SRC-000156",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3f0e5855be3981b8bba3deb59e7b5088",
+          "title": "EV-000262"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0004",
+      "content": "Bitran and Caldentey describe a generic revenue-management setting with perishable, nonrenewable resources and stochastic price-sensitive demand over a finite selling period.",
+      "source_locator": "Abstract",
+      "selection_reason": "Independent survey support for the common finite-horizon, constrained-resource, price-sensitive-demand formulation.",
+      "note_type": "Theory",
+      "provenance": {
+        "source_id": "SRC-000157",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3f0e5855be398188a631f3b3d40150f2",
+          "title": "EV-000263"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0005",
+      "content": "Within that generic setting, the seller's control problem is to dynamically choose the offered product menu, quantities, and corresponding prices so as to maximize total revenue over the selling horizon.",
+      "source_locator": "Abstract",
+      "selection_reason": "Clarifies dynamic pricing as a sequential control problem linking controllable offers/prices to an explicit objective.",
+      "note_type": "Theory",
+      "provenance": {
+        "source_id": "SRC-000157",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3f0e5855be3981969fa2c07929da9ea1",
+          "title": "EV-000264"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0006",
+      "content": "Elmaghraby and Keskinocak identify increased availability of demand data, lower friction in changing prices due to technology, and decision-support tools for demand analysis and pricing as major enablers of dynamic-pricing adoption.",
+      "source_locator": "Abstract",
+      "selection_reason": "Supports the role of observable demand information and low repricing friction in making repeated price decisions operationally feasible.",
+      "note_type": "Claim",
+      "provenance": {
+        "source_id": "SRC-000158",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3f0e5855be3981d7a00df626b359a6f9",
+          "title": "EV-000265"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0007",
+      "content": "Elmaghraby and Keskinocak frame their review around dynamic intertemporal pricing in the presence of inventory considerations, spanning both short-term fixed/perishable capacity settings and markets with storable inventory.",
+      "source_locator": "Abstract",
+      "selection_reason": "Shows that inventory/capacity is an important but not singular form of state and constraint in dynamic pricing.",
+      "note_type": "Definition",
+      "provenance": {
+        "source_id": "SRC-000158",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3f0e5855be3981849494c591bdee2879",
+          "title": "EV-000266"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0008",
+      "content": "den Boer characterizes dynamic pricing as determining optimal selling prices for products or services in settings where prices can be adjusted easily and frequently.",
+      "source_locator": "Introduction",
+      "selection_reason": "Provides a concise general definition centered on repeated price choice rather than a particular industry or algorithm.",
+      "note_type": "Definition",
+      "provenance": {
+        "source_id": "SRC-000159",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3f0e5855be39819ba9a9c82c4ff51a55",
+          "title": "EV-000267"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0009",
+      "content": "In dynamic pricing with learning, sales data can be used to learn how consumers respond to different prices and to adapt pricing policies under uncertainty about demand behavior.",
+      "source_locator": "Introduction",
+      "selection_reason": "Supports feedback and updating: observed outcomes can change the information state used for later price decisions.",
+      "note_type": "Theory",
+      "provenance": {
+        "source_id": "SRC-000159",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3f0e5855be398194bc08efa6ec32833f",
+          "title": "EV-000268"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0010",
+      "content": "Kopalle and coauthors define dynamic pricing as price changes prompted by changes or differences in four demand-driver dimensions: people, product configurations, periods, and places.",
+      "source_locator": "Abstract / Highlights",
+      "selection_reason": "Broadens the state-information view beyond inventory/time and identifies multiple demand-context dimensions that may trigger repricing.",
+      "note_type": "Definition",
+      "provenance": {
+        "source_id": "SRC-000160",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3f0e5855be3981488792fbdddf7974bd",
+          "title": "EV-000269"
+        }
+      }
+    }
+  ]
+}
