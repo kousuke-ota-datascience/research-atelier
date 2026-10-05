@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000158",
+  "notion_url": "https://app.notion.com/p/3f0e5855be3981928a51c1f91306a1f0",
+  "title": "Dynamic Pricing in the Presence of Inventory Considerations: Research Overview, Current Practices, and Future Directions",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "Management Science",
+  "authors": "Wedad Elmaghraby; Pınar Keskinocak",
+  "year": 2003,
+  "url": "https://pubsonline.informs.org/doi/abs/10.1287/mnsc.49.10.1287.17315",
+  "doi": "10.1287/mnsc.49.10.1287.17315",
+  "version_or_edition": null,
+  "reliability_note": "Peer-reviewed review article. Evidence used in this Investigation is limited to statements directly verified on the publisher page."
+}
