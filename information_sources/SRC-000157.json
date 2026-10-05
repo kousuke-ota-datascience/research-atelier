@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000157",
+  "notion_url": "https://app.notion.com/p/3f0e5855be39810db52bc723d2c32c7f",
+  "title": "An Overview of Pricing Models for Revenue Management",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "Manufacturing & Service Operations Management",
+  "authors": "Gabriel Bitran; René Caldentey",
+  "year": 2003,
+  "url": "https://pubsonline.informs.org/doi/10.1287/msom.5.3.203.16031",
+  "doi": "10.1287/msom.5.3.203.16031",
+  "version_or_edition": null,
+  "reliability_note": "Peer-reviewed survey article. Evidence used in this Investigation is limited to statements directly verified on the publisher abstract page."
+}
