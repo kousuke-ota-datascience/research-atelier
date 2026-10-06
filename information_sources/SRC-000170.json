@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000170",
+  "notion_url": "https://app.notion.com/p/3f1e5855be398147981ae0f73fd837ce",
+  "title": "Update: dynamic pricing",
+  "source_type": "Report",
+  "journal_or_publisher": "UK Competition and Markets Authority / GOV.UK",
+  "authors": "Competition and Markets Authority",
+  "year": 2025,
+  "url": "https://www.gov.uk/government/publications/dynamic-pricing-project-update/update-dynamic-pricing",
+  "doi": null,
+  "version_or_edition": null,
+  "reliability_note": "Official UK Competition and Markets Authority policy update based on engagement with businesses, academics, regulators, trade groups and consumer bodies plus literature review. Used only for observed implementation characteristics such as automation/manual oversight and price caps/checks."
+}
