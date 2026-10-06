@@ -1,0 +1,233 @@
+{
+  "schema_version": "2.1.0",
+  "artifact_type": "10_evidence",
+  "investigation_id": "INV-000035",
+  "rq_id": "RQ-000035",
+  "snapshot_at": "2026-10-06T01:00:11Z",
+  "sources": [
+    {
+      "source_id": "SRC-000157",
+      "source_revision": {
+        "commit_sha": "1e76a107d89e8cc37ba87c0054066bc3449a4c31",
+        "blob_sha": "d5436e36073a97edc79dd8658a051ff71f1381b9"
+      },
+      "accessed_at": "2026-10-06T01:00:11Z",
+      "notion_url": "https://app.notion.com/p/3f0e5855be39810db52bc723d2c32c7f"
+    },
+    {
+      "source_id": "SRC-000160",
+      "source_revision": {
+        "commit_sha": "4da69107247f100bfc183b7124e37212976e5f02",
+        "blob_sha": "ec2586e29e27fde2ec833fff6a74b997521eceaa"
+      },
+      "accessed_at": "2026-10-06T01:00:11Z",
+      "notion_url": "https://app.notion.com/p/3f0e5855be3981888293e253551c3bb6"
+    },
+    {
+      "source_id": "SRC-000161",
+      "source_revision": {
+        "commit_sha": "e5d25a33ddcde1ffe483bcdb503ec71e2cf37340",
+        "blob_sha": "d696971c303d416051ab6c3c6d7d2ef43422429a"
+      },
+      "accessed_at": "2026-10-06T01:00:11Z",
+      "notion_url": "https://app.notion.com/p/3f1e5855be3981f28b52cb688796cceb"
+    },
+    {
+      "source_id": "SRC-000162",
+      "source_revision": {
+        "commit_sha": "7770c0f5458f46f4f0da2b89dc98d1022b7f2964",
+        "blob_sha": "1813108cf5ad52cd23a96fd3d8a41e8bd4435089"
+      },
+      "accessed_at": "2026-10-06T01:00:11Z",
+      "notion_url": "https://app.notion.com/p/3f1e5855be39815b8a46eb9bfc0d6ac0"
+    },
+    {
+      "source_id": "SRC-000163",
+      "source_revision": {
+        "commit_sha": "72037be36f782d84a23b967c15ec27a6897c3b70",
+        "blob_sha": "f2a9492b6c7d588331447e40a7499afddc7e940d"
+      },
+      "accessed_at": "2026-10-06T01:00:11Z",
+      "notion_url": "https://app.notion.com/p/3f1e5855be3981fa95c9d4e66365286f"
+    },
+    {
+      "source_id": "SRC-000164",
+      "source_revision": {
+        "commit_sha": "c6899788af3160fdba3714ac96e2f32382bbdbe9",
+        "blob_sha": "f872b31a58c8e7217f457d5d211bd19cedb56bf4"
+      },
+      "accessed_at": "2026-10-06T01:00:11Z",
+      "notion_url": "https://app.notion.com/p/3f1e5855be39814ca82ed989326fa315"
+    }
+  ],
+  "evidence_items": [
+    {
+      "evidence_id": "E0001",
+      "content": "Bitran and Caldentey describe a generic revenue-management setting with perishable, nonrenewable resources and stochastic price-sensitive demand over a finite selling period.",
+      "source_locator": "Abstract",
+      "selection_reason": "Defines the resource and demand structure of a canonical revenue-management problem for comparison with dynamic pricing.",
+      "note_type": "Theory",
+      "provenance": {
+        "source_id": "SRC-000157",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3f0e5855be398188a631f3b3d40150f2",
+          "title": "EV-000263"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0002",
+      "content": "Within that generic setting, the seller's control problem is to dynamically choose the offered product menu, quantities, and corresponding prices so as to maximize total revenue over the selling horizon.",
+      "source_locator": "Abstract",
+      "selection_reason": "Shows that revenue management can include multiple controls beyond price alone, including product menu and quantity/capacity decisions.",
+      "note_type": "Theory",
+      "provenance": {
+        "source_id": "SRC-000157",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3f0e5855be3981969fa2c07929da9ea1",
+          "title": "EV-000264"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0003",
+      "content": "Kopalle and coauthors define dynamic pricing as price changes prompted by changes or differences in four demand-driver dimensions: people, product configurations, periods, and places.",
+      "source_locator": "Abstract / Highlights",
+      "selection_reason": "Provides a broad dynamic-pricing definition and the dimensions along which price variation may occur.",
+      "note_type": "Definition",
+      "provenance": {
+        "source_id": "SRC-000160",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3f0e5855be3981488792fbdddf7974bd",
+          "title": "EV-000269"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0004",
+      "content": "Kopalle and coauthors contrast static pricing, characterized by uniform prices, with dynamic pricing, characterized by changing prices.",
+      "source_locator": "Abstract / Executive summary",
+      "selection_reason": "Provides the cleanest baseline distinction between fixed/static pricing and dynamic pricing.",
+      "note_type": "Definition",
+      "provenance": {
+        "source_id": "SRC-000160",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3f1e5855be3981cd86d1c2c6c1f6f764",
+          "title": "EV-000270"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0005",
+      "content": "Maglaras and Meissner formulate two related revenue-management controls for a fixed-capacity resource over a finite horizon: dynamic pricing changes product prices, whereas the fixed-price formulation dynamically controls capacity allocation to requests.",
+      "source_locator": "Abstract",
+      "selection_reason": "Directly distinguishes price control from capacity-allocation control while holding the revenue-management problem structure constant.",
+      "note_type": "Theory",
+      "provenance": {
+        "source_id": "SRC-000161",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3f1e5855be3981d0b61cfcbe8b948c1c",
+          "title": "EV-000271"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0006",
+      "content": "Maglaras and Meissner show that dynamic pricing and fixed-price capacity control can be reduced to a common revenue-management formulation based on the aggregate rate at which products consume resource capacity.",
+      "source_locator": "Abstract",
+      "selection_reason": "Supports the claim that dynamic pricing and capacity control can be alternative controls within a shared revenue-management structure rather than mutually exclusive concepts.",
+      "note_type": "Result",
+      "provenance": {
+        "source_id": "SRC-000161",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3f1e5855be3981699b37dc40f912708b",
+          "title": "EV-000272"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0007",
+      "content": "Kimes describes yield management as allocating a fixed, perishable service capacity against potential demand in a manner intended to use that capacity profitably.",
+      "source_locator": "Abstract",
+      "selection_reason": "Defines yield management around scarce/perishable capacity allocation rather than price movement alone.",
+      "note_type": "Definition",
+      "provenance": {
+        "source_id": "SRC-000162",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3f1e5855be398175b651dbaecae4f8a3",
+          "title": "EV-000273"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0008",
+      "content": "Kimes states that the objective of yield management is to maximize revenue or yield and that a yield-management system decides how much inventory to allocate to different types of demand.",
+      "source_locator": "Abstract",
+      "selection_reason": "Identifies the yield-management objective and its characteristic inventory-allocation decision variable.",
+      "note_type": "Theory",
+      "provenance": {
+        "source_id": "SRC-000162",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3f1e5855be398134b202c8357c93cc47",
+          "title": "EV-000274"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0009",
+      "content": "Elmachtoub, Gupta, and Hamilton define personalized pricing as predicting an individual customer's valuation for a product and offering a price tailored to that customer.",
+      "source_locator": "Abstract",
+      "selection_reason": "Defines personalized pricing by individual-customer granularity and customer-specific valuation information.",
+      "note_type": "Definition",
+      "provenance": {
+        "source_id": "SRC-000163",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3f1e5855be398151b8deebf3f76254ce",
+          "title": "EV-000275"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0010",
+      "content": "Elmachtoub, Gupta, and Hamilton also analyze feature-based pricing, where customer valuations are estimated from observed customer features rather than applying one single price to all customers.",
+      "source_locator": "Abstract",
+      "selection_reason": "Shows the information basis that can differentiate personalized pricing from non-personalized market- or state-level price changes.",
+      "note_type": "Method",
+      "provenance": {
+        "source_id": "SRC-000163",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3f1e5855be39818f82a6f73fdf2827e3",
+          "title": "EV-000276"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0011",
+      "content": "Anderson and Fox describe price promotions as temporary price changes offered by a seller.",
+      "source_locator": "Introduction",
+      "selection_reason": "Defines promotion pricing by temporariness of the price change rather than by a state-contingent optimization rule.",
+      "note_type": "Definition",
+      "provenance": {
+        "source_id": "SRC-000164",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3f1e5855be3981bf8d30e9c469547b20",
+          "title": "EV-000277"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0012",
+      "content": "Anderson and Fox argue that most retail price promotions are not merely unilateral real-time reactions to immediate supply or demand changes; they commonly arise from planned, negotiated coordination between retailers and manufacturers.",
+      "source_locator": "Introduction",
+      "selection_reason": "Provides an operational contrast with dynamic pricing that responds to changing demand drivers or state information.",
+      "note_type": "Claim",
+      "provenance": {
+        "source_id": "SRC-000164",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3f1e5855be3981eb98e1cca707a7ee79",
+          "title": "EV-000278"
+        }
+      }
+    }
+  ]
+}
