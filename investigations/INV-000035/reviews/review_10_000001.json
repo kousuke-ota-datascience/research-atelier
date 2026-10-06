@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000035",
+  "review_seq": 1,
+  "layer": "10_evidence",
+  "review_kind": "source_evidence_note_to_10_evidence",
+  "target_blob_sha": "7c8ef59c5c493d7f162cedc12d7936cd0bffb817",
+  "assessment": "The individual Evidence items are traceable to pinned Sources and corresponding Evidence Notes, and the checked paraphrases for Revenue Management, Dynamic Pricing/static pricing, fixed-price capacity control, Yield Management, personalized pricing, and Price Promotion are source-faithful within their locators. However, the Evidence selection is not sufficient to execute the full frozen Comparative scope: several required comparison dimensions are only sparsely covered across units, and no discounting-specific Evidence is present even though discounting is an explicitly named adjacent approach.",
+  "findings": [
+    {
+      "finding_id": "F001",
+      "severity": "Moderate",
+      "target": "10_evidence: coverage of frozen Comparative scope",
+      "evidence": [
+        "00_context requires comparison of adjacent pricing approaches across purpose/objective, trigger/state dependency, decision target, temporal and customer granularity, inventory/capacity relationship, and optimization relationship, and explicitly includes discounting / promotion pricing.",
+        "10_evidence provides strong support for selected dimensions of Revenue Management, Yield Management, Dynamic Pricing, Personalized Pricing, and Price Promotion, but it does not provide discounting-specific evidence and does not furnish systematic evidence for the required objective/temporal/capacity/optimization dimensions across several comparison units."
+      ],
+      "impact": "The frozen Comparative scope cannot be fully executed from the current Evidence snapshot. Downstream synthesis and analysis can compare several boundaries, but they cannot support a systematic across-unit comparison on all named dimensions, and the missing discounting evidence creates a specific risk of treating discounting as equivalent to price promotion without canonical support.",
+      "repair_direction": {
+        "mode": "same_investigation",
+        "affected_layer": "10_evidence",
+        "instruction": "Keep 00_context frozen. Extend 10_evidence with source-faithful evidence sufficient to cover the frozen comparison dimensions for the named comparison units, including discounting as distinct from price promotion unless a source explicitly establishes the relationship. Preserve terminology uncertainty. Then invalidate and rebuild 20_synthesis and 30_analysis and run Workflow 20 again."
+      }
+    }
+  ],
+  "verdict": "FINDINGS"
+}

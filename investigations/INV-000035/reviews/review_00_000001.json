@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000035",
+  "review_seq": 1,
+  "layer": "00_context",
+  "review_kind": "context_semantic_validity",
+  "target_blob_sha": "d13c22de4df622705bfc26178992eb9e64d1da30",
+  "assessment": "The frozen Comparative context is semantically coherent. It asks how Dynamic Pricing differs from fixed/static pricing, Revenue Management / Yield Management, personalized pricing, and discounting / promotion pricing across objective, decision variable, trigger/state dependency, temporal and customer granularity, inventory/capacity relationship, optimization relationship, and overlap/inclusion. It explicitly anticipates terminology variation and excludes algorithmic detail, industry-specific implementation, causal performance ranking, and detailed legal/ethical comparison. No context-defining contradiction or omission is identified.",
+  "findings": [],
+  "verdict": "PASS"
+}

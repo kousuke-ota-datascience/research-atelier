@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000035",
+  "review_seq": 1,
+  "layer": "30_analysis",
+  "review_kind": "20_synthesis_plus_00_context_to_30_analysis",
+  "target_blob_sha": "79640d440a8c8e3a771a4681651ab1044417fcd1",
+  "assessment": "The Comparative analysis correctly uses multiple dimensions rather than forcing mutually exclusive labels, and its Revenue Management, Yield Management, fixed/static pricing, and personalized-pricing contrasts largely remain within the Synthesis boundary while retaining terminology and industry limitations. One material support-boundary defect remains: the Analysis turns the Synthesis-supported Price Promotion concept into a broader combined 'Discounting / Price Promotion' unit and carries that combined category into the contrast and Working Answer without discounting-specific canonical support.",
+  "findings": [
+    {
+      "finding_id": "F002",
+      "severity": "Moderate",
+      "target": "30_analysis: 'Discounting / Price Promotion' comparison unit, contrast, and Working Answer",
+      "evidence": [
+        "20_synthesis.K0006, R0004, and U0003 are explicitly about Price Promotion and are supported by E0011-E0012, which concern temporary retail price promotions and their planned/negotiated process.",
+        "30_analysis expands that supported concept into a combined comparison unit labeled 'Discounting / Price Promotion' and states that this unit is a temporary price change / price reduction whose boundary from Dynamic Pricing is trigger and decision process, despite the canonical Synthesis containing no general discounting proposition."
+      ],
+      "impact": "A named adjacent pricing approach in the frozen scope is presented as if the canonical chain supports the same boundary for both discounting and price promotion. This exceeds the Synthesis support boundary and can misclassify discounting strategies that are not promotion pricing. The broader multi-dimensional comparison framework remains useful, but this part of the Working Answer is not currently supported.",
+      "repair_direction": {
+        "mode": "same_investigation",
+        "affected_layer": "10_evidence",
+        "instruction": "Add discounting-specific Evidence and rebuild Synthesis so that discounting and price promotion are either distinguished or explicitly related only to the extent supported by sources. Then rebuild 30_analysis without carrying forward the unsupported combined category."
+      }
+    }
+  ],
+  "verdict": "FINDINGS"
+}

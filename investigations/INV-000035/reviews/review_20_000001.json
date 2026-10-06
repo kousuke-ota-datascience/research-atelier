@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000035",
+  "review_seq": 1,
+  "layer": "20_synthesis",
+  "review_kind": "10_evidence_to_20_synthesis",
+  "target_blob_sha": "ddd76da3bd3cb2a8cd2e8dabe65a59c6be8dcb7e",
+  "assessment": "Within the available Evidence boundary, K0001-K0007 and R0001-R0005 are generally well supported and preserve important qualifications: fixed price does not imply a fully static control system; Dynamic Pricing can be a Revenue Management price control rather than a disjoint category; foundational Yield Management is capacity-allocation oriented; personalized pricing overlaps only under a broad people-driven Dynamic Pricing definition; and Price Promotion may be planned rather than state-responsive. The Synthesis also preserves terminology uncertainty. The upstream Evidence coverage gap is not independently healed here, and no additional Synthesis-only semantic distortion is identified.",
+  "findings": [],
+  "verdict": "PASS"
+}
