@@ -3,17 +3,18 @@
   "artifact_type": "30_analysis",
   "investigation_id": "INV-000034",
   "rq_id": "RQ-000034",
-  "analyzed_at": "2026-10-05T14:21:11Z",
+  "analyzed_at": "2026-10-06T01:18:19Z",
   "question_type": "Conceptual",
   "profile": {
     "concept": "Dynamic Pricing as a repeated, state-contingent price-setting decision process",
-    "proposed_definition": "Dynamic Pricingは、意思決定時点ごとに観測可能な状態・情報と価格に対する需要反応を踏まえ、在庫・時間・許容価格等の制約の下で目的を達成する価格を選択し、状態や情報が変化するにつれて価格決定を更新する価格設定アプローチである。",
+    "proposed_definition": "Dynamic Pricingは、意思決定時点ごとに観測可能な状態・情報と価格に対する需要反応を踏まえ、有限な在庫・容量、販売期間、許容価格集合等の意思決定上の制約の下で目的を達成する価格を選択し、状態や情報が変化するにつれて価格決定を更新する価格設定アプローチである。",
     "dimensions": [
       "目的関数：何を最適化するか",
       "状態・情報：在庫、残存時間、需要条件、顧客・商品・時期・場所等の何を価格決定に用いるか",
       "意思決定変数：どの価格または価格を含むofferを選択するか",
       "価格反応：価格に応じて需要がどう変化するかをどう扱うか",
-      "制約：在庫・容量・時間・許容価格等が選択可能な価格政策をどう制約するか",
+      "意思決定上の制約：有限な在庫・容量、販売期間、許容価格集合等が実行可能な価格政策をどう制約するか",
+      "その他のmodel features / extensions：time-varying demand、holding costs、discounting、reordering、overbooking、cancellations等を制約と混同せずどう位置付けるか",
       "更新・フィードバック：状態変化や新たな販売情報を後続の価格決定へどう反映するか"
     ],
     "boundary_cases": [],
@@ -25,7 +26,7 @@
     ]
   },
   "working_answer": {
-    "text": "ダイナミックプライシングの基本原理は、価格を一度固定するのではなく、各意思決定時点で現在の状態・情報を観測し、価格に応じた需要反応と制約を踏まえて目的に適う価格を選び、状態や情報の変化に応じてその価格決定を更新することである。古典的なOperations Researchでは、残存在庫・残存時間・価格感応的で不確実な需要を主要な状態として、有限の販売期間で期待売上または総売上を最大化する問題として定式化される。より広い定義では、価格変更の契機となる情報は在庫・時間だけでなく、顧客、商品構成、時期、場所などの需要条件にも及ぶ。したがって本質は特定のMLアルゴリズムではなく、『目的・状態情報・価格という意思決定変数・需要反応・制約』を結び付けたstate-contingentな反復意思決定にある。販売結果から需要反応を学習して後続の価格へ反映するfeedback loopは重要な拡張だが、すべてのDynamic Pricingに必須とは限らない。",
+    "text": "ダイナミックプライシングの基本原理は、価格を一度固定するのではなく、各意思決定時点で現在の状態・情報を観測し、価格に応じた需要反応と意思決定上の制約を踏まえて目的に適う価格を選び、状態や情報の変化に応じてその価格決定を更新することである。古典的なOperations Researchでは、残存在庫・残存時間・価格感応的で不確実な需要を主要な状態として、有限の販売期間で期待売上または総売上を最大化する問題として定式化される。有限な在庫・容量、販売期間、許容価格集合は実行可能な価格政策を制約し得る一方、time-varying demand、holding costs、discounting、reordering、overbooking、cancellations等は、需要過程、目的・コスト構造、または状態遷移を変える異質なmodel features / extensionsとして区別すべきである。より広い定義では、価格変更の契機となる情報は在庫・時間だけでなく、顧客、商品構成、時期、場所などの需要条件にも及ぶ。したがって本質は特定のMLアルゴリズムではなく、『目的・状態情報・価格という意思決定変数・需要反応・意思決定上の制約』を結び付けたstate-contingentな反復意思決定にある。販売結果から需要反応を学習して後続の価格へ反映するfeedback loopは重要な拡張だが、すべてのDynamic Pricingに必須とは限らない。",
     "knowledge_unit_refs": [
       "K0001",
       "K0002",
@@ -47,7 +48,7 @@
     },
     {
       "judgment_id": "J0002",
-      "statement": "価格決定は、最適化したい目的、価格に対する需要反応、在庫・時間等の状態と制約を統合して行われる。古典的OR定式化では有限期間の売上最大化が代表的である。",
+      "statement": "価格決定は、最適化したい目的、価格に対する需要反応、在庫・容量・販売期間・許容価格集合等の意思決定上の制約を統合して行われる。古典的OR定式化では有限期間の売上最大化が代表的である一方、time-varying demandやholding costs、reordering、overbooking等は制約と一括せず、需要・コスト・状態遷移を変えるmodel features / extensionsとして扱う必要がある。",
       "knowledge_unit_refs": [
         "K0002",
         "K0003",
@@ -66,7 +67,7 @@
   ],
   "limitations": [
     {
-      "text": "主要Evidenceはpeer-reviewed論文のpublisher abstract / introductionで直接確認できる範囲に限定したため、各モデルの数理的詳細や条件別の最適政策までは評価していない。",
+      "text": "主要Evidenceはpeer-reviewed論文のpublisher abstract / introductionで直接確認できる範囲に限定したため、各モデルの数理的詳細や条件別の最適政策までは評価していない。また、Gallego–van Ryzinで列挙される拡張は異質であり、すべてを同一の『制約』カテゴリとして扱っていない。",
       "knowledge_unit_refs": [
         "K0002",
         "K0003",
