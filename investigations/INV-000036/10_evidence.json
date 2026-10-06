@@ -1,0 +1,307 @@
+{
+  "schema_version": "2.1.0",
+  "artifact_type": "10_evidence",
+  "investigation_id": "INV-000036",
+  "rq_id": "RQ-000036",
+  "snapshot_at": "2026-10-06T01:29:10Z",
+  "sources": [
+    {
+      "source_id": "SRC-000158",
+      "source_revision": {
+        "commit_sha": "e292b146f8d5d69f5a7e3252b0341c057cd5c433",
+        "blob_sha": "b1146e8cc40eeeb598df85bb2d9e1c2dffe89c88"
+      },
+      "accessed_at": "2026-10-06T01:29:10Z",
+      "notion_url": "https://app.notion.com/p/3f0e5855be3981928a51c1f91306a1f0"
+    },
+    {
+      "source_id": "SRC-000159",
+      "source_revision": {
+        "commit_sha": "023b020d7e2916236a34e107d231b7fdc98dc126",
+        "blob_sha": "04bdf0ed93cd26ea45b490e4afa4c3337bba160e"
+      },
+      "accessed_at": "2026-10-06T01:29:10Z",
+      "notion_url": "https://app.notion.com/p/3f0e5855be39819faa14fdc90c79f948"
+    },
+    {
+      "source_id": "SRC-000165",
+      "source_revision": {
+        "commit_sha": "e9960fa5620daa08d5f3a4a0c66b56697f1512d2",
+        "blob_sha": "19b7f6ca019e8deb409d60cfcc5f27ab81770270"
+      },
+      "accessed_at": "2026-10-06T01:29:10Z",
+      "notion_url": "https://app.notion.com/p/3f1e5855be3981d69244da66ac507145"
+    },
+    {
+      "source_id": "SRC-000166",
+      "source_revision": {
+        "commit_sha": "1893ca301b347c0a9663e4de96d0bc24d8024c51",
+        "blob_sha": "ffd91dcb7993d9ebf44fd6339411ef9458703a3d"
+      },
+      "accessed_at": "2026-10-06T01:29:10Z",
+      "notion_url": "https://app.notion.com/p/3f1e5855be3981c0b93fe83d5499807f"
+    },
+    {
+      "source_id": "SRC-000167",
+      "source_revision": {
+        "commit_sha": "b7e0cb34480ab7299d1ca9e24e1bd8925259f254",
+        "blob_sha": "6d85a1bf7ba0940424cf20b48277966f7a831768"
+      },
+      "accessed_at": "2026-10-06T01:29:10Z",
+      "notion_url": "https://app.notion.com/p/3f1e5855be3981be8ef6cda6e731f5d4"
+    },
+    {
+      "source_id": "SRC-000168",
+      "source_revision": {
+        "commit_sha": "28a8a1f93d59e5340837e2e5c9bb18035c99b47a",
+        "blob_sha": "b2c263df38f3e9d679a4f376e59d823c54040528"
+      },
+      "accessed_at": "2026-10-06T01:29:10Z",
+      "notion_url": "https://app.notion.com/p/3f1e5855be3981589529cde5786f85d7"
+    },
+    {
+      "source_id": "SRC-000169",
+      "source_revision": {
+        "commit_sha": "1926d5f11d9cf05e12e0b7fea31fe5bcb875b8d0",
+        "blob_sha": "49f1adc9f854c766acaf305b06ce959773c83144"
+      },
+      "accessed_at": "2026-10-06T01:29:10Z",
+      "notion_url": "https://app.notion.com/p/3f1e5855be398101963dc15ed4afe7f6"
+    },
+    {
+      "source_id": "SRC-000170",
+      "source_revision": {
+        "commit_sha": "31f34ac8c85aa5208de2d3d07550865d2a078b95",
+        "blob_sha": "0f9c6d305d19a3f2da1de7eec30dbbbd3b7836d7"
+      },
+      "accessed_at": "2026-10-06T01:29:10Z",
+      "notion_url": "https://app.notion.com/p/3f1e5855be398147981ae0f73fd837ce"
+    }
+  ],
+  "evidence_items": [
+    {
+      "evidence_id": "E0001",
+      "content": "Elmaghraby and Keskinocak identify increased availability of demand data, lower friction in changing prices due to technology, and decision-support tools for demand analysis and pricing as major enablers of dynamic-pricing adoption.",
+      "source_locator": "Abstract",
+      "selection_reason": "Supports data availability and decision-support capability as enabling layers rather than a specific algorithm.",
+      "note_type": "Claim",
+      "provenance": {
+        "source_id": "SRC-000158",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3f0e5855be3981d7a00df626b359a6f9",
+          "title": "EV-000265"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0002",
+      "content": "In dynamic pricing with learning, sales data can be used to learn how consumers respond to different prices and to adapt pricing policies under uncertainty about demand behavior.",
+      "source_locator": "Introduction",
+      "selection_reason": "Supports the feedback loop from observed outcomes into subsequent pricing decisions.",
+      "note_type": "Theory",
+      "provenance": {
+        "source_id": "SRC-000159",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3f0e5855be398194bc08efa6ec32833f",
+          "title": "EV-000268"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0003",
+      "content": "Ferreira, Lee, and Simchi-Levi use machine-learning techniques to estimate historical lost sales and predict future demand for products, including products not previously sold by the retailer.",
+      "source_locator": "Abstract",
+      "selection_reason": "Direct evidence for machine-learning demand-estimation/forecasting as one implementable method family.",
+      "note_type": "Method",
+      "provenance": {
+        "source_id": "SRC-000165",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3f1e5855be39815a9f6bfb2839717032",
+          "title": "EV-000279"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0004",
+      "content": "Their demand-prediction model is nonparametric and includes dependence of a product's demand on competing-product prices; the resulting forecasts are translated into a multiproduct price-optimization problem.",
+      "source_locator": "Abstract",
+      "selection_reason": "Connects demand-response modeling and market information to downstream price optimization.",
+      "note_type": "Method",
+      "provenance": {
+        "source_id": "SRC-000165",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3f1e5855be398135a56bc952be67e98d",
+          "title": "EV-000280"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0005",
+      "content": "Ferreira, Lee, and Simchi-Levi implemented the pricing algorithm as a pricing decision-support tool for daily operational use.",
+      "source_locator": "Abstract",
+      "selection_reason": "Shows that an algorithmic method must be operationalized in a decision-support/execution surface to be used repeatedly.",
+      "note_type": "Result",
+      "provenance": {
+        "source_id": "SRC-000165",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3f1e5855be3981ce8373ce562fc8958c",
+          "title": "EV-000281"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0006",
+      "content": "The implemented pricing tool was evaluated with a field experiment, illustrating controlled experimentation as one way to assess pricing-policy outcomes.",
+      "source_locator": "Abstract",
+      "selection_reason": "Supports controlled experimentation as an evaluation method for an implemented pricing policy.",
+      "note_type": "Method",
+      "provenance": {
+        "source_id": "SRC-000165",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3f1e5855be39819ca4a4c2c28b465a85",
+          "title": "EV-000282"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0007",
+      "content": "Besbes and Zeevi study dynamic pricing when the relation between price and mean demand is unknown, considering both parametric demand families with unknown parameters and broad nonparametric demand classes.",
+      "source_locator": "Abstract",
+      "selection_reason": "Establishes demand-function estimation/modeling as a technical problem and shows that both parametric and nonparametric approaches are possible.",
+      "note_type": "Theory",
+      "provenance": {
+        "source_id": "SRC-000166",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3f1e5855be39812cb1dbe4aa80a768d3",
+          "title": "EV-000283"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0008",
+      "content": "Besbes and Zeevi develop policies that learn the demand function on the fly while optimizing prices, making learning and pricing decisions interdependent.",
+      "source_locator": "Abstract",
+      "selection_reason": "Supports adaptive/sequential methods that combine estimation with price decisions rather than separating them into a fixed forecast-then-optimize pipeline.",
+      "note_type": "Method",
+      "provenance": {
+        "source_id": "SRC-000166",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3f1e5855be3981e3957bc342eb453a71",
+          "title": "EV-000284"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0009",
+      "content": "They evaluate learning-pricing policies using regret, defined as revenue loss relative to a benchmark that knows the demand function before the selling season.",
+      "source_locator": "Abstract",
+      "selection_reason": "Provides a methodological evaluation criterion for online learning/pricing policies.",
+      "note_type": "Method",
+      "provenance": {
+        "source_id": "SRC-000166",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3f1e5855be39814f8dd7d826359fdfcc",
+          "title": "EV-000285"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0010",
+      "content": "Kastius, Hagedorn, and Schlosser characterize reinforcement learning as a method family in which agents explore an environment and learn well-performing decision policies, and survey its use in dynamic-pricing problems.",
+      "source_locator": "Abstract / Introduction",
+      "selection_reason": "Supports reinforcement learning as one candidate method family for sequential pricing decisions.",
+      "note_type": "Method",
+      "provenance": {
+        "source_id": "SRC-000167",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3f1e5855be39817e9e7fe95d5dfb6667",
+          "title": "EV-000286"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0011",
+      "content": "The reinforcement-learning survey notes that many pricing models resemble Markov decision processes and treats RL as a way to address pricing decision problems that may be difficult to model or solve tractably with conventional methods.",
+      "source_locator": "Abstract / Introduction",
+      "selection_reason": "Explains the methodological fit of RL to sequential state-action pricing without implying that RL is necessary.",
+      "note_type": "Theory",
+      "provenance": {
+        "source_id": "SRC-000167",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3f1e5855be3981f491e5e37928024a6e",
+          "title": "EV-000287"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0012",
+      "content": "Gerpott and Berends distinguish a manual rule-based pricing approach, in which if-then-else rules are defined and updated manually, from data-driven algorithmic optimization approaches.",
+      "source_locator": "Competitive pricing on online markets section",
+      "selection_reason": "Direct evidence that rule-based pricing and data-driven optimization are distinct implementation method families.",
+      "note_type": "Definition",
+      "provenance": {
+        "source_id": "SRC-000168",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3f1e5855be39810fbfa6c7e4a29a27e6",
+          "title": "EV-000288"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0013",
+      "content": "Gerpott and Berends emphasize that competitive online pricing can require information such as price elasticities, stock levels, and comprehensive real-time information about other market participants.",
+      "source_locator": "Research approach section",
+      "selection_reason": "Supports elasticity, inventory and competitive-market data as possible technical inputs for pricing models.",
+      "note_type": "Claim",
+      "provenance": {
+        "source_id": "SRC-000168",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3f1e5855be398137b03be7b95d232d04",
+          "title": "EV-000289"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0014",
+      "content": "Kumari and Kumar propose a modular cloud-native real-time pricing framework with components including pricing models, competition and demand watchers, and analytics components that support real-time price decisions.",
+      "source_locator": "Abstract",
+      "selection_reason": "Provides evidence for modular real-time system components beyond the statistical/optimization model itself.",
+      "note_type": "Method",
+      "provenance": {
+        "source_id": "SRC-000169",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3f1e5855be3981f6a568fda782f2c984",
+          "title": "EV-000290"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0015",
+      "content": "The UK Competition and Markets Authority reports that businesses implement dynamic pricing with varying degrees of automation and that most businesses it engaged with retained at least some manual oversight.",
+      "source_locator": "Why and how do businesses use dynamic pricing?",
+      "selection_reason": "Supports human oversight and different automation levels as real implementation design choices.",
+      "note_type": "Result",
+      "provenance": {
+        "source_id": "SRC-000170",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3f1e5855be3981e69e4ed51fe16e43ab",
+          "title": "EV-000291"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0016",
+      "content": "The UK Competition and Markets Authority reports that some implementations use checks and balances such as price caps or triggers for manual oversight to prevent very steep or very high price increases.",
+      "source_locator": "Why and how do businesses use dynamic pricing?",
+      "selection_reason": "Supports operational guardrails such as caps and escalation/manual-review triggers.",
+      "note_type": "Result",
+      "provenance": {
+        "source_id": "SRC-000170",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/3f1e5855be3981d8bdbad952ff1c2298",
+          "title": "EV-000292"
+        }
+      }
+    }
+  ]
+}
