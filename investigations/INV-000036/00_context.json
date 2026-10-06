@@ -1,0 +1,39 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "00_context",
+  "investigation_id": "INV-000036",
+  "rq_id": "RQ-000036",
+  "context_state": "frozen",
+  "question": {
+    "text": "それを実現するためにどのような技術が用いられるか",
+    "notion_url": "https://app.notion.com/p/3f1e5855be3981f2a4e4da5f6f63e9b4"
+  },
+  "question_type": "Methodological",
+  "scope": "Dynamic Pricingの価格決定を実装するために用いられるデータ処理、需要・価格反応の推定、予測、最適化、意思決定アルゴリズム、実験・評価、価格配信・更新、監視等の主要な技術・method familyを対象とし、それぞれがpricing pipelineのどの機能を担い、どのように組み合わされるかを整理する。特定業界・企業への適用ではなく、Dynamic Pricing systemに共通する技術構成を対象とする。",
+  "investigation_boundary": {
+    "include": [
+      "Data / feature layer：transaction / booking / inventory data、demand signals、competitor / market information、temporal / contextual features、streaming / batch data processing",
+      "Demand estimation / forecasting：statistical forecasting、machine learningによる需要予測、seasonality / trend modeling",
+      "Price response / elasticity estimation：price elasticity estimation、demand curve estimation、willingness-to-pay等の推定が実装上利用される場合",
+      "Decision / optimization：rule-based pricing、mathematical optimization、constrained optimization、stochastic optimization、contextual bandit / reinforcement learning等のsequential decision methods、exploration–exploitationを扱うmethod",
+      "Experimentation / evaluation：simulation、offline evaluation / backtesting、A/B testing等、revenue / profit等のperformance measurement",
+      "Serving / system architecture：batch repricing、real-time / near-real-time pricing、pricing API / decision service、feature / model serving、feedback loop",
+      "Operational controls：price floor / ceiling、business rules、guardrails、monitoring / drift detection、human override等"
+    ],
+    "exclude": [
+      "Dynamic Pricingの基本的な意思決定原理そのもの（RQ1）",
+      "Revenue Management等との概念比較（RQ2）",
+      "旅行代理店・OTA固有のシステム構成・導入事例（RQ4）",
+      "個別vendor / software製品の網羅的比較",
+      "特定のMLアルゴリズムについての数理的詳細",
+      "「どのアルゴリズムが最も優れているか」という一般的ランキング",
+      "個々の企業のproprietary algorithmの推測",
+      "fairness / regulation / consumer acceptanceの詳細分析"
+    ],
+    "evidence_cutoff": null
+  },
+  "assumptions": [
+    "Dynamic PricingはML/AIを必須としない。rule-based、statistical、optimization-based等も対象とする。"
+  ],
+  "frozen_at": "2026-10-06T01:22:22Z"
+}
