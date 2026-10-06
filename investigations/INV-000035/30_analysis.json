@@ -1,0 +1,135 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "30_analysis",
+  "investigation_id": "INV-000035",
+  "rq_id": "RQ-000035",
+  "analyzed_at": "2026-10-06T01:04:30Z",
+  "question_type": "Comparative",
+  "profile": {
+    "comparison_units": [
+      "Dynamic Pricing",
+      "Fixed / Static Pricing",
+      "Revenue Management",
+      "Yield Management",
+      "Personalized Pricing",
+      "Discounting / Price Promotion"
+    ],
+    "comparison_dimensions": [
+      "primary control variable",
+      "trigger / state dependency",
+      "temporal granularity",
+      "customer granularity",
+      "inventory / capacity relationship",
+      "pricing objective and optimization scope",
+      "conceptual overlap / inclusion relationship"
+    ],
+    "contrasts": [
+      "Fixed / Static Pricingとの境界はprice controlが変化するかである。Dynamic Pricingは価格を変更するが、固定価格でもcapacity allocation等の別controlは動的に変更できる。",
+      "Revenue Managementは、希少・有限capacityを有限horizonで管理するより広いproblem classであり、Dynamic Pricingはその中で利用可能なprice controlの一つになり得る。Revenue Managementは固定価格のままcapacity allocationを動的に制御することもできる。",
+      "Yield Managementは、基礎文献では固定・perishable capacityを需要タイプへ配分してrevenue/yieldを最大化することを中心とする。Dynamic Pricingは価格自体を動かす点が直接的な差だが、両者はRevenue Management文脈で重複し得る。",
+      "Personalized Pricingは、個々の顧客のvaluationやcustomer featuresを用いて個別価格を提示するcustomer-level pricingである。Peopleを価格変更driverに含める広義Dynamic Pricingでは、Personalized PricingはDynamic Pricingと重複し、場合によってはその一形態とみなせる。",
+      "Discounting / Price Promotionは、通常価格からの一時的な価格変更・値下げというcommercial actionである。多くのpromotionは事前に計画・交渉され、即時のstate changeへの反応とは限らない。したがってDynamic Pricingとの境界は『価格が変わるか』ではなく、変更triggerとdecision processにある。"
+    ],
+    "comparability_limits": [
+      "Revenue ManagementとYield Managementの用語関係には歴史的・業界的な揺れがあり、全Sourceが同じtaxonomyを採用しているわけではない。",
+      "Dynamic Pricingの定義自体にも幅があり、Peopleを含む広義定義ではPersonalized Pricingとの境界が意図的に重なる。",
+      "Price PromotionのSourceは主にretail/CPG文脈であり、全業界のpromotion practiceを一律に代表するものではない。",
+      "本Investigationは概念・運用上の境界を対象とし、各手法のperformance優劣や具体アルゴリズムは評価していない。"
+    ]
+  },
+  "working_answer": {
+    "text": "Dynamic Pricingは、隣接手法と排他的な一カテゴリとしてではなく、『何を動かすか』『何を契機に動かすか』『誰の粒度で動かすか』『capacity制約をどう扱うか』で区別するのが適切である。Fixed / Static Pricingとの最小の差は、Dynamic Pricingでは価格自体が状態・需要条件に応じて変更される点にある。ただし固定価格でもcapacity allocationは動的に制御できる。Revenue Managementは希少・perishable capacityを有限horizonで管理するより広い意思決定問題で、Dynamic Pricingはその中のprice controlとして用いられ得る一方、価格を固定してcapacityを配分するRevenue Managementも成立する。Yield Managementは基礎文献ではcapacityを需要タイプへ配分してrevenue/yieldを最大化することが中心であり、Dynamic Pricingとは主controlが異なるが強く重なる。Personalized Pricingは個々の顧客のvaluationやfeaturesに基づくcustomer-specific pricingで、Peopleをdriverとする広義Dynamic Pricingとは重複し、一形態とみなせる場合がある。Discounting / Price Promotionは一時的な価格変更・値下げであり、多くは計画的なcommercial actionであるため、Dynamic Pricingとの境界は価格変化そのものではなく、state-dependentなtriggerとdecision ruleの有無にある。",
+    "knowledge_unit_refs": [
+      "K0001",
+      "K0002",
+      "K0003",
+      "K0004",
+      "K0005",
+      "K0006",
+      "K0007"
+    ]
+  },
+  "judgments": [
+    {
+      "judgment_id": "J0001",
+      "statement": "Dynamic PricingをRevenue Management / Yield Managementと単純な並列カテゴリとして扱うのは不適切であり、Dynamic PricingはRevenue Managementの中で用いられるprice controlになり得る。",
+      "knowledge_unit_refs": [
+        "K0002",
+        "K0003",
+        "K0004",
+        "K0007"
+      ]
+    },
+    {
+      "judgment_id": "J0002",
+      "statement": "Fixed / Static Pricingとの最も直接的な境界は価格自体の可変性だが、固定価格でもcapacity control等の動的意思決定は成立するため、『dynamic』をシステム全体の可変性と混同してはならない。",
+      "knowledge_unit_refs": [
+        "K0001",
+        "K0002",
+        "K0004"
+      ]
+    },
+    {
+      "judgment_id": "J0003",
+      "statement": "Personalized Pricingはindividual-customer granularityによって特徴付けられ、広義Dynamic Pricingとは包含・重複関係にある。",
+      "knowledge_unit_refs": [
+        "K0004",
+        "K0005",
+        "K0007"
+      ]
+    },
+    {
+      "judgment_id": "J0004",
+      "statement": "Price Promotionはtemporary price actionであり、Dynamic Pricingとの識別には価格変更の有無ではなく、変更trigger、計画性、state dependencyを見る必要がある。",
+      "knowledge_unit_refs": [
+        "K0004",
+        "K0006",
+        "K0007"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "text": "Revenue Management / Yield Managementの境界は文献・時代・業界によって揺れるため、本Analysisは単一の普遍taxonomyを主張しない。",
+      "knowledge_unit_refs": [
+        "K0002",
+        "K0003",
+        "K0007"
+      ]
+    },
+    {
+      "text": "Personalized PricingをDynamic Pricingのsubsetと呼べるかはDynamic Pricingをどこまで広く定義するかに依存する。本AnalysisはPeopleをdriverに含む広義定義とのoverlapを示す。",
+      "knowledge_unit_refs": [
+        "K0004",
+        "K0005"
+      ]
+    },
+    {
+      "text": "Promotion pricingのEvidenceはretail中心であり、旅行業界等の特定業界でのpromotion運用はRQ4の対象として別途検証が必要である。",
+      "knowledge_unit_refs": [
+        "K0006"
+      ]
+    }
+  ],
+  "unresolved_questions": [
+    "Revenue ManagementとYield Managementの現代実務での用語使い分けは、旅行産業の各subsectorでどの程度異なるか。",
+    "市場・segment単位のprice differentiationとindividual-level personalized pricingの実務上の境界を、データ利用単位からどこまで一貫して分類できるか。"
+  ],
+  "alternative_interpretations": [
+    {
+      "text": "Dynamic Pricingを狭く『時間・在庫・市場状態に応じた価格変更』と定義する文脈ではPersonalized Pricingを別概念として分離しやすいが、Peopleを価格変更driverに含む広義定義では両者は重複する。",
+      "knowledge_unit_refs": [
+        "K0004",
+        "K0005"
+      ]
+    },
+    {
+      "text": "Yield ManagementをRevenue Managementの旧称・近接語として広く使う実務文脈では、両者の差よりもcapacity allocationとpricing controlの差を直接見る方が分析上有用である。",
+      "knowledge_unit_refs": [
+        "K0002",
+        "K0003",
+        "K0007"
+      ]
+    }
+  ]
+}
