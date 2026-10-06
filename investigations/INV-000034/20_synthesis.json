@@ -3,7 +3,7 @@
   "artifact_type": "20_synthesis",
   "investigation_id": "INV-000034",
   "rq_id": "RQ-000034",
-  "synthesized_at": "2026-10-05T14:20:08Z",
+  "synthesized_at": "2026-10-06T01:18:19Z",
   "knowledge_units": [
     {
       "knowledge_unit_id": "K0001",
@@ -54,14 +54,15 @@
     },
     {
       "knowledge_unit_id": "K0005",
-      "statement": "Operational constraints materially shape the pricing decision; examples include finite or perishable inventory, allowable price sets, time-varying demand, holding costs, discounting, reordering, overbooking, and cancellations.",
+      "statement": "Finite or perishable inventory/capacity, a finite selling horizon, and an allowable price set can constrain feasible pricing decisions in canonical formulations; other features such as time-varying demand, holding costs, discounting, reordering, overbooking, and cancellations are heterogeneous model extensions that alter demand, cost/objective structure, or operational state transitions rather than forming one homogeneous constraint category.",
       "evidence_refs": [
         "E0003",
         "E0004",
         "E0007"
       ],
       "qualifiers": [
-        "These constraints are examples from inventory-oriented formulations, not a claim that all dynamic-pricing applications share the same constraints."
+        "The selected evidence distinguishes resource/feasibility constraints from other model features and extensions; the latter should not all be labeled constraints.",
+        "The examples are drawn from inventory-oriented formulations and are not claimed to be universal across all dynamic-pricing applications."
       ]
     },
     {
