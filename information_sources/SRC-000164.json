@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000164",
+  "notion_url": "https://app.notion.com/p/3f1e5855be39814ca82ed989326fa315",
+  "title": "How price promotions work: A review of practice and theory",
+  "source_type": "Book Chapter",
+  "journal_or_publisher": "Handbook of the Economics of Marketing, Volume 1",
+  "authors": "Eric T. Anderson; Edward J. Fox",
+  "year": 2019,
+  "url": "https://www.sciencedirect.com/science/article/pii/S2452261919300061",
+  "doi": "10.1016/bs.hem.2019.04.006",
+  "version_or_edition": null,
+  "reliability_note": "Academic review chapter in the Handbook of the Economics of Marketing. Used for the definition and institutional characteristics of retail price promotions as temporary price changes that are often planned and coordinated."
+}
