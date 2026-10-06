@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000169",
+  "notion_url": "https://app.notion.com/p/3f1e5855be398101963dc15ed4afe7f6",
+  "title": "A Cloud Native Framework for Real-time Pricing in e-Commerce",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "International Journal of Advanced Computer Science and Applications",
+  "authors": "Archana Kumari; Mohan Kumar S",
+  "year": 2023,
+  "url": "https://thesai.org/Publications/ViewPaper?Code=IJACSA&Issue=4&SerialNo=57&Volume=14",
+  "doi": "10.14569/IJACSA.2023.0140457",
+  "version_or_edition": null,
+  "reliability_note": "Peer-reviewed systems-design article. Used narrowly for modular real-time pricing architecture components such as demand/competition watchers, analytics, pricing models, and cloud-native execution; architectural generality should be treated cautiously."
+}
