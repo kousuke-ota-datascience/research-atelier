@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000162",
+  "notion_url": "https://app.notion.com/p/3f1e5855be39815b8a46eb9bfc0d6ac0",
+  "title": "Yield management: A tool for capacity-constrained service firms",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "Journal of Operations Management",
+  "authors": "Sheryl E. Kimes",
+  "year": 1989,
+  "url": "https://onlinelibrary.wiley.com/doi/10.1016/0272-6963%2889%2990035-1",
+  "doi": "10.1016/0272-6963(89)90035-1",
+  "version_or_edition": null,
+  "reliability_note": "Peer-reviewed foundational yield-management article. Used for capacity allocation, perishable inventory, demand classes, and revenue/yield objective."
+}
