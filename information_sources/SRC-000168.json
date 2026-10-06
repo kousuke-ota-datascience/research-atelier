@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000168",
+  "notion_url": "https://app.notion.com/p/3f1e5855be3981589529cde5786f85d7",
+  "title": "Competitive pricing on online markets: a literature review",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "Journal of Revenue and Pricing Management",
+  "authors": "Torsten J. Gerpott; Jan Berends",
+  "year": 2022,
+  "url": "https://link.springer.com/article/10.1057/s41272-022-00390-x",
+  "doi": "10.1057/s41272-022-00390-x",
+  "version_or_edition": null,
+  "reliability_note": "Peer-reviewed literature review of competitive online pricing. Used for the distinction between manual rule-based pricing and data-driven algorithmic optimization and for the role of competitor/market information."
+}
