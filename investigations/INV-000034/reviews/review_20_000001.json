@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000034",
+  "review_seq": 1,
+  "layer": "20_synthesis",
+  "review_kind": "10_evidence_to_20_synthesis",
+  "target_blob_sha": "87bb568447fcb8286958d041dcd02f79cba8d1d8",
+  "assessment": "Most synthesis units preserve the Evidence support boundary: K0001-K0004 correctly separate the broad repeated/state-contingent concept from canonical finite-horizon revenue-maximization models; K0006 treats demand learning as an important but non-universal extension; and K0007 frames data, low repricing friction, and decision support as implementation enablers. One semantic categorization issue remains in K0005, where heterogeneous model extensions are grouped under 'operational constraints'.",
+  "findings": [
+    {
+      "finding_id": "F001",
+      "severity": "Minor",
+      "target": "20_synthesis.K0005",
+      "evidence": [
+        "10_evidence.E0003 presents time-varying demand, finite allowable price sets, holding costs, discounting, reordering, overbooking, and random cancellations as heterogeneous extensions/cases of the Gallego-van Ryzin framework, not as one homogeneous class of constraints.",
+        "10_evidence.E0004 and E0007 support finite/perishable/nonrenewable resources and inventory considerations as resource-state or capacity constraints; E0003 separately includes cost terms, demand-process variation, and operational/state-transition features."
+      ],
+      "impact": "K0005 collapses constraints, cost/objective terms, demand-process variation, and operational state transitions into one 'operational constraints' category. The main Working Answer is not overturned because its constraint examples are narrower and independently supported, but the synthesis category can mislead later conceptual reuse or downstream comparison.",
+      "repair_direction": {
+        "mode": "same_investigation",
+        "affected_layer": "20_synthesis",
+        "instruction": "Rephrase K0005 to distinguish actual decision constraints/finite resources (for example finite inventory or capacity, finite horizon, allowable price set) from other model features or extensions (for example time-varying demand, holding costs, discounting, reordering, overbooking, cancellations). Preserve the supported point that operational conditions shape pricing, then rebuild/revalidate 30_analysis from the repaired synthesis."
+      }
+    }
+  ],
+  "verdict": "FINDINGS"
+}

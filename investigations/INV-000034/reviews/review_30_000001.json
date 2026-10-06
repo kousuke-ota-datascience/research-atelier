@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000034",
+  "review_seq": 1,
+  "layer": "30_analysis",
+  "review_kind": "20_synthesis_plus_00_context_to_30_analysis",
+  "target_blob_sha": "007e2e43d25575a8ca9b3bb6fb75f8fafce23b23",
+  "assessment": "The Conceptual analysis answers the frozen RQ at the intended level: it identifies dynamic pricing as repeated/state-contingent price choice linking objective, observable state/information, price-sensitive demand, and operational constraints; distinguishes the canonical OR finite-horizon revenue-maximization formulation from a broader demand-context definition; and keeps learning as an important extension rather than a universal requirement. The limitations preserve the evidence-base bias toward OR/revenue-management and retail literature. The K0005 categorization issue does not create an independent Analysis-layer finding because the Working Answer and dimensions use narrower, supportable constraint examples rather than relying on the heterogeneous extensions as constraints.",
+  "findings": [],
+  "verdict": "PASS"
+}

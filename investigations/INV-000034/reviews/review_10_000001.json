@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000034",
+  "review_seq": 1,
+  "layer": "10_evidence",
+  "review_kind": "source_evidence_note_to_10_evidence",
+  "target_blob_sha": "3e4553366884adcc6e856833c20ff762b71e46ce",
+  "assessment": "The Evidence layer is source-faithful and traceable. E0001-E0003 accurately reflect the Gallego-van Ryzin finite-horizon stochastic price-sensitive inventory model and listed extensions; E0004-E0005 accurately capture the Bitran-Caldentey generic revenue-management control problem; E0006-E0007 stay within Elmaghraby-Keskinocak's adoption/inventory framing; E0008-E0009 are consistent with den Boer's introductory definition and learning motivation; and E0010 matches Kopalle et al.'s four demand-driver definition. Source revisions and Evidence Note provenance are pinned. No material Source-to-Evidence semantic distortion is identified.",
+  "findings": [],
+  "verdict": "PASS"
+}
