@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000161",
+  "notion_url": "https://app.notion.com/p/3f1e5855be3981f28b52cb688796cceb",
+  "title": "Dynamic Pricing Strategies for Multiproduct Revenue Management Problems",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "Manufacturing & Service Operations Management",
+  "authors": "Constantinos Maglaras; Joern Meissner",
+  "year": 2006,
+  "url": "https://pubsonline.informs.org/doi/10.1287/msom.1060.0105",
+  "doi": "10.1287/msom.1060.0105",
+  "version_or_edition": null,
+  "reliability_note": "Peer-reviewed operations-management article. Used for the structural distinction and common formulation between dynamic pricing and fixed-price capacity control within revenue management."
+}
