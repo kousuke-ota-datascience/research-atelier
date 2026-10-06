@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000166",
+  "notion_url": "https://app.notion.com/p/3f1e5855be3981c0b93fe83d5499807f",
+  "title": "Dynamic Pricing Without Knowing the Demand Function: Risk Bounds and Near-Optimal Algorithms",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "Operations Research",
+  "authors": "Omar Besbes; Assaf Zeevi",
+  "year": 2009,
+  "url": "https://pubsonline.informs.org/doi/abs/10.1287/opre.1080.0640",
+  "doi": "10.1287/opre.1080.0640",
+  "version_or_edition": null,
+  "reliability_note": "Peer-reviewed Operations Research article. Used for online demand learning, parametric/nonparametric demand models, exploration-exploitation, price optimization, and regret-based evaluation."
+}
