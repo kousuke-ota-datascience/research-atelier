@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000165",
+  "notion_url": "https://app.notion.com/p/3f1e5855be3981d69244da66ac507145",
+  "title": "Analytics for an Online Retailer: Demand Forecasting and Price Optimization",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "Manufacturing & Service Operations Management",
+  "authors": "Kris Johnson Ferreira; Bin Hong Alex Lee; David Simchi-Levi",
+  "year": 2016,
+  "url": "https://pubsonline.informs.org/doi/10.1287/msom.2015.0561",
+  "doi": "10.1287/msom.2015.0561",
+  "version_or_edition": null,
+  "reliability_note": "Peer-reviewed practice-focused article. Used for an implemented pipeline combining machine-learning demand forecasting, multiproduct price optimization, a pricing decision-support tool, and field experimentation."
+}
