@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000163",
+  "notion_url": "https://app.notion.com/p/3f1e5855be3981fa95c9d4e66365286f",
+  "title": "The Value of Personalized Pricing",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "Management Science",
+  "authors": "Adam N. Elmachtoub; Vishal Gupta; Michael L. Hamilton",
+  "year": 2021,
+  "url": "https://pubsonline.informs.org/doi/10.1287/mnsc.2020.3821",
+  "doi": "10.1287/mnsc.2020.3821",
+  "version_or_edition": null,
+  "reliability_note": "Peer-reviewed article. Used for the definition of personalized pricing as predicting an individual customer's valuation and tailoring the offered price to that customer."
+}
