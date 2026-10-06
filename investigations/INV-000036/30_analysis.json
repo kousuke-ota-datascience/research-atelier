@@ -1,0 +1,143 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "30_analysis",
+  "investigation_id": "INV-000036",
+  "rq_id": "RQ-000036",
+  "analyzed_at": "2026-10-06T01:31:33Z",
+  "question_type": "Methodological",
+  "profile": {
+    "method_or_procedure": "Dynamic Pricingを実装するend-to-end pricing pipeline：data/state acquisition → demand/price-response estimation or forecasting → pricing rule/optimization/sequential policy → decision support / serving → evaluation and feedback → operational guardrails / human oversight",
+    "intended_use": "需要・在庫・競争環境等の変化を価格決定へ反映し、反復可能な価格recommendationまたはprice actionを生成・評価・統制すること。",
+    "assumptions": [
+      "利用するstate / market signalが観測可能または推定可能であること。",
+      "価格と需要反応の関係を、rule、parametric/nonparametric model、machine-learning forecast、またはonline learning policyのいずれかで意思決定に接続できること。",
+      "価格decisionを実運用へ反映するdecision-support / serving processが存在すること。",
+      "自動化の程度に応じて、必要なbusiness constraint・guardrail・human oversightを別途設計できること。"
+    ],
+    "evaluation_criteria": [
+      "forecast-then-optimize型では、需要予測を価格optimizationへ適切に接続できること。",
+      "online learning型では、学習中の機会損失を含めてpolicy performanceを評価できること（例：regret）。",
+      "deployed pricing policyでは、controlled field experiment等でbusiness outcomeを評価できること。",
+      "production運用では、price cap等のguardrailとmanual-review triggerを含むoperational controlが機能すること。"
+    ],
+    "comparators": [
+      "manual rule-based pricing",
+      "forecast / estimate then optimize",
+      "adaptive online learning / exploration-exploitation",
+      "reinforcement-learning-based sequential policy"
+    ],
+    "tradeoffs": [
+      "rule-based pricingは明示的なif-then logicで運用できる一方、大規模・高頻度なstate variationをdata-drivenに吸収する能力はalgorithmic methodsと異なる。",
+      "forecast-then-optimizeは推定とdecisionを分離して設計しやすい一方、需要関係が未知で逐次学習が必要な場合はlearningとpricingを結合するmethodが必要になる。",
+      "online learning / RLは環境からpolicyを学習できる一方、explorationによる短期的機会損失、modeling complexity、tractabilityやscalabilityを考慮する必要がある。",
+      "real-time automationを高めるほど、serving architectureとguardrail / human-oversight designの重要性が増す。"
+    ],
+    "applicability_limits": [
+      "本Evidenceは特定のproduction architectureを普遍的標準として支持していない。batch、streaming、API、feature/model serving等の具体構成は業界・更新頻度・latency要求によって異なる。",
+      "Reinforcement Learningは有力なmethod familyだが、全Dynamic Pricing systemで必要または一般的であるとは結論しない。",
+      "price elasticity / willingness-to-pay等の推定手法について、単一の標準methodは本Evidenceから確定しない。",
+      "旅行代理店・OTA固有のsystem integrationやcommercial workflowはRQ4の範囲であり、本Analysisでは一般技術構成に限定する。"
+    ]
+  },
+  "working_answer": {
+    "text": "Dynamic Pricingを実現する技術は、単一のAIモデルではなく、複数層からなるpricing pipelineとして捉えるのが適切である。まず、sales / transaction、inventory、demand signals、competitor information等のstateを取得し、需要や価格反応を推定・予測する。ここではparametric / nonparametric demand model、statistical method、machine learning等が利用できる。次にprice decisionを生成する層があり、manual rule-basedなif-then pricing、需要予測を入力とするmathematical / algorithmic optimization、需要関係を価格決定と同時に学習するonline learning / exploration-exploitation、さらにMarkov decision process型の問題に対するreinforcement learning等が候補となる。したがってML/AIは必須ではない。決定methodの後には、pricing decision-support toolやreal-time pricing service等、recommendationを実運用へ渡すserving layerが必要になる。さらに、field experimentやregret等によるevaluation、sales feedbackによるmodel / policy update、price caps・manual review trigger・human oversight等のoperational controlsを組み合わせる。技術構成は概ね Data → Estimate/Forecast → Decision/Optimization → Serving → Evaluation/Feedback → Guardrail と整理できるが、forecast-then-optimize型とonline-learning型では推定と意思決定の結合の仕方が異なり、production architectureも業界・latency要求により変わる。",
+    "knowledge_unit_refs": [
+      "K0001",
+      "K0002",
+      "K0003",
+      "K0004",
+      "K0005",
+      "K0006",
+      "K0007",
+      "K0008",
+      "K0009"
+    ]
+  },
+  "judgments": [
+    {
+      "judgment_id": "J0001",
+      "statement": "Dynamic Pricingの技術基盤は『予測モデル』単体ではなく、データ取得から価格配信・評価・統制までを含むend-to-end decision systemとして設計すべきである。",
+      "knowledge_unit_refs": [
+        "K0001",
+        "K0007",
+        "K0008",
+        "K0009"
+      ]
+    },
+    {
+      "judgment_id": "J0002",
+      "statement": "価格decision methodにはrule-based、forecast-then-optimize、adaptive online learning、reinforcement learning等の異なるmethod familyがあり、AI/MLをDynamic Pricingの必要条件とみなすべきではない。",
+      "knowledge_unit_refs": [
+        "K0003",
+        "K0004",
+        "K0005",
+        "K0006"
+      ]
+    },
+    {
+      "judgment_id": "J0003",
+      "statement": "需要関係が未知または変化する場合、推定とpricingを分離するだけでなく、price actionから得られるfeedbackを利用して需要を学習しながら価格を選択するsequential methodが重要になる。",
+      "knowledge_unit_refs": [
+        "K0002",
+        "K0006"
+      ]
+    },
+    {
+      "judgment_id": "J0004",
+      "statement": "実装の成立条件にはoptimizer以外のproduction要素も含まれ、serving、evaluation、guardrail、manual oversightはpricing methodとは分離して設計・検証する必要がある。",
+      "knowledge_unit_refs": [
+        "K0007",
+        "K0008",
+        "K0009"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "text": "production architectureに関するEvidenceはonline retail / e-commerce等の個別実装を含むため、特定のcloud-native componentやreal-time構成を全業界へ一般化していない。",
+      "knowledge_unit_refs": [
+        "K0007"
+      ]
+    },
+    {
+      "text": "RLについてはpeer-reviewed surveyでmethod familyとしての位置付けを確認したが、rule-based / optimization-based methodsに対する実運用上の普及率や優越性は本Investigationでは評価していない。",
+      "knowledge_unit_refs": [
+        "K0004",
+        "K0006"
+      ]
+    },
+    {
+      "text": "price elasticityやwillingness-to-pay推定はcandidate input/methodとしてScopeに含まれるが、本Evidence setは具体的推定手法を十分比較していない。",
+      "knowledge_unit_refs": [
+        "K0002",
+        "K0003"
+      ]
+    },
+    {
+      "text": "個別企業vendor製品、proprietary algorithm、旅行代理店・OTA固有のintegration patternはContext上の除外対象である。"
+    }
+  ],
+  "unresolved_questions": [
+    "price elasticity / demand-curve estimationについて、実務で利用される代表的推定methodをどの粒度まで一般化できるか。",
+    "batch repricingとnear-real-time / real-time servingを分けるlatency・data freshness・cost条件はどのように整理すべきか。",
+    "production monitoringで、需要model drift、pricing-policy drift、business-rule violationをそれぞれどのmetricで検出するのが妥当か。"
+  ],
+  "alternative_interpretations": [
+    {
+      "text": "Dynamic Pricingを狭く価格optimization problemとして捉える場合、servingやguardrailは周辺システムとみなせる。一方、本RQの『実現するための技術』をend-to-end systemとして読む場合、それらは実運用成立に必要な独立技術層として含める方が整合的である。",
+      "knowledge_unit_refs": [
+        "K0001",
+        "K0007",
+        "K0009"
+      ]
+    },
+    {
+      "text": "需要予測とoptimizationを明確に分離するpipelineだけでなく、online learningではprice action自体が情報獲得手段になるため、Estimate → Optimizeという一方向pipelineではなくfeedback loopとして理解する必要がある。",
+      "knowledge_unit_refs": [
+        "K0005",
+        "K0006",
+        "K0008"
+      ]
+    }
+  ]
+}
