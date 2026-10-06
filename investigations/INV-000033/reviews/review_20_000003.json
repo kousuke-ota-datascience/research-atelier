@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000033",
+  "review_seq": 3,
+  "layer": "20_synthesis",
+  "review_kind": "10_evidence_to_20_synthesis",
+  "target_blob_sha": "be4688e3cb5d01f847e6c72d0e88cd6da56e66a9",
+  "assessment": "The rebuilt Synthesis remains within the repaired Evidence boundary. It compares A–D's shared A4 assignments without erasing their D07–D17 structural differences, distinguishes E=A2 from F=A3 despite their shared ROUTE_CONNECTION causal-source code, preserves common candidate-as-design states and taxonomy/conflict qualifications, and explicitly blocks a D21-to-other-dimensions causal interpretation. No Synthesis-layer semantic finding is identified.",
+  "findings": [],
+  "verdict": "PASS"
+}

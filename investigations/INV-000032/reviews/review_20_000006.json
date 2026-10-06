@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000032",
+  "review_seq": 6,
+  "layer": "20_synthesis",
+  "review_kind": "10_evidence_to_20_synthesis",
+  "target_blob_sha": "30b6cb72e0de96e6767c251deb1eafd1190114c1",
+  "assessment": "The Synthesis layer stays within the Evidence support boundary. It separates corpus prevalence from candidate definitions, preserves source-level uncertainty and taxonomy-gap possibilities, states the no-guess U/NA/C contract, and distinguishes corpus non-observation from codebook absence. It supplies the definitions and candidate facts needed for downstream formal coding without prematurely asserting unsupported final values. No Synthesis-layer semantic finding is identified.",
+  "findings": [],
+  "verdict": "PASS"
+}

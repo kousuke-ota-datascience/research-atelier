@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000032",
+  "review_seq": 6,
+  "layer": "00_context",
+  "review_kind": "context_semantic_validity",
+  "target_blob_sha": "f779a4dacedfcd75786107cf1a3c317e933f1160",
+  "assessment": "The frozen Comparative context remains semantically coherent. It fixes candidate A–F against the pinned canonical corpus, requires D01–D21 status/code comparison, explicitly separates U/NA/C from ordinary code values, and prohibits both aggregate-similarity compression and corpus-nonobservation-to-real-world-novelty inference. No context-defining semantic defect is identified.",
+  "findings": [],
+  "verdict": "PASS"
+}

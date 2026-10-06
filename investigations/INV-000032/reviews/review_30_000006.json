@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000032",
+  "review_seq": 6,
+  "layer": "30_analysis",
+  "review_kind": "20_synthesis_plus_00_context_to_30_analysis",
+  "target_blob_sha": "9a2b5904a40fad8c7ebe83ac54da07dcf09bbfb6",
+  "assessment": "The repaired Analysis now executes the frozen D01–D21 comparison rather than leaving candidate dimensions unassigned. D01.G8 is explicitly limited to research-time candidate generation; D02–D06/D19 are treated as NA only for the pre-circulation candidate-as-design scope; D08/D12/D14/D20 remain U rather than being guessed; A/B temporal alternatives are preserved as C; and D07 taxonomy gaps remain U. The D21 assignments A–D=A4, E=A2, F=A3 are consistent with the pinned A0–A4 distinctions and are accompanied by a boundary alternative rather than overstated. E/F use the existing ROUTE_CONNECTION code without confusing corpus non-observation with a taxonomy gap. Conclusions remain corpus-relative and do not infer global novelty or quality. No Analysis-layer semantic finding is identified.",
+  "findings": [],
+  "verdict": "PASS"
+}

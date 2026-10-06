@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000033",
+  "review_seq": 3,
+  "layer": "30_analysis",
+  "review_kind": "20_synthesis_plus_00_context_to_30_analysis",
+  "target_blob_sha": "5be238905a69bce92993fddb39bac1dacdf2e3fb",
+  "assessment": "The Analysis now satisfies the frozen Investigation prerequisite that failed Review 000002: it uses finalized RQ-000032 D01–D21 coding, including explicit D21 assignments, and performs the requested comparison across the reality-anchor integration modes and the other differing dimensions. It keeps the six candidates as an intentional design set, treats observed relationships as design-set associations rather than general causal effects, preserves D07 and D16 limitations, and retains the D21 boundary alternative. The prior context-adherence finding is therefore resolved, with no new Analysis-layer semantic finding identified.",
+  "findings": [],
+  "verdict": "PASS"
+}

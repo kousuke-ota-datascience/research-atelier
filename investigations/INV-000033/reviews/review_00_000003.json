@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000033",
+  "review_seq": 3,
+  "layer": "00_context",
+  "review_kind": "context_semantic_validity",
+  "target_blob_sha": "a4b5cd1467d9456e14fe887862a992025e3af940",
+  "assessment": "The frozen Comparative context is semantically coherent. It requires the RQ-000031 candidate set together with finalized RQ-000032 D01–D21 coding, distinguishes reality-anchor integration modes, and explicitly forbids quality ranking, small-sample statistical generalization, and automatic causal attribution from D21 to other dimensions. No context-defining semantic defect is identified.",
+  "findings": [],
+  "verdict": "PASS"
+}

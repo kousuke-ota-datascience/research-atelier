@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000032",
+  "review_seq": 6,
+  "layer": "10_evidence",
+  "review_kind": "source_evidence_note_to_10_evidence",
+  "target_blob_sha": "ef95cd3ae73752c005723550e7b0451dc0593d85",
+  "assessment": "The Evidence layer is source-faithful and traceable. Source revisions are pinned; E0007 accurately preserves what INV-000031 candidate definitions explicitly specify and leave unresolved; E0008 anchors the complete 25-entry corpus snapshot; E0009 pins the Dimension-status and D21 coding contract; and E0010–E0015 faithfully represent the six candidate definitions without treating the later formal assignments as source facts. No Evidence-layer semantic finding is identified.",
+  "findings": [],
+  "verdict": "PASS"
+}
