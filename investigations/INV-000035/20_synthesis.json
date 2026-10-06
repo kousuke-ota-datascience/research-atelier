@@ -1,0 +1,212 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "20_synthesis",
+  "investigation_id": "INV-000035",
+  "rq_id": "RQ-000035",
+  "synthesized_at": "2026-10-06T01:03:00Z",
+  "knowledge_units": [
+    {
+      "knowledge_unit_id": "K0001",
+      "statement": "Fixed/static pricing is distinguished from dynamic pricing by whether the offered price changes: static pricing holds a uniform price, whereas dynamic pricing changes price across relevant states or demand-driver dimensions.",
+      "evidence_refs": [
+        "E0003",
+        "E0004"
+      ],
+      "qualifiers": [
+        "A fixed price does not imply that every surrounding commercial decision is fixed."
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0002",
+      "statement": "Revenue management is broader than dynamic pricing in canonical constrained-resource formulations: it manages scarce/perishable resources over a finite horizon and may jointly or alternatively control product menus, quantities/capacity allocation, acceptance, and prices.",
+      "evidence_refs": [
+        "E0001",
+        "E0002",
+        "E0005",
+        "E0006"
+      ],
+      "qualifiers": [
+        "Dynamic pricing can be one revenue-management control, but revenue management can also operate with fixed prices and dynamic capacity allocation."
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0003",
+      "statement": "Yield management is centered on allocating fixed, perishable service capacity among different demand types to maximize revenue or yield.",
+      "evidence_refs": [
+        "E0007",
+        "E0008"
+      ],
+      "qualifiers": [
+        "The foundational source is capacity-allocation oriented; later industry usage may use revenue management and yield management with partially overlapping meanings."
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0004",
+      "statement": "Dynamic pricing is primarily identified by price as an actively changing control, with price changes prompted by differences or changes in demand-relevant conditions such as people, product configuration, period, or place.",
+      "evidence_refs": [
+        "E0003",
+        "E0005"
+      ],
+      "qualifiers": [
+        "The specific optimization or forecasting algorithm is outside this Investigation."
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0005",
+      "statement": "Personalized pricing is distinguished by customer granularity: it estimates an individual customer's valuation or uses customer features and offers a customer-tailored price.",
+      "evidence_refs": [
+        "E0009",
+        "E0010"
+      ],
+      "qualifiers": [
+        "Because a broad definition of dynamic pricing includes price changes driven by 'people', personalized pricing can overlap with dynamic pricing rather than forming a disjoint category."
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0006",
+      "statement": "Price promotion is distinguished primarily by the temporary nature and commercial purpose/process of the price change; promotions may be planned and negotiated in advance rather than being real-time responses to current supply or demand.",
+      "evidence_refs": [
+        "E0011",
+        "E0012"
+      ],
+      "qualifiers": [
+        "A promotion can still be implemented dynamically in a particular system; temporariness alone does not determine whether the underlying decision process is dynamic pricing."
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0007",
+      "statement": "The adjacent concepts are best separated along multiple dimensions—what control changes, what triggers the change, the customer granularity, the role of scarce capacity/inventory, and the temporal form—rather than as mutually exclusive labels.",
+      "evidence_refs": [
+        "E0002",
+        "E0003",
+        "E0005",
+        "E0006",
+        "E0008",
+        "E0009",
+        "E0011",
+        "E0012"
+      ],
+      "qualifiers": [
+        "This is a cross-source synthesis; terminology varies by literature and industry."
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "relation_id": "R0001",
+      "relation_type": "qualification",
+      "knowledge_unit_refs": [
+        "K0001",
+        "K0002"
+      ],
+      "description": "Fixed pricing is the opposite of dynamic price movement, but a fixed-price system may still make dynamic revenue-management capacity decisions.",
+      "evidence_refs": [
+        "E0004",
+        "E0005",
+        "E0006"
+      ]
+    },
+    {
+      "relation_id": "R0002",
+      "relation_type": "dependency",
+      "knowledge_unit_refs": [
+        "K0002",
+        "K0003"
+      ],
+      "description": "Foundational yield management is a capacity-allocation form within the broader family of revenue/yield management problems involving scarce, perishable capacity.",
+      "evidence_refs": [
+        "E0001",
+        "E0007",
+        "E0008"
+      ]
+    },
+    {
+      "relation_id": "R0003",
+      "relation_type": "association",
+      "knowledge_unit_refs": [
+        "K0004",
+        "K0005"
+      ],
+      "description": "Personalized pricing can be a people-driven instance of dynamic pricing when individual or segment information triggers the offered price.",
+      "evidence_refs": [
+        "E0003",
+        "E0009",
+        "E0010"
+      ]
+    },
+    {
+      "relation_id": "R0004",
+      "relation_type": "qualification",
+      "knowledge_unit_refs": [
+        "K0004",
+        "K0006"
+      ],
+      "description": "Both dynamic pricing and promotions can produce changing prices, but promotion is defined by a temporary promotional price change and may be planned rather than state-responsive.",
+      "evidence_refs": [
+        "E0003",
+        "E0011",
+        "E0012"
+      ]
+    },
+    {
+      "relation_id": "R0005",
+      "relation_type": "dependency",
+      "knowledge_unit_refs": [
+        "K0001",
+        "K0002",
+        "K0003",
+        "K0004",
+        "K0005",
+        "K0006",
+        "K0007"
+      ],
+      "description": "No single binary distinction separates all pricing approaches; their boundaries depend on the comparison dimension.",
+      "evidence_refs": [
+        "E0002",
+        "E0003",
+        "E0005",
+        "E0008",
+        "E0009",
+        "E0011"
+      ]
+    }
+  ],
+  "uncertainties": [
+    {
+      "uncertainty_id": "U0001",
+      "description": "Revenue management and yield management terminology is historically and operationally overlapping; the selected evidence supports a capacity-allocation emphasis for yield management but does not establish a universal modern naming convention.",
+      "knowledge_unit_refs": [
+        "K0002",
+        "K0003"
+      ],
+      "evidence_refs": [
+        "E0007",
+        "E0008"
+      ]
+    },
+    {
+      "uncertainty_id": "U0002",
+      "description": "Under broad definitions that include people as a dynamic-pricing driver, personalized pricing overlaps with dynamic pricing; other literatures may reserve dynamic pricing mainly for time/state variation at market or segment level.",
+      "knowledge_unit_refs": [
+        "K0004",
+        "K0005"
+      ],
+      "evidence_refs": [
+        "E0003",
+        "E0009"
+      ]
+    },
+    {
+      "uncertainty_id": "U0003",
+      "description": "Price promotions can be dynamically optimized in practice, so the distinction from dynamic pricing is not whether the observed price changes, but whether the underlying decision is characterized primarily as temporary promotional action or state-contingent price control.",
+      "knowledge_unit_refs": [
+        "K0004",
+        "K0006"
+      ],
+      "evidence_refs": [
+        "E0011",
+        "E0012"
+      ]
+    }
+  ]
+}
