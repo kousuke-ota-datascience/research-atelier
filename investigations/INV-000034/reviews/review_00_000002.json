@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000034",
+  "review_seq": 2,
+  "layer": "00_context",
+  "review_kind": "context_semantic_validity",
+  "target_blob_sha": "597a4fa1c07067b643279f185cf62fd5a45f2c8f",
+  "assessment": "The frozen Conceptual context remains semantically coherent and unchanged from the previously reviewed target. It asks for the basic decision principle of Dynamic Pricing across objective, observable state/information, price as the decision variable, demand response, constraints/uncertainty, and repeated updating, while excluding adjacent-concept comparison, algorithmic detail, travel-specific application, causal impact estimation, and detailed legal/ethical analysis. No context-defining semantic defect is identified.",
+  "findings": [],
+  "verdict": "PASS"
+}

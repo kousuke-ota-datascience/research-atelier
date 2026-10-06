@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000034",
+  "review_seq": 2,
+  "layer": "20_synthesis",
+  "review_kind": "10_evidence_to_20_synthesis",
+  "target_blob_sha": "a9bf6232d2de0ecf5386a45ac0718e5cb6830172",
+  "assessment": "The prior Review 000001 finding is resolved. Repaired K0005 now distinguishes actual resource/feasibility constraints such as finite inventory or capacity, finite selling horizon, and allowable price set from heterogeneous model extensions such as time-varying demand, holding costs, discounting, reordering, overbooking, and cancellations, and it explicitly characterizes the latter as changes to demand, cost/objective structure, or operational state transitions rather than one homogeneous constraint class. K0001-K0007 otherwise remain within the Evidence support boundary and preserve the relevant qualifications and uncertainties. No Synthesis-layer semantic finding remains.",
+  "findings": [],
+  "verdict": "PASS"
+}
