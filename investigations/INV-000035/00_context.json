@@ -1,0 +1,41 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "00_context",
+  "investigation_id": "INV-000035",
+  "rq_id": "RQ-000035",
+  "context_state": "frozen",
+  "question": {
+    "text": "隣接する価格決定手法とどう区別されるか",
+    "notion_url": "https://app.notion.com/p/3f1e5855be3981fdb5e6ee65ea5722b4"
+  },
+  "question_type": "Comparative",
+  "scope": "Dynamic Pricingを、fixed pricing、Revenue Management / Yield Management、personalized pricing、discounting / promotion pricing等の隣接する価格決定アプローチと比較し、それぞれの目的、価格変更の契機、意思決定対象、時間的・顧客別粒度、在庫・容量制約との関係、価格最適化との関係を整理することで、Dynamic Pricingの概念的および実務的な境界を明らかにする。",
+  "investigation_boundary": {
+    "include": [
+      "pricing objective：revenue、profit、inventory utilization等、何を目的とするか",
+      "decision variable：priceそのものを変えるのか、fare class / inventory allocation等を操作するのか",
+      "trigger / state dependency：時間、需要、在庫、競争環境、顧客属性等の何に応じて決定が変化するか",
+      "temporal granularity：静的か、定期更新か、near-real-timeか",
+      "customer granularity：市場・segment単位か、individual単位か",
+      "inventory / capacity relationship",
+      "forecasting / optimizationとの関係",
+      "価格変更そのものとdiscount / promotionとの違い",
+      "各概念間のoverlap / subset / complementary relationship",
+      "academic literatureとindustry usageで用語法が異なる場合、その差異"
+    ],
+    "exclude": [
+      "各手法の具体的なML・optimization algorithm（RQ3）",
+      "OTA・旅行代理店での具体的運用や企業事例（RQ4）",
+      "dynamic pricing単体の基本decision modelの詳細（RQ1）",
+      "各手法の売上・利益への因果効果比較",
+      "「どの手法が最も優れているか」という一般的優劣評価",
+      "法制度・fairness・倫理の詳細比較",
+      "pricing software vendorによる独自分類を、そのまま一般定義として採用すること"
+    ],
+    "evidence_cutoff": null
+  },
+  "assumptions": [
+    "用語が文献・業界によって揺れることを前提とし、単一の用語定義を無条件に正本化しない。"
+  ],
+  "frozen_at": "2026-10-06T00:46:25Z"
+}
