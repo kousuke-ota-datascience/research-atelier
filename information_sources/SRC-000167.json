@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000167",
+  "notion_url": "https://app.notion.com/p/3f1e5855be3981be8ef6cda6e731f5d4",
+  "title": "Reinforcement learning in dynamic pricing: a survey",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "Journal of Revenue and Pricing Management",
+  "authors": "Alexander Kastius; Christopher Hagedorn; Rainer Schlosser",
+  "year": 2026,
+  "url": "https://doi.org/10.1057/s41272-026-00619-z",
+  "doi": "10.1057/s41272-026-00619-z",
+  "version_or_edition": null,
+  "reliability_note": "Peer-reviewed 2026 survey. Used to establish reinforcement learning as one method family applied to dynamic-pricing decision policies and to retain its modeling/scalability challenges; not treated as a mandatory technology."
+}
