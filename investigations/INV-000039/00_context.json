@@ -3,7 +3,7 @@
   "artifact_type": "00_context",
   "investigation_id": "INV-000039",
   "rq_id": "RQ-000039",
-  "context_state": "draft",
+  "context_state": "frozen",
   "question": {
     "text": "時系列異常検知と故障予測の方法論は、どのような共通点・相違点を持ち、データ条件、評価基準および運用要件に応じてどのように選択すべきか？",
     "notion_url": "https://app.notion.com/p/40fe5855be39811287f1cf38e06965a3"
@@ -36,5 +36,5 @@
     "accuracy単一指標によって運用上の適切性が決定できるとは仮定しない。",
     "INV-000037／038の上流結果の受理前には、上流結論を確定した比較Evidenceとして扱わない。"
   ],
-  "frozen_at": null
+  "frozen_at": "2026-11-05T23:24:09.040Z"
 }

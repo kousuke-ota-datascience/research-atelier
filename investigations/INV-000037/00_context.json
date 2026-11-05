@@ -3,7 +3,7 @@
   "artifact_type": "00_context",
   "investigation_id": "INV-000037",
   "rq_id": "RQ-000037",
-  "context_state": "draft",
+  "context_state": "frozen",
   "question": {
     "text": "時系列異常検知には、どのような問題設定、基本原理、代表的アルゴリズムおよび最新手法が存在し、それらをどのように体系化できるか？",
     "notion_url": "https://app.notion.com/p/40fe5855be39810b90edf3acb7a84075"
@@ -34,5 +34,5 @@
     "故障ラベルまたは完全な異常ラベルが常に利用可能とは仮定しない。",
     "手法の一般的な優劣は前提とせず、主張を対象データ・評価設計・実装条件に結び付けて検討する。"
   ],
-  "frozen_at": null
+  "frozen_at": "2026-11-05T23:24:09.040Z"
 }
