@@ -1,0 +1,310 @@
+{
+  "schema_version": "2.1.0",
+  "artifact_type": "10_evidence",
+  "investigation_id": "INV-000037",
+  "rq_id": "RQ-000037",
+  "snapshot_at": "2026-11-05T23:46:18.770Z",
+  "sources": [
+    {
+      "source_id": "SRC-000171",
+      "source_revision": {
+        "commit_sha": "1b94a3afc2498ca7d9cfb09131c5345d335cb2cf",
+        "blob_sha": "b362917b4eddfe1d0e1d548115da259b83fc129b"
+      },
+      "accessed_at": "2026-11-05T23:46:18.770Z",
+      "notion_url": "https://app.notion.com/p/40fe5855be3981dd8a8eec6c53930d05"
+    },
+    {
+      "source_id": "SRC-000172",
+      "source_revision": {
+        "commit_sha": "1b94a3afc2498ca7d9cfb09131c5345d335cb2cf",
+        "blob_sha": "361e854c4ea221ce2cab11a8969040268e7667ec"
+      },
+      "accessed_at": "2026-11-05T23:46:18.770Z",
+      "notion_url": "https://app.notion.com/p/40fe5855be3981169042edc5796bd5e6"
+    },
+    {
+      "source_id": "SRC-000173",
+      "source_revision": {
+        "commit_sha": "1b94a3afc2498ca7d9cfb09131c5345d335cb2cf",
+        "blob_sha": "2ab7477155098e6d7a75a51f799867e96ddc9138"
+      },
+      "accessed_at": "2026-11-05T23:46:18.770Z",
+      "notion_url": "https://app.notion.com/p/40fe5855be3981ff94befddd4fbdbb80"
+    },
+    {
+      "source_id": "SRC-000174",
+      "source_revision": {
+        "commit_sha": "1b94a3afc2498ca7d9cfb09131c5345d335cb2cf",
+        "blob_sha": "1e4ca17553f148579bf8d7dd953b56ba41242aea"
+      },
+      "accessed_at": "2026-11-05T23:46:18.770Z",
+      "notion_url": "https://app.notion.com/p/40fe5855be3981aeaf47fb2b4dee4340"
+    },
+    {
+      "source_id": "SRC-000175",
+      "source_revision": {
+        "commit_sha": "1b94a3afc2498ca7d9cfb09131c5345d335cb2cf",
+        "blob_sha": "64fcc8e43d0d614377039b091ba3437b022f4493"
+      },
+      "accessed_at": "2026-11-05T23:46:18.770Z",
+      "notion_url": "https://app.notion.com/p/40fe5855be398153befbc5f95a5ece05"
+    },
+    {
+      "source_id": "SRC-000176",
+      "source_revision": {
+        "commit_sha": "1b94a3afc2498ca7d9cfb09131c5345d335cb2cf",
+        "blob_sha": "09cfb4b85f142a253a0f6afc38a160da3cb713c0"
+      },
+      "accessed_at": "2026-11-05T23:46:18.770Z",
+      "notion_url": "https://app.notion.com/p/40fe5855be3981e5806ff0020ee6faa2"
+    },
+    {
+      "source_id": "SRC-000177",
+      "source_revision": {
+        "commit_sha": "1b94a3afc2498ca7d9cfb09131c5345d335cb2cf",
+        "blob_sha": "e013a946084508be5348f989106a4baed397d7d2"
+      },
+      "accessed_at": "2026-11-05T23:46:18.770Z",
+      "notion_url": "https://app.notion.com/p/40fe5855be3981fda882d4f57db678d0"
+    },
+    {
+      "source_id": "SRC-000178",
+      "source_revision": {
+        "commit_sha": "1b94a3afc2498ca7d9cfb09131c5345d335cb2cf",
+        "blob_sha": "b886bcb3d8b292e420a2de51fe0add1abf362e3f"
+      },
+      "accessed_at": "2026-11-05T23:46:18.770Z",
+      "notion_url": "https://app.notion.com/p/40fe5855be39812d9357c43f0a53579e"
+    },
+    {
+      "source_id": "SRC-000179",
+      "source_revision": {
+        "commit_sha": "1b94a3afc2498ca7d9cfb09131c5345d335cb2cf",
+        "blob_sha": "49c813bd12dd25016e1bcd734470ffb1b55fe804"
+      },
+      "accessed_at": "2026-11-05T23:46:18.770Z",
+      "notion_url": "https://app.notion.com/p/40fe5855be398125a66df11a78d87223"
+    },
+    {
+      "source_id": "SRC-000180",
+      "source_revision": {
+        "commit_sha": "1b94a3afc2498ca7d9cfb09131c5345d335cb2cf",
+        "blob_sha": "500b06c44a23280fb4bdd8aeb7d497c24b7e6c34"
+      },
+      "accessed_at": "2026-11-05T23:46:18.770Z",
+      "notion_url": "https://app.notion.com/p/40fe5855be398169a453c367e2118ffd"
+    },
+    {
+      "source_id": "SRC-000181",
+      "source_revision": {
+        "commit_sha": "1b94a3afc2498ca7d9cfb09131c5345d335cb2cf",
+        "blob_sha": "e09f8f5ac8aa018633ed41159e17712bee74c9d4"
+      },
+      "accessed_at": "2026-11-05T23:46:18.770Z",
+      "notion_url": "https://app.notion.com/p/40fe5855be3981649f01f9637326e96c"
+    },
+    {
+      "source_id": "SRC-000182",
+      "source_revision": {
+        "commit_sha": "1b94a3afc2498ca7d9cfb09131c5345d335cb2cf",
+        "blob_sha": "2d89c7c352fcd4599812c1f6145eca24b980c6f6"
+      },
+      "accessed_at": "2026-11-05T23:46:18.770Z",
+      "notion_url": "https://app.notion.com/p/40fe5855be3981ce9ed7e7a84aade18f"
+    },
+    {
+      "source_id": "SRC-000183",
+      "source_revision": {
+        "commit_sha": "1b94a3afc2498ca7d9cfb09131c5345d335cb2cf",
+        "blob_sha": "288ca409a74430cad219508c103c0de6591463cd"
+      },
+      "accessed_at": "2026-11-05T23:46:18.770Z",
+      "notion_url": "https://app.notion.com/p/40fe5855be3981868bbeea8e299ac393"
+    }
+  ],
+  "evidence_items": [
+    {
+      "evidence_id": "E0001",
+      "content": "Page (1954)は連続検査方式（Continuous Inspection Schemes）を題材とする原著論文である。",
+      "source_locator": "Title / bibliographic record",
+      "note_type": "Method",
+      "selection_reason": "Methodological taxonomy, benchmark validity or important counterevidence within the adopted scope.",
+      "provenance": {
+        "source_id": "SRC-000171",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/40fe5855be398145861efcaa28f92029",
+          "title": "EV-000293"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0002",
+      "content": "Blázquez-Garcíaら（2021）は時系列のunsupervised outlier/anomaly detection技術を対象として、検出技術の特徴に基づくtaxonomyを提示する。",
+      "source_locator": "ACM Abstract",
+      "note_type": "Method",
+      "selection_reason": "Methodological taxonomy, benchmark validity or important counterevidence within the adopted scope.",
+      "provenance": {
+        "source_id": "SRC-000172",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/40fe5855be39819f81cdcfb127d848eb",
+          "title": "EV-000294"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0003",
+      "content": "Matrix Profile Iは部分系列のall-pairs similarity joinによりmotifとdiscordを計算し、novelty/discord発見に適用する。",
+      "source_locator": "IEEE Abstract",
+      "note_type": "Method",
+      "selection_reason": "Methodological taxonomy, benchmark validity or important counterevidence within the adopted scope.",
+      "provenance": {
+        "source_id": "SRC-000173",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/40fe5855be3981cb9dc4df37d7e17f3d",
+          "title": "EV-000295"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0004",
+      "content": "OmniAnomalyはstochastic recurrent networkとflow等で多変量時系列の通常パターンを学習し、再構成確率で異常を判定する。",
+      "source_locator": "KDD Abstract",
+      "note_type": "Method",
+      "selection_reason": "Methodological taxonomy, benchmark validity or important counterevidence within the adopted scope.",
+      "provenance": {
+        "source_id": "SRC-000174",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/40fe5855be398110a87fc1d39478b1d1",
+          "title": "EV-000296"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0005",
+      "content": "Anomaly Transformerは自己注意で表現される時点間associationとassociation discrepancyを異常点の識別指標として提案する。",
+      "source_locator": "ICLR Abstract",
+      "note_type": "Method",
+      "selection_reason": "Methodological taxonomy, benchmark validity or important counterevidence within the adopted scope.",
+      "provenance": {
+        "source_id": "SRC-000175",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/40fe5855be39813da984d9eacbffc350",
+          "title": "EV-000297"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0006",
+      "content": "TranADは多変量時系列のTransformer異常検知・診断モデルとしてself-conditioning、adversarial training、MAMLを組み込む。",
+      "source_locator": "PVLDB Abstract",
+      "note_type": "Method",
+      "selection_reason": "Methodological taxonomy, benchmark validity or important counterevidence within the adopted scope.",
+      "provenance": {
+        "source_id": "SRC-000176",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/40fe5855be3981398573df2cf1ef73a7",
+          "title": "EV-000298"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0007",
+      "content": "Kimら（2022）はpoint adjustmentで時系列異常検知F1が過大評価され、ランダムスコアが高性能検知手法のように扱われ得ると理論・実験で示した。",
+      "source_locator": "AAAI Abstract",
+      "note_type": "Limitation",
+      "selection_reason": "Methodological taxonomy, benchmark validity or important counterevidence within the adopted scope.",
+      "provenance": {
+        "source_id": "SRC-000177",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/40fe5855be3981ecb9d6ede655fd5d10",
+          "title": "EV-000299"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0008",
+      "content": "LiuとPaparrizos（2024）のTSB-ADは40データセット由来の1070時系列と40手法の比較を提供し、VUS-PRを推奨する。単純手法が深層手法に勝る条件があると報告した。",
+      "source_locator": "NeurIPS Abstract",
+      "note_type": "Result",
+      "selection_reason": "Methodological taxonomy, benchmark validity or important counterevidence within the adopted scope.",
+      "provenance": {
+        "source_id": "SRC-000178",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/40fe5855be398184b96cd4d97c8cd10d",
+          "title": "EV-000300"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0009",
+      "content": "Zhuら（2026）は5系統の時系列基盤モデルを比較し、再構成・予測誤差に基づく異常検知の性能が移動分散・平方差の単純基準と大きく変わらないと報告した。",
+      "source_locator": "ICLR Abstract",
+      "note_type": "Counterargument",
+      "selection_reason": "Methodological taxonomy, benchmark validity or important counterevidence within the adopted scope.",
+      "provenance": {
+        "source_id": "SRC-000179",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/40fe5855be3981f09904cdc537de8f17",
+          "title": "EV-000301"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0010",
+      "content": "Lanら（2026）はqueryと周囲contextの相対的差異から異常を判定するRelative Context Discrepancyに基づくゼロショットTimeRCDを提案する。",
+      "source_locator": "ICML PMLR Abstract",
+      "note_type": "Method",
+      "selection_reason": "Methodological taxonomy, benchmark validity or important counterevidence within the adopted scope.",
+      "provenance": {
+        "source_id": "SRC-000180",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/40fe5855be3981f69893d4e03c9898a7",
+          "title": "EV-000302"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0011",
+      "content": "Martinez Gilら（2026）は時系列基盤モデル予測に適応的conformal boundsを組み合わせて解釈可能なp値による異常アラートを提案する。",
+      "source_locator": "ICLR Abstract",
+      "note_type": "Method",
+      "selection_reason": "Methodological taxonomy, benchmark validity or important counterevidence within the adopted scope.",
+      "provenance": {
+        "source_id": "SRC-000181",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/40fe5855be39811089dfd6f6150fad28",
+          "title": "EV-000303"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0012",
+      "content": "Kimら（2026）はfoundation modelのovergeneralizationと正規化による統計情報消失に対し、統計モデルとのensembleおよび平均・分散の再導入を提案する。",
+      "source_locator": "ICLR Abstract",
+      "note_type": "Method",
+      "selection_reason": "Methodological taxonomy, benchmark validity or important counterevidence within the adopted scope.",
+      "provenance": {
+        "source_id": "SRC-000182",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/40fe5855be3981779743d94427ce81a6",
+          "title": "EV-000304"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0013",
+      "content": "Isolation Forestは点の分離の容易さから外れ値を検出する。元の論文自体は時系列の順序依存性を直接モデル化する方法としては設計されていない。",
+      "source_locator": "ICDM Abstract",
+      "note_type": "Method",
+      "selection_reason": "Methodological taxonomy, benchmark validity or important counterevidence within the adopted scope.",
+      "provenance": {
+        "source_id": "SRC-000183",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/40fe5855be3981c584f9e59db1d8cd39",
+          "title": "EV-000305"
+        }
+      }
+    }
+  ]
+}
