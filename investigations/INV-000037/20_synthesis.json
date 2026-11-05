@@ -22,7 +22,7 @@
     },
     {
       "knowledge_unit_id": "K0002",
-      "statement": "Pageの連続検査方式は、逐次的監視・蓄積統計量による変化検出という歴史的な基盤を示す。",
+      "statement": "Pageの1954年原著はContinuous Inspection Schemesを扱う。累積統計量の定式化や検知保証の詳細は、今回抽出した書誌情報だけからは確定しない。",
       "evidence_refs": [
         "E0001"
       ],
@@ -106,7 +106,7 @@
     },
     {
       "knowledge_unit_id": "K0010",
-      "statement": "Isolation Forestは時間依存性を直接モデル化しない外れ値検出基準法で、時系列で用いる場合にはwindow化や特徴量抽出と時間単位への再対応づけが別途必要になる。",
+      "statement": "Isolation Forestの原著は外れ値の分離に基づく手法を提案するが、時系列の順序依存性をそのアルゴリズムの本来の対象としては扱っていない。",
       "evidence_refs": [
         "E0013"
       ],
