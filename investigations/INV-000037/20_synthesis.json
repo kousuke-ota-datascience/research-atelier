@@ -1,0 +1,230 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "20_synthesis",
+  "investigation_id": "INV-000037",
+  "rq_id": "RQ-000037",
+  "synthesized_at": "2026-11-05T23:50:49.246Z",
+  "knowledge_units": [
+    {
+      "knowledge_unit_id": "K0001",
+      "statement": "時系列異常検知の方法論は、時系列構造の扱い方（逐次的な変化、部分系列類似性、確率的系列表現、attention表現など）で異なる。一般的なoutlier検出と時系列固有の検出を同一視できない。",
+      "evidence_refs": [
+        "E0002",
+        "E0003",
+        "E0004",
+        "E0005",
+        "E0006",
+        "E0013"
+      ],
+      "qualifiers": [
+        "収録した研究は方法論の代表例であり、全アルゴリズムを列挙した完全taxonomyではない。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0002",
+      "statement": "Pageの連続検査方式は、逐次的監視・蓄積統計量による変化検出という歴史的な基盤を示す。",
+      "evidence_refs": [
+        "E0001"
+      ],
+      "qualifiers": [
+        "論文タイトルだけから実装式・性能条件まで断定しない。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0003",
+      "statement": "Matrix Profile Iは部分系列間のsimilarity/discordを利用し、学習済み生成モデルとは異なる非パラメトリック系列パターンの発見法を提供する。",
+      "evidence_refs": [
+        "E0003"
+      ],
+      "qualifiers": [
+        "discordの発見を特定の故障に対する予測と同一視しない。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0004",
+      "statement": "OmniAnomalyは確率的な再帰系列表現の一例であり、多変量観測に対する異常スコアを生成する。",
+      "evidence_refs": [
+        "E0004"
+      ],
+      "qualifiers": [
+        "個別モデルの再現性能は、この出典の実験条件を超えて一般化しない。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0005",
+      "statement": "Anomaly TransformerとTranADは、注意機構を用いるが異常判定の機序・学習目的が異なるTransformer系アプローチである。",
+      "evidence_refs": [
+        "E0005",
+        "E0006"
+      ],
+      "qualifiers": [
+        "Transformerというアーキテクチャ名だけで分類や性能比較を終えない。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0006",
+      "statement": "基盤モデルの異常検知利用は、相対文脈差異（TimeRCD）、予測区間・p値の校正、統計量を組み合わせるなど複数の設計方向へ分かれている。",
+      "evidence_refs": [
+        "E0010",
+        "E0011",
+        "E0012"
+      ],
+      "qualifiers": [
+        "ここでの記述は提案・方法構造の確認であり、実運用の一般性能を確立していない。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0007",
+      "statement": "point adjustmentを利用したF1は異常検知能力を過大に評価することがあり、scoreレベル・アラート区間・eventレベルの評価プロトコルを区別する必要がある。",
+      "evidence_refs": [
+        "E0007",
+        "E0008"
+      ],
+      "qualifiers": [
+        "指標選択は異常のアノテーション単位・許容遅延・誤報コストに依存する。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0008",
+      "statement": "TSB-ADの標準化比較は、評価データと指標を揃えた時に単純手法が競争力を持つ場合を示す。異なるベンチマークの公表スコアを直接順位づけできない。",
+      "evidence_refs": [
+        "E0008"
+      ],
+      "qualifiers": [
+        "報告された相対結果はTSB-ADの収録データ・実装・プロトコルの範囲に限る。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0009",
+      "statement": "2026年の基盤モデル検証には、予測誤差や再構成誤差が単純な時系列統計baselineを必ずしも上回らないという反証的結果がある。",
+      "evidence_refs": [
+        "E0009"
+      ],
+      "qualifiers": [
+        "調査対象の5系統のモデルと評価設定に限定された結果である。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0010",
+      "statement": "Isolation Forestは時間依存性を直接モデル化しない外れ値検出基準法で、時系列で用いる場合にはwindow化や特徴量抽出と時間単位への再対応づけが別途必要になる。",
+      "evidence_refs": [
+        "E0013"
+      ],
+      "qualifiers": [
+        "window化の効果について本Sourceは直接検証していない。"
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "relation_id": "R0001",
+      "relation_type": "qualification",
+      "knowledge_unit_refs": [
+        "K0005",
+        "K0006"
+      ],
+      "description": "Transformer系も基盤モデル系も単一の同質なアルゴリズムではなく、異常スコア設計と校正方法の差異がある。",
+      "evidence_refs": [
+        "E0005",
+        "E0006",
+        "E0010",
+        "E0011",
+        "E0012"
+      ]
+    },
+    {
+      "relation_id": "R0002",
+      "relation_type": "qualification",
+      "knowledge_unit_refs": [
+        "K0007",
+        "K0008"
+      ],
+      "description": "モデル順位の議論にはpoint-adjustment依存度と統一評価プロトコルの条件付けが必要。",
+      "evidence_refs": [
+        "E0007",
+        "E0008"
+      ]
+    },
+    {
+      "relation_id": "R0003",
+      "relation_type": "conflict",
+      "knowledge_unit_refs": [
+        "K0006",
+        "K0009"
+      ],
+      "description": "基盤モデルを利用する新提案が存在する一方、性能向上が単純baselineを超えないという実証的反例が報告されている。",
+      "evidence_refs": [
+        "E0009",
+        "E0010",
+        "E0011",
+        "E0012"
+      ]
+    },
+    {
+      "relation_id": "R0004",
+      "relation_type": "qualification",
+      "knowledge_unit_refs": [
+        "K0003",
+        "K0010"
+      ],
+      "description": "部分系列の類似・discordの検出と、非時系列outlier点の隔離は異なるデータ表現を必要とする。",
+      "evidence_refs": [
+        "E0003",
+        "E0013"
+      ]
+    },
+    {
+      "relation_id": "R0005",
+      "relation_type": "dependency",
+      "knowledge_unit_refs": [
+        "K0001",
+        "K0007",
+        "K0008"
+      ],
+      "description": "異常の単位・検出スコア・ラベル解釈を定義しないまま評価指標だけ比較しても一般的な手法選択は成立しない。",
+      "evidence_refs": [
+        "E0002",
+        "E0007",
+        "E0008"
+      ]
+    }
+  ],
+  "uncertainties": [
+    {
+      "uncertainty_id": "U0001",
+      "description": "選択した13 Sourceだけでは予測残差、control chart、state-space、距離・密度、self-supervised、オンライン学習など全手法群を原著レベルで網羅できていない。",
+      "knowledge_unit_refs": [
+        "K0001"
+      ],
+      "evidence_refs": [
+        "E0002"
+      ]
+    },
+    {
+      "uncertainty_id": "U0002",
+      "description": "2026年基盤モデル手法の性能比較は対象モデル、訓練条件、ラベル粒度、score校正とデータセット移植性を横断して再検証できていない。",
+      "knowledge_unit_refs": [
+        "K0006",
+        "K0009"
+      ],
+      "evidence_refs": [
+        "E0009",
+        "E0010",
+        "E0011",
+        "E0012"
+      ]
+    },
+    {
+      "uncertainty_id": "U0003",
+      "description": "point-level rankingとevent-level operational utilityを一致させる一般的条件は、このEvidenceだけでは定量的に確定できない。",
+      "knowledge_unit_refs": [
+        "K0007",
+        "K0008"
+      ],
+      "evidence_refs": [
+        "E0007",
+        "E0008"
+      ]
+    }
+  ]
+}
