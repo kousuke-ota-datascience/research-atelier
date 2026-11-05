@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000189",
+  "notion_url": "https://app.notion.com/p/40fe5855be3981d18231e2e679a04e16",
+  "title": "Long Short-Term Memory Network for Remaining Useful Life estimation",
+  "source_type": "Conference Paper",
+  "journal_or_publisher": "IEEE ICPHM",
+  "authors": "Shuai Zheng; Kosta Ristovski; Ahmed Farahat; Chetan Gupta",
+  "year": 2017,
+  "url": "https://doi.org/10.1109/ICPHM.2017.7998311",
+  "doi": "10.1109/ICPHM.2017.7998311",
+  "version_or_edition": null,
+  "reliability_note": "Original or peer-reviewed research source; evaluate claims within published task, dataset and protocol boundaries."
+}

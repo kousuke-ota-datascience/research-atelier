@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000176",
+  "notion_url": "https://app.notion.com/p/40fe5855be3981e5806ff0020ee6faa2",
+  "title": "TranAD: Deep Transformer Networks for Anomaly Detection in Multivariate Time Series Data",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "Proceedings of the VLDB Endowment",
+  "authors": "Shreshth Tuli; Giuliano Casale; Nicholas R. Jennings",
+  "year": 2022,
+  "url": "https://vldb.org/pvldb/vol15/p1201-tuli.pdf",
+  "doi": "10.14778/3514061.3514067",
+  "version_or_edition": null,
+  "reliability_note": "Original or peer-reviewed research source; evaluate claims within published task, dataset and protocol boundaries."
+}

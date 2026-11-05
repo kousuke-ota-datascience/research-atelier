@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000174",
+  "notion_url": "https://app.notion.com/p/40fe5855be3981aeaf47fb2b4dee4340",
+  "title": "Robust Anomaly Detection for Multivariate Time Series through Stochastic Recurrent Neural Network",
+  "source_type": "Conference Paper",
+  "journal_or_publisher": "KDD",
+  "authors": "Ya Su; Youjian Zhao; Chenhao Niu; Rong Liu; Wei Sun; Dan Pei",
+  "year": 2019,
+  "url": "https://doi.org/10.1145/3292500.3330672",
+  "doi": "10.1145/3292500.3330672",
+  "version_or_edition": null,
+  "reliability_note": "Original or peer-reviewed research source; evaluate claims within published task, dataset and protocol boundaries."
+}

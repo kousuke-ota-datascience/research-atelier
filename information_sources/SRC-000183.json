@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000183",
+  "notion_url": "https://app.notion.com/p/40fe5855be3981868bbeea8e299ac393",
+  "title": "Isolation Forest",
+  "source_type": "Conference Paper",
+  "journal_or_publisher": "IEEE ICDM",
+  "authors": "Fei Tony Liu; Kai Ming Ting; Zhi-Hua Zhou",
+  "year": 2008,
+  "url": "https://doi.org/10.1109/ICDM.2008.17",
+  "doi": "10.1109/ICDM.2008.17",
+  "version_or_edition": null,
+  "reliability_note": "Original or peer-reviewed research source; evaluate claims within published task, dataset and protocol boundaries."
+}

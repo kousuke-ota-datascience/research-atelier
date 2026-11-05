@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000175",
+  "notion_url": "https://app.notion.com/p/40fe5855be398153befbc5f95a5ece05",
+  "title": "Anomaly Transformer: Time Series Anomaly Detection with Association Discrepancy",
+  "source_type": "Conference Paper",
+  "journal_or_publisher": "ICLR",
+  "authors": "Jiehui Xu; Haixu Wu; Jianmin Wang; Mingsheng Long",
+  "year": 2022,
+  "url": "https://openreview.net/pdf?id=LzQQ89U1qm_",
+  "doi": null,
+  "version_or_edition": null,
+  "reliability_note": "Original or peer-reviewed research source; evaluate claims within published task, dataset and protocol boundaries."
+}

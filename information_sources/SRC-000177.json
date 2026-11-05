@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000177",
+  "notion_url": "https://app.notion.com/p/40fe5855be3981fda882d4f57db678d0",
+  "title": "Towards a Rigorous Evaluation of Time-Series Anomaly Detection",
+  "source_type": "Conference Paper",
+  "journal_or_publisher": "AAAI",
+  "authors": "Siwon Kim; Kukjin Choi; Hyun-Soo Choi; Byunghan Lee; Sungroh Yoon",
+  "year": 2022,
+  "url": "https://ojs.aaai.org/index.php/AAAI/article/view/20680",
+  "doi": "10.1609/aaai.v36i7.20680",
+  "version_or_edition": null,
+  "reliability_note": "Original or peer-reviewed research source; evaluate claims within published task, dataset and protocol boundaries."
+}

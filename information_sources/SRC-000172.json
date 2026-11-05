@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000172",
+  "notion_url": "https://app.notion.com/p/40fe5855be3981169042edc5796bd5e6",
+  "title": "A Review on Outlier/Anomaly Detection in Time Series Data",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "ACM Computing Surveys",
+  "authors": "Ane Blázquez-García; Ángel Conde; Usue Mori; José A. Lozano",
+  "year": 2021,
+  "url": "https://doi.org/10.1145/3444690",
+  "doi": "10.1145/3444690",
+  "version_or_edition": null,
+  "reliability_note": "Original or peer-reviewed research source; evaluate claims within published task, dataset and protocol boundaries."
+}

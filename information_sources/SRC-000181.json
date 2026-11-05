@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000181",
+  "notion_url": "https://app.notion.com/p/40fe5855be3981649f01f9637326e96c",
+  "title": "Adaptive Conformal Anomaly Detection with Time Series Foundation Models for Signal Monitoring",
+  "source_type": "Conference Paper",
+  "journal_or_publisher": "ICLR",
+  "authors": "Natalia Martinez Gil; Fearghal O'Donncha; Wesley Gifford; Nianjun Zhou; Dhaval Patel; Roman Vaculin",
+  "year": 2026,
+  "url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/f54c9fc57aa6e1c72400cc127917fcf8-Abstract-Conference.html",
+  "doi": null,
+  "version_or_edition": null,
+  "reliability_note": "Recent peer-reviewed primary/review source; reported results are study- and protocol-dependent."
+}

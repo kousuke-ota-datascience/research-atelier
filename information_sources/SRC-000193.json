@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000193",
+  "notion_url": "https://app.notion.com/p/40fe5855be3981079ca4c069923890a6",
+  "title": "A comprehensive overview of remaining useful life prediction: From traditional literature review to scientometric analysis",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "Machine Learning with Applications",
+  "authors": null,
+  "year": 2025,
+  "url": "https://www.sciencedirect.com/science/article/pii/S2666827025000878",
+  "doi": "10.1016/j.mlwa.2025.100704",
+  "version_or_edition": null,
+  "reliability_note": "Original or peer-reviewed research source; evaluate claims within published task, dataset and protocol boundaries."
+}

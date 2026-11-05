@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000184",
+  "notion_url": "https://app.notion.com/p/40fe5855be3981f99054e40161d3f25c",
+  "title": "A review on machinery diagnostics and prognostics implementing condition-based maintenance",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "Mechanical Systems and Signal Processing",
+  "authors": "Andrew K.S. Jardine; Daming Lin; Dragan Banjevic",
+  "year": 2006,
+  "url": "https://doi.org/10.1016/j.ymssp.2005.09.012",
+  "doi": "10.1016/j.ymssp.2005.09.012",
+  "version_or_edition": null,
+  "reliability_note": "Original or peer-reviewed research source; evaluate claims within published task, dataset and protocol boundaries."
+}

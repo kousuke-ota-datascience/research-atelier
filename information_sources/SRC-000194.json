@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000194",
+  "notion_url": "https://app.notion.com/p/40fe5855be3981668b19d50e5b287316",
+  "title": "Robust uncertainty quantification for online remaining useful life prediction with randomly missing and partially faulty sensor data",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "Reliability Engineering & System Safety",
+  "authors": "Wei Wang; Zhaoqiang Wang; Zhiqiang Cai; Changhua Hu; Shubin Si",
+  "year": 2025,
+  "url": "https://www.sciencedirect.com/science/article/pii/S0951832025003783",
+  "doi": "10.1016/j.ress.2025.111177",
+  "version_or_edition": null,
+  "reliability_note": "Original or peer-reviewed research source; evaluate claims within published task, dataset and protocol boundaries."
+}

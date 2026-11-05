@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000182",
+  "notion_url": "https://app.notion.com/p/40fe5855be3981ce9ed7e7a84aade18f",
+  "title": "Complexity- and Statistics-Guided Anomaly Detection in Time Series Foundation Models",
+  "source_type": "Conference Paper",
+  "journal_or_publisher": "ICLR",
+  "authors": "Jongwon Kim; Samuel Yoon; Young Ko; Yerin Kim; Sung Kim; Jaeung Tae",
+  "year": 2026,
+  "url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/d06768735ce7d11ade5baef7099b4e05-Abstract-Conference.html",
+  "doi": null,
+  "version_or_edition": null,
+  "reliability_note": "Recent peer-reviewed primary/review source; reported results are study- and protocol-dependent."
+}

@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000180",
+  "notion_url": "https://app.notion.com/p/40fe5855be398169a453c367e2118ffd",
+  "title": "Towards Foundation Models for Zero-Shot Time Series Anomaly Detection: Leveraging Synthetic Data and Relative Context Discrepancy",
+  "source_type": "Conference Paper",
+  "journal_or_publisher": "ICML / PMLR 306",
+  "authors": "Tian Lan; Hao Duong Le; Jinbo Li; Wenjun He; Meng Wang; Chenghao Liu; Chen Zhang",
+  "year": 2026,
+  "url": "https://proceedings.mlr.press/v306/lan26b.html",
+  "doi": null,
+  "version_or_edition": null,
+  "reliability_note": "Recent peer-reviewed primary/review source; reported results are study- and protocol-dependent."
+}

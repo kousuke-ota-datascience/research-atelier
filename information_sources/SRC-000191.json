@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000191",
+  "notion_url": "https://app.notion.com/p/40fe5855be3981b690e8ca0a31d93494",
+  "title": "Remaining useful life data-driven estimation: a selective evaluation and analysis",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "Signal Processing",
+  "authors": "Maxime Dehondt; Chrysoula Kosma; Charles Truong; Clément Linarès; Laurent Oudre",
+  "year": 2026,
+  "url": "https://www.sciencedirect.com/science/article/pii/S0165168426004731",
+  "doi": "10.1016/j.sigpro.2026.110960",
+  "version_or_edition": null,
+  "reliability_note": "Recent peer-reviewed primary/review source; reported results are study- and protocol-dependent."
+}

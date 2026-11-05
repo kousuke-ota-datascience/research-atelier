@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000171",
+  "notion_url": "https://app.notion.com/p/40fe5855be3981dd8a8eec6c53930d05",
+  "title": "Continuous Inspection Schemes",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "Biometrika",
+  "authors": "E. S. Page",
+  "year": 1954,
+  "url": "https://doi.org/10.1093/biomet/41.1-2.100",
+  "doi": "10.1093/biomet/41.1-2.100",
+  "version_or_edition": null,
+  "reliability_note": "Original or peer-reviewed research source; evaluate claims within published task, dataset and protocol boundaries."
+}
