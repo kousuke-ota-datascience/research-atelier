@@ -21,8 +21,8 @@
       "impact": "A core methodological judgment currently conflates differences in training objectives with established differences in anomaly-score construction, which cannot be independently justified from the frozen Synthesis alone. This weakens a key comparison axis without proving the general taxonomy false.",
       "repair_direction": {
         "mode": "same_investigation",
-        "affected_layer": "10_evidence",
-        "instruction": "If precise score semantics are required, capture source-grounded inference-time scoring and calibration details for USAD/TimeAutoAD, then rebuild 20_synthesis and 30_analysis. Otherwise limit J0005 to supported objective/representation distinctions and avoid claiming verified score definitions; Workflow 00/10 should select the earliest necessary repair stage."
+        "affected_layer": "30_analysis",
+        "instruction": "In 30_analysis J0005, restrict the comparison to the training objectives and representations established by K0013-K0015; remove assertions about inference-time anomaly-score definitions unless first established by a separate evidence/synthesis repair. Revalidate the revised Analysis through 30."
       }
     }
   ],
