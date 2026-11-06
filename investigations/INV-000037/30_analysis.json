@@ -3,10 +3,10 @@
   "artifact_type": "30_analysis",
   "investigation_id": "INV-000037",
   "rq_id": "RQ-000037",
-  "analyzed_at": "2026-11-06T01:03:26.791Z",
+  "analyzed_at": "2026-11-06T01:11:41.032Z",
   "question_type": "Methodological",
   "profile": {
-    "method_or_procedure": "時系列異常検知の初回method taxonomy：逐次的統計監視／変化検出；部分系列の類似性・discord；確率的系列表現；Transformer系のassociationまたは再構成／予測；基盤モデルと相対文脈検知・conformal校正；時系列特徴量に対する汎用outlier baseline。これは13 Sourceから抽出した代表系列で、網羅分類ではない。 補強原著：EWMA管理図（Roberts, 1959）およびrun-length posteriorに基づくBayesian online change-point detection（Adams & MacKay, 2007）。",
+    "method_or_procedure": "18件のSource/Evidenceに基づく暫定時系列異常検知taxonomy：逐次監視（EWMA）、Bayesian online change-point detection、部分系列discord、予測残差（DeepAnT）、確率的系列モデル、敵対的Autoencoder（USAD）、Transformerのassociation/再構成、自己教師ありcontrastive（TimeAutoAD）、時系列基盤モデルとconformal校正、時系列特徴量の汎用outlier baseline。方法群の存在・適用条件を整理するもので網羅的な手法ランキングではない。",
     "intended_use": "対象時系列の正常性からの逸脱を時点・部分系列・イベントなどの定義された単位で検知し、アラートとその解釈を支援する。",
     "assumptions": [
       "異常の意味とground truth粒度をユースケースごとに定義する。",
@@ -28,22 +28,26 @@
       "TimeRCD・conformal score・統計量再導入型の2026年研究方向",
       "Isolation Forestなど非時系列outlier baselineと単純時系列統計baseline",
       "Roberts (1959) の指数移動平均（EWMA）管理図",
-      "Adams & MacKay (2007) のBayesian online change-point detection"
+      "Adams & MacKay (2007) のBayesian online change-point detection",
+      "CNN予測残差によるDeepAnT",
+      "敵対的AutoencoderによるUSAD",
+      "self-supervised contrastive learningによるTimeAutoAD"
     ],
     "tradeoffs": [
       "単純な統計・類似性based手法には実装・解釈の利点があり得るが、複雑な時系列関係の表現は設計や追加特徴に依存する。",
       "deep sequential modelsは非線形・多変量の関係を表現する一方、訓練分布・ラベル・スコア校正・運用負荷に依存する。",
       "foundation-model系では学習なしの導入可能性と汎化性能が研究上の関心だが、単純基準を上回る保証はない。",
-      "評価protocolの違いによってreported rankingが変化するため、異なる実験の数値は無条件に比較しない。"
+      "評価protocolの違いによってreported rankingが変化するため、異なる実験の数値は無条件に比較しない。",
+      "予測残差、再構成確率、contrastive表現は異常scoreの意味が異なり、単一の閾値・アノテーション単位や評価関数での比較が直ちに成立するとは限らない。"
     ],
     "applicability_limits": [
-      "本初回Evidenceは全手法族の網羅ではない。EWMA／CUSUM数理・state-space・深層自己教師あり・オンライン変化点検出等は重要な追加原著確認対象である。",
+      "18 Sourceの初回方法論調査であり、CUSUMの数理保証、状態空間・密度・距離系、連続オンライン再学習・ドリフト対応の原著を網羅していない。",
       "現在の異常検知と将来の故障確率／RUL推定は異なるtargetであり、後者はINV-000038に委ねる。",
       "2026年の基盤モデル評価は限定されたモデル・データ・scoreに関する知見であり、2026年現在の普遍的SOTA順位とは解釈しない。"
     ]
   },
   "working_answer": {
-    "text": "初回Evidenceに基づく時系列異常検知の方法論は、単一の『SOTAアルゴリズム』ではなく、(1)逐次的な統計監視・変化検出、(2)部分系列の類似性・discord探索、(3)確率的系列表現、(4)Transformer系のassociation・再構成等、(5)基盤モデルと相対文脈検知・統計量の併用・conformal校正、(6)汎用外れ値検出器を用いたbaseline、という異なる役割の組合せとして暫定整理できる。タスクの異常単位、ラベルの有無、多変量性、予測遅延と誤報コストを明示しないモデル順位は意味が弱い。point adjustmentはF1を過大評価し得る。TSB-ADのような標準化評価や2026年の基盤モデル批判的検証を踏まえると、複雑なモデルの一般的な優位は支持されない。現時点の13 Sourceは主な方法系列と評価上の反証を示すが、古典数理・オンライン検出・自己教師あり手法の網羅を完了していないため、taxonomyは暫定である。",
+    "text": "Evidenceを18 Sourceまで補強した結果、時系列異常検知は(1)逐次的統計監視（EWMA等）、(2)Bayesian online change-point detection、(3)部分系列discord/類似性探索、(4)予測残差・確率的系列表現・Autoencoder、(5)Transformerのassociation等、(6)自己教師ありcontrastive表現、(7)時系列基盤モデル・統計量併用・conformal校正、(8)単純時系列統計と汎用外れ値検出baselineに分けて暫定整理できる。ただしアーキテクチャ分類と異常score生成機序、教師信号、ラベル粒度、運用目的は独立した比較軸である。point adjustmentによるF1過大評価、TSB-ADの手法順位の文脈依存性、2026年基盤モデル評価における単純baselineとの競争力は反証的検討を要求する。モデルの普遍的優位は確認されず、オンライン閾値管理、ドリフト、状態空間、統計的保証の一次資料をさらに調査する必要がある。",
     "knowledge_unit_refs": [
       "K0001",
       "K0002",
@@ -56,7 +60,10 @@
       "K0009",
       "K0010",
       "K0011",
-      "K0012"
+      "K0012",
+      "K0013",
+      "K0014",
+      "K0015"
     ]
   },
   "judgments": [
@@ -97,14 +104,26 @@
         "K0007",
         "K0008"
       ]
+    },
+    {
+      "judgment_id": "J0005",
+      "statement": "予測残差・敵対的Autoencoder・self-supervised contrastive学習は目的関数と異常スコアの定義が異なり、同一Architecture系統として安易に性能統合できない。",
+      "knowledge_unit_refs": [
+        "K0013",
+        "K0014",
+        "K0015"
+      ]
     }
   ],
   "limitations": [
     {
-      "text": "EWMAとBayesian online change-point detectionの原著を補強したが、state-space・密度・深層自己教師あり／contrastive・オンライン適応は依然として原著収集が不足する。",
+      "text": "EWMA、Bayesian online change-point detection、CNN予測残差、敵対的AE、self-supervised contrastiveの原著は補強したが、CUSUM数理、状態空間、密度/距離、オンラインドリフト適応の網羅はまだ不足する。",
       "knowledge_unit_refs": [
-        "K0001",
-        "K0002"
+        "K0011",
+        "K0012",
+        "K0013",
+        "K0014",
+        "K0015"
       ]
     },
     {
@@ -124,7 +143,7 @@
     }
   ],
   "unresolved_questions": [
-    "EWMAとBayesian online change-point detectionを含め、state-space・密度・距離・予測残差の適用仮定と共通評価軸を原著まで遡って体系化する。",
+    "CUSUMの検知保証、状態空間・距離/密度・予測残差の仮定を揃えた、異常の単位とalert utilityに基づくmethod taxonomyをどう完成させるか。",
     "オンライン異常検知における閾値更新・concept drift・latency／誤報コストの実運用上の設計指標をどう定式化するか。",
     "代表的な自己教師あり／基盤モデル手法を、同一task・分割・event-level評価で比較した場合の頑健な差はあるか。"
   ],
