@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000037",
+  "review_seq": 2,
+  "layer": "00_context",
+  "review_kind": "context_semantic_validity",
+  "target_blob_sha": "895b4ffd708e47b0c83aaf43fb71176f14854809",
+  "assessment": "Independent assessment of frozen RQ-000037 (Methodological): the anomaly-detection task, point/contextual/collective units, online/offline regimes, supervision, evidence cutoff, baseline comparisons, and explicit exclusion of future fault time/RUL remain semantically coherent. The frozen 00_context has the same blob as Review 000001 and no context-defining contradiction was identified. No frozen-context change is required.",
+  "findings": [],
+  "verdict": "PASS"
+}

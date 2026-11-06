@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000037",
+  "review_seq": 2,
+  "layer": "10_evidence",
+  "review_kind": "source_evidence_note_to_10_evidence",
+  "target_blob_sha": "f38d944ced4b4cdc9d306fdc1eca263db524d281",
+  "assessment": "The 23 selected Evidence items are traceable to the 23 pinned Git Source revisions and corresponding Notion Evidence Notes. Review 000001 F001 was repaired by E0019 KalmanAE (state-space/filtered reconstruction), E0020 LOF (local density with its non-temporal source boundary), E0021 NIST CUSUM k/h/ARL, E0022 ADWIN concept drift, and E0023 EVT/SPOT streaming threshold risk, alongside existing Matrix Profile and other model families. Independent comparison with original IEEE KalmanAE abstract, NIST CUSUM documentation, original SIAM ADWIN abstract and ACM Siffer et al. KDD abstract substantiated the major additional method-level claims; the five new Notion Notes match the canonical Evidence statements. The scope is represented by explicit methodological examples, not an exhaustive comparative experiment. Selection and source-specific limitations are preserved; no surviving material provenance distortion or omission was established for this review target.",
+  "findings": [],
+  "verdict": "PASS"
+}

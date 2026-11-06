@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000037",
+  "review_seq": 2,
+  "layer": "20_synthesis",
+  "review_kind": "10_evidence_to_20_synthesis",
+  "target_blob_sha": "6fb9560b380a15a7842b70f6291a32df35ff00dc",
+  "assessment": "K0001–K0020 each retain explicit Evidence references, appropriate caveats and five uncertainty records; new K0016–K0020 preserve state-space versus prediction residual, local density versus subsequence discord, cumulative monitoring versus EWMA, drift versus online risk-threshold distinctions. R0003 now correctly characterizes new foundation-model proposals and negative performance benchmarks as compatible evidence requiring matched evaluation settings, rather than a demonstrated direct conflict (closing Review 000001 F002). Distinct study-specific claims are not inflated into universal performance guarantees. No independently support-defeating synthesis claim was identified.",
+  "findings": [],
+  "verdict": "PASS"
+}

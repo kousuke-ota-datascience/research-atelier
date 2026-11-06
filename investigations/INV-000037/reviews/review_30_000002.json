@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000037",
+  "review_seq": 2,
+  "layer": "30_analysis",
+  "review_kind": "20_synthesis_plus_00_context_to_30_analysis",
+  "target_blob_sha": "5e761bc193e701e8bd611d3b5730001972adc24d",
+  "assessment": "The Methodological Working Answer is explicitly representative and grounded in K0001–K0020, correctly reports 23 Sources, distinguishes architecture, training objective, anomaly-score inference, alarm calibration and annotation/metric regimes, and retains limitations concerning score formulas, drift, window embeddings and comparative validity. Judgment J0005 now restricts DeepAnT, USAD and TimeAutoAD distinctions to the source-supported training objectives/representations, explicitly not inferring their exact inference-time scores (closing Review 000001 F003). The analysis does not bypass Synthesis, does not turn concept drift automatically into anomaly labels, and does not universalize baseline rankings. No new independent semantic finding was identified.",
+  "findings": [],
+  "verdict": "PASS"
+}
