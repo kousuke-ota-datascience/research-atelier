@@ -1,0 +1,486 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "20_synthesis",
+  "investigation_id": "INV-000039",
+  "rq_id": "RQ-000039",
+  "synthesized_at": "2026-11-06T04:25:11.190Z",
+  "knowledge_units": [
+    {
+      "knowledge_unit_id": "K0001",
+      "statement": "診断・現時点の状態監視と将来故障・RUL予測は、同じセンサ時系列を使えても予測対象が異なる。",
+      "evidence_refs": [
+        "E0016",
+        "E0017"
+      ],
+      "qualifiers": [
+        "比較は選定Sourceの方法記述を接続した条件付き推論であり、異分野の直接head-to-head実験結果ではない。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0002",
+      "statement": "異常検知は逸脱score・discord・再構成確率などを用い、scoreを将来故障確率と同一視できない。",
+      "evidence_refs": [
+        "E0001",
+        "E0002",
+        "E0003"
+      ],
+      "qualifiers": [
+        "比較は選定Sourceの方法記述を接続した条件付き推論であり、異分野の直接head-to-head実験結果ではない。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0003",
+      "statement": "point-adjusted F1の過大評価が報告され、異常検知はevent粒度・誤報・検知遅延も考慮すべきである。",
+      "evidence_refs": [
+        "E0004",
+        "E0005"
+      ],
+      "qualifiers": [
+        "比較は選定Sourceの方法記述を接続した条件付き推論であり、異分野の直接head-to-head実験結果ではない。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0004",
+      "statement": "RULは観測起点の残存期間であり、CNN回帰とGamma/Wiener first-hitting-time分布は別の出力・仮定を持つ。",
+      "evidence_refs": [
+        "E0017",
+        "E0020",
+        "E0024",
+        "E0025"
+      ],
+      "qualifiers": [
+        "比較は選定Sourceの方法記述を接続した条件付き推論であり、異分野の直接head-to-head実験結果ではない。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0005",
+      "statement": "DeepAnTの予測残差とCNNのRUL回帰は系列特徴を共有し得るが、正解と出力は異なる。",
+      "evidence_refs": [
+        "E0009",
+        "E0020"
+      ],
+      "qualifiers": [
+        "比較は選定Sourceの方法記述を接続した条件付き推論であり、異分野の直接head-to-head実験結果ではない。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0006",
+      "statement": "KalmanAEの状態推定・再構成残差と粒子filterの将来RUL分布は状態推定を共有するが、下流目的は異なる。",
+      "evidence_refs": [
+        "E0011",
+        "E0026"
+      ],
+      "qualifiers": [
+        "比較は選定Sourceの方法記述を接続した条件付き推論であり、異分野の直接head-to-head実験結果ではない。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0007",
+      "statement": "CUSUMのk/h・ARL、ADWINのdrift検知、EVTのstreaming閾値riskはそれだけでRUL・故障ハザードを出力しない。",
+      "evidence_refs": [
+        "E0013",
+        "E0014",
+        "E0015"
+      ],
+      "qualifiers": [
+        "比較は選定Sourceの方法記述を接続した条件付き推論であり、異分野の直接head-to-head実験結果ではない。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0008",
+      "statement": "survivalの期間内failure riskとtime-dependent Brier/IBSは故障event定義と打切り仮定が要り、点F1とは異なる。",
+      "evidence_refs": [
+        "E0021",
+        "E0031",
+        "E0004"
+      ],
+      "qualifiers": [
+        "比較は選定Sourceの方法記述を接続した条件付き推論であり、異分野の直接head-to-head実験結果ではない。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0009",
+      "statement": "保全介入下の区間打切りは故障時刻の観測を制約し、IPCW等でも任意のinformative censoringは自動解決されない。",
+      "evidence_refs": [
+        "E0029",
+        "E0031"
+      ],
+      "qualifiers": [
+        "比較は選定Sourceの方法記述を接続した条件付き推論であり、異分野の直接head-to-head実験結果ではない。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0010",
+      "statement": "RUL prognostic horizon・α-λとfuture-alarm windowのF1/lead timeは異なる予測対象・時点を評価する。",
+      "evidence_refs": [
+        "E0030",
+        "E0032"
+      ],
+      "qualifiers": [
+        "比較は選定Sourceの方法記述を接続した条件付き推論であり、異分野の直接head-to-head実験結果ではない。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0011",
+      "statement": "将来alarmの予測は実故障eventの予測と同義でなく、誤報負荷・見逃し・実行可能lead timeを別途評価する必要がある。",
+      "evidence_refs": [
+        "E0016",
+        "E0032"
+      ],
+      "qualifiers": [
+        "比較は選定Sourceの方法記述を接続した条件付き推論であり、異分野の直接head-to-head実験結果ではない。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0012",
+      "statement": "C-MAPSSの劣化はsimulationであり、同データの自己教師ありRUL転移が実fleetで成立するとは限らない。",
+      "evidence_refs": [
+        "E0019",
+        "E0028"
+      ],
+      "qualifiers": [
+        "比較は選定Sourceの方法記述を接続した条件付き推論であり、異分野の直接head-to-head実験結果ではない。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0013",
+      "statement": "contrastive異常表現と自己教師ありRUL転移は自己教師信号を使うが、ラベル・学習目的・推論出力が異なる。",
+      "evidence_refs": [
+        "E0010",
+        "E0028"
+      ],
+      "qualifiers": [
+        "比較は選定Sourceの方法記述を接続した条件付き推論であり、異分野の直接head-to-head実験結果ではない。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0014",
+      "statement": "KalmanAE・粒子filter・physics-informed RULは状態・物理知識を使い得るが、機構仮定や校正を共通保証しない。",
+      "evidence_refs": [
+        "E0011",
+        "E0026",
+        "E0027"
+      ],
+      "qualifiers": [
+        "比較は選定Sourceの方法記述を接続した条件付き推論であり、異分野の直接head-to-head実験結果ではない。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0015",
+      "statement": "Isolation Forest・LOF等の非時系列outlier基準法には時間window・特徴の追加設計が要り、寿命学習は内在しない。",
+      "evidence_refs": [
+        "E0007",
+        "E0012"
+      ],
+      "qualifiers": [
+        "比較は選定Sourceの方法記述を接続した条件付き推論であり、異分野の直接head-to-head実験結果ではない。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0016",
+      "statement": "異常検知ベンチマークとC-MAPSSのRUL比較ではtask・data・metricが異なり、分野横断順位を導けない。",
+      "evidence_refs": [
+        "E0005",
+        "E0006",
+        "E0022"
+      ],
+      "qualifiers": [
+        "比較は選定Sourceの方法記述を接続した条件付き推論であり、異分野の直接head-to-head実験結果ではない。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0017",
+      "statement": "センサ欠損やdomain shiftではRULの不確実性推定・転移の方法があるが、実fleet一般化は未検証である。",
+      "evidence_refs": [
+        "E0023",
+        "E0028"
+      ],
+      "qualifiers": [
+        "比較は選定Sourceの方法記述を接続した条件付き推論であり、異分野の直接head-to-head実験結果ではない。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0018",
+      "statement": "診断、現在のアラート、将来alarm、RUL、期間内故障riskは予測起点・label・horizon・評価目的を確認して条件付きで選定すべきである。",
+      "evidence_refs": [
+        "E0016",
+        "E0017",
+        "E0004",
+        "E0030",
+        "E0031",
+        "E0032"
+      ],
+      "qualifiers": [
+        "比較は選定Sourceの方法記述を接続した条件付き推論であり、異分野の直接head-to-head実験結果ではない。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0019",
+      "statement": "比較可能性にはevent・ラベル・予測期間・time split・打切り・警報単位・指標の整合を確認する必要がある。",
+      "evidence_refs": [
+        "E0004",
+        "E0005",
+        "E0022",
+        "E0030",
+        "E0031",
+        "E0032"
+      ],
+      "qualifiers": [
+        "比較は選定Sourceの方法記述を接続した条件付き推論であり、異分野の直接head-to-head実験結果ではない。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0020",
+      "statement": "ISO 13381-1:2025公式要旨はprognostics実施時のデータ特性・開発プロセスを対象とするが、各モデルの実績を保証しない。",
+      "evidence_refs": [
+        "E0018"
+      ],
+      "qualifiers": [
+        "比較は選定Sourceの方法記述を接続した条件付き推論であり、異分野の直接head-to-head実験結果ではない。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0021",
+      "statement": "LOFの局所密度とMatrix Profileの部分系列discordは異なる入力表現を使い、標準LOFは系列順序をモデル化しない。",
+      "evidence_refs": [
+        "E0002",
+        "E0012"
+      ],
+      "qualifiers": [
+        "比較は選定Sourceの方法記述を接続した条件付き推論であり、異分野の直接head-to-head実験結果ではない。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0022",
+      "statement": "EVT型streaming thresholdのrisk parameterと所定期間内failure probabilityは異なる事象・校正対象を表す。",
+      "evidence_refs": [
+        "E0015",
+        "E0031"
+      ],
+      "qualifiers": [
+        "比較は選定Sourceの方法記述を接続した条件付き推論であり、異分野の直接head-to-head実験結果ではない。"
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "relation_id": "R0001",
+      "relation_type": "qualification",
+      "knowledge_unit_refs": [
+        "K0001",
+        "K0002",
+        "K0004"
+      ],
+      "description": "現在の逸脱scoreは故障時刻・残余寿命・確率を直接出力しない。",
+      "evidence_refs": [
+        "E0016",
+        "E0017",
+        "E0003"
+      ]
+    },
+    {
+      "relation_id": "R0002",
+      "relation_type": "association",
+      "knowledge_unit_refs": [
+        "K0005",
+        "K0013"
+      ],
+      "description": "共通の系列表現・自己教師信号を異なる下流taskへ使うことと学習目標が同じことは別。",
+      "evidence_refs": [
+        "E0009",
+        "E0010",
+        "E0020",
+        "E0028"
+      ]
+    },
+    {
+      "relation_id": "R0003",
+      "relation_type": "qualification",
+      "knowledge_unit_refs": [
+        "K0003",
+        "K0010",
+        "K0019"
+      ],
+      "description": "point F1とRULのprognostic horizon／未来alarm F1は比較指標として互換でない。",
+      "evidence_refs": [
+        "E0004",
+        "E0030",
+        "E0032"
+      ]
+    },
+    {
+      "relation_id": "R0004",
+      "relation_type": "dependency",
+      "knowledge_unit_refs": [
+        "K0008",
+        "K0009"
+      ],
+      "description": "故障確率・time-to-event評価にはevent観測と打切り機構の把握が必要。",
+      "evidence_refs": [
+        "E0029",
+        "E0031"
+      ]
+    },
+    {
+      "relation_id": "R0005",
+      "relation_type": "qualification",
+      "knowledge_unit_refs": [
+        "K0007",
+        "K0022"
+      ],
+      "description": "監視統計量／stream閾値のriskは故障horizon probabilityとは別。",
+      "evidence_refs": [
+        "E0013",
+        "E0015",
+        "E0031"
+      ]
+    },
+    {
+      "relation_id": "R0006",
+      "relation_type": "qualification",
+      "knowledge_unit_refs": [
+        "K0006",
+        "K0014"
+      ],
+      "description": "状態推定の要素が重なっても検知残差と将来RUL分布は別の推論出力。",
+      "evidence_refs": [
+        "E0011",
+        "E0026"
+      ]
+    },
+    {
+      "relation_id": "R0007",
+      "relation_type": "qualification",
+      "knowledge_unit_refs": [
+        "K0011",
+        "K0008"
+      ],
+      "description": "将来alarmラベルをobserved failure eventと同一視しない。",
+      "evidence_refs": [
+        "E0032",
+        "E0031"
+      ]
+    },
+    {
+      "relation_id": "R0008",
+      "relation_type": "qualification",
+      "knowledge_unit_refs": [
+        "K0012",
+        "K0017"
+      ],
+      "description": "合成C-MAPSSでの転移・欠測耐性は実fleetの保全・故障モードへ自動外挿できない。",
+      "evidence_refs": [
+        "E0019",
+        "E0023",
+        "E0028"
+      ]
+    },
+    {
+      "relation_id": "R0009",
+      "relation_type": "qualification",
+      "knowledge_unit_refs": [
+        "K0016",
+        "K0019"
+      ],
+      "description": "研究間の性能値はtask・event定義・分割・評価が一致しないと総合順位へ集約できない。",
+      "evidence_refs": [
+        "E0005",
+        "E0022",
+        "E0030"
+      ]
+    },
+    {
+      "relation_id": "R0010",
+      "relation_type": "dependency",
+      "knowledge_unit_refs": [
+        "K0018",
+        "K0019"
+      ],
+      "description": "条件付きの手法選択はevent、horizon、label、censoring、online制約を先に定義することが前提。",
+      "evidence_refs": [
+        "E0016",
+        "E0030",
+        "E0031",
+        "E0032"
+      ]
+    }
+  ],
+  "uncertainties": [
+    {
+      "uncertainty_id": "U0001",
+      "description": "同一対象で検知・早期警告・RUL・故障riskを共通protocolで直接比較した選定Evidenceは存在しない。",
+      "knowledge_unit_refs": [
+        "K0016",
+        "K0019"
+      ],
+      "evidence_refs": [
+        "E0005",
+        "E0022",
+        "E0031"
+      ]
+    },
+    {
+      "uncertainty_id": "U0002",
+      "description": "future alarmと実際の故障event、保全介入とinformative censoringの対応関係は未確定。",
+      "knowledge_unit_refs": [
+        "K0009",
+        "K0011"
+      ],
+      "evidence_refs": [
+        "E0029",
+        "E0032"
+      ]
+    },
+    {
+      "uncertainty_id": "U0003",
+      "description": "ARL・stream閾値risk・survival calibrationは異なる条件付けを持ち、ドリフト時の統一保証はない。",
+      "knowledge_unit_refs": [
+        "K0007",
+        "K0008",
+        "K0022"
+      ],
+      "evidence_refs": [
+        "E0013",
+        "E0015",
+        "E0031"
+      ]
+    },
+    {
+      "uncertainty_id": "U0004",
+      "description": "模擬劣化・自己教師あり転移・センサー欠測に対する実fleetの外的妥当性は不明。",
+      "knowledge_unit_refs": [
+        "K0012",
+        "K0017"
+      ],
+      "evidence_refs": [
+        "E0019",
+        "E0023",
+        "E0028"
+      ]
+    },
+    {
+      "uncertainty_id": "U0005",
+      "description": "現場固有の計算制約、監視コスト、必要lead time、誤報・保全介入費用を与えず単一の最適手法を決定できない。",
+      "knowledge_unit_refs": [
+        "K0018",
+        "K0019"
+      ],
+      "evidence_refs": [
+        "E0030",
+        "E0032"
+      ]
+    },
+    {
+      "uncertainty_id": "U0006",
+      "description": "上流INV-000038のFinalization audit logがmainに未統合なら、形式的なaccepted-result依存の完了判定は保留する。",
+      "knowledge_unit_refs": [
+        "K0018",
+        "K0019"
+      ],
+      "evidence_refs": [
+        "E0016",
+        "E0031"
+      ]
+    }
+  ]
+}
