@@ -3,22 +3,26 @@
   "artifact_type": "30_analysis",
   "investigation_id": "INV-000037",
   "rq_id": "RQ-000037",
-  "analyzed_at": "2026-11-06T01:11:41.032Z",
+  "analyzed_at": "2026-11-06T01:56:59.308Z",
   "question_type": "Methodological",
   "profile": {
-    "method_or_procedure": "18件のSource/Evidenceに基づく暫定時系列異常検知taxonomy：逐次監視（EWMA）、Bayesian online change-point detection、部分系列discord、予測残差（DeepAnT）、確率的系列モデル、敵対的Autoencoder（USAD）、Transformerのassociation/再構成、自己教師ありcontrastive（TimeAutoAD）、時系列基盤モデルとconformal校正、時系列特徴量の汎用outlier baseline。方法群の存在・適用条件を整理するもので網羅的な手法ランキングではない。",
+    "method_or_procedure": "frozen RQ-000037の方法論的範囲を代表的に覆う23件のSource/Evidenceを選定。選定軸は（a）統計監視（EWMA/CUSUMとARL）、（b）オンライン変化点・drift監視（BOCPD/ADWIN）、（c）状態空間推定と残差（KalmanAE/DeepAnT）、（d）部分系列距離・局所密度（Matrix Profile/LOF）、（e）生成・再構成・attention・contrastive学習、（f）基盤モデル・校正・反証的benchmark。対象に直結した原著または公的技術資料を優先し、異なるデータ表現とonline/offline・異常単位・モデル学習目的・スコア判定を独立軸に整理する。LOFの時系列へのwindow化は原著を越える拡張であり、原著abstractから詳細な保証やscore式を推測しない。",
     "intended_use": "対象時系列の正常性からの逸脱を時点・部分系列・イベントなどの定義された単位で検知し、アラートとその解釈を支援する。",
     "assumptions": [
       "異常の意味とground truth粒度をユースケースごとに定義する。",
       "モデルやscoreには適切な時間依存性の表現、threshold、警報単位への集約が必要となり得る。",
-      "全異常ラベル、正常運転分布の定常性、学習/試験分布の一致を前提としない。"
+      "全異常ラベル、正常運転分布の定常性、学習/試験分布の一致を前提としない。",
+      "CUSUM・ADWIN・EVTにおけるfalse alarmや平均run lengthの期待挙動は確率モデル・閾値・基準期間・drift条件に依存し、あらゆる実時系列での保証を仮定しない。"
     ],
     "evaluation_criteria": [
       "point-level, range/event-levelのprecision/recallと対応する検知遅延・誤報負荷を区別する。",
       "point adjustmentに依存するF1を単独の性能根拠としない。",
       "label粒度、閾値設定、データ漏洩、異常密度、series length、データセット構成を報告する。",
       "単純baseline（移動分散、平方差、特徴量に対するIsolation Forestなど）を必須比較候補とする。",
-      "online制約、メモリ・計算量、再学習、domain shiftに伴うscore校正の可否を検討する。"
+      "online制約、メモリ・計算量、再学習、domain shiftに伴うscore校正の可否を検討する。",
+      "CUSUM・EWMAのARLは基準平均、対象シフト量、分布・独立性などの監視前提と共に報告し、point/event指標と混同しない。",
+      "オンラインstreamではconcept drift検知とanomaly alertを分離し、ADWIN型のwindow更新条件、EVT risk thresholdの校正集合・非定常性を明示する。",
+      "LOF等の一般外れ値法を時系列に適用する際はwindow/feature embedding、距離、時間的依存性、評価分割を独立に定義する。"
     ],
     "comparators": [
       "Pageに代表される連続的統計監視",
@@ -31,23 +35,31 @@
       "Adams & MacKay (2007) のBayesian online change-point detection",
       "CNN予測残差によるDeepAnT",
       "敵対的AutoencoderによるUSAD",
-      "self-supervised contrastive learningによるTimeAutoAD"
+      "self-supervised contrastive learningによるTimeAutoAD",
+      "CUSUM：NIST/SEMATECHの基準値k、判定限界h、Average Run Lengthによる逐次平均シフト監視",
+      "KalmanAE：Kalman状態推定・AE embeddingとfiltered signal再構成残差",
+      "LOF：局所密度外れ度（時系列window化は原著外の追加設計）",
+      "ADWIN：オンラインwindow適応型分布変化監視",
+      "EVT/SPOT：単変量ストリーミング系列のリスク設定付き閾値"
     ],
     "tradeoffs": [
       "単純な統計・類似性based手法には実装・解釈の利点があり得るが、複雑な時系列関係の表現は設計や追加特徴に依存する。",
       "deep sequential modelsは非線形・多変量の関係を表現する一方、訓練分布・ラベル・スコア校正・運用負荷に依存する。",
       "foundation-model系では学習なしの導入可能性と汎化性能が研究上の関心だが、単純基準を上回る保証はない。",
       "評価protocolの違いによってreported rankingが変化するため、異なる実験の数値は無条件に比較しない。",
-      "予測残差、再構成確率、contrastive表現は異常scoreの意味が異なり、単一の閾値・アノテーション単位や評価関数での比較が直ちに成立するとは限らない。"
+      "予測残差、状態空間filter＋再構成、敵対的AE、contrastive表現学習は、学習目標・潜在表現・必要な入力前処理が異なる。個々の異常score算出・閾値化の方式を比較するには、原著のinference procedureを別途確認する必要がある。",
+      "CUSUM/EWMAの設計パラメータとARLのトレードオフ、ADWINのdrift/false alarm特性、EVT型閾値のrisk設定は異なる統計的対象であり、同じ『誤報率保証』として直接比較できない。",
+      "Matrix Profileの部分系列距離とLOFの局所密度外れ度は異なる入力表現を用いる。LOFは時系列順序を標準的に内在化しないため、window表現やレジーム変化による影響を別途評価する。"
     ],
     "applicability_limits": [
-      "18 Sourceの初回方法論調査であり、CUSUMの数理保証、状態空間・密度・距離系、連続オンライン再学習・ドリフト対応の原著を網羅していない。",
+      "23 Sourceの代表的方法論調査で、CUSUM/ARL、KalmanAE状態空間、LOF局所密度、ADWIN drift、EVT/SPOT閾値を新たに補強したが、全文の数学的保証、時系列window embedding、各手法の実装条件、online drift下の校正性能を横断的に実証したものではない。",
       "現在の異常検知と将来の故障確率／RUL推定は異なるtargetであり、後者はINV-000038に委ねる。",
-      "2026年の基盤モデル評価は限定されたモデル・データ・scoreに関する知見であり、2026年現在の普遍的SOTA順位とは解釈しない。"
+      "2026年の基盤モデル評価は限定されたモデル・データ・scoreに関する知見であり、2026年現在の普遍的SOTA順位とは解釈しない。",
+      "Sourceの一部は原著abstract・公的技術概要までの確認にとどまる。特定の異常score式・統計的保証・実測性能は検証された記述の範囲を越えて推測しない。"
     ]
   },
   "working_answer": {
-    "text": "Evidenceを18 Sourceまで補強した結果、時系列異常検知は(1)逐次的統計監視（EWMA等）、(2)Bayesian online change-point detection、(3)部分系列discord/類似性探索、(4)予測残差・確率的系列表現・Autoencoder、(5)Transformerのassociation等、(6)自己教師ありcontrastive表現、(7)時系列基盤モデル・統計量併用・conformal校正、(8)単純時系列統計と汎用外れ値検出baselineに分けて暫定整理できる。ただしアーキテクチャ分類と異常score生成機序、教師信号、ラベル粒度、運用目的は独立した比較軸である。point adjustmentによるF1過大評価、TSB-ADの手法順位の文脈依存性、2026年基盤モデル評価における単純baselineとの競争力は反証的検討を要求する。モデルの普遍的優位は確認されず、オンライン閾値管理、ドリフト、状態空間、統計的保証の一次資料をさらに調査する必要がある。",
+    "text": "23件のSourceを用いた代表的な時系列異常検知の方法分類として、(1)逐次統計監視（EWMA/CUSUM: 統計量・k/h・ARL）、(2)オンライン変化・drift監視（Bayesian run-length posterior、ADWIN）、(3)部分系列距離・discord（Matrix Profile）と一般的特徴空間での局所密度外れ値（LOF）、(4)CNN予測残差（DeepAnT）・Kalman状態推定＋再構成（KalmanAE）・確率的系列モデル・敵対的AE（USAD）、(5)Transformerのassociation等、(6)自己教師ありcontrastive表現（TimeAutoAD）、(7)基盤モデル応用・conformalおよびEVT型閾値校正、(8)単純統計・非時系列外れ値baselineを区別できる。選定はfrozen Contextに明示された方法群の最低限の原著／公的資料を含み、欠落していたstate-space、CUSUM、density、online drift、thresholdを補うよう行った。ただし各手法の学習目標・入力表現と、推論時の異常scoreの算出・警報閾値・異常単位は別の比較軸であり、DeepAnT/USAD/TimeAutoADの具体的なscore定義の相互差まで本Evidenceで立証したものではない。ARLやfalse alarmの議論は対象shift・risk・モデル前提を必要とする。point adjustmentによるF1の過大評価や、基盤モデルに関する新提案と限定的な否定的benchmark結果は併存し、無条件の性能順位にはならない。方法群の網羅性、inference scoreの定式化、drift環境での再現性能には引き続き未解決事項がある。",
     "knowledge_unit_refs": [
       "K0001",
       "K0002",
@@ -63,7 +75,12 @@
       "K0012",
       "K0013",
       "K0014",
-      "K0015"
+      "K0015",
+      "K0016",
+      "K0017",
+      "K0018",
+      "K0019",
+      "K0020"
     ]
   },
   "judgments": [
@@ -77,7 +94,12 @@
         "K0005",
         "K0010",
         "K0011",
-        "K0012"
+        "K0012",
+        "K0016",
+        "K0017",
+        "K0018",
+        "K0019",
+        "K0020"
       ]
     },
     {
@@ -107,23 +129,53 @@
     },
     {
       "judgment_id": "J0005",
-      "statement": "予測残差・敵対的Autoencoder・self-supervised contrastive学習は目的関数と異常スコアの定義が異なり、同一Architecture系統として安易に性能統合できない。",
+      "statement": "DeepAnTは短期予測を、USADは敵対的Autoencoder学習を、TimeAutoADはpseudo-negativeを用いたcontrastive表現学習を提案し、少なくとも学習対象・表現方式が異なる。K0013-K0015のみから各手法の推論時異常score式や閾値化の相互差は確定できず、学習目的の違いをscore semanticsの確証と混同してはならない。",
       "knowledge_unit_refs": [
         "K0013",
         "K0014",
         "K0015"
       ]
+    },
+    {
+      "judgment_id": "J0006",
+      "statement": "CUSUMのk/hとARL、ADWINのwindow適応、EVT/SPOTのrisk-thresholdは、それぞれ逐次シフト監視・ドリフト検知・極値による閾値管理という別の方法論層に属する。評価ではシフト量、誤報・遅延、モデル仮定を対応付ける必要がある。",
+      "knowledge_unit_refs": [
+        "K0018",
+        "K0019",
+        "K0020"
+      ]
+    },
+    {
+      "judgment_id": "J0007",
+      "statement": "部分系列の距離・discordを扱うMatrix Profileと局所密度に基づくLOFを同一の時系列アルゴリズムとして扱ってはならない。LOFを時系列に適用するならwindow化と時間依存性の取扱いを別に設計する。",
+      "knowledge_unit_refs": [
+        "K0003",
+        "K0017"
+      ]
+    },
+    {
+      "judgment_id": "J0008",
+      "statement": "状態空間Kalman filter＋AE再構成のKalmanAEとCNN短期予測のDeepAnTは、ともに逸脱の検出に残差情報を使うが、状態・予測表現の学習条件が異なり同等なモデル族として単純な性能比較はできない。",
+      "knowledge_unit_refs": [
+        "K0013",
+        "K0016"
+      ]
     }
   ],
   "limitations": [
     {
-      "text": "EWMA、Bayesian online change-point detection、CNN予測残差、敵対的AE、self-supervised contrastiveの原著は補強したが、CUSUM数理、状態空間、密度/距離、オンラインドリフト適応の網羅はまだ不足する。",
+      "text": "CUSUMのk/h・ARL、公的統計監視、KalmanAE状態空間、LOF局所密度、ADWINのdrift適応、EVT/SPOT閾値の代表資料を補強した。ただし理論証明の前提、時系列へのLOF適用の窓表現、非定常下の検知遅延・誤報、手法間の同一評価条件は未確立。",
       "knowledge_unit_refs": [
         "K0011",
         "K0012",
         "K0013",
         "K0014",
-        "K0015"
+        "K0015",
+        "K0016",
+        "K0017",
+        "K0018",
+        "K0019",
+        "K0020"
       ]
     },
     {
@@ -140,20 +192,34 @@
         "K0008",
         "K0009"
       ]
+    },
+    {
+      "text": "DeepAnT/USAD/TimeAutoADについて確認済みのK0013-K0015は学習方式を支持するが、推論時の異常スコアの具体的式・閾値の同一条件比較は支持しない。",
+      "knowledge_unit_refs": [
+        "K0013",
+        "K0014",
+        "K0015"
+      ]
     }
   ],
   "unresolved_questions": [
-    "CUSUMの検知保証、状態空間・距離/密度・予測残差の仮定を揃えた、異常の単位とalert utilityに基づくmethod taxonomyをどう完成させるか。",
-    "オンライン異常検知における閾値更新・concept drift・latency／誤報コストの実運用上の設計指標をどう定式化するか。",
-    "代表的な自己教師あり／基盤モデル手法を、同一task・分割・event-level評価で比較した場合の頑健な差はあるか。"
+    "CUSUM/ARLの分布・逐次相関の前提、state-space再構成残差、距離・局所密度のwindow設計を共通の異常・アラート単位で比較するプロトコルはどう定義できるか。",
+    "ADWIN型drift適応とEVT/SPOT型risk thresholdの同時運用時、非定常性・閾値更新・alert delay・false positiveをどう確かめるか。",
+    "代表的な自己教師あり／基盤モデル手法を、同一task・分割・event-level評価で比較した場合の頑健な差はあるか。",
+    "DeepAnT/USAD/TimeAutoADの推論時scoreの正確な式・thresholdとevent-level評価設計を原著全文・実装に基づき比較できるか。"
   ],
   "alternative_interpretations": [
     {
-      "text": "method taxonomyはモデルarchitectureだけで分ける方式もあるが、同じTransformer内部でscore生成/校正が異なるため、問題設定とscore semanticsを横断軸にする方が適用可否の説明に有用である。",
+      "text": "architectureによる分類も有用だが、CUSUM/ADWIN/SPOTの監視機能、KalmanAEとDeepAnTの状態・予測機序、LOFのwindow前処理などはモデル族だけでは表せず、入力構成・学習・統計監視・閾値を別軸に区別する必要がある。",
       "knowledge_unit_refs": [
         "K0001",
         "K0005",
-        "K0006"
+        "K0006",
+        "K0016",
+        "K0017",
+        "K0018",
+        "K0019",
+        "K0020"
       ]
     },
     {
