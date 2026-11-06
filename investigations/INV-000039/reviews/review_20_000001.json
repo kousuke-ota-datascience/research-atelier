@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000039",
+  "review_seq": 1,
+  "findings": [],
+  "verdict": "PASS",
+  "layer": "20_synthesis",
+  "review_kind": "10_evidence_to_20_synthesis",
+  "target_blob_sha": "e4085f6239e60598ed60c0bba87f345635e9dc6f",
+  "assessment": "All 22 Knowledge Units, 10 relations and six uncertainty records were examined for support by E0001-E0032. Source claims are distinguished from cross-source conditional inference. K0001/K0002/K0018 distinguish current anomaly scoring, future alarm, failure risk, and RUL; K0003/K0010/K0019 avoid misleading metric equivalence. Censoring, maintenance interventions, simulation-to-fleet transfer, and online drift qualifications remain explicit. U0006 is a historical operational gate, not empirical scientific uncertainty: the condition was discharged by merge PR #23, and it is not used as a live claim of an unresolved scientific mechanism. No material unsupported research-level proposition or omitted qualification was identified."
+}
