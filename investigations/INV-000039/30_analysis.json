@@ -1,0 +1,214 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "30_analysis",
+  "investigation_id": "INV-000039",
+  "rq_id": "RQ-000039",
+  "analyzed_at": "2026-11-06T04:26:36.866Z",
+  "question_type": "Comparative",
+  "profile": {
+    "comparison_units": [
+      "現在時刻tの異常検知・診断（point/subsequence/event）",
+      "時刻tの観測から将来[t,t+h]のalarm発生を予測する早期警告",
+      "時刻tからh内の実故障eventの条件付き確率を推定するprognostics",
+      "観測時刻tの残存寿命RUL・故障時刻・劣化状態分布を推定するprognostics",
+      "状態監視scoreを入力とする複段階パイプライン（検知から故障予測への連結）"
+    ],
+    "comparison_dimensions": [
+      "target：現在の逸脱、将来alarm、実故障event、故障時刻・RUL、劣化状態",
+      "time origin / horizon：観測起点t、online/offline、alert lead time、予測幅h",
+      "ground truth：point/range/event anomaly label、alarm時刻、failure event、run-to-failure、打切り・競合event",
+      "input：系列・状態推定・物理知識、個体差・センサ欠損・ドメインシフト",
+      "supervision：normal-only、weak/fully labeled、future failure/RUL label、unsupervised target adaptation",
+      "outputs：anomaly score/alert、future-alarm probability、survival/hazard、RUL point/interval/distribution",
+      "evaluation：event PR/recall・alarm rate/検知遅延、lead time、RUL MAE/RMSE/α-λ、time-dependent Brier/IBS/calibration",
+      "operation：latency、false-alarm負荷、見逃しcost、説明可能性、保全介入と検証コスト"
+    ],
+    "contrasts": [
+      "現在の異常監視：正常系中心で故障時刻ラベルが無い場合、CUSUM/Matrix Profile/再構成残差/簡単なbaseline等を候補とし、point-adjusted F1単独で選ばずevent単位のprecision・recall、検知遅延、誤報負荷を確認する。故障確率の出力とは扱わない。",
+      "将来alarmの早期警告：観測窓とh先のalarm labelがあればfuture-alarm予測を候補とする。必要な介入lead time、未来alarmの定義、誤報・見逃し、事前警告時刻を評価し、alarm labelを実故障eventと同一視しない。",
+      "将来故障の期間内確率：実故障event・観測起点・prediction horizon・打切り情報が整うならsurvival/hazardや劣化過程によるrisk推定を候補とし、time-dependent discrimination・Brier/IBS・校正とIPCW等の前提を評価する。保全によるinformative censoringを無視しない。",
+      "残存寿命RUL：故障閾値／failure timeやrun-to-failure系列、または物理的劣化仮定が利用できるならGamma/Wiener/粒子filter、CNN等のRUL回帰を条件付き候補とする。MAE/RMSEに加え、prognostic horizon・α-λ・予測区間と外部fleet検証を要求する。",
+      "連結型：異常score・状態推定をprognosticsへの入力に使うことは可能だが、scoreをそのまま故障確率やRULへ読み替えられない。failure labels・閾値・保全policy・校正モデル等の追加条件を要する。",
+      "運用ドリフト：ADWINの変化監視、CUSUM/ARL、EVT risk thresholdはオンライン監視・閾値更新の候補だが、誤報と予測遅延の確率保証は分布・drift条件に依存する。"
+    ],
+    "comparability_limits": [
+      "selected EvidenceはINV-000037の15件とINV-000038の17件を原Source/Notion Note/SHAで再使用。異なるtaskの直接head-to-head比較を実施したわけではない。",
+      "point-adjusted F1、RUL MAE、prognostic horizon、future-alarm F1、survival Brier/IBS等の数値を共通rankingに合成しない。",
+      "単純baseline、複雑深層モデル、基盤モデルの性能優劣はdataset・異常定義・分割・baseline条件に依存する。",
+      "RULのrun-to-failure/censoring、合成C-MAPSS、保全介入のある実fleetを同じ観測機構として扱わない。",
+      "ISO 13381-1の公表要旨はprognostics processの範囲を説明するが、特定モデルの性能保証ではない。",
+      "INV-000038 Finalizationのprojection_log_v2.jsonがmainに未統合である間、上流accepted-result依存の形式的完了判定を保留する。"
+    ]
+  },
+  "working_answer": {
+    "text": "時系列異常検知と故障予測は系列データ・特徴抽出・状態推定・一部の自己教師あり学習を共有できるが、同一問題ではない。判断の第一軸はprediction targetである。①現在の逸脱・状態監視には異常score/alertとevent-level誤報・検知遅延、②将来alarmの早期警告には指定horizonと実行可能lead time・誤報、③所定期間の実故障リスクにはfailure event・survival/censoring・確率校正とBrier/IBS、④故障時刻／RULには劣化過程・故障閾値／failure labelsとMAE/RMSE・prognostic horizon・予測不確実性を対応させる。CUSUM・ADWIN・EVTのstream監視、KalmanAEなどの異常再構成、粒子filter・Gamma/Wiener・CNN等のprognosticsは共通の技術要素を使えても異なる条件付き出力を持つ。異常scoreから故障発生確率・RULを得るには故障との写像、時間原点、label・打切り機構、別途の学習・校正を要し、そのまま置換できない。比較前にevent定義、prediction horizon、supervision、time split、点／event単位、評価指標、運用costを明示する。C-MAPSS合成劣化による性能順位や異常検知のpoint-adjusted F1から異分野共通の『最良手法』は導けない。本比較はINV-000037/038で確認されたsource-faithful Evidenceを32件再選択した条件付きmethod selectionであり、両タスクを同条件で比較する実験ではない。",
+    "knowledge_unit_refs": [
+      "K0001",
+      "K0002",
+      "K0003",
+      "K0004",
+      "K0005",
+      "K0006",
+      "K0007",
+      "K0008",
+      "K0009",
+      "K0010",
+      "K0011",
+      "K0012",
+      "K0013",
+      "K0014",
+      "K0015",
+      "K0016",
+      "K0017",
+      "K0018",
+      "K0019",
+      "K0020",
+      "K0021",
+      "K0022"
+    ]
+  },
+  "judgments": [
+    {
+      "judgment_id": "J0001",
+      "statement": "対象を『現在の異常』『未来alarm』『未来の実故障risk』『RUL』に分け、horizon・イベント・評価を対応させて初めて手法選定が可能となる。",
+      "knowledge_unit_refs": [
+        "K0001",
+        "K0002",
+        "K0004",
+        "K0011",
+        "K0018"
+      ]
+    },
+    {
+      "judgment_id": "J0002",
+      "statement": "異常score、CUSUM/EVT閾値、将来故障確率は異なる確率事象・推論対象であり、追加の故障labelと校正なしには相互変換できない。",
+      "knowledge_unit_refs": [
+        "K0007",
+        "K0008",
+        "K0022"
+      ]
+    },
+    {
+      "judgment_id": "J0003",
+      "statement": "共有可能なのは系列表現・状態推定・一部の学習技術であり、CNN残差検知とRUL回帰、KalmanAEと粒子filter、contrastive異常学習とRUL転移は目的変数が異なる。",
+      "knowledge_unit_refs": [
+        "K0005",
+        "K0006",
+        "K0013",
+        "K0014"
+      ]
+    },
+    {
+      "judgment_id": "J0004",
+      "statement": "異常検知のpoint-adjusted F1とRULのprognostic horizon、故障riskのBrier/IBS、future-alarm窓F1は数値の横並び比較に適さない。",
+      "knowledge_unit_refs": [
+        "K0003",
+        "K0008",
+        "K0010",
+        "K0019"
+      ]
+    },
+    {
+      "judgment_id": "J0005",
+      "statement": "実故障time-to-event評価では保全介入と区間／情報依存打切りの区別が必要であり、IPCW等は無条件の無偏性を保証しない。",
+      "knowledge_unit_refs": [
+        "K0008",
+        "K0009"
+      ]
+    },
+    {
+      "judgment_id": "J0006",
+      "statement": "将来alarmを早く当てることと故障を十分な時間前に予測することは別であり、alarm label、必要lead time、誤報負荷を個別に確定する。",
+      "knowledge_unit_refs": [
+        "K0010",
+        "K0011"
+      ]
+    },
+    {
+      "judgment_id": "J0007",
+      "statement": "C-MAPSSの合成劣化、転移学習、部分センサ故障への頑健性の各報告は実fleet全体への性能保証ではない。",
+      "knowledge_unit_refs": [
+        "K0012",
+        "K0017"
+      ]
+    },
+    {
+      "judgment_id": "J0008",
+      "statement": "最適手法を断定せず、目的・ラベル・horizon・評価単位・運用資源を入力とする条件付きdecision matrixとして提示する。",
+      "knowledge_unit_refs": [
+        "K0018",
+        "K0019",
+        "K0020"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "text": "受理済み上流のOriginal Source／Evidenceを選び直した比較であり、同一設備・同一指標による検知と故障予測の実験的な直接比較ではない。",
+      "knowledge_unit_refs": [
+        "K0016",
+        "K0019"
+      ]
+    },
+    {
+      "text": "故障eventの欠測、保全介入とinformative censoring、future alarmとfailure eventの対応が不明な現場では、risk・RULの校正可能性が限定される。",
+      "knowledge_unit_refs": [
+        "K0008",
+        "K0009",
+        "K0011"
+      ]
+    },
+    {
+      "text": "独立設備fleet、センサー故障、domain shiftでの外的妥当性はC-MAPSS等の合成劣化benchmarkから保証されない。",
+      "knowledge_unit_refs": [
+        "K0012",
+        "K0017"
+      ]
+    },
+    {
+      "text": "用途・データ・計算制約、誤報／見逃しcost、介入lead timeが指定されていないため、選択表は条件付き推薦に限り一意の最良手法を出さない。",
+      "knowledge_unit_refs": [
+        "K0018",
+        "K0019"
+      ]
+    },
+    {
+      "text": "INV-000038のFinalization履歴PR #23がmain未統合の間、上流accepted resultを必要とする形式的なWorkflow 00のCOMPLETE判定はできない。",
+      "knowledge_unit_refs": [
+        "K0018",
+        "K0019"
+      ]
+    }
+  ],
+  "unresolved_questions": [
+    "異常検知scoreを所定horizon内の故障riskへ結び付けるとき、必要なfailure eventのアノテーション、保全policy、校正モデル・介入効果は何か。",
+    "同一設備でpoint/event検知、future alarm、RUL、故障riskを時間分割とlabelの整合を保って比較する評価protocolはどう設計するか。",
+    "情報依存打切り・競合故障mode・ドメインシフト下で校正とfalse alarm burdenをどう検証するか。",
+    "作業可能lead time、誤報cost、オンラインlatency、説明可能性など運用制約を定量化したとき、どの条件で候補間の優劣が変化するか。"
+  ],
+  "alternative_interpretations": [
+    {
+      "text": "共通の状態空間・系列embeddingを上流特徴として共有し、下流にanomaly alertとsurvival/RUL headを設ける多タスク系は設計可能だが、共有特徴のみで識別・校正可能性は保証できない。",
+      "knowledge_unit_refs": [
+        "K0005",
+        "K0006",
+        "K0014"
+      ]
+    },
+    {
+      "text": "future-alarm分類が保全意思決定に十分な場合もあるが、alarmがfault ground truthを意味しないとき、その成功を故障リスク推定の成功と扱えない。",
+      "knowledge_unit_refs": [
+        "K0010",
+        "K0011"
+      ]
+    },
+    {
+      "text": "単純なCUSUM・距離系baselineが適した監視条件と、物理・確率劣化／深層RUL回帰が必要な条件は併存し、複雑性単独で順位付けできない。",
+      "knowledge_unit_refs": [
+        "K0007",
+        "K0004",
+        "K0016"
+      ]
+    }
+  ]
+}
