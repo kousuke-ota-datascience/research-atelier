@@ -92,6 +92,16 @@ class WorkingAnswerPatchTests(unittest.TestCase):
         self.assertEqual(result.markdown, body)
         self.assertTrue(working_answer_section_matches(body, ANALYSIS))
 
+    def test_notion_roundtrip_blank_block_separators_is_current(self):
+        rendered = render_working_answer_section(ANALYSIS)
+        notion_readback = rendered.replace(
+            "# Working Answer\n## Answer",
+            "# Working Answer\n\n## Answer",
+        ).replace("## Key Judgments\n", "## Key Judgments\n\n")
+        self.assertTrue(working_answer_section_matches(notion_readback, ANALYSIS))
+        self.assertEqual(working_answer_projection_state(notion_readback, ANALYSIS), "CURRENT")
+        self.assertEqual(patch_working_answer_section(notion_readback, ANALYSIS).action, "NOOP")
+
     def test_duplicate_target_heading_blocks_projection(self):
         body = "# Working Answer\nold one\n\n# Notes\nkeep\n\n# Working Answer\nold two"
         with self.assertRaises(DuplicateWorkingAnswerSectionError):
