@@ -3,7 +3,7 @@
   "artifact_type": "10_evidence",
   "investigation_id": "INV-000038",
   "rq_id": "RQ-000038",
-  "snapshot_at": "2026-11-05T23:49:21.339Z",
+  "snapshot_at": "2026-11-06T01:03:26.791Z",
   "sources": [
     {
       "source_id": "SRC-000184",
@@ -94,6 +94,15 @@
       },
       "accessed_at": "2026-11-05T23:49:21.339Z",
       "notion_url": "https://app.notion.com/p/40fe5855be3981668b19d50e5b287316"
+    },
+    {
+      "source_id": "SRC-000197",
+      "source_revision": {
+        "commit_sha": "6b1ad2e5d678c03d5a6d2d27351adc1734d04092",
+        "blob_sha": "1c294748d5f2bb1358d7567dbf9770ef96373806"
+      },
+      "accessed_at": "2026-11-06T01:03:26.791Z",
+      "notion_url": "https://app.notion.com/p/410e5855be3981e48601cc6fe18be038"
     }
   ],
   "evidence_items": [
@@ -231,6 +240,20 @@
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/40fe5855be39816497b4de549dc40773",
           "title": "EV-000315"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0011",
+      "content": "Lingら（2019）は、劣化速度が途中で変化する二相Gamma過程に対し、変化時点の不確実性を組み込むBayesianおよびlikelihood推定によってRULを予測した。シミュレーションとLEDデータを用いて評価した。",
+      "source_locator": "Abstract",
+      "selection_reason": "Original publication fills a previously underrepresented classical or degradation-method family.",
+      "note_type": "Method",
+      "provenance": {
+        "source_id": "SRC-000197",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/410e5855be3981abb371f11714ccf7c4",
+          "title": "EV-000318"
         }
       }
     }

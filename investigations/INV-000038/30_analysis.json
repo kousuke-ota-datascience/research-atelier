@@ -3,10 +3,10 @@
   "artifact_type": "30_analysis",
   "investigation_id": "INV-000038",
   "rq_id": "RQ-000038",
-  "analyzed_at": "2026-11-05T23:53:49.498Z",
+  "analyzed_at": "2026-11-06T01:03:26.791Z",
   "question_type": "Methodological",
   "profile": {
-    "method_or_procedure": "時系列による故障予測の初回method taxonomy：故障診断からprognosticsへの接続；統計的RUL・time-to-event/survival；物理劣化または状態推定に基づくmodel-based；CNN/LSTMなどdata-driven系列回帰；model-based/data-drivenのhybrid；センサー欠損への予測不確実性評価。多数の候補を挙げているが選択した10 Sourceから再構成した暫定体系である。",
+    "method_or_procedure": "時系列による故障予測の初回method taxonomy：故障診断からprognosticsへの接続；統計的RUL・time-to-event/survival；物理劣化または状態推定に基づくmodel-based；CNN/LSTMなどdata-driven系列回帰；model-based/data-drivenのhybrid；センサー欠損への予測不確実性評価。多数の候補を挙げているが選択した10 Sourceから再構成した暫定体系である。 補強原著：二相Gamma劣化過程と変化点不確実性を取り扱うRUL推定（Ling et al., 2019）。",
     "intended_use": "工学システムの観測履歴を利用し、故障・劣化の将来状態、故障までの時間、RULあるいは保全上の事前警告を推定し、予測のリスクと不確実性を説明する。",
     "assumptions": [
       "故障定義、劣化判定基準、予測起点とprediction horizonを明記する。",
@@ -26,7 +26,8 @@
       "センサー特徴量からのCNN回帰",
       "LSTMなどの時系列回帰",
       "打切り対応のDeep Survival Machines",
-      "hybrid/uncertainty-awareモデルとsimple baselines"
+      "hybrid/uncertainty-awareモデルとsimple baselines",
+      "Ling et al. (2019) の二相Gamma確率劣化過程とBayesian／likelihood RUL推定"
     ],
     "tradeoffs": [
       "状態・劣化物理をモデル化できれば機構に沿った予測が可能だが、状態観測・パラメータ同定を必要とする。原著レベルでの詳細比較は本初回Sourceに不足する。",
@@ -52,7 +53,8 @@
       "K0006",
       "K0007",
       "K0008",
-      "K0009"
+      "K0009",
+      "K0010"
     ]
   },
   "judgments": [
@@ -62,7 +64,8 @@
       "knowledge_unit_refs": [
         "K0001",
         "K0002",
-        "K0006"
+        "K0006",
+        "K0010"
       ]
     },
     {
@@ -93,7 +96,7 @@
   ],
   "limitations": [
     {
-      "text": "現初回Evidenceは10 Sourceにとどまり、劣化統計モデル・状態推定・physics-informed・transfer/self-supervised・保全介入/検閲を十分収集していない。",
+      "text": "二相Gamma過程の原著を補強したが、Wiener過程・粒子フィルタ・physics-informed・transfer/self-supervised・保全介入や打切りの網羅は不十分である。",
       "knowledge_unit_refs": [
         "K0004",
         "K0006"
@@ -120,7 +123,7 @@
     }
   ],
   "unresolved_questions": [
-    "Wiener/Gamma過程、particle filter、physics-informed prognostics、Bayesian filteringなどの数理的分類と仮定条件を原著から補強する。",
+    "二相Gamma過程以外のWiener過程、粒子フィルタ、physics-informed prognostics、Bayesian filteringなどの理論的分類と仮定条件を原著で補強する。",
     "保全介入が故障時刻を観測不能にするinformative censoringをどう扱い、予測性能をどの実運用データで評価すべきか。",
     "RUL回帰、故障ハザード、早期警告における決定理論上の目標関数と校正をどう整合させるか。",
     "2025–2026年のtransfer、foundation model、self-supervised、cross-fleet prognosticsの独立再現比較を追加する。"

@@ -3,7 +3,7 @@
   "artifact_type": "10_evidence",
   "investigation_id": "INV-000037",
   "rq_id": "RQ-000037",
-  "snapshot_at": "2026-11-05T23:46:18.770Z",
+  "snapshot_at": "2026-11-06T01:03:26.791Z",
   "sources": [
     {
       "source_id": "SRC-000171",
@@ -121,6 +121,24 @@
       },
       "accessed_at": "2026-11-05T23:46:18.770Z",
       "notion_url": "https://app.notion.com/p/40fe5855be3981868bbeea8e299ac393"
+    },
+    {
+      "source_id": "SRC-000195",
+      "source_revision": {
+        "commit_sha": "6b1ad2e5d678c03d5a6d2d27351adc1734d04092",
+        "blob_sha": "5dd950574e2f4affc3f5ce18c05e7f46f7913ca2"
+      },
+      "accessed_at": "2026-11-06T01:03:26.791Z",
+      "notion_url": "https://app.notion.com/p/410e5855be39817db53bf89ae016ddd8"
+    },
+    {
+      "source_id": "SRC-000196",
+      "source_revision": {
+        "commit_sha": "6b1ad2e5d678c03d5a6d2d27351adc1734d04092",
+        "blob_sha": "04e03926df3a1fb953254f360a1180730b844cda"
+      },
+      "accessed_at": "2026-11-06T01:03:26.791Z",
+      "notion_url": "https://app.notion.com/p/410e5855be3981bf9517c46256e8cb7d"
     }
   ],
   "evidence_items": [
@@ -303,6 +321,34 @@
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/40fe5855be3981c584f9e59db1d8cd39",
           "title": "EV-000305"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0014",
+      "content": "AdamsとMacKay（2007）は、直近の変化点からの経過長（run length）の事後分布を逐次更新するオンラインBayesian change-point detectionを提示する。",
+      "source_locator": "Abstract",
+      "selection_reason": "Original publication fills a previously underrepresented classical or degradation-method family.",
+      "note_type": "Method",
+      "provenance": {
+        "source_id": "SRC-000195",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/410e5855be3981fab63bd9d36229e195",
+          "title": "EV-000316"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0015",
+      "content": "Roberts（1959）は、最新観測に最大の重みを与え、過去観測に等比的に減衰する重みを付ける移動平均に基づく管理図を検討した。",
+      "source_locator": "Abstract",
+      "selection_reason": "Original publication fills a previously underrepresented classical or degradation-method family.",
+      "note_type": "Method",
+      "provenance": {
+        "source_id": "SRC-000196",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/410e5855be3981eaaf2de60599fe3078",
+          "title": "EV-000317"
         }
       }
     }

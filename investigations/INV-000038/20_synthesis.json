@@ -3,7 +3,7 @@
   "artifact_type": "20_synthesis",
   "investigation_id": "INV-000038",
   "rq_id": "RQ-000038",
-  "synthesized_at": "2026-11-05T23:51:33.772Z",
+  "synthesized_at": "2026-11-06T01:03:26.791Z",
   "knowledge_units": [
     {
       "knowledge_unit_id": "K0001",
@@ -95,6 +95,16 @@
       "qualifiers": [
         "conformal校正保証の適用前提はこの要旨だけでは確認しきれていない。"
       ]
+    },
+    {
+      "knowledge_unit_id": "K0010",
+      "statement": "Lingら（2019）は劣化速度が変化する二相Gamma過程に基づいてBayesian法と尤度法を用いるRUL推定を定式化し、simulationとLEDで評価した。",
+      "evidence_refs": [
+        "E0011"
+      ],
+      "qualifiers": [
+        "Two-phase gamma-process method was evaluated in simulation and an LED example; generalization to arbitrary industrial systems is unverified."
+      ]
     }
   ],
   "relations": [
@@ -171,7 +181,7 @@
   "uncertainties": [
     {
       "uncertainty_id": "U0001",
-      "description": "RULの物理劣化・ベイズ状態推定・ハイブリッドモデルの個別原著を十分収集できておらず、包括的な選択則の主張は時期尚早である。",
+      "description": "二相Gamma過程の原著を補強したが、Wiener劣化過程、particle filter、physics-informed、Bayesian state estimation等の体系的比較はまだ不足する。",
       "knowledge_unit_refs": [
         "K0004"
       ],

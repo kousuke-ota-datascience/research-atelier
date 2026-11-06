@@ -3,7 +3,7 @@
   "artifact_type": "20_synthesis",
   "investigation_id": "INV-000037",
   "rq_id": "RQ-000037",
-  "synthesized_at": "2026-11-05T23:50:49.246Z",
+  "synthesized_at": "2026-11-06T01:03:26.791Z",
   "knowledge_units": [
     {
       "knowledge_unit_id": "K0001",
@@ -113,6 +113,26 @@
       "qualifiers": [
         "window化の効果について本Sourceは直接検証していない。"
       ]
+    },
+    {
+      "knowledge_unit_id": "K0011",
+      "statement": "AdamsとMacKay（2007）は、change point以降のrun lengthの事後分布をオンラインで再帰更新するBayesian change-point detection法を提示した。",
+      "evidence_refs": [
+        "E0014"
+      ],
+      "qualifiers": [
+        "Online changepoint posterior inference; detection of a change in data-generating process is not a verified equipment fault prediction."
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0012",
+      "statement": "Roberts（1959）は、最新観測に大きな重みを与え過去の重みを指数的に減衰させるEWMA管理図を検討した。",
+      "evidence_refs": [
+        "E0015"
+      ],
+      "qualifiers": [
+        "Original abstract supports the EWMA weighting/monitoring construction, not numerical superiority under arbitrary series."
+      ]
     }
   ],
   "relations": [
@@ -192,7 +212,7 @@
   "uncertainties": [
     {
       "uncertainty_id": "U0001",
-      "description": "選択した13 Sourceだけでは予測残差、control chart、state-space、距離・密度、self-supervised、オンライン学習など全手法群を原著レベルで網羅できていない。",
+      "description": "EWMA管理図とBayesian online change-point detectionの原著を補強したが、state-space、距離・密度、self-supervised、オンラインドリフト適応など全手法群を原著レベルで網羅できていない。",
       "knowledge_unit_refs": [
         "K0001"
       ],
