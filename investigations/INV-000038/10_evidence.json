@@ -129,7 +129,8 @@
       "provenance": {
         "source_id": "SRC-000185",
         "evidence_note": {
-          "notion_url": "https://app.notion.com/p/40fe5855be3981298bc0eaa229bcb5d6"
+          "notion_url": "https://app.notion.com/p/40fe5855be3981298bc0eaa229bcb5d6",
+          "title": "EV-000307"
         }
       }
     },
@@ -184,7 +185,8 @@
       "provenance": {
         "source_id": "SRC-000189",
         "evidence_note": {
-          "notion_url": "https://app.notion.com/p/40fe5855be3981358db0c0786a83b460"
+          "notion_url": "https://app.notion.com/p/40fe5855be3981358db0c0786a83b460",
+          "title": "EV-000311"
         }
       }
     },
@@ -197,7 +199,8 @@
       "provenance": {
         "source_id": "SRC-000190",
         "evidence_note": {
-          "notion_url": "https://app.notion.com/p/40fe5855be3981448e4ffe0199678712"
+          "notion_url": "https://app.notion.com/p/40fe5855be3981448e4ffe0199678712",
+          "title": "EV-000312"
         }
       }
     },
