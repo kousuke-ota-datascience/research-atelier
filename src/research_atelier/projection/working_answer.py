@@ -12,8 +12,8 @@ from typing import Any, Mapping, Sequence
 
 WORKING_ANSWER_HEADING = "# Working Answer"
 _EMPTY_NOTION_BODY = "<empty-block/>"
-_H1_RE = re.compile(r"^#\\s+.+")
-_TARGET_H1_RE = re.compile(r"^#\\s+Working Answer(?:\\s+\\{[^}]*\\})?\\s*$")
+_H1_RE = re.compile(r"^#\s+.+")
+_TARGET_H1_RE = re.compile(r"^#\s+Working Answer(?:\s+\{[^}]*\})?\s*$")
 
 
 class DuplicateWorkingAnswerSectionError(ValueError):
