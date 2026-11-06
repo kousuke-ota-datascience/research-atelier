@@ -3,7 +3,7 @@
   "artifact_type": "20_synthesis",
   "investigation_id": "INV-000038",
   "rq_id": "RQ-000038",
-  "synthesized_at": "2026-11-06T01:10:41.321Z",
+  "synthesized_at": "2026-11-06T02:18:41.203Z",
   "knowledge_units": [
     {
       "knowledge_unit_id": "K0001",
@@ -165,6 +165,96 @@
       "qualifiers": [
         "モデルアーキテクチャの存在と任意の運転条件での予測力は区別する。"
       ]
+    },
+    {
+      "knowledge_unit_id": "K0017",
+      "statement": "Siら（2013）は、観測した劣化履歴を用い、Wiener過程のdriftをrecursive filteringで更新し、EMで他のパラメータを更新するfirst-hitting-time型RUL分布を示した。",
+      "evidence_refs": [
+        "E0018"
+      ],
+      "qualifiers": [
+        "既知の劣化閾値・Wiener確率モデル等の前提に依存し、原著gyro例から任意の劣化機構へ外挿しない。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0018",
+      "statement": "OrchardとVachtsevanos（2009）は非線形・非Gaussianのhybrid状態空間モデルで粒子filterによる診断状態PDFを推定し、その後RUL分布を予測するprognosticsを提案した。",
+      "evidence_refs": [
+        "E0019"
+      ],
+      "qualifiers": [
+        "seeded-fault例に限られ、確率密度出力の存在は実fleetでの校正を保証しない。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0019",
+      "statement": "Liら（2024）はphysics-informed data-driven RULを体系的にレビューし、物理的機構や事前知識の利用とデータ駆動学習の接続、各系統の制約を整理した。",
+      "evidence_refs": [
+        "E0020"
+      ],
+      "qualifiers": [
+        "二次的な方法論レビュー。実運用の性能改善を直接実験で証明したSourceではない。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0020",
+      "statement": "Le Xuanら（2024）はdual-Siameseのself-supervised domain adaptationでsourceのRULラベルとlabel-free targetデータを組み合わせ、C-MAPSSでドメイン転移時のRUL回帰を評価した。",
+      "evidence_refs": [
+        "E0021"
+      ],
+      "qualifiers": [
+        "評価はC-MAPSSの模擬劣化に限定。実機の複数fleetへ横断適用できることは示さない。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0021",
+      "statement": "Cousinoら（2024）は点検時の不完全予防保全と故障後のminimal repairをモデル化し、保全介入下のinterval-censored故障観測データに対して推定法を示した。",
+      "evidence_refs": [
+        "E0022"
+      ],
+      "qualifiers": [
+        "修理可能設備の点検区間内イベント把握の例であり、情報依存の一般的打切りや学習済みRUL回帰の全てを解決するものではない。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0022",
+      "statement": "Saxenaら（2010）は点RUL誤差に加えてprognostic horizon、α-λ performance、relative accuracy等の時点別予測品質を評価する体系を提示した。",
+      "evidence_refs": [
+        "E0023"
+      ],
+      "qualifiers": [
+        "十分なlead timeが得られるかという予測の運用意味を扱うが、生存確率のcalibrationを実験検証したSourceではない。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0023",
+      "statement": "Shadiら（2026）は産業エネルギー設備のsurvival予測について、所定horizon内failure risk、time-dependent discrimination、Brier/IBSとcensoring-aware weightingを含む方法論をレビューした。",
+      "evidence_refs": [
+        "E0024"
+      ],
+      "qualifiers": [
+        "2026年reviewの数理・評価整理であり、特定工業fleetのcalibrationに成功した原著実験ではない。IPCW等は打切り機構の仮定が必要。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0024",
+      "statement": "Caterinoら（2026）は3種類の実産業データで観測窓と未来alarm予測窓を変化させ、alarm anticipationの性能・lead-timeが機器の動特性と窓設定に依存することを報告した。",
+      "evidence_refs": [
+        "E0025"
+      ],
+      "qualifiers": [
+        "目的変数は将来alarmであり必ずしも実故障時刻ではない。F1-macro中心で予測確率校正・誤報コスト等の実証は未実施。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0025",
+      "statement": "2024年の軸受RUL原著は、劣化に関する時周波数特徴の変化傾向を動的に重み付けしたphysics-guided LSTMによるRUL回帰を提案した。",
+      "evidence_refs": [
+        "E0026"
+      ],
+      "qualifiers": [
+        "個別の軸受例。理論的な普遍保証・他設備への転移可能性はabstractの証拠を超える。"
+      ]
     }
   ],
   "relations": [
@@ -292,35 +382,149 @@
         "E0002",
         "E0013"
       ]
+    },
+    {
+      "relation_id": "R0010",
+      "relation_type": "qualification",
+      "knowledge_unit_refs": [
+        "K0010",
+        "K0017"
+      ],
+      "description": "Gamma過程では非負増分に基づく単調劣化が中心だが、Wienerモデルは確率的変動とfirst-hitting-timeに着目する。両者で劣化観測・閾値・分布仮定を合わせて性能比較する必要がある。",
+      "evidence_refs": [
+        "E0011",
+        "E0018"
+      ]
+    },
+    {
+      "relation_id": "R0011",
+      "relation_type": "qualification",
+      "knowledge_unit_refs": [
+        "K0018",
+        "K0005"
+      ],
+      "description": "粒子filterの状態事後分布からの将来予測と、CNN/LSTMの直接的RUL回帰は入力・状態遷移モデル・出力不確実性が異なる。",
+      "evidence_refs": [
+        "E0019",
+        "E0005",
+        "E0006"
+      ]
+    },
+    {
+      "relation_id": "R0012",
+      "relation_type": "association",
+      "knowledge_unit_refs": [
+        "K0019",
+        "K0025"
+      ],
+      "description": "physics-informed RUL reviewで整理される系統の一つの実装例として、劣化特徴の物理的傾向をLSTM学習に利用する研究がある。",
+      "evidence_refs": [
+        "E0020",
+        "E0026"
+      ]
+    },
+    {
+      "relation_id": "R0013",
+      "relation_type": "qualification",
+      "knowledge_unit_refs": [
+        "K0020",
+        "K0007",
+        "K0011"
+      ],
+      "description": "自己教師あり転移のC-MAPSSでの成果は、実fleet間の分布移動・保全介入・未観測故障様態での独立検証と区別する。",
+      "evidence_refs": [
+        "E0021",
+        "E0004",
+        "E0012"
+      ]
+    },
+    {
+      "relation_id": "R0014",
+      "relation_type": "qualification",
+      "knowledge_unit_refs": [
+        "K0023",
+        "K0005",
+        "K0006"
+      ],
+      "description": "RUL回帰誤差と故障ハザード/期間内リスクのcalibration・discriminationは対象変数と打切り条件が異なり、Deep Survival Machinesの医療原著を工業実証に流用しない。",
+      "evidence_refs": [
+        "E0024",
+        "E0005",
+        "E0007"
+      ]
+    },
+    {
+      "relation_id": "R0015",
+      "relation_type": "dependency",
+      "knowledge_unit_refs": [
+        "K0021",
+        "K0023"
+      ],
+      "description": "点検・予防保全下で未観測になるfailure timeを適切にモデル化しないと、survivalの期間内故障確率・時間依存評価の母集団解釈とcalibrationが損なわれ得る。",
+      "evidence_refs": [
+        "E0022",
+        "E0024"
+      ]
+    },
+    {
+      "relation_id": "R0016",
+      "relation_type": "qualification",
+      "knowledge_unit_refs": [
+        "K0022",
+        "K0024"
+      ],
+      "description": "prognostic horizon/α-λはEoLまでのRUL予測の時点別評価であり、産業のfuture-alarm window F1とは目的変数・警報単位が異なる。action lead timeや誤報を同一尺度とみなさない。",
+      "evidence_refs": [
+        "E0023",
+        "E0025"
+      ]
     }
   ],
   "uncertainties": [
     {
       "uncertainty_id": "U0001",
-      "description": "Gamma過程の基礎と二相モデル、Bayesian RUL分布の原著は補強したが、Wiener劣化過程、particle filtering、physics-informed・model-basedの体系的比較は依然として不足する。",
+      "description": "F001でWiener/recursive filtering、粒子filterによるnonlinear state-space予測、physics-guided LSTMとphysics-informedレビュー、self-supervised domain adaptationの代表資料を追加した。ただし物理的機構パラメータの同定・先験条件・独立実機fleet間移植およびモデル間同一条件比較は未実証。",
       "knowledge_unit_refs": [
         "K0004",
         "K0010",
         "K0012",
-        "K0015"
+        "K0015",
+        "K0017",
+        "K0018",
+        "K0019",
+        "K0020",
+        "K0025"
       ],
       "evidence_refs": [
         "E0009",
         "E0011",
         "E0013",
-        "E0016"
+        "E0016",
+        "E0018",
+        "E0019",
+        "E0020",
+        "E0021",
+        "E0026"
       ]
     },
     {
       "uncertainty_id": "U0002",
-      "description": "予兆のlead time、alarm quality、time-dependent discrimination、保全後のinformative censoring、運転条件分布変化の実証Evidenceは本セットでは不足。",
+      "description": "F002で保全介入下の区間打切り推定、prognostic horizon/α-λ、産業survivalの期間内risk/Brier/IBS、実産業alarm予測期間の研究を補強した。しかし実測のfailure timeと単なるalarmを統一した評価、観測依存打切り、予測確率校正・false-alarm負荷・lead-time utilityの同一データでの検証は不足。",
       "knowledge_unit_refs": [
         "K0001",
-        "K0002"
+        "K0002",
+        "K0021",
+        "K0022",
+        "K0023",
+        "K0024"
       ],
       "evidence_refs": [
         "E0001",
-        "E0002"
+        "E0002",
+        "E0022",
+        "E0023",
+        "E0024",
+        "E0025"
       ]
     },
     {
@@ -347,6 +551,58 @@
         "E0012",
         "E0014",
         "E0015"
+      ]
+    },
+    {
+      "uncertainty_id": "U0005",
+      "description": "自己教師ありdomain adaptationのC-MAPSS評価は実fleet transfer、異なる保全規則・未知故障modeや欠測機構への一般化を確立しない。",
+      "knowledge_unit_refs": [
+        "K0020",
+        "K0007",
+        "K0011"
+      ],
+      "evidence_refs": [
+        "E0021",
+        "E0004",
+        "E0012"
+      ]
+    },
+    {
+      "uncertainty_id": "U0006",
+      "description": "点検・保全介入がデータ観測を規定するため、administrative right censoring、interval censoring、informative censoringや競合事象は互換でない。IPCWの独立打切り条件や保全policyの因果依存を評価しない限り校正・評価の無偏性は保証できない。",
+      "knowledge_unit_refs": [
+        "K0021",
+        "K0023",
+        "K0006"
+      ],
+      "evidence_refs": [
+        "E0022",
+        "E0024",
+        "E0007"
+      ]
+    },
+    {
+      "uncertainty_id": "U0007",
+      "description": "RULのprognostic horizonと実産業future-alarmのlead timeは異なる。後者の原著ではF1-macroのみでfalse alarm burden、PR/AUC、Brier/calibration、統計的不確実性・costを検証していない。",
+      "knowledge_unit_refs": [
+        "K0022",
+        "K0024"
+      ],
+      "evidence_refs": [
+        "E0023",
+        "E0025"
+      ]
+    },
+    {
+      "uncertainty_id": "U0008",
+      "description": "physics-guided方法のreview/個別軸受実験は物理拘束とデータ駆動の併用例を示すが、別の劣化機構・fleetで物理整合性や外的妥当性が成立する条件は未検証。",
+      "knowledge_unit_refs": [
+        "K0019",
+        "K0025"
+      ],
+      "evidence_refs": [
+        "E0020",
+        "E0026"
       ]
     }
   ]
