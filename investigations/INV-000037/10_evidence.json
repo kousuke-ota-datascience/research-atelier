@@ -3,7 +3,7 @@
   "artifact_type": "10_evidence",
   "investigation_id": "INV-000037",
   "rq_id": "RQ-000037",
-  "snapshot_at": "2026-11-06T01:08:26.830Z",
+  "snapshot_at": "2026-11-06T01:54:05.360Z",
   "sources": [
     {
       "source_id": "SRC-000171",
@@ -166,6 +166,51 @@
       },
       "accessed_at": "2026-11-06T01:08:26.830Z",
       "notion_url": "https://app.notion.com/p/410e5855be3981b6abcfc937c86c09a3"
+    },
+    {
+      "source_id": "SRC-000206",
+      "source_revision": {
+        "commit_sha": "cc822b6c52a5f37b3e50eedb29ae74fd8cc88f1c",
+        "blob_sha": "e6fe2d9e081802a409948d99756af7814d91e0ab"
+      },
+      "accessed_at": "2026-11-06T01:53:59.968Z",
+      "notion_url": "https://app.notion.com/p/410e5855be3981dda105e2b21bc6d1a6"
+    },
+    {
+      "source_id": "SRC-000207",
+      "source_revision": {
+        "commit_sha": "cc822b6c52a5f37b3e50eedb29ae74fd8cc88f1c",
+        "blob_sha": "58d07f142a412f0b9df5bffefbc8f5fca3890560"
+      },
+      "accessed_at": "2026-11-06T01:54:00.950Z",
+      "notion_url": "https://app.notion.com/p/410e5855be3981a485d2ebf76ce3cbcb"
+    },
+    {
+      "source_id": "SRC-000208",
+      "source_revision": {
+        "commit_sha": "cc822b6c52a5f37b3e50eedb29ae74fd8cc88f1c",
+        "blob_sha": "2f988b28fbdc4b45fa743d2766a777a59152e341"
+      },
+      "accessed_at": "2026-11-06T01:54:03.662Z",
+      "notion_url": "https://app.notion.com/p/410e5855be3981a09db8f944aa618e03"
+    },
+    {
+      "source_id": "SRC-000209",
+      "source_revision": {
+        "commit_sha": "cc822b6c52a5f37b3e50eedb29ae74fd8cc88f1c",
+        "blob_sha": "7084602bf97eede8eb51b9af8e4860dbdc3f10cc"
+      },
+      "accessed_at": "2026-11-06T01:54:04.445Z",
+      "notion_url": "https://app.notion.com/p/410e5855be3981bb9b80ee10cd72954f"
+    },
+    {
+      "source_id": "SRC-000210",
+      "source_revision": {
+        "commit_sha": "cc822b6c52a5f37b3e50eedb29ae74fd8cc88f1c",
+        "blob_sha": "11b511d7b4dc624c09473e61115754d7bb0ebe28"
+      },
+      "accessed_at": "2026-11-06T01:54:05.360Z",
+      "notion_url": "https://app.notion.com/p/410e5855be39812489fef18dba02b19a"
     }
   ],
   "evidence_items": [
@@ -418,6 +463,76 @@
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/410e5855be39813f8a10fdbb414bd344",
           "title": "EV-000325"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0019",
+      "content": "Huangら（2023）のKalmanAEは、autoencoderのembeddingを通じてKalman filterを逐次最適化し正常系列の状態推定を行い、filtered signal由来の再構成誤差で逸脱点を検出する教師なし時系列異常検知法を提案した。",
+      "source_locator": "IEEE publisher abstract; KalmanAE method overview",
+      "selection_reason": "F001: original state-space/Kalman filter and reconstruction-residual example; explicit source selection for included state-space approach.",
+      "note_type": "Method",
+      "provenance": {
+        "source_id": "SRC-000206",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/410e5855be398157a216d6a0eea65052",
+          "title": "EV-000331"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0020",
+      "content": "Breunigら（2000）のLocal Outlier Factor（LOF）は、対象点の近傍密度を周辺点の近傍密度と比較する局所外れ度を提案した。原著の対象は一般的な多次元標本であり、時系列windowへの適用・時間順序の保持は原著の主張ではない。",
+      "source_locator": "Original SIGMOD 2000 paper, Abstract / Introduction",
+      "selection_reason": "F001: density-based reference baseline complementary to existing Matrix Profile subsequence-distance evidence; original is not a time-series model.",
+      "note_type": "Method",
+      "provenance": {
+        "source_id": "SRC-000207",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/410e5855be39810b9c8bf214ad72a69f",
+          "title": "EV-000332"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0021",
+      "content": "NIST/SEMATECHのCUSUM監視設計では、平均の上方変化を捉える一側累積和にreference value kとdecision limit hを指定し、検出までの標本数の期待値としてAverage Run Length（ARL）を評価する。ARLは対象のシフト量や分布前提に依存し、任意の非定常系列に対する普遍的な誤報保証ではない。",
+      "source_locator": "NIST e-Handbook §6.3.2.3.1 Cusum Average Run Length",
+      "selection_reason": "F001: authoritative CUSUM monitoring reference documenting reference value, decision interval and ARL rather than inferring mathematics from Page 1954 title.",
+      "note_type": "Theory",
+      "provenance": {
+        "source_id": "SRC-000208",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/410e5855be3981659115dc21e6f800ce",
+          "title": "EV-000333"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0022",
+      "content": "BifetとGavaldà（2007）のADWINは、時系列ストリームにおける分布変化を監視し、観測した変化率に応じてwindow長をオンラインで自動調整する。論文はfalse positive/negativeの性能境界を論じ、ADWIN2をNaïve Bayes予測器の誤差監視・更新に組み込んだ。",
+      "source_locator": "SDM 2007 publisher abstract",
+      "selection_reason": "F001: original concept-drift monitoring method and adaptation guarantees with explicit online regime caveat.",
+      "note_type": "Method",
+      "provenance": {
+        "source_id": "SRC-000209",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/410e5855be398193b66ac10a836afc45",
+          "title": "EV-000334"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0023",
+      "content": "Sifferら（2017）は単変量ストリーミング時系列の外れ値・閾値設定にExtreme Value Theoryを用いる方法を提案し、手動閾値の代わりにfalse positiveに関係するrisk parameterを制御量として提示した。原著要約は任意のdrift下での保証までは示さない。",
+      "source_locator": "KDD 2017 ACM publisher abstract",
+      "selection_reason": "F001: original EVT-based streaming alert-threshold calibration with risk parameter; separate distributional assumptions from actual operational false-alarm rates.",
+      "note_type": "Method",
+      "provenance": {
+        "source_id": "SRC-000210",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/410e5855be398166bcadf470361d2440",
+          "title": "EV-000335"
         }
       }
     }
