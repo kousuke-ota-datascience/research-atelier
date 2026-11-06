@@ -101,6 +101,25 @@ def render_working_answer_section(analysis: Mapping[str, Any]) -> str:
     return "\n".join(blocks).rstrip()
 
 
+def _notion_block_sequence(markdown: str) -> str:
+    """Normalize layout-only blank separators inserted by Notion NFM readback.
+
+    The canonical renderer emits no empty spacer blocks. Notion may emit
+    blank Markdown lines between headings and paragraphs when fetching the
+    corresponding block sequence. Never discard nonblank text or reorder
+    blocks; preserve blank lines inside code fences.
+    """
+    lines: list[str] = []
+    in_fence = False
+    for line in markdown.splitlines():
+        if line.strip().startswith("```"):
+            in_fence = not in_fence
+            lines.append(line)
+        elif in_fence or line.strip():
+            lines.append(line)
+    return "\n".join(lines).rstrip()
+
+
 def _top_level_heading_positions(markdown: str) -> tuple[list[int], list[int]]:
     """Return (all H1 line indices, target H1 line indices), ignoring code fences."""
 
@@ -164,7 +183,7 @@ def patch_working_answer_section(page_markdown: str, analysis: Mapping[str, Any]
     lines = body.splitlines()
     start, end = bounds
     current = "\n".join(lines[start:end]).rstrip()
-    if current == rendered:
+    if _notion_block_sequence(current) == _notion_block_sequence(rendered):
         return PatchResult(markdown=body, action="NOOP")
 
     replacement_lines = rendered.splitlines()
@@ -183,7 +202,7 @@ def working_answer_section_matches(page_markdown: str, analysis: Mapping[str, An
     lines = page_markdown.splitlines()
     start, end = bounds
     current = "\n".join(lines[start:end]).rstrip()
-    return current == render_working_answer_section(analysis)
+    return _notion_block_sequence(current) == _notion_block_sequence(render_working_answer_section(analysis))
 
 
 def working_answer_projection_state(page_markdown: str, analysis: Mapping[str, Any]) -> str:
