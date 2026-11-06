@@ -3,7 +3,7 @@
   "artifact_type": "10_evidence",
   "investigation_id": "INV-000037",
   "rq_id": "RQ-000037",
-  "snapshot_at": "2026-11-06T01:03:26.791Z",
+  "snapshot_at": "2026-11-06T01:08:26.830Z",
   "sources": [
     {
       "source_id": "SRC-000171",
@@ -139,6 +139,33 @@
       },
       "accessed_at": "2026-11-06T01:03:26.791Z",
       "notion_url": "https://app.notion.com/p/410e5855be3981bf9517c46256e8cb7d"
+    },
+    {
+      "source_id": "SRC-000198",
+      "source_revision": {
+        "commit_sha": "50b52fcbb0bcb093f05aec0aa2bfaeebab026e27",
+        "blob_sha": "ad8999a29a98d5395311e2b5d4d7caee36118709"
+      },
+      "accessed_at": "2026-11-06T01:08:26.830Z",
+      "notion_url": "https://app.notion.com/p/410e5855be398129a522dbf2db8e05af"
+    },
+    {
+      "source_id": "SRC-000199",
+      "source_revision": {
+        "commit_sha": "50b52fcbb0bcb093f05aec0aa2bfaeebab026e27",
+        "blob_sha": "a98d5db8077a2908b228afe3f93b0761d36c0912"
+      },
+      "accessed_at": "2026-11-06T01:08:26.830Z",
+      "notion_url": "https://app.notion.com/p/410e5855be39811fa2f4ceb4caa52afc"
+    },
+    {
+      "source_id": "SRC-000200",
+      "source_revision": {
+        "commit_sha": "50b52fcbb0bcb093f05aec0aa2bfaeebab026e27",
+        "blob_sha": "5987b635a54380f1d40b2e184dc58f077333856c"
+      },
+      "accessed_at": "2026-11-06T01:08:26.830Z",
+      "notion_url": "https://app.notion.com/p/410e5855be3981b6abcfc937c86c09a3"
     }
   ],
   "evidence_items": [
@@ -349,6 +376,48 @@
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/410e5855be3981eaaf2de60599fe3078",
           "title": "EV-000317"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0016",
+      "content": "MunirらのDeepAnTはCNNで時系列の次時点を予測し、実測と予測の関係からpoint/contextual anomalyを判定する二段階構造である。",
+      "source_locator": "IEEE Access abstract",
+      "note_type": "Method",
+      "selection_reason": "Original methods covering prediction residuals, adversarial autoencoders, and self-supervised contrastive TSAD.",
+      "provenance": {
+        "source_id": "SRC-000198",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/410e5855be3981b78735c58aa8919ef5",
+          "title": "EV-000323"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0017",
+      "content": "AudibertらのUSADは敵対的学習を使うAutoencoderによる教師なし多変量時系列異常検知を提案し、5つの公開データセットで実験した。",
+      "source_locator": "KDD 2020 abstract",
+      "note_type": "Method",
+      "selection_reason": "Original methods covering prediction residuals, adversarial autoencoders, and self-supervised contrastive TSAD.",
+      "provenance": {
+        "source_id": "SRC-000199",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/410e5855be398130a7d0c3adca7a1093",
+          "title": "EV-000324"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0018",
+      "content": "TimeAutoADは擬似negative系列を生成するデータ拡張とself-supervised contrastive lossで多変量時系列の表現を学習する手法を提案する。",
+      "source_locator": "IEEE TNSE abstract",
+      "note_type": "Method",
+      "selection_reason": "Original methods covering prediction residuals, adversarial autoencoders, and self-supervised contrastive TSAD.",
+      "provenance": {
+        "source_id": "SRC-000200",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/410e5855be39813f8a10fdbb414bd344",
+          "title": "EV-000325"
         }
       }
     }

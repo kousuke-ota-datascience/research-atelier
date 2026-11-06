@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000200",
+  "notion_url": "https://app.notion.com/p/410e5855be3981b6abcfc937c86c09a3",
+  "title": "TimeAutoAD: Autonomous Anomaly Detection With Self-Supervised Contrastive Loss for Multivariate Time Series",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "IEEE Transactions on Network Science and Engineering",
+  "authors": "Yang Jiao; Kai Yang; Dongjin Song; Dacheng Tao",
+  "year": 2022,
+  "url": "https://ieeexplore.ieee.org/abstract/document/9705079/",
+  "doi": "10.1109/TNSE.2022.3148276",
+  "version_or_edition": null,
+  "reliability_note": "Original IEEE paper; abstract supports self-supervised contrastive training and pseudo negative sample augmentation; scores protocol dependent."
+}

@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000199",
+  "notion_url": "https://app.notion.com/p/410e5855be39811fa2f4ceb4caa52afc",
+  "title": "USAD: UnSupervised Anomaly Detection on Multivariate Time Series",
+  "source_type": "Conference Paper",
+  "journal_or_publisher": "ACM SIGKDD 2020",
+  "authors": "Julien Audibert; Pietro Michiardi; Frédéric Guyard; Sébastien Marti; Maria A. Zuluaga",
+  "year": 2020,
+  "url": "https://www.eurecom.edu/en/publication/6271",
+  "doi": "10.1145/3394486.3403392",
+  "version_or_edition": null,
+  "reliability_note": "Original conference paper and author-hosted copy; abstract confirms adversarially trained autoencoders in multivariate anomaly detection."
+}

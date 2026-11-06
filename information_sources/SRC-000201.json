@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000201",
+  "notion_url": "https://app.notion.com/p/410e5855be39811bbbfdd8205adf86d4",
+  "title": "Residual-life distributions from component degradation signals: A Bayesian approach",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "IIE Transactions",
+  "authors": "Nagi Z. Gebraeel; Mark A. Lawley; Rong Li; Jennifer K. Ryan",
+  "year": 2005,
+  "url": "https://doi.org/10.1080/07408170590929018",
+  "doi": "10.1080/07408170590929018",
+  "version_or_edition": null,
+  "reliability_note": "Primary Bayesian residual-life distributions for degradation signals; only publisher metadata/abstract-level material verified."
+}
