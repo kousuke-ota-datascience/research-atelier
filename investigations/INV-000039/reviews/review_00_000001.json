@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000039",
+  "review_seq": 1,
+  "layer": "00_context",
+  "review_kind": "context_semantic_validity",
+  "target_blob_sha": "5712d8776843abf58e0c37c0c48f8a7d72616245",
+  "assessment": "The frozen Comparative context coherently distinguishes present anomaly detection, future alarm prediction, failure-horizon risk and remaining useful life. Its scope, assumptions, source cutoff and exclusion of incomparable numerical rankings fit the Research Question. The upstream accepted INV-000037 and INV-000038 results were checked, including Review 000002 PASS and both successful projection logs on main.",
+  "findings": [],
+  "verdict": "PASS"
+}

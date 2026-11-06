@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000039",
+  "review_seq": 1,
+  "findings": [],
+  "verdict": "PASS",
+  "layer": "30_analysis",
+  "review_kind": "20_synthesis_plus_00_context_to_30_analysis",
+  "target_blob_sha": "a1242b752eecb711b80d44135027ba2f02660890",
+  "assessment": "Examined the five comparative target regimes, eight selection dimensions, six conditional contrasts, six comparability limits, Working Answer, eight Judgments, limitations and alternatives. Judgments J0001-J0008 trace to Knowledge Units without directly bypassing Synthesis. Separate recommendations are provided for current anomaly alerts, future alarm prediction, actual failure risk, RUL and multistage mapping. The analysis does not treat anomaly scores as calibrated failure probabilities, future alarm labels as actual failures, C-MAPSS results as real-fleet validation, or IPCW as a universal cure for informative censoring. References to PR #23 being unmerged describe a conditional historical gate now cleared, not a current scientific conclusion. No universal numerical rank or material overclaim was identified."
+}
