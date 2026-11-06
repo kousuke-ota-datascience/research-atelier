@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000216",
+  "notion_url": "https://app.notion.com/p/410e5855be39815caad4f964cc600904",
+  "title": "Metrics for Offline Evaluation of Prognostic Performance",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "International Journal of Prognostics and Health Management",
+  "authors": "Abhinav Saxena; Jose Celaya; Bhaskar Saha; Sankalita Saha; Kai Goebel",
+  "year": 2010,
+  "url": "https://papers.phmsociety.org/index.php/ijphm/article/view/1336",
+  "doi": "10.36001/ijphm.2010.v1i1.1336",
+  "version_or_edition": null,
+  "reliability_note": "Original PHM journal summary and NASA NTRS metadata reviewed. Prognostic horizon, alpha-lambda and uncertainty-aware RUL evaluation; publication original 2010, online platform may show 2021 migration."
+}

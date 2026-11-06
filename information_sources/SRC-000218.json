@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000218",
+  "notion_url": "https://app.notion.com/p/410e5855be398145b3c1fd5419392217",
+  "title": "Alarm Prediction in Predictive Maintenance: A Comparative Analysis of Temporal Windows for Machine Learning Models in Industrial Systems",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "Information 17(6), 523",
+  "authors": "Mario Caterino; Tammaro Ucciero; Riccardo Emanuele Landi; Luca Mozzillo; Antonio Negro; Federico Saponaro; Domenico Soriano; Ivo Surano; Salvatore Miranda; Marcello Fera",
+  "year": 2026,
+  "url": "https://www.mdpi.com/2078-2489/17/6/523",
+  "doi": "10.3390/info17060523",
+  "version_or_edition": null,
+  "reliability_note": "Original study on three industrial datasets of future alarm prediction; observation-vs-prediction window tradeoff. Event alarm labels not verified failure occurrence; F1-macro only, lacks PR/ROC and formal statistical tests as authors disclose."
+}

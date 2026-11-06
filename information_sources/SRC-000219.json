@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000219",
+  "notion_url": "https://app.notion.com/p/410e5855be3981e4bdc6fb54699a430b",
+  "title": "Physics guided neural network: Remaining useful life prediction of rolling bearings using long short-term memory network through dynamic weighting of degradation process",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "Engineering Applications of Artificial Intelligence 127(B), 107350",
+  "authors": null,
+  "year": 2024,
+  "url": "https://www.sciencedirect.com/science/article/pii/S0952197623015348",
+  "doi": "10.1016/j.engappai.2023.107350",
+  "version_or_edition": null,
+  "reliability_note": "Original publisher abstract: bearing RUL physics-guided LSTM with dynamic weighting of time-frequency degradation indicators. Full derivation/independent test not assessed; author metadata intentionally unfilled pending verification."
+}

@@ -3,7 +3,7 @@
   "artifact_type": "10_evidence",
   "investigation_id": "INV-000038",
   "rq_id": "RQ-000038",
-  "snapshot_at": "2026-11-06T01:09:02.950Z",
+  "snapshot_at": "2026-11-06T02:17:06.357Z",
   "sources": [
     {
       "source_id": "SRC-000184",
@@ -157,6 +157,87 @@
       },
       "accessed_at": "2026-11-06T01:09:02.950Z",
       "notion_url": "https://app.notion.com/p/410e5855be3981eab395dd3aae454157"
+    },
+    {
+      "source_id": "SRC-000211",
+      "source_revision": {
+        "commit_sha": "c886154ec8120458f142b74080e2d32d44bc61a3",
+        "blob_sha": "f007a571ba36e9333613c076dad8faef7af4c4e1"
+      },
+      "accessed_at": "2026-11-06T02:17:06.357Z",
+      "notion_url": "https://app.notion.com/p/410e5855be3981c8a46fd7600de7951d"
+    },
+    {
+      "source_id": "SRC-000212",
+      "source_revision": {
+        "commit_sha": "c886154ec8120458f142b74080e2d32d44bc61a3",
+        "blob_sha": "317482c96def1be729d40e2015d641a4fb563718"
+      },
+      "accessed_at": "2026-11-06T02:17:06.357Z",
+      "notion_url": "https://app.notion.com/p/410e5855be3981689b38fde99711a709"
+    },
+    {
+      "source_id": "SRC-000213",
+      "source_revision": {
+        "commit_sha": "c886154ec8120458f142b74080e2d32d44bc61a3",
+        "blob_sha": "b391ac0666f2abe14a7f7b718e8ffa8029137fcc"
+      },
+      "accessed_at": "2026-11-06T02:17:06.357Z",
+      "notion_url": "https://app.notion.com/p/410e5855be3981f691c7db8aad36fa3f"
+    },
+    {
+      "source_id": "SRC-000214",
+      "source_revision": {
+        "commit_sha": "c886154ec8120458f142b74080e2d32d44bc61a3",
+        "blob_sha": "58441a6bd0df8657cba04f204d86b2dd3d44a919"
+      },
+      "accessed_at": "2026-11-06T02:17:06.357Z",
+      "notion_url": "https://app.notion.com/p/410e5855be3981a09360c2cda2adb0b7"
+    },
+    {
+      "source_id": "SRC-000215",
+      "source_revision": {
+        "commit_sha": "c886154ec8120458f142b74080e2d32d44bc61a3",
+        "blob_sha": "5d717b22de826153c835aafeb6f002cdff8cabb5"
+      },
+      "accessed_at": "2026-11-06T02:17:06.357Z",
+      "notion_url": "https://app.notion.com/p/410e5855be3981bebf54d96e85ad3011"
+    },
+    {
+      "source_id": "SRC-000216",
+      "source_revision": {
+        "commit_sha": "c886154ec8120458f142b74080e2d32d44bc61a3",
+        "blob_sha": "df22f47fd0bab8ca7cd4cd10f44080e90bb9605a"
+      },
+      "accessed_at": "2026-11-06T02:17:06.357Z",
+      "notion_url": "https://app.notion.com/p/410e5855be39815caad4f964cc600904"
+    },
+    {
+      "source_id": "SRC-000217",
+      "source_revision": {
+        "commit_sha": "c886154ec8120458f142b74080e2d32d44bc61a3",
+        "blob_sha": "1b03a8141a5de6dc9a95f5af4828f5572243291c"
+      },
+      "accessed_at": "2026-11-06T02:17:06.357Z",
+      "notion_url": "https://app.notion.com/p/410e5855be3981ba8034fc1e2d4dda3b"
+    },
+    {
+      "source_id": "SRC-000218",
+      "source_revision": {
+        "commit_sha": "c886154ec8120458f142b74080e2d32d44bc61a3",
+        "blob_sha": "9c8dca97a2fab5e67f52e18eb4cf48d253ca38fa"
+      },
+      "accessed_at": "2026-11-06T02:17:06.357Z",
+      "notion_url": "https://app.notion.com/p/410e5855be398145b3c1fd5419392217"
+    },
+    {
+      "source_id": "SRC-000219",
+      "source_revision": {
+        "commit_sha": "c886154ec8120458f142b74080e2d32d44bc61a3",
+        "blob_sha": "e0dc978f2b783c0afc7f2d6d5f27b0a534ea9364"
+      },
+      "accessed_at": "2026-11-06T02:17:06.357Z",
+      "notion_url": "https://app.notion.com/p/410e5855be3981e4bdc6fb54699a430b"
     }
   ],
   "evidence_items": [
@@ -392,6 +473,132 @@
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/410e5855be398167b6a0d261d4c202a7",
           "title": "EV-000330"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0018",
+      "content": "Siら（2013）はWiener劣化過程のdrift係数を逐次filteringで更新し、他のパラメータをEMで推定するRUL推定法を開発した。観測された個体の劣化履歴と既知の故障閾値を前提にfirst-hitting-timeからRUL分布を得て、gyroscope例で評価した。",
+      "source_locator": "ScienceDirect original article Abstract / Introduction / Section II preview",
+      "selection_reason": "F001: Wiener degradation and recursive drift/state estimation with known-threshold qualification.",
+      "note_type": "Method",
+      "provenance": {
+        "source_id": "SRC-000211",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/410e5855be3981e5a7b2ef6f89625dd0",
+          "title": "EV-000336"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0019",
+      "content": "OrchardとVachtsevanos（2009）は非線形・非Gaussian系に対し粒子filterで故障診断用の状態事後分布を推定し、その推定状態を起点として将来の故障指標・RUL確率分布を予測する二段階prognosticsを提示した。原著の評価はseeded-fault実験に限定される。",
+      "source_locator": "SAGE original publisher abstract",
+      "selection_reason": "F001: particle filtering/hybrid nonlinear state-space method bridging FDI and future prognosis, bounded by seeded-fault demonstration.",
+      "note_type": "Method",
+      "provenance": {
+        "source_id": "SRC-000212",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/410e5855be398154bf4ecb6a49a9c25a",
+          "title": "EV-000337"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0020",
+      "content": "Liら（2024）のreviewはphysics-informed data-driven RUL手法を体系化し、従来のデータ駆動推定へ物理的制約・機構知識を導入する系統の利点と制約・研究課題を整理する。reviewは手法族の存在・比較軸の根拠であり、実運用での性能保証ではない。",
+      "source_locator": "Elsevier original review Abstract / Highlights",
+      "selection_reason": "F001: high-quality review taxonomy of physics-informed RUL with epistemic bounds.",
+      "note_type": "Method",
+      "provenance": {
+        "source_id": "SRC-000213",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/410e5855be39810ea679dfebefbb6c2f",
+          "title": "EV-000338"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0021",
+      "content": "Le Xuanら（2024）はsourceドメインのRULラベルとtargetドメインのラベル無し監視系列を使うself-supervised domain adaptationを提案し、dual-Siamese構成と劣化特徴からの自己教師信号を組み合わせてC-MAPSSで評価した。実機fleet間転移の直接実証ではない。",
+      "source_locator": "Elsevier original article Highlights / Abstract",
+      "selection_reason": "F001: original self-supervised machinery RUL domain adaptation; explicitly synthetic benchmark not operational fleet transfer.",
+      "note_type": "Method",
+      "provenance": {
+        "source_id": "SRC-000214",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/410e5855be3981a2a487e6999ae38173",
+          "title": "EV-000339"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0022",
+      "content": "Cousinoら（2024）は修理可能設備で故障後のminimal repairと二種類の不完全予防保全を区別するモデルを提案した。点検区間内の故障時刻が観測されないinterval-censored dataの推定を扱い、simulationとガス輸送事業者の実データ例で検証した。これをinformative censoring一般の解決策と同一視しない。",
+      "source_locator": "Elsevier original article Abstract / Introduction",
+      "selection_reason": "F002: intervention-dependent maintenance and interval-censored failure timing; real operator example and limitations.",
+      "note_type": "Method",
+      "provenance": {
+        "source_id": "SRC-000215",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/410e5855be39814b98dec695e714b750",
+          "title": "EV-000340"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0023",
+      "content": "Saxenaら（2010）はprognostics用の性能評価を、単一時点のRUL予測誤差に加えてprognostic horizon、α-λ performance、相対精度、収束などで整理し、EoLまで十分前に使える予測が出るかを考慮する必要を指摘した。生存曲線の確率校正を直接検証した論文ではない。",
+      "source_locator": "PHM Society original journal abstract; NASA NTRS abstract; NASA metrics library README",
+      "selection_reason": "F002: prognostics-specific accuracy-over-time and sufficient lead-time metrics, distinct from risk calibration.",
+      "note_type": "Theory",
+      "provenance": {
+        "source_id": "SRC-000216",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/410e5855be3981f68af9e46bbf9b962c",
+          "title": "EV-000341"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0024",
+      "content": "Shadiら（2026）の産業エネルギー設備向けsurvival reviewは条件付きsurvivalから所定期間内の故障確率を計算し、リスクranking、time-dependent discrimination、time-dependent Brier/Integrated Brierによる確率評価、右打切りへのIPCW補正を整理した。保全介入が打切り・truncationを生む実データ上の問題も明示するが、単一の産業モデルの校正性能を原著実験として実証するものではない。",
+      "source_locator": "Sensors 2026 review Abstract / Sections 4.1.2, 4.6 / Conclusions",
+      "selection_reason": "F002: industrial-energy survival methodological review on horizon risk, censoring-adjusted calibration and discrimination.",
+      "note_type": "Theory",
+      "provenance": {
+        "source_id": "SRC-000217",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/410e5855be39810e8bb4d9deb19fccbc",
+          "title": "EV-000342"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0025",
+      "content": "Caterinoら（2026）は3種類の実産業系列で過去観測窓CWと未来アラーム予測窓FWを組み合わせて比較し、予測対象のlead timeとF1-macroがprocess dynamics・window設定に依存することを示した。予測対象は将来のalarmであり実際の故障時刻ではない。PR/ROC、コストベースの誤報負荷、差の統計検定は未実施と著者が認める。",
+      "source_locator": "Information 2026 original abstract / 3.1 / 6 / 7 Conclusions and Limitations",
+      "selection_reason": "F002: prognostics-adjacent real industrial future-alarm lead-time evaluation with missing false-alarm cost diagnostics recorded.",
+      "note_type": "Result",
+      "provenance": {
+        "source_id": "SRC-000218",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/410e5855be3981ea9209dd7f919dbdcb",
+          "title": "EV-000343"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0026",
+      "content": "2024年の軸受RUL原著は、軸受の時周波数領域劣化特徴の変化傾向を動的に重み付けしてLSTMへ組み込むphysics-guided RUL法を提案する。原著abstractは物理拘束を導入する実装例を支持するが、独立したfleet間一般化や万能な物理整合性を立証しない。",
+      "source_locator": "Elsevier original article Abstract (2024, 107350)",
+      "selection_reason": "F001: original example of physics-guided LSTM for bearing RUL; bounds against universal physical or fleet robustness claims.",
+      "note_type": "Method",
+      "provenance": {
+        "source_id": "SRC-000219",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/410e5855be3981c1ba09d322823d46a7",
+          "title": "EV-000344"
         }
       }
     }
