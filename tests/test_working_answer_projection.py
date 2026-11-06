@@ -95,9 +95,9 @@ class WorkingAnswerPatchTests(unittest.TestCase):
     def test_notion_roundtrip_blank_block_separators_is_current(self):
         rendered = render_working_answer_section(ANALYSIS)
         notion_readback = rendered.replace(
-            "# Working Answer\\n## Answer",
-            "# Working Answer\\n\\n## Answer",
-        ).replace("## Key Judgments\\n", "## Key Judgments\\n\\n")
+            "# Working Answer\n## Answer",
+            "# Working Answer\n\n## Answer",
+        ).replace("## Key Judgments\n", "## Key Judgments\n\n")
         self.assertTrue(working_answer_section_matches(notion_readback, ANALYSIS))
         self.assertEqual(working_answer_projection_state(notion_readback, ANALYSIS), "CURRENT")
         self.assertEqual(patch_working_answer_section(notion_readback, ANALYSIS).action, "NOOP")
