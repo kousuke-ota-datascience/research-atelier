@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000212",
+  "notion_url": "https://app.notion.com/p/410e5855be3981689b38fde99711a709",
+  "title": "A particle-filtering approach for on-line fault diagnosis and failure prognosis",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "Transactions of the Institute of Measurement and Control",
+  "authors": "Marcos E. Orchard; George J. Vachtsevanos",
+  "year": 2009,
+  "url": "https://journals.sagepub.com/doi/10.1177/0142331208092026",
+  "doi": "10.1177/0142331208092026",
+  "version_or_edition": null,
+  "reliability_note": "Original publisher abstract consulted. Hybrid state-space and particle filtering connect real-time FDI to nonlinear/non-Gaussian RUL distribution prediction; seeded-fault test only; no universal fleet demonstration."
+}

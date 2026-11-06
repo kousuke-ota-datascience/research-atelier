@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000213",
+  "notion_url": "https://app.notion.com/p/410e5855be3981f691c7db8aad36fa3f",
+  "title": "A review on physics-informed data-driven remaining useful life prediction: Challenges and opportunities",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "Mechanical Systems and Signal Processing",
+  "authors": "Huiqin Li; Zhengxin Zhang; Tianmei Li; Xiaosheng Si",
+  "year": 2024,
+  "url": "https://doi.org/10.1016/j.ymssp.2024.111120",
+  "doi": "10.1016/j.ymssp.2024.111120",
+  "version_or_edition": null,
+  "reliability_note": "Publisher review abstract inspected: physics-informed data-driven RUL method families and strengths/weaknesses. Review synthesis is not itself an original comparative physics experiment."
+}

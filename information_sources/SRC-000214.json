@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000214",
+  "notion_url": "https://app.notion.com/p/410e5855be3981a09360c2cda2adb0b7",
+  "title": "Self-supervised domain adaptation for machinery remaining useful life prediction",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "Reliability Engineering & System Safety",
+  "authors": "Quy Le Xuan; Marco Munderloh; Jörn Ostermann",
+  "year": 2024,
+  "url": "https://www.sciencedirect.com/science/article/pii/S0951832024003685",
+  "doi": "10.1016/j.ress.2024.110296",
+  "version_or_edition": null,
+  "reliability_note": "Original publisher abstract consulted. Dual-Siamese self-supervised unlabeled target-domain RUL adaptation evaluated on synthetic C-MAPSS; not evidence of transfer to observed real-world fleets."
+}

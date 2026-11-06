@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000217",
+  "notion_url": "https://app.notion.com/p/410e5855be3981ba8034fc1e2d4dda3b",
+  "title": "Survival Models for Predictive Maintenance and Remaining Useful Life in Sensor-Enabled Smart Energy Networks: A Review",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "Sensors 26(6), 1915",
+  "authors": "Mohammad Reza Shadi; Hamid Mirshekali; Maryamsadat Tahavori; Hamid Reza Shaker",
+  "year": 2026,
+  "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13030038/",
+  "doi": "10.3390/s26061915",
+  "version_or_edition": null,
+  "reliability_note": "Peer-reviewed industrial-energy-focused survival review: horizon event risk, hazard, time-dependent discrimination and Brier/IBS with censoring-aware weighting. Secondary methodological synthesis, not an original industrial model calibration experiment."
+}

@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000211",
+  "notion_url": "https://app.notion.com/p/410e5855be3981c8a46fd7600de7951d",
+  "title": "A Wiener-process-based degradation model with a recursive filter algorithm for remaining useful life estimation",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "Mechanical Systems and Signal Processing",
+  "authors": "Xiao-Sheng Si; Wenbin Wang; Chang-Hua Hu; Mao-Yin Chen; Dong-Hua Zhou",
+  "year": 2013,
+  "url": "https://www.sciencedirect.com/science/article/pii/S0888327012003226",
+  "doi": "10.1016/j.ymssp.2012.08.016",
+  "version_or_edition": null,
+  "reliability_note": "Publisher full article preview consulted; stochastic Wiener drift updated by recursive filter and EM, first-hitting-time RUL distribution under assumed known failure threshold; gyro case only."
+}
