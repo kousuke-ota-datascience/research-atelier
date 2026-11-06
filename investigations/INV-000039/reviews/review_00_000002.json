@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000039",
+  "review_seq": 2,
+  "layer": "00_context",
+  "review_kind": "context_semantic_validity",
+  "target_blob_sha": "5712d8776843abf58e0c37c0c48f8a7d72616245",
+  "assessment": "Frozen Comparative RQ-000039, its scope and exclusions distinguish current anomaly detection, future alarm, horizon failure-event probability and RUL prediction by target, time origin, label, outcome and evaluation unit. The Context requires a conditional, source-grounded comparison rather than an unsupported cross-task ranking. Assumptions regarding score-to-risk mappings, non-equivalent benchmarks and upstream acceptance are explicit and internally consistent; no Context-defining semantic contradiction or missing indispensable boundary was identified.",
+  "findings": [],
+  "verdict": "PASS"
+}

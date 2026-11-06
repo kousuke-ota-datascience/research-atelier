@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000039",
+  "review_seq": 2,
+  "layer": "30_analysis",
+  "review_kind": "20_synthesis_plus_00_context_to_30_analysis",
+  "target_blob_sha": "a1242b752eecb711b80d44135027ba2f02660890",
+  "assessment": "The Comparative profile and Working Answer provide a conditional decision matrix for five regimes (current anomaly, future alarm, failure-horizon event risk, RUL, and multistage pipelines) across outcome, time origin/horizon, supervision, censoring, evaluation and operation. Eight judgments trace to the 22 Knowledge Units without bypassing Synthesis. The Analysis does not transform anomaly score into calibrated failure probability without an additional event model, treat future alarm as observed failure, compare incommensurate metrics numerically, or extrapolate simulation benchmarks to real fleet performance. It also identifies constraints on intervention/censoring and operational lead time. A historical conditional caveat concerning upstream finalization is now satisfied on main; it is not used to assert a current technical limitation. No independent material methodological overclaim or ungrounded unconditional model recommendation was identified.",
+  "findings": [],
+  "verdict": "PASS"
+}

@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000039",
+  "review_seq": 2,
+  "layer": "10_evidence",
+  "review_kind": "source_evidence_note_to_10_evidence",
+  "target_blob_sha": "f92540be9b169248e28445dee92b0c58d9387c5e",
+  "assessment": "Independently traced all 32 selected Evidence items to pinned Git Source revisions: 32 of 32 commit/blob bindings resolve, and all 32 Evidence statements, locators, note types and Source/Note provenance exactly match the referenced upstream canonical Evidence entries, selected as 15 anomaly-detection and 17 prognostics entries. Independently read all 32 Notion Evidence Notes: Evidence text and linked Source relation are identical for all items; minor abstract/locator phrasing differences are semantically equivalent. Original primary reports support the selected point-adjusted F1 critique, representative sequential monitoring, stochastic RUL assumptions, industrial survival censoring and future-alarm evaluation; healthcare survival and synthetic C-MAPSS evidence are bounded appropriately. Direct shared-dataset head-to-head cross-task comparison is absent but explicitly excluded from the asserted support. No substantiated material source distortion, omitted counterevidence or scope-defeating selection gap was identified.",
+  "findings": [],
+  "verdict": "PASS"
+}

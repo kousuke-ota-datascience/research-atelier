@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000039",
+  "review_seq": 2,
+  "layer": "20_synthesis",
+  "review_kind": "10_evidence_to_20_synthesis",
+  "target_blob_sha": "e4085f6239e60598ed60c0bba87f345635e9dc6f",
+  "assessment": "Independently examined 22 Knowledge Units, 10 cross-KU relations and 6 uncertainties against E0001-E0032. KUs separate current deviation scores, future alarm, actual failure-horizon risk and failure time/RUL; relations distinguish failure event from alarm label, point-adjustment metrics from prognostic horizon and Brier/IBS, Kalman residual reconstruction from particle prognostics, and EVT false-positive risk from calibrated failure event probability. Qualifications regarding informative censoring, synthesized C-MAPSS degradation, domain shift, operational costs and unavailable direct task-controlled experiments remain visible. U0006 is an operational historical if-condition now discharged by a committed finalization projection log, not a claim about physical uncertainty. No unsupported causal bridge, logically false conflict or missing material qualification was established.",
+  "findings": [],
+  "verdict": "PASS"
+}
