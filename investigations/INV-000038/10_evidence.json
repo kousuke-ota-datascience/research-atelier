@@ -3,7 +3,7 @@
   "artifact_type": "10_evidence",
   "investigation_id": "INV-000038",
   "rq_id": "RQ-000038",
-  "snapshot_at": "2026-11-06T01:03:26.791Z",
+  "snapshot_at": "2026-11-06T01:09:02.950Z",
   "sources": [
     {
       "source_id": "SRC-000184",
@@ -103,6 +103,60 @@
       },
       "accessed_at": "2026-11-06T01:03:26.791Z",
       "notion_url": "https://app.notion.com/p/410e5855be3981e48601cc6fe18be038"
+    },
+    {
+      "source_id": "SRC-000192",
+      "source_revision": {
+        "commit_sha": "50b52fcbb0bcb093f05aec0aa2bfaeebab026e27",
+        "blob_sha": "7e6ddc8dce43331a73d6d11c8a2c754e2a2e806e"
+      },
+      "accessed_at": "2026-11-06T01:09:02.950Z",
+      "notion_url": "https://app.notion.com/p/40fe5855be3981a9b263e0f64c17eef7"
+    },
+    {
+      "source_id": "SRC-000201",
+      "source_revision": {
+        "commit_sha": "50b52fcbb0bcb093f05aec0aa2bfaeebab026e27",
+        "blob_sha": "24b5442425a280e249862d34d58cbfbffddf0870"
+      },
+      "accessed_at": "2026-11-06T01:09:02.950Z",
+      "notion_url": "https://app.notion.com/p/410e5855be39811bbbfdd8205adf86d4"
+    },
+    {
+      "source_id": "SRC-000202",
+      "source_revision": {
+        "commit_sha": "50b52fcbb0bcb093f05aec0aa2bfaeebab026e27",
+        "blob_sha": "4d3d10d4bf175e4db9d5d56487f3c40a4a0da9c5"
+      },
+      "accessed_at": "2026-11-06T01:09:02.950Z",
+      "notion_url": "https://app.notion.com/p/410e5855be3981d9b6e2f36ac2e3dd0d"
+    },
+    {
+      "source_id": "SRC-000203",
+      "source_revision": {
+        "commit_sha": "50b52fcbb0bcb093f05aec0aa2bfaeebab026e27",
+        "blob_sha": "60e39828a89ed08b01aac7a38f574e7ac93a5ad6"
+      },
+      "accessed_at": "2026-11-06T01:09:02.950Z",
+      "notion_url": "https://app.notion.com/p/410e5855be3981b8bd00c9f85bc796a0"
+    },
+    {
+      "source_id": "SRC-000204",
+      "source_revision": {
+        "commit_sha": "50b52fcbb0bcb093f05aec0aa2bfaeebab026e27",
+        "blob_sha": "d61ccad1bfd3cd92e8fa245a4933600fb1f78b8c"
+      },
+      "accessed_at": "2026-11-06T01:09:02.950Z",
+      "notion_url": "https://app.notion.com/p/410e5855be3981e78ac8f92880246b88"
+    },
+    {
+      "source_id": "SRC-000205",
+      "source_revision": {
+        "commit_sha": "50b52fcbb0bcb093f05aec0aa2bfaeebab026e27",
+        "blob_sha": "1ecdaf34609fa6aeefa7ebaa36e600019c1dd80d"
+      },
+      "accessed_at": "2026-11-06T01:09:02.950Z",
+      "notion_url": "https://app.notion.com/p/410e5855be3981eab395dd3aae454157"
     }
   ],
   "evidence_items": [
@@ -254,6 +308,90 @@
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/410e5855be3981abb371f11714ccf7c4",
           "title": "EV-000318"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0012",
+      "content": "NASAのN-CMAPSS記述によれば、実飛行条件を入力に用いるrun-to-failureエンジン系列でも、エンジン劣化過程自体はsimulation modelで生成されている。",
+      "source_locator": "NASA NTRS 20205001125, Description",
+      "note_type": "Data",
+      "selection_reason": "Original data generation, Bayesian RUL, gamma deterioration and deep prognostics methods supporting a more representative methodological review.",
+      "provenance": {
+        "source_id": "SRC-000192",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/410e5855be3981eb8276df94d21c6a95",
+          "title": "EV-000322"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0013",
+      "content": "Gebraeelら（2005）は部品の劣化信号からBayesianアプローチによって残存寿命の分布を推定する枠組みを研究した。",
+      "source_locator": "IIE Transactions bibliographic abstract",
+      "note_type": "Method",
+      "selection_reason": "Original data generation, Bayesian RUL, gamma deterioration and deep prognostics methods supporting a more representative methodological review.",
+      "provenance": {
+        "source_id": "SRC-000201",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/410e5855be39815dbbd0c5d21abd5c18",
+          "title": "EV-000326"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0014",
+      "content": "Saxenaら（2008）のC-MAPSS劣化シミュレーションでは熱力学的エンジンモデルに流量・効率損失を与え、定義されたhealth indexがfailure criterionに達するまで信号を生成した。",
+      "source_locator": "IEEE 2008 abstract; NASA dataset description",
+      "note_type": "Data",
+      "selection_reason": "Original data generation, Bayesian RUL, gamma deterioration and deep prognostics methods supporting a more representative methodological review.",
+      "provenance": {
+        "source_id": "SRC-000202",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/410e5855be39816fba58e36aeb6becea",
+          "title": "EV-000327"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0015",
+      "content": "Chaoら（2021）のN-CMAPSSは実飛行プロファイルに基づく入力を採用するが故障進展は合成され、論文自身も加速劣化と対象故障モードの限定を明示する。",
+      "source_locator": "Data 2021, §§2,5",
+      "note_type": "Limitation",
+      "selection_reason": "Original data generation, Bayesian RUL, gamma deterioration and deep prognostics methods supporting a more representative methodological review.",
+      "provenance": {
+        "source_id": "SRC-000203",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/410e5855be398182aa3dc8c671552efe",
+          "title": "EV-000328"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0016",
+      "content": "van Noortwijk（2009）はGamma過程が時間とともに進む確率的劣化のモデル化に利用され、点検・保全の意思決定に応用されることをレビューした。",
+      "source_locator": "Reliability Engineering & System Safety abstract",
+      "note_type": "Method",
+      "selection_reason": "Original data generation, Bayesian RUL, gamma deterioration and deep prognostics methods supporting a more representative methodological review.",
+      "provenance": {
+        "source_id": "SRC-000204",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/410e5855be3981f38c7ed42e071e2ebf",
+          "title": "EV-000329"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0017",
+      "content": "Babuら（2016）はセンサ時系列から特徴量を自動抽出する深層CNN回帰をRUL推定に適用する方法を提案した。",
+      "source_locator": "LNCS original paper abstract",
+      "note_type": "Method",
+      "selection_reason": "Original data generation, Bayesian RUL, gamma deterioration and deep prognostics methods supporting a more representative methodological review.",
+      "provenance": {
+        "source_id": "SRC-000205",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/410e5855be398167b6a0d261d4c202a7",
+          "title": "EV-000330"
         }
       }
     }
