@@ -3,22 +3,31 @@
   "artifact_type": "30_analysis",
   "investigation_id": "INV-000038",
   "rq_id": "RQ-000038",
-  "analyzed_at": "2026-11-06T01:12:26.013Z",
+  "analyzed_at": "2026-11-06T02:20:26.565Z",
   "question_type": "Methodological",
   "profile": {
-    "method_or_procedure": "17 Source/Evidenceを用いた暫定故障予測taxonomy：診断とprognosticsの分離、Bayesian residual-life distribution、Gamma過程（単相・変化点を含む二相）などの確率劣化モデル、survival/time-to-event、CNN/LSTM等のdata-driven RUL、状態・物理過程と観測のハイブリッド、センサー欠損・不確実性の評価。NASA C-MAPSS/N-CMAPSSの生成原著を比較するが、物理・粒子フィルタ・転移学習を網羅した体系ではない。",
+    "method_or_procedure": "frozen RQ-000038の故障予測・prognosticsに対し26件のSource/Evidenceを方法系統別に選定： (a) Bayesian residual-life/Gamma・Wiener劣化過程とfirst-hitting-time、(b) 非線形・非Gaussian状態推定とparticle filtering、(c) physics-guided/physics-informed degradation、(d) CNN/LSTMとself-supervised domain adaptation（C-MAPSSでの転移評価を実fleetと区別）、(e) survival/hazard・保全介入に伴うinterval censoring、(f) prognostic horizon・α-λと実産業future-alarm window・time-dependent Brier/IBSなどの検証設計。選定では直接の原著と工業分野の高品質reviewを区別し、将来故障時刻・RUL・将来alarm・現在の診断を同一のtargetとして扱わない。",
     "intended_use": "工学システムの観測履歴を利用し、故障・劣化の将来状態、故障までの時間、RULあるいは保全上の事前警告を推定し、予測のリスクと不確実性を説明する。",
     "assumptions": [
       "故障定義、劣化判定基準、予測起点とprediction horizonを明記する。",
       "故障時刻やmaintenance eventが完全に記録されるとは仮定しない。",
-      "実験run-to-failureと保全介入がある実運用のデータ生成過程を同一視しない。"
+      "実験run-to-failureと保全介入がある実運用のデータ生成過程を同一視しない。",
+      "failure threshold・劣化過程の分布条件、時間依存covariates、競合リスク・保全介入の観測機構を必ずしも既知と仮定しない。",
+      "future-alarm分類の教師ラベルを物理故障・保全実績と同一視しない。",
+      "IPCWなどのcensoring-adjusted risk評価は打切り機構の仮定を要し、任意のmaintenance interventionによるinformative censoringには自動適用できない。"
     ],
     "evaluation_criteria": [
       "RUL回帰ならホライズンと観測打切りを明示したMAE/RMSE等、時点別/寿命域別性能を検討する。",
       "time-to-eventならcensoring、competing risks、予測確率の校正、time-dependent discriminationを区別する。",
       "予兆アラートならlead time、false alarm、見逃し、事前警告時刻の定義を合わせて評価する。",
       "運転条件・設備個体・故障モードを分離したout-of-sample評価とドメインシフト検証を求める。",
-      "センサー欠損・部分的故障下の不確実性、モデル校正・推定区間の妥当性を評価する。"
+      "センサー欠損・部分的故障下の不確実性、モデル校正・推定区間の妥当性を評価する。",
+      "Wiener/Gamma劣化過程やparticle filteringでは、故障閾値、劣化単調性、状態遷移、noise分布、個体差、予測分布・区間を明記し、同じ観測条件で推定と校正を評価する。",
+      "prognostic horizon、α-λ performance等を用い、RUL誤差だけでなく許容精度へ入る予測時点と継続的精度を報告する。",
+      "horizon-event riskについて、予測起点tと未来区間τ、イベント定義、survival/censoringを指定し、時点依存のdiscrimination、Brier/IBS、別途の校正プロットを検討する。",
+      "preventive maintenance、corrective action、interval censoring、administrative censoring、informative censoringを区別し、IPCW等の仮定が成立するか確認する。",
+      "future-alarm predictionでは観測窓と予測窓、必要lead time、警報数/時間、false positive・missed events、PR指標、cost、対象eventが実故障か単なるalarmかを明示する。",
+      "cross-fleet/domain adaptationはlabel-free targetの有無、source/targetの独立設備・故障mode・保全方策、C-MAPSS合成劣化と実fleet観測の外的妥当性を分けて検証する。"
     ],
     "comparators": [
       "統計的確率過程／寿命・survivalモデル",
@@ -31,24 +40,39 @@
       "Gebraeelら（2005）のBayesian残存寿命分布",
       "Gamma劣化のモデルファミリーと二相Gamma推定",
       "Babuら（2016）のCNN RUL回帰",
-      "C-MAPSS生成原著とN-CMAPSS実飛行条件利用の相違"
+      "C-MAPSS生成原著とN-CMAPSS実飛行条件利用の相違",
+      "Siら（2013）のWiener確率劣化、recursive filtering＋EMとfirst-hitting-timeによるRUL分布",
+      "OrchardとVachtsevanos（2009）のhybrid状態空間・粒子filterによる非線形prognosis",
+      "Liら（2024）のphysics-informed RUL reviewと2024年physics-guided軸受LSTMの個別実装",
+      "Le Xuanら（2024）のself-supervised source/target domain adaptation（C-MAPSS評価）",
+      "Cousinoら（2024）の不完全保全とinterval-censored industrial failure観測",
+      "Saxenaら（2010）のprognostic horizon・α-λ・relative accuracyのRUL-specific metrics",
+      "Shadiら（2026）のindustrial survival horizon-risk、time-dependent discrimination、Brier/IBS、censoring-aware evaluation",
+      "Caterinoら（2026）の3実産業dataのfuture-alarm prediction observation/prediction-window評価"
     ],
     "tradeoffs": [
       "状態・劣化物理をモデル化できれば機構に沿った予測が可能だが、状態観測・パラメータ同定を必要とする。原著レベルでの詳細比較は本初回Sourceに不足する。",
       "CNN/LSTM等は系列パターンの学習を通じてRULを推定できる一方、run-to-failureラベル・劣化シナリオの代表性に依存する。",
       "survival系は打切りを扱う枠組みを持つが、機械設備での実証がない異分野モデルをそのまま故障予測SOTAとして推薦できない。",
       "センサー欠損に耐える不確実性評価は運用判断の補助になるが、確率校正と安全性の保証は別途検証すべきである。",
-      "劣化信号から寿命の分布を推定するBayesianモデルと、fixed targetのRUL回帰ではラベル・不確実性表現・校正方法が異なる。"
+      "劣化信号から寿命の分布を推定するBayesianモデルと、fixed targetのRUL回帰ではラベル・不確実性表現・校正方法が異なる。",
+      "Wienerは確率的な非単調増分とfirst-hitting-time、Gamma劣化は単調蓄積、particle filteringは非線形/非Gaussian状態事後分布という異なる生成・観測仮定を持つ。",
+      "物理誘導LSTMは劣化知識を取り込めるが、物理情報の正しさ・移植性・独立設備の外的検証が不足すれば汎用性能は主張できない。",
+      "self-supervised adaptationはターゲットRULラベル無しの転移に対応するが、C-MAPSS模擬条件での優位を実fleet間のドリフト・保全介入下へ直結できない。",
+      "保全介入下のinterval censoringと単純な右打切り・情報依存打切りは異なる観測機構であり、calibrationやhazard評価に必要な同定前提も異なる。",
+      "実産業alarmの短いFWは当該データでF1に有利でも、介入の必要lead timeを満たさない場合があり、誤報負荷・見逃し・統計的不確実性と同時に選択する。"
     ],
     "applicability_limits": [
-      "17 SourceでGamma劣化・Bayesian残余寿命・CNN原著を補強したが、Wiener過程、particle filter、physics-informed、fleet間transfer、informative censoringの原著・評価が不足する。",
+      "26 Sourceを用い、Wiener/recursive filtering、particle filtering、physics-informedレビュー・軸受LSTM、self-supervised domain adaptationを方法論の代表例として補充した。ただしmethod-specificな式・state noise・故障閾値・実fleet転移の再現性は今回のSource抽出粒度では確立していない。",
       "C-MAPSSとN-CMAPSSはいずれもシミュレーションで劣化進展を与える。N-CMAPSSの入力飛行条件に実記録が使われても実機故障進展の観測とは同一視できない。",
       "ISO 13381-1:2025は公式abstractを参照したのみで本文条項を扱っていない。",
-      "モデル比較の非普遍性はDehondtらのFD001条件での結果であり、全データに対する順位不存在の厳密証明ではない。"
+      "モデル比較の非普遍性はDehondtらのFD001条件での結果であり、全データに対する順位不存在の厳密証明ではない。",
+      "2026年の産業survival reviewはhorizon-riskとcensoring-aware評価を方法論的に支持するが、工業設備で校正が実証された個別予測モデルの一次実験ではない。",
+      "Caterinoらの産業future-alarm論文はlead-time窓設計を実データで評価するが、目的変数は故障時刻ではなくalarmであり、PR/ROC・コスト/誤報負荷・bootstrap検定・確率calibrationは未実施。"
     ]
   },
   "working_answer": {
-    "text": "時系列故障予測の主な予測対象は、故障イベント確率／ハザード、劣化状態、故障時刻、残存寿命（RUL）および予兆アラートであり、現在の異常検知・fault diagnosisとは区別すべきである。17 Sourceを元に(1)Bayesian residual-life distributionとGamma過程などの統計的劣化モデル、(2)モデルベースの状態・物理過程、(3)CNN/LSTM等による観測系列からのRUL回帰、(4)survival/time-to-event・打切り、(5)ハイブリッド・不確実性評価という暫定taxonomyが得られる。二相Gammaモデルは劣化速度の変化点不確実性を含む一例である。C-MAPSSとN-CMAPSSはいずれも合成劣化によるrun-to-failureデータであり、実飛行条件使用が実故障の外的妥当性を確立するわけではない。FD001での統一実験を一般的な最良手法ランキングとして扱うこともできない。Wiener過程・粒子フィルタ・保全介入と打切り・転移学習等の一次検証は引き続き不足する。",
+    "text": "26件のSource/Evidenceに基づき、時系列故障予測（prognostics）を、故障イベントの所定期間内リスク/ハザード、劣化状態の将来分布、故障時刻・RUL分布/点予測、早期警告のalarm anticipationとして区別する。代表的な方法群は(1)確率劣化：単調増分Gamma・Wiener過程とfirst-hitting-time/recursive filtering、(2)状態推定・物理モデル：particle filtering、physics-informed/physics-guided RUL、(3)データ駆動：CNN/LSTM RUL回帰、(4)self-supervised domain adaptationでのlabel-free target RUL学習、(5)survival/time-to-eventと保全介入・打切り、(6)各予測対象に対応する確率と運用評価に整理できる。RUL回帰ではMAE/RMSEのみではなくprognostic horizon・α-λなどの時間軸評価が必要であり、故障horizon riskではcensoring-awareなtime-dependent discriminationやBrier/IBS等の確率評価、早期警告ではlead time・false alarm・見逃し・costを分けて評価する。産業の区間打切りに対するモデルと産業survival reviewは追加したが、maintenance interventionによる任意の情報依存打切りを解決したものではない。self-supervised転移の原著評価はsynthetic C-MAPSSであり、実機fleet間移植は別問題である。3実産業データによる予測窓比較は将来alarmの評価であり、実故障リスクのcalibrationを示さない。医療Deep Survival Machinesの原著も工業分野の直接実証として扱わず、未検証の実運用性能・条件横断の万能順位を主張しない。",
     "knowledge_unit_refs": [
       "K0001",
       "K0002",
@@ -65,7 +89,16 @@
       "K0013",
       "K0014",
       "K0015",
-      "K0016"
+      "K0016",
+      "K0017",
+      "K0018",
+      "K0019",
+      "K0020",
+      "K0021",
+      "K0022",
+      "K0023",
+      "K0024",
+      "K0025"
     ]
   },
   "judgments": [
@@ -123,16 +156,63 @@
         "K0015",
         "K0016"
       ]
+    },
+    {
+      "judgment_id": "J0007",
+      "statement": "Wiener・Gamma確率劣化、particle filtering、physics-informed学習は故障閾値・確率状態・物理的機構の仮定が異なる。生データと予測target・不確実性表現を揃えずにRUL性能を比較してはならない。",
+      "knowledge_unit_refs": [
+        "K0010",
+        "K0015",
+        "K0017",
+        "K0018",
+        "K0019",
+        "K0025"
+      ]
+    },
+    {
+      "judgment_id": "J0008",
+      "statement": "ラベル無しtargetドメインを活用したself-supervised RUL転移がC-MAPSSで報告されても、合成劣化benchmarksから独立した実機fleet・保全policy・故障modeの一般化は別に検証しなければならない。",
+      "knowledge_unit_refs": [
+        "K0020",
+        "K0007",
+        "K0011"
+      ]
+    },
+    {
+      "judgment_id": "J0009",
+      "statement": "故障horizon-riskの時間依存discrimination・probability scoringとRUL point-error、prognostic horizon、future-alarm窓F1は対象が異なる。打切り機構・保全介入の仮定とalarm lead time、false alarm burdenを合わせて設計する必要がある。",
+      "knowledge_unit_refs": [
+        "K0002",
+        "K0006",
+        "K0021",
+        "K0022",
+        "K0023",
+        "K0024"
+      ]
+    },
+    {
+      "judgment_id": "J0010",
+      "statement": "保全介入の有無が故障観測・打切り過程を変える状況では、単純な右打切り独立性やC-MAPSS run-to-failureを前提とした評価だけで実運用のhazard校正を正当化できない。",
+      "knowledge_unit_refs": [
+        "K0007",
+        "K0021",
+        "K0023"
+      ]
     }
   ],
   "limitations": [
     {
-      "text": "Bayesian RUL分布、単調Gamma劣化・二相Gamma、CNN RUL回帰の原著を補強したが、Wiener過程、粒子フィルタ、physics-informed/transfer、実運用の打切り過程の調査は未完了。",
+      "text": "Wiener/recursive filter、粒子filter、物理誘導RUL、self-supervised domain adaptationの原著・reviewを補充した。ただし個別の故障閾値、状態noise、外部fleetでの転移、physics知識の正確さは追加の独立実験が必要。",
       "knowledge_unit_refs": [
         "K0010",
         "K0012",
         "K0015",
-        "K0016"
+        "K0016",
+        "K0017",
+        "K0018",
+        "K0019",
+        "K0020",
+        "K0025"
       ]
     },
     {
@@ -156,13 +236,27 @@
         "K0013",
         "K0014"
       ]
+    },
+    {
+      "text": "industrial survival reviewのBrier/IBS・IPCW・期間内故障riskは方法論であり、介入と情報依存打切りを伴う特定現場で無偏・校正済みとする実験ではない。",
+      "knowledge_unit_refs": [
+        "K0021",
+        "K0023"
+      ]
+    },
+    {
+      "text": "prognostic horizon/α-λとfuture-alarm F1-macroの比較は異なる目的変数を扱う。future-alarm研究にないPR/calibration・誤報コスト・統計検定を実証済みとみなさない。",
+      "knowledge_unit_refs": [
+        "K0022",
+        "K0024"
+      ]
     }
   ],
   "unresolved_questions": [
-    "Wiener劣化モデル、particle filtering、physics-informed／transfer prognosticsの仮定と、Gamma過程・survival・深層RULの共通比較軸をどう定めるか。",
-    "保全介入が故障時刻を観測不能にするinformative censoringをどう扱い、予測性能をどの実運用データで評価すべきか。",
-    "RUL回帰、故障ハザード、早期警告における決定理論上の目標関数と校正をどう整合させるか。",
-    "2025–2026年のtransfer、foundation model、self-supervised、cross-fleet prognosticsの独立再現比較を追加する。"
+    "Wiener/Gamma過程・粒子filter・physics-guided LSTMのstate observationとfault threshold、prediction horizon、probabilistic outputをどう統一比較するか。",
+    "corrective/preventive actionが故障イベント観測や保全後hazardを変える状況で、右打切り・区間打切り・情報依存打切りを区別し、どこまで同定・校正できるか。",
+    "RUL回帰（MAE/RMSE、prognostic horizon、α-λ）、故障horizon risk（Brier/IBS、time-dependent discrimination）、future-alarm（lead time・false alarm・missed events）を、同じ設備で対応付ける評価設計はどう構成するか。",
+    "self-supervised転移・physics-informed・particle filteringがC-MAPSS合成劣化や軸受seeded test以外の実fleetで再現する条件、label/maintenance policy shiftをどう評価するか。"
   ],
   "alternative_interpretations": [
     {
@@ -178,6 +272,15 @@
       "knowledge_unit_refs": [
         "K0007",
         "K0008"
+      ]
+    },
+    {
+      "text": "RUL point estimateとrisk threshold判定を一つのprognostics taskとして扱える場合もあるが、horizon riskは条件付きsurvivalと打切り仮定、future alarmはイベントラベルと窓設計が異なる。変換・対応は無条件に成立しない。",
+      "knowledge_unit_refs": [
+        "K0002",
+        "K0022",
+        "K0023",
+        "K0024"
       ]
     }
   ]
