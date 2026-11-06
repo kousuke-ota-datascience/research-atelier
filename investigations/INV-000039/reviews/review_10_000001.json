@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000039",
+  "review_seq": 1,
+  "findings": [],
+  "verdict": "PASS",
+  "layer": "10_evidence",
+  "review_kind": "source_evidence_note_to_10_evidence",
+  "target_blob_sha": "f92540be9b169248e28445dee92b0c58d9387c5e",
+  "assessment": "Reviewed the 32 selected Evidence records against the accepted upstream 10_evidence snapshots: 15 of 23 records from INV-000037 and 17 of 26 from INV-000038. Every selected entry retains exactly the upstream content, source locator, note type, Notion Note reference, Source ID, and Source revision commit/blob SHA. No mismatch was found. Omitted upstream methods concern catalog coverage rather than indispensable contradictory evidence for this conditional Comparative inquiry. The selected evidence preserves point-adjustment criticism, simulation boundaries, informative censoring, domain shift, lead-time, and false-alarm caveats. No new synthetic Source or unqualified performance evidence is introduced."
+}
