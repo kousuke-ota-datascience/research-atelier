@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000186",
+  "notion_url": "https://app.notion.com/p/40fe5855be39817db243e87aa06fde41",
+  "title": "ISO 13381-1:2025 Condition monitoring and diagnostics of machine systems — Prognostics — Part 1: General guidelines and requirements",
+  "source_type": "Documentation",
+  "journal_or_publisher": "International Organization for Standardization",
+  "authors": "ISO/TC 108/SC 5",
+  "year": 2025,
+  "url": "https://www.iso.org/standard/88029.html",
+  "doi": null,
+  "version_or_edition": null,
+  "reliability_note": "Official standard metadata and abstract only; full normative clauses not examined."
+}

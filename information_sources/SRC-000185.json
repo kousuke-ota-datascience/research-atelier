@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000185",
+  "notion_url": "https://app.notion.com/p/40fe5855be39813dad09f69171ea59c2",
+  "title": "Remaining useful life estimation – A review on the statistical data driven approaches",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "European Journal of Operational Research",
+  "authors": "Xiao-Sheng Si; Wenbin Wang; Chang-Hua Hu; Dong-Hua Zhou",
+  "year": 2011,
+  "url": "https://doi.org/10.1016/j.ejor.2010.11.018",
+  "doi": "10.1016/j.ejor.2010.11.018",
+  "version_or_edition": null,
+  "reliability_note": "Original or peer-reviewed research source; evaluate claims within published task, dataset and protocol boundaries."
+}

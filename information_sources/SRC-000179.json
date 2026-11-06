@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000179",
+  "notion_url": "https://app.notion.com/p/40fe5855be398125a66df11a78d87223",
+  "title": "When Foundation Models are One-Liners: Limitations and Future Directions for Time Series Anomaly Detection",
+  "source_type": "Conference Paper",
+  "journal_or_publisher": "ICLR",
+  "authors": "Xiaokun Zhu; Louis Carpentier; Mathias Verbeke",
+  "year": 2026,
+  "url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/cf70320e93c08b39b1b29a348097a376-Abstract-Conference.html",
+  "doi": null,
+  "version_or_edition": null,
+  "reliability_note": "Recent peer-reviewed primary/review source; reported results are study- and protocol-dependent."
+}

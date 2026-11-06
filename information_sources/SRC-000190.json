@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000190",
+  "notion_url": "https://app.notion.com/p/40fe5855be3981a2b13adc0608c571f6",
+  "title": "Deep Survival Machines: Fully Parametric Survival Regression and Representation Learning for Censored Data With Competing Risks",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "IEEE Journal of Biomedical and Health Informatics",
+  "authors": "Chirag Nagpal; Xinyu Li; Artur Dubrawski",
+  "year": 2021,
+  "url": "https://pubmed.ncbi.nlm.nih.gov/33460387/",
+  "doi": "10.1109/JBHI.2021.3052441",
+  "version_or_edition": null,
+  "reliability_note": "Original or peer-reviewed research source; evaluate claims within published task, dataset and protocol boundaries."
+}

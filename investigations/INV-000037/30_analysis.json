@@ -1,0 +1,148 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "30_analysis",
+  "investigation_id": "INV-000037",
+  "rq_id": "RQ-000037",
+  "analyzed_at": "2026-11-06T01:03:26.791Z",
+  "question_type": "Methodological",
+  "profile": {
+    "method_or_procedure": "時系列異常検知の初回method taxonomy：逐次的統計監視／変化検出；部分系列の類似性・discord；確率的系列表現；Transformer系のassociationまたは再構成／予測；基盤モデルと相対文脈検知・conformal校正；時系列特徴量に対する汎用outlier baseline。これは13 Sourceから抽出した代表系列で、網羅分類ではない。 補強原著：EWMA管理図（Roberts, 1959）およびrun-length posteriorに基づくBayesian online change-point detection（Adams & MacKay, 2007）。",
+    "intended_use": "対象時系列の正常性からの逸脱を時点・部分系列・イベントなどの定義された単位で検知し、アラートとその解釈を支援する。",
+    "assumptions": [
+      "異常の意味とground truth粒度をユースケースごとに定義する。",
+      "モデルやscoreには適切な時間依存性の表現、threshold、警報単位への集約が必要となり得る。",
+      "全異常ラベル、正常運転分布の定常性、学習/試験分布の一致を前提としない。"
+    ],
+    "evaluation_criteria": [
+      "point-level, range/event-levelのprecision/recallと対応する検知遅延・誤報負荷を区別する。",
+      "point adjustmentに依存するF1を単独の性能根拠としない。",
+      "label粒度、閾値設定、データ漏洩、異常密度、series length、データセット構成を報告する。",
+      "単純baseline（移動分散、平方差、特徴量に対するIsolation Forestなど）を必須比較候補とする。",
+      "online制約、メモリ・計算量、再学習、domain shiftに伴うscore校正の可否を検討する。"
+    ],
+    "comparators": [
+      "Pageに代表される連続的統計監視",
+      "Matrix Profileによるdiscord探索",
+      "OmniAnomalyの確率的系列モデル",
+      "Anomaly Transformer／TranADなどTransformer変種",
+      "TimeRCD・conformal score・統計量再導入型の2026年研究方向",
+      "Isolation Forestなど非時系列outlier baselineと単純時系列統計baseline",
+      "Roberts (1959) の指数移動平均（EWMA）管理図",
+      "Adams & MacKay (2007) のBayesian online change-point detection"
+    ],
+    "tradeoffs": [
+      "単純な統計・類似性based手法には実装・解釈の利点があり得るが、複雑な時系列関係の表現は設計や追加特徴に依存する。",
+      "deep sequential modelsは非線形・多変量の関係を表現する一方、訓練分布・ラベル・スコア校正・運用負荷に依存する。",
+      "foundation-model系では学習なしの導入可能性と汎化性能が研究上の関心だが、単純基準を上回る保証はない。",
+      "評価protocolの違いによってreported rankingが変化するため、異なる実験の数値は無条件に比較しない。"
+    ],
+    "applicability_limits": [
+      "本初回Evidenceは全手法族の網羅ではない。EWMA／CUSUM数理・state-space・深層自己教師あり・オンライン変化点検出等は重要な追加原著確認対象である。",
+      "現在の異常検知と将来の故障確率／RUL推定は異なるtargetであり、後者はINV-000038に委ねる。",
+      "2026年の基盤モデル評価は限定されたモデル・データ・scoreに関する知見であり、2026年現在の普遍的SOTA順位とは解釈しない。"
+    ]
+  },
+  "working_answer": {
+    "text": "初回Evidenceに基づく時系列異常検知の方法論は、単一の『SOTAアルゴリズム』ではなく、(1)逐次的な統計監視・変化検出、(2)部分系列の類似性・discord探索、(3)確率的系列表現、(4)Transformer系のassociation・再構成等、(5)基盤モデルと相対文脈検知・統計量の併用・conformal校正、(6)汎用外れ値検出器を用いたbaseline、という異なる役割の組合せとして暫定整理できる。タスクの異常単位、ラベルの有無、多変量性、予測遅延と誤報コストを明示しないモデル順位は意味が弱い。point adjustmentはF1を過大評価し得る。TSB-ADのような標準化評価や2026年の基盤モデル批判的検証を踏まえると、複雑なモデルの一般的な優位は支持されない。現時点の13 Sourceは主な方法系列と評価上の反証を示すが、古典数理・オンライン検出・自己教師あり手法の網羅を完了していないため、taxonomyは暫定である。",
+    "knowledge_unit_refs": [
+      "K0001",
+      "K0002",
+      "K0003",
+      "K0004",
+      "K0005",
+      "K0006",
+      "K0007",
+      "K0008",
+      "K0009",
+      "K0010",
+      "K0011",
+      "K0012"
+    ]
+  },
+  "judgments": [
+    {
+      "judgment_id": "J0001",
+      "statement": "時系列異常検知は『時系列をどう表現するか』『何を異常と定義するか』『スコアをどう警報へ変換するか』を区別する多軸taxonomyが適切である。",
+      "knowledge_unit_refs": [
+        "K0001",
+        "K0003",
+        "K0004",
+        "K0005",
+        "K0010",
+        "K0011",
+        "K0012"
+      ]
+    },
+    {
+      "judgment_id": "J0002",
+      "statement": "point-adjusted F1のみの手法順位は、真の検知能力・早期性・誤報を反映しない可能性があるため、評価プロトコルを明示しなければならない。",
+      "knowledge_unit_refs": [
+        "K0007",
+        "K0008"
+      ]
+    },
+    {
+      "judgment_id": "J0003",
+      "statement": "2026年の基盤モデル研究は新しい候補を増やす一方、単純baselineを上回らない反証的研究も存在し、foundation model使用を自動的な性能優位と解釈できない。",
+      "knowledge_unit_refs": [
+        "K0006",
+        "K0009"
+      ]
+    },
+    {
+      "judgment_id": "J0004",
+      "statement": "異常の形態とアノテーション単位が異なる場合、univariate/multivariate、point/subsequence/event、online/offline、ラベル利用可能性を別軸に整理したうえで評価指標を選ぶ必要がある。",
+      "knowledge_unit_refs": [
+        "K0001",
+        "K0007",
+        "K0008"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "text": "EWMAとBayesian online change-point detectionの原著を補強したが、state-space・密度・深層自己教師あり／contrastive・オンライン適応は依然として原著収集が不足する。",
+      "knowledge_unit_refs": [
+        "K0001",
+        "K0002"
+      ]
+    },
+    {
+      "text": "各論文のabstractを主要なEvidence locatorとしており、数式・手法の保証条件や再現実験の詳細は未検証。",
+      "knowledge_unit_refs": [
+        "K0004",
+        "K0005",
+        "K0006"
+      ]
+    },
+    {
+      "text": "TSB-ADと基盤モデル評価の性能主張は、収録データセット・候補モデル・評価ルールの範囲でのみ支持される。",
+      "knowledge_unit_refs": [
+        "K0008",
+        "K0009"
+      ]
+    }
+  ],
+  "unresolved_questions": [
+    "EWMAとBayesian online change-point detectionを含め、state-space・密度・距離・予測残差の適用仮定と共通評価軸を原著まで遡って体系化する。",
+    "オンライン異常検知における閾値更新・concept drift・latency／誤報コストの実運用上の設計指標をどう定式化するか。",
+    "代表的な自己教師あり／基盤モデル手法を、同一task・分割・event-level評価で比較した場合の頑健な差はあるか。"
+  ],
+  "alternative_interpretations": [
+    {
+      "text": "method taxonomyはモデルarchitectureだけで分ける方式もあるが、同じTransformer内部でscore生成/校正が異なるため、問題設定とscore semanticsを横断軸にする方が適用可否の説明に有用である。",
+      "knowledge_unit_refs": [
+        "K0001",
+        "K0005",
+        "K0006"
+      ]
+    },
+    {
+      "text": "foundation modelは事前学習によるdeploymentの利点を持ち得るが、性能順位が高いという命題とは別である。評価上の反証と新モデル提案は論理的に両立する。",
+      "knowledge_unit_refs": [
+        "K0006",
+        "K0009"
+      ]
+    }
+  ]
+}

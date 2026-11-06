@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000188",
+  "notion_url": "https://app.notion.com/p/40fe5855be3981de9011ca12de6542bf",
+  "title": "Remaining useful life estimation in prognostics using deep convolution neural networks",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "Reliability Engineering & System Safety",
+  "authors": "Xiang Li; Qian Ding; Jian-Qiao Sun",
+  "year": 2018,
+  "url": "https://doi.org/10.1016/j.ress.2017.11.021",
+  "doi": "10.1016/j.ress.2017.11.021",
+  "version_or_edition": null,
+  "reliability_note": "Original or peer-reviewed research source; evaluate claims within published task, dataset and protocol boundaries."
+}

@@ -1,0 +1,148 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "30_analysis",
+  "investigation_id": "INV-000038",
+  "rq_id": "RQ-000038",
+  "analyzed_at": "2026-11-06T01:03:26.791Z",
+  "question_type": "Methodological",
+  "profile": {
+    "method_or_procedure": "時系列による故障予測の初回method taxonomy：故障診断からprognosticsへの接続；統計的RUL・time-to-event/survival；物理劣化または状態推定に基づくmodel-based；CNN/LSTMなどdata-driven系列回帰；model-based/data-drivenのhybrid；センサー欠損への予測不確実性評価。多数の候補を挙げているが選択した10 Sourceから再構成した暫定体系である。 補強原著：二相Gamma劣化過程と変化点不確実性を取り扱うRUL推定（Ling et al., 2019）。",
+    "intended_use": "工学システムの観測履歴を利用し、故障・劣化の将来状態、故障までの時間、RULあるいは保全上の事前警告を推定し、予測のリスクと不確実性を説明する。",
+    "assumptions": [
+      "故障定義、劣化判定基準、予測起点とprediction horizonを明記する。",
+      "故障時刻やmaintenance eventが完全に記録されるとは仮定しない。",
+      "実験run-to-failureと保全介入がある実運用のデータ生成過程を同一視しない。"
+    ],
+    "evaluation_criteria": [
+      "RUL回帰ならホライズンと観測打切りを明示したMAE/RMSE等、時点別/寿命域別性能を検討する。",
+      "time-to-eventならcensoring、competing risks、予測確率の校正、time-dependent discriminationを区別する。",
+      "予兆アラートならlead time、false alarm、見逃し、事前警告時刻の定義を合わせて評価する。",
+      "運転条件・設備個体・故障モードを分離したout-of-sample評価とドメインシフト検証を求める。",
+      "センサー欠損・部分的故障下の不確実性、モデル校正・推定区間の妥当性を評価する。"
+    ],
+    "comparators": [
+      "統計的確率過程／寿命・survivalモデル",
+      "状態・物理劣化に基づくmodel-basedアプローチ",
+      "センサー特徴量からのCNN回帰",
+      "LSTMなどの時系列回帰",
+      "打切り対応のDeep Survival Machines",
+      "hybrid/uncertainty-awareモデルとsimple baselines",
+      "Ling et al. (2019) の二相Gamma確率劣化過程とBayesian／likelihood RUL推定"
+    ],
+    "tradeoffs": [
+      "状態・劣化物理をモデル化できれば機構に沿った予測が可能だが、状態観測・パラメータ同定を必要とする。原著レベルでの詳細比較は本初回Sourceに不足する。",
+      "CNN/LSTM等は系列パターンの学習を通じてRULを推定できる一方、run-to-failureラベル・劣化シナリオの代表性に依存する。",
+      "survival系は打切りを扱う枠組みを持つが、機械設備での実証がない異分野モデルをそのまま故障予測SOTAとして推薦できない。",
+      "センサー欠損に耐える不確実性評価は運用判断の補助になるが、確率校正と安全性の保証は別途検証すべきである。"
+    ],
+    "applicability_limits": [
+      "文献は10 Sourceの初回セットであり、Bayesian filtering、Wiener/Gamma劣化過程、物理informed/particle filter、最新2026年transfer/self-supervised方法の網羅はできていない。",
+      "NASA C-MAPSSはsimulationであり、実機保全や故障発生率の外的妥当性を示さない。",
+      "ISO 13381-1:2025は公式abstractを参照したのみで本文条項を扱っていない。",
+      "モデル比較の非普遍性はDehondtらのFD001条件での結果であり、全データに対する順位不存在の厳密証明ではない。"
+    ]
+  },
+  "working_answer": {
+    "text": "故障予測は、現在の状態を把握するdiagnosticsとは異なり、将来の故障リスク、劣化状態、故障時刻、RULなど予測対象を明示する問題群である。初回Evidenceから、(1)統計・確率劣化・time-to-event/survival、(2)物理・状態モデルに基づくmodel-based、(3)CNN/LSTMを含むデータ駆動のRUL回帰、(4)hybridおよび不確実性に配慮した方法、という方法論上の区分を暫定的に構成できる。RULのpoint estimate、打切りを伴う生存時間、予兆アラートではラベル・loss・評価設計が異なる。C-MAPSSのようなsynthetic run-to-failure資料で良いモデルは実運用でも優れていると断定できない。2026年のFD001での同一条件比較でも万能な推奨モデルは示されていない。現時点では劣化過程・physics-informed・transfer学習等の原著を十分収集できていないため、完成した故障予測方法論の網羅的taxonomyではなく追加調査を要する初回の根拠付き分析である。",
+    "knowledge_unit_refs": [
+      "K0001",
+      "K0002",
+      "K0003",
+      "K0004",
+      "K0005",
+      "K0006",
+      "K0007",
+      "K0008",
+      "K0009",
+      "K0010"
+    ]
+  },
+  "judgments": [
+    {
+      "judgment_id": "J0001",
+      "statement": "fault diagnostics、prognostics、RUL、event-time predictionを一つのbinary detection問題として扱わず、将来の予測対象とground truthを起点に分類するべきである。",
+      "knowledge_unit_refs": [
+        "K0001",
+        "K0002",
+        "K0006",
+        "K0010"
+      ]
+    },
+    {
+      "judgment_id": "J0002",
+      "statement": "統計・モデルベース・データ駆動・hybridは異なるモデル情報源を持ち、CNNとLSTMのようなnetwork architectureはその下位の実装階層に位置付く。",
+      "knowledge_unit_refs": [
+        "K0004",
+        "K0005"
+      ]
+    },
+    {
+      "judgment_id": "J0003",
+      "statement": "C-MAPSSのRUL benchmark結果を実運用の故障予測・保全意思決定へ外挿する際は、シミュレーション条件と故障モード・保全介入の差を検証しなければならない。",
+      "knowledge_unit_refs": [
+        "K0007",
+        "K0008"
+      ]
+    },
+    {
+      "judgment_id": "J0004",
+      "statement": "センサー異常・欠損・故障ラベル打切りが存在する場合、予測精度に加え、不確実性・校正・外的妥当性の評価が必要である。",
+      "knowledge_unit_refs": [
+        "K0002",
+        "K0006",
+        "K0009"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "text": "二相Gamma過程の原著を補強したが、Wiener過程・粒子フィルタ・physics-informed・transfer/self-supervised・保全介入や打切りの網羅は不十分である。",
+      "knowledge_unit_refs": [
+        "K0004",
+        "K0006"
+      ]
+    },
+    {
+      "text": "ISO 13381-1:2025本文にアクセスしていないため、規範的要求・条項番号について結論しない。",
+      "knowledge_unit_refs": [
+        "K0003"
+      ]
+    },
+    {
+      "text": "Deep Survival Machinesは設備の実証ではなく医療データの原著であり、設備予測精度のEvidenceとして採用しない。",
+      "knowledge_unit_refs": [
+        "K0006"
+      ]
+    },
+    {
+      "text": "同一protocol比較の性能知見はC-MAPSS FD001などのデータ・モデル範囲に限定される。",
+      "knowledge_unit_refs": [
+        "K0007",
+        "K0008"
+      ]
+    }
+  ],
+  "unresolved_questions": [
+    "二相Gamma過程以外のWiener過程、粒子フィルタ、physics-informed prognostics、Bayesian filteringなどの理論的分類と仮定条件を原著で補強する。",
+    "保全介入が故障時刻を観測不能にするinformative censoringをどう扱い、予測性能をどの実運用データで評価すべきか。",
+    "RUL回帰、故障ハザード、早期警告における決定理論上の目標関数と校正をどう整合させるか。",
+    "2025–2026年のtransfer、foundation model、self-supervised、cross-fleet prognosticsの独立再現比較を追加する。"
+  ],
+  "alternative_interpretations": [
+    {
+      "text": "故障予測をRUL回帰と同義に定義する狭義の立場もあるが、fault riskやtime-to-eventを含む概念整理の方が故障データの観測・打切り条件を明確化できる。",
+      "knowledge_unit_refs": [
+        "K0001",
+        "K0002",
+        "K0006"
+      ]
+    },
+    {
+      "text": "simulation benchmarkの共通protocolはモデルの再現可能性を上げる一方、実運用の外的妥当性と同じ問いではない。FD001で一般的勝者がないことは、条件付き推奨の必要性を示す。",
+      "knowledge_unit_refs": [
+        "K0007",
+        "K0008"
+      ]
+    }
+  ]
+}

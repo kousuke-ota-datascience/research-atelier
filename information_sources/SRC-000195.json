@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000195",
+  "notion_url": "https://app.notion.com/p/410e5855be39817db53bf89ae016ddd8",
+  "title": "Bayesian Online Changepoint Detection",
+  "source_type": "Preprint",
+  "journal_or_publisher": "arXiv",
+  "authors": "Ryan Prescott Adams; David J. C. MacKay",
+  "year": 2007,
+  "url": "https://arxiv.org/abs/0710.3742",
+  "doi": "10.48550/arXiv.0710.3742",
+  "version_or_edition": null,
+  "reliability_note": "Original 2007 arXiv preprint, not peer-review status inferred. Abstract reviewed for run-length posterior and online filtering."
+}
