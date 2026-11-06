@@ -1,0 +1,745 @@
+{
+  "schema_version": "2.1.0",
+  "artifact_type": "10_evidence",
+  "investigation_id": "INV-000039",
+  "rq_id": "RQ-000039",
+  "snapshot_at": "2026-11-06T04:21:42.088Z",
+  "sources": [
+    {
+      "source_id": "SRC-000172",
+      "source_revision": {
+        "commit_sha": "1b94a3afc2498ca7d9cfb09131c5345d335cb2cf",
+        "blob_sha": "361e854c4ea221ce2cab11a8969040268e7667ec"
+      },
+      "accessed_at": "2026-11-06T04:21:42.088Z",
+      "notion_url": "https://app.notion.com/p/40fe5855be3981169042edc5796bd5e6"
+    },
+    {
+      "source_id": "SRC-000173",
+      "source_revision": {
+        "commit_sha": "1b94a3afc2498ca7d9cfb09131c5345d335cb2cf",
+        "blob_sha": "2ab7477155098e6d7a75a51f799867e96ddc9138"
+      },
+      "accessed_at": "2026-11-06T04:21:42.088Z",
+      "notion_url": "https://app.notion.com/p/40fe5855be3981ff94befddd4fbdbb80"
+    },
+    {
+      "source_id": "SRC-000174",
+      "source_revision": {
+        "commit_sha": "1b94a3afc2498ca7d9cfb09131c5345d335cb2cf",
+        "blob_sha": "1e4ca17553f148579bf8d7dd953b56ba41242aea"
+      },
+      "accessed_at": "2026-11-06T04:21:42.088Z",
+      "notion_url": "https://app.notion.com/p/40fe5855be3981aeaf47fb2b4dee4340"
+    },
+    {
+      "source_id": "SRC-000177",
+      "source_revision": {
+        "commit_sha": "1b94a3afc2498ca7d9cfb09131c5345d335cb2cf",
+        "blob_sha": "e013a946084508be5348f989106a4baed397d7d2"
+      },
+      "accessed_at": "2026-11-06T04:21:42.088Z",
+      "notion_url": "https://app.notion.com/p/40fe5855be3981fda882d4f57db678d0"
+    },
+    {
+      "source_id": "SRC-000178",
+      "source_revision": {
+        "commit_sha": "1b94a3afc2498ca7d9cfb09131c5345d335cb2cf",
+        "blob_sha": "b886bcb3d8b292e420a2de51fe0add1abf362e3f"
+      },
+      "accessed_at": "2026-11-06T04:21:42.088Z",
+      "notion_url": "https://app.notion.com/p/40fe5855be39812d9357c43f0a53579e"
+    },
+    {
+      "source_id": "SRC-000179",
+      "source_revision": {
+        "commit_sha": "1b94a3afc2498ca7d9cfb09131c5345d335cb2cf",
+        "blob_sha": "49c813bd12dd25016e1bcd734470ffb1b55fe804"
+      },
+      "accessed_at": "2026-11-06T04:21:42.088Z",
+      "notion_url": "https://app.notion.com/p/40fe5855be398125a66df11a78d87223"
+    },
+    {
+      "source_id": "SRC-000183",
+      "source_revision": {
+        "commit_sha": "1b94a3afc2498ca7d9cfb09131c5345d335cb2cf",
+        "blob_sha": "288ca409a74430cad219508c103c0de6591463cd"
+      },
+      "accessed_at": "2026-11-06T04:21:42.088Z",
+      "notion_url": "https://app.notion.com/p/40fe5855be3981868bbeea8e299ac393"
+    },
+    {
+      "source_id": "SRC-000195",
+      "source_revision": {
+        "commit_sha": "6b1ad2e5d678c03d5a6d2d27351adc1734d04092",
+        "blob_sha": "5dd950574e2f4affc3f5ce18c05e7f46f7913ca2"
+      },
+      "accessed_at": "2026-11-06T04:21:42.088Z",
+      "notion_url": "https://app.notion.com/p/410e5855be39817db53bf89ae016ddd8"
+    },
+    {
+      "source_id": "SRC-000198",
+      "source_revision": {
+        "commit_sha": "50b52fcbb0bcb093f05aec0aa2bfaeebab026e27",
+        "blob_sha": "ad8999a29a98d5395311e2b5d4d7caee36118709"
+      },
+      "accessed_at": "2026-11-06T04:21:42.088Z",
+      "notion_url": "https://app.notion.com/p/410e5855be398129a522dbf2db8e05af"
+    },
+    {
+      "source_id": "SRC-000200",
+      "source_revision": {
+        "commit_sha": "50b52fcbb0bcb093f05aec0aa2bfaeebab026e27",
+        "blob_sha": "5987b635a54380f1d40b2e184dc58f077333856c"
+      },
+      "accessed_at": "2026-11-06T04:21:42.088Z",
+      "notion_url": "https://app.notion.com/p/410e5855be3981b6abcfc937c86c09a3"
+    },
+    {
+      "source_id": "SRC-000206",
+      "source_revision": {
+        "commit_sha": "cc822b6c52a5f37b3e50eedb29ae74fd8cc88f1c",
+        "blob_sha": "e6fe2d9e081802a409948d99756af7814d91e0ab"
+      },
+      "accessed_at": "2026-11-06T04:21:42.088Z",
+      "notion_url": "https://app.notion.com/p/410e5855be3981dda105e2b21bc6d1a6"
+    },
+    {
+      "source_id": "SRC-000207",
+      "source_revision": {
+        "commit_sha": "cc822b6c52a5f37b3e50eedb29ae74fd8cc88f1c",
+        "blob_sha": "58d07f142a412f0b9df5bffefbc8f5fca3890560"
+      },
+      "accessed_at": "2026-11-06T04:21:42.088Z",
+      "notion_url": "https://app.notion.com/p/410e5855be3981a485d2ebf76ce3cbcb"
+    },
+    {
+      "source_id": "SRC-000208",
+      "source_revision": {
+        "commit_sha": "cc822b6c52a5f37b3e50eedb29ae74fd8cc88f1c",
+        "blob_sha": "2f988b28fbdc4b45fa743d2766a777a59152e341"
+      },
+      "accessed_at": "2026-11-06T04:21:42.088Z",
+      "notion_url": "https://app.notion.com/p/410e5855be3981a09db8f944aa618e03"
+    },
+    {
+      "source_id": "SRC-000209",
+      "source_revision": {
+        "commit_sha": "cc822b6c52a5f37b3e50eedb29ae74fd8cc88f1c",
+        "blob_sha": "7084602bf97eede8eb51b9af8e4860dbdc3f10cc"
+      },
+      "accessed_at": "2026-11-06T04:21:42.088Z",
+      "notion_url": "https://app.notion.com/p/410e5855be3981bb9b80ee10cd72954f"
+    },
+    {
+      "source_id": "SRC-000210",
+      "source_revision": {
+        "commit_sha": "cc822b6c52a5f37b3e50eedb29ae74fd8cc88f1c",
+        "blob_sha": "11b511d7b4dc624c09473e61115754d7bb0ebe28"
+      },
+      "accessed_at": "2026-11-06T04:21:42.088Z",
+      "notion_url": "https://app.notion.com/p/410e5855be39812489fef18dba02b19a"
+    },
+    {
+      "source_id": "SRC-000184",
+      "source_revision": {
+        "commit_sha": "1b94a3afc2498ca7d9cfb09131c5345d335cb2cf",
+        "blob_sha": "8f7b3897b09e1a8ca3c35faa3d8ef77e3ce21074"
+      },
+      "accessed_at": "2026-11-06T04:21:42.088Z",
+      "notion_url": "https://app.notion.com/p/40fe5855be3981f99054e40161d3f25c"
+    },
+    {
+      "source_id": "SRC-000185",
+      "source_revision": {
+        "commit_sha": "1b94a3afc2498ca7d9cfb09131c5345d335cb2cf",
+        "blob_sha": "66cf00fef7590669c2b5c92961c38a05fac64e3a"
+      },
+      "accessed_at": "2026-11-06T04:21:42.088Z",
+      "notion_url": "https://app.notion.com/p/40fe5855be39813dad09f69171ea59c2"
+    },
+    {
+      "source_id": "SRC-000186",
+      "source_revision": {
+        "commit_sha": "1b94a3afc2498ca7d9cfb09131c5345d335cb2cf",
+        "blob_sha": "872db1b19d1957a9ec73148716fd8bc67c1a43cd"
+      },
+      "accessed_at": "2026-11-06T04:21:42.088Z",
+      "notion_url": "https://app.notion.com/p/40fe5855be39817db243e87aa06fde41"
+    },
+    {
+      "source_id": "SRC-000187",
+      "source_revision": {
+        "commit_sha": "1b94a3afc2498ca7d9cfb09131c5345d335cb2cf",
+        "blob_sha": "da55c2e7787e516f483a408a7924106fb0c5b2c6"
+      },
+      "accessed_at": "2026-11-06T04:21:42.088Z",
+      "notion_url": "https://app.notion.com/p/40fe5855be398155a55bd89711403d42"
+    },
+    {
+      "source_id": "SRC-000188",
+      "source_revision": {
+        "commit_sha": "1b94a3afc2498ca7d9cfb09131c5345d335cb2cf",
+        "blob_sha": "35114b4ade88edab28347182abee29751ad13a93"
+      },
+      "accessed_at": "2026-11-06T04:21:42.088Z",
+      "notion_url": "https://app.notion.com/p/40fe5855be3981de9011ca12de6542bf"
+    },
+    {
+      "source_id": "SRC-000190",
+      "source_revision": {
+        "commit_sha": "1b94a3afc2498ca7d9cfb09131c5345d335cb2cf",
+        "blob_sha": "789c8d1e3f71bac6c957a30bc3eff77b1cfa7617"
+      },
+      "accessed_at": "2026-11-06T04:21:42.088Z",
+      "notion_url": "https://app.notion.com/p/40fe5855be3981a2b13adc0608c571f6"
+    },
+    {
+      "source_id": "SRC-000191",
+      "source_revision": {
+        "commit_sha": "1b94a3afc2498ca7d9cfb09131c5345d335cb2cf",
+        "blob_sha": "dd6d0af80e30f2e6ab53dd7229d2cbe881ea7238"
+      },
+      "accessed_at": "2026-11-06T04:21:42.088Z",
+      "notion_url": "https://app.notion.com/p/40fe5855be3981b690e8ca0a31d93494"
+    },
+    {
+      "source_id": "SRC-000194",
+      "source_revision": {
+        "commit_sha": "1b94a3afc2498ca7d9cfb09131c5345d335cb2cf",
+        "blob_sha": "c48395d7a7624b23a3a29af99f12ff96e59cfab8"
+      },
+      "accessed_at": "2026-11-06T04:21:42.088Z",
+      "notion_url": "https://app.notion.com/p/40fe5855be3981668b19d50e5b287316"
+    },
+    {
+      "source_id": "SRC-000197",
+      "source_revision": {
+        "commit_sha": "6b1ad2e5d678c03d5a6d2d27351adc1734d04092",
+        "blob_sha": "1c294748d5f2bb1358d7567dbf9770ef96373806"
+      },
+      "accessed_at": "2026-11-06T04:21:42.088Z",
+      "notion_url": "https://app.notion.com/p/410e5855be3981e48601cc6fe18be038"
+    },
+    {
+      "source_id": "SRC-000211",
+      "source_revision": {
+        "commit_sha": "c886154ec8120458f142b74080e2d32d44bc61a3",
+        "blob_sha": "f007a571ba36e9333613c076dad8faef7af4c4e1"
+      },
+      "accessed_at": "2026-11-06T04:21:42.088Z",
+      "notion_url": "https://app.notion.com/p/410e5855be3981c8a46fd7600de7951d"
+    },
+    {
+      "source_id": "SRC-000212",
+      "source_revision": {
+        "commit_sha": "c886154ec8120458f142b74080e2d32d44bc61a3",
+        "blob_sha": "317482c96def1be729d40e2015d641a4fb563718"
+      },
+      "accessed_at": "2026-11-06T04:21:42.088Z",
+      "notion_url": "https://app.notion.com/p/410e5855be3981689b38fde99711a709"
+    },
+    {
+      "source_id": "SRC-000213",
+      "source_revision": {
+        "commit_sha": "c886154ec8120458f142b74080e2d32d44bc61a3",
+        "blob_sha": "b391ac0666f2abe14a7f7b718e8ffa8029137fcc"
+      },
+      "accessed_at": "2026-11-06T04:21:42.088Z",
+      "notion_url": "https://app.notion.com/p/410e5855be3981f691c7db8aad36fa3f"
+    },
+    {
+      "source_id": "SRC-000214",
+      "source_revision": {
+        "commit_sha": "c886154ec8120458f142b74080e2d32d44bc61a3",
+        "blob_sha": "58441a6bd0df8657cba04f204d86b2dd3d44a919"
+      },
+      "accessed_at": "2026-11-06T04:21:42.088Z",
+      "notion_url": "https://app.notion.com/p/410e5855be3981a09360c2cda2adb0b7"
+    },
+    {
+      "source_id": "SRC-000215",
+      "source_revision": {
+        "commit_sha": "c886154ec8120458f142b74080e2d32d44bc61a3",
+        "blob_sha": "5d717b22de826153c835aafeb6f002cdff8cabb5"
+      },
+      "accessed_at": "2026-11-06T04:21:42.088Z",
+      "notion_url": "https://app.notion.com/p/410e5855be3981bebf54d96e85ad3011"
+    },
+    {
+      "source_id": "SRC-000216",
+      "source_revision": {
+        "commit_sha": "c886154ec8120458f142b74080e2d32d44bc61a3",
+        "blob_sha": "df22f47fd0bab8ca7cd4cd10f44080e90bb9605a"
+      },
+      "accessed_at": "2026-11-06T04:21:42.088Z",
+      "notion_url": "https://app.notion.com/p/410e5855be39815caad4f964cc600904"
+    },
+    {
+      "source_id": "SRC-000217",
+      "source_revision": {
+        "commit_sha": "c886154ec8120458f142b74080e2d32d44bc61a3",
+        "blob_sha": "1b03a8141a5de6dc9a95f5af4828f5572243291c"
+      },
+      "accessed_at": "2026-11-06T04:21:42.088Z",
+      "notion_url": "https://app.notion.com/p/410e5855be3981ba8034fc1e2d4dda3b"
+    },
+    {
+      "source_id": "SRC-000218",
+      "source_revision": {
+        "commit_sha": "c886154ec8120458f142b74080e2d32d44bc61a3",
+        "blob_sha": "9c8dca97a2fab5e67f52e18eb4cf48d253ca38fa"
+      },
+      "accessed_at": "2026-11-06T04:21:42.088Z",
+      "notion_url": "https://app.notion.com/p/410e5855be398145b3c1fd5419392217"
+    }
+  ],
+  "evidence_items": [
+    {
+      "evidence_id": "E0001",
+      "content": "Blázquez-Garcíaら（2021）は時系列のunsupervised outlier/anomaly detection技術を対象として、検出技術の特徴に基づくtaxonomyを提示する。",
+      "source_locator": "ACM Abstract",
+      "note_type": "Method",
+      "selection_reason": "Reusable original evidence for anomaly detection: current-state score, alert semantics, time-series representation, baseline/ranking, online monitoring or shift under RQ-000039 comparison; no new evidence claim. Exact upstream canonical Evidence INV-000037/E0002, source=SRC-000172, upstream evidence blob=f38d944ced4b4cdc9d306fdc1eca263db524d281; original source-faithful content/locator/Note unchanged.",
+      "provenance": {
+        "source_id": "SRC-000172",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/40fe5855be39819f81cdcfb127d848eb",
+          "title": "EV-000294"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0002",
+      "content": "Matrix Profile Iは部分系列のall-pairs similarity joinによりmotifとdiscordを計算し、novelty/discord発見に適用する。",
+      "source_locator": "IEEE Abstract",
+      "note_type": "Method",
+      "selection_reason": "Reusable original evidence for anomaly detection: current-state score, alert semantics, time-series representation, baseline/ranking, online monitoring or shift under RQ-000039 comparison; no new evidence claim. Exact upstream canonical Evidence INV-000037/E0003, source=SRC-000173, upstream evidence blob=f38d944ced4b4cdc9d306fdc1eca263db524d281; original source-faithful content/locator/Note unchanged.",
+      "provenance": {
+        "source_id": "SRC-000173",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/40fe5855be3981cb9dc4df37d7e17f3d",
+          "title": "EV-000295"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0003",
+      "content": "OmniAnomalyはstochastic recurrent networkとflow等で多変量時系列の通常パターンを学習し、再構成確率で異常を判定する。",
+      "source_locator": "KDD Abstract",
+      "note_type": "Method",
+      "selection_reason": "Reusable original evidence for anomaly detection: current-state score, alert semantics, time-series representation, baseline/ranking, online monitoring or shift under RQ-000039 comparison; no new evidence claim. Exact upstream canonical Evidence INV-000037/E0004, source=SRC-000174, upstream evidence blob=f38d944ced4b4cdc9d306fdc1eca263db524d281; original source-faithful content/locator/Note unchanged.",
+      "provenance": {
+        "source_id": "SRC-000174",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/40fe5855be398110a87fc1d39478b1d1",
+          "title": "EV-000296"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0004",
+      "content": "Kimら（2022）はpoint adjustmentで時系列異常検知F1が過大評価され、ランダムスコアが高性能検知手法のように扱われ得ると理論・実験で示した。",
+      "source_locator": "AAAI Abstract",
+      "note_type": "Limitation",
+      "selection_reason": "Reusable original evidence for anomaly detection: current-state score, alert semantics, time-series representation, baseline/ranking, online monitoring or shift under RQ-000039 comparison; no new evidence claim. Exact upstream canonical Evidence INV-000037/E0007, source=SRC-000177, upstream evidence blob=f38d944ced4b4cdc9d306fdc1eca263db524d281; original source-faithful content/locator/Note unchanged.",
+      "provenance": {
+        "source_id": "SRC-000177",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/40fe5855be3981ecb9d6ede655fd5d10",
+          "title": "EV-000299"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0005",
+      "content": "LiuとPaparrizos（2024）のTSB-ADは40データセット由来の1070時系列と40手法の比較を提供し、VUS-PRを推奨する。単純手法が深層手法に勝る条件があると報告した。",
+      "source_locator": "NeurIPS Abstract",
+      "note_type": "Result",
+      "selection_reason": "Reusable original evidence for anomaly detection: current-state score, alert semantics, time-series representation, baseline/ranking, online monitoring or shift under RQ-000039 comparison; no new evidence claim. Exact upstream canonical Evidence INV-000037/E0008, source=SRC-000178, upstream evidence blob=f38d944ced4b4cdc9d306fdc1eca263db524d281; original source-faithful content/locator/Note unchanged.",
+      "provenance": {
+        "source_id": "SRC-000178",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/40fe5855be398184b96cd4d97c8cd10d",
+          "title": "EV-000300"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0006",
+      "content": "Zhuら（2026）は5系統の時系列基盤モデルを比較し、再構成・予測誤差に基づく異常検知の性能が移動分散・平方差の単純基準と大きく変わらないと報告した。",
+      "source_locator": "ICLR Abstract",
+      "note_type": "Counterargument",
+      "selection_reason": "Reusable original evidence for anomaly detection: current-state score, alert semantics, time-series representation, baseline/ranking, online monitoring or shift under RQ-000039 comparison; no new evidence claim. Exact upstream canonical Evidence INV-000037/E0009, source=SRC-000179, upstream evidence blob=f38d944ced4b4cdc9d306fdc1eca263db524d281; original source-faithful content/locator/Note unchanged.",
+      "provenance": {
+        "source_id": "SRC-000179",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/40fe5855be3981f09904cdc537de8f17",
+          "title": "EV-000301"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0007",
+      "content": "Isolation Forestは点の分離の容易さから外れ値を検出する。元の論文自体は時系列の順序依存性を直接モデル化する方法としては設計されていない。",
+      "source_locator": "ICDM Abstract",
+      "note_type": "Method",
+      "selection_reason": "Reusable original evidence for anomaly detection: current-state score, alert semantics, time-series representation, baseline/ranking, online monitoring or shift under RQ-000039 comparison; no new evidence claim. Exact upstream canonical Evidence INV-000037/E0013, source=SRC-000183, upstream evidence blob=f38d944ced4b4cdc9d306fdc1eca263db524d281; original source-faithful content/locator/Note unchanged.",
+      "provenance": {
+        "source_id": "SRC-000183",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/40fe5855be3981c584f9e59db1d8cd39",
+          "title": "EV-000305"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0008",
+      "content": "AdamsとMacKay（2007）は、直近の変化点からの経過長（run length）の事後分布を逐次更新するオンラインBayesian change-point detectionを提示する。",
+      "source_locator": "Abstract",
+      "selection_reason": "Reusable original evidence for anomaly detection: current-state score, alert semantics, time-series representation, baseline/ranking, online monitoring or shift under RQ-000039 comparison; no new evidence claim. Exact upstream canonical Evidence INV-000037/E0014, source=SRC-000195, upstream evidence blob=f38d944ced4b4cdc9d306fdc1eca263db524d281; original source-faithful content/locator/Note unchanged.",
+      "note_type": "Method",
+      "provenance": {
+        "source_id": "SRC-000195",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/410e5855be3981fab63bd9d36229e195",
+          "title": "EV-000316"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0009",
+      "content": "MunirらのDeepAnTはCNNで時系列の次時点を予測し、実測と予測の関係からpoint/contextual anomalyを判定する二段階構造である。",
+      "source_locator": "IEEE Access abstract",
+      "note_type": "Method",
+      "selection_reason": "Reusable original evidence for anomaly detection: current-state score, alert semantics, time-series representation, baseline/ranking, online monitoring or shift under RQ-000039 comparison; no new evidence claim. Exact upstream canonical Evidence INV-000037/E0016, source=SRC-000198, upstream evidence blob=f38d944ced4b4cdc9d306fdc1eca263db524d281; original source-faithful content/locator/Note unchanged.",
+      "provenance": {
+        "source_id": "SRC-000198",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/410e5855be3981b78735c58aa8919ef5",
+          "title": "EV-000323"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0010",
+      "content": "TimeAutoADは擬似negative系列を生成するデータ拡張とself-supervised contrastive lossで多変量時系列の表現を学習する手法を提案する。",
+      "source_locator": "IEEE TNSE abstract",
+      "note_type": "Method",
+      "selection_reason": "Reusable original evidence for anomaly detection: current-state score, alert semantics, time-series representation, baseline/ranking, online monitoring or shift under RQ-000039 comparison; no new evidence claim. Exact upstream canonical Evidence INV-000037/E0018, source=SRC-000200, upstream evidence blob=f38d944ced4b4cdc9d306fdc1eca263db524d281; original source-faithful content/locator/Note unchanged.",
+      "provenance": {
+        "source_id": "SRC-000200",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/410e5855be39813f8a10fdbb414bd344",
+          "title": "EV-000325"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0011",
+      "content": "Huangら（2023）のKalmanAEは、autoencoderのembeddingを通じてKalman filterを逐次最適化し正常系列の状態推定を行い、filtered signal由来の再構成誤差で逸脱点を検出する教師なし時系列異常検知法を提案した。",
+      "source_locator": "IEEE publisher abstract; KalmanAE method overview",
+      "selection_reason": "Reusable original evidence for anomaly detection: current-state score, alert semantics, time-series representation, baseline/ranking, online monitoring or shift under RQ-000039 comparison; no new evidence claim. Exact upstream canonical Evidence INV-000037/E0019, source=SRC-000206, upstream evidence blob=f38d944ced4b4cdc9d306fdc1eca263db524d281; original source-faithful content/locator/Note unchanged.",
+      "note_type": "Method",
+      "provenance": {
+        "source_id": "SRC-000206",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/410e5855be398157a216d6a0eea65052",
+          "title": "EV-000331"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0012",
+      "content": "Breunigら（2000）のLocal Outlier Factor（LOF）は、対象点の近傍密度を周辺点の近傍密度と比較する局所外れ度を提案した。原著の対象は一般的な多次元標本であり、時系列windowへの適用・時間順序の保持は原著の主張ではない。",
+      "source_locator": "Original SIGMOD 2000 paper, Abstract / Introduction",
+      "selection_reason": "Reusable original evidence for anomaly detection: current-state score, alert semantics, time-series representation, baseline/ranking, online monitoring or shift under RQ-000039 comparison; no new evidence claim. Exact upstream canonical Evidence INV-000037/E0020, source=SRC-000207, upstream evidence blob=f38d944ced4b4cdc9d306fdc1eca263db524d281; original source-faithful content/locator/Note unchanged.",
+      "note_type": "Method",
+      "provenance": {
+        "source_id": "SRC-000207",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/410e5855be39810b9c8bf214ad72a69f",
+          "title": "EV-000332"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0013",
+      "content": "NIST/SEMATECHのCUSUM監視設計では、平均の上方変化を捉える一側累積和にreference value kとdecision limit hを指定し、検出までの標本数の期待値としてAverage Run Length（ARL）を評価する。ARLは対象のシフト量や分布前提に依存し、任意の非定常系列に対する普遍的な誤報保証ではない。",
+      "source_locator": "NIST e-Handbook §6.3.2.3.1 Cusum Average Run Length",
+      "selection_reason": "Reusable original evidence for anomaly detection: current-state score, alert semantics, time-series representation, baseline/ranking, online monitoring or shift under RQ-000039 comparison; no new evidence claim. Exact upstream canonical Evidence INV-000037/E0021, source=SRC-000208, upstream evidence blob=f38d944ced4b4cdc9d306fdc1eca263db524d281; original source-faithful content/locator/Note unchanged.",
+      "note_type": "Theory",
+      "provenance": {
+        "source_id": "SRC-000208",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/410e5855be3981659115dc21e6f800ce",
+          "title": "EV-000333"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0014",
+      "content": "BifetとGavaldà（2007）のADWINは、時系列ストリームにおける分布変化を監視し、観測した変化率に応じてwindow長をオンラインで自動調整する。論文はfalse positive/negativeの性能境界を論じ、ADWIN2をNaïve Bayes予測器の誤差監視・更新に組み込んだ。",
+      "source_locator": "SDM 2007 publisher abstract",
+      "selection_reason": "Reusable original evidence for anomaly detection: current-state score, alert semantics, time-series representation, baseline/ranking, online monitoring or shift under RQ-000039 comparison; no new evidence claim. Exact upstream canonical Evidence INV-000037/E0022, source=SRC-000209, upstream evidence blob=f38d944ced4b4cdc9d306fdc1eca263db524d281; original source-faithful content/locator/Note unchanged.",
+      "note_type": "Method",
+      "provenance": {
+        "source_id": "SRC-000209",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/410e5855be398193b66ac10a836afc45",
+          "title": "EV-000334"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0015",
+      "content": "Sifferら（2017）は単変量ストリーミング時系列の外れ値・閾値設定にExtreme Value Theoryを用いる方法を提案し、手動閾値の代わりにfalse positiveに関係するrisk parameterを制御量として提示した。原著要約は任意のdrift下での保証までは示さない。",
+      "source_locator": "KDD 2017 ACM publisher abstract",
+      "selection_reason": "Reusable original evidence for anomaly detection: current-state score, alert semantics, time-series representation, baseline/ranking, online monitoring or shift under RQ-000039 comparison; no new evidence claim. Exact upstream canonical Evidence INV-000037/E0023, source=SRC-000210, upstream evidence blob=f38d944ced4b4cdc9d306fdc1eca263db524d281; original source-faithful content/locator/Note unchanged.",
+      "note_type": "Method",
+      "provenance": {
+        "source_id": "SRC-000210",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/410e5855be398166bcadf470361d2440",
+          "title": "EV-000335"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0016",
+      "content": "Jardineら（2006）はCBMをdata acquisition、processing、maintenance decision-makingに分け、diagnosticsを現在の故障の検知・分離・同定、prognosticsを将来の故障の予測と区別する。",
+      "source_locator": "Review: Introduction and Abstract",
+      "note_type": "Definition",
+      "selection_reason": "Reusable original evidence for prognostics: future event/RUL target, horizon, failure-time data, censoring, transfer, uncertainty or lead-time metrics under RQ-000039 comparison; no new evidence claim. Exact upstream canonical Evidence INV-000038/E0001, source=SRC-000184, upstream evidence blob=e836237722762c3785a59732704ad6ebf88efd07; original source-faithful content/locator/Note unchanged.",
+      "provenance": {
+        "source_id": "SRC-000184",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/40fe5855be398164ab55f431a37f79c9",
+          "title": "EV-000306"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0017",
+      "content": "Siら（2011）はRULを時点での残余使用可能期間として確率的に捉え、直接観測される状態情報の有無に基づいて統計手法を分類する。",
+      "source_locator": "Review: Abstract and Introduction",
+      "note_type": "Definition",
+      "selection_reason": "Reusable original evidence for prognostics: future event/RUL target, horizon, failure-time data, censoring, transfer, uncertainty or lead-time metrics under RQ-000039 comparison; no new evidence claim. Exact upstream canonical Evidence INV-000038/E0002, source=SRC-000185, upstream evidence blob=e836237722762c3785a59732704ad6ebf88efd07; original source-faithful content/locator/Note unchanged.",
+      "provenance": {
+        "source_id": "SRC-000185",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/40fe5855be3981298bc0eaa229bcb5d6"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0018",
+      "content": "ISO 13381-1:2025公式要旨は、prognostics開発・適用の要件、必要なデータ・プロセス・特性の共通理解と指針を対象にすると説明する。",
+      "source_locator": "ISO official abstract (not full standard)",
+      "note_type": "Definition",
+      "selection_reason": "Reusable original evidence for prognostics: future event/RUL target, horizon, failure-time data, censoring, transfer, uncertainty or lead-time metrics under RQ-000039 comparison; no new evidence claim. Exact upstream canonical Evidence INV-000038/E0003, source=SRC-000186, upstream evidence blob=e836237722762c3785a59732704ad6ebf88efd07; original source-faithful content/locator/Note unchanged.",
+      "provenance": {
+        "source_id": "SRC-000186",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/40fe5855be39819ead62e6ced28020dc",
+          "title": "EV-000308"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0019",
+      "content": "NASA PCoEはC-MAPSSターボファン劣化simulationに、異なる運転条件・故障モードの組合せで4セットがあり、複数センサチャネルで劣化過程を記録したと説明する。",
+      "source_locator": "NASA PCoE Turbofan Engine Degradation Simulation",
+      "note_type": "Data",
+      "selection_reason": "Reusable original evidence for prognostics: future event/RUL target, horizon, failure-time data, censoring, transfer, uncertainty or lead-time metrics under RQ-000039 comparison; no new evidence claim. Exact upstream canonical Evidence INV-000038/E0004, source=SRC-000187, upstream evidence blob=e836237722762c3785a59732704ad6ebf88efd07; original source-faithful content/locator/Note unchanged.",
+      "provenance": {
+        "source_id": "SRC-000187",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/40fe5855be3981de8346cb3b10255558",
+          "title": "EV-000309"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0020",
+      "content": "Liら（2018）はCNNに基づくRUL回帰手法を提案し、NASA C-MAPSS航空エンジン劣化データを用いて評価した。",
+      "source_locator": "Article highlights",
+      "note_type": "Method",
+      "selection_reason": "Reusable original evidence for prognostics: future event/RUL target, horizon, failure-time data, censoring, transfer, uncertainty or lead-time metrics under RQ-000039 comparison; no new evidence claim. Exact upstream canonical Evidence INV-000038/E0005, source=SRC-000188, upstream evidence blob=e836237722762c3785a59732704ad6ebf88efd07; original source-faithful content/locator/Note unchanged.",
+      "provenance": {
+        "source_id": "SRC-000188",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/40fe5855be3981178396f62999dbf8e6",
+          "title": "EV-000310"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0021",
+      "content": "Nagpalら（2021）のDeep Survival Machinesはcensoringとcompeting risksのあるtime-to-event予測を深層survival回帰で扱う。元の検証領域は医療である。",
+      "source_locator": "PubMed Abstract",
+      "note_type": "Method",
+      "selection_reason": "Reusable original evidence for prognostics: future event/RUL target, horizon, failure-time data, censoring, transfer, uncertainty or lead-time metrics under RQ-000039 comparison; no new evidence claim. Exact upstream canonical Evidence INV-000038/E0007, source=SRC-000190, upstream evidence blob=e836237722762c3785a59732704ad6ebf88efd07; original source-faithful content/locator/Note unchanged.",
+      "provenance": {
+        "source_id": "SRC-000190",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/40fe5855be3981448e4ffe0199678712"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0022",
+      "content": "Dehondtら（2026）はC-MAPSS FD001で9つのRUL手法を再実装して同一protocolで比較し、一部深層手法は良好だが普遍的な最良手法は同定できないと報告する。",
+      "source_locator": "Signal Processing abstract/discussion",
+      "note_type": "Result",
+      "selection_reason": "Reusable original evidence for prognostics: future event/RUL target, horizon, failure-time data, censoring, transfer, uncertainty or lead-time metrics under RQ-000039 comparison; no new evidence claim. Exact upstream canonical Evidence INV-000038/E0008, source=SRC-000191, upstream evidence blob=e836237722762c3785a59732704ad6ebf88efd07; original source-faithful content/locator/Note unchanged.",
+      "provenance": {
+        "source_id": "SRC-000191",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/40fe5855be3981e58668d2ea26b44d27",
+          "title": "EV-000313"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0023",
+      "content": "Wangら（2025）は部分的なセンサ故障・欠損下のonline RUL推定に深層学習とconformal予測を使う不確実性定量化を提案した。",
+      "source_locator": "Article highlights/abstract",
+      "note_type": "Method",
+      "selection_reason": "Reusable original evidence for prognostics: future event/RUL target, horizon, failure-time data, censoring, transfer, uncertainty or lead-time metrics under RQ-000039 comparison; no new evidence claim. Exact upstream canonical Evidence INV-000038/E0010, source=SRC-000194, upstream evidence blob=e836237722762c3785a59732704ad6ebf88efd07; original source-faithful content/locator/Note unchanged.",
+      "provenance": {
+        "source_id": "SRC-000194",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/40fe5855be39816497b4de549dc40773",
+          "title": "EV-000315"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0024",
+      "content": "Lingら（2019）は、劣化速度が途中で変化する二相Gamma過程に対し、変化時点の不確実性を組み込むBayesianおよびlikelihood推定によってRULを予測した。シミュレーションとLEDデータを用いて評価した。",
+      "source_locator": "Abstract",
+      "selection_reason": "Reusable original evidence for prognostics: future event/RUL target, horizon, failure-time data, censoring, transfer, uncertainty or lead-time metrics under RQ-000039 comparison; no new evidence claim. Exact upstream canonical Evidence INV-000038/E0011, source=SRC-000197, upstream evidence blob=e836237722762c3785a59732704ad6ebf88efd07; original source-faithful content/locator/Note unchanged.",
+      "note_type": "Method",
+      "provenance": {
+        "source_id": "SRC-000197",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/410e5855be3981abb371f11714ccf7c4",
+          "title": "EV-000318"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0025",
+      "content": "Siら（2013）はWiener劣化過程のdrift係数を逐次filteringで更新し、他のパラメータをEMで推定するRUL推定法を開発した。観測された個体の劣化履歴と既知の故障閾値を前提にfirst-hitting-timeからRUL分布を得て、gyroscope例で評価した。",
+      "source_locator": "ScienceDirect original article Abstract / Introduction / Section II preview",
+      "selection_reason": "Reusable original evidence for prognostics: future event/RUL target, horizon, failure-time data, censoring, transfer, uncertainty or lead-time metrics under RQ-000039 comparison; no new evidence claim. Exact upstream canonical Evidence INV-000038/E0018, source=SRC-000211, upstream evidence blob=e836237722762c3785a59732704ad6ebf88efd07; original source-faithful content/locator/Note unchanged.",
+      "note_type": "Method",
+      "provenance": {
+        "source_id": "SRC-000211",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/410e5855be3981e5a7b2ef6f89625dd0",
+          "title": "EV-000336"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0026",
+      "content": "OrchardとVachtsevanos（2009）は非線形・非Gaussian系に対し粒子filterで故障診断用の状態事後分布を推定し、その推定状態を起点として将来の故障指標・RUL確率分布を予測する二段階prognosticsを提示した。原著の評価はseeded-fault実験に限定される。",
+      "source_locator": "SAGE original publisher abstract",
+      "selection_reason": "Reusable original evidence for prognostics: future event/RUL target, horizon, failure-time data, censoring, transfer, uncertainty or lead-time metrics under RQ-000039 comparison; no new evidence claim. Exact upstream canonical Evidence INV-000038/E0019, source=SRC-000212, upstream evidence blob=e836237722762c3785a59732704ad6ebf88efd07; original source-faithful content/locator/Note unchanged.",
+      "note_type": "Method",
+      "provenance": {
+        "source_id": "SRC-000212",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/410e5855be398154bf4ecb6a49a9c25a",
+          "title": "EV-000337"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0027",
+      "content": "Liら（2024）のreviewはphysics-informed data-driven RUL手法を体系化し、従来のデータ駆動推定へ物理的制約・機構知識を導入する系統の利点と制約・研究課題を整理する。reviewは手法族の存在・比較軸の根拠であり、実運用での性能保証ではない。",
+      "source_locator": "Elsevier original review Abstract / Highlights",
+      "selection_reason": "Reusable original evidence for prognostics: future event/RUL target, horizon, failure-time data, censoring, transfer, uncertainty or lead-time metrics under RQ-000039 comparison; no new evidence claim. Exact upstream canonical Evidence INV-000038/E0020, source=SRC-000213, upstream evidence blob=e836237722762c3785a59732704ad6ebf88efd07; original source-faithful content/locator/Note unchanged.",
+      "note_type": "Method",
+      "provenance": {
+        "source_id": "SRC-000213",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/410e5855be39810ea679dfebefbb6c2f",
+          "title": "EV-000338"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0028",
+      "content": "Le Xuanら（2024）はsourceドメインのRULラベルとtargetドメインのラベル無し監視系列を使うself-supervised domain adaptationを提案し、dual-Siamese構成と劣化特徴からの自己教師信号を組み合わせてC-MAPSSで評価した。実機fleet間転移の直接実証ではない。",
+      "source_locator": "Elsevier original article Highlights / Abstract",
+      "selection_reason": "Reusable original evidence for prognostics: future event/RUL target, horizon, failure-time data, censoring, transfer, uncertainty or lead-time metrics under RQ-000039 comparison; no new evidence claim. Exact upstream canonical Evidence INV-000038/E0021, source=SRC-000214, upstream evidence blob=e836237722762c3785a59732704ad6ebf88efd07; original source-faithful content/locator/Note unchanged.",
+      "note_type": "Method",
+      "provenance": {
+        "source_id": "SRC-000214",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/410e5855be3981a2a487e6999ae38173",
+          "title": "EV-000339"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0029",
+      "content": "Cousinoら（2024）は修理可能設備で故障後のminimal repairと二種類の不完全予防保全を区別するモデルを提案した。点検区間内の故障時刻が観測されないinterval-censored dataの推定を扱い、simulationとガス輸送事業者の実データ例で検証した。これをinformative censoring一般の解決策と同一視しない。",
+      "source_locator": "Elsevier original article Abstract / Introduction",
+      "selection_reason": "Reusable original evidence for prognostics: future event/RUL target, horizon, failure-time data, censoring, transfer, uncertainty or lead-time metrics under RQ-000039 comparison; no new evidence claim. Exact upstream canonical Evidence INV-000038/E0022, source=SRC-000215, upstream evidence blob=e836237722762c3785a59732704ad6ebf88efd07; original source-faithful content/locator/Note unchanged.",
+      "note_type": "Method",
+      "provenance": {
+        "source_id": "SRC-000215",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/410e5855be39814b98dec695e714b750",
+          "title": "EV-000340"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0030",
+      "content": "Saxenaら（2010）はprognostics用の性能評価を、単一時点のRUL予測誤差に加えてprognostic horizon、α-λ performance、相対精度、収束などで整理し、EoLまで十分前に使える予測が出るかを考慮する必要を指摘した。生存曲線の確率校正を直接検証した論文ではない。",
+      "source_locator": "PHM Society original journal abstract; NASA NTRS abstract; NASA metrics library README",
+      "selection_reason": "Reusable original evidence for prognostics: future event/RUL target, horizon, failure-time data, censoring, transfer, uncertainty or lead-time metrics under RQ-000039 comparison; no new evidence claim. Exact upstream canonical Evidence INV-000038/E0023, source=SRC-000216, upstream evidence blob=e836237722762c3785a59732704ad6ebf88efd07; original source-faithful content/locator/Note unchanged.",
+      "note_type": "Theory",
+      "provenance": {
+        "source_id": "SRC-000216",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/410e5855be3981f68af9e46bbf9b962c",
+          "title": "EV-000341"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0031",
+      "content": "Shadiら（2026）の産業エネルギー設備向けsurvival reviewは条件付きsurvivalから所定期間内の故障確率を計算し、リスクranking、time-dependent discrimination、time-dependent Brier/Integrated Brierによる確率評価、右打切りへのIPCW補正を整理した。保全介入が打切り・truncationを生む実データ上の問題も明示するが、単一の産業モデルの校正性能を原著実験として実証するものではない。",
+      "source_locator": "Sensors 2026 review Abstract / Sections 4.1.2, 4.6 / Conclusions",
+      "selection_reason": "Reusable original evidence for prognostics: future event/RUL target, horizon, failure-time data, censoring, transfer, uncertainty or lead-time metrics under RQ-000039 comparison; no new evidence claim. Exact upstream canonical Evidence INV-000038/E0024, source=SRC-000217, upstream evidence blob=e836237722762c3785a59732704ad6ebf88efd07; original source-faithful content/locator/Note unchanged.",
+      "note_type": "Theory",
+      "provenance": {
+        "source_id": "SRC-000217",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/410e5855be39810e8bb4d9deb19fccbc",
+          "title": "EV-000342"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0032",
+      "content": "Caterinoら（2026）は3種類の実産業系列で過去観測窓CWと未来アラーム予測窓FWを組み合わせて比較し、予測対象のlead timeとF1-macroがprocess dynamics・window設定に依存することを示した。予測対象は将来のalarmであり実際の故障時刻ではない。PR/ROC、コストベースの誤報負荷、差の統計検定は未実施と著者が認める。",
+      "source_locator": "Information 2026 original abstract / 3.1 / 6 / 7 Conclusions and Limitations",
+      "selection_reason": "Reusable original evidence for prognostics: future event/RUL target, horizon, failure-time data, censoring, transfer, uncertainty or lead-time metrics under RQ-000039 comparison; no new evidence claim. Exact upstream canonical Evidence INV-000038/E0025, source=SRC-000218, upstream evidence blob=e836237722762c3785a59732704ad6ebf88efd07; original source-faithful content/locator/Note unchanged.",
+      "note_type": "Result",
+      "provenance": {
+        "source_id": "SRC-000218",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/410e5855be3981ea9209dd7f919dbdcb",
+          "title": "EV-000343"
+        }
+      }
+    }
+  ]
+}
