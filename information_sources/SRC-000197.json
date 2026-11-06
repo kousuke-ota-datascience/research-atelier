@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000197",
+  "notion_url": "https://app.notion.com/p/410e5855be3981e48601cc6fe18be038",
+  "title": "Bayesian and likelihood inferences on remaining useful life in two-phase degradation models under gamma process",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "Reliability Engineering & System Safety",
+  "authors": "M. H. Ling; H. K. T. Ng; K. L. Tsui",
+  "year": 2019,
+  "url": "https://www.sciencedirect.com/science/article/pii/S0951832017303083",
+  "doi": "10.1016/j.ress.2017.11.017",
+  "version_or_edition": null,
+  "reliability_note": "Original journal article abstract reviewed; two-phase gamma process degradation with Bayesian and likelihood inference tested by simulation and LED case study."
+}

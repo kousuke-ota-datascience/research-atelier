@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000196",
+  "notion_url": "https://app.notion.com/p/410e5855be3981bf9517c46256e8cb7d",
+  "title": "Control Chart Tests Based on Geometric Moving Averages",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "Technometrics",
+  "authors": "S. W. Roberts",
+  "year": 1959,
+  "url": "https://doi.org/10.1080/00401706.1959.10489860",
+  "doi": "10.1080/00401706.1959.10489860",
+  "version_or_edition": null,
+  "reliability_note": "Original article publisher abstract reviewed; full paper's mathematical detail not independently checked."
+}
