@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000037",
+  "review_seq": 1,
+  "layer": "20_synthesis",
+  "review_kind": "10_evidence_to_20_synthesis",
+  "target_blob_sha": "a5cde24e27930f77878b804ea7a8712561de70e7",
+  "assessment": "The knowledge-unit mappings K0001-K0015 are largely source-bounded, and U0001-U0003 acknowledge significant coverage and benchmark uncertainties. R0007/R0008 now distinguish forecasting residual, adversarial AE, and self-supervised representation. The major logical classification issue remains relation R0003: proposals based on foundation models and negative benchmarking of selected reconstruction/forecasting foundation models are not logically inconsistent claims about the same method/protocol, so 'conflict' is not yet demonstrated. This is recognized as a compatible pair in downstream alternative_interpretations.",
+  "findings": [
+    {
+      "finding_id": "F002",
+      "severity": "Minor",
+      "target": "20_synthesis.relations.R0003.relation_type = 'conflict'",
+      "evidence": [
+        "investigations/INV-000037/20_synthesis.json: K0006 and K0009; R0003 ('conflict')",
+        "investigations/INV-000037/10_evidence.json: E0009 versus E0010-E0012 have different algorithms and study conditions",
+        "investigations/INV-000037/30_analysis.json: alternative_interpretations[1] says new-model proposals and negative performance results logically coexist",
+        "Publisher abstracts: https://proceedings.iclr.cc/paper_files/paper/2026/hash/cf70320e93c08b39b1b29a348097a376-Abstract-Conference.html and https://proceedings.mlr.press/v306/lan26b.html"
+      ],
+      "impact": "Calling these propositions a direct conflict can imply head-to-head contradictory evidence that has not been established, distorting the structure of uncertainty in the synthesis despite cautious Working Answer wording.",
+      "repair_direction": {
+        "mode": "same_investigation",
+        "affected_layer": "20_synthesis",
+        "instruction": "Reclassify R0003 as a qualification or define a shared testable comparative proposition, including model/data/metric matching, before treating it as conflict; rebuild/revalidate 30_analysis."
+      }
+    }
+  ],
+  "verdict": "FINDINGS"
+}
