@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000203",
+  "notion_url": "https://app.notion.com/p/410e5855be3981b8bd00c9f85bc796a0",
+  "title": "Aircraft Engine Run-to-Failure Dataset under Real Flight Conditions for Prognostics and Diagnostics",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "Data",
+  "authors": "Manuel Arias Chao; Chetan Kulkarni; Kai Goebel; Olga Fink",
+  "year": 2021,
+  "url": "https://www.mdpi.com/2306-5729/6/1/5",
+  "doi": "10.3390/data6010005",
+  "version_or_edition": null,
+  "reliability_note": "Original open-access N-CMAPSS dataset paper; degradation simulation on real recorded flight profiles, not observed real engine failures."
+}

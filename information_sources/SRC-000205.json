@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000205",
+  "notion_url": "https://app.notion.com/p/410e5855be3981eab395dd3aae454157",
+  "title": "Deep Convolutional Neural Network Based Regression Approach for Estimation of Remaining Useful Life",
+  "source_type": "Conference Paper",
+  "journal_or_publisher": "Lecture Notes in Computer Science",
+  "authors": "Giduthuri Sateesh Babu; Peilin Zhao; Xiao-Li Li",
+  "year": 2016,
+  "url": "https://doi.org/10.1007/978-3-319-32025-0_14",
+  "doi": "10.1007/978-3-319-32025-0\\_14",
+  "version_or_edition": null,
+  "reliability_note": "Original conference paper on deep CNN RUL regression; benchmark performance limited to paper settings."
+}

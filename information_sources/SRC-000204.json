@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000204",
+  "notion_url": "https://app.notion.com/p/410e5855be3981e78ac8f92880246b88",
+  "title": "A survey of the application of gamma processes in maintenance",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "Reliability Engineering & System Safety",
+  "authors": "Jan M. van Noortwijk",
+  "year": 2009,
+  "url": "https://doi.org/10.1016/j.ress.2007.03.019",
+  "doi": "10.1016/j.ress.2007.03.019",
+  "version_or_edition": null,
+  "reliability_note": "Peer-reviewed review of monotonic gamma stochastic deterioration and inspection/maintenance; secondary, not original experiment."
+}

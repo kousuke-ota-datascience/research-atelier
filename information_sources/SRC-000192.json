@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000192",
+  "notion_url": "https://app.notion.com/p/40fe5855be3981a9b263e0f64c17eef7",
+  "title": "Aircraft Engine Run-to-Failure Dataset under real flight conditions",
+  "source_type": "Dataset",
+  "journal_or_publisher": "NASA Prognostics Data Repository",
+  "authors": "M. Chao; C. Kulkarni; K. Goebel; O. Fink",
+  "year": 2021,
+  "url": "https://www.nasa.gov/intelligent-systems-division/discovery-and-systems-health/pcoe/pcoe-data-set-repository/",
+  "doi": null,
+  "version_or_edition": null,
+  "reliability_note": "Official dataset record; synthetic simulation not proof of real-world predictive validity."
+}
