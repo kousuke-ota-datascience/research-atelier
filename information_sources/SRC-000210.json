@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000210",
+  "notion_url": "https://app.notion.com/p/410e5855be39812489fef18dba02b19a",
+  "title": "Anomaly Detection in Streams with Extreme Value Theory",
+  "source_type": "Conference Paper",
+  "journal_or_publisher": "ACM SIGKDD 2017",
+  "authors": "Alban Siffer; Pierre-Alain Fouque; Alexandre Termier; Christine Largouët",
+  "year": 2017,
+  "url": "https://doi.org/10.1145/3097983.3098144",
+  "doi": "10.1145/3097983.3098144",
+  "version_or_edition": null,
+  "reliability_note": "ACM proceedings abstract verified. Streaming univariate EVT thresholding with user risk parameter; reported false positive control is tied to its design/assumptions, not universal guarantee under arbitrary drift."
+}

@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000209",
+  "notion_url": "https://app.notion.com/p/410e5855be3981bb9b80ee10cd72954f",
+  "title": "Learning from Time-Changing Data with Adaptive Windowing",
+  "source_type": "Conference Paper",
+  "journal_or_publisher": "SIAM International Conference on Data Mining (SDM)",
+  "authors": "Albert Bifet; Ricard Gavaldà",
+  "year": 2007,
+  "url": "https://doi.org/10.1137/1.9781611972771.42",
+  "doi": "10.1137/1.9781611972771.42",
+  "version_or_edition": null,
+  "reliability_note": "Publisher abstract verified. ADWIN adaptive window adjusts to distribution shift and provides false-alarm/miss bounds; it is a change-monitoring component, not proof of anomaly-fault labeling accuracy."
+}
