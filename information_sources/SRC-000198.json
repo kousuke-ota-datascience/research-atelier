@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000198",
+  "notion_url": "https://app.notion.com/p/410e5855be398129a522dbf2db8e05af",
+  "title": "DeepAnT: A Deep Learning Approach for Unsupervised Anomaly Detection in Time Series",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "IEEE Access",
+  "authors": "Mohsin Munir; Shoaib Ahmed Siddiqui; Andreas Dengel; Sheraz Ahmed",
+  "year": 2019,
+  "url": "https://ieeexplore.ieee.org/document/8581424/",
+  "doi": "10.1109/ACCESS.2018.2886457",
+  "version_or_edition": null,
+  "reliability_note": "Original IEEE Access Vol.7 (2019), published online Dec 2018. Abstract confirms CNN forecasting residual approach; no claim of universal superiority."
+}

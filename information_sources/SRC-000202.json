@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000202",
+  "notion_url": "https://app.notion.com/p/410e5855be3981d9b6e2f36ac2e3dd0d",
+  "title": "Damage propagation modeling for aircraft engine run-to-failure simulation",
+  "source_type": "Conference Paper",
+  "journal_or_publisher": "2008 International Conference on Prognostics and Health Management",
+  "authors": "Abhinav Saxena; Kai Goebel; Don Simon; Neil Eklund",
+  "year": 2008,
+  "url": "https://ntrs.nasa.gov/search?q=Damage%20Propagation%20Modeling%20for%20Aircraft%20Engine%20Run-to-Failure%20Simulation",
+  "doi": "10.1109/PHM.2008.4711414",
+  "version_or_edition": null,
+  "reliability_note": "Original simulation-method description available through NASA and IEEE; original CMAPSS artificial faults and stopping criterion, no external validity claim."
+}

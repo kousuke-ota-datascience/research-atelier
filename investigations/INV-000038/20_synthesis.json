@@ -3,7 +3,7 @@
   "artifact_type": "20_synthesis",
   "investigation_id": "INV-000038",
   "rq_id": "RQ-000038",
-  "synthesized_at": "2026-11-06T01:03:26.791Z",
+  "synthesized_at": "2026-11-06T01:10:41.321Z",
   "knowledge_units": [
     {
       "knowledge_unit_id": "K0001",
@@ -105,6 +105,66 @@
       "qualifiers": [
         "Two-phase gamma-process method was evaluated in simulation and an LED example; generalization to arbitrary industrial systems is unverified."
       ]
+    },
+    {
+      "knowledge_unit_id": "K0011",
+      "statement": "NASAのN-CMAPSS資料は実記録された飛行条件を使う一方、故障進展自体はシミュレーションによる合成run-to-failure系列である。",
+      "evidence_refs": [
+        "E0012"
+      ],
+      "qualifiers": [
+        "実エンジン故障時刻の観測データセットと誤認しない。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0012",
+      "statement": "部品の劣化信号を観測し、Bayesianアプローチで残存寿命の確率分布を推定する方法は2005年の原著に見られる。",
+      "evidence_refs": [
+        "E0013"
+      ],
+      "qualifiers": [
+        "RULの予測分布を扱う研究例であり、推定法の保証条件は本文の詳細確認を要する。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0013",
+      "statement": "初期C-MAPSS run-to-failure datasetの生成には熱力学シミュレーションにおける流量・効率の劣化とhealth indexによる故障定義が組み込まれている。",
+      "evidence_refs": [
+        "E0014"
+      ],
+      "qualifiers": [
+        "故障様態は生成モデルの設計・仮定に依存する。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0014",
+      "statement": "2021年N-CMAPSSの原著は実飛行プロファイルを使ってもエンジン劣化は合成であり、加速劣化と対象故障モードの限定を明示している。",
+      "evidence_refs": [
+        "E0015"
+      ],
+      "qualifiers": [
+        "実飛行条件の入力は実機故障予測性能を直接保証しない。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0015",
+      "statement": "Gamma過程は非負の増分で蓄積する確率的劣化の表現に用いられ、その理論と保全適用が2009年のレビューに体系化されている。",
+      "evidence_refs": [
+        "E0016"
+      ],
+      "qualifiers": [
+        "単調な劣化量として定義できる対象への適用が中心であり、全故障モードに自然適合するわけではない。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0016",
+      "statement": "深層CNNの特徴抽出を利用したRUL回帰は、少なくとも2016年の原著から研究されている。",
+      "evidence_refs": [
+        "E0017"
+      ],
+      "qualifiers": [
+        "モデルアーキテクチャの存在と任意の運転条件での予測力は区別する。"
+      ]
     }
   ],
   "relations": [
@@ -176,17 +236,79 @@
         "E0003",
         "E0010"
       ]
+    },
+    {
+      "relation_id": "R0006",
+      "relation_type": "qualification",
+      "knowledge_unit_refs": [
+        "K0007",
+        "K0011",
+        "K0013",
+        "K0014"
+      ],
+      "description": "C-MAPSSとN-CMAPSSは運転入力の現実性が異なっても、劣化・故障時刻を生成規則で定めるsimulated run-to-failure資料という制限を共有する。",
+      "evidence_refs": [
+        "E0004",
+        "E0012",
+        "E0014",
+        "E0015"
+      ]
+    },
+    {
+      "relation_id": "R0007",
+      "relation_type": "association",
+      "knowledge_unit_refs": [
+        "K0010",
+        "K0015"
+      ],
+      "description": "劣化Gamma過程の一般的枠組みの中で、状態変化点を導入した二相モデルは一つの拡張事例である。",
+      "evidence_refs": [
+        "E0011",
+        "E0016"
+      ]
+    },
+    {
+      "relation_id": "R0008",
+      "relation_type": "qualification",
+      "knowledge_unit_refs": [
+        "K0005",
+        "K0016"
+      ],
+      "description": "同じCNN系RUL回帰であっても、学習データ・アーキテクチャ・ラベル設計に依存するため手法名だけでは優劣が判定できない。",
+      "evidence_refs": [
+        "E0005",
+        "E0017"
+      ]
+    },
+    {
+      "relation_id": "R0009",
+      "relation_type": "association",
+      "knowledge_unit_refs": [
+        "K0002",
+        "K0012"
+      ],
+      "description": "RUL point estimateとRUL predictive distributionの双方があり、不確実性の扱いを分けて評価する必要がある。",
+      "evidence_refs": [
+        "E0002",
+        "E0013"
+      ]
     }
   ],
   "uncertainties": [
     {
       "uncertainty_id": "U0001",
-      "description": "二相Gamma過程の原著を補強したが、Wiener劣化過程、particle filter、physics-informed、Bayesian state estimation等の体系的比較はまだ不足する。",
+      "description": "Gamma過程の基礎と二相モデル、Bayesian RUL分布の原著は補強したが、Wiener劣化過程、particle filtering、physics-informed・model-basedの体系的比較は依然として不足する。",
       "knowledge_unit_refs": [
-        "K0004"
+        "K0004",
+        "K0010",
+        "K0012",
+        "K0015"
       ],
       "evidence_refs": [
-        "E0009"
+        "E0009",
+        "E0011",
+        "E0013",
+        "E0016"
       ]
     },
     {
@@ -209,6 +331,22 @@
       ],
       "evidence_refs": [
         "E0003"
+      ]
+    },
+    {
+      "uncertainty_id": "U0004",
+      "description": "C-MAPSS/N-CMAPSSの合成劣化プロセスから、保全介入と打切りを伴う実運用故障データへ移植できる条件は、今回のデータセット原著だけでは確立していない。",
+      "knowledge_unit_refs": [
+        "K0007",
+        "K0011",
+        "K0013",
+        "K0014"
+      ],
+      "evidence_refs": [
+        "E0004",
+        "E0012",
+        "E0014",
+        "E0015"
       ]
     }
   ]
