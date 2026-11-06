@@ -1,0 +1,49 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000038",
+  "review_seq": 1,
+  "layer": "10_evidence",
+  "review_kind": "source_evidence_note_to_10_evidence",
+  "target_blob_sha": "a241e212c0b56d17e34affc13a34dfb66bfa37e9",
+  "assessment": "The 17 frozen Evidence items were traced to matching Git Source metadata and Notion Evidence Notes, including cross-checks of original ISO abstract, NASA N-CMAPSS synthetic generation, Dehondt et al. 2026 FD001 nine-model benchmark, and Deep Survival Machines' original medical scope. These sampled claims are source-faithful; there is no confirmed fabricated numerical claim. Two distinct material selection omissions remain relative to the frozen Methodological scope: (1) unrepresented primary Wiener/recursive-filter/particle or physics-informed, cross-fleet transfer/self-supervised prognostics methods, and (2) prognostics-specific evidence for horizon event-risk calibration, informative or intervention-related censoring, time-dependent evaluation and early warning utility. The Synthesis explicitly admits these gaps, but admission does not replace Source-grounded selected Evidence.",
+  "findings": [
+    {
+      "finding_id": "F001",
+      "severity": "Moderate",
+      "target": "10_evidence.evidence_items E0001-E0017: representative method-family coverage relative to frozen scope (Wiener/recursive state estimation, particle/physics-informed, cross-fleet transfer and self-supervised prognostics)",
+      "evidence": [
+        "investigations/INV-000038/00_context.json: scope and investigation_boundary.include[1,2,3] explicitly include state estimation/filtering, physics-informed, transfer, self-supervision and domain shift",
+        "investigations/INV-000038/10_evidence.json: selected E0001-E0017 principally cover broad reviews, Bayesian and gamma RUL, CNN/LSTM and NASA run-to-failure studies; no dedicated original transfer/self-supervised or Wiener recursive-filter method evidence",
+        "investigations/INV-000038/20_synthesis.json: U0001 acknowledges Wiener, particle filtering and physics-informed gaps",
+        "investigations/INV-000038/30_analysis.json: applicability_limits[0], unresolved_questions[0] and [3] explicitly acknowledge the missing methods",
+        "Contemporaneous primary examples omitted from the canonical Evidence snapshot (illustrative, not automatically adopted into Evidence): https://www.sciencedirect.com/science/article/pii/S0888327012003226 (Si et al., Wiener recursive filter, 2013); https://www.sciencedirect.com/science/article/pii/S0951832024003685 (self-supervised domain adaptation for RUL, 2024)"
+      ],
+      "impact": "The selected literature cannot adequately instantiate the Methodological RQ's stated method-family coverage or contrast the assumptions and domain-transport requirements of the omitted families. A correctly labelled provisional taxonomy is still materially narrower than the frozen intended scope.",
+      "repair_direction": {
+        "mode": "same_investigation",
+        "affected_layer": "10_evidence",
+        "instruction": "Within unchanged frozen Context, add primary or high-quality review Source/Evidence for Wiener and filtering/state-estimation RUL, representative physics-informed/particle filtering, and cross-fleet transfer/self-supervised prognostics; make evidence selection and applicability assumptions explicit. Invalidate and rebuild 20_synthesis and 30_analysis via Workflow 10."
+      }
+    },
+    {
+      "finding_id": "F002",
+      "severity": "Moderate",
+      "target": "10_evidence: prognostics-specific outcome and evaluation evidence for horizon failure probabilities, censoring and maintenance intervention, alarm lead time and time-dependent calibration/discrimination",
+      "evidence": [
+        "investigations/INV-000038/00_context.json: scope and investigation_boundary.include[0,3,5] specifically commit to event probabilities/hazard, lead time, informative observation/censoring, time-dependent discrimination, probabilistic calibration and maintenance relevance",
+        "investigations/INV-000038/10_evidence.json: E0002 is a broad RUL review; E0007 is a survival-model paper evaluated primarily in healthcare; E0008 is an FD001 RUL regression benchmark; E0010 concerns missing-sensor RUL uncertainty, not a general industrial censoring/alert assessment",
+        "investigations/INV-000038/20_synthesis.json: U0002 explicitly acknowledges missing empirical evidence for alarm lead time, time-dependent discrimination, intervention-related informative censoring and distribution changes",
+        "investigations/INV-000038/30_analysis.json: profile.evaluation_criteria lists these dimensions as intended criteria; limitations/unresolved_questions do not establish their empirical comparability",
+        "External original maintenance/censoring example within cutoff (for selection gap only): https://www.sciencedirect.com/science/article/abs/pii/S0951832024004964 (Cousino et al., imperfect maintenance and interval-censored data, 2024); reference taxonomy/evaluation synthesis: https://www.mdpi.com/1424-8220/26/6/1915 (2026 survival review)"
+      ],
+      "impact": "The RQ cannot yet distinguish, on adequate prognostics-specific empirical or methodological evidence, the operating and evaluation requirements for failure-hazard/early-warning forecasts versus run-to-failure RUL regression. Thus review conclusions on practical evaluation and use remain less supported than the frozen task demands.",
+      "repair_direction": {
+        "mode": "same_investigation",
+        "affected_layer": "10_evidence",
+        "instruction": "Capture prognostics-specific primary/review evidence for horizon-event risk, time-dependent discrimination/calibration, censoring and maintenance interventions, alert lead-time and false alarms, alongside RUL-error metrics. Explicitly distinguish healthcare survival methods from demonstrated industrial results. Rebuild downstream Synthesis and Analysis, retaining the frozen RQ."
+      }
+    }
+  ],
+  "verdict": "FINDINGS"
+}

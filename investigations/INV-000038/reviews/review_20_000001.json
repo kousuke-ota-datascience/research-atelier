@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000038",
+  "review_seq": 1,
+  "layer": "20_synthesis",
+  "review_kind": "10_evidence_to_20_synthesis",
+  "target_blob_sha": "aa2d9db44d69b3e37959eea4041c4134d428e016",
+  "assessment": "The 16 Knowledge Units K0001-K0016 and 9 relations are generally bounded by their referenced E0001-E0017, including caveats about the medical-domain source for survival models, FD001 benchmark scope, the simulated degradation in both C-MAPSS and N-CMAPSS, and the ISO abstract-only limitation. U0001-U0004 preserve major literature and external-validity uncertainty. No independently verified contradiction, unjustified conflation or conflict misclassification in this layer is identified. This PASS is local to the existing frozen Evidence; it does not cure the two selection gaps in 10_evidence.",
+  "findings": [],
+  "verdict": "PASS"
+}

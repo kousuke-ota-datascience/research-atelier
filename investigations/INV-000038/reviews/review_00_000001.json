@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000038",
+  "review_seq": 1,
+  "layer": "00_context",
+  "review_kind": "context_semantic_validity",
+  "target_blob_sha": "49a60ca151cf0e2459c416b6b7366983b0b8a08e",
+  "assessment": "The frozen Methodological Research Question RQ-000038 distinguishes future fault-event probability/hazard, early warning, degradation-state estimation, failure-time prediction and RUL from current diagnosis. Its scope explicitly includes survival/censoring, physics-based and stochastic degradation, filters, data-driven/hybrid/transfer/self-supervised approaches and operational evaluation; it excludes anomaly-only detection and maintenance scheduling detail. The cut-off and assumptions regarding missing failure times and nonrepresentative run-to-failure simulation are internally consistent. No context-defining semantic defect was identified.",
+  "findings": [],
+  "verdict": "PASS"
+}

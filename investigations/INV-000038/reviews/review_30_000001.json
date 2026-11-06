@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000038",
+  "review_seq": 1,
+  "layer": "30_analysis",
+  "review_kind": "20_synthesis_plus_00_context_to_30_analysis",
+  "target_blob_sha": "6f5eb00fe1d2774003b254447a3b9579aa065052",
+  "assessment": "The Methodological profile and Working Answer distinguish fault diagnosis from future prognosis, deterministic RUL regression from stochastic life distributions/survival, synthetic benchmarks from actual fleet failure observations, and study-specific FD001 ranking from universal superiority. There is no verified inference that bypasses 20_synthesis, and the stated 17-source count is correct. The coverage omissions noted in Evidence limit the completeness of the provisional taxonomy and empirical basis for event-risk and alert protocols; they are upstream defects rather than independent unsupported affirmative claims by 30_analysis. No distinct additional 30_analysis finding is issued.",
+  "findings": [],
+  "verdict": "PASS"
+}
