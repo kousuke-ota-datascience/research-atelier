@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000038",
+  "review_seq": 2,
+  "layer": "20_synthesis",
+  "review_kind": "10_evidence_to_20_synthesis",
+  "target_blob_sha": "ae6560ba89c908f657a666c88dcfd4b88ac46378",
+  "assessment": "The 25 Knowledge Units, 16 relations and eight uncertainties were independently inspected for Evidence support. New K0017-K0025 map to E0018-E0026 without overstating the underlying original studies or reviews. R0010-R0013 distinguish Gamma/Wiener assumptions, particle filtering and regression, physics guidance and synthetic transfer limitations. R0014-R0016 distinguish RUL error, horizon-specific failure risk, maintenance censoring and future-alarm prediction. U0001-U0008 explicitly preserve residual uncertainty about fleet generalization, informative censoring, calibration and false-alarm burden. No independent unsupported proposition, false conflict or elided material qualification was identified.",
+  "findings": [],
+  "verdict": "PASS"
+}

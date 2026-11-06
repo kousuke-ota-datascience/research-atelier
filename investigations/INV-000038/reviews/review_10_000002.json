@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000038",
+  "review_seq": 2,
+  "layer": "10_evidence",
+  "review_kind": "source_evidence_note_to_10_evidence",
+  "target_blob_sha": "e836237722762c3785a59732704ad6ebf88efd07",
+  "assessment": "All 26 selected Source/Evidence records were reviewed, with focused independent checking of the nine new Source revision bindings and their Notion Evidence Notes EV-000336 through EV-000344. The prior method-coverage F001 is addressed by Wiener recursive filtering, particle prognostics, physics-informed and physics-guided RUL, and self-supervised domain adaptation evidence. The prior evaluation-coverage F002 is addressed by industrial interval-censoring, prognostic-horizon and alpha-lambda metrics, time-dependent survival risk/Brier/IPCW, and observed industrial future-alarm window studies. Original publication abstracts and accessible primary sources support these bounded descriptions. Synthetic benchmark and real-fleet transfer, actual failure and future alarm, interval and informative censoring, and methodological review versus empirical calibration are correctly distinguished. No material new source-fidelity or selection omission was identified.",
+  "findings": [],
+  "verdict": "PASS"
+}

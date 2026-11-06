@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000038",
+  "review_seq": 2,
+  "layer": "30_analysis",
+  "review_kind": "20_synthesis_plus_00_context_to_30_analysis",
+  "target_blob_sha": "c47809af5f0b4afa19d242eeecf89bdeacfdd172",
+  "assessment": "The revised Methodological analysis accurately identifies 26 Source/Evidence items and cites K0001-K0025. Its revised Working Answer differentiates future event risk, RUL distribution/regression and future-alarm prediction, and maps model families to their governing state, censoring, adaptation and evaluation assumptions. J0007-J0010 preserve important inferential boundaries: C-MAPSS results do not prove real-fleet transfer; interval censoring does not solve arbitrary informative censoring; survival-review evidence does not constitute validated industrial probability calibration; future alarm F1 does not establish observed failure-time prediction. Limitations and unresolved questions remain explicit. No new independent analysis-level overclaim or synthesis bypass was found.",
+  "findings": [],
+  "verdict": "PASS"
+}
