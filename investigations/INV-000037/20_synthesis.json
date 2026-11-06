@@ -3,7 +3,7 @@
   "artifact_type": "20_synthesis",
   "investigation_id": "INV-000037",
   "rq_id": "RQ-000037",
-  "synthesized_at": "2026-11-06T01:03:26.791Z",
+  "synthesized_at": "2026-11-06T01:09:55.532Z",
   "knowledge_units": [
     {
       "knowledge_unit_id": "K0001",
@@ -133,6 +133,36 @@
       "qualifiers": [
         "Original abstract supports the EWMA weighting/monitoring construction, not numerical superiority under arbitrary series."
       ]
+    },
+    {
+      "knowledge_unit_id": "K0013",
+      "statement": "DeepAnTは時系列CNNによる短期予測を作成し、その予測と観測の関係を用いて異常を検知する。予測誤差を使用する方法は生成分布やassociation scoreに基づく方法と異なる。",
+      "evidence_refs": [
+        "E0016"
+      ],
+      "qualifiers": [
+        "元論文のデータ・評価条件に限定された方法の存在証拠であり、性能の一般的優位は示していない。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0014",
+      "statement": "USADは教師なし多変量時系列に対し敵対的に訓練したAutoencoderを用いる異常検知アプローチを提示し、公開データセットで評価した。",
+      "evidence_refs": [
+        "E0017"
+      ],
+      "qualifiers": [
+        "報告された検知性能はUSAD原著の5つの公開データセットと評価プロトコルに限定される。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0015",
+      "statement": "TimeAutoADは擬似negative時系列の拡張とself-supervised contrastive lossを用い、異常ラベルが不足する多変量系列の表現学習を扱う。",
+      "evidence_refs": [
+        "E0018"
+      ],
+      "qualifiers": [
+        "未知データでの一般化と対比学習の利点は原著実験範囲を超えて確定しない。"
+      ]
     }
   ],
   "relations": [
@@ -207,17 +237,68 @@
         "E0007",
         "E0008"
       ]
+    },
+    {
+      "relation_id": "R0006",
+      "relation_type": "qualification",
+      "knowledge_unit_refs": [
+        "K0011",
+        "K0012"
+      ],
+      "description": "EWMAは移動平均による監視統計量を用い、Bayesianオンライン変化点検出はrun length事後分布を推定する。いずれも逐次処理だが対象となる検出量は同一ではない。",
+      "evidence_refs": [
+        "E0014",
+        "E0015"
+      ]
+    },
+    {
+      "relation_id": "R0007",
+      "relation_type": "qualification",
+      "knowledge_unit_refs": [
+        "K0004",
+        "K0013",
+        "K0014"
+      ],
+      "description": "深層系列モデルでも確率的生成スコア、予測残差、再構成に基づく異常検知は別のスコア構造を持つ。",
+      "evidence_refs": [
+        "E0004",
+        "E0016",
+        "E0017"
+      ]
+    },
+    {
+      "relation_id": "R0008",
+      "relation_type": "association",
+      "knowledge_unit_refs": [
+        "K0001",
+        "K0015"
+      ],
+      "description": "自己教師ありcontrastive学習はラベルの少なさに対処する特徴表現方式であり、異常定義と評価単位の設計を別途必要とする。",
+      "evidence_refs": [
+        "E0002",
+        "E0018"
+      ]
     }
   ],
   "uncertainties": [
     {
       "uncertainty_id": "U0001",
-      "description": "EWMA管理図とBayesian online change-point detectionの原著を補強したが、state-space、距離・密度、self-supervised、オンラインドリフト適応など全手法群を原著レベルで網羅できていない。",
+      "description": "EWMA管理図・Bayesian online change-point detection・予測残差・self-supervised contrastive学習の原著を補強したが、CUSUMの統計特性、状態空間、距離・密度系、オンラインドリフト適応や閾値校正は依然として原著ベースの網羅性が不足する。",
       "knowledge_unit_refs": [
-        "K0001"
+        "K0001",
+        "K0011",
+        "K0012",
+        "K0013",
+        "K0014",
+        "K0015"
       ],
       "evidence_refs": [
-        "E0002"
+        "E0002",
+        "E0014",
+        "E0015",
+        "E0016",
+        "E0017",
+        "E0018"
       ]
     },
     {
