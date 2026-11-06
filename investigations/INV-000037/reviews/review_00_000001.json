@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000037",
+  "review_seq": 1,
+  "layer": "00_context",
+  "review_kind": "context_semantic_validity",
+  "target_blob_sha": "895b4ffd708e47b0c83aaf43fb71176f14854809",
+  "assessment": "Frozen RQ RQ-000037, Methodological Question Type, time-series anomaly detection inclusion/exclusion boundaries and evidence cutoff are coherent. The scope distinguishes point/contextual/collective anomalies, supervision, online/offline deployment, and excludes future failure-time/RUL forecasting. No frozen-context semantic contradiction identified. Inadequate downstream evidence coverage is recorded in the Evidence layer rather than rewriting Context.",
+  "findings": [],
+  "verdict": "PASS"
+}

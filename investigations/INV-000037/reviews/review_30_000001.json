@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000037",
+  "review_seq": 1,
+  "layer": "30_analysis",
+  "review_kind": "20_synthesis_plus_00_context_to_30_analysis",
+  "target_blob_sha": "3ad5d5956025d46a53a93bfbc831ce85da73e65b",
+  "assessment": "The Methodological profile includes applicability, comparators, evaluation protocols, tradeoffs, and caveats, and the current 18-Source count is correct. The Working Answer avoids universal performance ranking, respects the excluded prognostic target, and retains relevant limitations. Judgment J0005 nevertheless asserts differences in anomaly-score definitions for DeepAnT/USAD/TimeAutoAD while its cited K0013-K0015 support prediction-residual design, adversarial AE training, and contrastive representation training but do not specify anomaly-score computation/thresholding for all three. That stronger score-semantics comparison exceeds the recorded Synthesis support.",
+  "findings": [
+    {
+      "finding_id": "F003",
+      "severity": "Moderate",
+      "target": "30_analysis.judgments.J0005: assertion about anomaly-score definitions for DeepAnT, USAD and TimeAutoAD",
+      "evidence": [
+        "investigations/INV-000037/30_analysis.json: J0005 and working_answer.text emphasize anomaly-score semantics as comparative axis",
+        "investigations/INV-000037/20_synthesis.json: K0013-K0015 describe forecast relation, adversarial AE and contrastive learning; lack explicit inference-time score construction/comparable score definitions for USAD/TimeAutoAD",
+        "investigations/INV-000037/10_evidence.json: E0016-E0018 are abstract-level method summaries; E0018 describes contrastive training without defining its detection score",
+        "Original TimeAutoAD abstract: https://ieeexplore.ieee.org/abstract/document/9705079/ supports self-supervised contrastive loss and pseudo-negatives, not a specific inference-time anomaly-score formula in the abstract"
+      ],
+      "impact": "A core methodological judgment currently conflates differences in training objectives with established differences in anomaly-score construction, which cannot be independently justified from the frozen Synthesis alone. This weakens a key comparison axis without proving the general taxonomy false.",
+      "repair_direction": {
+        "mode": "same_investigation",
+        "affected_layer": "10_evidence",
+        "instruction": "If precise score semantics are required, capture source-grounded inference-time scoring and calibration details for USAD/TimeAutoAD, then rebuild 20_synthesis and 30_analysis. Otherwise limit J0005 to supported objective/representation distinctions and avoid claiming verified score definitions; Workflow 00/10 should select the earliest necessary repair stage."
+      }
+    }
+  ],
+  "verdict": "FINDINGS"
+}
