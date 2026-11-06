@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000206",
+  "notion_url": "https://app.notion.com/p/410e5855be3981dda105e2b21bc6d1a6",
+  "title": "KalmanAE: Deep Embedding Optimized Kalman Filter for Time Series Anomaly Detection",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "IEEE Transactions on Instrumentation and Measurement 72",
+  "authors": "Xunhua Huang; Fengbin Zhang; Ruidong Wang; Xiaohui Lin; Han Liu; Haoyi Fan",
+  "year": 2023,
+  "url": "https://ieeexplore.ieee.org/document/10304171",
+  "doi": "10.1109/TIM.2023.3329098",
+  "version_or_edition": null,
+  "reliability_note": "IEEE publisher abstract verified: AE-enhanced Kalman filter estimating normal state, reconstruction-error-based detection. Full methods/assumptions/benchmark metrics not independently checked."
+}

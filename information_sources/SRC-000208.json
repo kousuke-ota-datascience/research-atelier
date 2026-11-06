@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000208",
+  "notion_url": "https://app.notion.com/p/410e5855be3981a09db8f944aa618e03",
+  "title": "NIST/SEMATECH e-Handbook: Cusum Average Run Length",
+  "source_type": "Documentation",
+  "journal_or_publisher": "NIST/SEMATECH e-Handbook of Statistical Methods",
+  "authors": "NIST/SEMATECH",
+  "year": null,
+  "url": "https://www.itl.nist.gov/div898/handbook/pmc/section3/pmc3231.htm",
+  "doi": null,
+  "version_or_edition": null,
+  "reliability_note": "Authoritative public statistical engineering guide for CUSUM mean-shift monitoring: reference k, decision h and ARL under stated modeling assumptions. Not a reproduction of Page 1954 full text; formula/design conditions should not be ascribed to Page's inaccessible text."
+}

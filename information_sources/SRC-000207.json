@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000207",
+  "notion_url": "https://app.notion.com/p/410e5855be3981a485d2ebf76ce3cbcb",
+  "title": "LOF: Identifying Density-Based Local Outliers",
+  "source_type": "Conference Paper",
+  "journal_or_publisher": "ACM SIGMOD 2000",
+  "authors": "Markus M. Breunig; Hans-Peter Kriegel; Raymond T. Ng; Jörg Sander",
+  "year": 2000,
+  "url": "https://sigmodrecord.org/2000/06/07/lof-identifying-density-based-local-outliers/",
+  "doi": "10.1145/335191.335388",
+  "version_or_edition": null,
+  "reliability_note": "Original SIGMOD article and archived copy consulted for local-neighborhood density-based outlier factor. Generic multidimensional samples; application to window features is a methodological extension NOT established by this original paper."
+}
