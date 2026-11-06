@@ -1,0 +1,65 @@
+name: Validate INV-000039 Review history
+on:
+  pull_request:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  review_history:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install 'jsonschema>=4.18'
+      - name: Canonical through-30 and review history
+        env:
+          PYTHONPATH: src
+        run: |
+          python -m research_atelier.validation.validate_investigation INV-000039 --through 30
+          python - <<'PY'
+          import json
+          import subprocess
+          from research_atelier.reviewing.review_state import load_review_history
+          from research_atelier.reviewing.reconcile import reconcile_payload
+
+          inv = "INV-000039"
+          history = load_review_history(
+              inv,
+              review_dir=f"investigations/{inv}/reviews",
+              schema_path="schemas/v2/review_manifest.schema.json",
+          )
+          assert not history.issues, history.issues
+          assert len(history.records) == 1, len(history.records)
+          latest = history.latest
+          assert latest is not None and latest["verdict"] == "PASS", latest
+          for layer, expected_sha in latest["target"]["artifact_blob_shas"].items():
+              actual_sha = subprocess.check_output(
+                  ["git", "rev-parse", f"HEAD:investigations/{inv}/{layer}.json"],
+                  text=True,
+              ).strip()
+              assert actual_sha == expected_sha, (layer, actual_sha, expected_sha)
+          subprocess.run(
+              ["git", "merge-base", "--is-ancestor", latest["target"]["commit_sha"], "HEAD"],
+              check=True,
+          )
+          with open(f"investigations/{inv}/00_context.json", encoding="utf-8") as source:
+              context = json.load(source)
+          state = reconcile_payload({
+              "current": {"review_status": "完了", "latest_review_seq": 1},
+              "review": {"latest": latest, "issues": list(history.issues), "target_relation": "exact"},
+              "context": context,
+          })
+          assert state["outcome"] == "NOOP", state
+          print(json.dumps({
+              "investigation_id": inv,
+              "review_history": "PASS",
+              "review_seq": latest["review_seq"],
+              "review_verdict": latest["verdict"],
+              "issues": list(history.issues),
+              "reconcile": state,
+          }, ensure_ascii=False))
+          PY
