@@ -3,7 +3,7 @@
   "artifact_type": "20_synthesis",
   "investigation_id": "INV-000037",
   "rq_id": "RQ-000037",
-  "synthesized_at": "2026-11-06T01:09:55.532Z",
+  "synthesized_at": "2026-11-06T01:55:17.586Z",
   "knowledge_units": [
     {
       "knowledge_unit_id": "K0001",
@@ -163,6 +163,57 @@
       "qualifiers": [
         "未知データでの一般化と対比学習の利点は原著実験範囲を超えて確定しない。"
       ]
+    },
+    {
+      "knowledge_unit_id": "K0016",
+      "statement": "KalmanAE（Huangら, 2023）は、Kalman filterの状態推定をautoencoder embeddingで更新し、filtered signalの再構成誤差で正常状態からの逸脱を検出する。状態空間推定と再構成残差の組み合わせを示す。",
+      "evidence_refs": [
+        "E0019"
+      ],
+      "qualifiers": [
+        "IEEE原著要約に支持される設計構造の記述。状態推定の確率前提・数式・比較性能の一般性は未検証。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0017",
+      "statement": "LOF（Breunigら, 2000）は近傍点との局所密度の違いを外れ度として表す。部分系列距離を直接比較するMatrix Profileとは入力表現と原理が異なる。",
+      "evidence_refs": [
+        "E0020",
+        "E0003"
+      ],
+      "qualifiers": [
+        "LOFの原著は一般的な多次元標本を対象とし、時系列への適用にはwindow特徴量や時系列依存性の設計を別途必要とする。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0018",
+      "statement": "CUSUM平均シフト監視はreference kとdecision limit hで一側累積和を評価し、対象平均シフトでのAverage Run Lengthを設計・評価する枠組みを持つ。",
+      "evidence_refs": [
+        "E0021"
+      ],
+      "qualifiers": [
+        "NIST/SEMATECH資料による設計条件の記述。Page（1954）のタイトルだけを原著の数理定義の出典としない。ARLは分布・シフト量・逐次依存等の前提から独立した保証ではない。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0019",
+      "statement": "ADWIN（BifetとGavaldà, 2007）は分布変化を検知してwindow長をオンラインで調整するため、系列のdrift監視と学習器更新の候補となる。",
+      "evidence_refs": [
+        "E0022"
+      ],
+      "qualifiers": [
+        "予測器の誤差監視とNaïve Bayesへの統合を論じる原著の境界内。concept drift検出は必ずしも異常イベントの直接検出ではない。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0020",
+      "statement": "Sifferら（2017）はストリーム単変量系列に対しExtreme Value Theoryによる自動閾値設定を提案し、risk parameterをfalse-positive管理の操作変数とした。",
+      "evidence_refs": [
+        "E0023"
+      ],
+      "qualifiers": [
+        "実際の誤報率はtail-model適合、非定常性、score生成、データ汚染等の評価条件に依存する。原著abstractだけから任意のドリフト下での保証は導けない。"
+      ]
     }
   ],
   "relations": [
@@ -197,12 +248,12 @@
     },
     {
       "relation_id": "R0003",
-      "relation_type": "conflict",
+      "relation_type": "qualification",
       "knowledge_unit_refs": [
         "K0006",
         "K0009"
       ],
-      "description": "基盤モデルを利用する新提案が存在する一方、性能向上が単純baselineを超えないという実証的反例が報告されている。",
+      "description": "基盤モデルを利用する新規アプローチの存在（K0006）と、特定条件で単純baselineを上回らないとの報告（K0009）は論理的に両立する。優劣の判断には同一のモデル・データ・異常定義・評価指標・閾値条件が必要であり、現Source間の直接conflictではない。",
       "evidence_refs": [
         "E0009",
         "E0010",
@@ -278,19 +329,76 @@
         "E0002",
         "E0018"
       ]
+    },
+    {
+      "relation_id": "R0009",
+      "relation_type": "qualification",
+      "knowledge_unit_refs": [
+        "K0003",
+        "K0017"
+      ],
+      "description": "Matrix Profileは部分系列間の距離・discordを対象とする。一方LOFの局所密度は一般的な多次元特徴上の外れ度であり、時系列へ適用する際はwindow表現と依存性保持を別途設計する必要がある。",
+      "evidence_refs": [
+        "E0003",
+        "E0020"
+      ]
+    },
+    {
+      "relation_id": "R0010",
+      "relation_type": "qualification",
+      "knowledge_unit_refs": [
+        "K0012",
+        "K0018"
+      ],
+      "description": "EWMAとCUSUMはどちらも逐次監視だが、前者は指数的に重みづけした移動平均、後者はreference kに対する累積偏差とdecision hに基づき、感度・誤報・run lengthの設計条件が異なる。",
+      "evidence_refs": [
+        "E0015",
+        "E0021"
+      ]
+    },
+    {
+      "relation_id": "R0011",
+      "relation_type": "qualification",
+      "knowledge_unit_refs": [
+        "K0019",
+        "K0020"
+      ],
+      "description": "オンライン変化検知・window適応（ADWIN）と、単変量ストリーミングスコアのリスク閾値（EVT/SPOT）は役割が異なり、一方だけではdrift適応と閾値校正の双方を一般的に保証しない。",
+      "evidence_refs": [
+        "E0022",
+        "E0023"
+      ]
+    },
+    {
+      "relation_id": "R0012",
+      "relation_type": "qualification",
+      "knowledge_unit_refs": [
+        "K0013",
+        "K0016"
+      ],
+      "description": "DeepAnTの短期予測との乖離とKalmanAEの状態推定・filtered signal再構成は、系列への予測・表現の設計が異なり、単なる『residual』名称だけで同等のscore生成過程とみなせない。",
+      "evidence_refs": [
+        "E0016",
+        "E0019"
+      ]
     }
   ],
   "uncertainties": [
     {
       "uncertainty_id": "U0001",
-      "description": "EWMA管理図・Bayesian online change-point detection・予測残差・self-supervised contrastive学習の原著を補強したが、CUSUMの統計特性、状態空間、距離・密度系、オンラインドリフト適応や閾値校正は依然として原著ベースの網羅性が不足する。",
+      "description": "F001で指摘された代表的方法群には、CUSUMのk/hとARL、状態推定KalmanAE、局所密度LOF、距離的部分系列Matrix Profile、ドリフトADWIN、閾値EVT/SPOTの一次・公的資料を補強した。ただし各手法の分布仮定、系列依存性、ドリフト下の誤報率と検知遅延、論文間の統一比較は依然として詳細な原著・実験による検証が必要。",
       "knowledge_unit_refs": [
         "K0001",
         "K0011",
         "K0012",
         "K0013",
         "K0014",
-        "K0015"
+        "K0015",
+        "K0016",
+        "K0017",
+        "K0018",
+        "K0019",
+        "K0020"
       ],
       "evidence_refs": [
         "E0002",
@@ -298,7 +406,13 @@
         "E0015",
         "E0016",
         "E0017",
-        "E0018"
+        "E0018",
+        "E0003",
+        "E0019",
+        "E0020",
+        "E0021",
+        "E0022",
+        "E0023"
       ]
     },
     {
@@ -325,6 +439,32 @@
       "evidence_refs": [
         "E0007",
         "E0008"
+      ]
+    },
+    {
+      "uncertainty_id": "U0004",
+      "description": "LOF原著は多次元標本の局所密度を定義するが、時系列へ適用する場合のwindow長、embedding、距離の定義、時系列相関・季節性・異常ラベル粒度の依存性を原著から直接定められない。",
+      "knowledge_unit_refs": [
+        "K0017",
+        "K0003"
+      ],
+      "evidence_refs": [
+        "E0020",
+        "E0003"
+      ]
+    },
+    {
+      "uncertainty_id": "U0005",
+      "description": "CUSUM・ADWIN・EVT/SPOTの報告するARL、false positive/negative bound、risk parameterは異なる監視対象・確率前提・操作条件に対応し、横断的に同じ誤報・遅延保証と解釈できない。",
+      "knowledge_unit_refs": [
+        "K0018",
+        "K0019",
+        "K0020"
+      ],
+      "evidence_refs": [
+        "E0021",
+        "E0022",
+        "E0023"
       ]
     }
   ]
