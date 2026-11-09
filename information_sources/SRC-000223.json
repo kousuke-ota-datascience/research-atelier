@@ -1,0 +1,14 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000223",
+  "notion_url": "https://app.notion.com/p/413e5855be3981178739d5f11dcd459a",
+  "title": "Building Fault Detection and Diagnostics: Achieved Savings, and Methods to Evaluate Algorithm Performance",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "Building and Environment, 168 / Lawrence Berkeley National Laboratory",
+  "authors": "Guanjing Lin; Hannah Kramer; Jessica Granderson",
+  "year": 2020,
+  "url": "https://betterbuildingssolutioncenter.energy.gov/sites/default/files/building_fault_detection_and_diagnostic-paper.pdf",
+  "doi": "10.1016/j.buildenv.2019.106505",
+  "reliability_note": "Observational study of building FDD users and algorithm benchmarking; savings not necessarily causal treatment effects."
+}
