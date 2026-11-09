@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000040",
+  "review_seq": 1,
+  "layer": "10_evidence",
+  "review_kind": "source_evidence_note_to_10_evidence",
+  "target_blob_sha": "72651e40740f21bab45e189e0ece0f2ddeee8389",
+  "assessment": "Inspected 19 Evidence items and 10 pinned Source revisions; checked the linked Notion Evidence Notes EV-000345 through EV-000362 and EV-000328. All 19 evidence statements track the corresponding note's content and linked Source; EV-000328 paraphrases the same synthetic-degradation limitation without substantive distortion. Primary/official NIST, DCASE, LBNL, SWaT, NREL, Microsoft KDD, PhysioNet and N-CMAPSS sources substantiate key counts, tasks and benchmark-versus-deployment boundaries. Found one bibliographic provenance defect: SRC-000220 lists 'Matthew Helu'/'Guoxian Qiao' instead of NIST's 'Moneer Helu'/'Guixiu Qiao'. This does not overturn E0001/E0002 but requires correction of pinned Source identity and its downstream lineage.",
+  "findings": [
+    {
+      "finding_id": "F001",
+      "severity": "Minor",
+      "target": "information_sources/SRC-000220.json.authors; Notion Sources SRC-000220 Authors; provenance for 10_evidence E0001/E0002",
+      "evidence": [
+        "SRC-000220 pinned Git Source revision 0b9c93398be342252fa8a7667c1fb3c5bb097c9d lists 'Matthew Helu' and 'Guoxian Qiao'.",
+        "Original NIST publication (https://www.nist.gov/publications/use-case-development-advance-monitoring-diagnostics-and-prognostics-manufacturing), Authors section lists 'Moneer Helu' and 'Guixiu Qiao'.",
+        "10_evidence E0001 and E0002 bind SRC-000220 and EV-000345/EV-000346 to this misattributed Source revision."
+      ],
+      "impact": "Two author names in canonical Source provenance are inaccurate, weakening bibliographic identity and audit traceability. The substantive E0001/E0002 claims remain supported by the correctly linked publication URL.",
+      "repair_direction": {
+        "mode": "same_investigation",
+        "affected_layer": "10_evidence",
+        "instruction": "Correct SRC-000220 Authors in the Notion Source registry and canonical Git information_sources metadata to match NIST ('Moneer Helu', 'Guixiu Qiao'; verify complete author list). Materialize the corrected Source revision, update the pinned 10_evidence source revision via Workflow 10 Evidence stage, invalidate/rebuild 20_synthesis and 30_analysis per canonical rules, revalidate, and reReview the new target."
+      }
+    }
+  ],
+  "verdict": "FINDINGS"
+}

@@ -1,0 +1,45 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000040",
+  "review_seq": 1,
+  "layer": "30_analysis",
+  "review_kind": "20_synthesis_plus_00_context_to_30_analysis",
+  "target_blob_sha": "583c42f3372ba6d3745da047ce5b500166bb27ca",
+  "assessment": "Descriptive profile and Working Answer appropriately reject universal rankings, unjustified causal effects and treating synthetic benchmark results as deployment evidence. Two substantive defects remain: (1) wind gearbox Working Answer adds sensor '状態監視' beyond K0005 and GRD evidence; and (2) although an axes-based taxonomy is proposed, the eight exemplars do not provide per-use-case business decision, prediction/detection event, horizon and required output with explicit unknowns, which the frozen scope requests. In particular, change-point and calibrated fault-risk categories are not mapped or explicitly identified as unverified. These defects affect fidelity of the user-facing mapping but do not require changing the frozen question.",
+  "findings": [
+    {
+      "finding_id": "F002",
+      "severity": "Moderate",
+      "target": "30_analysis.working_answer.text, wind-power gearbox case (4), phrase '故障モード分類、原因調査、状態監視'",
+      "evidence": [
+        "20_synthesis K0005, supported by E0011/E0012 (SRC-000225), describes an operational gearbox incident database, failure-mode categorization and root-cause/reliability analysis; it does not establish a sensor-time-series condition monitoring task.",
+        "NREL Gearbox Reliability Database (https://grd.nrel.gov/) describes 1,938 incident reports from 84 wind plants over 21 years and a failure-mode/root-cause research purpose; the cited page does not document time-series condition-monitoring implementation.",
+        "30_analysis Working Answer extends the K0005-supported problem list to '状態監視' without a supporting Knowledge Unit."
+      ],
+      "impact": "The case conflates event-log reliability analysis with time-series condition monitoring, potentially misleading the RQ's task-to-data mapping and the implied evidence level for wind-energy monitoring.",
+      "repair_direction": {
+        "mode": "same_investigation",
+        "affected_layer": "30_analysis",
+        "instruction": "Within the current source boundary, restrict this wind-gearbox case to failure incident aggregation, failure-mode classification and root-cause/reliability investigation; remove '状態監視' as an evidenced application or explicitly mark it unsupported by this Source. If a positive wind sensor-time-series monitoring claim is required, separately repair from Workflow 10 Evidence and rebuild downstream rather than bypassing Synthesis."
+      }
+    },
+    {
+      "finding_id": "F003",
+      "severity": "Moderate",
+      "target": "30_analysis.profile.summary_statistics_or_patterns and 30_analysis.working_answer.text: case-specific analytical-problem mapping",
+      "evidence": [
+        "Frozen 00_context.scope and investigation_boundary.include explicitly require mapping business purpose/decision to detection or prediction target, temporal horizon and required analytical output.",
+        "20_synthesis K0010/K0011 proposes separate axes for decision, analytical target, time horizon and output, with source-specific qualifiers.",
+        "30_analysis Working Answer enumerates eight domain-to-task examples but supplies output types ('score、クラス、確率、時間') and lead-time/event-label considerations only globally, without assigning known vs unverified target/horizon/output and decision to each use case. Change-point detection and calibrated fault-risk prediction named in the frozen scope are not explicitly classified as evidenced, merely possible, or outside current evidence."
+      ],
+      "impact": "The advertised mapping is not operationalized at the requested granularity; readers cannot reliably distinguish, for each use case, a current-state alarm, diagnosis, future failure risk and RUL requirement, or know which axes remain unsupported by the selected sources.",
+      "repair_direction": {
+        "mode": "same_investigation",
+        "affected_layer": "30_analysis",
+        "instruction": "Re-express the eight supported cases with explicit business decision, analysis target/event definition, current-versus-future horizon, model output and evidence status. Mark per-case unknown or unestablished axes as 'not identified by selected Evidence' rather than inventing details. Explicitly classify change-point and failure-risk problems as candidate/unverified where evidence is absent. Preserve 20_synthesis support boundaries; any newly asserted deployment needs an upstream Evidence-stage repair."
+      }
+    }
+  ],
+  "verdict": "FINDINGS"
+}

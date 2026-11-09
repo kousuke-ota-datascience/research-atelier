@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000040",
+  "review_seq": 1,
+  "layer": "20_synthesis",
+  "review_kind": "10_evidence_to_20_synthesis",
+  "target_blob_sha": "15adb6ea7418a4e26206b50a982656227b0c2598",
+  "assessment": "All 13 knowledge units trace to the 19 Evidence items with stated qualifications. Key distinct analytical objectives are not homogenized: anomaly detection, machine diagnostics, prognostics, RUL and ECG rhythm classification are separated; NIST project aims, artificial attacks/degradation, Microsoft author-reported deployment, and observational FDD savings are appropriately bounded. K0011 is expressly labeled an analyst-proposed taxonomy rather than an accepted industry standard. K0005 is restricted to gearbox incident/reliability analysis. No additional unsupported proposition, lost conflict, or upstream-healing defect was substantiated in this layer.",
+  "findings": [],
+  "verdict": "PASS"
+}

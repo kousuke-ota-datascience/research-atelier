@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000040",
+  "review_seq": 1,
+  "layer": "00_context",
+  "review_kind": "context_semantic_validity",
+  "target_blob_sha": "8a90e4a7832e4517ff184a6423b471ddf5acb369",
+  "assessment": "Frozen RQ-000040 asks for descriptive systematization of industry/business use cases and their corresponding detection, diagnosis, prediction and RUL questions. The Descriptive Question Type is appropriate. Scope, inclusion/exclusion and explicit separation between demonstrated use and technical possibility are internally consistent. A fixed evidence cutoff is not indispensable to the non-exhaustive descriptive mapping; no context-defining semantic defect was substantiated.",
+  "findings": [],
+  "verdict": "PASS"
+}
