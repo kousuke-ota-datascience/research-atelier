@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000040",
+  "review_seq": 2,
+  "layer": "20_synthesis",
+  "review_kind": "10_evidence_to_20_synthesis",
+  "target_blob_sha": "ae62a315f9af0861aa8042aa97e031719e20fd1b",
+  "assessment": "Reviewed 13 Knowledge Units, relations, qualifications and uncertainties against 19 Evidence references. The post-repair K0005 explicitly limits the NREL Gearbox Reliability Database to incident aggregation, failure modes and root causes rather than unverified sensor-time-series monitoring, and K0010 distinguishes unverified change-point detection and calibrated failure-risk deployment from evidenced cases. DCASE, SWaT, PhysioNet and synthetic N-CMAPSS are not represented as field effectiveness; HVAC energy savings are observational and Microsoft deployment is author-reported. Cross-source taxonomy K0011 is marked as an analytical proposal, not an externally established universal classification. No unsupported synthesis assertion or loss of material uncertainty was identified.",
+  "findings": [],
+  "verdict": "PASS"
+}

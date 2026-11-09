@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000040",
+  "review_seq": 2,
+  "layer": "10_evidence",
+  "review_kind": "source_evidence_note_to_10_evidence",
+  "target_blob_sha": "7385633f6ab96de3aa521a75360a625e861eb569",
+  "assessment": "Re-examined the 10 Git-pinned canonical Source revisions and all 19 Evidence items against the referenced Notion Evidence Notes: 18/19 Evidence texts match exactly; E0019 is a semantically equivalent paraphrase of the N-CMAPSS synthetic-degradation limitation; Source relations and locators align in all 19. The corrected SRC-000220 authors (Brian A. Weiss, Moneer Helu, Gregory W. Vogl, Guixiu Qiao) match the NIST primary record in both Git and Notion, and its pinned commit de27532d195ee3c70e221d5097d0a5c4ed743027 resolves to the expected blob da0f7614a1c4de0e965e38cd633413ae6b85f03b. The revised Evidence snapshot retains appropriate distinctions among research use cases, experimental benchmarks, author-reported deployment, observational savings and real failure-event databases. No remaining source-faithfulness, provenance or materially omitted counterevidence finding was substantiated.",
+  "findings": [],
+  "verdict": "PASS"
+}

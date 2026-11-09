@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000040",
+  "review_seq": 2,
+  "layer": "30_analysis",
+  "review_kind": "20_synthesis_plus_00_context_to_30_analysis",
+  "target_blob_sha": "d3c90ad9b70cc2c79a1b780d44f22643ee882d3d",
+  "assessment": "Independently assessed the revised Descriptive profile, eight case mappings, Working Answer, nine Judgments, limitations, alternatives and unanswered questions using only frozen 00_context and supported 20_synthesis. Each of eight cases now distinguishes business decision, observation/event target, present/past versus future horizon, model output or explicit lack of evidence, and provenance/validation level. The wind gearbox case is explicitly retrospective incident-data analysis and is not counted as verified time-series monitoring. Change-point detection and calibrated future-failure risk are correctly labeled candidate/unverified for the selected Evidence; prospective deployment, calibrated probabilities, numeric horizons and implementation effects are not invented. The distinctions between anomaly score, diagnosis, prognostics, RUL and ECG classification remain intact. No further supported semantic defect was found.",
+  "findings": [],
+  "verdict": "PASS"
+}

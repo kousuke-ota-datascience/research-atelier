@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000040",
+  "review_seq": 2,
+  "layer": "00_context",
+  "review_kind": "context_semantic_validity",
+  "target_blob_sha": "8a90e4a7832e4517ff184a6423b471ddf5acb369",
+  "assessment": "Independently reassessed the unchanged frozen RQ-000040 and Investigation Context. Descriptive question type coherently supports cross-industry, non-exhaustive mapping of use cases, business decisions and analytical problems; the scope explicitly requires temporal target, output and evidence-strength distinctions and excludes unsupported deployment and universal performance rankings. No unresolved frozen-context contradiction or context-defining defect was identified.",
+  "findings": [],
+  "verdict": "PASS"
+}
