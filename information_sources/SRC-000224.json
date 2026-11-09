@@ -1,0 +1,12 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000224",
+  "notion_url": "https://app.notion.com/p/413e5855be398142bc57dd97885ec370",
+  "title": "Secure Water Treatment (SWaT) — Dataset Characteristics",
+  "source_type": "Dataset",
+  "journal_or_publisher": "Singapore University of Technology and Design (iTrust)",
+  "url": "https://www.sutd.edu.sg/itrust/itrust-labs/datasets/dataset-characteristics/swat/",
+  "version_or_edition": "SWaT.A1_Dec 2015 and later variants",
+  "reliability_note": "Scaled-down industry-like water treatment testbed with induced attacks; not municipal operational deployment."
+}

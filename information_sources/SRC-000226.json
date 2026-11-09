@@ -1,0 +1,14 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000226",
+  "notion_url": "https://app.notion.com/p/413e5855be398192aa96f1a93c3fd6be",
+  "title": "Time-Series Anomaly Detection Service at Microsoft",
+  "source_type": "Conference Paper",
+  "journal_or_publisher": "ACM SIGKDD 2019",
+  "authors": "Hansheng Ren; Bixiong Xu; Yujing Wang; Chao Yi; Congrui Huang; Xiaoyu Kou; Tony Xing; Mao Yang; Jie Tong; Qi Zhang",
+  "year": 2019,
+  "url": "https://www.kdd.org/kdd2019/accepted-papers/view/time-series-anomaly-detection-service-at-microsoft",
+  "doi": "10.1145/3292500.3330680",
+  "reliability_note": "Author-reported production deployment and metrics, not independently audited operation."
+}

@@ -1,0 +1,13 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000220",
+  "notion_url": "https://app.notion.com/p/413e5855be3981829b18fa1ebbad03b0",
+  "title": "Use Case Development to Advance Monitoring, Diagnostics, and Prognostics in Manufacturing Operations",
+  "source_type": "Conference Paper",
+  "journal_or_publisher": "IMS2016 – Intelligent Manufacturing Systems / NIST",
+  "authors": "Brian A. Weiss; Matthew Helu; Gregory Vogl; Guoxian Qiao",
+  "year": 2016,
+  "url": "https://www.nist.gov/publications/use-case-development-advance-monitoring-diagnostics-and-prognostics-manufacturing",
+  "reliability_note": "NIST original use-case paper; describes assessment scenarios, not independent proof of broad industrial deployment."
+}
