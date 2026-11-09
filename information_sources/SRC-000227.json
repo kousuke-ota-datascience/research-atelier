@@ -1,0 +1,14 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000227",
+  "notion_url": "https://app.notion.com/p/413e5855be39813ab75cdd9022a47d59",
+  "title": "AF Classification from a Short Single Lead ECG Recording: The PhysioNet/Computing in Cardiology Challenge 2017",
+  "source_type": "Dataset",
+  "journal_or_publisher": "PhysioNet / Computing in Cardiology",
+  "authors": "Gari D. Clifford; Chengyu Liu; Benjamin Moody; Li-wei Lehman; Ikaro Silva; Alistair Johnson; Roger Mark",
+  "year": 2017,
+  "url": "https://physionet.org/content/challenge-2017/1.0.0/",
+  "version_or_edition": "1.0.0",
+  "reliability_note": "Challenge dataset for retrospective ECG classification; not prospective clinical deployment."
+}
