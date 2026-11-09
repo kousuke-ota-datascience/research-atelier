@@ -16,6 +16,18 @@ jobs:
         with:
           python-version: '3.11'
       - run: python -m pip install 'jsonschema>=4.18'
+      - name: Check canonical information source metadata
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from jsonschema import Draft202012Validator, FormatChecker
+          schema = json.loads(Path("schemas/v2/information_source.schema.json").read_text())
+          for uid in range(220, 229):
+              source = Path(f"information_sources/SRC-{uid:06d}.json")
+              Draft202012Validator(schema, format_checker=FormatChecker()).validate(json.loads(source.read_text()))
+              print("PASS", source)
+          PY
       - name: Canonical CLI new Context freeze
         env:
           PYTHONPATH: src
