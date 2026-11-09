@@ -1,0 +1,12 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000222",
+  "notion_url": "https://app.notion.com/p/413e5855be3981449999c71bd23a1586",
+  "title": "Unsupervised Detection of Anomalous Sounds for Machine Condition Monitoring",
+  "source_type": "Web Page",
+  "journal_or_publisher": "DCASE 2020 Challenge",
+  "year": 2020,
+  "url": "https://dcase.community/challenge2020/task-unsupervised-detection-of-anomalous-sounds",
+  "reliability_note": "Benchmark comprises toy and real machines with deliberately induced abnormal sounds; deployment unverified."
+}
