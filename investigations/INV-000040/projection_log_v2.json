@@ -4,12 +4,12 @@
   "target_rq_url": "https://app.notion.com/p/413e5855be39812e8640d7a8f56b1483",
   "rq_id": "RQ-000040",
   "source_investigation_id": "INV-000040",
-  "source_30_analysis_commit_sha": "9317a9c716c905299e5ab072d03d4d80529560d0",
-  "projection_timestamp": "2026-11-09T05:57:03.575Z",
+  "source_30_analysis_commit_sha": "aedb0b59defa044fa2b95bc713ad54014c547d18",
+  "projection_timestamp": "2026-11-09T09:25:28.175Z",
   "projection_target": {
     "surface": "page_body",
     "section_heading": "# Working Answer"
   },
   "result": "SUCCESS",
-  "note": "Accepted 30_analysis rendered into the unique RQ Working Answer section; Notion read-back normalized block sequence matched current source rendering."
+  "note": "Review 000001 findings F001–F003 repaired in same INV; corrected 30_analysis projected into RQ-000040 unique Working Answer section and verified by readback. Prior successful projection remains available in Git history."
 }
