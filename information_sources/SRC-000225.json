@@ -1,0 +1,11 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000225",
+  "notion_url": "https://app.notion.com/p/413e5855be39818e95fad95d051b246b",
+  "title": "Gearbox Reliability Database",
+  "source_type": "Web Page",
+  "journal_or_publisher": "National Renewable Energy Laboratory",
+  "url": "https://grd.nrel.gov/",
+  "reliability_note": "Operational incident catalog and failure-mode characterization; no direct RUL prediction validation."
+}
