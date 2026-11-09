@@ -3,15 +3,15 @@
   "artifact_type": "10_evidence",
   "investigation_id": "INV-000040",
   "rq_id": "RQ-000040",
-  "snapshot_at": "2026-11-09T05:50:38.252Z",
+  "snapshot_at": "2026-11-09T09:18:57.103Z",
   "sources": [
     {
       "source_id": "SRC-000220",
       "source_revision": {
-        "commit_sha": "cc4332d49d36f05ca919418a6262bf9da8fa6d3c",
-        "blob_sha": "0b9c93398be342252fa8a7667c1fb3c5bb097c9d"
+        "commit_sha": "de27532d195ee3c70e221d5097d0a5c4ed743027",
+        "blob_sha": "da0f7614a1c4de0e965e38cd633413ae6b85f03b"
       },
-      "accessed_at": "2026-11-09T05:50:38.252Z",
+      "accessed_at": "2026-11-09T09:18:57.103Z",
       "notion_url": "https://app.notion.com/p/413e5855be3981829b18fa1ebbad03b0"
     },
     {
