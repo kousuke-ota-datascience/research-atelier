@@ -1,0 +1,295 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "20_synthesis",
+  "investigation_id": "INV-000040",
+  "rq_id": "RQ-000040",
+  "synthesized_at": "2026-11-09T05:52:19.408Z",
+  "knowledge_units": [
+    {
+      "knowledge_unit_id": "K0001",
+      "statement": "製造業向けのPHMユースケースは、製造プロセス・設備の監視、工作機械直動軸の診断・予測、ロボットの健全性と制御という異なる対象に展開されている。",
+      "evidence_refs": [
+        "E0001"
+      ],
+      "qualifiers": [
+        "NISTの代表ユースケース設計であり、3領域すべての商用実装実績を示すものではない。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0002",
+      "statement": "製造業では設備稼働率・品質・生産性を保ちつつ停止を抑える目的から、現在状態の監視・診断と将来の閾値超過・劣化予測を使い分ける構成が提示されている。",
+      "evidence_refs": [
+        "E0002",
+        "E0017",
+        "E0018"
+      ],
+      "qualifiers": [
+        "記述はNISTの目的設定と研究活動であり、必ずしも介入による改善の因果効果を測定していない。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0003",
+      "statement": "機械の異常音監視は、正常音のみで学習したモデルから未知の異常音を検知する課題として設定される。",
+      "evidence_refs": [
+        "E0005",
+        "E0006"
+      ],
+      "qualifiers": [
+        "DCASEの玩具・実機ベンチマークには人工的に誘発した故障が含まれる。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0004",
+      "statement": "建築設備の空調FDDは、施設の故障検出・診断と省エネルギー運用を支援するユースケースであり、利用者調査の実適用報告が存在する。",
+      "evidence_refs": [
+        "E0007",
+        "E0008"
+      ],
+      "qualifiers": [
+        "報告された8%は調査上の中央値であり、無作為化された節減効果の推定ではない。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0005",
+      "statement": "風力発電設備のギヤボックスについて、運用故障事象の集計・故障モード分類・根本原因調査を保全と信頼性研究に結びつける資料が存在する。",
+      "evidence_refs": [
+        "E0011",
+        "E0012"
+      ],
+      "qualifiers": [
+        "公開故障事象データ自体はRUL予測の有効性を立証しない。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0006",
+      "statement": "オンラインサービスではページビューや売上などKPIの時間系列を監視し、異常スコア／警報を用いてインシデントへの早期対応を支援する実運用報告がある。",
+      "evidence_refs": [
+        "E0013",
+        "E0014"
+      ],
+      "qualifiers": [
+        "論文著者が報告した運用であり、将来システム故障確率の校正とは異なる。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0007",
+      "statement": "水処理のサイバーフィジカル監視では、センサー・アクチュエータの多変量時系列と通信から攻撃・異常挙動を識別する研究用問題設定が成立する。",
+      "evidence_refs": [
+        "E0009",
+        "E0010"
+      ],
+      "qualifiers": [
+        "SWaTの攻撃は研究テストベッドに人工投入されたもので、公共水道実運用の検知性能を意味しない。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0008",
+      "statement": "心電図の診断支援ユースケースでは、短いECG信号を正常・心房細動・その他の調律・ノイズに分類する課題が定義されている。",
+      "evidence_refs": [
+        "E0015",
+        "E0016"
+      ],
+      "qualifiers": [
+        "このベンチマークは将来の発症予測や臨床導入効果を評価していない。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0009",
+      "statement": "航空機エンジンの寿命予測研究には、実飛行プロファイルに基づく合成劣化データを用いたRUL予測タスクが存在する。",
+      "evidence_refs": [
+        "E0019"
+      ],
+      "qualifiers": [
+        "N-CMAPSSは実機run-to-failure観測や実運用導入を証明するものではない。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0010",
+      "statement": "確認した事例には、現在の逸脱判定、故障状態の診断、将来の劣化・閾値超過予測、RUL推定が別々の分析対象として現れる。",
+      "evidence_refs": [
+        "E0001",
+        "E0005",
+        "E0008",
+        "E0017",
+        "E0019"
+      ],
+      "qualifiers": [
+        "選択Sourceの課題記述を横断した分類であり、業界標準の完全なtaxonomyではない。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0011",
+      "statement": "『産業・対象資産→ユースケース→業務目的・意思決定→分析対象と時間軸→出力→評価』を別軸で整理すると、同一領域内の複数問題や複数領域で共通する問題を表現できる。",
+      "evidence_refs": [
+        "E0001",
+        "E0002",
+        "E0005",
+        "E0013",
+        "E0015",
+        "E0019"
+      ],
+      "qualifiers": [
+        "資料群に整合的な分析上の提案であり、資料に記載された唯一の標準分類ではない。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0012",
+      "statement": "実証上の確度は、実サービス／利用者の調査、実故障データベース、実験ベンチマーク、将来適用を目指す研究計画の間で異なり、区別する必要がある。",
+      "evidence_refs": [
+        "E0004",
+        "E0006",
+        "E0007",
+        "E0010",
+        "E0012",
+        "E0014",
+        "E0016",
+        "E0019"
+      ],
+      "qualifiers": [
+        "研究用ベンチマークが役に立たないという意味ではなく、実運用への外挿には別の検証が必要である。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0013",
+      "statement": "産業保全の評価研究を集めた系統的レビューは工学・財務評価のheterogeneityと産業間カバレッジの偏りを報告し、普遍的なROI・モデル順位の一般化を支持しない。",
+      "evidence_refs": [
+        "E0003",
+        "E0004"
+      ],
+      "qualifiers": [
+        "レビューの母集団と採択条件に依存する。"
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "relation_id": "R0001",
+      "relation_type": "association",
+      "knowledge_unit_refs": [
+        "K0001",
+        "K0002"
+      ],
+      "description": "製造業内の用途と業務目的を接続する。",
+      "evidence_refs": [
+        "E0001",
+        "E0002"
+      ]
+    },
+    {
+      "relation_id": "R0002",
+      "relation_type": "qualification",
+      "knowledge_unit_refs": [
+        "K0004",
+        "K0013"
+      ],
+      "description": "建築設備の節減事例を一般的な因果ROIへ外挿しない。",
+      "evidence_refs": [
+        "E0007",
+        "E0004"
+      ]
+    },
+    {
+      "relation_id": "R0003",
+      "relation_type": "qualification",
+      "knowledge_unit_refs": [
+        "K0005",
+        "K0009"
+      ],
+      "description": "実際のギヤボックス故障データと航空機RULベンチマークは別のデータ条件である。",
+      "evidence_refs": [
+        "E0012",
+        "E0019"
+      ]
+    },
+    {
+      "relation_id": "R0004",
+      "relation_type": "association",
+      "knowledge_unit_refs": [
+        "K0003",
+        "K0006",
+        "K0007"
+      ],
+      "description": "設備音・IT KPI・水処理の異常判定は観測系列とイベント定義が違う。",
+      "evidence_refs": [
+        "E0005",
+        "E0013",
+        "E0009"
+      ]
+    },
+    {
+      "relation_id": "R0005",
+      "relation_type": "dependency",
+      "knowledge_unit_refs": [
+        "K0010",
+        "K0011"
+      ],
+      "description": "ユースケースの時間軸と目的変数を確定してから分析問題として分類する。",
+      "evidence_refs": [
+        "E0001",
+        "E0019"
+      ]
+    },
+    {
+      "relation_id": "R0006",
+      "relation_type": "qualification",
+      "knowledge_unit_refs": [
+        "K0011",
+        "K0012"
+      ],
+      "description": "提示されたtaxonomyと実運用の根拠レベルを独立に表示する。",
+      "evidence_refs": [
+        "E0010",
+        "E0014",
+        "E0016"
+      ]
+    }
+  ],
+  "uncertainties": [
+    {
+      "uncertainty_id": "U0001",
+      "description": "産業・業務を横断する網羅的なユースケースの母集団・代表性は選定資料のみでは確定できない。",
+      "knowledge_unit_refs": [
+        "K0011",
+        "K0013"
+      ],
+      "evidence_refs": [
+        "E0004"
+      ]
+    },
+    {
+      "uncertainty_id": "U0002",
+      "description": "設置現場の異常検知・診断が保全介入を介して故障率・停止損失をどれほど改善するかは資料ごとの因果識別条件が異なる。",
+      "knowledge_unit_refs": [
+        "K0004",
+        "K0005"
+      ],
+      "evidence_refs": [
+        "E0007",
+        "E0012"
+      ]
+    },
+    {
+      "uncertainty_id": "U0003",
+      "description": "異常スコアから故障確率・RULへの変換には故障イベントラベルと校正が必要であり、本Evidenceはその同定可能性を直接検証していない。",
+      "knowledge_unit_refs": [
+        "K0010",
+        "K0009"
+      ],
+      "evidence_refs": [
+        "E0019"
+      ]
+    },
+    {
+      "uncertainty_id": "U0004",
+      "description": "医療、IT、製造、エネルギーを横断した共通評価法は予測対象・ground truth・介入機構が違うため単一スコアでは確定できない。",
+      "knowledge_unit_refs": [
+        "K0008",
+        "K0012"
+      ],
+      "evidence_refs": [
+        "E0016",
+        "E0004"
+      ]
+    }
+  ]
+}
