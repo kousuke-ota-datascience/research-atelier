@@ -1,0 +1,367 @@
+{
+  "schema_version": "2.1.0",
+  "artifact_type": "10_evidence",
+  "investigation_id": "INV-000040",
+  "rq_id": "RQ-000040",
+  "snapshot_at": "2026-11-09T05:50:38.252Z",
+  "sources": [
+    {
+      "source_id": "SRC-000220",
+      "source_revision": {
+        "commit_sha": "cc4332d49d36f05ca919418a6262bf9da8fa6d3c",
+        "blob_sha": "0b9c93398be342252fa8a7667c1fb3c5bb097c9d"
+      },
+      "accessed_at": "2026-11-09T05:50:38.252Z",
+      "notion_url": "https://app.notion.com/p/413e5855be3981829b18fa1ebbad03b0"
+    },
+    {
+      "source_id": "SRC-000221",
+      "source_revision": {
+        "commit_sha": "29ecc7b11c08d4fe27ed8fa87220e4dfdd0ab8b0",
+        "blob_sha": "fa7c820462cc2549cce4dedac3bd5c759bc43248"
+      },
+      "accessed_at": "2026-11-09T05:50:38.252Z",
+      "notion_url": "https://app.notion.com/p/413e5855be3981f2ab1cf1552b4de8fc"
+    },
+    {
+      "source_id": "SRC-000222",
+      "source_revision": {
+        "commit_sha": "f66b9e5448acea3547d5da661b44d19b322fcfd4",
+        "blob_sha": "753c6403240f6a94d83ea316e48558b250bf22d2"
+      },
+      "accessed_at": "2026-11-09T05:50:38.252Z",
+      "notion_url": "https://app.notion.com/p/413e5855be3981449999c71bd23a1586"
+    },
+    {
+      "source_id": "SRC-000223",
+      "source_revision": {
+        "commit_sha": "d437bf5021d5194a387dc3a5a0d4e7b507ba60cd",
+        "blob_sha": "e7b3bbfc3f0a6d0a2495902a7f56c0b8005d2dc7"
+      },
+      "accessed_at": "2026-11-09T05:50:38.252Z",
+      "notion_url": "https://app.notion.com/p/413e5855be3981178739d5f11dcd459a"
+    },
+    {
+      "source_id": "SRC-000224",
+      "source_revision": {
+        "commit_sha": "bcbe9065ea2f8e2ac33dafd348f041a2390c23f1",
+        "blob_sha": "de35d8c66ab81854c34f036b2adbd846e62428e6"
+      },
+      "accessed_at": "2026-11-09T05:50:38.252Z",
+      "notion_url": "https://app.notion.com/p/413e5855be398142bc57dd97885ec370"
+    },
+    {
+      "source_id": "SRC-000225",
+      "source_revision": {
+        "commit_sha": "c918a910eae8c41aa92eba0ad5a694c1066bc1a7",
+        "blob_sha": "acc8ffc5dfa4cb0bf2e0c808c8c2fbce36eec813"
+      },
+      "accessed_at": "2026-11-09T05:50:38.252Z",
+      "notion_url": "https://app.notion.com/p/413e5855be39818e95fad95d051b246b"
+    },
+    {
+      "source_id": "SRC-000226",
+      "source_revision": {
+        "commit_sha": "86ad6b1561be13f325faf2913b27902015cbf6bf",
+        "blob_sha": "0d1c13aa89b1991774aa8da54f4da81aa3370d81"
+      },
+      "accessed_at": "2026-11-09T05:50:38.252Z",
+      "notion_url": "https://app.notion.com/p/413e5855be398192aa96f1a93c3fd6be"
+    },
+    {
+      "source_id": "SRC-000227",
+      "source_revision": {
+        "commit_sha": "e11059c12e8977893fd146747d6b21a66d067275",
+        "blob_sha": "d6fb58f846c1fc81bcfbb59fe67116510354b2be"
+      },
+      "accessed_at": "2026-11-09T05:50:38.252Z",
+      "notion_url": "https://app.notion.com/p/413e5855be39813ab75cdd9022a47d59"
+    },
+    {
+      "source_id": "SRC-000228",
+      "source_revision": {
+        "commit_sha": "591dc53c36e6c50ee29138720724db4984e4a1f0",
+        "blob_sha": "5b2e01c45d292c75aa5cdc0a1337d27f57da160a"
+      },
+      "accessed_at": "2026-11-09T05:50:38.252Z",
+      "notion_url": "https://app.notion.com/p/413e5855be3981bca1acde729539f026"
+    },
+    {
+      "source_id": "SRC-000203",
+      "source_revision": {
+        "commit_sha": "50b52fcbb0bcb093f05aec0aa2bfaeebab026e27",
+        "blob_sha": "60e39828a89ed08b01aac7a38f574e7ac93a5ad6"
+      },
+      "accessed_at": "2026-11-09T05:50:38.252Z",
+      "notion_url": "https://app.notion.com/p/410e5855be3981b8bd00c9f85bc796a0"
+    }
+  ],
+  "evidence_items": [
+    {
+      "evidence_id": "E0001",
+      "content": "NISTは製造業向けPHM評価の代表的ユースケースを、製造プロセス・設備監視、工作機械直動軸の診断・予測、ロボットシステムの健全性・制御管理の3領域で構成した。",
+      "source_locator": "Abstract",
+      "note_type": "Claim",
+      "selection_reason": "Domain-specific use case, corresponding analytical task and evidence-strength limitation in approved descriptive scope",
+      "provenance": {
+        "source_id": "SRC-000220",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/413e5855be39814cb444f31b04a1e2a4",
+          "title": "EV-000345"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0002",
+      "content": "同論文は製造設備・プロセスの劣化に対し、監視・診断・prognosticsを保全や制御の改善に結び付け、設備稼働率、製品品質、生産性の改善を目的としている。",
+      "source_locator": "Abstract",
+      "note_type": "Claim",
+      "selection_reason": "Domain-specific use case, corresponding analytical task and evidence-strength limitation in approved descriptive scope",
+      "provenance": {
+        "source_id": "SRC-000220",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/413e5855be3981899b85c1f831c0d847",
+          "title": "EV-000346"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0003",
+      "content": "2001〜2023年の関連研究465件から適格基準を満たす42件を選んだ系統的レビューでは、状態監視を含む保全技術の工学的・財務的評価を分析した。",
+      "source_locator": "Abstract, methods summary",
+      "note_type": "Result",
+      "selection_reason": "Domain-specific use case, corresponding analytical task and evidence-strength limitation in approved descriptive scope",
+      "provenance": {
+        "source_id": "SRC-000221",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/413e5855be3981d3a476cca6bb24bf95",
+          "title": "EV-000347"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0004",
+      "content": "同レビューでは製造業の評価研究がエネルギー・輸送分野より少なく、評価尺度・費用分析・不確実性が異質なため研究間の直接比較が難しいと報告する。",
+      "source_locator": "Abstract, findings",
+      "note_type": "Result",
+      "selection_reason": "Domain-specific use case, corresponding analytical task and evidence-strength limitation in approved descriptive scope",
+      "provenance": {
+        "source_id": "SRC-000221",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/413e5855be398184af26cb55156ef1b4",
+          "title": "EV-000348"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0005",
+      "content": "DCASE 2020 Task 2は機械の音から通常・異常を判別する問題であり、学習には正常音のみを与え、未知の異常を検知させる。",
+      "source_locator": "Description; Task setup and rules",
+      "note_type": "Method",
+      "selection_reason": "Domain-specific use case, corresponding analytical task and evidence-strength limitation in approved descriptive scope",
+      "provenance": {
+        "source_id": "SRC-000222",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/413e5855be398195bed2d87daf3e101b",
+          "title": "EV-000349"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0006",
+      "content": "DCASE 2020のデータは玩具装置と実機（バルブ、ポンプ、ファン、スライドレール等）の録音から成り、異常音は対象機械を意図的に損傷させて取得している。",
+      "source_locator": "Audio dataset; Recording procedure",
+      "note_type": "Data",
+      "selection_reason": "Domain-specific use case, corresponding analytical task and evidence-strength limitation in approved descriptive scope",
+      "provenance": {
+        "source_id": "SRC-000222",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/413e5855be3981bbb0c7d9070c51af65",
+          "title": "EV-000350"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0007",
+      "content": "Linら（2020）はFDD利用26組織、合計550建物・9700万平方フィートの調査で、報告された中央値8%の省エネルギーを記載する。",
+      "source_locator": "Abstract",
+      "note_type": "Result",
+      "selection_reason": "Domain-specific use case, corresponding analytical task and evidence-strength limitation in approved descriptive scope",
+      "provenance": {
+        "source_id": "SRC-000223",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/413e5855be3981ec8e08e5576111496e",
+          "title": "EV-000351"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0008",
+      "content": "同論文は空調設備のfault detection and diagnosticsの評価法として、エアハンドリングユニット故障データと3つのサンプルアルゴリズムによるベンチマークを提示した。",
+      "source_locator": "Abstract",
+      "note_type": "Method",
+      "selection_reason": "Domain-specific use case, corresponding analytical task and evidence-strength limitation in approved descriptive scope",
+      "provenance": {
+        "source_id": "SRC-000223",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/413e5855be39812aa226fd6f02d58cf9",
+          "title": "EV-000352"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0009",
+      "content": "iTrustのSWaT.A1には7日間の正常運転と4日間の攻撃シナリオを含む11日間の連続データがあり、51センサー・アクチュエータの値とネットワーク通信が収録されている。",
+      "source_locator": "Characteristics of dataset (SWaT.A1\\_Dec 2015)",
+      "note_type": "Data",
+      "selection_reason": "Domain-specific use case, corresponding analytical task and evidence-strength limitation in approved descriptive scope",
+      "provenance": {
+        "source_id": "SRC-000224",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/413e5855be39819da409ed5b74ac9a3f",
+          "title": "EV-000353"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0010",
+      "content": "SWaTの異常は研究用水処理テストベッドに仕掛けた41件の攻撃によって生成されており、実際の公共水道施設での事故検知実績とは異なる。",
+      "source_locator": "Characteristics of dataset (SWaT.A1\\_Dec 2015)",
+      "note_type": "Limitation",
+      "selection_reason": "Domain-specific use case, corresponding analytical task and evidence-strength limitation in approved descriptive scope",
+      "provenance": {
+        "source_id": "SRC-000224",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/413e5855be39819ca1e0fe8bd236d2ed",
+          "title": "EV-000354"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0011",
+      "content": "NRELのGearbox Reliability Databaseは風力発電設備の故障事象を集約して故障モードと根本原因を分類し、ギヤボックス信頼性の研究開発を支援することを目的とする。",
+      "source_locator": "Gearbox Reliability Database: About",
+      "note_type": "Claim",
+      "selection_reason": "Domain-specific use case, corresponding analytical task and evidence-strength limitation in approved descriptive scope",
+      "provenance": {
+        "source_id": "SRC-000225",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/413e5855be3981f28380ec79fcf8f7f5",
+          "title": "EV-000355"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0012",
+      "content": "NRELのGearbox Reliability Databaseの公開統計には84風力発電所、21年間にわたる1938件の故障・損傷事象が登録されている。",
+      "source_locator": "Wind Turbine Gearbox Damage Distribution Statistics",
+      "note_type": "Data",
+      "selection_reason": "Domain-specific use case, corresponding analytical task and evidence-strength limitation in approved descriptive scope",
+      "provenance": {
+        "source_id": "SRC-000225",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/413e5855be3981209f82c98ff0ca0513",
+          "title": "EV-000356"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0013",
+      "content": "Renら（2019）はMicrosoftでアプリケーション・サービスのPage ViewsやRevenue等の時系列指標を連続監視し、異常時の早期通知を行うサービスを記述する。",
+      "source_locator": "Abstract",
+      "note_type": "Claim",
+      "selection_reason": "Domain-specific use case, corresponding analytical task and evidence-strength limitation in approved descriptive scope",
+      "provenance": {
+        "source_id": "SRC-000226",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/413e5855be398174a242cd6966c13ce4",
+          "title": "EV-000357"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0014",
+      "content": "同論文はMicrosoftの実運用データと公開データで時系列異常検知を評価したと報告する。ただし故障時刻やRULではなくKPI系列上の異常通知が対象である。",
+      "source_locator": "Abstract; Experiments",
+      "note_type": "Result",
+      "selection_reason": "Domain-specific use case, corresponding analytical task and evidence-strength limitation in approved descriptive scope",
+      "provenance": {
+        "source_id": "SRC-000226",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/413e5855be3981a7a6fcc37f1dc07b0b",
+          "title": "EV-000358"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0015",
+      "content": "PhysioNet/CinC Challenge 2017は短時間の単一誘導心電図から、正常洞調律、心房細動、その他の調律、ノイズによる判定不能を分類する問題を定義する。",
+      "source_locator": "Introduction; Rules and deadlines",
+      "note_type": "Definition",
+      "selection_reason": "Domain-specific use case, corresponding analytical task and evidence-strength limitation in approved descriptive scope",
+      "provenance": {
+        "source_id": "SRC-000227",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/413e5855be398179899fdafe340db81c",
+          "title": "EV-000359"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0016",
+      "content": "PhysioNet/CinC Challenge 2017の学習用データは単一誘導ECG 8528件、テスト用3658件であり、これは将来発症までの時間を予測する課題ではない。",
+      "source_locator": "Challenge Data",
+      "note_type": "Data",
+      "selection_reason": "Domain-specific use case, corresponding analytical task and evidence-strength limitation in approved descriptive scope",
+      "provenance": {
+        "source_id": "SRC-000227",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/413e5855be39814dab0feb72a566cbfa",
+          "title": "EV-000360"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0017",
+      "content": "NISTの製造業向け監視・診断・予測研究は、閾値をいつ・なぜ超えたか、または超えるかの情報を用いて、設備の計画外停止を抑え製品品質を維持する意思決定を支援することを目的とする。",
+      "source_locator": "Summary; Description; Objective",
+      "note_type": "Claim",
+      "selection_reason": "Domain-specific use case, corresponding analytical task and evidence-strength limitation in approved descriptive scope",
+      "provenance": {
+        "source_id": "SRC-000228",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/413e5855be3981858a7af058c4420a2b",
+          "title": "EV-000361"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0018",
+      "content": "NISTはロボットアームや工作機械の稼働条件が劣化・故障リスクを変えることに着目し、健全性・故障兆候から保全計画を改善するための計測技術を研究している。",
+      "source_locator": "Description: Enhance Diagnostics and Prognostics",
+      "note_type": "Claim",
+      "selection_reason": "Domain-specific use case, corresponding analytical task and evidence-strength limitation in approved descriptive scope",
+      "provenance": {
+        "source_id": "SRC-000228",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/413e5855be3981a8a28fdcfbe6f0f117",
+          "title": "EV-000362"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0019",
+      "content": "Chaoら（2021）のN-CMAPSSは実飛行プロファイルを用いて模擬エンジンの劣化・故障を生成するRUL予測用データであり、実運航下の実故障時刻を観測したデータではない。",
+      "source_locator": "Data 2021, §§2,5",
+      "note_type": "Limitation",
+      "selection_reason": "Distinguish aviation RUL benchmark task from measured maintenance deployment",
+      "provenance": {
+        "source_id": "SRC-000203",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/410e5855be398182aa3dc8c671552efe",
+          "title": "EV-000328"
+        }
+      }
+    }
+  ]
+}
