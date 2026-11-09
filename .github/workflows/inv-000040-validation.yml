@@ -58,3 +58,39 @@ jobs:
           assert log["projection_target"] == {"surface": "page_body", "section_heading": "# Working Answer"}
           print("PASS projection_log_v2.json")
           PY
+
+      - name: Preflight canonical allocation guard and Review reconciliation
+        env:
+          PYTHONPATH: src
+        run: |
+          python - <<'PY'
+          import json, subprocess
+          from pathlib import Path
+          from research_atelier.orchestration.investigation_allocation import decide_investigation_allocation
+          from research_atelier.reviewing.reconcile import reconcile_payload
+          root=Path("investigations/INV-000040")
+          context=json.loads((root/"00_context.json").read_text())
+          review=json.loads((root/"reviews/review-000001.json").read_text())
+          decision=decide_investigation_allocation(
+              intent="repair",
+              existing_investigation_id="INV-000040",
+              existing_context=context,
+              requested_context={"rq_id":"RQ-000040"},
+          )
+          assert decision.decision == "reuse_existing", decision.as_dict()
+          assert review["verdict"]=="FINDINGS" and review["review_seq"]==1
+          subprocess.run(["git","merge-base","--is-ancestor",review["target"]["commit_sha"],"HEAD"],check=True)
+          files={"00_context":"00_context.json","10_evidence":"10_evidence.json","20_synthesis":"20_synthesis.json","30_analysis":"30_analysis.json"}
+          actual={key:subprocess.check_output(["git","rev-parse",f"HEAD:investigations/INV-000040/{filename}"],text=True).strip() for key,filename in files.items()}
+          old=review["target"]["artifact_blob_shas"]
+          assert old["00_context"]==actual["00_context"]
+          assert any(old[layer]!=actual[layer] for layer in ("10_evidence","20_synthesis","30_analysis"))
+          plan=reconcile_payload({
+              "current":{"review_status":"要修正","latest_review_seq":1},
+              "review":{"latest":review,"target_relation":"stale","issues":[]},
+              "context":context,"events":{}
+          })
+          print("allocation:",decision.as_dict())
+          print("review reconciliation:",plan)
+          assert plan["outcome"]=="UPDATE" and plan["changes"]=={"Review Status":"再レビュー待"},plan
+          PY
