@@ -1,0 +1,13 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000221",
+  "notion_url": "https://app.notion.com/p/413e5855be3981f2ab1cf1552b4de8fc",
+  "title": "Comprehensive evaluations of condition monitoring-based technologies in industrial maintenance: A systematic review",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "Journal of Manufacturing Systems / NIST",
+  "year": 2025,
+  "url": "https://www.nist.gov/publications/comprehensive-evaluations-condition-monitoring-based-technologies-industrial",
+  "doi": "10.1016/j.jmsy.2025.06.015",
+  "reliability_note": "Systematic review of selected studies, not exhaustive industrial deployment census."
+}
