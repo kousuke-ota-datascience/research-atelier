@@ -1,0 +1,11 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000228",
+  "notion_url": "https://app.notion.com/p/413e5855be3981bca1acde729539f026",
+  "title": "Monitoring, Diagnostics and Prognostics for Manufacturing Operations",
+  "source_type": "Web Page",
+  "journal_or_publisher": "National Institute of Standards and Technology (NIST)",
+  "url": "https://www.nist.gov/programs-projects/monitoring-diagnostics-and-prognostics-manufacturing-operations",
+  "reliability_note": "NIST program objectives reflect proposed applicability, not field-deployment validation."
+}
