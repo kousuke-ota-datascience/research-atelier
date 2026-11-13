@@ -1,0 +1,14 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000249",
+  "notion_url": "https://app.notion.com/p/417e5855be3981dead3ec10d286e9c47",
+  "title": "ShakeAlert®",
+  "source_type": "Web Page",
+  "journal_or_publisher": "U.S. Geological Survey",
+  "authors": null,
+  "year": null,
+  "url": "https://earthquake.usgs.gov/data/shakealert/",
+  "doi": null,
+  "reliability_note": "Operational earthquake detection and impending-shaking warning; not equipment failure prediction or RUL."
+}
