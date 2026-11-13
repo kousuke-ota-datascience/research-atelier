@@ -1,0 +1,14 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000252",
+  "notion_url": "https://app.notion.com/p/417e5855be3981dfae51e5418587b23c",
+  "title": "Application of machine learning to accidents detection at directional drilling",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "Journal of Petroleum Science and Engineering",
+  "authors": null,
+  "year": 2020,
+  "url": "https://www.sciencedirect.com/science/article/pii/S0920410519309404",
+  "doi": "10.1016/j.petrol.2019.106519",
+  "reliability_note": "Retrospective detection/type classification on accident lessons across 80 wells; not an evaluated live preventive system."
+}

@@ -1,0 +1,14 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000248",
+  "notion_url": "https://app.notion.com/p/417e5855be398160ac8ec8f3e26c22ab",
+  "title": "Airplane Health Management (AHM) & Monitoring",
+  "source_type": "Web Page",
+  "journal_or_publisher": "Boeing Global Services",
+  "authors": null,
+  "year": null,
+  "url": "https://services.boeing.com/maintenance/tech-ops/airplane-health-management-ahm",
+  "doi": null,
+  "reliability_note": "OEM commercial marketing of aircraft fault alerting and maintenance planning, without independently validated quantitative performance claims."
+}

@@ -1,0 +1,14 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000236",
+  "notion_url": "https://app.notion.com/p/417e5855be398140a798ef75f90106b0",
+  "title": "Acquiring better load estimates by combining anomaly and change point detection in power grid time-series measurements",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "Sustainable Energy, Grids and Networks",
+  "authors": null,
+  "year": 2024,
+  "url": "https://www.sciencedirect.com/science/article/pii/S2352467724002698",
+  "doi": "10.1016/j.segan.2024.101540",
+  "reliability_note": "Real grid load estimation use case with unsupervised abnormal and switch-event filtering; does not predict equipment failure."
+}

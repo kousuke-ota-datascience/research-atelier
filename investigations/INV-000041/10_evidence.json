@@ -1,0 +1,1026 @@
+{
+  "schema_version": "2.1.0",
+  "artifact_type": "10_evidence",
+  "investigation_id": "INV-000041",
+  "rq_id": "RQ-000040",
+  "snapshot_at": "2026-11-13T06:49:16.420Z",
+  "sources": [
+    {
+      "source_id": "SRC-000220",
+      "source_revision": {
+        "commit_sha": "de27532d195ee3c70e221d5097d0a5c4ed743027",
+        "blob_sha": "da0f7614a1c4de0e965e38cd633413ae6b85f03b"
+      },
+      "accessed_at": "2026-11-13T06:49:16.420Z",
+      "notion_url": "https://app.notion.com/p/413e5855be3981829b18fa1ebbad03b0"
+    },
+    {
+      "source_id": "SRC-000221",
+      "source_revision": {
+        "commit_sha": "29ecc7b11c08d4fe27ed8fa87220e4dfdd0ab8b0",
+        "blob_sha": "fa7c820462cc2549cce4dedac3bd5c759bc43248"
+      },
+      "accessed_at": "2026-11-13T06:49:16.420Z",
+      "notion_url": "https://app.notion.com/p/413e5855be3981f2ab1cf1552b4de8fc"
+    },
+    {
+      "source_id": "SRC-000222",
+      "source_revision": {
+        "commit_sha": "f66b9e5448acea3547d5da661b44d19b322fcfd4",
+        "blob_sha": "753c6403240f6a94d83ea316e48558b250bf22d2"
+      },
+      "accessed_at": "2026-11-13T06:49:16.420Z",
+      "notion_url": "https://app.notion.com/p/413e5855be3981449999c71bd23a1586"
+    },
+    {
+      "source_id": "SRC-000223",
+      "source_revision": {
+        "commit_sha": "d437bf5021d5194a387dc3a5a0d4e7b507ba60cd",
+        "blob_sha": "e7b3bbfc3f0a6d0a2495902a7f56c0b8005d2dc7"
+      },
+      "accessed_at": "2026-11-13T06:49:16.420Z",
+      "notion_url": "https://app.notion.com/p/413e5855be3981178739d5f11dcd459a"
+    },
+    {
+      "source_id": "SRC-000224",
+      "source_revision": {
+        "commit_sha": "bcbe9065ea2f8e2ac33dafd348f041a2390c23f1",
+        "blob_sha": "de35d8c66ab81854c34f036b2adbd846e62428e6"
+      },
+      "accessed_at": "2026-11-13T06:49:16.420Z",
+      "notion_url": "https://app.notion.com/p/413e5855be398142bc57dd97885ec370"
+    },
+    {
+      "source_id": "SRC-000225",
+      "source_revision": {
+        "commit_sha": "c918a910eae8c41aa92eba0ad5a694c1066bc1a7",
+        "blob_sha": "acc8ffc5dfa4cb0bf2e0c808c8c2fbce36eec813"
+      },
+      "accessed_at": "2026-11-13T06:49:16.420Z",
+      "notion_url": "https://app.notion.com/p/413e5855be39818e95fad95d051b246b"
+    },
+    {
+      "source_id": "SRC-000226",
+      "source_revision": {
+        "commit_sha": "86ad6b1561be13f325faf2913b27902015cbf6bf",
+        "blob_sha": "0d1c13aa89b1991774aa8da54f4da81aa3370d81"
+      },
+      "accessed_at": "2026-11-13T06:49:16.420Z",
+      "notion_url": "https://app.notion.com/p/413e5855be398192aa96f1a93c3fd6be"
+    },
+    {
+      "source_id": "SRC-000227",
+      "source_revision": {
+        "commit_sha": "e11059c12e8977893fd146747d6b21a66d067275",
+        "blob_sha": "d6fb58f846c1fc81bcfbb59fe67116510354b2be"
+      },
+      "accessed_at": "2026-11-13T06:49:16.420Z",
+      "notion_url": "https://app.notion.com/p/413e5855be39813ab75cdd9022a47d59"
+    },
+    {
+      "source_id": "SRC-000228",
+      "source_revision": {
+        "commit_sha": "591dc53c36e6c50ee29138720724db4984e4a1f0",
+        "blob_sha": "5b2e01c45d292c75aa5cdc0a1337d27f57da160a"
+      },
+      "accessed_at": "2026-11-13T06:49:16.420Z",
+      "notion_url": "https://app.notion.com/p/413e5855be3981bca1acde729539f026"
+    },
+    {
+      "source_id": "SRC-000203",
+      "source_revision": {
+        "commit_sha": "50b52fcbb0bcb093f05aec0aa2bfaeebab026e27",
+        "blob_sha": "60e39828a89ed08b01aac7a38f574e7ac93a5ad6"
+      },
+      "accessed_at": "2026-11-13T06:49:16.420Z",
+      "notion_url": "https://app.notion.com/p/410e5855be3981b8bd00c9f85bc796a0"
+    },
+    {
+      "source_id": "SRC-000229",
+      "source_revision": {
+        "commit_sha": "41b8424bfa1823cfda1b36cc203eb5599df6a0b2",
+        "blob_sha": "c8030a7fd715f8d35088bec8e23488286fce1a69"
+      },
+      "accessed_at": "2026-11-13T06:49:16.420Z",
+      "notion_url": "https://app.notion.com/p/417e5855be398195b1d9c038fa4838f6"
+    },
+    {
+      "source_id": "SRC-000230",
+      "source_revision": {
+        "commit_sha": "41b8424bfa1823cfda1b36cc203eb5599df6a0b2",
+        "blob_sha": "46f5420486079cd300828f1676620328a03531b6"
+      },
+      "accessed_at": "2026-11-13T06:49:16.420Z",
+      "notion_url": "https://app.notion.com/p/417e5855be398127a78cda64a6c6210a"
+    },
+    {
+      "source_id": "SRC-000231",
+      "source_revision": {
+        "commit_sha": "41b8424bfa1823cfda1b36cc203eb5599df6a0b2",
+        "blob_sha": "144c787bcfe476a2157c31068ec38e7463a11c78"
+      },
+      "accessed_at": "2026-11-13T06:49:16.420Z",
+      "notion_url": "https://app.notion.com/p/417e5855be39819ab920ef2175555481"
+    },
+    {
+      "source_id": "SRC-000232",
+      "source_revision": {
+        "commit_sha": "41b8424bfa1823cfda1b36cc203eb5599df6a0b2",
+        "blob_sha": "6647f44200625c3166694952787ed215b68fbeb2"
+      },
+      "accessed_at": "2026-11-13T06:49:16.420Z",
+      "notion_url": "https://app.notion.com/p/417e5855be39819b877be7a910b284ac"
+    },
+    {
+      "source_id": "SRC-000233",
+      "source_revision": {
+        "commit_sha": "41b8424bfa1823cfda1b36cc203eb5599df6a0b2",
+        "blob_sha": "82c70a4a2858470d462c86420cd5bff844d37038"
+      },
+      "accessed_at": "2026-11-13T06:49:16.420Z",
+      "notion_url": "https://app.notion.com/p/417e5855be39816e9549c315483ac13a"
+    },
+    {
+      "source_id": "SRC-000234",
+      "source_revision": {
+        "commit_sha": "41b8424bfa1823cfda1b36cc203eb5599df6a0b2",
+        "blob_sha": "da090cce41ee9187499b6a36c9ac828485aabfc8"
+      },
+      "accessed_at": "2026-11-13T06:49:16.420Z",
+      "notion_url": "https://app.notion.com/p/417e5855be3981fb8be7f76e9479a345"
+    },
+    {
+      "source_id": "SRC-000235",
+      "source_revision": {
+        "commit_sha": "41b8424bfa1823cfda1b36cc203eb5599df6a0b2",
+        "blob_sha": "eb0ab24dc51d3494772519f001862a64ba9a2fcd"
+      },
+      "accessed_at": "2026-11-13T06:49:16.420Z",
+      "notion_url": "https://app.notion.com/p/417e5855be39810c89a4e5eeb35f6fd6"
+    },
+    {
+      "source_id": "SRC-000236",
+      "source_revision": {
+        "commit_sha": "41b8424bfa1823cfda1b36cc203eb5599df6a0b2",
+        "blob_sha": "6d7618cff11e7098cab8b131dbc9def426b8bbe3"
+      },
+      "accessed_at": "2026-11-13T06:49:16.420Z",
+      "notion_url": "https://app.notion.com/p/417e5855be398140a798ef75f90106b0"
+    },
+    {
+      "source_id": "SRC-000237",
+      "source_revision": {
+        "commit_sha": "41b8424bfa1823cfda1b36cc203eb5599df6a0b2",
+        "blob_sha": "c6db4e5f8172348b5e3e8633f6be19f09fc04505"
+      },
+      "accessed_at": "2026-11-13T06:49:16.420Z",
+      "notion_url": "https://app.notion.com/p/417e5855be3981fcbf39ca5d60988431"
+    },
+    {
+      "source_id": "SRC-000238",
+      "source_revision": {
+        "commit_sha": "41b8424bfa1823cfda1b36cc203eb5599df6a0b2",
+        "blob_sha": "6ce213826e1d1deb535f41b3e4601fd4454ee9ef"
+      },
+      "accessed_at": "2026-11-13T06:49:16.420Z",
+      "notion_url": "https://app.notion.com/p/417e5855be398165a70ed328c3f71396"
+    },
+    {
+      "source_id": "SRC-000239",
+      "source_revision": {
+        "commit_sha": "41b8424bfa1823cfda1b36cc203eb5599df6a0b2",
+        "blob_sha": "83568a44fcd048f1c76e073629ff1f9118c21a8d"
+      },
+      "accessed_at": "2026-11-13T06:49:16.420Z",
+      "notion_url": "https://app.notion.com/p/417e5855be39814ea841db794fb57892"
+    },
+    {
+      "source_id": "SRC-000240",
+      "source_revision": {
+        "commit_sha": "41b8424bfa1823cfda1b36cc203eb5599df6a0b2",
+        "blob_sha": "87c7149496d89e7057076e20fed05b4a2098516b"
+      },
+      "accessed_at": "2026-11-13T06:49:16.420Z",
+      "notion_url": "https://app.notion.com/p/417e5855be39819885dedc9b6e9c1e05"
+    },
+    {
+      "source_id": "SRC-000241",
+      "source_revision": {
+        "commit_sha": "41b8424bfa1823cfda1b36cc203eb5599df6a0b2",
+        "blob_sha": "2ecfc3373eca667c6d5b633fb8a7fe2f1f8531ed"
+      },
+      "accessed_at": "2026-11-13T06:49:16.420Z",
+      "notion_url": "https://app.notion.com/p/417e5855be3981259412f0c9fda7d3a3"
+    },
+    {
+      "source_id": "SRC-000242",
+      "source_revision": {
+        "commit_sha": "41b8424bfa1823cfda1b36cc203eb5599df6a0b2",
+        "blob_sha": "13bc0ee7bc8628197e697a1e5891ae296cd3f42d"
+      },
+      "accessed_at": "2026-11-13T06:49:16.420Z",
+      "notion_url": "https://app.notion.com/p/417e5855be3981d994b0f8b7315be78e"
+    },
+    {
+      "source_id": "SRC-000243",
+      "source_revision": {
+        "commit_sha": "41b8424bfa1823cfda1b36cc203eb5599df6a0b2",
+        "blob_sha": "f1076e38d64e4607674e4884785fe1564b72a5c1"
+      },
+      "accessed_at": "2026-11-13T06:49:16.420Z",
+      "notion_url": "https://app.notion.com/p/417e5855be3981cfae54ca256e9b6084"
+    },
+    {
+      "source_id": "SRC-000244",
+      "source_revision": {
+        "commit_sha": "41b8424bfa1823cfda1b36cc203eb5599df6a0b2",
+        "blob_sha": "b0d3f6ae6e698c8e3fe43da29fed8d8302cafd98"
+      },
+      "accessed_at": "2026-11-13T06:49:16.420Z",
+      "notion_url": "https://app.notion.com/p/417e5855be3981e8af58d49b7a7a11f8"
+    },
+    {
+      "source_id": "SRC-000245",
+      "source_revision": {
+        "commit_sha": "41b8424bfa1823cfda1b36cc203eb5599df6a0b2",
+        "blob_sha": "d48b148c8b461cff1f006917830553a3bd458852"
+      },
+      "accessed_at": "2026-11-13T06:49:16.420Z",
+      "notion_url": "https://app.notion.com/p/417e5855be3981c99b8fe125e6b5819a"
+    },
+    {
+      "source_id": "SRC-000246",
+      "source_revision": {
+        "commit_sha": "41b8424bfa1823cfda1b36cc203eb5599df6a0b2",
+        "blob_sha": "43cb28c852218bc71863c055d16b3521186a62a3"
+      },
+      "accessed_at": "2026-11-13T06:49:16.420Z",
+      "notion_url": "https://app.notion.com/p/417e5855be3981d19505f5517d2c9a78"
+    },
+    {
+      "source_id": "SRC-000247",
+      "source_revision": {
+        "commit_sha": "41b8424bfa1823cfda1b36cc203eb5599df6a0b2",
+        "blob_sha": "5d68d38e5a5525770388aa0eed1750b6aeeaddf2"
+      },
+      "accessed_at": "2026-11-13T06:49:16.420Z",
+      "notion_url": "https://app.notion.com/p/417e5855be39810e92f7d54cfcb035a7"
+    },
+    {
+      "source_id": "SRC-000248",
+      "source_revision": {
+        "commit_sha": "41b8424bfa1823cfda1b36cc203eb5599df6a0b2",
+        "blob_sha": "89f449934e6c6a649694c08232a2570ea5a56813"
+      },
+      "accessed_at": "2026-11-13T06:49:16.420Z",
+      "notion_url": "https://app.notion.com/p/417e5855be398160ac8ec8f3e26c22ab"
+    },
+    {
+      "source_id": "SRC-000249",
+      "source_revision": {
+        "commit_sha": "41b8424bfa1823cfda1b36cc203eb5599df6a0b2",
+        "blob_sha": "d84a8f7378cc2701f2adcefa9db20c04806fe10b"
+      },
+      "accessed_at": "2026-11-13T06:49:16.420Z",
+      "notion_url": "https://app.notion.com/p/417e5855be3981dead3ec10d286e9c47"
+    },
+    {
+      "source_id": "SRC-000250",
+      "source_revision": {
+        "commit_sha": "41b8424bfa1823cfda1b36cc203eb5599df6a0b2",
+        "blob_sha": "daff5f574353e9bf88a106b8536dfac2db6093d1"
+      },
+      "accessed_at": "2026-11-13T06:49:16.420Z",
+      "notion_url": "https://app.notion.com/p/417e5855be3981a0967ee1b6e1381916"
+    },
+    {
+      "source_id": "SRC-000251",
+      "source_revision": {
+        "commit_sha": "41b8424bfa1823cfda1b36cc203eb5599df6a0b2",
+        "blob_sha": "9ff45a714101a5f1dd9cfd71c906128652195a19"
+      },
+      "accessed_at": "2026-11-13T06:49:16.420Z",
+      "notion_url": "https://app.notion.com/p/417e5855be3981afbfd5f9f3b30d57f4"
+    },
+    {
+      "source_id": "SRC-000252",
+      "source_revision": {
+        "commit_sha": "41b8424bfa1823cfda1b36cc203eb5599df6a0b2",
+        "blob_sha": "4d0d609cbd7968934bb3fd1f42a90ceafde1166c"
+      },
+      "accessed_at": "2026-11-13T06:49:16.420Z",
+      "notion_url": "https://app.notion.com/p/417e5855be3981dfae51e5418587b23c"
+    },
+    {
+      "source_id": "SRC-000253",
+      "source_revision": {
+        "commit_sha": "41b8424bfa1823cfda1b36cc203eb5599df6a0b2",
+        "blob_sha": "ef6a305beeaf452531c21b58a4025f7e6c3ece4e"
+      },
+      "accessed_at": "2026-11-13T06:49:16.420Z",
+      "notion_url": "https://app.notion.com/p/417e5855be3981c7bae1fb7f7f1ea834"
+    }
+  ],
+  "evidence_items": [
+    {
+      "evidence_id": "E0001",
+      "content": "NISTは製造業向けPHM評価の代表的ユースケースを、製造プロセス・設備監視、工作機械直動軸の診断・予測、ロボットシステムの健全性・制御管理の3領域で構成した。",
+      "source_locator": "Abstract",
+      "note_type": "Claim",
+      "selection_reason": "Domain-specific use case, corresponding analytical task and evidence-strength limitation in approved descriptive scope",
+      "provenance": {
+        "source_id": "SRC-000220",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/413e5855be39814cb444f31b04a1e2a4",
+          "title": "EV-000345"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0002",
+      "content": "同論文は製造設備・プロセスの劣化に対し、監視・診断・prognosticsを保全や制御の改善に結び付け、設備稼働率、製品品質、生産性の改善を目的としている。",
+      "source_locator": "Abstract",
+      "note_type": "Claim",
+      "selection_reason": "Domain-specific use case, corresponding analytical task and evidence-strength limitation in approved descriptive scope",
+      "provenance": {
+        "source_id": "SRC-000220",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/413e5855be3981899b85c1f831c0d847",
+          "title": "EV-000346"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0003",
+      "content": "2001〜2023年の関連研究465件から適格基準を満たす42件を選んだ系統的レビューでは、状態監視を含む保全技術の工学的・財務的評価を分析した。",
+      "source_locator": "Abstract, methods summary",
+      "note_type": "Result",
+      "selection_reason": "Domain-specific use case, corresponding analytical task and evidence-strength limitation in approved descriptive scope",
+      "provenance": {
+        "source_id": "SRC-000221",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/413e5855be3981d3a476cca6bb24bf95",
+          "title": "EV-000347"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0004",
+      "content": "同レビューでは製造業の評価研究がエネルギー・輸送分野より少なく、評価尺度・費用分析・不確実性が異質なため研究間の直接比較が難しいと報告する。",
+      "source_locator": "Abstract, findings",
+      "note_type": "Result",
+      "selection_reason": "Domain-specific use case, corresponding analytical task and evidence-strength limitation in approved descriptive scope",
+      "provenance": {
+        "source_id": "SRC-000221",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/413e5855be398184af26cb55156ef1b4",
+          "title": "EV-000348"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0005",
+      "content": "DCASE 2020 Task 2は機械の音から通常・異常を判別する問題であり、学習には正常音のみを与え、未知の異常を検知させる。",
+      "source_locator": "Description; Task setup and rules",
+      "note_type": "Method",
+      "selection_reason": "Domain-specific use case, corresponding analytical task and evidence-strength limitation in approved descriptive scope",
+      "provenance": {
+        "source_id": "SRC-000222",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/413e5855be398195bed2d87daf3e101b",
+          "title": "EV-000349"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0006",
+      "content": "DCASE 2020のデータは玩具装置と実機（バルブ、ポンプ、ファン、スライドレール等）の録音から成り、異常音は対象機械を意図的に損傷させて取得している。",
+      "source_locator": "Audio dataset; Recording procedure",
+      "note_type": "Data",
+      "selection_reason": "Domain-specific use case, corresponding analytical task and evidence-strength limitation in approved descriptive scope",
+      "provenance": {
+        "source_id": "SRC-000222",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/413e5855be3981bbb0c7d9070c51af65",
+          "title": "EV-000350"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0007",
+      "content": "Linら（2020）はFDD利用26組織、合計550建物・9700万平方フィートの調査で、報告された中央値8%の省エネルギーを記載する。",
+      "source_locator": "Abstract",
+      "note_type": "Result",
+      "selection_reason": "Domain-specific use case, corresponding analytical task and evidence-strength limitation in approved descriptive scope",
+      "provenance": {
+        "source_id": "SRC-000223",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/413e5855be3981ec8e08e5576111496e",
+          "title": "EV-000351"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0008",
+      "content": "同論文は空調設備のfault detection and diagnosticsの評価法として、エアハンドリングユニット故障データと3つのサンプルアルゴリズムによるベンチマークを提示した。",
+      "source_locator": "Abstract",
+      "note_type": "Method",
+      "selection_reason": "Domain-specific use case, corresponding analytical task and evidence-strength limitation in approved descriptive scope",
+      "provenance": {
+        "source_id": "SRC-000223",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/413e5855be39812aa226fd6f02d58cf9",
+          "title": "EV-000352"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0009",
+      "content": "iTrustのSWaT.A1には7日間の正常運転と4日間の攻撃シナリオを含む11日間の連続データがあり、51センサー・アクチュエータの値とネットワーク通信が収録されている。",
+      "source_locator": "Characteristics of dataset (SWaT.A1\\_Dec 2015)",
+      "note_type": "Data",
+      "selection_reason": "Domain-specific use case, corresponding analytical task and evidence-strength limitation in approved descriptive scope",
+      "provenance": {
+        "source_id": "SRC-000224",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/413e5855be39819da409ed5b74ac9a3f",
+          "title": "EV-000353"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0010",
+      "content": "SWaTの異常は研究用水処理テストベッドに仕掛けた41件の攻撃によって生成されており、実際の公共水道施設での事故検知実績とは異なる。",
+      "source_locator": "Characteristics of dataset (SWaT.A1\\_Dec 2015)",
+      "note_type": "Limitation",
+      "selection_reason": "Domain-specific use case, corresponding analytical task and evidence-strength limitation in approved descriptive scope",
+      "provenance": {
+        "source_id": "SRC-000224",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/413e5855be39819ca1e0fe8bd236d2ed",
+          "title": "EV-000354"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0011",
+      "content": "NRELのGearbox Reliability Databaseは風力発電設備の故障事象を集約して故障モードと根本原因を分類し、ギヤボックス信頼性の研究開発を支援することを目的とする。",
+      "source_locator": "Gearbox Reliability Database: About",
+      "note_type": "Claim",
+      "selection_reason": "Domain-specific use case, corresponding analytical task and evidence-strength limitation in approved descriptive scope",
+      "provenance": {
+        "source_id": "SRC-000225",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/413e5855be3981f28380ec79fcf8f7f5",
+          "title": "EV-000355"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0012",
+      "content": "NRELのGearbox Reliability Databaseの公開統計には84風力発電所、21年間にわたる1938件の故障・損傷事象が登録されている。",
+      "source_locator": "Wind Turbine Gearbox Damage Distribution Statistics",
+      "note_type": "Data",
+      "selection_reason": "Domain-specific use case, corresponding analytical task and evidence-strength limitation in approved descriptive scope",
+      "provenance": {
+        "source_id": "SRC-000225",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/413e5855be3981209f82c98ff0ca0513",
+          "title": "EV-000356"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0013",
+      "content": "Renら（2019）はMicrosoftでアプリケーション・サービスのPage ViewsやRevenue等の時系列指標を連続監視し、異常時の早期通知を行うサービスを記述する。",
+      "source_locator": "Abstract",
+      "note_type": "Claim",
+      "selection_reason": "Domain-specific use case, corresponding analytical task and evidence-strength limitation in approved descriptive scope",
+      "provenance": {
+        "source_id": "SRC-000226",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/413e5855be398174a242cd6966c13ce4",
+          "title": "EV-000357"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0014",
+      "content": "同論文はMicrosoftの実運用データと公開データで時系列異常検知を評価したと報告する。ただし故障時刻やRULではなくKPI系列上の異常通知が対象である。",
+      "source_locator": "Abstract; Experiments",
+      "note_type": "Result",
+      "selection_reason": "Domain-specific use case, corresponding analytical task and evidence-strength limitation in approved descriptive scope",
+      "provenance": {
+        "source_id": "SRC-000226",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/413e5855be3981a7a6fcc37f1dc07b0b",
+          "title": "EV-000358"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0015",
+      "content": "PhysioNet/CinC Challenge 2017は短時間の単一誘導心電図から、正常洞調律、心房細動、その他の調律、ノイズによる判定不能を分類する問題を定義する。",
+      "source_locator": "Introduction; Rules and deadlines",
+      "note_type": "Definition",
+      "selection_reason": "Domain-specific use case, corresponding analytical task and evidence-strength limitation in approved descriptive scope",
+      "provenance": {
+        "source_id": "SRC-000227",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/413e5855be398179899fdafe340db81c",
+          "title": "EV-000359"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0016",
+      "content": "PhysioNet/CinC Challenge 2017の学習用データは単一誘導ECG 8528件、テスト用3658件であり、これは将来発症までの時間を予測する課題ではない。",
+      "source_locator": "Challenge Data",
+      "note_type": "Data",
+      "selection_reason": "Domain-specific use case, corresponding analytical task and evidence-strength limitation in approved descriptive scope",
+      "provenance": {
+        "source_id": "SRC-000227",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/413e5855be39814dab0feb72a566cbfa",
+          "title": "EV-000360"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0017",
+      "content": "NISTの製造業向け監視・診断・予測研究は、閾値をいつ・なぜ超えたか、または超えるかの情報を用いて、設備の計画外停止を抑え製品品質を維持する意思決定を支援することを目的とする。",
+      "source_locator": "Summary; Description; Objective",
+      "note_type": "Claim",
+      "selection_reason": "Domain-specific use case, corresponding analytical task and evidence-strength limitation in approved descriptive scope",
+      "provenance": {
+        "source_id": "SRC-000228",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/413e5855be3981858a7af058c4420a2b",
+          "title": "EV-000361"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0018",
+      "content": "NISTはロボットアームや工作機械の稼働条件が劣化・故障リスクを変えることに着目し、健全性・故障兆候から保全計画を改善するための計測技術を研究している。",
+      "source_locator": "Description: Enhance Diagnostics and Prognostics",
+      "note_type": "Claim",
+      "selection_reason": "Domain-specific use case, corresponding analytical task and evidence-strength limitation in approved descriptive scope",
+      "provenance": {
+        "source_id": "SRC-000228",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/413e5855be3981a8a28fdcfbe6f0f117",
+          "title": "EV-000362"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0019",
+      "content": "Chaoら（2021）のN-CMAPSSは実飛行プロファイルを用いて模擬エンジンの劣化・故障を生成するRUL予測用データであり、実運航下の実故障時刻を観測したデータではない。",
+      "source_locator": "Data 2021, §§2,5",
+      "note_type": "Limitation",
+      "selection_reason": "Distinguish aviation RUL benchmark task from measured maintenance deployment",
+      "provenance": {
+        "source_id": "SRC-000203",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/410e5855be398182aa3dc8c671552efe",
+          "title": "EV-000328"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0020",
+      "content": "MetroPTはポルトの地下鉄で稼働する車両の空気圧縮機系（APU）から1 Hzの圧力・温度・電流等を収集した実車データで、2022年1〜6月に記録された故障3件が保全記録で確認されている。",
+      "source_locator": "Methods; Data Records; Technical Validation",
+      "note_type": "Data",
+      "selection_reason": "Original sector-specific use case and analytical task, target event/horizon or explicit evidence-level limitation",
+      "provenance": {
+        "source_id": "SRC-000229",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/417e5855be3981d8b4f3dbb5afcdf9da",
+          "title": "EV-000363"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0021",
+      "content": "MetroPTの原著は故障発生区間と故障部位の予測を評価課題に設定し、車両を安全に線路から外すには運行不能の少なくとも2時間前に故障を検知する必要があると記述する。",
+      "source_locator": "Technical Validation: Evaluation protocol",
+      "note_type": "Method",
+      "selection_reason": "Original sector-specific use case and analytical task, target event/horizon or explicit evidence-level limitation",
+      "provenance": {
+        "source_id": "SRC-000229",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/417e5855be3981d5bc11ef9fc3ba0e3d",
+          "title": "EV-000364"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0022",
+      "content": "風力発電の主軸受損傷について、10分平均SCADAデータを入力した半教師あり畳み込みAutoencoderの異常兆候指標を12基の実風車データで評価し、月単位での早期警告を報告する。",
+      "source_locator": "Abstract",
+      "note_type": "Result",
+      "selection_reason": "Original sector-specific use case and analytical task, target event/horizon or explicit evidence-level limitation",
+      "provenance": {
+        "source_id": "SRC-000230",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/417e5855be3981ce8056f36361cf72c3",
+          "title": "EV-000365"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0023",
+      "content": "同研究は風車の主軸受温度と外生変数を使う再構成誤差指標をfault prognosis indicatorとして設計し、実SCADAの運転条件・季節変動に対する頑健性と早期警告を評価している。",
+      "source_locator": "Abstract: contributions and early warnings",
+      "note_type": "Method",
+      "selection_reason": "Original sector-specific use case and analytical task, target event/horizon or explicit evidence-level limitation",
+      "provenance": {
+        "source_id": "SRC-000230",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/417e5855be3981f4a005e702bd189c0e",
+          "title": "EV-000366"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0024",
+      "content": "風車の10分SCADA系列とアラーム履歴から過去の停止事象を自動分類・ラベル付けし、そのラベルを用いて将来の突発停止を分類予測する構成を報告する。",
+      "source_locator": "Abstract",
+      "note_type": "Method",
+      "selection_reason": "Original sector-specific use case and analytical task, target event/horizon or explicit evidence-level limitation",
+      "provenance": {
+        "source_id": "SRC-000231",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/417e5855be398189af69fff48ca2232d",
+          "title": "EV-000367"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0025",
+      "content": "PhysioNet/CinC Challenge 2019は患者の現在・過去の臨床時系列から毎時敗血症リスク値と二値アラームを出力し、敗血症発症の約6時間前の予測を求める。",
+      "source_locator": "Challenge rules: Submitting Your Entry",
+      "note_type": "Definition",
+      "selection_reason": "Original sector-specific use case and analytical task, target event/horizon or explicit evidence-level limitation",
+      "provenance": {
+        "source_id": "SRC-000232",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/417e5855be39812691e5cafae61190bf",
+          "title": "EV-000368"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0026",
+      "content": "同Challengeのutility-based評価は発症前の適時警告を報酬化し、誤報、早すぎる警告、発症後の遅延検知を不利に扱う。",
+      "source_locator": "Evaluation: utility function",
+      "note_type": "Method",
+      "selection_reason": "Original sector-specific use case and analytical task, target event/horizon or explicit evidence-level limitation",
+      "provenance": {
+        "source_id": "SRC-000232",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/417e5855be3981448c94ec2f5fcc1312",
+          "title": "EV-000369"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0027",
+      "content": "124個の商用LiFePO4/黒鉛電池セルの加速充放電実験において、早期の放電電圧曲線から最終サイクル寿命を予測し、最初の100サイクルを用いた寿命推定のテスト誤差9.1%を報告する。",
+      "source_locator": "Abstract",
+      "note_type": "Result",
+      "selection_reason": "Original sector-specific use case and analytical task, target event/horizon or explicit evidence-level limitation",
+      "provenance": {
+        "source_id": "SRC-000233",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/417e5855be39811db7bfeb72241bfc06",
+          "title": "EV-000370"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0028",
+      "content": "Googleの大量実運用ディスクの観察研究では一部SMART項目と故障の相関を示したが、著者らはSMARTパラメータだけでは個々のディスクの故障予測に役立ちにくいと結論する。",
+      "source_locator": "Abstract",
+      "note_type": "Result",
+      "selection_reason": "Original sector-specific use case and analytical task, target event/horizon or explicit evidence-level limitation",
+      "provenance": {
+        "source_id": "SRC-000234",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/417e5855be3981f18746e3d6bdb51cb9",
+          "title": "EV-000371"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0029",
+      "content": "電力系統の実フィールドPMU同期位相データを用い、短期／長期平均比STA/LTAで過渡・振動・周波数逸脱等のイベントをリアルタイム検出する方法が検証された。",
+      "source_locator": "Abstract",
+      "note_type": "Result",
+      "selection_reason": "Original sector-specific use case and analytical task, target event/horizon or explicit evidence-level limitation",
+      "provenance": {
+        "source_id": "SRC-000235",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/417e5855be398124a264d45e2b2ff523",
+          "title": "EV-000372"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0030",
+      "content": "電力系統の負荷推定に先立ち、計測時系列中の開閉操作イベントを変化点検知で、異常値を統計的工程管理で除去する構成が、実測系統データに対して検証されている。",
+      "source_locator": "Abstract",
+      "note_type": "Method",
+      "selection_reason": "Original sector-specific use case and analytical task, target event/horizon or explicit evidence-level limitation",
+      "provenance": {
+        "source_id": "SRC-000236",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/417e5855be3981a59585f2c3634f7146",
+          "title": "EV-000373"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0031",
+      "content": "自動車ボディインホワイト製造の実データで、工程品質に関係する異常な時系列変化をオンライン変化点検知として定式化し、変更点検出の適合率・再現率・時刻誤差を評価した。",
+      "source_locator": "Abstract; Case study",
+      "note_type": "Result",
+      "selection_reason": "Original sector-specific use case and analytical task, target event/horizon or explicit evidence-level limitation",
+      "provenance": {
+        "source_id": "SRC-000237",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/417e5855be398194aad6c86331becddd",
+          "title": "EV-000374"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0032",
+      "content": "半導体製造装置メーカーの出荷前検査データと保守記録を使い、将来の故障発生有無と初回故障時期を別々の予測対象とした研究が実データで検証されている。",
+      "source_locator": "Abstract",
+      "note_type": "Method",
+      "selection_reason": "Original sector-specific use case and analytical task, target event/horizon or explicit evidence-level limitation",
+      "provenance": {
+        "source_id": "SRC-000238",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/417e5855be3981ee97fdd361aec47f97",
+          "title": "EV-000375"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0033",
+      "content": "同半導体装置研究での入力は出荷前検査・保守情報であり、運転中の多変量センサ時系列を必須としない。そのため、時系列監視の直接的適用例としては区別すべきである。",
+      "source_locator": "Abstract: pre-shipment inspection data",
+      "note_type": "Limitation",
+      "selection_reason": "Original sector-specific use case and analytical task, target event/horizon or explicit evidence-level limitation",
+      "provenance": {
+        "source_id": "SRC-000238",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/417e5855be39815b82f3c0185fb7e9d1",
+          "title": "EV-000376"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0034",
+      "content": "ウェハ搬送ロボットアームの位置ずれ・ベルト摩耗に関する兆候をCCDによる偏心監視、時系列特徴、LSTM予測、IoTエッジ処理で扱う予知保全フレームワークが報告されている。",
+      "source_locator": "Abstract",
+      "note_type": "Method",
+      "selection_reason": "Original sector-specific use case and analytical task, target event/horizon or explicit evidence-level limitation",
+      "provenance": {
+        "source_id": "SRC-000239",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/417e5855be39817eac0dd8063d7900c6",
+          "title": "EV-000377"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0035",
+      "content": "通信事業者の全国規模の実トラフィック時系列に対し、SARIMAによる基準予測と外れ値判定を組み合わせ、ネットワークの異常イベント検知を評価した。",
+      "source_locator": "Abstract",
+      "note_type": "Result",
+      "selection_reason": "Original sector-specific use case and analytical task, target event/horizon or explicit evidence-level limitation",
+      "provenance": {
+        "source_id": "SRC-000240",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/417e5855be3981fdb44dc2af935001a9",
+          "title": "EV-000378"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0036",
+      "content": "大規模5G事業者のKPI時系列524,019本を30分ごとに処理する異常検知枠組みが、商用MNO由来の1年分の実データで評価されたと著者らは報告する。",
+      "source_locator": "Abstract",
+      "note_type": "Result",
+      "selection_reason": "Original sector-specific use case and analytical task, target event/horizon or explicit evidence-level limitation",
+      "provenance": {
+        "source_id": "SRC-000241",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/417e5855be39816eb817f69c53f3f31e",
+          "title": "EV-000379"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0037",
+      "content": "沖合油・ガス生産井の多変量時系列で異常・故障状態を検出する課題を、実事象と模擬事象を含む公開3Wデータセット上で複数の一クラス分類器を比較して評価した。",
+      "source_locator": "Abstract",
+      "note_type": "Result",
+      "selection_reason": "Original sector-specific use case and analytical task, target event/horizon or explicit evidence-level limitation",
+      "provenance": {
+        "source_id": "SRC-000242",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/417e5855be39818ebcc7c22af76f2cf7",
+          "title": "EV-000380"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0038",
+      "content": "ブラジルSantos Basinの大水深生産井について、インターバル制御バルブの異常イベントを多変量生産時系列からTransformerで識別し、フィールド試験を報告する。",
+      "source_locator": "Abstract",
+      "note_type": "Result",
+      "selection_reason": "Original sector-specific use case and analytical task, target event/horizon or explicit evidence-level limitation",
+      "provenance": {
+        "source_id": "SRC-000243",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/417e5855be3981748ea3caf51cab5b47",
+          "title": "EV-000381"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0039",
+      "content": "電動水中ポンプ（ESP）の運用監視では、ガス干渉・過熱などの異常状態と残存使用可能寿命の低下を推定し、技術者が機器保護・長寿命化の推奨操作を実施した事例が報告された。",
+      "source_locator": "Abstract",
+      "note_type": "Result",
+      "selection_reason": "Original sector-specific use case and analytical task, target event/horizon or explicit evidence-level limitation",
+      "provenance": {
+        "source_id": "SRC-000244",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/417e5855be39815db7b2c6284485dc8c",
+          "title": "EV-000382"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0040",
+      "content": "水道管の圧力過渡波形と数値モデルのデータ同化によって、現在発生している漏水箇所・漏水量を推定し、模型管と実フィールド管の実験で位置誤差等を検証した。",
+      "source_locator": "Abstract",
+      "note_type": "Result",
+      "selection_reason": "Original sector-specific use case and analytical task, target event/horizon or explicit evidence-level limitation",
+      "provenance": {
+        "source_id": "SRC-000245",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/417e5855be3981cbbc32cad559dd3f15",
+          "title": "EV-000383"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0041",
+      "content": "大手銀行Intesa Sanpaoloが8か月間に記録した20億件超の取引を使い、疑わしい金融口座を特定する教師なしAML異常検知パイプラインを本番環境に導入したと著者らは報告する。",
+      "source_locator": "Abstract",
+      "note_type": "Result",
+      "selection_reason": "Original sector-specific use case and analytical task, target event/horizon or explicit evidence-level limitation",
+      "provenance": {
+        "source_id": "SRC-000246",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/417e5855be39814b96f3e657e5986b9c",
+          "title": "EV-000384"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0042",
+      "content": "航空会社のフライト全体のセンサーデータを使い、航空機構成部品の故障を事前警告して保全計画へつなぐprognostic alertの開発・複数航空事業者への配備経験を著者らは報告する。",
+      "source_locator": "Abstract",
+      "note_type": "Claim",
+      "selection_reason": "Original sector-specific use case and analytical task, target event/horizon or explicit evidence-level limitation",
+      "provenance": {
+        "source_id": "SRC-000247",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/417e5855be39816ba412dc37be82aae3",
+          "title": "EV-000385"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0043",
+      "content": "Boeing Airplane Health Managementは飛行中の機体健全性・故障アラートを保守担当に知らせ、到着前の診断・部品手配・整備計画を可能にする商用サービスとしてBoeingが説明する。",
+      "source_locator": "Product overview; In-flight health monitoring",
+      "note_type": "Claim",
+      "selection_reason": "Original sector-specific use case and analytical task, target event/horizon or explicit evidence-level limitation",
+      "provenance": {
+        "source_id": "SRC-000248",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/417e5855be398195a8b3d21d8ae419fb",
+          "title": "EV-000386"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0044",
+      "content": "USGSのShakeAlertは地震センサーから地震を検出し、今後差し迫って生じる強い揺れへの警報を発するシステムとして運用されている。",
+      "source_locator": "ShakeAlert overview",
+      "note_type": "Definition",
+      "selection_reason": "Original sector-specific use case and analytical task, target event/horizon or explicit evidence-level limitation",
+      "provenance": {
+        "source_id": "SRC-000249",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/417e5855be3981f1b339f3930cf975e9",
+          "title": "EV-000387"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0045",
+      "content": "飲料工場の逆浸透装置における予知保全事例では、振動V-RMSの5分値の多期間予測、アラーム、周波数診断、保全管理システムへの連携を実プラントへ統合したと報告する。",
+      "source_locator": "Abstract",
+      "note_type": "Result",
+      "selection_reason": "Original sector-specific use case and analytical task, target event/horizon or explicit evidence-level limitation",
+      "provenance": {
+        "source_id": "SRC-000250",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/417e5855be398156a098fb330a249801",
+          "title": "EV-000388"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0046",
+      "content": "同逆浸透設備事例は2025年の運用前後で故障なし日の割合が72.8%から84.5%へ増えたと報告するが、比較は観察的な前後比較である。",
+      "source_locator": "§4.3 Operational impact",
+      "note_type": "Result",
+      "selection_reason": "Original sector-specific use case and analytical task, target event/horizon or explicit evidence-level limitation",
+      "provenance": {
+        "source_id": "SRC-000250",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/417e5855be39819abec4f592faac2ec8",
+          "title": "EV-000389"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0047",
+      "content": "Petrobras 3W Dataset 2.0.0は、実生産井の履歴、物理シミュレーション、専門家が手描きした系列からなる3系統を区別し、異常イベントについて専門家ラベルを付している。",
+      "source_locator": "Abstract; Types of instances",
+      "note_type": "Data",
+      "selection_reason": "Original sector-specific use case and analytical task, target event/horizon or explicit evidence-level limitation",
+      "provenance": {
+        "source_id": "SRC-000251",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/417e5855be398115931dc8c5676cc2cd",
+          "title": "EV-000390"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0048",
+      "content": "3W Dataset 2.0.0の実系列は産業プラント情報管理システムから取得され、模擬／描画事象は希少異常の不足を補うため追加されている。",
+      "source_locator": "Methods: Types of instances",
+      "note_type": "Limitation",
+      "selection_reason": "Original sector-specific use case and analytical task, target event/horizon or explicit evidence-level limitation",
+      "provenance": {
+        "source_id": "SRC-000251",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/417e5855be39819e8ad8cfe9478ba74d",
+          "title": "EV-000391"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0049",
+      "content": "方向性掘削事故の早期検出・種類判定について、19油田・80坑井・94件の過去の事故記録を使い、掘削パラメータ時系列から異常と事故類型を識別する方法を検証した。",
+      "source_locator": "Abstract; Highlights",
+      "note_type": "Result",
+      "selection_reason": "Original sector-specific use case and analytical task, target event/horizon or explicit evidence-level limitation",
+      "provenance": {
+        "source_id": "SRC-000252",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/417e5855be398183a1ead2d1d2a0d5ae",
+          "title": "EV-000392"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0050",
+      "content": "NS形電気転てつ機を用いた営業線分岐器の状態監視を目的として、長期設置センサーを開発し、調整不良・故障の測定データを得るため管理された故障模擬試験を行った。",
+      "source_locator": "Abstract / Description",
+      "note_type": "Method",
+      "selection_reason": "Original sector-specific use case and analytical task, target event/horizon or explicit evidence-level limitation",
+      "provenance": {
+        "source_id": "SRC-000253",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/417e5855be3981a2a4e1f17630d3f510",
+          "title": "EV-000393"
+        }
+      }
+    }
+  ]
+}

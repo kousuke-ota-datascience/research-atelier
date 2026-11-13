@@ -1,0 +1,14 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000231",
+  "notion_url": "https://app.notion.com/p/417e5855be39819ab920ef2175555481",
+  "title": "Automatically identifying and predicting unplanned wind turbine stoppages using SCADA and alarms system data: case study and results",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "Journal of Physics: Conference Series",
+  "authors": null,
+  "year": 2017,
+  "url": "https://cora.ucc.ie/handle/10468/5392",
+  "doi": "10.1088/1742-6596/926/1/012011",
+  "reliability_note": "Study combining SCADA and alarm-log labels; prediction of stoppages should not be conflated with RUL."
+}

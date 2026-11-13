@@ -1,0 +1,14 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000250",
+  "notion_url": "https://app.notion.com/p/417e5855be3981a0967ee1b6e1381916",
+  "title": "Industrial Deployment of a Decision-Oriented Digital Twin for Predictive Maintenance of a Reverse Osmosis System: An End-To-End Case Study in a Beverage Filling Plant",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "Journal Européen des Systèmes Automatisés",
+  "authors": null,
+  "year": 2026,
+  "url": "https://www.iieta.org/journals/jesa/paper/10.18280/jesa.590321",
+  "doi": "10.18280/jesa.590321",
+  "reliability_note": "Single reported deployment with before-after observational comparison; effect cannot be attributed causally without adjustment."
+}

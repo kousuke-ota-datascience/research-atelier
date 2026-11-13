@@ -1,0 +1,14 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000253",
+  "notion_url": "https://app.notion.com/p/417e5855be3981c7bae1fb7f7f1ea834",
+  "title": "CONSIDERATION OF TURNOUT CONDITION MONITORING METHODS FOR NS TYPE POINT MACHINE",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "Journal of Railway Engineering",
+  "authors": null,
+  "year": 2025,
+  "url": "https://cir.nii.ac.jp/crid/1390304936060878592",
+  "doi": "10.11532/railwayengineering.29.1_69",
+  "reliability_note": "Japanese railway study developing sensor installation and controlled fault tests; field sensing does not prove deployed fault prediction."
+}

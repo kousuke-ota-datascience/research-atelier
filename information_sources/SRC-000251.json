@@ -1,0 +1,14 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000251",
+  "notion_url": "https://app.notion.com/p/417e5855be3981afbfd5f9f3b30d57f4",
+  "title": "3W Dataset 2.0.0: a realistic and public dataset with rare undesirable real events in oil wells",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "Scientific Data",
+  "authors": null,
+  "year": 2026,
+  "url": "https://www.nature.com/articles/s41597-026-07225-z",
+  "doi": "10.1038/s41597-026-07225-z",
+  "reliability_note": "Petrobras real, simulated and hand-drawn event sequences; mixture must be stratified in external validity claims."
+}

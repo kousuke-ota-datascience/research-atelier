@@ -1,0 +1,14 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000235",
+  "notion_url": "https://app.notion.com/p/417e5855be39810c89a4e5eeb35f6fd6",
+  "title": "Real-Time Event Detection Based on STA/LTA Method Using Field Synchrophasor Measurements",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "IEEE Transactions on Power Delivery",
+  "authors": null,
+  "year": 2023,
+  "url": "https://ieeexplore.ieee.org/abstract/document/10202573",
+  "doi": "10.1109/TPWRD.2023.3301130",
+  "reliability_note": "Real field PMU measurements used for event-detection validation; no commercial deployment proof."
+}

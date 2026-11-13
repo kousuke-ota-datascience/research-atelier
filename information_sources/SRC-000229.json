@@ -1,0 +1,14 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000229",
+  "notion_url": "https://app.notion.com/p/417e5855be398195b1d9c038fa4838f6",
+  "title": "The MetroPT dataset for predictive maintenance",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "Scientific Data",
+  "authors": null,
+  "year": 2022,
+  "url": "https://www.nature.com/articles/s41597-022-01877-3",
+  "doi": "10.1038/s41597-022-01877-3",
+  "reliability_note": "Real operational train APU sensor data; dataset proposes evaluation and target intervention lead time, not a proven deployed predictor."
+}
