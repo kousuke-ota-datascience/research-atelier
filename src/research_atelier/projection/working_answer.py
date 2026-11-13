@@ -115,8 +115,13 @@ def _notion_block_sequence(markdown: str) -> str:
         if line.strip().startswith("```"):
             in_fence = not in_fence
             lines.append(line)
-        elif in_fence or line.strip():
+        elif in_fence:
             lines.append(line)
+        elif line.strip():
+            # Notion Flavored Markdown serializes inline bold as <b>...</b>
+            # even when the accepted Git analysis used **...**. Treat only
+            # this representation difference as equivalent for CURRENT checks.
+            lines.append(re.sub(r"<b>(.*?)</b>", r"**\1**", line))
     return "\n".join(lines).rstrip()
 
 
