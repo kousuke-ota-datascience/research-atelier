@@ -1,0 +1,14 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000244",
+  "notion_url": "https://app.notion.com/p/417e5855be3981e8af58d49b7a7a11f8",
+  "title": "Case Study: Automated Recommendations to Increase Run Life of the Electrical Submersible Pumps (ESPs) Using Machine Learning",
+  "source_type": "Conference Paper",
+  "journal_or_publisher": "International Petroleum Technology Conference / OnePetro",
+  "authors": null,
+  "year": 2024,
+  "url": "https://onepetro.org/IPTCONF/proceedings-abstract/24IPTC/24IPTC/542771",
+  "doi": "10.2523/IPTC-23971-EA",
+  "reliability_note": "Author-reported field recommendation execution and remaining-life estimate for ESP; vendor-authored case not independently audited."
+}
