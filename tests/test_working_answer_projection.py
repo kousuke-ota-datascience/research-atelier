@@ -102,6 +102,36 @@ class WorkingAnswerPatchTests(unittest.TestCase):
         self.assertEqual(working_answer_projection_state(notion_readback, ANALYSIS), "CURRENT")
         self.assertEqual(patch_working_answer_section(notion_readback, ANALYSIS).action, "NOOP")
 
+    def test_notion_inline_bold_roundtrip_is_current(self):
+        # Notion NFM fetch returns <b> even when canonical Git text used **.
+        analysis = {
+            "working_answer": {
+                "text": "Domain **decision** and **time horizon**.",
+                "knowledge_unit_refs": [],
+            },
+            "judgments": [], "limitations": [],
+            "unresolved_questions": [], "alternative_interpretations": [],
+        }
+        notion_readback = (
+            "# Working Answer\n\n## Answer\n"
+            "Domain <b>decision</b> and <b>time horizon</b>."
+        )
+        self.assertTrue(working_answer_section_matches(notion_readback, analysis))
+        self.assertEqual(working_answer_projection_state(notion_readback, analysis), "CURRENT")
+        self.assertEqual(patch_working_answer_section(notion_readback, analysis).action, "NOOP")
+
+    def test_notion_inline_bold_code_fence_is_not_normalized(self):
+        analysis = {
+            "working_answer": {
+                "text": "```md\n**literal markdown**\n```",
+                "knowledge_unit_refs": [],
+            },
+            "judgments": [], "limitations": [],
+            "unresolved_questions": [], "alternative_interpretations": [],
+        }
+        readback = "# Working Answer\n## Answer\n```md\n<b>literal markdown</b>\n```"
+        self.assertFalse(working_answer_section_matches(readback, analysis))
+
     def test_duplicate_target_heading_blocks_projection(self):
         body = "# Working Answer\nold one\n\n# Notes\nkeep\n\n# Working Answer\nold two"
         with self.assertRaises(DuplicateWorkingAnswerSectionError):
