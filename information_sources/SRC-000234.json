@@ -1,0 +1,14 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000234",
+  "notion_url": "https://app.notion.com/p/417e5855be3981fb8be7f76e9479a345",
+  "title": "Failure Trends in a Large Disk Drive Population",
+  "source_type": "Conference Paper",
+  "journal_or_publisher": "USENIX FAST / Google Research",
+  "authors": null,
+  "year": 2007,
+  "url": "https://research.google/pubs/failure-trends-in-a-large-disk-drive-population/",
+  "doi": null,
+  "reliability_note": "Field population observational correlation study; authors warn SMART alone poorly predicts individual failures."
+}
