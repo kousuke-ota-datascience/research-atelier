@@ -1,0 +1,14 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000230",
+  "notion_url": "https://app.notion.com/p/417e5855be398127a78cda64a6c6210a",
+  "title": "Detecting bearing failures in wind energy parks: A main bearing early damage detection method using SCADA data and a convolutional autoencoder",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "Energy Science & Engineering",
+  "authors": null,
+  "year": 2023,
+  "url": "https://onlinelibrary.wiley.com/doi/10.1002/ese3.1398",
+  "doi": "10.1002/ese3.1398",
+  "reliability_note": "Reported validation on a wind park of 12 turbines; early alerts relative to failures, not calibrated per-horizon failure probability."
+}
