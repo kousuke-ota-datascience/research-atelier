@@ -1,0 +1,14 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000241",
+  "notion_url": "https://app.notion.com/p/417e5855be3981259412f0c9fda7d3a3",
+  "title": "AnomalyTrack: Scalable and Self-Adaptive Anomaly Detection in Large-Scale 5G Networks",
+  "source_type": "Conference Paper",
+  "journal_or_publisher": "IEEE ISCC 2025",
+  "authors": null,
+  "year": 2025,
+  "url": "https://ieeexplore.ieee.org/abstract/document/11326411",
+  "doi": null,
+  "reliability_note": "Commercial operator KPI evaluation reported; runtime footprint in 5G core described, verify deployment versus test."
+}
