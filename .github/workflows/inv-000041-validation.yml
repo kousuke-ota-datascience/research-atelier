@@ -66,3 +66,20 @@ jobs:
         env:
           PYTHONPATH: src
         run: python -m research_atelier.validation.validate_investigation INV-000041 --through 30
+      - name: Validate INV-000041 Working Answer projection provenance
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from jsonschema import Draft202012Validator, FormatChecker
+          path = Path("investigations/INV-000041/projection_log_v2.json")
+          schema = json.loads(Path("schemas/v2/projection_log.schema.json").read_text())
+          record = json.loads(path.read_text())
+          Draft202012Validator(schema, format_checker=FormatChecker()).validate(record)
+          assert record["result"] == "SUCCESS"
+          assert record["rq_id"] == "RQ-000040"
+          assert record["source_investigation_id"] == "INV-000041"
+          assert record["source_30_analysis_commit_sha"] == "b61f7eb5590ffc995eb92f68d64465b02828a8aa"
+          assert record["projection_target"] == {"surface":"page_body", "section_heading":"# Working Answer"}
+          print("PASS", path)
+          PY
