@@ -1,0 +1,14 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000245",
+  "notion_url": "https://app.notion.com/p/417e5855be3981c99b8fe125e6b5819a",
+  "title": "DEVELOPMENT AND VALIDATION OF A LEAK DETECTION METHOD IN PIPES WITH A LEAK USING PRESSURE TRANSIENT DATA ASSIMILATION",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "Journal of Japan Society of Civil Engineers",
+  "authors": null,
+  "year": 2024,
+  "url": "https://www.jstage.jst.go.jp/article/jscejj/80/16/80_23-16045/_article/-char/en",
+  "doi": "10.2208/jscejj.23-16045",
+  "reliability_note": "Physical pipe model and field test of pressure-transient localization; diagnosis of existing leak, not future failure risk."
+}
