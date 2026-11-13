@@ -54,3 +54,7 @@ jobs:
               assert source['source_id']==f'SRC-{uid:06d}'
               print("PASS", p)
           PY
+      - name: Canonical CLI through-10
+        env:
+          PYTHONPATH: src
+        run: python -m research_atelier.validation.validate_investigation INV-000041 --through 10
