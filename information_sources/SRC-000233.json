@@ -1,0 +1,14 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000233",
+  "notion_url": "https://app.notion.com/p/417e5855be39816e9549c315483ac13a",
+  "title": "Data-driven prediction of battery cycle life before capacity degradation",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "Nature Energy",
+  "authors": null,
+  "year": 2019,
+  "url": "https://www.nature.com/articles/s41560-019-0356-8",
+  "doi": "10.1038/s41560-019-0356-8",
+  "reliability_note": "Controlled laboratory cycling of 124 cells; predicts cycle life from early cycles, not deployed vehicle-level RUL."
+}
