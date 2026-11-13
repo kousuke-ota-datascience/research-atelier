@@ -1,0 +1,14 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000247",
+  "notion_url": "https://app.notion.com/p/417e5855be39810e92f7d54cfcb035a7",
+  "title": "Lessons Learned from Aircraft Component Failure Prediction using Full Flight Sensor Data",
+  "source_type": "Conference Paper",
+  "journal_or_publisher": "PHM Society",
+  "authors": null,
+  "year": 2023,
+  "url": "https://www.papers.phmsociety.org/index.php/phmap/article/view/3684",
+  "doi": null,
+  "reliability_note": "Authors report airline-operator prognostic alert deployment, while operational outcome/false-alert rate may be unspecified."
+}
