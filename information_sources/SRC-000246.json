@@ -1,0 +1,14 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000246",
+  "notion_url": "https://app.notion.com/p/417e5855be3981d19505f5517d2c9a78",
+  "title": "MAD: Multicriteria Anomaly Detection of Suspicious Financial Accounts from Billions of Cash Transactions",
+  "source_type": "Conference Paper",
+  "journal_or_publisher": "ACM SIGKDD 2025",
+  "authors": null,
+  "year": 2025,
+  "url": "https://doi.org/10.1145/3711896.3737244",
+  "doi": "10.1145/3711896.3737244",
+  "reliability_note": "Reports bank AML production pipeline and 2B transactions; check whether temporal data are aggregated rather than direct time-series."
+}
