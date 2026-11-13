@@ -1,0 +1,14 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000243",
+  "notion_url": "https://app.notion.com/p/417e5855be3981cfae54ca256e9b6084",
+  "title": "A Transformer-based approach for anomaly detection in intelligent well completions",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "Petroleum Exploration and Development",
+  "authors": null,
+  "year": 2025,
+  "url": "https://ped.cpedm.com/EN/10.1016/S1876-3804%2825%2960620-3",
+  "doi": "10.1016/S1876-3804(25)60620-3",
+  "reliability_note": "Reports field test in Santos Basin production wells; fault identification is not calibrated time-to-failure prediction."
+}
