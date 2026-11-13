@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000041",
+  "review_seq": 1,
+  "layer": "00_context",
+  "review_kind": "context_semantic_validity",
+  "target_blob_sha": "d70c46b4b7b4feff02d3ea6238e3f47681f29e59",
+  "assessment": "The frozen Investigation Context is semantically consistent with RQ-000040 and the Descriptive Question Type. Scope includes industry/business use cases, decision purposes, analytical targets, temporal outputs and evidenced-versus-possible deployment, plus a search/coverage audit. Explicit exclusion of event-log-only findings as direct time-series application evidence is coherent. 24 documented illustrative cases rather than a statistically exhaustive industry census is consistent with the question as bounded; no frozen-context defect was established.",
+  "findings": [],
+  "verdict": "PASS"
+}

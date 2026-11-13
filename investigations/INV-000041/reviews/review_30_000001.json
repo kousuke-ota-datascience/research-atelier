@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000041",
+  "review_seq": 1,
+  "layer": "30_analysis",
+  "review_kind": "20_synthesis_plus_00_context_to_30_analysis",
+  "target_blob_sha": "88801f0d70be6b3cfc2890e22055422a1c24bc71",
+  "assessment": "Checked the 24 use-case mappings, Working Answer, judgments, limitations, unresolved questions and the supporting search_audit.md/coverage_matrix.md against frozen 00_context and 20_synthesis. Each positive example records business decision, analytical task, temporal framing, output and evidence level with explicit unknowns; boundary examples are segregated rather than counted as direct time-series application verification. The principal conclusion is a proposed many-to-many decision/target/horizon/output/evidence mapping, not an asserted universally exhaustive taxonomy. New examples of change-point detection and future-event prediction are correctly distinguished from benchmark-only and vendor/operator reports; MetroPT's two-hour and the sepsis challenge's six-hour targets are not represented as achieved deployment performance. Limitations acknowledge purposive selection, incomplete retrieval/eligibility flow and non-identifiability of intervention effects. No unsupported methodological inference or critical uncertainty omission was established.",
+  "findings": [],
+  "verdict": "PASS"
+}

@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000041",
+  "review_seq": 1,
+  "layer": "20_synthesis",
+  "review_kind": "10_evidence_to_20_synthesis",
+  "target_blob_sha": "9e01ce5c5a152fdaefd5a63fb1f24498fdac2ffd",
+  "assessment": "Reviewed all 35 Knowledge Units, their Evidence references, 15 relationships and 8 explicit uncertainties. Propositions remain bounded: real-field data versus deployed algorithms, synthetic and controlled anomalies versus genuine production incidents, retrospective ECG and sepsis challenges versus clinical deployment, event-only wind gearbox database versus wind-SCADA monitoring, retrospective semiconductor shipment features versus operating sensor streams, AML transaction aggregates versus confirmed temporal-dependency models and ShakeAlert earthquake detection versus pre-event earthquake prediction. Distinct tasks—current anomaly/event detection, change-point detection, fault diagnosis, future event warning, and RUL/cycle life—are not conflated; reported lead-time requirements and empirical achievements are kept separate. These qualifications support the cross-source descriptive taxonomy without implying sector prevalence or causal benefits.",
+  "findings": [],
+  "verdict": "PASS"
+}

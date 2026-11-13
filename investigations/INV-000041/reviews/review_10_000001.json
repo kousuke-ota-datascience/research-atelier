@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000041",
+  "review_seq": 1,
+  "layer": "10_evidence",
+  "review_kind": "source_evidence_note_to_10_evidence",
+  "target_blob_sha": "fb90eb4b198f31184985445375eb13eba471d5fe",
+  "assessment": "Independently inspected the 35 pinned Git information_source metadata records and all 50 Evidence items, verifying 35 source identities and the corresponding Notion Evidence Note pages. All 50 Note-to-Source relations and locators align; 49 Evidence texts exactly match their Notion notes. E0019 is a semantically faithful paraphrase of the Note's qualification that N-CMAPSS uses real flight profiles but simulated degradation. Key original institutional and publisher pages were spot-checked independently, including MetroPT, PhysioNet 2019, battery cycle-life study, 3W Dataset 2.0.0, body-in-white change-point detection, power-grid event detection/segmentation, oil-well transformer, 5G AnomalyTrack, ESP case, Boeing prognostic alerts and the reverse-osmosis deployment study. Reported study sample sizes, lead-time requirements and observed improvements are not mislabeled as achieved field prediction performance or causal effects. This assessment does not imply a reproduction or full-text audit of every cited study. No substantiated source-distortion, fatal provenance ambiguity, or systematically omitted contrary fact was found.",
+  "findings": [],
+  "verdict": "PASS"
+}
