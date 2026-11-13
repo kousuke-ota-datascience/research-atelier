@@ -1,0 +1,14 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000238",
+  "notion_url": "https://app.notion.com/p/417e5855be398165a70ed328c3f71396",
+  "title": "Fault classification and timing prediction based on shipment inspection data and maintenance reports for semiconductor manufacturing equipment",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "Computers & Industrial Engineering",
+  "authors": null,
+  "year": 2023,
+  "url": "https://www.sciencedirect.com/science/article/pii/S0360835222009603",
+  "doi": "10.1016/j.cie.2022.108972",
+  "reliability_note": "Uses pre-shipment inspection and maintenance records rather than operational sensor sequences; a useful boundary case for failure timing."
+}
