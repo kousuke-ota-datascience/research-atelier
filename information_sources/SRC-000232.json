@@ -1,0 +1,14 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000232",
+  "notion_url": "https://app.notion.com/p/417e5855be39819b877be7a910b284ac",
+  "title": "Early Prediction of Sepsis from Clinical Data: The PhysioNet/Computing in Cardiology Challenge 2019",
+  "source_type": "Dataset",
+  "journal_or_publisher": "PhysioNet",
+  "authors": null,
+  "year": 2019,
+  "url": "https://physionet.org/content/challenge-2019/1.0.0/",
+  "doi": null,
+  "reliability_note": "Prospective-task benchmark on retrospective ICU clinical data; not implementation evidence of bedside intervention."
+}
