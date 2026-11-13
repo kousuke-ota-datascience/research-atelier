@@ -1,0 +1,14 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000242",
+  "notion_url": "https://app.notion.com/p/417e5855be3981d994b0f8b7315be78e",
+  "title": "Anomaly detection in oil-producing wells: a comparative study of one-class classifiers in a multivariate time series dataset",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "Journal of Petroleum Exploration and Production Technology",
+  "authors": null,
+  "year": 2024,
+  "url": "https://link.springer.com/article/10.1007/s13202-023-01710-6",
+  "doi": "10.1007/s13202-023-01710-6",
+  "reliability_note": "Experiments on Petrobras 3W data mixing real and simulated events; F1 not equivalent to prospective field alert lead time."
+}
