@@ -36,3 +36,7 @@ jobs:
           assert result.explicit_new_execution_intent is True
           assert "explicit_independent_execution" in result.reason_codes
           PY
+      - name: Canonical CLI new Context freeze
+        env:
+          PYTHONPATH: src
+        run: python -m research_atelier.validation.validate_investigation INV-000041 --through 00 --new-freeze
