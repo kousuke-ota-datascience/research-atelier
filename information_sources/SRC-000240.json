@@ -1,0 +1,14 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000240",
+  "notion_url": "https://app.notion.com/p/417e5855be39819885dedc9b6e9c1e05",
+  "title": "Real-time SARIMA-based anomaly detection in operator networks",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "Computer Networks",
+  "authors": null,
+  "year": 2026,
+  "url": "https://www.sciencedirect.com/science/article/pii/S1389128626000824",
+  "doi": "10.1016/j.comnet.2026.112070",
+  "reliability_note": "Research validated using actual nationwide telecom operator traffic; not proof of product-scale production deployment."
+}
