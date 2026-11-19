@@ -1,0 +1,12 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000286",
+  "notion_url": "https://app.notion.com/p/41de5855be398110a245f483a6645a84",
+  "title": "Focus on the Industrial Equipment Market: ROHM launches Product Longevity Program",
+  "source_type": "Web Page",
+  "journal_or_publisher": "ROHM Semiconductor",
+  "year": 2023,
+  "url": "https://www.rohm.com/news-detail?defaultGroupId=false&news-title=2023-09-07_news_plp",
+  "reliability_note": "Manufacturer first-party announcement: 10–20-year supply periods primarily for industrial equipment long-life applications; equipment/material/process constraints affect selected products. Program estimates are not EOL observations."
+}
