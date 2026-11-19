@@ -1,0 +1,11 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000289",
+  "notion_url": "https://app.notion.com/p/41de5855be3981f4bc16d8d22456afb2",
+  "title": "Industrial Semiconductor Lifecycle Market Support",
+  "source_type": "Web Page",
+  "journal_or_publisher": "Rochester Electronics",
+  "url": "https://www.rocelec.com/markets/industrial",
+  "reliability_note": "Authorized semiconductor aftermarket supplier first-party account: industrial systems long-lived, certifications restrict redesign, stockpiles and licensed production for residual demand; thyssenkrupp replications cited, not a representative survey."
+}
