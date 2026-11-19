@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000042",
+  "review_seq": 5,
+  "layer": "00_context",
+  "review_kind": "context_semantic_validity",
+  "target_blob_sha": "369e03646598983815495c857f69525f7f2ea412",
+  "assessment": "frozen RQ-000041のQuestion Type=Methodologicalは、メーカー又は正規流通での通常調達不能時期・期間内リスクをtargetとする。観測イベントNRND、EOL/生産終了通知、LTB/LTS、流通業者独自status、Web掲載消滅と正規調達不能を区別し、RULと二次流通最終入手を除外するContextは整合している。対象部品、調達経路、予測起点を下流で具体化でき、変更を要求するContext-defining semantic defectはない。",
+  "findings": [],
+  "verdict": "PASS"
+}

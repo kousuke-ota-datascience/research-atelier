@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000042",
+  "review_seq": 5,
+  "layer": "20_synthesis",
+  "review_kind": "10_evidence_to_20_synthesis",
+  "target_blob_sha": "153661377d7ec1515a6b2be18309c6b5373d2a91",
+  "assessment": "30 Knowledge Unit、14 relation、10 uncertaintyを参照Evidenceと照合した。部品属性のLTB回帰、製品ライフサイクル曲線、Markov宇宙機陳腐化、Weibull部品条件付きリスクを同一の正規調達不能targetの直接性能実証と誤認していない。NRND・Web掲載の先行リードタイムと増分予測力が未実証であること、実際の入力欄・時点リークが未特定であること、提供事業者による履歴保持の主張と公開研究データの可用性の差異をUncertaintyに維持している。Evidenceからunsupportedな断定へ飛躍するSynthesis Findingは認めない。",
+  "findings": [],
+  "verdict": "PASS"
+}

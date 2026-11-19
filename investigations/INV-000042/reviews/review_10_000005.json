@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000042",
+  "review_seq": 5,
+  "layer": "10_evidence",
+  "review_kind": "source_evidence_note_to_10_evidence",
+  "target_blob_sha": "823cd7507e866de0a041f374bc34802437dcb5aa",
+  "assessment": "19 Source・38 Evidenceを評価した。前Review以後10_evidenceのblob SHAは不変。19 Source revisionはGit正本で確認され、Notion Evidence Noteに紐づく既存31件の本文は以前確認したexact canonical revisionと一致している。追加7件はsource_idに直接紐づきschema上許容される。原著2件のADS重複cover・局所回帰、k-meansクラスタ毎のDT/RF/GB等重みHybrid、LTB日を対象とした事後ラベルの扱いを原著本文と照合した。198未廃番部品の将来日付sanity checkは将来真値での外部予測精度ではない。DigiKey公式statusはオンラインカタログ掲載除外と同義とされず、Z2Dataの商品説明も検証用データ取得・精度の証拠とみなされない。出典範囲を逸脱するSource-faithfulness Findingは認めない。",
+  "findings": [],
+  "verdict": "PASS"
+}

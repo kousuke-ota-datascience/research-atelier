@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000042",
+  "review_seq": 5,
+  "layer": "30_analysis",
+  "review_kind": "20_synthesis_plus_00_context_to_30_analysis",
+  "target_blob_sha": "3ed2acee45299814b07c37ce8e097c0143e317da",
+  "assessment": "Working AnswerはRQの『どのような手法か』に対し、Sandbornの調達寿命、条件付きWeibull、MoonのADS局所回帰とk-means Hybridの入力→アルゴリズム→出力、Gaussian/時系列曲線、宇宙機Markovを具体的に対比している。原著の予測ラベルとメーカー・正規流通での実際の調達不能日を区別し、M0/年齢等、M1/NRND履歴、M2/代理店status・掲載履歴のablationを検証済みの方法でなく提案として表示する。打切り、prediction-as-of日時、校正、前向き評価と選択偏りは明示され、研究者に実測精度の保証を与えない。limitationsのSource件数は現行Evidenceと一致する19件に修正済み。ContextとSynthesisの支持範囲内であり、新しいFindingは認めない。",
+  "findings": [],
+  "verdict": "PASS"
+}
