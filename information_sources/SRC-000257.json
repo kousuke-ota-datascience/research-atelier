@@ -1,0 +1,12 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000257",
+  "notion_url": "https://app.notion.com/41de5855be39812585e0c027f1953645",
+  "title": "Forecasting Obsolescence of Components by Using a Clustering-Based Hybrid Machine-Learning Algorithm",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "Sensors",
+  "year": 2022,
+  "url": "https://www.mdpi.com/1424-8220/22/9/3244",
+  "reliability_note": "学術原著。電子ダイオードの事例であり業界横断の外的妥当性は未検証。"
+}

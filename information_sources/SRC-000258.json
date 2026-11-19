@@ -1,0 +1,12 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000258",
+  "notion_url": "https://app.notion.com/41de5855be398104b918d9deb181e547",
+  "title": "What is happening in product obsolescence management? Three decades of review from 1993 to 2023",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "Research in Engineering Design",
+  "year": 2026,
+  "url": "https://link.springer.com/article/10.1007/s00163-026-00470-8",
+  "reliability_note": "査読付き二次レビュー。原著研究の実験事実の代用とはしない。"
+}

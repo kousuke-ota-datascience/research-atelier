@@ -1,0 +1,11 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000264",
+  "notion_url": "https://app.notion.com/41de5855be398137b5fdfdeb51f49de9",
+  "title": "Product Lifecycle",
+  "source_type": "Documentation",
+  "journal_or_publisher": "NXP Semiconductors",
+  "url": "https://www.nxp.com/support/sample-and-buy/product-lifecycle:PRDLIFCYC",
+  "reliability_note": "メーカー公式ステータス定義。NRND時点で終了決定がない点に注意。"
+}

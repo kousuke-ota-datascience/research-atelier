@@ -1,0 +1,11 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000263",
+  "notion_url": "https://app.notion.com/41de5855be3981e5b453dbbfe8bd0dd2",
+  "title": "Quality, reliability & packaging FAQs",
+  "source_type": "Documentation",
+  "journal_or_publisher": "Texas Instruments",
+  "url": "https://www.ti.com/en-us/quality-reliability/faqs",
+  "reliability_note": "メーカー公式FAQ。通知後LTB/最終納品の一般方針。"
+}

@@ -1,0 +1,12 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000259",
+  "notion_url": "https://app.notion.com/41de5855be39816392d2ee2266dfc72b",
+  "title": "A machine learning framework for long-term forecasting of spare part demand in end-of-life product scenarios",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "Scientific Reports",
+  "year": 2025,
+  "url": "https://www.nature.com/articles/s41598-025-31171-2",
+  "reliability_note": "自動車補修部品の長期需要予測原著。調達終了時点の予測とは目的変数が異なる。"
+}

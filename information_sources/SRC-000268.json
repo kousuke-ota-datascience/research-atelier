@@ -1,0 +1,11 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000268",
+  "notion_url": "https://app.notion.com/41de5855be3981f5a80bddf7142a8369",
+  "title": "DMSMS — Defense Standardization Program Office",
+  "source_type": "Documentation",
+  "journal_or_publisher": "Defense Standardization Program Office",
+  "url": "https://www.dsp.dla.mil/Programs/DMSMS/",
+  "reliability_note": "米国国防省関連公式DMSMS政策。サイト全文参照制限あり、検索結果から限定的に利用。"
+}

@@ -1,0 +1,12 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000255",
+  "notion_url": "https://app.notion.com/41de5855be398101b494cc8760a39e34",
+  "title": "A risk-based approach to forecasting component obsolescence",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "Microelectronics Reliability",
+  "year": 2021,
+  "url": "https://www.sciencedirect.com/science/article/pii/S0026271421002961",
+  "reliability_note": "学術原著。現時点で検索インデックスの要旨確認のみ。本文の方法・数値は未検証。"
+}

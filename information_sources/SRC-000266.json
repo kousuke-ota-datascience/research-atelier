@@ -1,0 +1,11 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000266",
+  "notion_url": "https://app.notion.com/41de5855be3981879db5c4d87ee0a271",
+  "title": "37 部品の供給年限に関する自主基準",
+  "source_type": "Web Page",
+  "journal_or_publisher": "公正取引委員会",
+  "url": "https://www.jftc.go.jp/dk/soudanjirei/h14/h14dantaimokuji/h14eigyo/h14dantai37.html",
+  "reliability_note": "公的相談事例。対象団体の提案・当局判断であり建機業界全体の実施事実を示さない。"
+}

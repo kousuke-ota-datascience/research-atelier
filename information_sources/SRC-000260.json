@@ -1,0 +1,11 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000260",
+  "notion_url": "https://app.notion.com/41de5855be3981fc970af48728d0a0b9",
+  "title": "クルマの部品はいつまで供給されるの？",
+  "source_type": "Web Page",
+  "journal_or_publisher": "トヨタ自動車",
+  "url": "https://toyota.jp/faq/show/210.html",
+  "reliability_note": "メーカー公式FAQ。全車種・部品へ保証期間として一般化しない。"
+}

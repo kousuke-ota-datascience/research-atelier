@@ -1,0 +1,12 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000267",
+  "notion_url": "https://app.notion.com/41de5855be398108b40dde2b2aa48ca6",
+  "title": "Commission Regulation (EU) 2019/2019 (Ecodesign requirements for refrigerating appliances)",
+  "source_type": "Documentation",
+  "journal_or_publisher": "European Union / EUR-Lex",
+  "year": 2019,
+  "url": "https://eur-lex.europa.eu/eli/reg/2019/2019/oj/eng",
+  "reliability_note": "一次法令。EU冷蔵機器の対象部品に限る供給義務。"
+}

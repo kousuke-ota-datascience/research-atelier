@@ -1,0 +1,11 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000265",
+  "notion_url": "https://app.notion.com/41de5855be39811787b1dcd76d06d6f5",
+  "title": "Longevity Program",
+  "source_type": "Documentation",
+  "journal_or_publisher": "Infineon Technologies",
+  "url": "https://www.infineon.com/product-information/product-longevity-program",
+  "reliability_note": "メーカー公式長期供給プログラム。需要等の条件付き計画であり確定的保証ではない。"
+}

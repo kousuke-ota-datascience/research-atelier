@@ -1,0 +1,11 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000262",
+  "notion_url": "https://app.notion.com/41de5855be39819d99cde5d09ac7a733",
+  "title": "Supply Policy & Product Lifecycle",
+  "source_type": "Documentation",
+  "journal_or_publisher": "Renesas Electronics",
+  "url": "https://www.renesas.com/en/support/supply-policy-product-lifecycle",
+  "reliability_note": "メーカー公式供給・EOLポリシー。提示期間は一般則・目安で個別品目は異なりうる。"
+}

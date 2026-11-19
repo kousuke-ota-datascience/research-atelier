@@ -1,0 +1,12 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000261",
+  "notion_url": "https://app.notion.com/41de5855be3981bcabfcfc9fa7b256da",
+  "title": "補修部品(修理用の部品)・ディーラーオプション部品はいつまで買うことができるか教えて。",
+  "source_type": "Web Page",
+  "journal_or_publisher": "日産自動車",
+  "year": 2020,
+  "url": "https://faq2.nissan.co.jp/faq/show/2985?category_id=9&site_domain=default",
+  "reliability_note": "メーカー公式FAQ。補修部品とディーラーオプションを分離。"
+}

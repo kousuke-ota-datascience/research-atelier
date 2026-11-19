@@ -1,0 +1,13 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000254",
+  "notion_url": "https://app.notion.com/41de5855be39815b802dee61377fdc03",
+  "title": "Forecasting Electronic Part Procurement Lifetimes to Enable the Management of DMSMS Obsolescence",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "Microelectronics Reliability",
+  "authors": "P. Sandborn; V. Prabhakar; O. Ahmad",
+  "year": 2011,
+  "url": "https://web.calce.umd.edu/articles/abstracts/2011/Forecast_Electronic_Part-Procurement_Life_abstract.html",
+  "reliability_note": "学術原著（研究機関公開要旨まで確認）。全文細部は未照合。"
+}
