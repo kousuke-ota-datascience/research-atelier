@@ -1,0 +1,237 @@
+{
+  "schema_version": "2.1.0",
+  "artifact_type": "10_evidence",
+  "investigation_id": "INV-000044",
+  "rq_id": "RQ-000043",
+  "snapshot_at": "2026-11-19T14:00:12.171Z",
+  "sources": [
+    {
+      "source_id": "SRC-000262",
+      "source_revision": {
+        "commit_sha": "51c2126d64f5ec99471aa12c2fe9e2882fb36acc",
+        "blob_sha": "f57c6eb35fff83513bba140a7597740ecd841994"
+      },
+      "accessed_at": "2026-11-19T14:00:12.171Z",
+      "notion_url": "https://app.notion.com/p/41de5855be39819d99cde5d09ac7a733"
+    },
+    {
+      "source_id": "SRC-000263",
+      "source_revision": {
+        "commit_sha": "51c2126d64f5ec99471aa12c2fe9e2882fb36acc",
+        "blob_sha": "c115bbe63801fe7960e17e81301071f64705f9c7"
+      },
+      "accessed_at": "2026-11-19T14:00:12.171Z",
+      "notion_url": "https://app.notion.com/p/41de5855be3981e5b453dbbfe8bd0dd2"
+    },
+    {
+      "source_id": "SRC-000264",
+      "source_revision": {
+        "commit_sha": "51c2126d64f5ec99471aa12c2fe9e2882fb36acc",
+        "blob_sha": "89605d596bd13b869c453de02d2bb3dce2348b7d"
+      },
+      "accessed_at": "2026-11-19T14:00:12.171Z",
+      "notion_url": "https://app.notion.com/p/41de5855be398137b5fdfdeb51f49de9"
+    },
+    {
+      "source_id": "SRC-000265",
+      "source_revision": {
+        "commit_sha": "51c2126d64f5ec99471aa12c2fe9e2882fb36acc",
+        "blob_sha": "a69037467132838dfcba789b329d9341714a097b"
+      },
+      "accessed_at": "2026-11-19T14:00:12.171Z",
+      "notion_url": "https://app.notion.com/p/41de5855be39811787b1dcd76d06d6f5"
+    },
+    {
+      "source_id": "SRC-000280",
+      "source_revision": {
+        "commit_sha": "c56c1fa8691fa11344aaae24c5153b15f77108f1",
+        "blob_sha": "4814b15ac307beabe373a0ccd29dcf3eff85c6fe"
+      },
+      "accessed_at": "2026-11-19T14:00:12.171Z",
+      "notion_url": "https://app.notion.com/p/41de5855be398135a2b6fb7493db2ab2"
+    },
+    {
+      "source_id": "SRC-000281",
+      "source_revision": {
+        "commit_sha": "c56c1fa8691fa11344aaae24c5153b15f77108f1",
+        "blob_sha": "dc11e6613b6212856b36982fa6f5f7a483c73b2f"
+      },
+      "accessed_at": "2026-11-19T14:00:12.171Z",
+      "notion_url": "https://app.notion.com/p/41de5855be39817d8dbdf1676a7d6c91"
+    },
+    {
+      "source_id": "SRC-000282",
+      "source_revision": {
+        "commit_sha": "c56c1fa8691fa11344aaae24c5153b15f77108f1",
+        "blob_sha": "48bb5ecc56bad07fcb92dc882c7810bcf26c78ac"
+      },
+      "accessed_at": "2026-11-19T14:00:12.171Z",
+      "notion_url": "https://app.notion.com/p/41de5855be39812d847ec867a618cc6c"
+    },
+    {
+      "source_id": "SRC-000283",
+      "source_revision": {
+        "commit_sha": "c56c1fa8691fa11344aaae24c5153b15f77108f1",
+        "blob_sha": "0fe5871cc78bfc52b7b74efde9d087514b42d282"
+      },
+      "accessed_at": "2026-11-19T14:00:12.171Z",
+      "notion_url": "https://app.notion.com/p/41de5855be39816f8efffaedc7068a1e"
+    }
+  ],
+  "evidence_items": [
+    {
+      "evidence_id": "E0001",
+      "content": "NXPのProduct Longevity Programは参加製品に10年または15年の最短供給期間を設定する。公表一覧のPF7100 PMICはAutomotiveが2020年9月発売・2035年9月まで、Industrialは同発売月・2030年9月までプログラム対象となっている。",
+      "source_locator": "Active Longevity Products > PMICs > PF7100",
+      "selection_reason": "用途別の供給・通知・認定構造とEOL事象の先行可観測性を示す一次資料。",
+      "note_type": "Data",
+      "provenance": {
+        "source_id": "SRC-000280",
+        "evidence_note": null
+      }
+    },
+    {
+      "evidence_id": "E0002",
+      "content": "NXPはプログラム期間満了時の自動的製造終了を否定する。製造拠点変更や互換品への移行を許容し、合理的制御外の事情または12か月間に実質的な受注がない場合などに期間・対象が変更され得る。",
+      "source_locator": "Program Requirements (paragraphs 1–2)",
+      "selection_reason": "用途別の供給・通知・認定構造とEOL事象の先行可観測性を示す一次資料。",
+      "note_type": "Claim",
+      "provenance": {
+        "source_id": "SRC-000280",
+        "evidence_note": null
+      }
+    },
+    {
+      "evidence_id": "E0003",
+      "content": "TIの標準製品廃番方針では、直近5年間に売上があった製品は廃番適格としない。車載または高信頼性製品ではこの販売実績条件が7年間に延長される。これは廃番決定日そのものではない。",
+      "source_locator": "Product life cycle / obsolescence eligibility conditions",
+      "selection_reason": "用途別の供給・通知・認定構造とEOL事象の先行可観測性を示す一次資料。",
+      "note_type": "Claim",
+      "provenance": {
+        "source_id": "SRC-000281",
+        "evidence_note": null
+      }
+    },
+    {
+      "evidence_id": "E0004",
+      "content": "TIは自動車用途向け認定製品でPPAP提出に対応し、発行されたPCNに対する補足情報を含むPCN PPAPを提供する。",
+      "source_locator": "Automotive PPAP / PCN PPAP",
+      "selection_reason": "用途別の供給・通知・認定構造とEOL事象の先行可観測性を示す一次資料。",
+      "note_type": "Claim",
+      "provenance": {
+        "source_id": "SRC-000282",
+        "evidence_note": null
+      }
+    },
+    {
+      "evidence_id": "E0005",
+      "content": "NXPは形状・適合性・機能・品質・信頼性に影響し得る製品／工程変更についてPCNを発行し、実施90日前に通知する。通知には対象品番、実施日、連絡先等を含める。",
+      "source_locator": "Product Change Notices",
+      "selection_reason": "用途別の供給・通知・認定構造とEOL事象の先行可観測性を示す一次資料。",
+      "note_type": "Claim",
+      "provenance": {
+        "source_id": "SRC-000283",
+        "evidence_note": null
+      }
+    },
+    {
+      "evidence_id": "E0006",
+      "content": "NXPの製品終息方針はJEDEC J-STD-048に準拠し、例外指定がなければ廃番通知効力日から12か月以内の最終納入を顧客が指定できるとする。",
+      "source_locator": "Product Obsolescence Policy",
+      "selection_reason": "用途別の供給・通知・認定構造とEOL事象の先行可観測性を示す一次資料。",
+      "note_type": "Claim",
+      "provenance": {
+        "source_id": "SRC-000283",
+        "evidence_note": null
+      }
+    },
+    {
+      "evidence_id": "E0007",
+      "content": "NXPはPPAPを自動車産業での生産設計・工程に関する供給者と顧客の承認プロセスとして説明し、AIAG・IATF 16949等との整合を掲げる。",
+      "source_locator": "Production Part Approval Process (PPAP)",
+      "selection_reason": "用途別の供給・通知・認定構造とEOL事象の先行可観測性を示す一次資料。",
+      "note_type": "Definition",
+      "provenance": {
+        "source_id": "SRC-000283",
+        "evidence_note": null
+      }
+    },
+    {
+      "evidence_id": "E0008",
+      "content": "NXPのNRNDは新規設計に推奨されない状態だが、既存顧客は引き続き注文でき、製品終息の決定はまだなされていない。",
+      "source_locator": "Product Lifecycle / NRND status",
+      "selection_reason": "用途別の供給・通知・認定構造とEOL事象の先行可観測性を示す一次資料。",
+      "note_type": "Definition",
+      "provenance": {
+        "source_id": "SRC-000264",
+        "evidence_note": null
+      }
+    },
+    {
+      "evidence_id": "E0009",
+      "content": "NXPのEOL状態では最終発注日まで注文可能で最終納品日まで出荷を完了する見込みとし、NLM状態では新規注文を受けず製造も行わない。",
+      "source_locator": "Product Lifecycle / EOL and NLM status",
+      "selection_reason": "用途別の供給・通知・認定構造とEOL事象の先行可観測性を示す一次資料。",
+      "note_type": "Definition",
+      "provenance": {
+        "source_id": "SRC-000264",
+        "evidence_note": null
+      }
+    },
+    {
+      "evidence_id": "E0010",
+      "content": "RenesasはEOL決定後にEOL-notifiedへ状態を変更して顧客へ通知する。最終発注受付は通知後6〜12か月、通常は最終発注受付終了から約6〜12か月製造が続く。",
+      "source_locator": "EOL Notification and Shipment",
+      "selection_reason": "用途別の供給・通知・認定構造とEOL事象の先行可観測性を示す一次資料。",
+      "note_type": "Claim",
+      "provenance": {
+        "source_id": "SRC-000262",
+        "evidence_note": null
+      }
+    },
+    {
+      "evidence_id": "E0011",
+      "content": "TIの公式FAQでは一般的廃番通知に対し12か月の最終注文期間と追加6か月の最終納品猶予を示す。",
+      "source_locator": "Quality, reliability & packaging FAQs / obsolescence withdrawal schedule",
+      "selection_reason": "用途別の供給・通知・認定構造とEOL事象の先行可観測性を示す一次資料。",
+      "note_type": "Claim",
+      "provenance": {
+        "source_id": "SRC-000263",
+        "evidence_note": null
+      }
+    },
+    {
+      "evidence_id": "E0012",
+      "content": "Infineonは車載MOSFET・IGBT・SiC等の長期供給プログラムに加え、センサやGaNパワーデバイスなど車載以外にも利用される製品群について長期供給プログラムを公表する。",
+      "source_locator": "Product Longevity Program / automotive / sensors / GaN sections",
+      "selection_reason": "用途別の供給・通知・認定構造とEOL事象の先行可観測性を示す一次資料。",
+      "note_type": "Claim",
+      "provenance": {
+        "source_id": "SRC-000265",
+        "evidence_note": null
+      }
+    },
+    {
+      "evidence_id": "E0013",
+      "content": "Infineonの一部製品カテゴリの長期供給予定には、十分な全体需要が続くこと等の条件が付されている。",
+      "source_locator": "Product Longevity Program / category-specific conditions",
+      "selection_reason": "用途別の供給・通知・認定構造とEOL事象の先行可観測性を示す一次資料。",
+      "note_type": "Limitation",
+      "provenance": {
+        "source_id": "SRC-000265",
+        "evidence_note": null
+      }
+    },
+    {
+      "evidence_id": "E0014",
+      "content": "TIの公式FAQはカスタム製品の変更を顧客承認前に実施しないと説明する。",
+      "source_locator": "Quality, reliability & packaging FAQs / custom device change management",
+      "selection_reason": "用途別の供給・通知・認定構造とEOL事象の先行可観測性を示す一次資料。",
+      "note_type": "Claim",
+      "provenance": {
+        "source_id": "SRC-000263",
+        "evidence_note": null
+      }
+    }
+  ]
+}
