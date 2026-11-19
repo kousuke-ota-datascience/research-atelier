@@ -1,0 +1,160 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "20_synthesis",
+  "investigation_id": "INV-000042",
+  "rq_id": "RQ-000041",
+  "synthesized_at": "2026-11-19T09:34:31.000Z",
+  "knowledge_units": [
+    {
+      "knowledge_unit_id": "K0001",
+      "statement": "DMSMSは元メーカーから部品を調達できなくなることを対象とする定義として、部品寿命と搭載システム寿命の不一致を扱う。",
+      "evidence_refs": [
+        "E0001"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0002",
+      "statement": "Sandbornらの手法は廃番済み部品だけでなく、観測時点で未廃番の部品も扱う調達可能期間推定である。",
+      "evidence_refs": [
+        "E0002"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0003",
+      "statement": "risk-based原著の公開要旨は、調達可能を条件とした指定ホライズン内の陳腐化確率の予測と遡及比較を記述する。",
+      "evidence_refs": [
+        "E0003"
+      ],
+      "qualifiers": [
+        "本文へのアクセスができておらず式・数値検証は未実施。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0004",
+      "statement": "電子ダイオードの原著2件は、類似部品のクラスタ・部分集合ごとに回帰モデルを用いるEOL時期予測を検証している。",
+      "evidence_refs": [
+        "E0004",
+        "E0005",
+        "E0006"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0005",
+      "statement": "2026年レビューはEOL予測を数理的寿命・状態モデルとデータマイニング系に整理し、データ品質・欠測を主要制約とする。",
+      "evidence_refs": [
+        "E0007",
+        "E0008"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0006",
+      "statement": "自動車補修部品の2025年原著は1,709部品の8年先の補修需要量を予測するものであり、供給終了時点の直接予測ではない。",
+      "evidence_refs": [
+        "E0009",
+        "E0010"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0007",
+      "statement": "NRNDはEOL検討・新規設計非推奨を示しうるが、NXPではNRND時点で供給終了の意思決定は未確定と定義されている。",
+      "evidence_refs": [
+        "E0011",
+        "E0014"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0008",
+      "statement": "RenesasとTIはEOL通知後のLTB受付や出荷終了に関する一般的な期間を公表している。",
+      "evidence_refs": [
+        "E0012",
+        "E0013"
+      ],
+      "qualifiers": [
+        "実際の日程は製品別通知による。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0009",
+      "statement": "一部機械学習研究の予測targetは導入からLTBまでの期間であり、正規流通における在庫消化後の調達不能とは同一イベントではない。",
+      "evidence_refs": [
+        "E0004",
+        "E0014",
+        "E0001"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0010",
+      "statement": "ダイオード研究のデータ構成・学習分割は確認できるが、時点外・自動車部品への移転精度はこれらのSourceから確立されない。",
+      "evidence_refs": [
+        "E0004",
+        "E0005",
+        "E0006",
+        "E0008"
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "relation_id": "R0001",
+      "relation_type": "qualification",
+      "knowledge_unit_refs": [
+        "K0001",
+        "K0009"
+      ],
+      "description": "文献間で原メーカー調達不能、LTB等の終了イベントが異なり、正規流通を含む研究targetへ自動的に同一視できない。"
+    },
+    {
+      "relation_id": "R0002",
+      "relation_type": "association",
+      "knowledge_unit_refs": [
+        "K0002",
+        "K0003"
+      ],
+      "description": "調達可能期間・指定期間内リスクを扱うが、用いる確率モデルや検証設計は一致するとは限らない。"
+    },
+    {
+      "relation_id": "R0003",
+      "relation_type": "qualification",
+      "knowledge_unit_refs": [
+        "K0007",
+        "K0008"
+      ],
+      "description": "NRNDは生産終了決定とは限らないが、EOL通知後はLTB等の既知日程が与えられる場合がある。"
+    },
+    {
+      "relation_id": "R0004",
+      "relation_type": "qualification",
+      "knowledge_unit_refs": [
+        "K0004",
+        "K0010"
+      ],
+      "description": "電子ダイオード内の成績が、実稼働部品の時点外評価や他業界での性能を示すわけではない。"
+    }
+  ],
+  "uncertainties": [
+    {
+      "uncertainty_id": "U0001",
+      "description": "各原著について、未廃番部品を含む検証集合・時点外テスト・観測欠測を同条件で比較できていない。",
+      "knowledge_unit_refs": [
+        "K0002",
+        "K0004",
+        "K0010"
+      ]
+    },
+    {
+      "uncertainty_id": "U0002",
+      "description": "メーカー・正規代理店の双方を含む『通常調達不能』時刻を、公開データから直接観測できるかは未確認。",
+      "knowledge_unit_refs": [
+        "K0001",
+        "K0009"
+      ]
+    },
+    {
+      "uncertainty_id": "U0003",
+      "description": "2021年risk-based論文は要旨のみ確認しており、数式・推定・実測性能を未照合。",
+      "knowledge_unit_refs": [
+        "K0003"
+      ]
+    }
+  ]
+}
