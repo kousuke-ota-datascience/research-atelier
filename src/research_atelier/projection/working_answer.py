@@ -101,13 +101,15 @@ def render_working_answer_section(analysis: Mapping[str, Any]) -> str:
     return "\n".join(blocks).rstrip()
 
 
-def _notion_block_sequence(markdown: str) -> str:
+def _notion_block_sequence(markdown: str, *, notion_readback: bool = False) -> str:
     """Normalize layout-only blank separators inserted by Notion NFM readback.
 
     The canonical renderer emits no empty spacer blocks. Notion may emit
     blank Markdown lines between headings and paragraphs when fetching the
     corresponding block sequence. Never discard nonblank text or reorder
-    blocks; preserve blank lines inside code fences.
+    blocks; preserve blank lines inside code fences. In Notion readback only,
+    unescape standard Markdown punctuation in prose (never table rows), so
+    formula punctuation is not misclassified as a semantic change.
     """
     lines: list[str] = []
     in_fence = False
@@ -121,7 +123,10 @@ def _notion_block_sequence(markdown: str) -> str:
             # Notion Flavored Markdown serializes inline bold as <b>...</b>
             # even when the accepted Git analysis used **...**. Treat only
             # this representation difference as equivalent for CURRENT checks.
-            lines.append(re.sub(r"<b>(.*?)</b>", r"**\1**", line))
+            normalized = re.sub(r"<b>(.*?)</b>", r"**\\1**", line)
+            if notion_readback and not normalized.lstrip().startswith("|"):
+                normalized = re.sub(r"\\([\\]_|])", r"\\1", normalized)
+            lines.append(normalized)
     return "\n".join(lines).rstrip()
 
 
@@ -188,7 +193,7 @@ def patch_working_answer_section(page_markdown: str, analysis: Mapping[str, Any]
     lines = body.splitlines()
     start, end = bounds
     current = "\n".join(lines[start:end]).rstrip()
-    if _notion_block_sequence(current) == _notion_block_sequence(rendered):
+    if _notion_block_sequence(current, notion_readback=True) == _notion_block_sequence(rendered):
         return PatchResult(markdown=body, action="NOOP")
 
     replacement_lines = rendered.splitlines()
@@ -207,7 +212,7 @@ def working_answer_section_matches(page_markdown: str, analysis: Mapping[str, An
     lines = page_markdown.splitlines()
     start, end = bounds
     current = "\n".join(lines[start:end]).rstrip()
-    return _notion_block_sequence(current) == _notion_block_sequence(render_working_answer_section(analysis))
+    return _notion_block_sequence(current, notion_readback=True) == _notion_block_sequence(render_working_answer_section(analysis))
 
 
 def working_answer_projection_state(page_markdown: str, analysis: Mapping[str, Any]) -> str:
