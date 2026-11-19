@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000044",
+  "review_seq": 1,
+  "layer": "10_evidence",
+  "review_kind": "source_evidence_note_to_10_evidence",
+  "target_blob_sha": "26ff92c6c072a20dae545a1d5791421c36207353",
+  "assessment": "採用8件はいずれも半導体メーカー公式一次文書であり、固定したSource revisionのblob SHAは8件すべて一致する。NXP PF7100 Automotive/Industrial長期供給予定差（2035/2030）、TI標準品対車載/高信頼性の直近販売5/7年非廃番適格条件、NRND/EOL/NLM、PCN、PPAP、LTB/最終納品の基本的な説明は一次資料の支持範囲内で、約束期間を実EOL日時に転用していない。ただしEvidence全14件がメーカー供給ポリシー・変更通知に偏り、RQの中心である保守・補修需要と品番別半導体供給継続判断の実態を直接比較する根拠が選定されていない。このcoverage gapをF001（Moderate）とする。",
+  "findings": [
+    {
+      "finding_id": "F001",
+      "severity": "Moderate",
+      "target": "10_evidence.evidence_items / RQ-000043の『車両寿命・補修・保守需要と半導体メーカーの供給継続判断』dimensionが未収集",
+      "evidence": [
+        "00_context.question.textは車載/非車載半導体の商習慣・供給体制・保守補修需要の比較を求め、investigation_boundary.includeに『車両寿命・補修・保守需要と、半導体メーカーの供給継続判断との関係』を明示する。",
+        "10_evidenceの8 Source・14 Evidence（E0001–E0014）は、NXPの用途別長期供給、TIの無販売5/7年の非廃番適格条件、車載PPAP、一般PCN、NRND、LTB/納品、Infineon等の長期供給計画、カスタム品承認手続に限られる。車両の生産終了後・修理補修用半導体の需要構造と正規調達継続判断との関係、及び非車載用途の補修・保守需要との直接比較を裏付けるEvidenceがない。",
+        "20_synthesis.U0004、30_analysis.limitationsは『車両補修需要とメーカーのEOL意思決定の因果連鎖は未検証』と留保している。これは断定の回避として適切だが、主要比較dimensionのEvidence収集そのものが成立していない。"
+      ],
+      "impact": "RQの主要dimensionである車両寿命・補修需要／非車載保守需要と供給継続の関係を検証できず、用途別EOL先行シグナル・予測可能性に関する比較回答の重要部分が欠落している。既存の供給ポリシー比較は保持可能であるためModerateとする。",
+      "repair_direction": {
+        "mode": "same_investigation",
+        "affected_layer": "10_evidence",
+        "instruction": "同一INVで、車載・非車載の保守補修需要構造、車両製造終了後の補修用半導体需要と品番別供給継続判断の関係、産業・医療・民生等の非車載用途の保守需要の差を直接支えるメーカー/OEM・一次調査・原著を追加探索する。完成車OEMの補修部品供給と半導体メーカーの製造継続義務は同一視しない。得られた資料はSource/Evidenceへ加え、確認できない部分は探索範囲と限界を記録する。10_evidenceを更新したら20_synthesisと30_analysisを再構築・through-30 validate後、独立にWorkflow 20再レビューする。"
+      }
+    }
+  ],
+  "verdict": "FINDINGS"
+}

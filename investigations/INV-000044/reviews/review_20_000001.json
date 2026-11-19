@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000044",
+  "review_seq": 1,
+  "layer": "20_synthesis",
+  "review_kind": "10_evidence_to_20_synthesis",
+  "target_blob_sha": "004ee7efb796a646b468f4e7d44c48fccb5cb926",
+  "assessment": "K0001–K0012はE0001–E0014に結び付き、NXPのプログラム期間の非確定性、TI無販売年数の必要・十分条件の非混同、車載PPAPと一般PCN/PDNの区別、非車載にも長期供給が存在する反例を維持している。U0001–U0005も用途別の予測性能、as-of履歴、補修需要との未検証の関係を保持し、Evidence未収集の事実を補完していない。20_synthesisに固有のunsupported inferenceは認めない。ただし上流F001は未解消。",
+  "findings": [],
+  "verdict": "PASS"
+}

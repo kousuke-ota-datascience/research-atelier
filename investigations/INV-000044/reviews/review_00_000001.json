@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000044",
+  "review_seq": 1,
+  "layer": "00_context",
+  "review_kind": "context_semantic_validity",
+  "target_blob_sha": "af702962e76abd8dc390b54b8a67f944bfffe768",
+  "assessment": "RQ-000043のComparative型の凍結Contextは、半導体の車載用途と非車載用途を製品群×メーカー×契約・経路で比較し、商習慣、供給管理、車両・設備の補修需要、予測先行情報、予測精度を区別する。EOL/PDN通知、LTB、製造終了、正規調達不能を同一イベントへ統合しない制約と、非車載内異質性・交絡の留保は一貫している。Contextのsemantic defectはない。",
+  "findings": [],
+  "verdict": "PASS"
+}

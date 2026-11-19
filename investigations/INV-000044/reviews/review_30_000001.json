@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000044",
+  "review_seq": 1,
+  "layer": "30_analysis",
+  "review_kind": "20_synthesis_plus_00_context_to_30_analysis",
+  "target_blob_sha": "3888daed60871c589e530625c2e022e298bdfc43",
+  "assessment": "Working Answerは8 Sourceの特定メーカー制度の違いを過剰に一般化せず、同シリーズ用途区分の供給計画、廃番非適格期間、PPAP・PCN、NRND/EOL/LTB/NLMを区別する。生存解析・多状態・階層的推定・時点外比較は検証済みモデルでなく提案とし、メーカー×製品種類×契約の交絡、予測性能未確認、車両補修需要への因果効果未検証を正しく留保する。主たるRQの補修需要dimensionが未回答なのは上流Evidence選定F001の帰結であり、Source/Synthesisをbypassして新たに補完してはいない。30_analysis固有の別Findingは記録しない。",
+  "findings": [],
+  "verdict": "PASS"
+}
