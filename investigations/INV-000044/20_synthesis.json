@@ -3,7 +3,7 @@
   "artifact_type": "20_synthesis",
   "investigation_id": "INV-000044",
   "rq_id": "RQ-000043",
-  "synthesized_at": "2026-11-19T14:01:40.141Z",
+  "synthesized_at": "2026-11-19T15:15:19.868Z",
   "knowledge_units": [
     {
       "knowledge_unit_id": "K0001",
@@ -108,6 +108,125 @@
       "qualifiers": [
         "これは本調査の採用Sourceに関するcoverage observationであり、該当実データや研究が世界に存在しないという主張ではない。"
       ]
+    },
+    {
+      "knowledge_unit_id": "K0013",
+      "statement": "USITC執筆者による2019年業界briefは、完成車OEMが車載半導体に長期間の信頼性と補修用部品の供給（最大30年相当）を期待すると記し、認定試験・モデル期間中の供給元固定が需要の継続性に関係すると述べる。",
+      "evidence_refs": [
+        "E0015",
+        "E0016"
+      ],
+      "qualifiers": [
+        "著者個人の業界分析でありUSITCの公式政府見解ではない。30年は顧客期待の上限で、半導体個品番の実供給期間・法的義務ではない。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0014",
+      "statement": "ZVEIと会員メーカー・Tier1のPosition Paperは、車載向けの長期供給、厳格な変更管理、品質・追跡性支援をコンシューマ用途より強く要求する一方、非車載設計の部品が車載に利用されることも述べる。",
+      "evidence_refs": [
+        "E0017",
+        "E0018"
+      ],
+      "qualifiers": [
+        "業界団体のPosition Paperであり品番別実測の供給継続率・予測性能ではない。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0015",
+      "statement": "ROHMは産業設備などの長寿命製品向けに10〜20年の半導体長期供給予定を公表し、対象選定に生産設備・材料調達・生産体制を考慮すると説明する。",
+      "evidence_refs": [
+        "E0019",
+        "E0020"
+      ],
+      "qualifiers": [
+        "対象品番の供給予定であり需要量の測定値や製造終了日ではない。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0016",
+      "statement": "Rochesterは車載補修・アフターサービスが一部OEMで車両生産終了後15年求められ、認定されたメーカーEOL品の在庫を供給すると説明する。",
+      "evidence_refs": [
+        "E0021",
+        "E0022"
+      ],
+      "qualifiers": [
+        "認定アフターマーケット事業者による自社説明。OEMの全件義務や半導体OCMが15年間製造を継続する証拠ではない。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0017",
+      "statement": "Rochesterの医療機器事業資料は、医療機器の認証・再設計負担が旧BOM部品の需要を維持し、元メーカーEOL後も在庫やライセンス製造による継続供給が行われるとする。",
+      "evidence_refs": [
+        "E0023",
+        "E0024"
+      ],
+      "qualifiers": [
+        "供給者の自己申告であり医療用途の全品番を代表しない。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0018",
+      "statement": "Rochesterは人工呼吸器用MC68040FEマイクロプロセッサの継続調達を必要とする顧客事例を説明する。",
+      "evidence_refs": [
+        "E0025"
+      ],
+      "qualifiers": [
+        "定性的な個別事例で、需要量・半導体メーカーEOL決定日との因果関係は不明。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0019",
+      "statement": "Rochesterの産業設備向け資料は、機械設備が長期間稼働し認定・再設計負担が旧品番の継続需要を生じさせ、供給者がEOL在庫や需要継続時のライセンス製造を使うと記す。",
+      "evidence_refs": [
+        "E0026"
+      ],
+      "qualifiers": [
+        "販売者の自社サービス説明で、実需の母集団分布や個別メーカーの終息政策と混同できない。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0020",
+      "statement": "Microchipの製品終息方針では通常の3年間の取引実績に対し、車載・軍事・宇宙などでは契約等によりさらに長い期間の事業活動を考慮することがあり、カスタム車載・PPAP顧客にはEOL/最終発注の個別通知と書面承認要求がある。",
+      "evidence_refs": [
+        "E0027",
+        "E0028"
+      ],
+      "qualifiers": [
+        "メーカーの通知ポリシーであり取引実績が終了日を決める単一規則ではない。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0021",
+      "statement": "RenesasのPLPは車載・産業・インフラ製品を含み、車載MCUでは12か月間に需要と対応する受注がない場合に供給期間満了前の終息を認める方針がある。",
+      "evidence_refs": [
+        "E0029",
+        "E0030"
+      ],
+      "qualifiers": [
+        "これは注文・需要による廃番判断のルールが存在する直接証拠。ただし適用回数、継続需要量とEOL確率の実測係数は不明。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0022",
+      "statement": "2025年自動車OEM補修部品需要予測の原著は1,709補修部品SKUを対象に、過去消費・保証故障率・残存車両数等から8年の需要量を推定した。",
+      "evidence_refs": [
+        "E0031"
+      ],
+      "qualifiers": [
+        "対象は車載半導体の発注履歴・EOL実績ではなく完成車OEMの補修部品需要である。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0023",
+      "statement": "認定アフターマーケット事業者の資料は、半導体の元メーカーEOL後も、認定流通在庫またはライセンス製造で車載・産業・医療向けに供給が残り得ることを示す。",
+      "evidence_refs": [
+        "E0022",
+        "E0024",
+        "E0026"
+      ],
+      "qualifiers": [
+        "元メーカーの製造終了・正規認定流通での供給継続・最終調達不能は別イベント。"
+      ]
     }
   ],
   "relations": [
@@ -165,6 +284,76 @@
         "K0010"
       ],
       "description": "長期供給プログラムは車載専用ではない。"
+    },
+    {
+      "relation_id": "R0007",
+      "relation_type": "association",
+      "knowledge_unit_refs": [
+        "K0013",
+        "K0016"
+      ],
+      "description": "車載の長い補修・アフターサービス期待と、認定半導体供給者による元メーカー終息後対応が別資料で示されるが、個品番の供給決定との定量的連結は未確認。"
+    },
+    {
+      "relation_id": "R0008",
+      "relation_type": "qualification",
+      "knowledge_unit_refs": [
+        "K0015",
+        "K0017",
+        "K0019"
+      ],
+      "description": "産業設備・医療用途も長期間の設計継続・部品供給を必要とするため、非車載を短寿命と一般化できない。"
+    },
+    {
+      "relation_id": "R0009",
+      "relation_type": "qualification",
+      "knowledge_unit_refs": [
+        "K0013",
+        "K0016",
+        "K0023"
+      ],
+      "description": "完成車OEMが要求する補修供給期間と半導体OCMの品番別製造継続期間、さらに認定流通者の供給期間は一致しない。"
+    },
+    {
+      "relation_id": "R0010",
+      "relation_type": "association",
+      "knowledge_unit_refs": [
+        "K0020",
+        "K0021",
+        "K0003"
+      ],
+      "description": "複数の半導体メーカー文書は用途・契約・注文需要が製品終息の判断や通知に関与し得る制度を示す。"
+    },
+    {
+      "relation_id": "R0011",
+      "relation_type": "qualification",
+      "knowledge_unit_refs": [
+        "K0022",
+        "K0021",
+        "K0016"
+      ],
+      "description": "自動車OEM補修需要を観測・予測できても、それだけで半導体メーカーの受注履歴・EOL日への因果連結は観測されない。"
+    },
+    {
+      "relation_id": "R0012",
+      "relation_type": "qualification",
+      "knowledge_unit_refs": [
+        "K0017",
+        "K0018",
+        "K0019"
+      ],
+      "description": "医療・産業の長期保守需要の個別事例や自社事業説明は全用途の平均・制度普及率を保証しない。"
+    },
+    {
+      "relation_id": "R0013",
+      "relation_type": "association",
+      "knowledge_unit_refs": [
+        "K0014",
+        "K0015",
+        "K0020",
+        "K0021"
+      ],
+      "description": "車載・非車載とも長期供給の制度があり、その条件は用途名称だけでなく受注・設備・材料・契約にも依存する。"
     }
   ],
   "uncertainties": [
@@ -194,12 +383,14 @@
     },
     {
       "uncertainty_id": "U0004",
-      "description": "車両の補修需要、設計採用・顧客契約が半導体メーカー品番の製造終了判断へ寄与する因果関係や大きさは、このSource集合からは同定できない。",
+      "description": "RenesasやMicrochip等の公式方針はメーカーの需要・注文条件を示す一方、車両・機器の保守需要からTier1発注・半導体メーカー受注・個別EOL決定へ至る品番単位の定量的因果連鎖は未観測。",
       "knowledge_unit_refs": [
-        "K0001",
-        "K0004",
-        "K0011",
-        "K0012"
+        "K0016",
+        "K0017",
+        "K0019",
+        "K0020",
+        "K0021",
+        "K0022"
       ]
     },
     {
@@ -208,6 +399,37 @@
       "knowledge_unit_refs": [
         "K0001",
         "K0010"
+      ]
+    },
+    {
+      "uncertainty_id": "U0006",
+      "description": "車載半導体のメーカー別サービス・LTB需要量、車両補修需要の半導体品番別変換率、車両生産終了後のチップ受注量は今回の資料では取得できず、EOLリスクへの寄与を推定できない。",
+      "knowledge_unit_refs": [
+        "K0013",
+        "K0016",
+        "K0021",
+        "K0022"
+      ]
+    },
+    {
+      "uncertainty_id": "U0007",
+      "description": "認定アフターマーケットのEOL後供給が元メーカーの元品番製造継続と異なるため、最終調達不能を対象とする際は経路ごとのイベント履歴が必要。",
+      "knowledge_unit_refs": [
+        "K0016",
+        "K0017",
+        "K0019",
+        "K0023"
+      ]
+    },
+    {
+      "uncertainty_id": "U0008",
+      "description": "USITC staff brief・ZVEI position・Rochester営業資料における年限・需要要求は選択サンプル／組織主張であり、実際の車載と非車載の平均差・発生率・統一予測精度を定量化できない。",
+      "knowledge_unit_refs": [
+        "K0013",
+        "K0014",
+        "K0016",
+        "K0017",
+        "K0019"
       ]
     }
   ]
