@@ -1,0 +1,11 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000287",
+  "notion_url": "https://app.notion.com/p/41de5855be398151b075ce2abab77df1",
+  "title": "The Authorized Source for Automotive Device Solutions",
+  "source_type": "Web Page",
+  "journal_or_publisher": "Rochester Electronics",
+  "url": "https://www.rocelec.com/news/authorized-automotive-solutions",
+  "reliability_note": "Authorized distributor/licensed manufacturer self-description. Auto OEMs often request years of postproduction service supply and Rochester provides authorized EOL semiconductor stock. Own marketing claims do not prove exact OEM obligations or OCM EOL choice."
+}
