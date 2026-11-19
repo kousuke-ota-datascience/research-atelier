@@ -1,0 +1,12 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000285",
+  "notion_url": "https://app.notion.com/p/41de5855be3981b9988ec9b1bfad273b",
+  "title": "Consumer Components in Safe Automotive Applications (2024 Position Paper)",
+  "source_type": "Report",
+  "journal_or_publisher": "ZVEI - Electro and Digital Industry Association",
+  "year": 2024,
+  "url": "https://www.zvei.org/fileadmin/user_upload/Presse_und_Medien/Publikationen/2024/Mai/Consumer_Components_in_Safe_Automotive_Applications/Position-Paper-Consumer-Semi-Automotive_English_2024.pdf",
+  "reliability_note": "Original position paper from semiconductor makers and Tier-1 suppliers; discusses automotive supply, production and change-management expectations versus consumer, but not measured EOL outcomes or representative comparison."
+}
