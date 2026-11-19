@@ -1,0 +1,14 @@
+{
+  "validation_target_commit_sha": "4cfb7707da2c563c635a9301ba683625e9d0b9c8",
+  "validated_at": "2026-11-19T14:15:48.626860+00:00",
+  "validator_command": "python -m research_atelier.validation.validate_investigation INV-000042 --through 30",
+  "exit_code": 0,
+  "validation": {
+    "errors": [],
+    "internal_errors": [],
+    "investigation_id": "INV-000042",
+    "new_freeze": false,
+    "result": "PASS",
+    "through": "30"
+  }
+}
