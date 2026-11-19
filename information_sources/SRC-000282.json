@@ -1,0 +1,11 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000282",
+  "notion_url": "https://app.notion.com/p/41de5855be39812d847ec867a618cc6c",
+  "title": "Automotive PPAP",
+  "source_type": "Documentation",
+  "journal_or_publisher": "Texas Instruments",
+  "url": "https://www.ti.com/en-us/quality-reliability/reliability/automotive-ppap",
+  "reliability_note": "車載製品PPAP／PCN PPAPに関するメーカー公式文書。需要量、EOL発生日や予測精度の根拠ではない。"
+}
