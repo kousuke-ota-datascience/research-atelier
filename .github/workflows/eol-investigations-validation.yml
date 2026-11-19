@@ -55,38 +55,42 @@ jobs:
               if pinned == current:
                   print('PASS', inv, 'projection provenance CURRENT')
               else:
-                  if inv != 'INV-000042':
-                      raise AssertionError('unexpected stale projection: ' + inv)
                   reviews = sorted((base / 'reviews').glob('review-[0-9][0-9][0-9][0-9][0-9][0-9].json'))
                   assert reviews, 'stale projection without canonical Review'
                   latest = json.loads(reviews[-1].read_text())
                   assert latest['investigation_id'] == inv
                   assert latest['verdict'] == 'FINDINGS', 'a PASS Review requires current accepted Working Answer projection'
+                  current_blob = subprocess.check_output(['git', 'hash-object', file_path], text=True).strip()
+                  assert latest['target']['artifact_blob_shas']['30_analysis'] != current_blob, 'cannot allow stale projection without actual repair'
                   print('STALE', inv, 'prior Working Answer; newest semantic Review remains FINDINGS')
           PY
-      - name: Test canonical Review-000001 stale-target reconciliation
+      - name: Verify canonical Review-state transition for both repaired Investigations
         env:
           PYTHONPATH: src
         run: |
           python - <<'PY'
           import json
+          import subprocess
           from pathlib import Path
           from research_atelier.reviewing.reconcile import reconcile_payload
-          base = Path('investigations/INV-000042')
-          context = json.loads((base / '00_context.json').read_text())
-          manifest = json.loads((base / 'reviews/review-000001.json').read_text())
-          assert manifest['verdict'] == 'FINDINGS'
-          assert manifest['target']['artifact_blob_shas']['10_evidence'] != __import__('subprocess').check_output(
-              ['git', 'hash-object', str(base / '10_evidence.json')], text=True
-          ).strip()
-          outcome = reconcile_payload({
-              'current': {'review_status': '要修正', 'latest_review_seq': 1},
-              'review': {'latest': manifest, 'target_relation': 'stale', 'issues': []},
-              'context': context,
-              'events': {}
-          })
-          assert outcome['outcome'] == 'UPDATE', outcome
-          assert outcome['changes'] == {'Review Status': '再レビュー待'}, outcome
-          assert not outcome['issues'], outcome
-          print('PASS canonical reconcile: INV-000042 Review Status => 再レビュー待')
+          for inv in ('INV-000042', 'INV-000043'):
+              base = Path('investigations') / inv
+              context = json.loads((base / '00_context.json').read_text())
+              reviews = sorted((base / 'reviews').glob('review-[0-9][0-9][0-9][0-9][0-9][0-9].json'))
+              assert reviews
+              manifest = json.loads(reviews[-1].read_text())
+              assert manifest['verdict'] == 'FINDINGS'
+              current_blob = subprocess.check_output(['git', 'hash-object', str(base / '10_evidence.json')], text=True).strip()
+              assert manifest['target']['artifact_blob_shas']['10_evidence'] != current_blob
+              for old_status in ('要修正', '再レビュー待'):
+                  outcome = reconcile_payload({
+                      'current': {'review_status': old_status, 'latest_review_seq': manifest['review_seq']},
+                      'review': {'latest': manifest, 'target_relation': 'stale', 'issues': []},
+                      'context': context,
+                      'events': {}
+                  })
+                  assert not outcome['issues'], outcome
+                  expected = ('UPDATE', {'Review Status': '再レビュー待'}) if old_status == '要修正' else ('NOOP', {})
+                  assert (outcome['outcome'], outcome['changes']) == expected, outcome
+              print('PASS stale Review-state reconciliation:', inv)
           PY
