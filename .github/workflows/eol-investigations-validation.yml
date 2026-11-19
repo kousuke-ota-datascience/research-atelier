@@ -32,3 +32,26 @@ jobs:
             python -m research_atelier.validation.validate_investigation "$id" --through 20
             python -m research_atelier.validation.validate_investigation "$id" --through 30
           done
+      - name: Validate accepted Working Answer projection provenance
+        run: |
+          python - <<'PY'
+          import json
+          import subprocess
+          from pathlib import Path
+          from jsonschema import Draft202012Validator, FormatChecker
+          schema = json.loads(Path('schemas/v2/projection_log.schema.json').read_text())
+          validator = Draft202012Validator(schema, format_checker=FormatChecker())
+          for inv, rq in (('INV-000042', 'RQ-000041'), ('INV-000043', 'RQ-000042')):
+              base = Path('investigations') / inv
+              log = json.loads((base / 'projection_log_v2.json').read_text())
+              validator.validate(log)
+              assert log['result'] == 'SUCCESS'
+              assert log['rq_id'] == rq
+              assert log['source_investigation_id'] == inv
+              assert log['projection_target'] == {'surface': 'page_body', 'section_heading': '# Working Answer'}
+              file_path = f'investigations/{inv}/30_analysis.json'
+              pinned = subprocess.check_output(['git', 'show', log['source_30_analysis_commit_sha'] + ':' + file_path], text=True)
+              current = (base / '30_analysis.json').read_text()
+              assert pinned == current
+              print('PASS', inv, 'projection provenance')
+          PY
