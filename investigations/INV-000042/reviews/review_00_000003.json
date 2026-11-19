@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000042",
+  "review_seq": 3,
+  "layer": "00_context",
+  "review_kind": "context_semantic_validity",
+  "target_blob_sha": "369e03646598983815495c857f69525f7f2ea412",
+  "assessment": "Frozen RQ-000041はMethodological questionとして予測対象をメーカーまたは正規流通の部品別通常調達不能時期／期間内リスクに設定し、二次流通とRULを明確に除外する。カタログ掲載、取扱終了status、NRND、LTB、LTS、製造終了と通常調達不能日を別のイベントとする境界は、サイエンティフィックな推定対象・母集団・予測時点を定義するために十分な一貫性を持つ。Context-defining defectは検出しない。",
+  "findings": [],
+  "verdict": "PASS"
+}

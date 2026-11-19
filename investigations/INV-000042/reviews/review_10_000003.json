@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000042",
+  "review_seq": 3,
+  "layer": "10_evidence",
+  "review_kind": "source_evidence_note_to_10_evidence",
+  "target_blob_sha": "e8c6d76a13c705a96b44904e1a44fa4de17153a0",
+  "assessment": "17 Source revisionのGit blob SHAと31件のNotion Evidence Note本文がcanonical Evidenceと一致することを確認した。DigiKey公式説明は『Discontinued By DigiKey』という業者独自statusとメーカーstatusの相違のみを直接支持し、カタログ掲載・検索除外日時は支持しない。この範囲はE0019に忠実に表現されている。Nexarは状態と更新時刻、Accurisはライフサイクル予測項目を示すが完全な過去掲載履歴を立証しないと明示。原著のWeibull条件付きリスク・製品寿命曲線・宇宙機MarkovとダイオードのLTBラベルはそれぞれ別の予測targetとして記録されている。論文全文が未確認な原著の精度・式への過剰な断定はなく、MLのPart Status/Obsolete Date項目から実際のリークを断定していない。新たなSource-faithfulness defectを検出しない。",
+  "findings": [],
+  "verdict": "PASS"
+}

@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000042",
+  "review_seq": 3,
+  "layer": "30_analysis",
+  "review_kind": "20_synthesis_plus_00_context_to_30_analysis",
+  "target_blob_sha": "a8091dc2147a69bc1ef4e53ff713d12b18e2d122",
+  "assessment": "Methodological Working Answerは17 Sourceに整合し、メーカー／正規流通での通常調達不能を共通labelとする課題を明示し、オンライン掲載削除・検索除外、DigiKey独自の取扱終了status、メーカーstatusの別変数による履歴収集案を実証済みの結論でなく研究設計提案として提示している。Gaussian製品曲線、Markov宇宙機技術モデル、Weibullの部品リスク、時系列製品群curve、クラスタ・MLのLTB回帰を条件・入力・予測対象ごとに区別し、比較不能な精度を順位付けしていない。未廃番品の打切り、時点リークの未立証性、予測as-of-time復元、校正とout-of-time評価の必要性が適切に位置づけられている。JudgmentとLimitationはContextとSynthesisを越えない。",
+  "findings": [],
+  "verdict": "PASS"
+}

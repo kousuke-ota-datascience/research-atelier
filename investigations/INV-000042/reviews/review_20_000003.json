@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000042",
+  "review_seq": 3,
+  "layer": "20_synthesis",
+  "review_kind": "10_evidence_to_20_synthesis",
+  "target_blob_sha": "f936d9bb1db131c61c87f2bf20863dcfcdf0ed95",
+  "assessment": "23 Knowledge Unitと10 relationおよび7 uncertaintyは、参照する31 Evidenceの支持範囲に留まる。流通業者の取扱終了statusと実際のカタログ掲載・検索除外をK0011で独立に扱い、掲載履歴の不存在でなく今回のSource集合に予測力実証がない旨を保持する。製品曲線、部品の条件付きリスク、宇宙機技術陳腐化、ダイオードLTB回帰、補修需要量の別targetを混同しない。時点整合性・打切り・外的妥当性の限界がSynthesisで保持されており、unsupported inferenceや上流Evidenceの補完を認めない。",
+  "findings": [],
+  "verdict": "PASS"
+}
