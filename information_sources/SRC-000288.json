@@ -1,0 +1,11 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000288",
+  "notion_url": "https://app.notion.com/p/41de5855be3981b7ad61d0bcf3e77fe4",
+  "title": "Medical Semiconductor Lifecycle Market Support",
+  "source_type": "Web Page",
+  "journal_or_publisher": "Rochester Electronics",
+  "url": "https://www.rocelec.com/markets/medical",
+  "reliability_note": "Authorized semiconductor aftermarket supplier first-party account: medical-device certification restricts redesign, licensed manufacture if demand persists, ventilator processor sourcing case. Commercial first-party case, not industry-wide demand measurement."
+}
