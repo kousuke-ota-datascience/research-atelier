@@ -1,0 +1,11 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000291",
+  "notion_url": "https://app.notion.com/p/41de5855be3981dd83dbdd9df0002e39",
+  "title": "Product Longevity Program (PLP)",
+  "source_type": "Documentation",
+  "journal_or_publisher": "Renesas Electronics",
+  "url": "https://www.renesas.com/en/support/product-longevity-program-plp",
+  "reliability_note": "Manufacturer official PLP: automotive, industrial and infrastructure participation; continued supply qualified by manufacturing/parts availability and order demand. Automotive MCU can be obsoleted early after 12 months without demand/orders. Does not show frequency/causal effect."
+}
