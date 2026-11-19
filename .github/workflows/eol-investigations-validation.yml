@@ -57,11 +57,12 @@ jobs:
               else:
                   if inv != 'INV-000042':
                       raise AssertionError('unexpected stale projection: ' + inv)
-                  review_path = base / 'reviews' / 'review-000001.json'
-                  review = json.loads(review_path.read_text())
-                  assert review['verdict'] == 'FINDINGS'
-                  assert review['investigation_id'] == inv
-                  print('STALE', inv, 'old Working Answer projection; reviewed repair pending independent re-review')
+                  reviews = sorted((base / 'reviews').glob('review-[0-9][0-9][0-9][0-9][0-9][0-9].json'))
+                  assert reviews, 'stale projection without canonical Review'
+                  latest = json.loads(reviews[-1].read_text())
+                  assert latest['investigation_id'] == inv
+                  assert latest['verdict'] == 'FINDINGS', 'a PASS Review requires current accepted Working Answer projection'
+                  print('STALE', inv, 'prior Working Answer; newest semantic Review remains FINDINGS')
           PY
       - name: Test canonical Review-000001 stale-target reconciliation
         env:
