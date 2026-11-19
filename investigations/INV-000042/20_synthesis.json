@@ -3,7 +3,7 @@
   "artifact_type": "20_synthesis",
   "investigation_id": "INV-000042",
   "rq_id": "RQ-000041",
-  "synthesized_at": "2026-11-19T09:34:31.000Z",
+  "synthesized_at": "2026-11-19T10:45:00.000Z",
   "knowledge_units": [
     {
       "knowledge_unit_id": "K0001",
@@ -91,6 +91,120 @@
         "E0006",
         "E0008"
       ]
+    },
+    {
+      "knowledge_unit_id": "K0011",
+      "statement": "DigiKey公式資料は『DigiKeyによる取扱終了』がメーカー側の製品活動状態と一致しない例を明記しており、流通カタログ落ちをOEM製造終了・正規調達不能と同一視できない。",
+      "evidence_refs": [
+        "E0019"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0012",
+      "statement": "DigiKeyの公式説明は製品状態の見直し頻度がメーカー等で異なるとし、Nexarは現在状態と更新時点を提供する。ただし掲載削除履歴・LTBまでの先行期間を定量検証する資料ではない。",
+      "evidence_refs": [
+        "E0020",
+        "E0021"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0013",
+      "statement": "Accurisの公式仕様は製品状態の再活性化、製品寿命の推定年数、予測時点を区別する。製品状態の再活性化は一方向EOL遷移と異なる可能性を示し、推定年月と実際の調達不能日を区別すべきである。",
+      "evidence_refs": [
+        "E0022",
+        "E0031"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0014",
+      "statement": "Solomonらの電子部品原著は販売・技術・市場の推移を利用し、電子部品のライフサイクル段階と陳腐化までの年数を予測する。元メーカー調達不能日を直接観測する同一labelではない。",
+      "evidence_refs": [
+        "E0015"
+      ],
+      "qualifiers": [
+        "所属研究機関公開の要旨に基づく。モデル式・時間外精度の全文確認は未実施。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0015",
+      "statement": "DubosとSalehのMarkov/Monte Carlo研究は宇宙機の軌道上技術陳腐化を対象とし、個別電子部品のメーカー・正規流通からの調達終了を対象とした実証ではない。",
+      "evidence_refs": [
+        "E0017"
+      ],
+      "qualifiers": [
+        "公開要旨・本文概要に基づく。電子部品EOLへの応用は研究仮説にとどめる。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0016",
+      "statement": "MastrangeloとOlsonの原著は、Weibull分布に基づく条件付き陳腐化リスクを計算し、製品寿命変化・大きな打切り・小標本・標本偏りなどへの対処を扱う。",
+      "evidence_refs": [
+        "E0018"
+      ],
+      "qualifiers": [
+        "公表要旨に基づく。校正・外部再現の詳細は未確認。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0017",
+      "statement": "MaとKimの原著はフラッシュメモリのライフサイクル曲線について、系列位置合わせ、Box–Cox変換、時系列モデルの3段階で予測する。曲線の予測と調達不能時刻の予測は同一ではない。",
+      "evidence_refs": [
+        "E0016"
+      ],
+      "qualifiers": [
+        "KCI掲載の原著要旨に基づく。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0018",
+      "statement": "電子部品の実証調査原著はEOL通知・LTB情報の不足と統計モデル適用の難しさを指摘しており、公開資料だけで全品番の観測履歴が得られるとは限らない。",
+      "evidence_refs": [
+        "E0023"
+      ],
+      "qualifiers": [
+        "閲覧可能なインデックス要旨に限定。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0019",
+      "statement": "Moonらのハイブリッド原著はZener等の収集フィールドにPart StatusおよびLTB dateを列挙する。記録列と実際の予測入力列、取得時点は別に検証しなければならず、現情報からリーク有無を断定できない。",
+      "evidence_refs": [
+        "E0024",
+        "E0026"
+      ],
+      "qualifiers": [
+        "原著のTable 1と学習・評価手順。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0020",
+      "statement": "同ハイブリッド原著は廃番済みのZener 2366、varactor 350、bridge rectifier 307件を対象とし、学習クラスタ、grid search、テスト誤差を報告するが、予測原点に対応した歴史的スナップショットを示していない。",
+      "evidence_refs": [
+        "E0025",
+        "E0026"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0021",
+      "statement": "ADS原著はLTB日から導入日を引いた期間を目的変数とすることを明記する。入力フィールド一覧にLTB日も見えるが、予測入力への使用と予測原点は原著の記述から確認できず、実際のリーク発生は未立証である。",
+      "evidence_refs": [
+        "E0027",
+        "E0028"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0022",
+      "statement": "ADS原著が未廃番の198件について確認したのは『予測日が過去になっていない』ことであり、真の未来LTB日が未観測である以上、前向き予測誤差・校正の検証ではない。",
+      "evidence_refs": [
+        "E0029"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0023",
+      "statement": "2026年のレビューはGaussian・Markov・Weibull・時系列・MLをそれぞれ異なる研究系列として紹介する。ただし直接の原著が対象とするイベント・単位・精度の同質性を保証しない。",
+      "evidence_refs": [
+        "E0030"
+      ]
     }
   ],
   "relations": [
@@ -129,6 +243,60 @@
         "K0010"
       ],
       "description": "電子ダイオード内の成績が、実稼働部品の時点外評価や他業界での性能を示すわけではない。"
+    },
+    {
+      "relation_id": "R0005",
+      "relation_type": "qualification",
+      "knowledge_unit_refs": [
+        "K0007",
+        "K0011"
+      ],
+      "description": "モデル状態、メーカーEOL決定、流通業者独自の取り扱い終了は異なる観測事象である。"
+    },
+    {
+      "relation_id": "R0006",
+      "relation_type": "qualification",
+      "knowledge_unit_refs": [
+        "K0012",
+        "K0018"
+      ],
+      "description": "現在値・更新日が見えることと、先行期間付き時系列データが取得できることは異なる。"
+    },
+    {
+      "relation_id": "R0007",
+      "relation_type": "qualification",
+      "knowledge_unit_refs": [
+        "K0014",
+        "K0017"
+      ],
+      "description": "ライフサイクルの段階・曲線予測と、部品別の最終調達不能時刻の予測は同じtargetではない。"
+    },
+    {
+      "relation_id": "R0008",
+      "relation_type": "qualification",
+      "knowledge_unit_refs": [
+        "K0015",
+        "K0016"
+      ],
+      "description": "Markov宇宙機技術陳腐化とWeibull部品EOL確率は単位とイベントが異なる。"
+    },
+    {
+      "relation_id": "R0009",
+      "relation_type": "qualification",
+      "knowledge_unit_refs": [
+        "K0019",
+        "K0020"
+      ],
+      "description": "回帰性能の実証は収集フィールドを予測時点に再構成できるかという検証を代替しない。"
+    },
+    {
+      "relation_id": "R0010",
+      "relation_type": "qualification",
+      "knowledge_unit_refs": [
+        "K0021",
+        "K0022"
+      ],
+      "description": "LTB日時の回帰学習と、未廃番品での予測時刻sanity checkは正規流通調達不能の前向き評価ではない。"
     }
   ],
   "uncertainties": [
@@ -154,6 +322,44 @@
       "description": "2021年risk-based論文は要旨のみ確認しており、数式・推定・実測性能を未照合。",
       "knowledge_unit_refs": [
         "K0003"
+      ]
+    },
+    {
+      "uncertainty_id": "U0004",
+      "description": "本Evidence集合に、カタログ掲載削除時点・次回掲載時点・掲載頻度・欠測と将来LTB/正規調達不能までの先行時間を品番単位で追跡して評価した原著はない。一般的に存在しないとまでは断定しない。",
+      "knowledge_unit_refs": [
+        "K0011",
+        "K0012",
+        "K0018"
+      ]
+    },
+    {
+      "uncertainty_id": "U0005",
+      "description": "ハイブリッド／ADS研究において、Part StatusやObsolete Dateがモデルの予測入力に含まれたか、事後値と区別されていたか、予測時点の履歴情報に制限したか未確認。",
+      "knowledge_unit_refs": [
+        "K0019",
+        "K0020",
+        "K0021"
+      ]
+    },
+    {
+      "uncertainty_id": "U0006",
+      "description": "Gaussian/Markov/Weibull/時系列の複数原著は要旨・公開概要に基づき、詳細数式・全特徴量・時点外精度を横並びで照合できていない。",
+      "knowledge_unit_refs": [
+        "K0014",
+        "K0015",
+        "K0016",
+        "K0017"
+      ]
+    },
+    {
+      "uncertainty_id": "U0007",
+      "description": "『EOL』・『LTB』・『調達不能』の解釈差、正規代理店の在庫消化・再供給の挙動に関する共通ラベルデータがない。",
+      "knowledge_unit_refs": [
+        "K0009",
+        "K0011",
+        "K0013",
+        "K0021"
       ]
     }
   ]
