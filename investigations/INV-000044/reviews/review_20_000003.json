@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000044",
+  "review_seq": 3,
+  "layer": "20_synthesis",
+  "review_kind": "10_evidence_to_20_synthesis",
+  "target_blob_sha": "0d39a5304273d2c629ae419858633c213922871f",
+  "assessment": "23 Knowledge Unitと参照31 Evidenceの意味論を対照し、全参照の存在・方向は整合する。メーカー供給予定と実EOL時点、USITCの業界期待と半導体メーカー義務、OEM補修部品需要と個別半導体需要、元メーカーEOLと認定アフターマーケット在庫・ライセンス製造による正規調達可能性の違いは維持されている。8つのUncertaintyが、品番単位の時点付受注/EOL記録、補修用ECU/BOMと半導体需要をつなぐ数量連鎖、車載対非車載の同一ラベルでの前向き予測精度、メーカー・製品群交絡を未検証と明記する。根拠を越えた統合・有力な反例の黙殺なし。",
+  "findings": [],
+  "verdict": "PASS"
+}

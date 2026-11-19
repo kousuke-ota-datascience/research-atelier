@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000044",
+  "review_seq": 3,
+  "layer": "30_analysis",
+  "review_kind": "20_synthesis_plus_00_context_to_30_analysis",
+  "target_blob_sha": "43d4713cc166882ca8a497ac3978978873c27273",
+  "assessment": "Comparative Working Answerは車載・産業設備・医療・民生の長期供給制度、品質承認、補修需要と供給継続手段を分け、補修需要→半導体メーカー個別受注→EOL判断という観測されていない連鎖を実証済みとせず、メーカーEOLと正規経路の調達不能を別targetとする。生存時間解析、多状態・階層モデル、rolling/time-as-of validationは推奨設計であり、文献で車載優位の実測精度が確認されたとは記していない。30_analysis.limitations[0]は現在の17 Source・31 Evidenceの出典構成（メーカー公式文書、USITC執筆者brief、ZVEI Position Paper、Rochester自社例、学術原著）を正確に反映し、それらが半導体品番別EOLの代表サンプルでないと明記する。必要な不確実性・代替解釈は保持され、Findingなし。",
+  "findings": [],
+  "verdict": "PASS"
+}

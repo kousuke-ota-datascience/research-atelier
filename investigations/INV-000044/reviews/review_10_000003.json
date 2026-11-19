@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000044",
+  "review_seq": 3,
+  "layer": "10_evidence",
+  "review_kind": "source_evidence_note_to_10_evidence",
+  "target_blob_sha": "6798649559f71e74cdaddf0b815f8f5bdbee3613",
+  "assessment": "現行17 Sourceのrevision commit/blob SHAとsource_idの一致を全件検証した。31 EvidenceはNXP/TI/Renesas/Microchip等の長期供給・廃番条件、車載品質承認とPCN/EOL通知、USITC職員briefの車載OEM補修供給期待、ZVEIの車載/コンシューマ業界Position Paper、ROHMの産業向けPLP、Rochesterによる認定アフターマーケットの車載・産業・医療用継続供給、完成車OEM補修部品の需要予測原著に対応する。30年・15年等の期間は顧客期待・事業者事例の範囲でありメーカー全チップ製造の保証ではない。メーカー別無販売/無受注条件はEOL日を確定するものではない。Rochester自社事例とUSITCの執筆者見解は代表的な実測精度とは区別する。補修需要側の比較Evidenceも含め、Source-faithfulness/selection Findingなし。",
+  "findings": [],
+  "verdict": "PASS"
+}

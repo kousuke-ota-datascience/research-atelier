@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000044",
+  "review_seq": 3,
+  "layer": "00_context",
+  "review_kind": "context_semantic_validity",
+  "target_blob_sha": "af702962e76abd8dc390b54b8a67f944bfffe768",
+  "assessment": "RQ-000043のfrozen ContextはComparative型として、車載・非車載半導体の供給管理、補修需要、商習慣、先行予測シグナルと予測適用条件を問う。メーカー半導体品番×用途×メーカー×契約/調達経路の単位を保持し、EOL/PDN通知、LTB、製造終了、正規調達不能を区別する。自動車OEMの補修義務を半導体メーカーの製造義務と同一視しない制約と非車載異質性・交絡への配慮は一貫し、Contextにsemantic Findingなし。",
+  "findings": [],
+  "verdict": "PASS"
+}
