@@ -1,0 +1,288 @@
+{
+  "schema_version": "2.1.0",
+  "artifact_type": "10_evidence",
+  "investigation_id": "INV-000042",
+  "rq_id": "RQ-000041",
+  "snapshot_at": "2026-11-19T09:31:13.000Z",
+  "sources": [
+    {
+      "source_id": "SRC-000254",
+      "source_revision": {
+        "commit_sha": "51c2126d64f5ec99471aa12c2fe9e2882fb36acc",
+        "blob_sha": "a52dafa4b5cb53e76cabf69083b28b60f5a9be8c"
+      },
+      "accessed_at": "2026-11-19T09:31:13.000Z",
+      "notion_url": "https://app.notion.com/p/41de5855be39815b802dee61377fdc03"
+    },
+    {
+      "source_id": "SRC-000255",
+      "source_revision": {
+        "commit_sha": "51c2126d64f5ec99471aa12c2fe9e2882fb36acc",
+        "blob_sha": "e52f1783d236cd5c74e2fe9ebb62aebf5e4a13e5"
+      },
+      "accessed_at": "2026-11-19T09:31:13.000Z",
+      "notion_url": "https://app.notion.com/p/41de5855be398101b494cc8760a39e34"
+    },
+    {
+      "source_id": "SRC-000256",
+      "source_revision": {
+        "commit_sha": "51c2126d64f5ec99471aa12c2fe9e2882fb36acc",
+        "blob_sha": "fe8c75c034577c58affe6928092f83ddabe2400b"
+      },
+      "accessed_at": "2026-11-19T09:31:13.000Z",
+      "notion_url": "https://app.notion.com/p/41de5855be3981149b71d785e27c35ef"
+    },
+    {
+      "source_id": "SRC-000257",
+      "source_revision": {
+        "commit_sha": "51c2126d64f5ec99471aa12c2fe9e2882fb36acc",
+        "blob_sha": "ff09de9770e7139dc121b5675f4993839ce9d83f"
+      },
+      "accessed_at": "2026-11-19T09:31:13.000Z",
+      "notion_url": "https://app.notion.com/p/41de5855be39812585e0c027f1953645"
+    },
+    {
+      "source_id": "SRC-000258",
+      "source_revision": {
+        "commit_sha": "51c2126d64f5ec99471aa12c2fe9e2882fb36acc",
+        "blob_sha": "83ddc95145d2a12773302ed5c5194cde65c75583"
+      },
+      "accessed_at": "2026-11-19T09:31:13.000Z",
+      "notion_url": "https://app.notion.com/p/41de5855be398104b918d9deb181e547"
+    },
+    {
+      "source_id": "SRC-000259",
+      "source_revision": {
+        "commit_sha": "51c2126d64f5ec99471aa12c2fe9e2882fb36acc",
+        "blob_sha": "5d75b4a0134799f086199cfe1bf539b535dcebd7"
+      },
+      "accessed_at": "2026-11-19T09:31:13.000Z",
+      "notion_url": "https://app.notion.com/p/41de5855be39816392d2ee2266dfc72b"
+    },
+    {
+      "source_id": "SRC-000262",
+      "source_revision": {
+        "commit_sha": "51c2126d64f5ec99471aa12c2fe9e2882fb36acc",
+        "blob_sha": "f57c6eb35fff83513bba140a7597740ecd841994"
+      },
+      "accessed_at": "2026-11-19T09:31:13.000Z",
+      "notion_url": "https://app.notion.com/p/41de5855be39819d99cde5d09ac7a733"
+    },
+    {
+      "source_id": "SRC-000263",
+      "source_revision": {
+        "commit_sha": "51c2126d64f5ec99471aa12c2fe9e2882fb36acc",
+        "blob_sha": "c115bbe63801fe7960e17e81301071f64705f9c7"
+      },
+      "accessed_at": "2026-11-19T09:31:13.000Z",
+      "notion_url": "https://app.notion.com/p/41de5855be3981e5b453dbbfe8bd0dd2"
+    },
+    {
+      "source_id": "SRC-000264",
+      "source_revision": {
+        "commit_sha": "51c2126d64f5ec99471aa12c2fe9e2882fb36acc",
+        "blob_sha": "89605d596bd13b869c453de02d2bb3dce2348b7d"
+      },
+      "accessed_at": "2026-11-19T09:31:13.000Z",
+      "notion_url": "https://app.notion.com/p/41de5855be398137b5fdfdeb51f49de9"
+    }
+  ],
+  "evidence_items": [
+    {
+      "evidence_id": "E0001",
+      "content": "SandbornらはDMSMS陳腐化を元メーカーから部品を調達する能力の喪失として扱い、長寿命システムと短寿命部品のライフサイクル不一致を問題とする。",
+      "source_locator": "Abstract",
+      "selection_reason": "予測方法・予測target・評価上の適用条件と限界を示す。",
+      "note_type": "Definition",
+      "provenance": {
+        "source_id": "SRC-000254",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/41de5855be39813ea536c9c636e16b7d",
+          "title": "EV-000394"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0002",
+      "content": "部品の過去の陳腐化イベントと、導入済みでまだ陳腐化していない部品の両方の記録から調達可能期間を推定する方法を提示する。",
+      "source_locator": "Abstract",
+      "selection_reason": "予測方法・予測target・評価上の適用条件と限界を示す。",
+      "note_type": "Method",
+      "provenance": {
+        "source_id": "SRC-000254",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/41de5855be3981ea986ec447a5ebae4a",
+          "title": "EV-000395"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0003",
+      "content": "2021年のrisk-based原著は、現時点で調達可能である条件の下で指定ホライズン以内に陳腐化する条件付き確率をモデル化し、MTTFベース手法と遡及比較する。全文詳細は未照合。",
+      "source_locator": "Abstract (index only)",
+      "selection_reason": "予測方法・予測target・評価上の適用条件と限界を示す。",
+      "note_type": "Method",
+      "provenance": {
+        "source_id": "SRC-000255",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/41de5855be3981748707f2e9faacf521",
+          "title": "EV-000396"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0004",
+      "content": "ADS研究は既に生産終了したZenerダイオード2366部品を選び、16数値・21カテゴリ説明変数を整理した。予測targetは導入日からLTB日までの期間である。",
+      "source_locator": "Section 4.1 Data Collection and Problem Description",
+      "selection_reason": "予測方法・予測target・評価上の適用条件と限界を示す。",
+      "note_type": "Data",
+      "provenance": {
+        "source_id": "SRC-000256",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/41de5855be3981f482c6fdafef215800",
+          "title": "EV-000397"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0005",
+      "content": "ADS研究は学習集合を類似部品の重複しうる部分集合へ分割し、各部分集合の回帰モデルから新しい部品に最も近いモデルを選ぶ。学習／テストの配分は80％／20％。",
+      "source_locator": "Section 3.2 / Section 4.1",
+      "selection_reason": "予測方法・予測target・評価上の適用条件と限界を示す。",
+      "note_type": "Method",
+      "provenance": {
+        "source_id": "SRC-000256",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/41de5855be39815eaa68d454c1666fb7",
+          "title": "EV-000398"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0006",
+      "content": "Moonらの研究はZener・varactor・bridge rectifierの3種ダイオードを対象に、k-meansによる類似クラスタと複数回帰モデルのhybridを用いてEOL日予測の誤差を比較した。",
+      "source_locator": "Abstract; Sections 3,5,6",
+      "selection_reason": "予測方法・予測target・評価上の適用条件と限界を示す。",
+      "note_type": "Method",
+      "provenance": {
+        "source_id": "SRC-000257",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/41de5855be398189817ed317e93eb580",
+          "title": "EV-000399"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0007",
+      "content": "2026年のレビューは188文献中、予測手法を扱う研究を21件（レビュー1件を除く）と整理し、数理的ライフサイクル・確率モデルとデータマイニングを主要系統として記述する。",
+      "source_locator": "Section 3.5 Forecasting",
+      "selection_reason": "予測方法・予測target・評価上の適用条件と限界を示す。",
+      "note_type": "Claim",
+      "provenance": {
+        "source_id": "SRC-000258",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/41de5855be398103a6a1f321206f9ca5",
+          "title": "EV-000400"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0008",
+      "content": "同レビューは予測手法が大量で正確なデータに依存する一方、実際のデータには欠測、古さ、誤記、不十分な品質があり、特徴量選択や仮定のバイアスが精度を損ねうると指摘する。",
+      "source_locator": "Discussion / Forecasting",
+      "selection_reason": "予測方法・予測target・評価上の適用条件と限界を示す。",
+      "note_type": "Limitation",
+      "provenance": {
+        "source_id": "SRC-000258",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/41de5855be3981499c3dea6cd357c26a",
+          "title": "EV-000401"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0009",
+      "content": "自動車補修部品1709品番の消費履歴、保証故障率、車両残存台数推定等を用い、EOL期における今後8年間の部品需要量を予測する機械学習フレームワークを提案・評価している。",
+      "source_locator": "Abstract; AI/ML modelling framework",
+      "selection_reason": "予測方法・予測target・評価上の適用条件と限界を示す。",
+      "note_type": "Method",
+      "provenance": {
+        "source_id": "SRC-000259",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/41de5855be3981c8a17dc06ab9929c91",
+          "title": "EV-000402"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0010",
+      "content": "自動車補修需要の予測比較でRandom ForestがSafe MAPE 4.36％を報告した。これはEOL期の需要予測誤差であり、正規調達終了日の予測誤差ではない。",
+      "source_locator": "Abstract; Results",
+      "selection_reason": "予測方法・予測target・評価上の適用条件と限界を示す。",
+      "note_type": "Result",
+      "provenance": {
+        "source_id": "SRC-000259",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/41de5855be39819d8dded7b90fe1bb39",
+          "title": "EV-000403"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0011",
+      "content": "RenesasはNRNDを新規設計採用非推奨、EOL-notifiedを生産終了決定と最終発注依頼済みとして区分する。",
+      "source_locator": "Supply Policy & Product Lifecycle: NRND / EOL",
+      "selection_reason": "予測方法・予測target・評価上の適用条件と限界を示す。",
+      "note_type": "Definition",
+      "provenance": {
+        "source_id": "SRC-000262",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/41de5855be3981dc9e63ea7f0d242ecb",
+          "title": "EV-000408"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0012",
+      "content": "Renesasは一般にEOL通知を生産終了12～24か月前とし、通知から6～12か月のLTB受付、LTB後およそ6～12か月の生産継続を説明する。品番別の例外はありうる。",
+      "source_locator": "Supply Policy & Product Lifecycle: EOL Notification and Shipment",
+      "selection_reason": "予測方法・予測target・評価上の適用条件と限界を示す。",
+      "note_type": "Claim",
+      "provenance": {
+        "source_id": "SRC-000262",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/41de5855be39818b991cf938c83b9d0b",
+          "title": "EV-000409"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0013",
+      "content": "TIは通常のdiscontinuance時、最終発注まで12か月、さらに最終納品まで6か月の期間を設けるとし、早期終了の例外では通知で理由と日程を示す。",
+      "source_locator": "Quality FAQs: product withdrawal",
+      "selection_reason": "予測方法・予測target・評価上の適用条件と限界を示す。",
+      "note_type": "Claim",
+      "provenance": {
+        "source_id": "SRC-000263",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/41de5855be398193b570e774750de8db",
+          "title": "EV-000410"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0014",
+      "content": "NXPではNRNDで既存顧客の受注は継続し、生産終了の意思決定はまだない。EOLではLTB期日まで受注可能、NLMでは新規受注も製造も行わない。",
+      "source_locator": "Product Lifecycle Status Definitions",
+      "selection_reason": "予測方法・予測target・評価上の適用条件と限界を示す。",
+      "note_type": "Definition",
+      "provenance": {
+        "source_id": "SRC-000264",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/41de5855be3981e6b101cf889c87c808",
+          "title": "EV-000411"
+        }
+      }
+    }
+  ]
+}
