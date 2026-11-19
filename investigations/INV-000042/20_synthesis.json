@@ -3,7 +3,7 @@
   "artifact_type": "20_synthesis",
   "investigation_id": "INV-000042",
   "rq_id": "RQ-000041",
-  "synthesized_at": "2026-11-19T12:57:44.524Z",
+  "synthesized_at": "2026-11-19T13:17:59.326Z",
   "knowledge_units": [
     {
       "knowledge_unit_id": "K0001",
@@ -94,7 +94,7 @@
     },
     {
       "knowledge_unit_id": "K0011",
-      "statement": "DigiKey公式資料が説明する『Discontinued By DigiKey』は、DigiKey独自の取扱終了ステータスであり、メーカー側では製品状態がActiveのままであり得る。これは販売業者のstatusとメーカーstatusの区別を裏付けるが、オンラインカタログ掲載からの削除・検索結果からの除外やその日時を示さない。後者の『カタログ落ち』は別途、掲載履歴に基づく観測が必要なイベントである。",
+      "statement": "DigiKey公式説明は『Discontinued By DigiKey』（代理店独自の取扱終了status）がメーカーのActiveと共存し得ると述べる。ただしカタログ掲載除外・検索結果からの削除が起きたことやその日時を証明しない。ステータス変更と掲載削除は別個の観測事象である。",
       "evidence_refs": [
         "E0019"
       ],
@@ -208,6 +208,59 @@
       "evidence_refs": [
         "E0030"
       ]
+    },
+    {
+      "knowledge_unit_id": "K0024",
+      "statement": "ADS原著は2,366件の廃番済みZenerを対象に、電気仕様・メーカー・Part Status・導入日・LTB日を含む収集フィールドを列挙し、『導入→LTB』期間を回帰targetにする。収集列と予測input列の一致や過去時点可用性は証明されない。",
+      "evidence_refs": [
+        "E0032"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0025",
+      "statement": "ADSは重なりを許す類似部品集合（cover）を形成し、部分集合ごとに回帰モデルを学習、予測対象に適する局所モデルを選択する。学習・評価対象は主に廃番済み標本であり、時点外の予測運用を実証していない。",
+      "evidence_refs": [
+        "E0033",
+        "E0005"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0026",
+      "statement": "MoonらのHybridはk-meansで訓練集合を分け、最寄り重心のクラスタに対応するDT・RF・GB回帰予測を等重み平均する（原著の具体式）。廃番済みダイオード3品種が評価対象である。",
+      "evidence_refs": [
+        "E0034",
+        "E0006"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0027",
+      "statement": "ADS原著は既知LTB日をもつ標本のMRE・RMSREと、未廃番198件の過去日付予測がないことを報告する。いずれも未廃番群の実際の将来EOL日時の前向き誤差・期間内EOL確率の校正ではない。",
+      "evidence_refs": [
+        "E0035",
+        "E0029"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0028",
+      "statement": "DigiKeyの公式説明ではNRND品目は通常なお生産・購入可能で、終了日程が未確定である。これは予測先行シグナルの定性的説明であり、NRND移行からEOLまでの分布や追加的予測力を数量で保証しない。",
+      "evidence_refs": [
+        "E0036",
+        "E0011"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0029",
+      "statement": "FAA受託報告書（2015）は、メーカー自己申告のライフサイクルコードだけでは終了日を予測できず、ライフサイクル曲線の形・複数点などが必要と指摘する。これは業界観察であり全対象部品に対する予測不可能性の数学的証明ではない。",
+      "evidence_refs": [
+        "E0037"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0030",
+      "statement": "Z2Dataの製品説明はActive→NRND→LTB→EOL等の履歴を保持すると主張するが、公開ページは利用可能な履歴スナップショット、NRND先行期間分布、予測精度を示さない。履歴サービスの存在と研究利用可能な検証データの入手は別である。",
+      "evidence_refs": [
+        "E0038"
+      ]
     }
   ],
   "relations": [
@@ -300,6 +353,43 @@
         "K0022"
       ],
       "description": "LTB日時の回帰学習と、未廃番品での予測時刻sanity checkは正規流通調達不能の前向き評価ではない。"
+    },
+    {
+      "relation_id": "R0011",
+      "relation_type": "qualification",
+      "knowledge_unit_refs": [
+        "K0028",
+        "K0029"
+      ],
+      "description": "定性的NRND/段階コードはEOLの確定日ではない。経過時間・動的履歴を加えた条件付き予測は提案できるが、追加的予測力は別途検証する。"
+    },
+    {
+      "relation_id": "R0012",
+      "relation_type": "qualification",
+      "knowledge_unit_refs": [
+        "K0025",
+        "K0026",
+        "K0027"
+      ],
+      "description": "廃番済み部品に対する局所回帰のオフライン誤差が低くても、現役品を含むprospective時点外性能・右打切りへの対処を示さない。"
+    },
+    {
+      "relation_id": "R0013",
+      "relation_type": "qualification",
+      "knowledge_unit_refs": [
+        "K0030",
+        "K0012"
+      ],
+      "description": "commercial status historyというデータ取得可能性の主張と、公開API現時点情報・カタログ掲載削除履歴の可観測性は別問題。"
+    },
+    {
+      "relation_id": "R0014",
+      "relation_type": "qualification",
+      "knowledge_unit_refs": [
+        "K0024",
+        "K0009"
+      ],
+      "description": "導入→LTBの教師ラベル、NRNDの収集列、正規調達不能日という当初targetを別々に識別する。"
     }
   ],
   "uncertainties": [
@@ -363,6 +453,30 @@
         "K0011",
         "K0013",
         "K0021"
+      ]
+    },
+    {
+      "uncertainty_id": "U0008",
+      "description": "今回の19 Sourceからは、過去時点のNRND／掲載削除履歴を説明変数に組み込んだ際の期間内EOL確率の追加予測力（同条件のablation）が定量確認できていない。",
+      "knowledge_unit_refs": [
+        "K0028",
+        "K0029",
+        "K0030"
+      ]
+    },
+    {
+      "uncertainty_id": "U0009",
+      "description": "商用のステータス履歴提供はベンダー公表であり、品番カバレッジ・契約上の入手性・履歴の検閲性と正規調達不能ラベルの有無は未実査。",
+      "knowledge_unit_refs": [
+        "K0030"
+      ]
+    },
+    {
+      "uncertainty_id": "U0010",
+      "description": "Moonらの収集フィールドにあるPart StatusやLTB日が、実際のpredictor・クラスタ用変数・前処理へ入ったか、歴史時点で得られたかは未確認。リークは疑義であり事実として確定していない。",
+      "knowledge_unit_refs": [
+        "K0024",
+        "K0026"
       ]
     }
   ]
