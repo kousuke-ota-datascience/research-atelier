@@ -1,0 +1,13 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000271",
+  "notion_url": "https://app.notion.com/p/41de5855be3981a2a03ce859ceeeb071",
+  "title": "Risk of spacecraft on-orbit obsolescence: Novel framework, stochastic modeling, and implications",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "Acta Astronautica",
+  "authors": "Fabien Dubos; Joseph H. Saleh",
+  "year": 2010,
+  "url": "https://www.sciencedirect.com/science/article/pii/S0094576510000020",
+  "reliability_note": "学術原著要旨・紹介文のみ。対象は宇宙機システムの軌道上技術陳腐化であり、個別部品の調達EOL予測性能は根拠にできない。"
+}

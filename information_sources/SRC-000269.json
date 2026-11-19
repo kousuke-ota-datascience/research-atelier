@@ -1,0 +1,13 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000269",
+  "notion_url": "https://app.notion.com/p/41de5855be398177a992eba6daaef5ae",
+  "title": "Electronic Part Life Cycle Concepts and Obsolescence Forecasting",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "IEEE Transactions on Components and Packaging Technologies",
+  "authors": "Rajeev Solomon; Peter Sandborn; Michael Pecht",
+  "year": 2000,
+  "url": "https://web.calce.umd.edu/articles/abstracts/2000/ObsCPMT.htm",
+  "reliability_note": "原著の所属研究機関による公開要旨のみ。Gaussian曲線・販売データの詳細式と実測評価の全文未確認。"
+}

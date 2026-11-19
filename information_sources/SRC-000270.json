@@ -1,0 +1,13 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000270",
+  "notion_url": "https://app.notion.com/p/41de5855be3981699451c3a83cd450e0",
+  "title": "Electronic Part Obsolescence Forecasting Based on Time Series Modeling",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "International Journal of Precision Engineering and Manufacturing",
+  "authors": "Jungmok Ma; Namhun Kim",
+  "year": 2017,
+  "url": "https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART002220465",
+  "reliability_note": "学術原著の書誌・要旨（KCI）。フラッシュメモリのライフサイクル曲線を予測。個別品番の調達不能日とは区別。"
+}

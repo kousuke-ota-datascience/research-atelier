@@ -1,0 +1,12 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000273",
+  "notion_url": "https://app.notion.com/p/41de5855be398177abefc9540f83627f",
+  "title": "Part Status: Obsolescence Process Explained",
+  "source_type": "Documentation",
+  "journal_or_publisher": "DigiKey TechForum",
+  "year": 2020,
+  "url": "https://forum.digikey.com/t/part-status-obsolescence-process-explained/10614",
+  "reliability_note": "流通企業の公式フォーラム説明。取扱終了とメーカー生産終了の分離を説明するが、カタログ落ちの予測先行期間の実測は示さない。"
+}

@@ -1,0 +1,12 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000276",
+  "notion_url": "https://app.notion.com/p/41de5855be39810cbd21f92e7f090346",
+  "title": "Micro-electronic Chips shortages and obsolescence: an empirical study",
+  "source_type": "Conference Paper",
+  "journal_or_publisher": "Procedia CIRP",
+  "year": 2023,
+  "url": "https://www.sciencedirect.com/science/article/pii/S2212827123009484",
+  "reliability_note": "原著公開要旨のみ。製造中止通知・LTB日の実態調査で、通知情報の欠落を報告するがカタログ落ち単独の予測力は未実証。"
+}

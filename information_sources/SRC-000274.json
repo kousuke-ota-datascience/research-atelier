@@ -1,0 +1,12 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000274",
+  "notion_url": "https://app.notion.com/p/41de5855be398195915be1972faa6786",
+  "title": "Supply: Lifecycle information for parts",
+  "source_type": "Documentation",
+  "journal_or_publisher": "Nexar Support",
+  "year": 2024,
+  "url": "https://support.nexar.com/support/solutions/articles/101000434626-supply-lifecycle-information-for-parts",
+  "reliability_note": "ライフサイクルstatusと更新時点のAPI例。履歴完全性・カタログ消滅・EOLリードタイムの実測を示さない。"
+}

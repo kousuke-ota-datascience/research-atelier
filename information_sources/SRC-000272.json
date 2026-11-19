@@ -1,0 +1,13 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000272",
+  "notion_url": "https://app.notion.com/p/41de5855be39812ebf18ecb401fd07c5",
+  "title": "A reliability approach for prediction and management of part obsolescence for improved system health",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "Quality Engineering",
+  "authors": "Christina M. Mastrangelo; Kara A. Olson",
+  "year": 2024,
+  "url": "https://asq.org/quality-resources/articles/a-reliability-approach-for-prediction-and-management-of-part-obsolescence-for-improved-system-health?id=bd7c5afde97b414e9b67652d209cefdb",
+  "reliability_note": "原著の出版元掲載要旨。条件付きWeibullによる部品陳腐化リスクを扱う。全文未確認。"
+}

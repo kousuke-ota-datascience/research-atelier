@@ -1,0 +1,11 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000275",
+  "notion_url": "https://app.notion.com/p/41de5855be39816a8bf2e2a6bdf96d30",
+  "title": "View part details: Life Cycle",
+  "source_type": "Documentation",
+  "journal_or_publisher": "Accuris / IHS",
+  "url": "https://4donline.ihs.com/bomhelp/Content/Part_Details/View_part_details.htm",
+  "reliability_note": "メーカーからの調達不能とリスク予測値を別項目で示す製品ドキュメント。現時点のライフサイクル情報中心、カタログ除外の先行時間実証ではない。"
+}
