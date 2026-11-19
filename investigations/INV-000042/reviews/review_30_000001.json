@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000042",
+  "review_seq": 1,
+  "layer": "30_analysis",
+  "review_kind": "20_synthesis_plus_00_context_to_30_analysis",
+  "target_blob_sha": "a1c64d768fbb3e506931c7850d4f54ac8621dd9c",
+  "assessment": "Working Answerはtargetの区別、未廃番の打切り、時間外検証、予測と通知後ルールの分離をMethodological design proposalとして提示し、主たる推論はK単位のsupport境界内。方法・情報範囲は上流Findingによって再構築を要し、さらにSource件数の誤表記がある。",
+  "findings": [
+    {
+      "finding_id": "F004",
+      "severity": "Minor",
+      "target": "30_analysis.working_answer.text: 『今回の15 Sourceから』",
+      "evidence": [
+        "10_evidence.sources lists precisely 9 distinct canonical Source IDs: SRC-000254, 255, 256, 257, 258, 259, 262, 263, 264.",
+        "30_analysis.working_answer.text claims '今回の15 Sourceから' without a defined or linked 15-source set."
+      ],
+      "impact": "Working Answerの根拠母集団・参照可能Source数が誤認され、traceabilityを損なう。",
+      "repair_direction": {
+        "mode": "same_investigation",
+        "affected_layer": "30_analysis",
+        "instruction": "『今回の15 Source』をcanonical Evidenceで追跡可能な『今回採用した9 Source』などに修正する。15件の探索母集団を意味する場合はEvidenceと区別して由来を明記する。"
+      }
+    }
+  ],
+  "verdict": "FINDINGS"
+}

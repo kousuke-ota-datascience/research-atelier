@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000042",
+  "review_seq": 1,
+  "layer": "00_context",
+  "review_kind": "context_semantic_validity",
+  "target_blob_sha": "369e03646598983815495c857f69525f7f2ea412",
+  "assessment": "frozen RQ-000041のMethodological question、通常調達不能日を主targetとするScope、OEM/正規流通・LTB/NRNDの区別、RUL除外は整合している。欠落・矛盾によりfrozen Context自体の変更を要するdefectは確認されない。",
+  "findings": [],
+  "verdict": "PASS"
+}

@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000042",
+  "review_seq": 1,
+  "layer": "20_synthesis",
+  "review_kind": "10_evidence_to_20_synthesis",
+  "target_blob_sha": "cecfd2032a1f16a1e5494540a98d482d47f6007f",
+  "assessment": "K0001-K0010は登録済みEvidenceへの参照が概ね整合し、LTBと通常調達不能の差、未検証の外的妥当性、全文未確認などの留保を保持する。上流Evidenceで欠落した重要論点はSynthesisだけで補完せず、Evidence repairとdownstream rebuildを要する。",
+  "findings": [],
+  "verdict": "PASS"
+}

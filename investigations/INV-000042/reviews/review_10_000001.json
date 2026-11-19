@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000042",
+  "review_seq": 1,
+  "layer": "10_evidence",
+  "review_kind": "source_evidence_note_to_10_evidence",
+  "target_blob_sha": "d64956ffb90ff8f66eb3f1cc5d64c8a3793d770e",
+  "assessment": "14 Evidence Noteと9つの固定Source revisionの対応を照合。原著のLTB定義、Renesas/TI/NXPの状態定義、Sandborn abstract等の引用は概ねSource-faithfulだが、RQのカタログ落ち、方法体系の詳細比較、原著の時点リーク可能性に関わる重要なEvidence selection/qualification omissionがある。",
+  "findings": [
+    {
+      "finding_id": "F001",
+      "severity": "Moderate",
+      "target": "10_evidence.evidence_items / 00_context.investigation_boundary.include[1]: カタログ落ちの先行シグナル",
+      "evidence": [
+        "00_context.question.text and investigation_boundary.include explicitly require catalog delisting/掲載状況 as a precursor signal.",
+        "10_evidence E0001-E0014: none assesses catalog listing/delisting timestamps, predictive lead-time, relation to NRND/EOL, or an empirical validation design.",
+        "SRC-000262/263/264 describe lifecycle or notice definitions, not catalog-delist predictive performance."
+      ],
+      "impact": "RQの主要な説明変数候補であるカタログ落ちの利用可能性・先行性・適用条件が未検証のまま、方法論を網羅したように読める。",
+      "repair_direction": {
+        "mode": "same_investigation",
+        "affected_layer": "10_evidence",
+        "instruction": "カタログ掲載履歴の観測単位・更新頻度・欠測とEOL/LTBまでの先行期間を評価したSource/Evidenceを追加する。該当する実証研究・データがなければ未確立と明示するEvidenceを記録し、20/30をinvalidateして再構築する。"
+      }
+    },
+    {
+      "finding_id": "F002",
+      "severity": "Moderate",
+      "target": "10_evidence.E0007/E0008 -> 20_synthesis.K0005 -> 30_analysis.working_answer: 方法体系の展開不足",
+      "evidence": [
+        "SRC-000258, Section 3.5 Forecasting enumerates Gaussian life-cycle modeling, Markov-chain risk, Weibull conditional risk, time-series models, and several data-mining/ML families.",
+        "E0007 and K0005 summarize only high-level mathematical/data-mining categories without recording representative model-specific assumptions and empirical evaluation boundaries.",
+        "00_context.question.text explicitly asks for methods, applicability conditions, and performance-evaluation issues."
+      ],
+      "impact": "複数の異なるモデル構造と適用条件が一括りにされ、汎用的な予測手法の比較設計に必要な選択肢・仮定の区別が不十分。",
+      "repair_direction": {
+        "mode": "same_investigation",
+        "affected_layer": "10_evidence",
+        "instruction": "SRC-000258で挙げられた代表的手法の原著を選択し、Gaussian/parametric life-cycle、Markov/multistate、Weibull/hazard、time-series、MLのtarget・入力・仮定・評価条件を原著依拠でEvidence化する。十分に検証できない手法は未検証と明示し、20/30を再構築する。"
+      }
+    },
+    {
+      "finding_id": "F003",
+      "severity": "Moderate",
+      "target": "10_evidence.E0006 / SRC-000257: 予測時点の特徴量可観測性・リーク検証の欠落",
+      "evidence": [
+        "SRC-000257, Section 4.1 and Table 1 lists Part Status and Obsolete Date (LTB Date) among recorded Zener-diode fields and selects only discontinued parts; Sections 3-5 report retrospective clustering/regression.",
+        "E0006 records method structure but not whether all predictors were available at the intended prediction date; 20_synthesis.K0010 and 30_analysis note temporal generalization limits, but not this specific feature/label audit issue.",
+        "SRC-000256, Section 4.1 expressly defines the target as time from introduction to LTB, distinct from the frozen normal-procurement-unavailable target."
+      ],
+      "impact": "原著の比較成績を将来予測可能性の根拠として解釈する際、結果時点のstatus/date情報による時点リークを排除できない。リークが実際に起きたと断定する根拠も現段階ではない。",
+      "repair_direction": {
+        "mode": "same_investigation",
+        "affected_layer": "10_evidence",
+        "instruction": "SRC-000257/256の目的変数と学習特徴量の区別、prediction-as-of-date、Part Status/Obsolete Dateを入力として用いたか、split・tuningの時点整合性を原著で検証しEvidenceへ追記する。未確認なら性能の前向き妥当性は不明と明確に留保し、20/30を再構築する。"
+      }
+    }
+  ],
+  "verdict": "FINDINGS"
+}
