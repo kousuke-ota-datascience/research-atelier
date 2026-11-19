@@ -1,0 +1,13 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000278",
+  "notion_url": "https://app.notion.com/p/41de5855be39813496c9d5210bb4ae1a",
+  "title": "Obsolescence and Life Cycle Management for Avionics",
+  "source_type": "Report",
+  "journal_or_publisher": "Federal Aviation Administration / DOT/FAA/TC-15/33",
+  "authors": "Chris Wilkinson",
+  "year": 2015,
+  "url": "https://rosap.ntl.bts.gov/view/dot/57637/dot_57637_DS1.pdf",
+  "reliability_note": "FAA sponsored contractor report. Its industry observations concern status codes and obsolescence date limitations; not FAA regulation or policy."
+}
