@@ -1,0 +1,11 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000283",
+  "notion_url": "https://app.notion.com/p/41de5855be39816f8efffaedc7068a1e",
+  "title": "Change Management and Customer Communication",
+  "source_type": "Documentation",
+  "journal_or_publisher": "NXP Semiconductors",
+  "url": "https://www.nxp.com/products/nxp-product-information/quality/change-management-and-customer-communication:QUALITY_CHGMGMT",
+  "reliability_note": "メーカー公式PCN・ディスコン通知・PPAP方針。通知期間は個別品番の調達不能日ではない。"
+}
