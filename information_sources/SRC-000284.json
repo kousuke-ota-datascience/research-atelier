@@ -1,0 +1,13 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000284",
+  "notion_url": "https://app.notion.com/p/41de5855be398180815df6a1e5cd8802",
+  "title": "The Automotive Semiconductor Market – Key Determinants of U.S. Firm Competitiveness",
+  "source_type": "Report",
+  "journal_or_publisher": "USITC Executive Briefings on Trade",
+  "year": 2019,
+  "authors": "Amanda Lawrence; John VerWey",
+  "url": "https://www.govinfo.gov/content/pkg/GOVPUB-ITC1-PURL-gpo190243/pdf/GOVPUB-ITC1-PURL-gpo190243.pdf",
+  "reliability_note": "USITC staff industry briefing; authors' views only, not official Commission/government position. Replacement parts supply up to 30 years is an industry expectation reported by authors, not a legal guarantee or observed semiconductor-EOL distribution."
+}
