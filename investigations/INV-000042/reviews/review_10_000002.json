@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000042",
+  "review_seq": 2,
+  "layer": "10_evidence",
+  "review_kind": "source_evidence_note_to_10_evidence",
+  "target_blob_sha": "083a89d26ef7aee23883211d75130a01dc893a33",
+  "assessment": "17 Sourceと31 Evidenceを原著およびNotion Evidence Noteに照合。製品寿命曲線・Markov/Weibull・時系列・MLの対象差、未廃番と右打切り、ML時点リークの未立証性はSourceに忠実に留保されている。一方DigiKeyの取扱終了ステータスをカタログ掲載除外として記述した箇所に小さな証拠範囲の飛躍がある。",
+  "findings": [
+    {
+      "finding_id": "F001",
+      "severity": "Minor",
+      "target": "10_evidence.E0019 (SRC-000273 / EV-000419) → 20_synthesis.K0011: 流通業者の取扱終了とオンラインカタログ掲載削除の区別",
+      "evidence": [
+        "SRC-000273 (DigiKey TechForum, Part Status: Obsolescence Process Explained, 'Discontinued By DigiKey') describes DigiKey's discontinuation of a part it carries while the manufacturer may still show it as Active; it does NOT establish a dated disappearance from catalog/search listings. https://forum.digikey.com/t/part-status-obsolescence-process-explained/10614",
+        "10_evidence.E0019 concludes 'Thus distributor catalog delisting and manufacturer production-end are distinct events'; 20_synthesis.K0011 refers to '流通カタログ落ち', although the directly documented event is distributor-specific discontinuation status.",
+        "00_context.question.text concerns catalog listing as precursor; 30_analysis.evaluation_criteria separately identifies '掲載有無', '検索に含まれたか', and 'ステータス', which need different observation definitions."
+      ],
+      "impact": "ディストリビュータによる取扱終了ステータスと、商品掲載・検索インデックスからの実際の削除は観測上同一とは限らない。Sourceにない掲載削除の存在や日時を証明したように読み取れる。Working Answerは別変数として扱う設計のため、主要結論への影響は限定的。",
+      "repair_direction": {
+        "mode": "same_investigation",
+        "affected_layer": "10_evidence",
+        "instruction": "E0019/EV-000419をDigiKey独自の取扱終了statusとメーカー生産状態の区別に限定し、カタログ検索・掲載からの除外日時は当該Sourceでは未確認と明記する。K0011/30_analysisで『カタログ落ち』が実際の掲載除外かstatus変更かを明示し、20/30を再構築する。"
+      }
+    }
+  ],
+  "verdict": "FINDINGS"
+}

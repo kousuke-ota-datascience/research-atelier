@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000042",
+  "review_seq": 2,
+  "layer": "20_synthesis",
+  "review_kind": "10_evidence_to_20_synthesis",
+  "target_blob_sha": "bbde9dab0f24fad948ffa1d757742369ef933674",
+  "assessment": "K0001-K0023はSourceからEvidenceに組み入れた主要事実を整合的に統合し、対象イベントの違いや情報の不確実性を保持する。独立した直接Findingはないが、E0019を修正する場合はK0011の用語補正と再構築が必要。",
+  "findings": [],
+  "verdict": "PASS"
+}

@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000042",
+  "review_seq": 2,
+  "layer": "30_analysis",
+  "review_kind": "20_synthesis_plus_00_context_to_30_analysis",
+  "target_blob_sha": "558a443f28badfad920de31d07c42851a54ca034",
+  "assessment": "Working Answerは17 Sourceを正しく数え、カタログ掲載有無・status・API更新・欠測を分け、原著モデルのtarget相違やリーク未立証を保ち、out-of-time評価を明示的な設計提案として扱っている。独立した直接Findingはない。",
+  "findings": [],
+  "verdict": "PASS"
+}
