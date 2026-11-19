@@ -1,0 +1,39 @@
+name: Validate EOL Investigation 000044
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/inv-000044-validation.yml'
+      - 'investigations/INV-000044/**'
+      - 'information_sources/SRC-0002**'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install 'jsonschema>=4.18'
+      - name: Validate available canonical stages in order
+        env:
+          PYTHONPATH: src
+        run: |
+          set -euo pipefail
+          id=INV-000044
+          python -m research_atelier.validation.validate_investigation "$id" --through 00 --new-freeze
+          for stage in 10 20 30; do
+            case "$stage" in
+              10) file=10_evidence.json ;;
+              20) file=20_synthesis.json ;;
+              30) file=30_analysis.json ;;
+            esac
+            if [ -f "investigations/$id/$file" ]; then
+              python -m research_atelier.validation.validate_investigation "$id" --through "$stage"
+            fi
+          done
