@@ -1,0 +1,11 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000290",
+  "notion_url": "https://app.notion.com/p/41de5855be3981dbaea1d364ffe5dcac",
+  "title": "End of Life (EOL) Policy",
+  "source_type": "Documentation",
+  "journal_or_publisher": "Microchip Technology",
+  "url": "https://www.microchip.com/en-us/support/quality/end-of-life-eol-policy",
+  "reliability_note": "Official Microchip policy: business activity trigger usually past three years, extended auto/military/space and special contracts, custom automotive/PPAP direct LTB approval communication. EOL timeline subject to supplier/inventory constraints."
+}
