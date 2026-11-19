@@ -1,0 +1,11 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000280",
+  "notion_url": "https://app.notion.com/p/41de5855be398135a2b6fb7493db2ab2",
+  "title": "Product Longevity",
+  "source_type": "Documentation",
+  "journal_or_publisher": "NXP Semiconductors",
+  "url": "https://www.nxp.com/products/nxp-product-information/nxp-product-programs/product-longevity:PRDCT_LONGEVITY_HM",
+  "reliability_note": "メーカー公式長期供給プログラム。対象製品の用途・製品別10/15年方針を示す。期間満了はEOL確定日ではない。"
+}
