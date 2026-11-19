@@ -3,7 +3,7 @@
   "artifact_type": "10_evidence",
   "investigation_id": "INV-000044",
   "rq_id": "RQ-000043",
-  "snapshot_at": "2026-11-19T14:00:12.171Z",
+  "snapshot_at": "2026-11-19T15:13:07.733Z",
   "sources": [
     {
       "source_id": "SRC-000262",
@@ -76,6 +76,87 @@
       },
       "accessed_at": "2026-11-19T14:00:12.171Z",
       "notion_url": "https://app.notion.com/p/41de5855be39816f8efffaedc7068a1e"
+    },
+    {
+      "source_id": "SRC-000259",
+      "source_revision": {
+        "commit_sha": "51c2126d64f5ec99471aa12c2fe9e2882fb36acc",
+        "blob_sha": "5d75b4a0134799f086199cfe1bf539b535dcebd7"
+      },
+      "accessed_at": "2026-11-19T15:13:07.733Z",
+      "notion_url": "https://app.notion.com/p/41de5855be39816392d2ee2266dfc72b"
+    },
+    {
+      "source_id": "SRC-000284",
+      "source_revision": {
+        "commit_sha": "d0e93aef53261c53f53fc25661caba3e71c9ff87",
+        "blob_sha": "c3a34ece5b1cd7692f9a8deee00adf363ae16382"
+      },
+      "accessed_at": "2026-11-19T15:13:07.733Z",
+      "notion_url": "https://app.notion.com/p/41de5855be398180815df6a1e5cd8802"
+    },
+    {
+      "source_id": "SRC-000285",
+      "source_revision": {
+        "commit_sha": "d0e93aef53261c53f53fc25661caba3e71c9ff87",
+        "blob_sha": "36e92d10c6f546a3ae65b57801f4b2e5943fb180"
+      },
+      "accessed_at": "2026-11-19T15:13:07.733Z",
+      "notion_url": "https://app.notion.com/p/41de5855be3981b9988ec9b1bfad273b"
+    },
+    {
+      "source_id": "SRC-000286",
+      "source_revision": {
+        "commit_sha": "d0e93aef53261c53f53fc25661caba3e71c9ff87",
+        "blob_sha": "59a55f894efd24ad69d251f0be5ab4ab6a910516"
+      },
+      "accessed_at": "2026-11-19T15:13:07.733Z",
+      "notion_url": "https://app.notion.com/p/41de5855be398110a245f483a6645a84"
+    },
+    {
+      "source_id": "SRC-000287",
+      "source_revision": {
+        "commit_sha": "d0e93aef53261c53f53fc25661caba3e71c9ff87",
+        "blob_sha": "32cdcd9beff925a7e6e44832ca00ac68f245764e"
+      },
+      "accessed_at": "2026-11-19T15:13:07.733Z",
+      "notion_url": "https://app.notion.com/p/41de5855be398151b075ce2abab77df1"
+    },
+    {
+      "source_id": "SRC-000288",
+      "source_revision": {
+        "commit_sha": "d0e93aef53261c53f53fc25661caba3e71c9ff87",
+        "blob_sha": "123a5c89a8f9a291cfb357f4eaf612e7e466b637"
+      },
+      "accessed_at": "2026-11-19T15:13:07.733Z",
+      "notion_url": "https://app.notion.com/p/41de5855be3981b7ad61d0bcf3e77fe4"
+    },
+    {
+      "source_id": "SRC-000289",
+      "source_revision": {
+        "commit_sha": "d0e93aef53261c53f53fc25661caba3e71c9ff87",
+        "blob_sha": "b68421676d306abedb8de57f965e632b6db37326"
+      },
+      "accessed_at": "2026-11-19T15:13:07.733Z",
+      "notion_url": "https://app.notion.com/p/41de5855be3981f4bc16d8d22456afb2"
+    },
+    {
+      "source_id": "SRC-000290",
+      "source_revision": {
+        "commit_sha": "d0e93aef53261c53f53fc25661caba3e71c9ff87",
+        "blob_sha": "8ef60b5848c94434fd50d11c65b3a2b2f0c4937a"
+      },
+      "accessed_at": "2026-11-19T15:13:07.733Z",
+      "notion_url": "https://app.notion.com/p/41de5855be3981dbaea1d364ffe5dcac"
+    },
+    {
+      "source_id": "SRC-000291",
+      "source_revision": {
+        "commit_sha": "d0e93aef53261c53f53fc25661caba3e71c9ff87",
+        "blob_sha": "d700a4fd8f86f9a974fbac774c2f2a311a136034"
+      },
+      "accessed_at": "2026-11-19T15:13:07.733Z",
+      "notion_url": "https://app.notion.com/p/41de5855be3981dd83dbdd9df0002e39"
     }
   ],
   "evidence_items": [
@@ -230,6 +311,193 @@
       "note_type": "Claim",
       "provenance": {
         "source_id": "SRC-000263",
+        "evidence_note": null
+      }
+    },
+    {
+      "evidence_id": "E0015",
+      "content": "USITC職員執筆の2019年業界briefは、車載OEMが車載半導体へ長い製品寿命と交換用部品の供給（最大30年間相当）を期待すると報告する。これは顧客の期待についての記述であり、特定メーカーが半導体を30年間生産・供給するとの保証ではない。",
+      "source_locator": "How the Automotive Market Differs... / Figure 3",
+      "selection_reason": "Review 000001 F001: 車載・非車載の長期補修需要／メーカー・認定供給者の供給継続判断を直接比較するため選定。",
+      "note_type": "Claim",
+      "provenance": {
+        "source_id": "SRC-000284",
+        "evidence_note": null
+      }
+    },
+    {
+      "evidence_id": "E0016",
+      "content": "同briefは、車載半導体のOEMによる認定試験とシステム試験は1年を超えることがあり、車載OEMが車両モデル期間中（概ね5年）は同一供給元を維持しやすいと記す。",
+      "source_locator": "Automotive Semiconductors: Stickiness, Reputation, and Time to Qualify",
+      "selection_reason": "Review 000001 F001: 車載・非車載の長期補修需要／メーカー・認定供給者の供給継続判断を直接比較するため選定。",
+      "note_type": "Claim",
+      "provenance": {
+        "source_id": "SRC-000284",
+        "evidence_note": null
+      }
+    },
+    {
+      "evidence_id": "E0017",
+      "content": "ZVEIと車載Tier1・部品メーカーの共同Position Paperは、車載部品向けのvalue-added supportとして長期供給、製造・変更管理、追跡性、監査、故障解析を列挙し、コンシューマ用途の標準的要求を超えると述べる。",
+      "source_locator": "p.1 Introduction / p.2 Value-added Support",
+      "selection_reason": "Review 000001 F001: 車載・非車載の長期補修需要／メーカー・認定供給者の供給継続判断を直接比較するため選定。",
+      "note_type": "Claim",
+      "provenance": {
+        "source_id": "SRC-000285",
+        "evidence_note": null
+      }
+    },
+    {
+      "evidence_id": "E0018",
+      "content": "ZVEI Position Paperは非車載向けに開発された部品が車両に採用される事例の増加を述べ、車載／コンシューマ用の部品仕様・認定・供給管理が一様でないと指摘する。",
+      "source_locator": "p.1 Purpose / pp.2–3 Component differences",
+      "selection_reason": "Review 000001 F001: 車載・非車載の長期補修需要／メーカー・認定供給者の供給継続判断を直接比較するため選定。",
+      "note_type": "Limitation",
+      "provenance": {
+        "source_id": "SRC-000285",
+        "evidence_note": null
+      }
+    },
+    {
+      "evidence_id": "E0019",
+      "content": "ROHMは長寿命の産業設備等向けに、主としてパワー・アナログ部品の供給期間を10〜20年とするProduct Longevity Programを2023年に公表した。",
+      "source_locator": "Sept. 7, 2023 announcement; program term",
+      "selection_reason": "Review 000001 F001: 車載・非車載の長期補修需要／メーカー・認定供給者の供給継続判断を直接比較するため選定。",
+      "note_type": "Claim",
+      "provenance": {
+        "source_id": "SRC-000286",
+        "evidence_note": null
+      }
+    },
+    {
+      "evidence_id": "E0020",
+      "content": "ROHMは産業設備向け長期供給プログラムの対象選定で製造体制・設備・材料調達状況等を考慮し、対象品番・予定供給期間をウェブ公開、年1回更新すると説明する。",
+      "source_locator": "Sept. 7, 2023 announcement; product selection and update",
+      "selection_reason": "Review 000001 F001: 車載・非車載の長期補修需要／メーカー・認定供給者の供給継続判断を直接比較するため選定。",
+      "note_type": "Claim",
+      "provenance": {
+        "source_id": "SRC-000286",
+        "evidence_note": null
+      }
+    },
+    {
+      "evidence_id": "E0021",
+      "content": "認定アフターマーケット半導体事業者Rochesterは、車両のモデル変更（5〜7年程度）後も車載電装・部品が継続利用され、一部完成車メーカーには生産終了後15年間のサービス／補修用部品供給要求があると説明する。これは供給事業者の自己申告であり車載半導体全品番の製造保証ではない。",
+      "source_locator": "Providing a Continuous Source for Long Lead Time Products",
+      "selection_reason": "Review 000001 F001: 車載・非車載の長期補修需要／メーカー・認定供給者の供給継続判断を直接比較するため選定。",
+      "note_type": "Claim",
+      "provenance": {
+        "source_id": "SRC-000287",
+        "evidence_note": null
+      }
+    },
+    {
+      "evidence_id": "E0022",
+      "content": "Rochesterは半導体メーカーから認定されたActive・EOL品の在庫を車載品を含む顧客へ供給し、EOL品の長期流通を業務としていると説明する。",
+      "source_locator": "Providing a Continuous Source for Long Lead Time Products; authorized stock",
+      "selection_reason": "Review 000001 F001: 車載・非車載の長期補修需要／メーカー・認定供給者の供給継続判断を直接比較するため選定。",
+      "note_type": "Claim",
+      "provenance": {
+        "source_id": "SRC-000287",
+        "evidence_note": null
+      }
+    },
+    {
+      "evidence_id": "E0023",
+      "content": "Rochesterの医療機器向け事業説明では、医療機器の認証・規制、再設計に要する費用と時間がBOMを維持した長期半導体調達を必要にするとされる。",
+      "source_locator": "Medical: opening paragraphs",
+      "selection_reason": "Review 000001 F001: 車載・非車載の長期補修需要／メーカー・認定供給者の供給継続判断を直接比較するため選定。",
+      "note_type": "Claim",
+      "provenance": {
+        "source_id": "SRC-000288",
+        "evidence_note": null
+      }
+    },
+    {
+      "evidence_id": "E0024",
+      "content": "Rochesterは医療機器向けに最終出荷後もEOL在庫を保有し、在庫が枯渇した後にも需要が継続する場合はライセンス製造を行うと説明する。",
+      "source_locator": "Medical: Our focus / authorized stock, discontinuation stock and licensed manufacturing",
+      "selection_reason": "Review 000001 F001: 車載・非車載の長期補修需要／メーカー・認定供給者の供給継続判断を直接比較するため選定。",
+      "note_type": "Claim",
+      "provenance": {
+        "source_id": "SRC-000288",
+        "evidence_note": null
+      }
+    },
+    {
+      "evidence_id": "E0025",
+      "content": "Rochesterは医療用人工呼吸器を製造する顧客が旧MC68040FEプロセッサの継続供給を必要とした事例を紹介している。これは同社の顧客事例で、車載との比較頻度やEOL日予測精度は示さない。",
+      "source_locator": "Medical: Case Studies / MC68040FE microcontrollers",
+      "selection_reason": "Review 000001 F001: 車載・非車載の長期補修需要／メーカー・認定供給者の供給継続判断を直接比較するため選定。",
+      "note_type": "Claim",
+      "provenance": {
+        "source_id": "SRC-000288",
+        "evidence_note": null
+      }
+    },
+    {
+      "evidence_id": "E0026",
+      "content": "Rochesterによる産業設備の顧客事例・提供サービスでは、長寿命設備の認定要件が半導体部品の置換・再設計を制約し、最終出荷後の在庫確保や需要継続時のライセンス製造が継続供給手段になっている。",
+      "source_locator": "Industrial: long lifecycles and discontinuation stock / licensed manufacturing",
+      "selection_reason": "Review 000001 F001: 車載・非車載の長期補修需要／メーカー・認定供給者の供給継続判断を直接比較するため選定。",
+      "note_type": "Claim",
+      "provenance": {
+        "source_id": "SRC-000289",
+        "evidence_note": null
+      }
+    },
+    {
+      "evidence_id": "E0027",
+      "content": "MicrochipのEOL Policyは、大半の製品で直近3年の事業活動をEOL通知要否の基準としつつ、車載・軍事・宇宙用途では契約等に応じ3年を超えた取引実績を考慮し得ると述べる。",
+      "source_locator": "When We Notify Clients About EOL",
+      "selection_reason": "Review 000001 F001: 車載・非車載の長期補修需要／メーカー・認定供給者の供給継続判断を直接比較するため選定。",
+      "note_type": "Claim",
+      "provenance": {
+        "source_id": "SRC-000290",
+        "evidence_note": null
+      }
+    },
+    {
+      "evidence_id": "E0028",
+      "content": "Microchipはカスタム車載またはPPAP製品に対して個別PCNを送り、顧客の書面LTB承認を求めると説明する。LTB/LTS期日は要となる供給元・在庫等に制約され、早い場合はEOL通知日と同時に終了する可能性がある。",
+      "source_locator": "How We Notify Clients About EOL",
+      "selection_reason": "Review 000001 F001: 車載・非車載の長期補修需要／メーカー・認定供給者の供給継続判断を直接比較するため選定。",
+      "note_type": "Claim",
+      "provenance": {
+        "source_id": "SRC-000290",
+        "evidence_note": null
+      }
+    },
+    {
+      "evidence_id": "E0029",
+      "content": "Renesas Product Longevity Programは車載、産業、インフラ分野を対象とし、対象品番の製造施設その他の供給条件が整うことを採択条件に含める。参加期間が終われば通常の製品ライフサイクル管理に戻る。",
+      "source_locator": "Applicable Products / Program operation",
+      "selection_reason": "Review 000001 F001: 車載・非車載の長期補修需要／メーカー・認定供給者の供給継続判断を直接比較するため選定。",
+      "note_type": "Claim",
+      "provenance": {
+        "source_id": "SRC-000291",
+        "evidence_note": null
+      }
+    },
+    {
+      "evidence_id": "E0030",
+      "content": "Renesasは車載MCUについて、12か月間に需要と対応する受注がない場合、特別供給プログラムの期間満了前に終息させる権利を留保すると明記する。これは個別EOL判断で需要が考慮され得ることの直接の公式方針であり、実施頻度・実際のEOL日・効果量を報告しない。",
+      "source_locator": "PLP Change Policy item 6",
+      "selection_reason": "Review 000001 F001: 車載・非車載の長期補修需要／メーカー・認定供給者の供給継続判断を直接比較するため選定。",
+      "note_type": "Claim",
+      "provenance": {
+        "source_id": "SRC-000291",
+        "evidence_note": null
+      }
+    },
+    {
+      "evidence_id": "E0031",
+      "content": "自動車OEMの補修部品1709品番を対象とした2025年原著では、過去消費、保証故障率、車両の稼働母数の減衰等からEOL期の8年間の補修部品需要を予測している。対象は完成車の補修部品であり、半導体製造元の品番別EOL日や半導体のサービス需要の直接観測ではない。",
+      "source_locator": "Abstract / Methods: OEM aftersales inventory and 1709 SKUs",
+      "selection_reason": "Review 000001 F001: 車載・非車載の長期補修需要／メーカー・認定供給者の供給継続判断を直接比較するため選定。",
+      "note_type": "Result",
+      "provenance": {
+        "source_id": "SRC-000259",
         "evidence_note": null
       }
     }
