@@ -120,6 +120,25 @@ class WorkingAnswerPatchTests(unittest.TestCase):
         self.assertEqual(working_answer_projection_state(notion_readback, analysis), "CURRENT")
         self.assertEqual(patch_working_answer_section(notion_readback, analysis).action, "NOOP")
 
+    def test_notion_escaped_formula_punctuation_roundtrip_is_current(self):
+        # Notion NFM readback escapes Markdown punctuation in prose, but the
+        # accepted Git analysis uses ordinary characters in the formula.
+        analysis = {
+            "working_answer": {
+                "text": "logit P(T∈(t,t+Δ] | T>t, H_t)=α(t)+βᵀx(t)",
+                "knowledge_unit_refs": [],
+            },
+            "judgments": [], "limitations": [],
+            "unresolved_questions": [], "alternative_interpretations": [],
+        }
+        notion_readback = (
+            "# Working Answer\n\n## Answer\n\n"
+            "logit P(T∈(t,t+Δ\\] \\| T>t, H\\_t)=α(t)+βᵀx(t)"
+        )
+        self.assertTrue(working_answer_section_matches(notion_readback, analysis))
+        self.assertEqual(working_answer_projection_state(notion_readback, analysis), "CURRENT")
+        self.assertEqual(patch_working_answer_section(notion_readback, analysis).action, "NOOP")
+
     def test_notion_inline_bold_code_fence_is_not_normalized(self):
         analysis = {
             "working_answer": {
