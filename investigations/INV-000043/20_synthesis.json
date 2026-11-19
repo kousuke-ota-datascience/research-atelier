@@ -1,0 +1,183 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "20_synthesis",
+  "investigation_id": "INV-000043",
+  "rq_id": "RQ-000042",
+  "synthesized_at": "2026-11-19T09:34:31.000Z",
+  "knowledge_units": [
+    {
+      "knowledge_unit_id": "K0001",
+      "statement": "DMSMSは原メーカーからの調達不能を対象とし、補修・正規流通まで含む終了時点とは定義の確認が必要である。",
+      "evidence_refs": [
+        "E0001"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0002",
+      "statement": "トヨタは工場装着部品の供給を生産終了後約10年の目安とするが、部品による差を認め、販売店装着オプションは車両生産終了後は在庫のみとする。",
+      "evidence_refs": [
+        "E0006",
+        "E0007"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0003",
+      "statement": "日産は補修部品を販売実績のない品目から終了し、ディーラーオプションは原則生産終了後3年目安だが無注文なら前倒し終了するとしている。",
+      "evidence_refs": [
+        "E0008",
+        "E0009"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0004",
+      "statement": "RenesasとNXPはNRNDを生産終了確定と同義にせず、EOL通知・最終発注・製造終了と区別した製品状態を公開する。",
+      "evidence_refs": [
+        "E0010",
+        "E0013"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0005",
+      "statement": "Renesasは一般に生産終了約12〜24か月前の通知、通知後6〜12か月のLTB受付を説明し、TIは最終発注12か月・その後の納品6か月を説明する。",
+      "evidence_refs": [
+        "E0011",
+        "E0012"
+      ],
+      "qualifiers": [
+        "いずれも一般方針で個別品番の保証ではない。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0006",
+      "statement": "Infineonの長期供給予定は需要・技術変更・互換品への移行の条件を伴い、定期的に改訂される。",
+      "evidence_refs": [
+        "E0014"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0007",
+      "statement": "公正取引委員会の建機相談事例は、供給年限後に在庫保有から受注生産へ転換する団体自主基準案を紹介し、供給終了とはしていない。",
+      "evidence_refs": [
+        "E0015"
+      ],
+      "qualifiers": [
+        "相談事例は実際の業界一律運用を証明しない。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0008",
+      "statement": "EU冷蔵機器規則は対象補修部品ごとに最低7年・10年等の供給期間を義務付けており、対象部品・利用者区分ごとに適用条件が異なる。",
+      "evidence_refs": [
+        "E0016"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0009",
+      "statement": "自動車補修部品の需要予測研究は消費履歴、保証故障率、車両残存台数を使うが、予測出力は8年間の需要量である。",
+      "evidence_refs": [
+        "E0004",
+        "E0005"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0010",
+      "statement": "2026年のレビューはEOL予測研究の多様性と、データ不足・質の問題を指摘している。",
+      "evidence_refs": [
+        "E0002",
+        "E0003"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0011",
+      "statement": "自動車・半導体・建機・EU冷蔵機器のSourceでは『供給終了』『最終発注』『在庫終了』『受注生産への移行』『最低供給期間』が異なるイベントを指す。",
+      "evidence_refs": [
+        "E0006",
+        "E0011",
+        "E0013",
+        "E0015",
+        "E0016"
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "relation_id": "R0001",
+      "relation_type": "qualification",
+      "knowledge_unit_refs": [
+        "K0002",
+        "K0003"
+      ],
+      "description": "同じ自動車でもメーカー・部品区分で需要依存、供給目安、在庫終了条件が異なる。"
+    },
+    {
+      "relation_id": "R0002",
+      "relation_type": "qualification",
+      "knowledge_unit_refs": [
+        "K0004",
+        "K0005"
+      ],
+      "description": "NRNDをEOL通知後の既知LTB日程と同一視しない。"
+    },
+    {
+      "relation_id": "R0003",
+      "relation_type": "qualification",
+      "knowledge_unit_refs": [
+        "K0007",
+        "K0008"
+      ],
+      "description": "建機の在庫期間・受注生産とEU法令の最低供給期間は直接比較できる最終調達不能時期ではない。"
+    },
+    {
+      "relation_id": "R0004",
+      "relation_type": "association",
+      "knowledge_unit_refs": [
+        "K0003",
+        "K0009"
+      ],
+      "description": "補修品需要の履歴は一部自動車部品の供給判断に関係し、別研究では需要予測入力となっている。"
+    },
+    {
+      "relation_id": "R0005",
+      "relation_type": "qualification",
+      "knowledge_unit_refs": [
+        "K0001",
+        "K0011"
+      ],
+      "description": "原メーカー調達不能と正規流通・補修の実際の終了時刻は調達経路の区別が必要。"
+    }
+  ],
+  "uncertainties": [
+    {
+      "uncertainty_id": "U0001",
+      "description": "業界ごとの『EOL予測の実測精度』を統一target・同一条件で比較した資料は今回のEvidence集合にない。",
+      "knowledge_unit_refs": [
+        "K0009",
+        "K0010",
+        "K0011"
+      ]
+    },
+    {
+      "uncertainty_id": "U0002",
+      "description": "実際に終了した品番別日付、代理店在庫、代替品、受注履歴などが入手できる範囲は未検証。",
+      "knowledge_unit_refs": [
+        "K0002",
+        "K0003",
+        "K0004"
+      ]
+    },
+    {
+      "uncertainty_id": "U0003",
+      "description": "建機の団体相談事例を全メーカーの実施ルールに一般化できない。",
+      "knowledge_unit_refs": [
+        "K0007"
+      ]
+    },
+    {
+      "uncertainty_id": "U0004",
+      "description": "EU法令の対象部品区分・法域の外側へ最低供給年限を一般化できない。",
+      "knowledge_unit_refs": [
+        "K0008"
+      ]
+    }
+  ]
+}
