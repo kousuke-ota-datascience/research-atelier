@@ -3,7 +3,7 @@
   "artifact_type": "10_evidence",
   "investigation_id": "INV-000042",
   "rq_id": "RQ-000041",
-  "snapshot_at": "2026-11-19T10:39:00.000Z",
+  "snapshot_at": "2026-11-19T12:57:02.745Z",
   "sources": [
     {
       "source_id": "SRC-000254",
@@ -414,9 +414,9 @@
     },
     {
       "evidence_id": "E0019",
-      "content": "DigiKey distinguishes distributor-specific 'Discontinued By DigiKey' from manufacturer status: DigiKey can stop carrying a product while it remains active at the manufacturer. Thus distributor catalog delisting and manufacturer production-end are distinct events.",
-      "source_locator": "Statuses / Discontinued By DigiKey",
-      "selection_reason": "Review 000001 repair: F001 catalog-signal observability",
+      "content": "DigiKey公式TechForumの「Discontinued By DigiKey」は、DigiKey自身が当該品目の取扱いを終了したことを示すステータスである。DigiKeyで取扱終了となっても、メーカー公式サイトでは製品状態がActiveのままの場合がある。この資料は流通業者独自の取扱終了ステータスとメーカーの製品状態の相違を直接説明する。一方、オンラインカタログから品目が消去されたか、製品詳細ページ・検索結果から除外されたか、その発生日・時刻は示していない。したがって「取扱終了status」「メーカーstatus」「カタログ掲載有無／検索結果の出現有無」は別個の観測変数として扱い、実際の掲載削除日およびEOL/LTBまでの先行時間は未確認とする。",
+      "source_locator": "DigiKey TechForum, 'Part Status: Obsolescence Process Explained', Statuses > 'Discontinued By DigiKey' (2020-12-09)",
+      "selection_reason": "Review 000002 F001 repair: distinguish distributor-defined discontinued status from an independently observed disappearance from catalog/search listings; manufacturer status may differ.",
       "note_type": "Definition",
       "provenance": {
         "source_id": "SRC-000273",
