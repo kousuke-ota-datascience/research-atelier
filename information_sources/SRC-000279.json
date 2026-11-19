@@ -1,0 +1,12 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000279",
+  "notion_url": "https://app.notion.com/p/41de5855be398182a9b5e4dc29a97758",
+  "title": "Lifecycle Status and History for Every Component",
+  "source_type": "Documentation",
+  "journal_or_publisher": "Z2Data",
+  "year": 2026,
+  "url": "https://www.z2data.com/products/part-risk-manager/features/lifecycle-status-and-history/",
+  "reliability_note": "Vendor-authored product documentation: claims historical part status tracking, not independently validated dataset availability, coverage or predictive performance."
+}
