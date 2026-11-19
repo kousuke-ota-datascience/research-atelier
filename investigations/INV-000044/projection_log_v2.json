@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "report_type": "projection_log",
+  "target_rq_url": "https://app.notion.com/p/41de5855be398194868acfeb800c5ae5",
+  "rq_id": "RQ-000043",
+  "source_investigation_id": "INV-000044",
+  "source_30_analysis_commit_sha": "18986b66adf9968a2a527e773a19c57bfeae7ac8",
+  "projection_timestamp": "2026-11-19T14:05:16.987Z",
+  "projection_target": {
+    "surface": "page_body",
+    "section_heading": "# Working Answer"
+  },
+  "result": "SUCCESS",
+  "note": "Notion page body section matches deterministic renderer on post-update refetch."
+}
