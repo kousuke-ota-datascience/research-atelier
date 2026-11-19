@@ -63,3 +63,29 @@ jobs:
                   assert review['investigation_id'] == inv
                   print('STALE', inv, 'old Working Answer projection; reviewed repair pending independent re-review')
           PY
+      - name: Test canonical Review-000001 stale-target reconciliation
+        env:
+          PYTHONPATH: src
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from research_atelier.reviewing.reconcile import reconcile_payload
+          base = Path('investigations/INV-000042')
+          context = json.loads((base / '00_context.json').read_text())
+          manifest = json.loads((base / 'reviews/review-000001.json').read_text())
+          assert manifest['verdict'] == 'FINDINGS'
+          assert manifest['target']['artifact_blob_shas']['10_evidence'] != __import__('subprocess').check_output(
+              ['git', 'hash-object', str(base / '10_evidence.json')], text=True
+          ).strip()
+          outcome = reconcile_payload({
+              'current': {'review_status': '要修正', 'latest_review_seq': 1},
+              'review': {'latest': manifest, 'target_relation': 'stale', 'issues': []},
+              'context': context,
+              'events': {}
+          })
+          assert outcome['outcome'] == 'UPDATE', outcome
+          assert outcome['changes'] == {'Review Status': '再レビュー待'}, outcome
+          assert not outcome['issues'], outcome
+          print('PASS canonical reconcile: INV-000042 Review Status => 再レビュー待')
+          PY
