@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000043",
+  "review_seq": 2,
+  "layer": "30_analysis",
+  "review_kind": "20_synthesis_plus_00_context_to_30_analysis",
+  "target_blob_sha": "cd8b5f44524dd0c624dfb432aa199ed67aa3faa8",
+  "assessment": "Comparative analysisは企業×部品類型×調達経路×法域を比較単位として明示し、11 Sourceを業界を代表するサーベイと誤認しない。各ポリシー差は個別資料で確認できる事実に限定し、実測データの可観測性・業界間予測精度・商慣行の因果寄与は未検証と明示する。EU法定供給期間と実調達不能日の相違、需要予測とEOL日予測の違いも保持。追加実験デザインは実証でなく提案と区別される。Working Answer・Judgment・LimitationsはSynthesisとfrozen Scopeの範囲内。",
+  "findings": [],
+  "verdict": "PASS"
+}

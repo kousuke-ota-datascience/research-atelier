@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000043",
+  "review_seq": 2,
+  "layer": "10_evidence",
+  "review_kind": "source_evidence_note_to_10_evidence",
+  "target_blob_sha": "7cec8cdc3330878bdf093e929c73cde6e13ca74d",
+  "assessment": "11 Source・16 Evidenceを監査した。Toyota/Nissanの公式FAQは企業・部品区分別の供給方針として忠実であり、Renesas/TI/NXP/InfineonのNRND・EOL通知・LTB・長期供給条件は原文の一般則と例外を保持する。JFTC相談は業界の実施事実ではなく自主基準案と明記される。EU規則2019/2019 Annex II 3(a)(1)(2)の年限起算点は『当該モデルの最後の製品ユニットの市場投入後』と正確になり、部品・提供先別の7年／10年を区別する。Notion Evidence Note 16件の保存内容がEvidenceと一致することを確認した。Evidence全体に新たなsource-faithfulness Findingは認めない。",
+  "findings": [],
+  "verdict": "PASS"
+}

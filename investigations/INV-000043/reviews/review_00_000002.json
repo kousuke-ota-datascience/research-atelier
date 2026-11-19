@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000043",
+  "review_seq": 2,
+  "layer": "00_context",
+  "review_kind": "context_semantic_validity",
+  "target_blob_sha": "614f05d8c6d2f1adee379f7d5921792942b3dbb2",
+  "assessment": "Comparative RQ-000042は自動車を主対象に個別企業・部品類型・調達経路・法域による条件付き比較を許容し、通常調達不能を共通targetとして定義する。異種のEOL/LTB/在庫・最低供給義務を混同せず、業界間の実測精度差や商慣行の因果効果を無根拠に断定しないfrozen境界が整合している。Contextのsemantic defectは確認されない。",
+  "findings": [],
+  "verdict": "PASS"
+}

@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000043",
+  "review_seq": 2,
+  "layer": "20_synthesis",
+  "review_kind": "10_evidence_to_20_synthesis",
+  "target_blob_sha": "84d868fc5dd28879ceb8fc76a30f9284535220d0",
+  "assessment": "K0001-K0013はEvidenceを越えた推論を事実として追加していない。企業別一般方針、制度上のイベント、EU最低供給期間、需要量予測とEOL日予測の非同値性を区別し、JFTC相談の代表性不在と共通ラベル・時点別履歴・精度データ欠如をUncertaintyに保持する。17年等の時点誤認や法令起算点混同は確認されず、Cross-source synthesisの飛躍を認めない。",
+  "findings": [],
+  "verdict": "PASS"
+}
