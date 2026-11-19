@@ -3,7 +3,7 @@
   "artifact_type": "10_evidence",
   "investigation_id": "INV-000042",
   "rq_id": "RQ-000041",
-  "snapshot_at": "2026-11-19T12:57:02.745Z",
+  "snapshot_at": "2026-11-19T13:17:05.610Z",
   "sources": [
     {
       "source_id": "SRC-000254",
@@ -157,6 +157,24 @@
       },
       "accessed_at": "2026-11-19T10:39:00.000Z",
       "notion_url": "https://app.notion.com/p/41de5855be39810cbd21f92e7f090346"
+    },
+    {
+      "source_id": "SRC-000278",
+      "source_revision": {
+        "commit_sha": "b05e6711256877055b3cd95bc4f0a005b4e9082e",
+        "blob_sha": "299d1f3138113645b473c488458c3387a227d82e"
+      },
+      "accessed_at": "2026-11-19T13:17:05.610Z",
+      "notion_url": "https://app.notion.com/p/41de5855be39813496c9d5210bb4ae1a"
+    },
+    {
+      "source_id": "SRC-000279",
+      "source_revision": {
+        "commit_sha": "4d20f784ce0e2b99e6154a7ffa92637711e250e8",
+        "blob_sha": "860e7f8e50664455db9326ac704c3f24808d2e18"
+      },
+      "accessed_at": "2026-11-19T13:17:05.610Z",
+      "notion_url": "https://app.notion.com/p/41de5855be398182a9b5e4dc29a97758"
     }
   ],
   "evidence_items": [
@@ -592,6 +610,83 @@
           "notion_url": "https://app.notion.com/p/41de5855be3981eaae7cd81d7e460303",
           "title": "EV-000431"
         }
+      }
+    },
+    {
+      "evidence_id": "E0032",
+      "content": "ADS original: 2,366 discontinued Zener diodes were selected from QTEC part records and Z2Data specifications. The dataset has 16 numerical and 21 categorical collected fields: electrical specifications plus manufacturer, part identifier, Part Status, Part Introduction and Obsolete Date (LTB Date). It defines the target as elapsed time from introduction to LTB, then reconstructs predicted LTB date; a collected field table does not establish that post-event columns were included as model predictors.",
+      "source_locator": "Section 4.1, Tables 2–3",
+      "selection_reason": "INV-000042 same-Investigation repair: explicit model input/algorithm/output/evaluation or precursor-signal evidence",
+      "note_type": "Data",
+      "provenance": {
+        "source_id": "SRC-000256",
+        "evidence_note": null
+      }
+    },
+    {
+      "evidence_id": "E0033",
+      "content": "ADS original Sections 3.1–3.2: an adaptive data selection cover allows overlapping subsets (unlike disjoint k-means); train regression models on covered subsets and choose a suitable locally trained model for each test observation. DT/RF/GB (also DNN/RNN comparators) are used. Reported 80/20 split is among labeled discontinued records; a historical prediction-origin time split is not established.",
+      "source_locator": "Sections 3.1–3.2; 4.1–4.2",
+      "selection_reason": "INV-000042 same-Investigation repair: explicit model input/algorithm/output/evaluation or precursor-signal evidence",
+      "note_type": "Method",
+      "provenance": {
+        "source_id": "SRC-000256",
+        "evidence_note": null
+      }
+    },
+    {
+      "evidence_id": "E0034",
+      "content": "The clustering-based hybrid original partitions training observations into k-means clusters; a test component selects the model associated with the closest cluster centroid. It then averages DT, RF and GB regression outputs with equal one-third weights to form the hybrid predicted obsolescence timing. Training sample consists of discontinued Zener (2,366), varactor (350), and bridge-rectifier (307) diodes.",
+      "source_locator": "Sections 3.1–3.2 (Equations 2–4); Section 4.1",
+      "selection_reason": "INV-000042 same-Investigation repair: explicit model input/algorithm/output/evaluation or precursor-signal evidence",
+      "note_type": "Method",
+      "provenance": {
+        "source_id": "SRC-000257",
+        "evidence_note": null
+      }
+    },
+    {
+      "evidence_id": "E0035",
+      "content": "ADS reports mean relative error MRE = mean(|(actual-predicted)/actual|) and RMSRE = sqrt(mean(((actual-predicted)/actual)^2)) on labeled samples. Its 198 not-discontinued components receive a plausibility check that predicted LTB dates are not earlier than the present, not verified future error or probability calibration.",
+      "source_locator": "Sections 5.1–5.2 (Equations 7–8)",
+      "selection_reason": "INV-000042 same-Investigation repair: explicit model input/algorithm/output/evaluation or precursor-signal evidence",
+      "note_type": "Result",
+      "provenance": {
+        "source_id": "SRC-000256",
+        "evidence_note": null
+      }
+    },
+    {
+      "evidence_id": "E0036",
+      "content": "DigiKey TechForum says NRND items are usually in production and available with no known obsolescence schedule and no LTB/discontinuation date; statuses may change only near the manufacturer's actual decision. The explanation is a qualitative process statement, not a measured conditional EOL probability or lead-time distribution.",
+      "source_locator": "Statuses > Not Recommended for New Design, 2020-12-09",
+      "selection_reason": "INV-000042 same-Investigation repair: explicit model input/algorithm/output/evaluation or precursor-signal evidence",
+      "note_type": "Definition",
+      "provenance": {
+        "source_id": "SRC-000273",
+        "evidence_note": null
+      }
+    },
+    {
+      "evidence_id": "E0037",
+      "content": "The November 2015 FAA-sponsored final report states in Section 4.1 that lifecycle code alone is insufficient to predict an obsolescence date; estimating a curve requires its shape and at least two points. Manufacturer-reported decline stages often appear only shortly before EOL. The report treats commercial YTEOL values as proprietary and without substantiation or confidence level. These are industry observations, not controlled forecast comparisons or FAA regulations.",
+      "source_locator": "Section 4.1 'Components Obsolescence Forecasting', report pp.23–24",
+      "selection_reason": "INV-000042 same-Investigation repair: explicit model input/algorithm/output/evaluation or precursor-signal evidence",
+      "note_type": "Limitation",
+      "provenance": {
+        "source_id": "SRC-000278",
+        "evidence_note": null
+      }
+    },
+    {
+      "evidence_id": "E0038",
+      "content": "Z2Data product documentation claims lifecycle histories with dates of transitions through Active, NRND, LTB, EOL and Obsolete, with provenance from PCNs, distributor notices or provider research. It does not provide a publicly verifiable extract of complete historical records, catalog-search disappearance dates, measured NRND-to-EOL lead times, or independent out-of-time forecast accuracy. Dataset availability is vendor-claimed, not demonstrated for this Investigation.",
+      "source_locator": "Lifecycle Status and History; 'Full lifecycle history for every part'",
+      "selection_reason": "INV-000042 same-Investigation repair: explicit model input/algorithm/output/evaluation or precursor-signal evidence",
+      "note_type": "Data",
+      "provenance": {
+        "source_id": "SRC-000279",
+        "evidence_note": null
       }
     }
   ]
