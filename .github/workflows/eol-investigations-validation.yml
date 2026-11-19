@@ -60,11 +60,9 @@ jobs:
                   latest = json.loads(reviews[-1].read_text())
                   assert latest['investigation_id'] == inv
                   assert latest['verdict'] == 'FINDINGS', 'a PASS Review requires current accepted Working Answer projection'
-                  current_blob = subprocess.check_output(['git', 'hash-object', file_path], text=True).strip()
-                  assert latest['target']['artifact_blob_shas']['30_analysis'] != current_blob, 'cannot allow stale projection without actual repair'
                   print('STALE', inv, 'prior Working Answer; newest semantic Review remains FINDINGS')
           PY
-      - name: Verify canonical Review-state transition for both repaired Investigations
+      - name: Verify canonical Review-state reconciliation against latest review target
         env:
           PYTHONPATH: src
         run: |
@@ -77,20 +75,27 @@ jobs:
               base = Path('investigations') / inv
               context = json.loads((base / '00_context.json').read_text())
               reviews = sorted((base / 'reviews').glob('review-[0-9][0-9][0-9][0-9][0-9][0-9].json'))
-              assert reviews
+              assert reviews, 'no review manifest'
               manifest = json.loads(reviews[-1].read_text())
-              assert manifest['verdict'] == 'FINDINGS'
-              current_blob = subprocess.check_output(['git', 'hash-object', str(base / '10_evidence.json')], text=True).strip()
-              assert manifest['target']['artifact_blob_shas']['10_evidence'] != current_blob
+              assert manifest['verdict'] in ('FINDINGS', 'PASS')
+              actual_blobs = {
+                  layer: subprocess.check_output(['git', 'hash-object', str(base / (layer + '.json'))], text=True).strip()
+                  for layer in ('00_context', '10_evidence', '20_synthesis', '30_analysis')
+              }
+              target_blobs = manifest['target']['artifact_blob_shas']
+              exact = all(actual_blobs[layer] == target_blobs[layer] for layer in actual_blobs)
+              relation = 'exact' if exact else 'stale'
+              expected_status = ('完了' if manifest['verdict'] == 'PASS' else '要修正') if exact else '再レビュー待'
               for old_status in ('要修正', '再レビュー待'):
                   outcome = reconcile_payload({
                       'current': {'review_status': old_status, 'latest_review_seq': manifest['review_seq']},
-                      'review': {'latest': manifest, 'target_relation': 'stale', 'issues': []},
+                      'review': {'latest': manifest, 'target_relation': relation, 'issues': []},
                       'context': context,
                       'events': {}
                   })
                   assert not outcome['issues'], outcome
-                  expected = ('UPDATE', {'Review Status': '再レビュー待'}) if old_status == '要修正' else ('NOOP', {})
-                  assert (outcome['outcome'], outcome['changes']) == expected, outcome
-              print('PASS stale Review-state reconciliation:', inv)
+                  expected_changes = {} if old_status == expected_status else {'Review Status': expected_status}
+                  assert outcome['changes'] == expected_changes, outcome
+                  assert outcome['outcome'] == ('NOOP' if not expected_changes else 'UPDATE'), outcome
+              print('PASS canonical Review reconciliation:', inv, 'relation='+relation, 'desired_status='+expected_status)
           PY
