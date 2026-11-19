@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000043",
+  "review_seq": 1,
+  "layer": "20_synthesis",
+  "review_kind": "10_evidence_to_20_synthesis",
+  "target_blob_sha": "dde7ec61f8b664891a8a7a350f44d59eb3525f5f",
+  "assessment": "K0001-K0011とR0001-R0005はEvidenceに対応し、建機相談例を業界一律運用としない留保、LTBと通常調達終了日の差、精度差未測定の不確実性を保持する。E0016起算点は上流Evidence修正後に正しい根拠から再構築する必要がある。",
+  "findings": [],
+  "verdict": "PASS"
+}

@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000043",
+  "review_seq": 1,
+  "layer": "00_context",
+  "review_kind": "context_semantic_validity",
+  "target_blob_sha": "614f05d8c6d2f1adee379f7d5921792942b3dbb2",
+  "assessment": "Comparative RQ-000042の比較対象・主予測イベント・部品類型・調達経路・法域と、業界間の性能差や因果帰属を無条件に断定しない境界は意味論的に整合している。frozen Contextの変更を要する内部矛盾は確認されない。",
+  "findings": [],
+  "verdict": "PASS"
+}

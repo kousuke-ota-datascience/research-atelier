@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000043",
+  "review_seq": 1,
+  "layer": "30_analysis",
+  "review_kind": "20_synthesis_plus_00_context_to_30_analysis",
+  "target_blob_sha": "f3e6b238f8e19002f424ac51ccc240c1f9a5ba02",
+  "assessment": "メーカー別の供給条件、半導体通知、建機相談事例とEU最低供給期間の相違、および業界間予測精度を直接比較できないという制約は適切に区別される。一方、冒頭の『業界差の本体』は非代表的な異質事例の証拠範囲を超え、Source件数にも根拠不整合がある。",
+  "findings": [
+    {
+      "finding_id": "F002",
+      "severity": "Moderate",
+      "target": "30_analysis.working_answer 冒頭『業界差の本体は...可観測性にある』の証拠範囲と比較単位",
+      "evidence": [
+        "10_evidence.E0006-E0009 are supplier-specific Toyota/Nissan FAQs for distinct automotive part categories; E0010-E0014 are semiconductor supplier policies; E0015 is one historical JFTC proposal, not an industry-wide operational sample; E0016 is an EU sector-specific regulation.",
+        "20_synthesis.R0001/R0003 and U0001/U0003/U0004 themselves warn that the compared units are heterogeneous and predictive accuracy has not been compared on a common target.",
+        "30_analysis.working_answer nevertheless opens by stating what the core of 'industry differences' is, including demand/inventory information observability, without cross-industry matched observation of those signal datasets."
+      ],
+      "impact": "特定企業・部品カテゴリ・規制事例間の制度上の差異を、業界を代表する構造的差異、さらに予測可能性の支配要因と読ませる。これらの一般化・予測性能への寄与は現在のEvidenceで未同定。",
+      "repair_direction": {
+        "mode": "same_investigation",
+        "affected_layer": "30_analysis",
+        "instruction": "Working Answerの主張を『今回の事例資料で確認できる供給方針・通知・最低期間等の差』に限定し、業界を代表する違いと予測可能性差は未検証と明示する。比較単位を企業×部品類型×調達経路×法域に分離し、実測精度やデータ可観測性を未評価の比較軸として示す。"
+      }
+    },
+    {
+      "finding_id": "F003",
+      "severity": "Minor",
+      "target": "30_analysis.limitations[0]『対象は15 Source中の業界比較関連資料』",
+      "evidence": [
+        "10_evidence.sources in INV-000043 contains 11 distinct IDs: SRC-000254, SRC-000258, SRC-000259, SRC-000260, SRC-000261, SRC-000262, SRC-000263, SRC-000264, SRC-000265, SRC-000266, SRC-000267.",
+        "No 15-item source set is defined or linked in the reviewed canonical 00/10/20/30 chain."
+      ],
+      "impact": "レビュー対象の根拠集合を第三者が正確に追跡できず、資料カバレッジの解釈に曖昧さが残る。",
+      "repair_direction": {
+        "mode": "same_investigation",
+        "affected_layer": "30_analysis",
+        "instruction": "limitations[0]を『本Investigationで採用した11 Source』等、canonical 10_evidenceと整合する表記へ修正する。別途15件の探索母集団を指すならその集合・出典を区別して明示する。"
+      }
+    }
+  ],
+  "verdict": "FINDINGS"
+}

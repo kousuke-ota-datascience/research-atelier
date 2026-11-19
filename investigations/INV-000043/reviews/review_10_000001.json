@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000043",
+  "review_seq": 1,
+  "layer": "10_evidence",
+  "review_kind": "source_evidence_note_to_10_evidence",
+  "target_blob_sha": "e9179f185ccd3e034eec526cdcd26d286cf3af56",
+  "assessment": "11 Source revisionと16 Evidenceに対する出典追跡、トヨタ・日産・Renesas・TI・NXP・Infineon・公取委事例・EU規則の一次資料照合を行った。供給方針や通知区分・相談事例の扱いはおおむね忠実だが、EU規則の補修部品最低供給期間の起算点に重要な誤解を招く記述がある。",
+  "findings": [
+    {
+      "finding_id": "F001",
+      "severity": "Moderate",
+      "target": "10_evidence.E0016 / SRC-000267 / EV-000414: EU規則2019/2019の最低供給期間の起算点",
+      "evidence": [
+        "SRC-000267, Commission Regulation (EU) 2019/2019, Annex II 3(a)(1)(2): minimum availability periods are measured after placing the last UNIT OF THE MODEL on the market, not from launch of a final model.",
+        "10_evidence.E0016 says『最終モデル上市後7年、ドアガスケットについて10年』; EV-000414 repeats the same wording.",
+        "00_context requests comparable EOL lead times and industry-specific policy signals; confusing final-unit placement with model introduction shifts the legal temporal anchor."
+      ],
+      "impact": "法令による最低供給期間の起点をモデル発売・モデル系列最終上市と誤読しうる。調達残存期間や業界比較で起算点を誤設定する危険がある。",
+      "repair_direction": {
+        "mode": "same_investigation",
+        "affected_layer": "10_evidence",
+        "instruction": "E0016およびEV-000414をEU原文の『当該モデルの最後の製品ユニットが市場に投入された後』へ修正し、部品区分・修理者条件・規制対象域・年限の起点を正確にEvidence化する。20_synthesisと30_analysisをinvalidateして再構築する。"
+      }
+    }
+  ],
+  "verdict": "FINDINGS"
+}
