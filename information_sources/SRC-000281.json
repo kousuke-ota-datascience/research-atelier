@@ -1,0 +1,11 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000281",
+  "notion_url": "https://app.notion.com/p/41de5855be39817d8dbdf1676a7d6c91",
+  "title": "Product life cycle",
+  "source_type": "Documentation",
+  "journal_or_publisher": "Texas Instruments",
+  "url": "https://www.ti.com/en-us/quality-reliability/quality/product-life-cycle",
+  "reliability_note": "メーカー公式製品廃番ポリシー。直近販売5年・車載高信頼性7年の条件は廃番の非適格条件であり実際の廃番日ではない。"
+}
