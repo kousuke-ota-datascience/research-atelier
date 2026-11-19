@@ -3,7 +3,7 @@
   "artifact_type": "10_evidence",
   "investigation_id": "INV-000042",
   "rq_id": "RQ-000041",
-  "snapshot_at": "2026-11-19T09:31:13.000Z",
+  "snapshot_at": "2026-11-19T10:39:00.000Z",
   "sources": [
     {
       "source_id": "SRC-000254",
@@ -85,6 +85,78 @@
       },
       "accessed_at": "2026-11-19T09:31:13.000Z",
       "notion_url": "https://app.notion.com/p/41de5855be398137b5fdfdeb51f49de9"
+    },
+    {
+      "source_id": "SRC-000269",
+      "source_revision": {
+        "commit_sha": "6b707d0889924ed0956a96763ee71c1889c2d95f",
+        "blob_sha": "1f492ba4f639415a4cf172c1f4eea690243a8d91"
+      },
+      "accessed_at": "2026-11-19T10:39:00.000Z",
+      "notion_url": "https://app.notion.com/p/41de5855be398177a992eba6daaef5ae"
+    },
+    {
+      "source_id": "SRC-000270",
+      "source_revision": {
+        "commit_sha": "6b707d0889924ed0956a96763ee71c1889c2d95f",
+        "blob_sha": "67a8b73c38171fe47450ed55ff835b0255f79cb9"
+      },
+      "accessed_at": "2026-11-19T10:39:00.000Z",
+      "notion_url": "https://app.notion.com/p/41de5855be3981699451c3a83cd450e0"
+    },
+    {
+      "source_id": "SRC-000271",
+      "source_revision": {
+        "commit_sha": "6b707d0889924ed0956a96763ee71c1889c2d95f",
+        "blob_sha": "10ae4d70b3f975fb7c197c32b3983348c618538f"
+      },
+      "accessed_at": "2026-11-19T10:39:00.000Z",
+      "notion_url": "https://app.notion.com/p/41de5855be3981a2a03ce859ceeeb071"
+    },
+    {
+      "source_id": "SRC-000272",
+      "source_revision": {
+        "commit_sha": "6b707d0889924ed0956a96763ee71c1889c2d95f",
+        "blob_sha": "9546f212e3bc910378ca756d69622269aaffda39"
+      },
+      "accessed_at": "2026-11-19T10:39:00.000Z",
+      "notion_url": "https://app.notion.com/p/41de5855be39812ebf18ecb401fd07c5"
+    },
+    {
+      "source_id": "SRC-000273",
+      "source_revision": {
+        "commit_sha": "6b707d0889924ed0956a96763ee71c1889c2d95f",
+        "blob_sha": "73fb05de77a7cee0255b58bbaeb0ef13f0ea5195"
+      },
+      "accessed_at": "2026-11-19T10:39:00.000Z",
+      "notion_url": "https://app.notion.com/p/41de5855be398177abefc9540f83627f"
+    },
+    {
+      "source_id": "SRC-000274",
+      "source_revision": {
+        "commit_sha": "6b707d0889924ed0956a96763ee71c1889c2d95f",
+        "blob_sha": "823ed93aed41863c7ded1f74ed8af2ee715432a3"
+      },
+      "accessed_at": "2026-11-19T10:39:00.000Z",
+      "notion_url": "https://app.notion.com/p/41de5855be398195915be1972faa6786"
+    },
+    {
+      "source_id": "SRC-000275",
+      "source_revision": {
+        "commit_sha": "6b707d0889924ed0956a96763ee71c1889c2d95f",
+        "blob_sha": "812d87d302325d33a634df9c310b31a170407179"
+      },
+      "accessed_at": "2026-11-19T10:39:00.000Z",
+      "notion_url": "https://app.notion.com/p/41de5855be39816a8bf2e2a6bdf96d30"
+    },
+    {
+      "source_id": "SRC-000276",
+      "source_revision": {
+        "commit_sha": "6b707d0889924ed0956a96763ee71c1889c2d95f",
+        "blob_sha": "153466d6e51a9fedcc435cd8e948ad7d2822966e"
+      },
+      "accessed_at": "2026-11-19T10:39:00.000Z",
+      "notion_url": "https://app.notion.com/p/41de5855be39810cbd21f92e7f090346"
     }
   ],
   "evidence_items": [
@@ -281,6 +353,244 @@
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/41de5855be3981e6b101cf889c87c808",
           "title": "EV-000411"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0015",
+      "content": "Solomon, Sandborn and Pecht (2000) propose electronic-part life cycle forecasts including years-to-obsolescence and stages, using market and technology factors and dynamic sales data; DRAM integrated circuits are the example. The public author abstract does not report a prospective test of original/authorized-channel actual procurement unavailability.",
+      "source_locator": "Original author abstract (CALCE)",
+      "selection_reason": "Review 000001 repair: F002 methodological families",
+      "note_type": "Method",
+      "provenance": {
+        "source_id": "SRC-000269",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/41de5855be398162b35ae88b3dfb425e",
+          "title": "EV-000415"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0016",
+      "content": "Ma and Kim (2017) describe three steps for flash-memory life-cycle curves: time-series alignment by part family, Box–Cox transformation, and time-series modeling. Their target is a life-cycle curve, not directly the final authorized-procurement date; the abstract reports numerical example but no comparable out-of-time accuracy for target EOL.",
+      "source_locator": "KCI abstract; method phases",
+      "selection_reason": "Review 000001 repair: F002 methodological families",
+      "note_type": "Method",
+      "provenance": {
+        "source_id": "SRC-000270",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/41de5855be398170b70bf3e37c64a704",
+          "title": "EV-000416"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0017",
+      "content": "Dubos and Saleh (2010) use Markov-chain and Monte Carlo models for risk of on-orbit obsolescence of spacecraft and technological maturation. The event is technology obsolescence on spacecraft, not part-number purchasing availability; its transition probabilities cannot be transported to component EOL as validated empirical parameters.",
+      "source_locator": "Article abstract; Section 3–4 outline",
+      "selection_reason": "Review 000001 repair: F002 methodological families",
+      "note_type": "Limitation",
+      "provenance": {
+        "source_id": "SRC-000271",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/41de5855be39814da0addb5f7683b4b0",
+          "title": "EV-000417"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0018",
+      "content": "Mastrangelo and Olson (2024) describe a Weibull-based conditional probability approach to component obsolescence risk; changing product life, dynamic binning, Weibull regression, sample bias, and substantial censoring are discussed; a multiplexer dataset demonstrates feasibility. The public abstract does not establish forecast calibration for automotive authorized procurement end dates.",
+      "source_locator": "ASQ published abstract",
+      "selection_reason": "Review 000001 repair: F002 methodological families",
+      "note_type": "Method",
+      "provenance": {
+        "source_id": "SRC-000272",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/41de5855be3981408f0ddae3dac1055a",
+          "title": "EV-000418"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0019",
+      "content": "DigiKey distinguishes distributor-specific 'Discontinued By DigiKey' from manufacturer status: DigiKey can stop carrying a product while it remains active at the manufacturer. Thus distributor catalog delisting and manufacturer production-end are distinct events.",
+      "source_locator": "Statuses / Discontinued By DigiKey",
+      "selection_reason": "Review 000001 repair: F001 catalog-signal observability",
+      "note_type": "Definition",
+      "provenance": {
+        "source_id": "SRC-000273",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/41de5855be39817c90b2ff21ef59541d",
+          "title": "EV-000419"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0020",
+      "content": "DigiKey explains manufacturer part-status reviews may be annual, quarterly, monthly etc. and that distributors often learn changed status at or near the update. It does not quantify an empirical interval from catalog delisting to final LTB/EOL across parts.",
+      "source_locator": "First paragraphs; status update cadence",
+      "selection_reason": "Review 000001 repair: F001 catalog-signal observability",
+      "note_type": "Claim",
+      "provenance": {
+        "source_id": "SRC-000273",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/41de5855be3981e4af60c4b85c6248f2",
+          "title": "EV-000420"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0021",
+      "content": "Nexar's part API exposes homogenized lifecycle status, underlying manufacturer raw status, and last-updated information for individual part status. The article describes current values and metadata but not a complete longitudinal catalog-inclusion history or delist-to-LTB lead-time distribution.",
+      "source_locator": "LifecycleSpec example and Manufacturer lifecycle",
+      "selection_reason": "Review 000001 repair: F001 catalog-signal observability",
+      "note_type": "Definition",
+      "provenance": {
+        "source_id": "SRC-000274",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/41de5855be398183a893e148d2fc6036",
+          "title": "EV-000421"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0022",
+      "content": "Accuris defines 'Discontinued' as not available and includes a 'Reactivated' status for parts previously listed EOL or Discontinued; it provides life-cycle stage, estimated years-to-EOL, and prediction-date fields. The documentation does not describe catalog delisting as an equivalent EOL date.",
+      "source_locator": "Life Cycle and Life Cycle Risk sections",
+      "selection_reason": "Review 000001 repair: F001 catalog-signal observability",
+      "note_type": "Definition",
+      "provenance": {
+        "source_id": "SRC-000275",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/41de5855be3981868198fc2281a64de7",
+          "title": "EV-000422"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0023",
+      "content": "An industrial empirical investigation of electronic chip shortages/obsolescence reports that termination and LTB information can be incomplete, and the available data may not yield usable statistical models. Its indexed abstract does not test distributor catalog removal as an EOL predictor.",
+      "source_locator": "Abstract (ScienceDirect indexed)",
+      "selection_reason": "Review 000001 repair: F001 catalog-signal observability",
+      "note_type": "Limitation",
+      "provenance": {
+        "source_id": "SRC-000276",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/41de5855be39817899a3e4d73fbb6555",
+          "title": "EV-000423"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0024",
+      "content": "The clustering-based hybrid diode paper's collected Zener fields include 'Part Status', 'Part Introduction', and 'Obsolete Date (LTB Date)' under categorical feature listings; varactor and bridge rectifier tables include 'Part Status'. The table alone does not specify per-feature prediction-time availability or prove that LTB date was fed to the model as a predictor.",
+      "source_locator": "Section 4.1 Table 1",
+      "selection_reason": "Review 000001 repair: F003 input/target as-of-date audit",
+      "note_type": "Data",
+      "provenance": {
+        "source_id": "SRC-000257",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/41de5855be3981b995c0df04063dcf74",
+          "title": "EV-000424"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0025",
+      "content": "The hybrid diode work uses selected discontinued component observations: 2366 Zener, 350 varactor, and 307 bridge-rectifier parts. This sample does not represent a prospectively observed active-parts cohort with censored survival times.",
+      "source_locator": "Section 4.1 Data Collection and Problem Description",
+      "selection_reason": "Review 000001 repair: F003 input/target as-of-date audit",
+      "note_type": "Data",
+      "provenance": {
+        "source_id": "SRC-000257",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/41de5855be39817baac4e7b03f311986",
+          "title": "EV-000425"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0026",
+      "content": "The hybrid diode model clusters training records, fits DT/RF/GB-type regressors and selects clusters for test observations; grid search and error comparisons are described. The public article sections cited do not establish a historical as-of-date split or publication-time feature snapshots.",
+      "source_locator": "Sections 3.1–3.2, 4.2, 5",
+      "selection_reason": "Review 000001 repair: F003 input/target as-of-date audit",
+      "note_type": "Method",
+      "provenance": {
+        "source_id": "SRC-000257",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/41de5855be3981088673e74f5d651edb",
+          "title": "EV-000426"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0027",
+      "content": "The ADS paper builds 2366 discontinued Zener records from QTEC and Z2Data; the lifetime target is the interval between part introduction and LTB date. The categorical data table includes Part Status, Part Introduction and Obsolete Date, but target derivation is described separately from the input feature preparation.",
+      "source_locator": "Section 4.1, Table 2",
+      "selection_reason": "Review 000001 repair: F003 input/target as-of-date audit",
+      "note_type": "Data",
+      "provenance": {
+        "source_id": "SRC-000256",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/41de5855be398120a770c826b9159646",
+          "title": "EV-000427"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0028",
+      "content": "The ADS article evaluates regression against MRE/RMSRE and compares clustering/ADS against other regressors using known LTB-labeled records. It does not provide a clearly defined operational prediction as-of-date and corresponding historical feature availability audit in the passages checked.",
+      "source_locator": "Sections 4.1, 4.2, 5",
+      "selection_reason": "Review 000001 repair: F003 input/target as-of-date audit",
+      "note_type": "Method",
+      "provenance": {
+        "source_id": "SRC-000256",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/41de5855be3981829d2ae3a8d31705b5",
+          "title": "EV-000428"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0029",
+      "content": "For 198 non-discontinued Zener parts, the ADS paper verifies that no predicted LTB date lies in the past; because true LTB dates are unknown, this sanity check does not establish prospective date prediction accuracy or survival calibration.",
+      "source_locator": "Section 5.2 non-discontinued parts",
+      "selection_reason": "Review 000001 repair: F003 input/target as-of-date audit",
+      "note_type": "Limitation",
+      "provenance": {
+        "source_id": "SRC-000256",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/41de5855be39815eab97f702257713e4",
+          "title": "EV-000429"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0030",
+      "content": "The 2026 review enumerates Gaussian lifecycle (Solomon), Markov-chain spacecraft obsolescence (Dubos/Saleh), Weibull conditional risk (Mastrangelo et al.), time series lifecycle curves (Ma/Kim), and data mining/ML as distinct literature strands; comparability requires separating event definition and inputs.",
+      "source_locator": "Section 3.5 Forecasting",
+      "selection_reason": "Review 000001 repair: F002 family taxonomy",
+      "note_type": "Claim",
+      "provenance": {
+        "source_id": "SRC-000258",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/41de5855be3981a2a546d4aaff33e58c",
+          "title": "EV-000430"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0031",
+      "content": "Accuris documentation lists a prediction date for life-cycle estimates and estimated years to EOL; metadata are attached to a prediction run, not a direct statement of observed final buyability for each part number.",
+      "source_locator": "Life Cycle attributes: prediction date",
+      "selection_reason": "Review 000001 repair: F001 status metadata provenance",
+      "note_type": "Claim",
+      "provenance": {
+        "source_id": "SRC-000275",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/41de5855be3981eaae7cd81d7e460303",
+          "title": "EV-000431"
         }
       }
     }
