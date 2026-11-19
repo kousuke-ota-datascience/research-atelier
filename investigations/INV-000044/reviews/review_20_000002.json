@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000044",
+  "review_seq": 2,
+  "layer": "20_synthesis",
+  "review_kind": "10_evidence_to_20_synthesis",
+  "target_blob_sha": "0d39a5304273d2c629ae419858633c213922871f",
+  "assessment": "23 Knowledge Unit、13 relations、8 uncertaintyを参照Evidenceと対照した。USITC職員brief・Rochesterの自社資料・ROHM/Renesas/Microchip公式方針を性質の異なる根拠として扱い、NXP等の一般供給計画と実EOL発生日は分離する。車載補修需要が半導体メーカーの実受注につながる数量連鎖、契約・製品群交絡、前向き比較予測精度は未確認と保持し、根拠未観測部分を推論で埋めていない。Synthesis固有のFindingなし。",
+  "findings": [],
+  "verdict": "PASS"
+}

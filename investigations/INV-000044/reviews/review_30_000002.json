@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000044",
+  "review_seq": 2,
+  "layer": "30_analysis",
+  "review_kind": "20_synthesis_plus_00_context_to_30_analysis",
+  "target_blob_sha": "8c3d97427c586c75b86715aaf7485e8ea312fa59",
+  "assessment": "Working Answerは車載・産業・医療・民生の保守需要／供給制度を異なる資料種別とともに比較し、半導体元メーカーのEOLと認定供給者の残存供給、通知前の予測と通知後の既知日程、EOL予測と補修需要予測のラベルを区別する。as-of時点での生存・多状態・階層モデルと時間外検証は性能実証でなく設計提案であると限定し、業界横断の精度差・因果寄与を断定しない。ただしLimitationsの冒頭が旧版『メーカー公式8資料のみ』のままで、現行17 Source・31 Evidenceと追加された学術原著、USITC職員brief、業界Position Paper、認定供給者事例を反映していない。出典構成・representativenessに関する表現と根拠範囲のMinor不整合F001を認める。",
+  "findings": [
+    {
+      "finding_id": "F001",
+      "severity": "Minor",
+      "target": "30_analysis.limitations[0].text:『対象はメーカー公式8資料の方針・一部対象品番のみで…』",
+      "evidence": [
+        "10_evidence.jsonは17 Source（SRC-000259/262–265/280–291等）及び31 Evidenceを収録する。追加9 SourceにはUSITC職員著述の業界brief（SRC-000284）、ZVEI Position Paper（SRC-000285）、ROHM公式発表（SRC-000286）、Rochester公式事業資料（SRC-000287–289）、Microchip公式EOL方針（SRC-000290）、Renesas公式PLP（SRC-000291）、車載OEM補修部品需要原著（SRC-000259）を含む。",
+        "30_analysis.working_answer.textは『採用17 Source・31 Evidenceの範囲』と正しい件数を明記し、車載・産業・医療・民生の補修需要に関する比較やメーカー需要・受注条件も論じる。これに対しlimitations[0]が『対象はメーカー公式8資料の方針・一部対象品番のみ』と旧8 Sourceのみのcoverageを述べ、現在の根拠資料に含まれる官庁職員のbrief、業界団体資料、メーカー追加資料、認定供給者事例、学術原著を見落とす表現になっている。",
+        "20_synthesis K0013–K0023はE0015–E0031の追加Evidenceを参照しており、追加文献の反映はAnalysis本文に存在する。欠陥はlimitationsの対象Source構成説明に局在する。"
+      ],
+      "impact": "追加資料による調査範囲・出典種別の拡張がLimitationsの代表性評価に反映されず、調査範囲と証拠制約に関する記録の正確性・traceabilityを低下させる。実際の調査結論や一部メーカー例からの過剰一般化を直ちに生むものではないためMinorとする。",
+      "repair_direction": {
+        "mode": "same_investigation",
+        "affected_layer": "30_analysis",
+        "instruction": "30_analysis.limitations[0].textの『メーカー公式8資料の方針・一部対象品番のみ』を、現在の17 Source（メーカー公式方針、USITC職員著述brief、ZVEI Position Paper、認定アフターマーケット事業者の自社事例、補修部品需要の学術原著）を正確に表す記述へ修正する。その上で、これらが代表的な半導体品番別EOL実測データではないという制約を維持する。00_context/10_evidence/20_synthesisは変更せず、30_analysisのみ再validation・commit後に新Review Cycleを実施する。"
+      }
+    }
+  ],
+  "verdict": "FINDINGS"
+}

@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000044",
+  "review_seq": 2,
+  "layer": "00_context",
+  "review_kind": "context_semantic_validity",
+  "target_blob_sha": "af702962e76abd8dc390b54b8a67f944bfffe768",
+  "assessment": "RQ-000043は車載・非車載半導体の供給体制・保守補修需要・ライフサイクル管理と予測可能性を比較するComparative型であり、製品群×用途×メーカー×契約・調達経路で異質性を保つ設計になっている。EOL/PDN、LTB、製造終了、元メーカーEOL後の別経路の供給継続を同一イベントにしない境界は一貫する。凍結Contextの欠陥なし。",
+  "findings": [],
+  "verdict": "PASS"
+}

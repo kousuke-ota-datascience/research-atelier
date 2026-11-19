@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000044",
+  "review_seq": 2,
+  "layer": "10_evidence",
+  "review_kind": "source_evidence_note_to_10_evidence",
+  "target_blob_sha": "6798649559f71e74cdaddf0b815f8f5bdbee3613",
+  "assessment": "現行17 Sourceと31 Evidenceを監査し、17件のSource revision Git blob SHAはすべてcanonicalと一致した。メーカー公式PLP/EOL規則は対象・例外条件を含めて原文に整合し、USITC職員briefはOEM期待値として30年を記述するだけで一律の製造保証とはしない。Microchipの3年取引履歴は通知条件、Renesas車載MCUの12か月無需要・無受注は期間前終息許容条件と区別される。Rochesterの15年供給要求、産業/医療のEOL後認定在庫・ライセンス製造、人工呼吸器向けMC68040FE事例は事業者の自己申告・顧客事例の範囲に限定。車載OEM補修部品の1709 SKU需要予測も個別半導体需要・EOL実績とは区別される。旧版で未収集だった車載対非車載の長期保守需要構造・供給継続手段への直接Source coverageは現行Evidenceに収録されている。出典忠実性・Selection上の新たなFindingなし。",
+  "findings": [],
+  "verdict": "PASS"
+}
