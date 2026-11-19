@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000042",
+  "review_seq": 4,
+  "layer": "10_evidence",
+  "review_kind": "source_evidence_note_to_10_evidence",
+  "target_blob_sha": "823cd7507e866de0a041f374bc34802437dcb5aa",
+  "assessment": "19 Sourceと38 Evidenceを監査。各Source revisionのGit blob SHAは一致し、Notion Evidence Noteリンクのある31件も本文一致、追加7件はschema上認められるSource直接参照とlocatorを持つ。FAA受託2015年報告書Section 4.1はライフサイクルコード単独によるEOL時刻推定の不十分性を述べるが全品番に対する数学的な不可能性ではない。Z2Data文書の履歴提供はベンダー自身の主張であり公開検証データの存在と同一視できない。Moonらのk-means＋DT/RF/GB等重み予測は原著式に一致し、ADSの既知LTBラベルと過去日付sanity checkも前向き精度へ読み替えていない。既存のNRND、業者取扱終了status、実際のカタログ掲載削除の別イベント性も保持。Source-faithfulness上の新たな欠陥は認めない。",
+  "findings": [],
+  "verdict": "PASS"
+}

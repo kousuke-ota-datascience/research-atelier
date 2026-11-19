@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000042",
+  "review_seq": 4,
+  "layer": "20_synthesis",
+  "review_kind": "10_evidence_to_20_synthesis",
+  "target_blob_sha": "153661377d7ec1515a6b2be18309c6b5373d2a91",
+  "assessment": "30 Knowledge Unitと10 Uncertaintyは根拠Evidenceから逸脱しない。K0024-27はADS・Hybridの入力収集列、重複cover／k-means、局所DT/RF/GBモデル、LTB回帰target、MRE/RMSREという別々の事実を整合的に結び、入力時点リークの発生は未立証と留保する。K0028-30はDigiKeyの定性的NRND情報、FAA報告の業界観察、Z2Dataの商用履歴提供主張を実証された増分予測力と区別している。主targetの正規調達不能と文献のLTB・販売曲線・宇宙機陳腐化を混同せず、重要なuncertaintyも維持している。直接Findingは認めない。",
+  "findings": [],
+  "verdict": "PASS"
+}

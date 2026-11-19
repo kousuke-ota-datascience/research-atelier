@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000042",
+  "review_seq": 4,
+  "layer": "00_context",
+  "review_kind": "context_semantic_validity",
+  "target_blob_sha": "369e03646598983815495c857f69525f7f2ea412",
+  "assessment": "Frozen RQ-000041はMethodologicalとしてメーカー／正規流通から通常調達不能になる時期・期間内リスクを主targetとし、カタログ掲載、NRND、LTB/LTS等を先行情報や中間イベントとして区別する。二次流通での最終入手と物理故障RULを範囲外とする境界は整合する。予測時点、検証対象、右打切りの条件を下流で具体化でき、Context-defining defectは認めない。",
+  "findings": [],
+  "verdict": "PASS"
+}

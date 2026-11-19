@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000042",
+  "review_seq": 4,
+  "layer": "30_analysis",
+  "review_kind": "20_synthesis_plus_00_context_to_30_analysis",
+  "target_blob_sha": "e338de6512f3359270edc236cf74dfa173290e80",
+  "assessment": "Methodological Working Answerは19 Sourceに基づく文献系列、具体的な入出力と評価、NRND・Webカタログ掲載履歴の追加予測力が未実証である点を区別する。M0（基本属性）／M1（NRND履歴）／M2（流通・掲載履歴）の共通as-of時点における打切り対応比較は研究設計提案であって原著の実証とは明記される。FAAの観察は規制・実証精度ではなく、Z2Dataの公開製品説明は利用可能な履歴データの実査とは区別される。ただし30_analysis.limitationsの一箇所に『採用17 Source』という更新前の件数が残り、現行10_evidence.sourcesの19件と矛盾する。限定的なtraceability/coverage表現上のFindingがある。",
+  "findings": [
+    {
+      "finding_id": "F001",
+      "severity": "Minor",
+      "target": "30_analysis.limitations[4].text『採用17 SourceとSynthesisで確認できるのは…』 (10_evidence.sourcesは19件)",
+      "evidence": [
+        "現行10_evidence.json（blob SHA 823cd7507e866de0a041f374bc34802437dcb5aa）はsources配列に19件を収録する。追加されたSourceにはSRC-000278（2015 FAA受託報告書）、SRC-000279（Z2Data製品文書）が含まれる。",
+        "現行30_analysis.json（blob SHA e338de6512f3359270edc236cf74dfa173290e80）のlimitations[4].textに『採用17 SourceとSynthesisで確認できるのは手法体系・対象定義・基礎的評価設計であり…』とあり、同ファイルのworking_answer.textは『今回の19 Source』と記載する。",
+        "20_synthesis.jsonは追加されたSourceのE0037/E0038からK0029/K0030へ統合済みで、17件に限定する母集団の別定義は存在しない。"
+      ],
+      "impact": "調査対象Source数の誤表示により、Analysisのlimitationsが現在のEvidence/Synthesisの対象範囲を正確に記述していない。主結論の妥当性や実際の観測結果の解釈は直ちには反転しないが、学術記録としてのversion整合性・coverageの追跡可能性を損なう。",
+      "repair_direction": {
+        "mode": "same_investigation",
+        "affected_layer": "30_analysis",
+        "instruction": "30_analysis.limitations[4].textの『採用17 Source』を『採用19 Source』へ修正し、同ファイルの他のSource件数記述と整合させる。00_context、10_evidence、20_synthesisは変更せず、30_analysisのみ再validation・commitする。修正後にWorkflow 20を独立再レビューする。"
+      }
+    }
+  ],
+  "verdict": "FINDINGS"
+}
