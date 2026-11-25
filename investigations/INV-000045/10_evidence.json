@@ -593,8 +593,8 @@
     {
       "evidence_id": "E0030",
       "note_type": "Data",
-      "content": "MVTec ADは物体・テクスチャの画像を含む。正常画像のみを学習用に用い、評価には正常・異常画像があり、欠陥領域ごとに画素精度の手動正解アノテーションを提供する。",
-      "source_locator": "CVPR 2019 Abstract, §3 Dataset, Fig. 2; https://openaccess.thecvf.com/content_CVPR_2019/papers/Bergmann_MVTec_AD_--_A_Comprehensive_Real-World_Dataset_for_Unsupervised_Anomaly_CVPR_2019_paper.pdf",
+      "content": "MVTec ADは物体・テクスチャの画像を含む。正常画像のみを学習用に用い、評価には正常・異常画像があり、欠陥領域ごとに画素精度の手動正解アノテーションを提供する。 欠陥は現実の産業検査を模して手作業で生成されており、実際の生産欠陥頻度を測るデータではない。",
+      "source_locator": "CVPR 2019 Abstract, §3 Dataset Description, Table 1, Fig. 2; https://openaccess.thecvf.com/content_CVPR_2019/papers/Bergmann_MVTec_AD_--_A_Comprehensive_Real-World_Dataset_for_Unsupervised_Anomaly_CVPR_2019_paper.pdf",
       "selection_reason": "F001: 学習・評価ラベルの非対称性と空間正解",
       "provenance": {
         "source_id": "SRC-000292",
@@ -637,8 +637,8 @@
     {
       "evidence_id": "E0034",
       "note_type": "Result",
-      "content": "実運用ディスク調査では修理手続きでの交換を故障と定義し、交換時点を故障時刻としている。年齢群別の年率換算故障率は初年群1.7%、3年群8.6%超だが、3～4年群の高値は機種構成の影響が大きいと著者は指摘する。",
-      "source_locator": "§2.2 Definition of Failure; §3.1 Fig. 2; §3.2; https://www.usenix.org/legacy/events/fast07/tech/full_papers/pinheiro/pinheiro_html/",
+      "content": "実運用ディスク調査では修理手続きでの交換を故障と定義し、交換時点を故障時刻としている。年齢群別の年率換算故障率は初年群1.7%、3年群8.6%超だが、3～4年群の高値は機種構成の影響が大きいと著者は指摘する。 対象は運用開始後のデータセンター用ディスクで、年齢群別AFRは約5年分の修理記録に由来する。",
+      "source_locator": "§2.2 Deployment Details; §2.3 Data Preparation (Definition of Failure); §3.1 Fig. 2; §3.2; https://www.usenix.org/legacy/events/fast07/tech/full_papers/pinheiro/pinheiro_html/",
       "selection_reason": "F004: 事象率と事象定義・対象母集団",
       "provenance": {
         "source_id": "SRC-000234",
