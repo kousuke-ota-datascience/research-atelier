@@ -1,0 +1,27 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "00_context",
+  "investigation_id": "INV-000045",
+  "rq_id": "RQ-000044",
+  "context_state": "frozen",
+  "question": {
+    "text": "異常検知および故障予測のユースケースを特徴づけるファクターには、どのようなものがあるか？",
+    "notion_url": "https://app.notion.com/p/423e5855be398107aa12c66b1741001a"
+  },
+  "question_type": "Exploratory",
+  "scope": "異常検知・故障予測ユースケースを特徴づけるファクターの網羅的探索",
+  "significance": "異常検知・故障予測に共通するファクターと、それぞれに固有のファクターを網羅的に同定する。",
+  "investigation_boundary": {
+    "include": [
+      "設備特性、イベント特性、時間特性、観測条件、予測・検知条件、運用条件"
+    ],
+    "exclude": [
+      "個別アルゴリズムの詳細や性能比較そのもの"
+    ],
+    "evidence_cutoff": "2026-11-25T23:59:59+09:00"
+  },
+  "assumptions": [
+    "特定の設備・業界・分析手法に限定しない"
+  ],
+  "frozen_at": "2026-11-25T03:00:12.079Z"
+}
