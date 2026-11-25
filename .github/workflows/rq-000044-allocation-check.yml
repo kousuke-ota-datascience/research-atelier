@@ -1,0 +1,38 @@
+name: RQ-000044 allocation check
+on:
+  pull_request:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  allocation:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ github.event.pull_request.head.sha }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Check canonical allocation and global sequence
+        env:
+          PYTHONPATH: src
+        run: |
+          python - <<'PY'
+          import json, pathlib, re
+          from research_atelier.orchestration.investigation_allocation import decide_investigation_allocation_payload
+          root = pathlib.Path("investigations")
+          ids = sorted(p.name for p in root.iterdir() if p.is_dir() and re.fullmatch(r"INV-\d{6}",p.name))
+          existing = []
+          for p in root.glob("*/00_context.json"):
+              c = json.loads(p.read_text())
+              if c.get("rq_id") == "RQ-000044":
+                  existing.append(p.parent.name)
+          print("GIT_MAX_ID", ids[-1] if ids else None)
+          print("EXISTING_RQ_INVESTIGATIONS", json.dumps(existing))
+          assert not existing, "Existing Git investigation must be resolved before allocation"
+          result = decide_investigation_allocation_payload({"intent":"explicit_new_execution","existing":{},"requested_context":{"rq_id":"RQ-000044","question_type":"Exploratory"}})
+          print("ALLOCATION_DECISION",json.dumps(result,ensure_ascii=False))
+          assert result["decision"] == "allocate_new"
+          PY
