@@ -1,0 +1,57 @@
+name: INV-000045 review 3 repair validation
+on:
+  pull_request:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ github.event.pull_request.head.sha }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install 'jsonschema>=4.18'
+      - name: Review history and repair_started reconciliation
+        env:
+          PYTHONPATH: src
+        run: |
+          python - <<'PY'
+          import json, subprocess
+          from pathlib import Path
+          from research_atelier.reviewing.review_state import load_review_history, target_relation_from_blobs
+          from research_atelier.reviewing.reconcile import reconcile_payload
+          root=Path("investigations/INV-000045")
+          base="657772ebe44b1dcf0d37925b2a8d048758a1d8cc"
+          layers=("00_context","10_evidence","20_synthesis","30_analysis")
+          def git(*args):
+              return subprocess.check_output(["git",*args],text=True).strip()
+          def blobs(ref):
+              return {layer:git("rev-parse",f"{ref}:{root}/{layer}.json") for layer in layers}
+          history=load_review_history("INV-000045",review_dir=root/"reviews",schema_path="schemas/v2")
+          assert not history.issues, history.issues
+          assert history.latest["review_seq"]==3 and history.latest["verdict"]=="FINDINGS"
+          assert subprocess.run(["git","merge-base","--is-ancestor",history.latest["target"]["commit_sha"],base]).returncode==0
+          assert subprocess.run(["git","merge-base","--is-ancestor",base,"HEAD"]).returncode==0
+          ctx=json.loads((root/"00_context.json").read_text())
+          before=target_relation_from_blobs(history.latest,blobs(base))
+          assert before=="exact"
+          start=reconcile_payload({"current":{"review_status":"要修正","latest_review_seq":3},"review":{"latest":history.latest,"issues":history.issues,"target_relation":before},"context":ctx,"events":{"repair_started":True}})
+          print("repair_started:",json.dumps(start,ensure_ascii=False))
+          assert start["outcome"]=="UPDATE" and start["changes"]=={"Review Status":"再作業中"}
+          assert all(blobs(base)[k]==blobs("HEAD")[k] for k in layers[:3])
+          after=target_relation_from_blobs(history.latest,blobs("HEAD"))
+          if after=="stale":
+              end=reconcile_payload({"current":{"review_status":"再作業中","latest_review_seq":3},"review":{"latest":history.latest,"issues":history.issues,"target_relation":after},"context":ctx})
+              print("after validated commit:",json.dumps(end,ensure_ascii=False))
+              assert end["outcome"]=="UPDATE" and end["changes"]=={"Review Status":"再レビュー待"}
+          print("artifact blobs:",json.dumps(blobs("HEAD")))
+          PY
+      - name: Canonical through-30 validation
+        env:
+          PYTHONPATH: src
+        run: python -m research_atelier.validation.validate_investigation INV-000045 --through 30
