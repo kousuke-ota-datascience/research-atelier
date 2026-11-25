@@ -20,3 +20,7 @@ jobs:
         env:
           PYTHONPATH: src
         run: python -m research_atelier.validation.validate_information_source SRC-000292
+      - name: Canonical through-10 validation
+        env:
+          PYTHONPATH: src
+        run: python -m research_atelier.validation.validate_investigation INV-000045 --through 10
