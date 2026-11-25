@@ -24,3 +24,7 @@ jobs:
         env:
           PYTHONPATH: src
         run: python -m research_atelier.validation.validate_investigation INV-000045 --through 10
+      - name: Canonical through-20 validation
+        env:
+          PYTHONPATH: src
+        run: python -m research_atelier.validation.validate_investigation INV-000045 --through 20
