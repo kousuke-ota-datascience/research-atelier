@@ -3,7 +3,7 @@
   "artifact_type": "10_evidence",
   "investigation_id": "INV-000045",
   "rq_id": "RQ-000044",
-  "snapshot_at": "2026-11-25T04:16:45Z",
+  "snapshot_at": "2026-11-25T04:17:55Z",
   "sources": [
     {
       "source_id": "SRC-000172",
@@ -121,6 +121,15 @@
       },
       "accessed_at": "2026-11-25T04:16:45Z",
       "notion_url": "https://app.notion.com/p/417e5855be39810e92f7d54cfcb035a7"
+    },
+    {
+      "source_id": "SRC-000238",
+      "source_revision": {
+        "commit_sha": "9481db6643bcf3e63bf949acd6ad2a47d89880f9",
+        "blob_sha": "6ce213826e1d1deb535f41b3e4601fd4454ee9ef"
+      },
+      "accessed_at": "2026-11-25T04:17:55Z",
+      "notion_url": "https://app.notion.com/p/417e5855be398165a70ed328c3f71396"
     }
   ],
   "evidence_items": [
@@ -422,6 +431,42 @@
           "notion_url": "https://app.notion.com/p/417e5855be39816ba412dc37be82aae3",
           "title": "EV-000385"
         }
+      }
+    },
+    {
+      "evidence_id": "E0025",
+      "note_type": "Method",
+      "content": "半導体製造装置メーカーの出荷前検査データと保守記録を用い、将来の故障発生有無と初回故障時期を別々の予測対象として実データで検証した研究が報告される。",
+      "source_locator": "Abstract; EV-000375",
+      "selection_reason": "F003: 運転中の時系列監視を前提としない設備故障予測",
+      "provenance": {
+        "source_id": "SRC-000238",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/417e5855be3981ee97fdd361aec47f97",
+          "title": "EV-000375"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0026",
+      "note_type": "Theory",
+      "content": "条件付き生存曲線からRUL分布の分位点（例えば中央値）を要約として報告する方法をレビューは記載する。",
+      "source_locator": "§4.5, immediately preceding §4.6 (indexed publisher passage)",
+      "selection_reason": "F002: RUL分布と要約値の区別",
+      "provenance": {
+        "source_id": "SRC-000217",
+        "evidence_note": null
+      }
+    },
+    {
+      "evidence_id": "E0027",
+      "note_type": "Claim",
+      "content": "著者は予測構成の選択に際し誤報と見逃しによる損失の非対称性、安全上の制約を考慮する旨を議論している（Review 000001 F001の原文確認記録に基づく。今回の出版社直接再取得は制限あり）。定量的コスト評価の実証とは区別する。",
+      "source_locator": "§6.2, §7; previously inspected source passage recorded in review_10_000001.json F001",
+      "selection_reason": "F001: 運用損失・安全要求の候補、再取得制約を明示",
+      "provenance": {
+        "source_id": "SRC-000218",
+        "evidence_note": null
       }
     }
   ]
