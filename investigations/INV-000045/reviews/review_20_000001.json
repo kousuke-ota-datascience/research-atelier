@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000045",
+  "review_seq": 1,
+  "layer": "20_synthesis",
+  "review_kind": "10_evidence_to_20_synthesis",
+  "target_blob_sha": "a8f38cc1192fd6412fd1edd991f5720a8882afce",
+  "assessment": "14 Knowledge Unit、7 Relation、4 UncertaintyをEvidenceと照合。概ねsource-boundaryを保持し、アラームと故障の区別、ISO公開範囲、網羅性未検証を明示している。Evidenceの選択欠落をSynthesisで補完してはならない。固有の追加Findingは認めないが、上流repair後に再構築する。",
+  "findings": [],
+  "verdict": "PASS"
+}

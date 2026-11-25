@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000045",
+  "review_seq": 1,
+  "layer": "30_analysis",
+  "review_kind": "20_synthesis_plus_00_context_to_30_analysis",
+  "target_blob_sha": "4a8b0632a49130c6d7f34999b5f89e6c163f2693",
+  "assessment": "Exploratory profileはpatterns・candidate_hypotheses・anomalies・evidence_gapsを含み、仮説を確立済み因果結論としていない。10領域は候補として明示され、普遍性・網羅性・独立性の未確立を適切に限定する。一方、共通・主に故障予測の割当根拠と分類領域の意味境界に独立した欠陥がある。",
+  "findings": [
+    {
+      "severity": "Moderate",
+      "target": "J0001–J0010 / Working Answer: 共通・主に故障予測の分類",
+      "evidence": [
+        "00_context significance: 共通および固有ファクター同定。",
+        "J0002/J0006/J0008: 主に故障予測と分類するが、K0004–K0008等は異常検知における相対的重要性を比較していない。",
+        "J0003/J0009にも警報・停止・故障イベント属性が現れる。"
+      ],
+      "impact": "適用可能性と相対的重要性・タスク固有性が混同され、分類の判定根拠が不足する。",
+      "repair_direction": {
+        "mode": "same_investigation",
+        "affected_layer": "30_analysis",
+        "instruction": "概念上の適用可能性、タスク定義上の必要性、経験的頻度を区別し、共通・固有・未確定の判定基準と根拠を示す。追加Evidenceが必要なら上流でcaptureする。"
+      },
+      "finding_id": "F004"
+    },
+    {
+      "severity": "Minor",
+      "target": "J0002/J0006/J0008/J0009/J0010: 分類領域の重複",
+      "evidence": [
+        "J0002/J0009: 警報・停止閾値、J0006/J0009: 必要リードタイム、J0008/J0010: 予後信頼度。",
+        "alternative_interpretationsは別層別案を示すが、重複属性の扱いを定義しない。"
+      ],
+      "impact": "分類案を記述テンプレートとして用いる場合、重複記録や比較時の解釈不一致が生じ得る。",
+      "repair_direction": {
+        "mode": "same_investigation",
+        "affected_layer": "30_analysis",
+        "instruction": "各領域のsemantic boundaryと重複属性の参照関係を明示する。相互排他的分類を強制しない。"
+      },
+      "finding_id": "F005"
+    }
+  ],
+  "verdict": "FINDINGS"
+}

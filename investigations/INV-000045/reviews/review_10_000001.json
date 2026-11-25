@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000045",
+  "review_seq": 1,
+  "layer": "10_evidence",
+  "review_kind": "source_evidence_note_to_10_evidence",
+  "target_blob_sha": "2cda402483103dc09226919da22d34fd33145752",
+  "assessment": "7 Source revisionと14 Evidence、参照された5 Evidence Noteを照合。SRC-000172著者版、SRC-000186公開目次・序文、SRC-000217/218/250出版社資料、SRC-000177著者版abstractを確認。MetroPTは出版社の直接全文取得制約があり、著者preprintと検索索引・EV-000364で主要な内容を照合したが、出版版のFMEA/FMECAとGPSゼロ符号化の細部は独立確認未完。ISO規範本文は対象外。確認可能な範囲で主要な記述は概ね整合する一方、既存SourceとNoteにあるRQ関連情報の選択欠落を認める。",
+  "findings": [
+    {
+      "severity": "Moderate",
+      "target": "E0008 / E0013 → 運用条件・評価要求",
+      "evidence": [
+        "SRC-000218 https://doi.org/10.3390/info17060523 §6.2, §7: リードタイム、許容アラーム負荷、計算資源、誤報・見逃しの非対称な損失と安全上の制約を論じる。具体的なコストベース評価は未実施。",
+        "EV-000343 https://app.notion.com/p/410e5855be3981ea9209dd7f919dbdcb: PR/ROC、誤報負荷、統計検定の未実施を記録しているがE0008に欠落。",
+        "20_synthesis U0004; 30_analysis evidence_gaps, J0009/J0010"
+      ],
+      "impact": "既存資料で候補として支持される運用上の属性が根拠不足として除外される。F1の解釈上の制約も失われる。",
+      "repair_direction": {
+        "mode": "same_investigation",
+        "affected_layer": "10_evidence",
+        "instruction": "既存Sourceから運用制約と評価上のlimitationを追加captureし、著者の提案と実証結果、候補の存在と定量化の可否を区別する。"
+      },
+      "finding_id": "F001"
+    },
+    {
+      "severity": "Moderate",
+      "target": "E0007 → 予測出力・観測条件",
+      "evidence": [
+        "SRC-000217 https://doi.org/10.3390/s26061915 Abstract, §4.1.2, §5.4: RUL分布、risk ranking、静的・時間依存共変量、観測可能性、fleet heterogeneity、意思決定別出力を整理。",
+        "EV-000342 https://app.notion.com/p/410e5855be39810e8bb4d9deb19fccbc: risk ranking記述がE0007に欠落。",
+        "30_analysis J0007/J0008、Working Answer第7/8領域"
+      ],
+      "impact": "代表的な予後出力と事例間の観測条件の差が分類案に明示されない。",
+      "repair_direction": {
+        "mode": "same_investigation",
+        "affected_layer": "10_evidence",
+        "instruction": "RUL分布・要約、risk ranking、期間内故障確率の区別、共変量と観測可能性・対象群の異質性を既存Sourceからcaptureする。"
+      },
+      "finding_id": "F002"
+    },
+    {
+      "severity": "Moderate",
+      "target": "10_evidence sources / frozen scopeのcoverage",
+      "evidence": [
+        "00_context: 設備・業界・手法を限定しない網羅的探索。",
+        "10_evidence: 7件は産業・時系列中心。20_synthesis U0002、30_analysis limitations: 体系的探索の飽和未検証。",
+        "SRC-000172 https://ar5iv.labs.arxiv.org/html/2002.04236 §1–2: 時系列異常検知の適用領域は産業に限定されない。"
+      ],
+      "impact": "限定された探索で候補分類を構築しているため、非産業・非時系列等の属性が十分に探索されない。網羅性未確立の明記は適切だが、Scopeに対する探索不足は残る。",
+      "repair_direction": {
+        "mode": "same_investigation",
+        "affected_layer": "10_evidence",
+        "instruction": "既存Contextのまま異なるデータ形態・用途・設備・運用条件を意図的に比較するsource selectionを追加し、探索範囲、選択基準、未探索領域、終了条件を記録する。"
+      },
+      "finding_id": "F003"
+    }
+  ],
+  "verdict": "FINDINGS"
+}

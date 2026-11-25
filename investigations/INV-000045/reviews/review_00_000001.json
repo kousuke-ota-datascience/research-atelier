@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000045",
+  "review_seq": 1,
+  "layer": "00_context",
+  "review_kind": "context_semantic_validity",
+  "target_blob_sha": "fe78ff9e72984db707391a6671f192595567481b",
+  "assessment": "RQ・Scope・AssumptionsとExploratoryの対応は妥当。網羅的探索の終了条件は未定だが、既存Context内の探索設計で対処できる。Context-defining defectは認めない。",
+  "findings": [],
+  "verdict": "PASS"
+}
