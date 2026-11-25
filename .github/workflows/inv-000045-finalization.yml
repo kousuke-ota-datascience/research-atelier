@@ -1,0 +1,68 @@
+name: INV-000045 finalization
+on:
+  pull_request:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  finalize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ github.event.pull_request.head.sha }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install 'jsonschema>=4.18'
+      - name: Canonical validation
+        env:
+          PYTHONPATH: src
+        run: python -m research_atelier.validation.validate_investigation INV-000045 --through 30
+      - name: Review and deterministic projection
+        env:
+          PYTHONPATH: src
+        run: |
+          python - <<'PY'
+          import json, subprocess, base64, hashlib
+          from pathlib import Path
+          from research_atelier.reviewing.review_state import load_review_history, target_relation_from_blobs
+          from research_atelier.reviewing.reconcile import reconcile_payload
+          from research_atelier.projection.working_answer import render_working_answer_section, patch_working_answer_section, working_answer_projection_state, build_projection_log_v2
+          from jsonschema import Draft202012Validator, FormatChecker
+          root=Path("investigations/INV-000045")
+          layers=("00_context","10_evidence","20_synthesis","30_analysis")
+          def git(*args): return subprocess.check_output(["git",*args],text=True).strip()
+          base="0967d1f1695807de8745471ffb5bb22befa98f97"
+          def blobs(ref): return {k:git("rev-parse",f"{ref}:{root}/{k}.json") for k in layers}
+          h=load_review_history("INV-000045",review_dir=root/"reviews",schema_path="schemas/v2")
+          assert not h.issues, h.issues
+          assert h.latest["review_seq"]==4 and h.latest["verdict"]=="PASS"
+          assert subprocess.run(["git","merge-base","--is-ancestor",h.latest["target"]["commit_sha"],base]).returncode==0
+          assert blobs(base)==blobs("HEAD")
+          assert target_relation_from_blobs(h.latest,blobs("HEAD"))=="exact"
+          ctx=json.loads((root/"00_context.json").read_text())
+          rr=reconcile_payload({"current":{"review_status":"完了","latest_review_seq":4},"review":{"latest":h.latest,"issues":h.issues,"target_relation":"exact"},"context":ctx})
+          print("RECONCILE",json.dumps(rr,ensure_ascii=False))
+          assert rr["outcome"]=="NOOP" and not rr["issues"]
+          assert ctx["rq_id"]=="RQ-000044" and ctx["question"]["notion_url"]=="https://app.notion.com/p/423e5855be398107aa12c66b1741001a"
+          analysis=json.loads((root/"30_analysis.json").read_text())
+          rendered=render_working_answer_section(analysis)
+          patch=patch_working_answer_section("",analysis)
+          assert patch.action=="CREATE" and patch.markdown==rendered
+          assert working_answer_projection_state("",analysis)=="MISSING"
+          print("RENDER_SHA256",hashlib.sha256(rendered.encode()).hexdigest(),"CHARACTERS",len(rendered))
+          data=base64.b64encode(rendered.encode()).decode()
+          for i in range(0,len(data),2048): print("RENDER_B64",i//2048,data[i:i+2048])
+          readback=Path(".ops/inv-000045-readback.json")
+          if readback.exists():
+              d=json.loads(readback.read_text())
+              state=working_answer_projection_state(d["body"],analysis)
+              print("READBACK_STATE",state)
+              print("READBACK_SHA256",hashlib.sha256(d["body"].encode()).hexdigest())
+              rec=build_projection_log_v2(target_rq_url=ctx["question"]["notion_url"],rq_id=ctx["rq_id"],source_investigation_id=ctx["investigation_id"],source_30_analysis_commit_sha=h.latest["target"]["commit_sha"],projection_timestamp=d["timestamp"],result="SUCCESS" if state=="CURRENT" else "FAILURE",note="Workflow 00: Review 000004 PASS, exact current target; Notion readback "+state)
+              Draft202012Validator(json.loads(Path("schemas/v2/projection_log.schema.json").read_text()),format_checker=FormatChecker()).validate(rec)
+              print("PROJECTION_LOG_JSON",json.dumps(rec,ensure_ascii=False))
+              assert state=="CURRENT"
+          PY
