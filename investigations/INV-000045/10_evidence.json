@@ -3,7 +3,7 @@
   "artifact_type": "10_evidence",
   "investigation_id": "INV-000045",
   "rq_id": "RQ-000044",
-  "snapshot_at": "2026-11-25T04:18:12Z",
+  "snapshot_at": "2026-11-25T04:50:00Z",
   "sources": [
     {
       "source_id": "SRC-000172",
@@ -130,6 +130,105 @@
       },
       "accessed_at": "2026-11-25T04:17:55Z",
       "notion_url": "https://app.notion.com/p/417e5855be398165a70ed328c3f71396"
+    },
+    {
+      "source_id": "SRC-000292",
+      "source_revision": {
+        "commit_sha": "32eb6e8da1a8a7fcf2b4c8c7d957464c6b981286",
+        "blob_sha": "bdb5ff7b7669db1469d1ac3ac1b7ce2b66e19e65"
+      },
+      "accessed_at": "2026-11-25T04:50:00Z",
+      "notion_url": "https://app.notion.com/p/423e5855be3981c2b661f3f1162f259d"
+    },
+    {
+      "source_id": "SRC-000230",
+      "source_revision": {
+        "commit_sha": "5f39526b63d0cae2a496200ef8c58ca573231ae6",
+        "blob_sha": "46f5420486079cd300828f1676620328a03531b6"
+      },
+      "accessed_at": "2026-11-25T04:50:00Z",
+      "notion_url": "https://app.notion.com/p/417e5855be398127a78cda64a6c6210a"
+    },
+    {
+      "source_id": "SRC-000231",
+      "source_revision": {
+        "commit_sha": "5f39526b63d0cae2a496200ef8c58ca573231ae6",
+        "blob_sha": "144c787bcfe476a2157c31068ec38e7463a11c78"
+      },
+      "accessed_at": "2026-11-25T04:50:00Z",
+      "notion_url": "https://app.notion.com/p/417e5855be39819ab920ef2175555481"
+    },
+    {
+      "source_id": "SRC-000233",
+      "source_revision": {
+        "commit_sha": "5f39526b63d0cae2a496200ef8c58ca573231ae6",
+        "blob_sha": "82c70a4a2858470d462c86420cd5bff844d37038"
+      },
+      "accessed_at": "2026-11-25T04:50:00Z",
+      "notion_url": "https://app.notion.com/p/417e5855be39816e9549c315483ac13a"
+    },
+    {
+      "source_id": "SRC-000236",
+      "source_revision": {
+        "commit_sha": "5f39526b63d0cae2a496200ef8c58ca573231ae6",
+        "blob_sha": "6d7618cff11e7098cab8b131dbc9def426b8bbe3"
+      },
+      "accessed_at": "2026-11-25T04:50:00Z",
+      "notion_url": "https://app.notion.com/p/417e5855be398140a798ef75f90106b0"
+    },
+    {
+      "source_id": "SRC-000251",
+      "source_revision": {
+        "commit_sha": "5f39526b63d0cae2a496200ef8c58ca573231ae6",
+        "blob_sha": "9ff45a714101a5f1dd9cfd71c906128652195a19"
+      },
+      "accessed_at": "2026-11-25T04:50:00Z",
+      "notion_url": "https://app.notion.com/p/417e5855be3981afbfd5f9f3b30d57f4"
+    },
+    {
+      "source_id": "SRC-000245",
+      "source_revision": {
+        "commit_sha": "5f39526b63d0cae2a496200ef8c58ca573231ae6",
+        "blob_sha": "d48b148c8b461cff1f006917830553a3bd458852"
+      },
+      "accessed_at": "2026-11-25T04:50:00Z",
+      "notion_url": "https://app.notion.com/p/417e5855be3981c99b8fe125e6b5819a"
+    },
+    {
+      "source_id": "SRC-000253",
+      "source_revision": {
+        "commit_sha": "5f39526b63d0cae2a496200ef8c58ca573231ae6",
+        "blob_sha": "ef6a305beeaf452531c21b58a4025f7e6c3ece4e"
+      },
+      "accessed_at": "2026-11-25T04:50:00Z",
+      "notion_url": "https://app.notion.com/p/417e5855be3981c7bae1fb7f7f1ea834"
+    },
+    {
+      "source_id": "SRC-000244",
+      "source_revision": {
+        "commit_sha": "5f39526b63d0cae2a496200ef8c58ca573231ae6",
+        "blob_sha": "b0d3f6ae6e698c8e3fe43da29fed8d8302cafd98"
+      },
+      "accessed_at": "2026-11-25T04:50:00Z",
+      "notion_url": "https://app.notion.com/p/417e5855be3981e8af58d49b7a7a11f8"
+    },
+    {
+      "source_id": "SRC-000210",
+      "source_revision": {
+        "commit_sha": "5f39526b63d0cae2a496200ef8c58ca573231ae6",
+        "blob_sha": "11b511d7b4dc624c09473e61115754d7bb0ebe28"
+      },
+      "accessed_at": "2026-11-25T04:50:00Z",
+      "notion_url": "https://app.notion.com/p/410e5855be39812489fef18dba02b19a"
+    },
+    {
+      "source_id": "SRC-000178",
+      "source_revision": {
+        "commit_sha": "5f39526b63d0cae2a496200ef8c58ca573231ae6",
+        "blob_sha": "b886bcb3d8b292e420a2de51fe0add1abf362e3f"
+      },
+      "accessed_at": "2026-11-25T04:50:00Z",
+      "notion_url": "https://app.notion.com/p/40fe5855be39812d9357c43f0a53579e"
     }
   ],
   "evidence_items": [
@@ -488,6 +587,182 @@
       "selection_reason": "観測・ラベルの適用条件",
       "provenance": {
         "source_id": "SRC-000217",
+        "evidence_note": null
+      }
+    },
+    {
+      "evidence_id": "E0030",
+      "note_type": "Data",
+      "content": "MVTec ADは物体・テクスチャの画像を含む。正常画像のみを学習用に用い、評価には正常・異常画像があり、欠陥領域ごとに画素精度の手動正解アノテーションを提供する。",
+      "source_locator": "CVPR 2019 Abstract, §3 Dataset, Fig. 2; https://openaccess.thecvf.com/content_CVPR_2019/papers/Bergmann_MVTec_AD_--_A_Comprehensive_Real-World_Dataset_for_Unsupervised_Anomaly_CVPR_2019_paper.pdf",
+      "selection_reason": "F001: 学習・評価ラベルの非対称性と空間正解",
+      "provenance": {
+        "source_id": "SRC-000292",
+        "evidence_note": null
+      }
+    },
+    {
+      "evidence_id": "E0031",
+      "note_type": "Method",
+      "content": "ベンチマークは画素ごとの異常マップを閾値で領域分割し、画像単位の正常／異常分類と異常領域のセグメンテーションを別に評価する。前者は画像分類の正解率、後者は正解領域との重なりを用いる。",
+      "source_locator": "CVPR 2019 §4.3 Evaluation Metric, Tables 2–3",
+      "selection_reason": "F001: 画像・画素・領域の出力／評価単位",
+      "provenance": {
+        "source_id": "SRC-000292",
+        "evidence_note": null
+      }
+    },
+    {
+      "evidence_id": "E0032",
+      "note_type": "Result",
+      "content": "同ベンチマークでは画素ROC AUCが高くても推定閾値での領域重なりが高いとは限らず、正常画像のみからの閾値設定が難しいと著者は報告する。",
+      "source_locator": "CVPR 2019 §4.4 Results",
+      "selection_reason": "スコア・閾値・実際の領域出力の違い",
+      "provenance": {
+        "source_id": "SRC-000292",
+        "evidence_note": null
+      }
+    },
+    {
+      "evidence_id": "E0033",
+      "note_type": "Claim",
+      "content": "著者らは全飛行センサーデータから予後アラートを開発する上で、データ品質、ラベル作成のための故障同定、個々のアラートを行動可能なアラートへ集約することを課題として挙げる。具体的な集約規則・許容負荷の実測値は公開abstractからは確定できない。",
+      "source_locator": "Abstract; https://papers.phmsociety.org/index.php/phmap/article/view/3684",
+      "selection_reason": "F002: ラベル同定と通知集約",
+      "provenance": {
+        "source_id": "SRC-000247",
+        "evidence_note": null
+      }
+    },
+    {
+      "evidence_id": "E0034",
+      "note_type": "Result",
+      "content": "実運用ディスク調査では修理手続きでの交換を故障と定義し、交換時点を故障時刻としている。年齢群別の年率換算故障率は初年群1.7%、3年群8.6%超だが、3～4年群の高値は機種構成の影響が大きいと著者は指摘する。",
+      "source_locator": "§2.2 Definition of Failure; §3.1 Fig. 2; §3.2; https://www.usenix.org/legacy/events/fast07/tech/full_papers/pinheiro/pinheiro_html/",
+      "selection_reason": "F004: 事象率と事象定義・対象母集団",
+      "provenance": {
+        "source_id": "SRC-000234",
+        "evidence_note": null
+      }
+    },
+    {
+      "evidence_id": "E0035",
+      "note_type": "Method",
+      "content": "12基の風車の実SCADAデータによる主軸受早期損傷検知では、10分平均データを用い、正常データのみで学習するため作業指示記録による学習ラベル付けを不要とする設計を報告する。",
+      "source_locator": "Publisher abstract and indexed introduction; https://onlinelibrary.wiley.com/doi/10.1002/ese3.1398",
+      "selection_reason": "正常学習を故障予兆にも用いる反例",
+      "provenance": {
+        "source_id": "SRC-000230",
+        "evidence_note": null
+      }
+    },
+    {
+      "evidence_id": "E0036",
+      "note_type": "Method",
+      "content": "風車の停止をSCADAとアラームシステムのデータから自動的に同定・ラベル付けし、停止種類の識別と将来の故障予測に利用する事例を報告する。",
+      "source_locator": "Abstract (publisher/university indexed); https://doi.org/10.1088/1742-6596/926/1/012011",
+      "selection_reason": "停止イベントの正解取得と代理イベント",
+      "provenance": {
+        "source_id": "SRC-000231",
+        "evidence_note": null
+      }
+    },
+    {
+      "evidence_id": "E0037",
+      "note_type": "Result",
+      "content": "急速充電条件でサイクル試験した124個の商用LFP/graphiteセルについて、初期100サイクルからサイクル寿命の定量予測、初期5サイクルから寿命の2群分類を実験した。100サイクル時の容量は初期容量に対し中央値で0.2%増加していた。",
+      "source_locator": "Abstract (author institution); https://escholarship.org/uc/item/9532z8t0; DOI 10.1038/s41560-019-0356-8",
+      "selection_reason": "劣化顕在化前の予測とサイクル単位; 実験室セルに限定",
+      "provenance": {
+        "source_id": "SRC-000233",
+        "evidence_note": null
+      }
+    },
+    {
+      "evidence_id": "E0038",
+      "note_type": "Method",
+      "content": "電力網の負荷推定では計測誤差を異常とし、系統切替イベントと区別して両者をフィルタリングする。変化点検知と異常検知を組み合わせる用途であり設備故障時刻の予測ではない。",
+      "source_locator": "Publisher indexed text and author abstract; https://doi.org/10.1016/j.segan.2024.101540; https://arxiv.org/abs/2405.16164",
+      "selection_reason": "データ品質異常と正常／構造変化の役割",
+      "provenance": {
+        "source_id": "SRC-000236",
+        "evidence_note": null
+      }
+    },
+    {
+      "evidence_id": "E0039",
+      "note_type": "Data",
+      "content": "3W Dataset 2.0.0は油井の望ましくない事象について、実測・シミュレーション・専門家が手作成した系列の3種類を収録する。例外的な事象をシミュレーションで補った例を著者は説明する。",
+      "source_locator": "Methods; Table 6 (publisher indexed passages); https://www.nature.com/articles/s41597-026-07225-z",
+      "selection_reason": "データ生成過程と希少イベントの補完",
+      "provenance": {
+        "source_id": "SRC-000251",
+        "evidence_note": null
+      }
+    },
+    {
+      "evidence_id": "E0040",
+      "note_type": "Data",
+      "content": "油井状態が正常か望ましくない事象か不明な時点の観測にはUnknown（NaN）ラベルを付けると記載される。",
+      "source_locator": "Methods: class labels (publisher indexed passage); https://www.nature.com/articles/s41597-026-07225-z",
+      "selection_reason": "真値不明と正常・異常の区別",
+      "provenance": {
+        "source_id": "SRC-000251",
+        "evidence_note": null
+      }
+    },
+    {
+      "evidence_id": "E0041",
+      "note_type": "Result",
+      "content": "管路の圧力変動データと数値モデルを用いて、単一漏水点の位置と漏水量を推定する。模型・現地実験で位置誤差と量の誤差を評価し、検出可能な漏水規模の限界を報告する。",
+      "source_locator": "Abstract; https://www.jstage.jst.go.jp/article/jscejj/80/16/80_23-16045/_article/-char/en",
+      "selection_reason": "空間局在の別モダリティ・重症度に関係する量・検出限界",
+      "provenance": {
+        "source_id": "SRC-000245",
+        "evidence_note": null
+      }
+    },
+    {
+      "evidence_id": "E0042",
+      "note_type": "Method",
+      "content": "NS形電気転てつ機は既存の状態監視機構を持たず、稼働線路への長期設置可能なセンサーと安定データ取得を目指す。故障時のセンサー値を得るため、調整不良や故障を模擬した制御条件下の検証試験を実施する。",
+      "source_locator": "Abstract; https://www.jstage.jst.go.jp/article/railwayengineering/29/1/29_69/_article/-char/en",
+      "selection_reason": "観測設計・人工故障試験と実稼働の区別",
+      "provenance": {
+        "source_id": "SRC-000253",
+        "evidence_note": null
+      }
+    },
+    {
+      "evidence_id": "E0043",
+      "note_type": "Claim",
+      "content": "北米の事業者の2つの生産資産で、電動水中ポンプの稼働寿命延長に自動化された現場生産ソリューションを用いた事例を著者らは報告する。独立した介入効果の推定はabstractでは確認できない。",
+      "source_locator": "Publisher indexed abstract; https://onepetro.org/IPTCONF/proceedings-abstract/24IPTC/24IPTC/542771",
+      "selection_reason": "行動推奨・介入目的と実証限界",
+      "provenance": {
+        "source_id": "SRC-000244",
+        "evidence_note": null
+      }
+    },
+    {
+      "evidence_id": "E0044",
+      "note_type": "Method",
+      "content": "単変量ストリームの外れ値検知で、手動固定閾値の代わりに誤検知数を制御するためのリスクパラメータを指定する手法を提案する。任意のデータや運用条件での誤報負荷保証ではない。",
+      "source_locator": "KDD 2017 Abstract; https://kdd.org/kdd2017/papers/view/anomaly-detection-in-streams-with-extreme-value-theory",
+      "selection_reason": "閾値設定方式とリスク許容値の候補",
+      "provenance": {
+        "source_id": "SRC-000210",
+        "evidence_note": null
+      }
+    },
+    {
+      "evidence_id": "E0045",
+      "note_type": "Claim",
+      "content": "TSB-ADの著者は従来ベンチマークのデータ完全性・評価指標のバイアス等を問題として、40データセット由来の1070時系列のキュレーションと評価指標の検討を報告する。",
+      "source_locator": "NeurIPS 2024 Abstract; https://papers.nips.cc/paper_files/paper/2024/hash/c3f3c690b7a99fba16d0efd35cb83b2c-Abstract-Datasets_and_Benchmarks_Track.html",
+      "selection_reason": "ベンチマークの選定・評価の信頼性; アルゴリズム順位は対象外",
+      "provenance": {
+        "source_id": "SRC-000178",
         "evidence_note": null
       }
     }
