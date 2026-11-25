@@ -1,0 +1,54 @@
+name: INV-000045 repair completion
+on:
+  pull_request:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ github.event.pull_request.base.sha }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install 'jsonschema>=4.18'
+      - name: Validate committed chain and derive reconciliation
+        env:
+          PYTHONPATH: src
+        run: |
+          git rev-parse HEAD
+          python -m research_atelier.validation.validate_investigation INV-000045 --through 30
+          python - <<'PY'
+          import json, subprocess
+          from dataclasses import asdict
+          from pathlib import Path
+          from research_atelier.reviewing.review_state import load_review_history, target_relation_from_blobs
+          from research_atelier.reviewing.reconcile import reconcile_payload
+          from research_atelier.reviewing.review_writer import prepare_review_cycle, EXPECTED_ARTIFACTS
+          inv="INV-000045"
+          p=Path("investigations")/inv
+          def git(*args):
+              return subprocess.check_output(["git",*args],text=True).strip()
+          commit=git("rev-parse","HEAD")
+          assert commit=="224bd4033f11b2a094145fa70ccb3a0cddf368d5"
+          blobs={a:git("rev-parse",f"HEAD:{p}/{a}.json") for a in EXPECTED_ARTIFACTS}
+          assert list(blobs.values())==["fe78ff9e72984db707391a6671f192595567481b","eab41d07d2293f3978ec21202b2e26d767aefa19","f4d9bf165a86d5e295341601d18ff43773c556cd","59d3cbc0086a4d3a766433d8c84ca28f9245b7cb"]
+          h=load_review_history(inv,review_dir=p/"reviews",schema_path="schemas/v2")
+          assert not h.issues
+          latest=h.records[-1]
+          assert latest["review_seq"]==1 and latest["verdict"]=="FINDINGS"
+          subprocess.check_call(["git","merge-base","--is-ancestor",latest["target"]["commit_sha"],"HEAD"])
+          relation=target_relation_from_blobs(latest,blobs)
+          assert relation=="stale"
+          context=json.loads((p/"00_context.json").read_text())
+          result=reconcile_payload({"current":{"review_status":"再作業中","latest_review_seq":1},"review":{"latest":latest,"issues":list(h.issues),"target_relation":relation},"context":context})
+          print("REPAIR_COMPLETION",json.dumps(result,ensure_ascii=False))
+          assert result["outcome"]=="UPDATE" and result["changes"]=={"Review Status":"再レビュー待"}
+          prepared=prepare_review_cycle(inv,review_dir=p/"reviews",schema_path="schemas/v2",target_commit_sha=commit,artifact_blob_shas=blobs)
+          assert prepared.review_seq==2
+          print("PREPARED_REVIEW",json.dumps(asdict(prepared),ensure_ascii=False))
+          PY
