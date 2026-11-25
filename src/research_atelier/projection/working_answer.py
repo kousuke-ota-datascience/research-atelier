@@ -125,7 +125,7 @@ def _notion_block_sequence(markdown: str, *, notion_readback: bool = False) -> s
             # this representation difference as equivalent for CURRENT checks.
             normalized = re.sub(r"<b>(.*?)</b>", r"**\1**", line)
             if notion_readback and not normalized.lstrip().startswith("|"):
-                normalized = re.sub(r"\\([\]_|])", r"\1", normalized)
+                normalized = re.sub(r"\\([\[\]_|])", r"\1", normalized)
             lines.append(normalized)
     return "\n".join(lines).rstrip()
 

@@ -139,6 +139,28 @@ class WorkingAnswerPatchTests(unittest.TestCase):
         self.assertEqual(working_answer_projection_state(notion_readback, analysis), "CURRENT")
         self.assertEqual(patch_working_answer_section(notion_readback, analysis).action, "NOOP")
 
+    def test_notion_escaped_opening_bracket_roundtrip_is_current(self):
+        # Notion NFM escapes opening brackets in factor labels in prose.
+        analysis = {"working_answer": {"text": "D01.1 [C] example"}}
+        readback = "# Working Answer\n## Answer\nD01.1 \\[C] example"
+        self.assertTrue(working_answer_section_matches(readback, analysis))
+        self.assertEqual(working_answer_projection_state(readback, analysis), "CURRENT")
+        self.assertEqual(patch_working_answer_section(readback, analysis).action, "NOOP")
+        self.assertEqual(
+            working_answer_projection_state(readback.replace("[C]", "[U]"), analysis),
+            "STALE",
+        )
+
+    def test_notion_escaped_opening_bracket_inside_code_is_not_normalized(self):
+        analysis = {"working_answer": {"text": "\x60\x60\x60md\n[C]\n\x60\x60\x60"}}
+        rendered = render_working_answer_section(analysis)
+        self.assertFalse(working_answer_section_matches(rendered.replace("[C]", "\\[C]"), analysis))
+
+    def test_notion_escaped_opening_bracket_inside_table_is_not_normalized(self):
+        analysis = {"working_answer": {"text": "| Factor |\n| --- |\n| [C] |"}}
+        rendered = render_working_answer_section(analysis)
+        self.assertFalse(working_answer_section_matches(rendered.replace("[C]", "\\[C]"), analysis))
+
     def test_notion_inline_bold_code_fence_is_not_normalized(self):
         analysis = {
             "working_answer": {
