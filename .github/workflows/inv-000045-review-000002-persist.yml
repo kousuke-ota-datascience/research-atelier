@@ -1,0 +1,56 @@
+name: INV-000045 canonical review 000002 persistence audit
+on:
+  pull_request:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 224bd4033f11b2a094145fa70ccb3a0cddf368d5
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install 'jsonschema>=4.18'
+      - name: Run canonical writer and history/projection helpers
+        env:
+          PYTHONPATH: src
+        run: |
+          python - <<'PY'
+          import json, subprocess
+          from pathlib import Path
+          from datetime import datetime, timezone
+          from dataclasses import asdict
+          from research_atelier.reviewing.review_writer import prepare_review_cycle, save_review_cycle, EXPECTED_ARTIFACTS
+          from research_atelier.reviewing.review_state import load_review_history, target_relation_from_blobs
+          from research_atelier.projection.review import plan_review_projection
+          from research_atelier.reviewing.reconcile import reconcile_payload
+          def git(*args):
+              return subprocess.check_output(["git",*args],text=True).strip()
+          p=Path("investigations/INV-000045")
+          target="224bd4033f11b2a094145fa70ccb3a0cddf368d5"
+          expected={"00_context":"fe78ff9e72984db707391a6671f192595567481b","10_evidence":"eab41d07d2293f3978ec21202b2e26d767aefa19","20_synthesis":"f4d9bf165a86d5e295341601d18ff43773c556cd","30_analysis":"59d3cbc0086a4d3a766433d8c84ca28f9245b7cb"}
+          def blobs(ref): return {x:git("rev-parse",f"{ref}:{p}/{x}.json") for x in EXPECTED_ARTIFACTS}
+          assert git("rev-parse","HEAD")==target and blobs("HEAD")==expected
+          prepared=prepare_review_cycle("INV-000045",review_dir=p/"reviews",schema_path="schemas/v2",target_commit_sha=target,artifact_blob_shas=expected)
+          assert prepared.review_seq==2
+          layers=json.loads("{\"00_context\":{\"assessment\":\"Frozen ContextはReview 000001と同一blob。RQ、Scope、Assumptions、Exploratory profileの意味整合性は維持されている。Context-defining defectなし。\",\"findings\":[]},\"10_evidence\":{\"assessment\":\"14 Source・29 Evidenceを確認。前回から7 Source・15 Evidence追加。既存5 Noteの照合結果と追加7 Noteの個別照合を使用。F001の運用制約・評価limitationはE0015/E0016/E0027、F002の出力・観測条件はE0017/E0018/E0026/E0028/E0029で大幅に回復。追加資料の原著abstract・出版社索引・著者機関資料とNoteを照合し、LOF、KPI、SMART、5G、金融口座、航空機、半導体の主張は概ね整合する。MetroPTの1HzとFMEA/FMECAは出版社公開索引で再確認。ISOは公開範囲のみ、複数論文の本文全体や運用成果は独立確認していない。F003は対象・用途の対比が改善したが、既知の画像検知資料が未captureで具体的属性の欠落が残る。また新規事例のsource selectionに以下の欠落がある。\",\"findings\":[{\"severity\":\"Moderate\",\"target\":\"F003再評価 / 10_evidence sources / spatial anomaly localization\",\"evidence\":[\"00_context: 特定設備・業界・手法に限定しない網羅的探索。\",\"30_analysis limitations: MVTec ADはNotionにcaptureしたがexact Source ID未取得のためcanonical Evidence未使用。\",\"Bergmann et al. CVPR 2019 https://openaccess.thecvf.com/content_CVPR_2019/html/Bergmann_MVTec_AD_--_A_Comprehensive_Real-World_Dataset_for_Unsupervised_Anomaly_CVPR_2019_paper.html ; IJCV 2021 https://doi.org/10.1007/s11263-020-01400-4: 画像単位分類とpixel単位局在・segmentation、空間的正解アノテーションを区別。\",\"E0019は一般多次元標本のLOFであり、空間的局在・正解領域の事例を代替しない。J0003/J0007/J0009の粒度には空間領域が明示されない。\"],\"impact\":\"単なる網羅性未証明ではなく、既知の直接関連Sourceの未収録により、空間的局在と画像/領域単位の正解・出力・評価という具体的なファクターが欠落する。\",\"repair_direction\":{\"mode\":\"same_investigation\",\"affected_layer\":\"10_evidence\",\"instruction\":\"MVTec ADのcanonical Source登録・ID解決を正規経路で行い、画像全体と領域/pixel単位、正常のみの学習データと異常ラベル付き評価データの区別をcaptureする。追加探索の範囲を更新し、一般化を限定する。\"}},{\"severity\":\"Minor\",\"target\":\"E0024 / SRC-000247: operational alert aggregation\",\"evidence\":[\"Wang et al. 2023 https://doi.org/10.36001/phmap.2023.v4i1.3684 Abstract: prognostic alertの開発経験において故障同定によるラベル作成、データ品質、個々のalertをactionable alertへ集約する課題を明示。\",\"E0024/K0024は故障事前警告・保全計画・配備経験のみをcapture。D08.1/8.2は通知先・許容負荷を扱うが、通知の集約単位と規則が明示されない。\"],\"impact\":\"生の検知・予測出力と実際に行動可能な通知の対応関係が分類上不明確となる。主分類を直ちに覆すものではない。\",\"repair_direction\":{\"mode\":\"same_investigation\",\"affected_layer\":\"10_evidence\",\"instruction\":\"既存航空機Sourceからalert aggregationとラベル同定の課題をcaptureし、通知の集約単位・方針を業務上の要求と区別して記述する。\"}}]},\"20_synthesis\":{\"assessment\":\"29 Knowledge Unit、16 Relation、7 UncertaintyをEvidenceに照合。F001/F002の追加内容・運用指針と実証の区別、左切断と右打ち切り、SMART否定的結果、各資料の適用境界を概ね維持。K0029等のcross-source対比は妥当。以下はEvidenceからのsupportを越える小さな追加限定であり、上流欠落とは別に記録する。\",\"findings\":[{\"severity\":\"Minor\",\"target\":\"K0016 qualifier: アーカイブされたスコアが不足\",\"evidence\":[\"E0016はPR/ROC、コストベース誤報評価、統計検定の未実施のみを記録。E0027はプロセス別コスト行列不足を記録。\",\"K0016は両Evidenceに記載されないアーカイブ済みスコア不足を理由として追加している。\"],\"impact\":\"理由のprovenanceが不完全。F1比較のlimitationそのものは支持される。\",\"repair_direction\":{\"mode\":\"same_investigation\",\"affected_layer\":\"20_synthesis\",\"instruction\":\"当該限定をEvidenceで支持される範囲に修正するか、理由の原典記述が必要なら10_evidenceで追加captureしてから再構築する。\"}}]},\"30_analysis\":{\"assessment\":\"Exploratory profileと9領域の分類・C/A/P/U判定規則・主記録先/相互参照を確認。F004の相対的重要度と概念上適用可能性・定義上固有性の区別は明示され、F005の警報閾値・リードタイム・予後不確実性の重複処理も改善。網羅性・経験的頻度・実証済み効果を主張せず、探索方法・終了条件・未解決領域を明記。F001/F002は主たる修正内容がAnalysisに反映済み。画像局在等の欠落は10_evidence Findingとして扱う。独立に以下の残存する推論上の区別を指摘する。\",\"findings\":[{\"severity\":\"Minor\",\"target\":\"J0002 / D02.3 事象頻度 vs 観測された事象数\",\"evidence\":[\"J0002は事象頻度・予兆には根拠があると記載。参照K0028は故障事象数と打ち切り程度をモデル選定・評価の条件とする。K0021は特定の実運用ディスクの観察結果。\",\"J0005/D05.3はイベント事象数を観測・データ属性として記録し、J0010は経験的出現頻度を未確定とする。\"],\"impact\":\"発生率・時間当たり頻度という現象属性と、観測期間・標本サイズ・打ち切りに依存する観測事象数というデータ属性を混同する可能性がある。\",\"repair_direction\":{\"mode\":\"same_investigation\",\"affected_layer\":\"30_analysis\",\"instruction\":\"現象の発生頻度/率と観測された事象数を明示的に区別し、前者を支持するKと適用条件を特定する。支持が不足すれば候補・未確立として扱う。\"}}]}}")
+          git("fetch","origin","main")
+          current=git("rev-parse","FETCH_HEAD")
+          assert current==target and blobs(current)==expected
+          manifest=save_review_cycle(prepared,reviewed_at=datetime.now(timezone.utc).isoformat(),layer_bodies=layers,current_target_commit_sha=current,current_artifact_blob_shas=blobs(current),review_dir=p/"reviews",schema_path="schemas/v2")
+          h=load_review_history("INV-000045",review_dir=p/"reviews",schema_path="schemas/v2")
+          assert not h.issues and len(h.records)==2
+          latest=h.records[-1]
+          assert latest["review_seq"]==2
+          for f in sorted((p/"reviews").glob("*000002.json")):
+              print("REVIEW_FILE "+json.dumps({"path":str(f),"content":f.read_text()},ensure_ascii=False))
+          print("REVIEW_HISTORY_PASS")
+          print("PROJECTION_PLAN "+json.dumps(asdict(plan_review_projection(latest,investigation_rows=[{"investigation_id":"INV-000045","url":"https://app.notion.com/p/423e5855be3981bf860dd41a5c62d8e4"}],existing_review_rows=[])),ensure_ascii=False))
+          print("RECONCILE_PLAN "+json.dumps(reconcile_payload({"context":json.loads((p/"00_context.json").read_text()),"current":{"review_status":"再レビュー待","latest_review_seq":1},"review":{"latest":latest,"issues":list(h.issues),"target_relation":target_relation_from_blobs(latest,blobs(current))}}),ensure_ascii=False))
+          
+          PY
