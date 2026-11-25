@@ -1,0 +1,14 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000292",
+  "notion_url": "https://app.notion.com/p/423e5855be3981c2b661f3f1162f259d",
+  "title": "MVTec AD — A Comprehensive Real-World Dataset for Unsupervised Anomaly Detection",
+  "source_type": "Conference Paper",
+  "journal_or_publisher": "IEEE/CVF CVPR 2019",
+  "authors": "Paul Bergmann; Michael Fauser; David Sattlegger; Carsten Steger",
+  "year": 2019,
+  "url": "https://openaccess.thecvf.com/content_CVPR_2019/html/Bergmann_MVTec_AD_--_A_Comprehensive_Real-World_Dataset_for_Unsupervised_Anomaly_CVPR_2019_paper.html",
+  "doi": "10.1109/CVPR.2019.00982",
+  "reliability_note": "Original benchmark paper; normal-only training and pixel-precise ground truth; benchmark, not operational deployment."
+}
