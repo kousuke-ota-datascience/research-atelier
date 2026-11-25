@@ -3,7 +3,7 @@
   "artifact_type": "20_synthesis",
   "investigation_id": "INV-000045",
   "rq_id": "RQ-000044",
-  "synthesized_at": "2026-11-25T03:38:16Z",
+  "synthesized_at": "2026-11-25T04:19:00Z",
   "knowledge_units": [
     {
       "knowledge_unit_id": "K0001",
@@ -114,6 +114,154 @@
       "evidence_refs": [
         "E0014"
       ]
+    },
+    {
+      "knowledge_unit_id": "K0015",
+      "statement": "産業アラーム予測の著者は、最低限の介入時間、許容アラーム負荷、利用可能な計算資源を構成選定の制約とし、精度・先行時間・計算複雑性のトレードオフを論じる。",
+      "evidence_refs": [
+        "E0015"
+      ],
+      "qualifiers": [
+        "設計指針であって、経済的最適値の実証ではない。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0016",
+      "statement": "同研究はF1-macroに限定され、PR/ROC、コストベースの誤報評価、差の統計検定は実施していない。",
+      "evidence_refs": [
+        "E0016",
+        "E0027"
+      ],
+      "qualifiers": [
+        "アーカイブされたスコアやプロセス別コスト行列が不足。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0017",
+      "statement": "エネルギー設備の生存モデルレビューは意思決定向け出力をリスク順位、所定期間内の故障確率、RUL分布に区別し、分布の分位点・中央値という要約も扱う。",
+      "evidence_refs": [
+        "E0017",
+        "E0026"
+      ],
+      "qualifiers": [
+        "出力間の互換性・予測性能は実証していない。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0018",
+      "statement": "生存モデルレビューでは静的・時間変化共変量（センサー、検査、文脈情報）、設備群の年齢・製造元等の異質性、電力・地域熱供給設備の観測可能性・サンプリング・ノイズ差が論点となる。",
+      "evidence_refs": [
+        "E0017",
+        "E0018"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0019",
+      "statement": "一般多次元標本の局所密度に基づく外れ度は近傍を参照する。元のLOF研究は時系列ウィンドウを必須としない。",
+      "evidence_refs": [
+        "E0019"
+      ],
+      "qualifiers": [
+        "手法原著であり、具体的な業務運用を検証した事例ではない。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0020",
+      "statement": "Microsoftの異常検知サービスは閲覧数・売上等のKPI系列の連続監視と早期通知を扱う。設備故障時刻やRULの予測とは対象が異なる。",
+      "evidence_refs": [
+        "E0020"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0021",
+      "statement": "大量の実運用ディスクでは一部SMART項目と故障の関連があったが、故障個体の相当部分に予測的信号がなく、SMART単独による個体故障予測には限界がある。温度・活動度との関連は先行報告より弱かった。",
+      "evidence_refs": [
+        "E0021"
+      ],
+      "qualifiers": [
+        "集団観察研究であり、因果効果や新規モデルの性能実証ではない。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0022",
+      "statement": "5G事業者の実データによる評価では多数のKPI系列を30分周期で処理する枠組みが報告された。",
+      "evidence_refs": [
+        "E0022"
+      ],
+      "qualifiers": [
+        "運用規模・実行周期の例であり商用配備完了を意味しない。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0023",
+      "statement": "金融口座の疑わしさを対象とする教師なし異常検知パイプラインは大量の取引記録を利用し、銀行の本番環境への導入が報告される。",
+      "evidence_refs": [
+        "E0023"
+      ],
+      "qualifiers": [
+        "著者報告。疑わしさは物理故障のラベルとは異なる。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0024",
+      "statement": "航空機部品のprognostic alertは飛行全体のセンサーデータから故障事前警告と保全計画に連携する配備経験が報告される。",
+      "evidence_refs": [
+        "E0024"
+      ],
+      "qualifiers": [
+        "運用成果や誤報率の定量値は今回のEvidenceにない。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0025",
+      "statement": "半導体製造装置の出荷前検査・保守記録を用いる研究では将来故障の有無と初回故障時期を別の予測対象とする。",
+      "evidence_refs": [
+        "E0025"
+      ],
+      "qualifiers": [
+        "運転中のセンサー時系列を前提としない境界事例。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0026",
+      "statement": "産業アラーム予測の著者は誤報と見逃しの非対称な運用上の帰結、プロセス別コスト行列、安全重要用途における閾値校正・コスト感応評価・人の確認を論じる。",
+      "evidence_refs": [
+        "E0027",
+        "E0016"
+      ],
+      "qualifiers": [
+        "推奨でありコスト行列を使った評価は未実施。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0027",
+      "statement": "監視開始時点まで生存した設備のみ観測される左切断と、予防交換などにより故障時刻が未観測となる右打ち切りは別の観測条件である。",
+      "evidence_refs": [
+        "E0028",
+        "E0007"
+      ],
+      "qualifiers": [
+        "レビューの方法論的整理。競合リスクの形式的分類は未確立。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0028",
+      "statement": "生存モデル選定と評価では故障事象数、打ち切り程度、共変量品質、欠測、不規則サンプリング、ラベル不確実性、時間整合性が論点となる。",
+      "evidence_refs": [
+        "E0029"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0029",
+      "statement": "同じ故障予測でも、出荷時点の検査情報による有無・時期の予測、飛行データからの事前警告、所定期間リスク・RUL分布では、利用するデータと出力の構造が異なる。",
+      "evidence_refs": [
+        "E0017",
+        "E0024",
+        "E0025"
+      ],
+      "qualifiers": [
+        "複数資料の対比であり出力別の頻度や優劣は不明。"
+      ]
     }
   ],
   "relations": [
@@ -207,12 +355,160 @@
         "E0012",
         "E0014"
       ]
+    },
+    {
+      "relation_id": "R0008",
+      "relation_type": "qualification",
+      "knowledge_unit_refs": [
+        "K0008",
+        "K0015",
+        "K0016",
+        "K0026"
+      ],
+      "description": "F1を比較した時間窓研究は運用制約を論じるが、コスト感応評価の欠如により運用上の最適構成までは確定できない。",
+      "evidence_refs": [
+        "E0008",
+        "E0015",
+        "E0016",
+        "E0027"
+      ]
+    },
+    {
+      "relation_id": "R0009",
+      "relation_type": "association",
+      "knowledge_unit_refs": [
+        "K0007",
+        "K0017",
+        "K0025",
+        "K0029"
+      ],
+      "description": "将来故障の有無・時期とリスク順位・期間内確率・RUL分布という出力の違いがある。",
+      "evidence_refs": [
+        "E0007",
+        "E0017",
+        "E0025",
+        "E0026"
+      ]
+    },
+    {
+      "relation_id": "R0010",
+      "relation_type": "qualification",
+      "knowledge_unit_refs": [
+        "K0005",
+        "K0018",
+        "K0021",
+        "K0028"
+      ],
+      "description": "故障モード・運転条件に関する情報の有無だけでは個体の予兆が観測できるとは限らない。ディスクの負の結果と生存モデルの観測条件がこれを限定する。",
+      "evidence_refs": [
+        "E0005",
+        "E0017",
+        "E0018",
+        "E0021",
+        "E0029"
+      ]
+    },
+    {
+      "relation_id": "R0011",
+      "relation_type": "association",
+      "knowledge_unit_refs": [
+        "K0001",
+        "K0019",
+        "K0023"
+      ],
+      "description": "時系列上の点・区間・系列の粒度とは別に、一般多次元標本や金融口座単位が扱われる。",
+      "evidence_refs": [
+        "E0001",
+        "E0019",
+        "E0023"
+      ]
+    },
+    {
+      "relation_id": "R0012",
+      "relation_type": "association",
+      "knowledge_unit_refs": [
+        "K0003",
+        "K0020",
+        "K0022"
+      ],
+      "description": "連続KPI監視と周期的な大規模KPI処理はオンライン・実行周期・処理規模の具体例である。",
+      "evidence_refs": [
+        "E0003",
+        "E0020",
+        "E0022"
+      ]
+    },
+    {
+      "relation_id": "R0013",
+      "relation_type": "qualification",
+      "knowledge_unit_refs": [
+        "K0004",
+        "K0020",
+        "K0023",
+        "K0025"
+      ],
+      "description": "異常通知の対象はサービスKPIや疑わしい口座にも及ぶが、故障発生・初回故障時期の予測とはタスクが異なる。",
+      "evidence_refs": [
+        "E0004",
+        "E0020",
+        "E0023",
+        "E0025"
+      ]
+    },
+    {
+      "relation_id": "R0014",
+      "relation_type": "association",
+      "knowledge_unit_refs": [
+        "K0007",
+        "K0027",
+        "K0028"
+      ],
+      "description": "時間情報と観測条件の定義は、予防介入・監視開始・終了・打ち切りを含めて異なる。",
+      "evidence_refs": [
+        "E0007",
+        "E0028",
+        "E0029"
+      ]
+    },
+    {
+      "relation_id": "R0015",
+      "relation_type": "association",
+      "knowledge_unit_refs": [
+        "K0012",
+        "K0013",
+        "K0015",
+        "K0024",
+        "K0026"
+      ],
+      "description": "早期警告・保全システム連携・介入に必要な時間・安全上の人の確認は分析結果を行動に変換する条件として現れる。",
+      "evidence_refs": [
+        "E0012",
+        "E0013",
+        "E0015",
+        "E0024",
+        "E0027"
+      ]
+    },
+    {
+      "relation_id": "R0016",
+      "relation_type": "qualification",
+      "knowledge_unit_refs": [
+        "K0014",
+        "K0016",
+        "K0026"
+      ],
+      "description": "点補正によるF1の過大評価と、F1単独では閾値・コスト面が評価できないという制約は異なる問題である。",
+      "evidence_refs": [
+        "E0014",
+        "E0016",
+        "E0027"
+      ]
     }
   ],
   "uncertainties": [
     {
       "uncertainty_id": "U0001",
-      "description": "規格は公開目次・序文のみで、規範的要件の詳細は確定できない。",
+      "description": "ISO規格は公開目次・序文のみで、規範的要求の詳細は確定できない。",
       "knowledge_unit_refs": [
         "K0004",
         "K0005",
@@ -221,32 +517,69 @@
     },
     {
       "uncertainty_id": "U0002",
-      "description": "収集した事例は産業・時系列中心であり、全領域での網羅性は検証されていない。",
+      "description": "14 Sourceに拡張し金融・IT・5G・航空・非運転時系列の検査記録・一般多次元標本を含めたが、画像・3D・グラフ・テキスト等の網羅と全産業・用途の探索飽和は未確認。一般多次元標本の研究は運用事例ではない。",
       "knowledge_unit_refs": [
-        "K0001",
-        "K0008",
-        "K0009",
-        "K0013"
+        "K0019",
+        "K0020",
+        "K0021",
+        "K0022",
+        "K0023",
+        "K0024",
+        "K0025"
       ]
     },
     {
       "uncertainty_id": "U0003",
-      "description": "正常・例外・対象イベントの普遍的で相互排他的な分類は資料から直接確立されていない。",
+      "description": "正常・例外・対象イベントの普遍的で相互排他的な分類は確立されていない。非設備の異常検知も存在するため、設備・故障モードの適用はタスクに依存する。",
       "knowledge_unit_refs": [
         "K0001",
         "K0002",
         "K0010",
-        "K0011"
+        "K0011",
+        "K0020",
+        "K0023",
+        "K0025"
       ]
     },
     {
       "uncertainty_id": "U0004",
-      "description": "保全介入の競合リスクとしての扱い、経済性、誤報・見逃しコストの具体的定義は根拠不足。",
+      "description": "許容誤報負荷、非対称損失、コスト行列、安全要求は候補として支持されるが、定量的な許容値・最適値・費用便益効果は未確立。",
       "knowledge_unit_refs": [
-        "K0006",
+        "K0015",
+        "K0016",
+        "K0026"
+      ]
+    },
+    {
+      "uncertainty_id": "U0005",
+      "description": "出力・観測形式・意思決定上の条件を複数タスクで対比できるが、ファクターの経験的出現頻度、相対的重要度、普遍的な必要十分性は検証されていない。",
+      "knowledge_unit_refs": [
+        "K0017",
+        "K0019",
+        "K0020",
+        "K0023",
+        "K0025",
+        "K0029"
+      ]
+    },
+    {
+      "uncertainty_id": "U0006",
+      "description": "打ち切り・左切断の区別は扱われるが、介入・競合故障をどのように形式化するか、対象事象の重症度・頻度の一般的分類は追加検討が必要。",
+      "knowledge_unit_refs": [
         "K0007",
-        "K0012",
-        "K0014"
+        "K0027",
+        "K0028"
+      ]
+    },
+    {
+      "uncertainty_id": "U0007",
+      "description": "追加資料のうち複数の実装事例は著者のabstract・既存Evidence Noteに基づく。出版本文の全詳細や運用成果を独立に検証したものではない。",
+      "knowledge_unit_refs": [
+        "K0020",
+        "K0022",
+        "K0023",
+        "K0024",
+        "K0025"
       ]
     }
   ]
