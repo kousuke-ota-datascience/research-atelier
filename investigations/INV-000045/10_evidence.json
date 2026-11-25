@@ -3,7 +3,7 @@
   "artifact_type": "10_evidence",
   "investigation_id": "INV-000045",
   "rq_id": "RQ-000044",
-  "snapshot_at": "2026-11-25T03:18:00Z",
+  "snapshot_at": "2026-11-25T04:18:12Z",
   "sources": [
     {
       "source_id": "SRC-000172",
@@ -67,6 +67,69 @@
       },
       "accessed_at": "2026-11-25T03:16:51Z",
       "notion_url": "https://app.notion.com/p/40fe5855be3981fda882d4f57db678d0"
+    },
+    {
+      "source_id": "SRC-000207",
+      "source_revision": {
+        "commit_sha": "9481db6643bcf3e63bf949acd6ad2a47d89880f9",
+        "blob_sha": "58d07f142a412f0b9df5bffefbc8f5fca3890560"
+      },
+      "accessed_at": "2026-11-25T04:16:45Z",
+      "notion_url": "https://app.notion.com/p/410e5855be3981a485d2ebf76ce3cbcb"
+    },
+    {
+      "source_id": "SRC-000226",
+      "source_revision": {
+        "commit_sha": "9481db6643bcf3e63bf949acd6ad2a47d89880f9",
+        "blob_sha": "0d1c13aa89b1991774aa8da54f4da81aa3370d81"
+      },
+      "accessed_at": "2026-11-25T04:16:45Z",
+      "notion_url": "https://app.notion.com/p/413e5855be398192aa96f1a93c3fd6be"
+    },
+    {
+      "source_id": "SRC-000234",
+      "source_revision": {
+        "commit_sha": "9481db6643bcf3e63bf949acd6ad2a47d89880f9",
+        "blob_sha": "da090cce41ee9187499b6a36c9ac828485aabfc8"
+      },
+      "accessed_at": "2026-11-25T04:16:45Z",
+      "notion_url": "https://app.notion.com/p/417e5855be3981fb8be7f76e9479a345"
+    },
+    {
+      "source_id": "SRC-000241",
+      "source_revision": {
+        "commit_sha": "9481db6643bcf3e63bf949acd6ad2a47d89880f9",
+        "blob_sha": "2ecfc3373eca667c6d5b633fb8a7fe2f1f8531ed"
+      },
+      "accessed_at": "2026-11-25T04:16:45Z",
+      "notion_url": "https://app.notion.com/p/417e5855be3981259412f0c9fda7d3a3"
+    },
+    {
+      "source_id": "SRC-000246",
+      "source_revision": {
+        "commit_sha": "9481db6643bcf3e63bf949acd6ad2a47d89880f9",
+        "blob_sha": "43cb28c852218bc71863c055d16b3521186a62a3"
+      },
+      "accessed_at": "2026-11-25T04:16:45Z",
+      "notion_url": "https://app.notion.com/p/417e5855be3981d19505f5517d2c9a78"
+    },
+    {
+      "source_id": "SRC-000247",
+      "source_revision": {
+        "commit_sha": "9481db6643bcf3e63bf949acd6ad2a47d89880f9",
+        "blob_sha": "5d68d38e5a5525770388aa0eed1750b6aeeaddf2"
+      },
+      "accessed_at": "2026-11-25T04:16:45Z",
+      "notion_url": "https://app.notion.com/p/417e5855be39810e92f7d54cfcb035a7"
+    },
+    {
+      "source_id": "SRC-000238",
+      "source_revision": {
+        "commit_sha": "9481db6643bcf3e63bf949acd6ad2a47d89880f9",
+        "blob_sha": "6ce213826e1d1deb535f41b3e4601fd4454ee9ef"
+      },
+      "accessed_at": "2026-11-25T04:17:55Z",
+      "notion_url": "https://app.notion.com/p/417e5855be398165a70ed328c3f71396"
     }
   ],
   "evidence_items": [
@@ -237,6 +300,195 @@
           "notion_url": "https://app.notion.com/p/40fe5855be3981ecb9d6ede655fd5d10",
           "title": "EV-000299"
         }
+      }
+    },
+    {
+      "evidence_id": "E0015",
+      "note_type": "Claim",
+      "content": "著者は観測窓・予測窓の構成選定に際し、行動に必要なリードタイム、許容可能な誤警報負荷、利用可能な計算資源を考慮すべきと述べる。予測精度・先行時間・計算複雑性のトレードオフを論じる。",
+      "source_locator": "§6.2 / §7 (publisher indexed text; direct HTML access restricted)",
+      "selection_reason": "F001: 運用要求の候補。著者の推奨でありコストの実測ではない",
+      "provenance": {
+        "source_id": "SRC-000218",
+        "evidence_note": null
+      }
+    },
+    {
+      "evidence_id": "E0016",
+      "note_type": "Limitation",
+      "content": "EV-000343は、原著がPR/ROC、コストベースの誤報負荷、差の統計検定を実施していないと明記する旨を記録している。",
+      "source_locator": "§7 Conclusions and Limitations; EV-000343",
+      "selection_reason": "F001: 評価の限界",
+      "provenance": {
+        "source_id": "SRC-000218",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/410e5855be3981ea9209dd7f919dbdcb",
+          "title": "EV-000343"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0017",
+      "note_type": "Theory",
+      "content": "レビューは意思決定向け出力としてリスク順位、所定期間内の故障確率、RUL分布を区別し、センサー、検査、文脈情報から得る静的・時間変化共変量を扱う。",
+      "source_locator": "Abstract (PubMed 41902084); §4.1.2",
+      "selection_reason": "F002: 予後出力と共変量",
+      "provenance": {
+        "source_id": "SRC-000217",
+        "evidence_note": null
+      }
+    },
+    {
+      "evidence_id": "E0018",
+      "note_type": "Theory",
+      "content": "レビューは電力設備と地域熱供給設備でサンプリング構造、ノイズ、観測可能性が異なると述べ、設備群の異質性（年齢・製造元等）と共変量の利用可能性をモデル選択上の論点として扱う。",
+      "source_locator": "Data characteristics of power systems and DHNs; §5.4 (publisher indexed passage and author manuscript indexed passage)",
+      "selection_reason": "F002: 対象群の差・観測可能性",
+      "provenance": {
+        "source_id": "SRC-000217",
+        "evidence_note": null
+      }
+    },
+    {
+      "evidence_id": "E0019",
+      "note_type": "Method",
+      "content": "LOF原著は一般的な多次元標本の局所密度と近傍標本の密度を比較して外れ度を与える。時系列windowへの適用は原著の主張ではない。",
+      "source_locator": "Original paper Abstract / Introduction; EV-000332",
+      "selection_reason": "F003: 非時系列の多次元標本・近傍参照",
+      "provenance": {
+        "source_id": "SRC-000207",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/410e5855be39810b9c8bf214ad72a69f",
+          "title": "EV-000332"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0020",
+      "note_type": "Claim",
+      "content": "Microsoftのサービスではページ閲覧数や売上等のKPI時系列を連続監視し、異常を早期通知する。物理設備の故障時刻・RULの予測ではない。",
+      "source_locator": "Abstract; EV-000357/358",
+      "selection_reason": "F003: 非設備のサービスKPIと通知",
+      "provenance": {
+        "source_id": "SRC-000226",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/413e5855be398174a242cd6966c13ce4",
+          "title": "EV-000357"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0021",
+      "note_type": "Result",
+      "content": "実運用ディスク群の観察研究では一部SMART項目と故障との関連が見られたが、故障したディスクの相当部分に予測的SMART信号が現れず、SMARTのみで個体故障を正確に予測することは困難と著者は結論した。温度・活動度との関連は先行報告より弱かった。",
+      "source_locator": "Abstract / Conclusions; EV-000371 and USENIX original indexed HTML",
+      "selection_reason": "F003: IT機器・観測可能性の反例",
+      "provenance": {
+        "source_id": "SRC-000234",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/417e5855be3981f18746e3d6bdb51cb9",
+          "title": "EV-000371"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0022",
+      "note_type": "Result",
+      "content": "商用5G事業者の1年分のデータを用い、524,019本のKPI時系列を30分ごとに処理する異常検知枠組みを評価したと報告する。",
+      "source_locator": "Abstract; EV-000379",
+      "selection_reason": "F003: 大規模並列監視・実行周期",
+      "provenance": {
+        "source_id": "SRC-000241",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/417e5855be39816eb817f69c53f3f31e",
+          "title": "EV-000379"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0023",
+      "note_type": "Result",
+      "content": "銀行の8か月間の20億件超の取引を用いた疑わしい金融口座の教師なし異常検知パイプラインを本番導入したと著者らは報告する。",
+      "source_locator": "Abstract; EV-000384",
+      "selection_reason": "F003: 金融用途・取引から口座への分析単位",
+      "provenance": {
+        "source_id": "SRC-000246",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/417e5855be39814b96f3e657e5986b9c",
+          "title": "EV-000384"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0024",
+      "note_type": "Claim",
+      "content": "航空会社のフライト全体のセンサーデータを使い、航空機構成部品の故障を事前警告して保全計画へつなぐprognostic alertの開発・複数航空事業者への配備経験が報告される。",
+      "source_locator": "Abstract; EV-000385",
+      "selection_reason": "F003: 航空用途・飛行単位の観測",
+      "provenance": {
+        "source_id": "SRC-000247",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/417e5855be39816ba412dc37be82aae3",
+          "title": "EV-000385"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0025",
+      "note_type": "Method",
+      "content": "半導体製造装置メーカーの出荷前検査データと保守記録を用い、将来の故障発生有無と初回故障時期を別々の予測対象として実データで検証した研究が報告される。",
+      "source_locator": "Abstract; EV-000375",
+      "selection_reason": "F003: 運転中の時系列監視を前提としない設備故障予測",
+      "provenance": {
+        "source_id": "SRC-000238",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/417e5855be3981ee97fdd361aec47f97",
+          "title": "EV-000375"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0026",
+      "note_type": "Theory",
+      "content": "条件付き生存曲線からRUL分布の分位点（例えば中央値）を要約として報告する方法をレビューは記載する。",
+      "source_locator": "§4.5, immediately preceding §4.6 (indexed publisher passage)",
+      "selection_reason": "F002: RUL分布と要約値の区別",
+      "provenance": {
+        "source_id": "SRC-000217",
+        "evidence_note": null
+      }
+    },
+    {
+      "evidence_id": "E0027",
+      "note_type": "Claim",
+      "content": "著者は、安全上重要な用途では閾値校正、コスト感応評価、人による確認を経た意思決定支援として用いることを推奨する。誤報と見逃しの運用上の帰結は通常非対称であり、アラーム負荷、見逃しコスト、プロセス別コスト行列を評価すべきと論じる。研究ではコスト行列が得られず、当該評価は未実施。",
+      "source_locator": "§6.2 Managerial Implications; §7 Conclusions (publisher indexed full section retrieved)",
+      "selection_reason": "F001: 運用損失・安全要求の候補、推奨と実証の区別",
+      "provenance": {
+        "source_id": "SRC-000218",
+        "evidence_note": null
+      }
+    },
+    {
+      "evidence_id": "E0028",
+      "note_type": "Theory",
+      "content": "稼働開始後にデジタル監視を導入する設備では左切断（観測開始時点まで生存した設備だけを観測）が生じる。レビューは予防交換で故障時刻が未観測となる右打ち切りと区別し、観測開始時点に応じたリスク集合や打ち切り対応評価の必要性を論じる。",
+      "source_locator": "Discussion of left truncation and preventive replacement; publisher indexed text",
+      "selection_reason": "観測対象群・観測開始・観測終了条件の区別",
+      "provenance": {
+        "source_id": "SRC-000217",
+        "evidence_note": null
+      }
+    },
+    {
+      "evidence_id": "E0029",
+      "note_type": "Claim",
+      "content": "レビューは故障事象数、打ち切りの程度、共変量の品質、欠測、不規則サンプリング、ラベル不確実性と時間整合性が生存モデル選択・評価に関係すると整理する。",
+      "source_locator": "Model choice and practical deployment discussion; publisher indexed text",
+      "selection_reason": "観測・ラベルの適用条件",
+      "provenance": {
+        "source_id": "SRC-000217",
+        "evidence_note": null
       }
     }
   ]
