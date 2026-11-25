@@ -1,0 +1,253 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "20_synthesis",
+  "investigation_id": "INV-000045",
+  "rq_id": "RQ-000044",
+  "synthesized_at": "2026-11-25T03:38:16Z",
+  "knowledge_units": [
+    {
+      "knowledge_unit_id": "K0001",
+      "statement": "時系列異常の対象単位には点・部分系列・系列全体があり、変数の単変量／多変量性および局所／大域の参照範囲が関係する。",
+      "evidence_refs": [
+        "E0001"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0002",
+      "statement": "外れ値が関心対象か除去すべきデータ品質問題かは分析目的によって異なる。",
+      "evidence_refs": [
+        "E0002"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0003",
+      "statement": "期待値を求める際、過去のみと未来も利用する方式が区別され、ストリーミングでは利用可能な情報と計算時間が制約となる。",
+      "evidence_refs": [
+        "E0003"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0004",
+      "statement": "状態監視において逸脱検知、診断、将来進展の予後推定、行動推奨、事後検証は区別される。",
+      "evidence_refs": [
+        "E0004"
+      ],
+      "qualifiers": [
+        "ISO公開序文に基づく。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0005",
+      "statement": "故障進展の予測には故障モード・将来稼働条件・その関係が関与し、運転、状態、性能、保全、検査、累積稼働、故障までの履歴が必要となり得る。",
+      "evidence_refs": [
+        "E0005"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0006",
+      "statement": "ISO公開目次は影響因子、開始条件、進展モデル、警報・停止閾値、故障モード、介入後予後および予後信頼度を別項目として扱う。",
+      "evidence_refs": [
+        "E0006"
+      ],
+      "qualifiers": [
+        "全文の規範的要求は未確認。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0007",
+      "statement": "生存モデルでは所定期間の故障リスク、時間依存の評価と打ち切り補正が扱われ、介入や観測期間制限が寿命の部分観測につながる。",
+      "evidence_refs": [
+        "E0007"
+      ],
+      "qualifiers": [
+        "エネルギー設備を対象としたレビュー。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0008",
+      "statement": "産業アラーム予測では過去観測窓と未来予測窓の組み合わせ、プロセス特性によってリードタイムとF1-macroが変わると報告されている。",
+      "evidence_refs": [
+        "E0008"
+      ],
+      "qualifiers": [
+        "対象はアラームであり物理故障時刻ではない。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0009",
+      "statement": "MetroPTは地下鉄車両の空気圧縮機系を対象とし、FMEA/FMECAに基づくセンサー選定、1Hzの複数信号収集、保全記録での故障同定を行う。",
+      "evidence_refs": [
+        "E0009"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0010",
+      "statement": "同データでは負荷・無負荷・停止による電流の違いがあり、トンネルでのGPS受信不能は0で記録される。",
+      "evidence_refs": [
+        "E0010"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0011",
+      "statement": "同事例には警報後の運行継続、運用からの離脱、油漏れ時に油関連警告なしという異なるイベントの関係が報告される。",
+      "evidence_refs": [
+        "E0011"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0012",
+      "statement": "MetroPTの評価では故障の時間区間、予測区間との重なり、運用不能までの必要リードタイム2時間、故障部品の同定を扱う。",
+      "evidence_refs": [
+        "E0012"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0013",
+      "statement": "逆浸透設備の実装では振動指標の多期間予測、アラーム、診断、保全管理システムの連携が報告される。",
+      "evidence_refs": [
+        "E0013"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0014",
+      "statement": "時系列異常検知の評価におけるpoint adjustmentはF1を過大評価し得る。",
+      "evidence_refs": [
+        "E0014"
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "relation_id": "R0001",
+      "relation_type": "qualification",
+      "knowledge_unit_refs": [
+        "K0001",
+        "K0010"
+      ],
+      "description": "参照範囲の設定は正常運転状態ごとの信号差を扱う際に関係する。",
+      "evidence_refs": [
+        "E0001",
+        "E0010"
+      ]
+    },
+    {
+      "relation_id": "R0002",
+      "relation_type": "association",
+      "knowledge_unit_refs": [
+        "K0002",
+        "K0010"
+      ],
+      "description": "観測上の受信不能は、分析対象とデータ品質上の問題を区別する具体的な検討材料である。",
+      "evidence_refs": [
+        "E0002",
+        "E0010"
+      ]
+    },
+    {
+      "relation_id": "R0003",
+      "relation_type": "agreement",
+      "knowledge_unit_refs": [
+        "K0004",
+        "K0011"
+      ],
+      "description": "検知・診断・進展・行動の区別は、故障・警報・運用離脱が一致しない事例と整合する。",
+      "evidence_refs": [
+        "E0004",
+        "E0011"
+      ]
+    },
+    {
+      "relation_id": "R0004",
+      "relation_type": "association",
+      "knowledge_unit_refs": [
+        "K0005",
+        "K0009"
+      ],
+      "description": "故障モードの理解と観測変数の選定はFMEA/FMECAに基づく観測事例に対応する。",
+      "evidence_refs": [
+        "E0005",
+        "E0009"
+      ]
+    },
+    {
+      "relation_id": "R0005",
+      "relation_type": "association",
+      "knowledge_unit_refs": [
+        "K0006",
+        "K0007"
+      ],
+      "description": "介入後予後と、保全介入による寿命の部分観測は、介入の考慮という観点で関連する。",
+      "evidence_refs": [
+        "E0006",
+        "E0007"
+      ]
+    },
+    {
+      "relation_id": "R0006",
+      "relation_type": "qualification",
+      "knowledge_unit_refs": [
+        "K0008",
+        "K0012"
+      ],
+      "description": "予測窓と要求リードタイムは関連するが、アラーム予測と運用不能を基準とする評価は別の設定である。",
+      "evidence_refs": [
+        "E0008",
+        "E0012"
+      ]
+    },
+    {
+      "relation_id": "R0007",
+      "relation_type": "qualification",
+      "knowledge_unit_refs": [
+        "K0012",
+        "K0014"
+      ],
+      "description": "区間単位の評価は区間を扱う規則によって結果が変わり得るため、評価規則を明示する必要がある。",
+      "evidence_refs": [
+        "E0012",
+        "E0014"
+      ]
+    }
+  ],
+  "uncertainties": [
+    {
+      "uncertainty_id": "U0001",
+      "description": "規格は公開目次・序文のみで、規範的要件の詳細は確定できない。",
+      "knowledge_unit_refs": [
+        "K0004",
+        "K0005",
+        "K0006"
+      ]
+    },
+    {
+      "uncertainty_id": "U0002",
+      "description": "収集した事例は産業・時系列中心であり、全領域での網羅性は検証されていない。",
+      "knowledge_unit_refs": [
+        "K0001",
+        "K0008",
+        "K0009",
+        "K0013"
+      ]
+    },
+    {
+      "uncertainty_id": "U0003",
+      "description": "正常・例外・対象イベントの普遍的で相互排他的な分類は資料から直接確立されていない。",
+      "knowledge_unit_refs": [
+        "K0001",
+        "K0002",
+        "K0010",
+        "K0011"
+      ]
+    },
+    {
+      "uncertainty_id": "U0004",
+      "description": "保全介入の競合リスクとしての扱い、経済性、誤報・見逃しコストの具体的定義は根拠不足。",
+      "knowledge_unit_refs": [
+        "K0006",
+        "K0007",
+        "K0012",
+        "K0014"
+      ]
+    }
+  ]
+}
