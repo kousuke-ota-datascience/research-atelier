@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000045",
+  "review_seq": 3,
+  "layer": "10_evidence",
+  "review_kind": "source_evidence_note_to_10_evidence",
+  "target_blob_sha": "8f4bb782bf43da3c662878fc3455b28951d5d7e1",
+  "assessment": "25 Source、45 Evidenceを確認。前回の14 Source・29 Evidenceはexactに不変で、過去の原典・12 distinct Evidence Note照合を再利用した。追加11 Sourceのcanonical revision metadataと16 Evidence（E0030–E0045）を確認。CVPR原著§3/4.3/4.4、USENIX原著§3.1/3.2、PHM Society abstract、Wiley原著abstract、UCC/IOP abstract、Nature Energy abstract、電力網原著公開索引、3W publisher/PMC索引、J-STAGE管路・鉄道abstract、OnePetro abstract索引、ACM EVTとNeurIPS TSB-AD abstractに照合。F001はE0030–32・E0041、F002はE0033、F004の上流根拠はE0034で回復。追加Evidenceの主要主張は確認範囲で忠実。ISO規範本文、MetroPTの一部細部、アクセス制限のある原著の全文・独立運用監査は未確認。3D/グラフ/テキスト/音響等の未収録と25件での探索終了は網羅性の限界として記録されており、今回の探索的候補分類に対して具体的な未収録属性が追加で立証されない限り、件数のみを理由にFindingとしない。",
+  "findings": [],
+  "verdict": "PASS"
+}

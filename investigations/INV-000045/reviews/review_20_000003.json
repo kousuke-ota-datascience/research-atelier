@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000045",
+  "review_seq": 3,
+  "layer": "20_synthesis",
+  "review_kind": "10_evidence_to_20_synthesis",
+  "target_blob_sha": "3f9052721291cacc36b1432b5d3f6fa4d82a9d19",
+  "assessment": "43 Knowledge Unit、25 Relation、9 Uncertaintyを確認。K0016のアーカイブ済みスコア不足という支持されない限定は除去され、E0027のコスト行列不足と未知を区別したため前回F003解消。K0030–43はE0030–45の主張・適用境界を概ね維持。R0017–25の時間・空間粒度、データ生成、通知集約、AFRと観測数、評価の区別は妥当。K0034は画像検査と風車早期損傷検知の共通性を述べ、単独の将来故障予測モデルの実証とは記載していない。Analysisにおけるその一般化は別に評価する。",
+  "findings": [],
+  "verdict": "PASS"
+}
