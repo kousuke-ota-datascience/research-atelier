@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000045",
+  "review_seq": 4,
+  "layer": "20_synthesis",
+  "review_kind": "10_evidence_to_20_synthesis",
+  "target_blob_sha": "3f9052721291cacc36b1432b5d3f6fa4d82a9d19",
+  "assessment": "43 Knowledge Unit・25 Relation・9 Uncertaintyのartifact blobはReview 000003と同一。既存Evidenceとの支持関係・限定条件および前回評価を維持。K0034は風車早期損傷検知と画像検査の比較であり、狭義の将来故障予測で正常のみ学習が実証されたとは述べない。新たなFindingなし。",
+  "findings": [],
+  "verdict": "PASS"
+}

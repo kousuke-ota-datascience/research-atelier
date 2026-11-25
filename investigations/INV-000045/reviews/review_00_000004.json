@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000045",
+  "review_seq": 4,
+  "layer": "00_context",
+  "review_kind": "context_semantic_validity",
+  "target_blob_sha": "fe78ff9e72984db707391a6671f192595567481b",
+  "assessment": "Frozen Context blobはReview 000003と同一。RQ・Scope・境界・Exploratoryの整合性と適格性を再確認。Context-defining defectなし。",
+  "findings": [],
+  "verdict": "PASS"
+}

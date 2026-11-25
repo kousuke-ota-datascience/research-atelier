@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000045",
+  "review_seq": 4,
+  "layer": "10_evidence",
+  "review_kind": "source_evidence_note_to_10_evidence",
+  "target_blob_sha": "8f4bb782bf43da3c662878fc3455b28951d5d7e1",
+  "assessment": "25 Source・45 Evidenceのartifact blobはReview 000003と同一。前回の原典・Evidence Note照合結果を再利用し、追加変更がないことを確認。ISO規範本文、MetroPTの一部細部、アクセス制限のある原著全文・独立運用監査は引き続き未確認。既知の未探索領域は探索的候補同定のcoverage limitとして扱う。今回新たな意味論的欠陥を認めない。",
+  "findings": [],
+  "verdict": "PASS"
+}
