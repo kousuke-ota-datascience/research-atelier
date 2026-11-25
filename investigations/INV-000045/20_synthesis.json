@@ -3,7 +3,7 @@
   "artifact_type": "20_synthesis",
   "investigation_id": "INV-000045",
   "rq_id": "RQ-000044",
-  "synthesized_at": "2026-11-25T04:19:00Z",
+  "synthesized_at": "2026-11-25T04:52:00Z",
   "knowledge_units": [
     {
       "knowledge_unit_id": "K0001",
@@ -133,7 +133,7 @@
         "E0027"
       ],
       "qualifiers": [
-        "アーカイブされたスコアやプロセス別コスト行列が不足。"
+        "プロセス別コスト行列は得られていない（E0027）。アーカイブ済みスコアの有無は今回のEvidenceから確定しない。"
       ]
     },
     {
@@ -261,6 +261,150 @@
       ],
       "qualifiers": [
         "複数資料の対比であり出力別の頻度や優劣は不明。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0030",
+      "statement": "画像検査用MVTec ADは正常画像のみの学習と、正常・異常画像および画素精度の欠陥領域正解を持つ評価を分離する。",
+      "evidence_refs": [
+        "E0030"
+      ],
+      "qualifiers": [
+        "欠陥は実際の産業検査を模した手作業生成であり、実運用の欠陥率を示さない。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0031",
+      "statement": "MVTec ADの画像単位分類と画素・領域単位のセグメンテーションは異なる出力・評価対象である。画素スコアの閾値設定と領域重なりの評価も区別される。",
+      "evidence_refs": [
+        "E0031",
+        "E0032"
+      ],
+      "qualifiers": [
+        "ベンチマークでは画素ROC AUCが高くても閾値付き領域出力の一致が高いとは限らない。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0032",
+      "statement": "航空機のprognostic alert開発にはデータ品質、故障同定によるラベル作成、個々のアラートから行動可能なアラートへの集約という課題がある。",
+      "evidence_refs": [
+        "E0024",
+        "E0033"
+      ],
+      "qualifiers": [
+        "著者の経験報告。具体的な集約単位・規則や許容負荷の定量値は未確認。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0033",
+      "statement": "ディスク調査の年齢群別AFRは修理交換を故障とする特定の実運用母集団で得られ、初年群1.7%、3年群8.6%超であった。機種構成の影響があり、年齢の因果効果とは解釈できない。",
+      "evidence_refs": [
+        "E0034"
+      ],
+      "qualifiers": [
+        "運用開始後のデータセンター用ディスクと約5年分の修理記録に限定。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0034",
+      "statement": "風車主軸受の早期損傷検知でも正常データのみの学習が報告され、学習時に故障ラベルを要しない設計は画像異常検知に固有ではない。",
+      "evidence_refs": [
+        "E0030",
+        "E0035"
+      ],
+      "qualifiers": [
+        "風車の実SCADAデータの12基の検証事例。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0035",
+      "statement": "風車停止をSCADA・アラーム記録から同定し自動ラベル付けする事例では、停止種類を将来故障予測のためのラベルとして利用する。",
+      "evidence_refs": [
+        "E0036"
+      ],
+      "qualifiers": [
+        "停止ラベルを物理故障時刻やRULと同一視しない。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0036",
+      "statement": "電池の急速充電サイクル試験では顕著な容量劣化前の初期サイクルからサイクル寿命の定量予測と寿命群分類が報告された。",
+      "evidence_refs": [
+        "E0037"
+      ],
+      "qualifiers": [
+        "124セルの試験条件に限定され、実車等の故障時刻予測の実装を示さない。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0037",
+      "statement": "電力網の負荷推定では計測誤差と系統切替を別種の除去対象として扱う。",
+      "evidence_refs": [
+        "E0038"
+      ],
+      "qualifiers": [
+        "目的は負荷推定であり設備故障予測ではない。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0038",
+      "statement": "油井の希少事象データには実測・シミュレーション・専門家手作成系列があり、状態不明の観測にはUnknownラベルが与えられる。",
+      "evidence_refs": [
+        "E0039",
+        "E0040"
+      ],
+      "qualifiers": [
+        "収録構成は母集団の発生頻度を表すとは限らない。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0039",
+      "statement": "管路漏水検知は単一漏水点の位置と漏水量を出力し、模型・現地試験で位置／量の誤差と検知可能な規模の限界を評価した。",
+      "evidence_refs": [
+        "E0041"
+      ],
+      "qualifiers": [
+        "単一点・当該試験条件に限定。将来故障予測ではない。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0040",
+      "statement": "NS形電気転てつ機の状態監視研究は未設置センサーの長期設置・安定観測を目指し、故障時データを得るため制御された模擬故障試験を行った。",
+      "evidence_refs": [
+        "E0042"
+      ],
+      "qualifiers": [
+        "故障予測の本番実装は確認されていない。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0041",
+      "statement": "電動水中ポンプの稼働寿命延長を目的とする現場生産ソリューションの利用事例が北米の2資産で報告された。",
+      "evidence_refs": [
+        "E0043"
+      ],
+      "qualifiers": [
+        "著者報告の目的・実装事例で、独立した因果効果の推定は未確認。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0042",
+      "statement": "単変量ストリーム外れ値検知では固定手動閾値に代えて誤検知を制御するリスクパラメータを設定する方法が提案される。",
+      "evidence_refs": [
+        "E0044"
+      ],
+      "qualifiers": [
+        "当該手法の設計であり任意の運用条件での誤報負荷保証ではない。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0043",
+      "statement": "時系列異常検知ベンチマークTSB-ADは既存データの品質と評価指標のバイアスを指摘し、40データセットから1070時系列を選定した。",
+      "evidence_refs": [
+        "E0045"
+      ],
+      "qualifiers": [
+        "アルゴリズム性能順位・全用途への一般化を本RQでは扱わない。"
       ]
     }
   ],
@@ -503,6 +647,140 @@
         "E0016",
         "E0027"
       ]
+    },
+    {
+      "relation_id": "R0017",
+      "relation_type": "association",
+      "knowledge_unit_refs": [
+        "K0001",
+        "K0031",
+        "K0039"
+      ],
+      "description": "時間上の粒度と空間局在・対象全体分類・位置推定は異なる正解と出力の構造を持つ。",
+      "evidence_refs": [
+        "E0001",
+        "E0031",
+        "E0041"
+      ]
+    },
+    {
+      "relation_id": "R0018",
+      "relation_type": "agreement",
+      "knowledge_unit_refs": [
+        "K0030",
+        "K0034"
+      ],
+      "description": "正常のみの学習は画像と風車早期損傷検知の双方で報告される。",
+      "evidence_refs": [
+        "E0030",
+        "E0035"
+      ]
+    },
+    {
+      "relation_id": "R0019",
+      "relation_type": "qualification",
+      "knowledge_unit_refs": [
+        "K0024",
+        "K0032",
+        "K0015"
+      ],
+      "description": "予後アラートの集約はアラート利用を具体化する設計課題であり、許容負荷という要求値とは区別される。",
+      "evidence_refs": [
+        "E0024",
+        "E0033",
+        "E0015"
+      ]
+    },
+    {
+      "relation_id": "R0020",
+      "relation_type": "qualification",
+      "knowledge_unit_refs": [
+        "K0033",
+        "K0028",
+        "K0038"
+      ],
+      "description": "母集団を条件とする年率換算故障率、モデル評価上の観測故障事象数、実測と人工事象を混ぜたデータセット構成は異なる量である。",
+      "evidence_refs": [
+        "E0034",
+        "E0029",
+        "E0039"
+      ]
+    },
+    {
+      "relation_id": "R0021",
+      "relation_type": "agreement",
+      "knowledge_unit_refs": [
+        "K0002",
+        "K0010",
+        "K0037"
+      ],
+      "description": "対象異常・観測上の例外・変化イベントの分析上の役割は目的で変わる。",
+      "evidence_refs": [
+        "E0002",
+        "E0010",
+        "E0038"
+      ]
+    },
+    {
+      "relation_id": "R0022",
+      "relation_type": "association",
+      "knowledge_unit_refs": [
+        "K0038",
+        "K0040",
+        "K0030"
+      ],
+      "description": "実測・人工生成・制御実験・模擬欠陥という観測生成条件の違いがある。",
+      "evidence_refs": [
+        "E0030",
+        "E0039",
+        "E0042"
+      ]
+    },
+    {
+      "relation_id": "R0023",
+      "relation_type": "qualification",
+      "knowledge_unit_refs": [
+        "K0031",
+        "K0014",
+        "K0043"
+      ],
+      "description": "画像の領域出力と画素スコアの評価、時系列点補正、ベンチマークキュレーションはそれぞれ異なる評価条件である。",
+      "evidence_refs": [
+        "E0031",
+        "E0032",
+        "E0014",
+        "E0045"
+      ]
+    },
+    {
+      "relation_id": "R0024",
+      "relation_type": "association",
+      "knowledge_unit_refs": [
+        "K0025",
+        "K0036",
+        "K0035"
+      ],
+      "description": "初回故障、サイクル寿命、停止イベントは異なる将来対象と時間単位を持つ。",
+      "evidence_refs": [
+        "E0025",
+        "E0037",
+        "E0036"
+      ]
+    },
+    {
+      "relation_id": "R0025",
+      "relation_type": "qualification",
+      "knowledge_unit_refs": [
+        "K0042",
+        "K0015",
+        "K0026"
+      ],
+      "description": "検知リスクパラメータと業務上の許容アラーム負荷・損失は関連するが同じ量ではない。",
+      "evidence_refs": [
+        "E0044",
+        "E0015",
+        "E0027"
+      ]
     }
   ],
   "uncertainties": [
@@ -517,7 +795,7 @@
     },
     {
       "uncertainty_id": "U0002",
-      "description": "14 Sourceに拡張し金融・IT・5G・航空・非運転時系列の検査記録・一般多次元標本を含めたが、画像・3D・グラフ・テキスト等の網羅と全産業・用途の探索飽和は未確認。一般多次元標本の研究は運用事例ではない。",
+      "description": "25 Sourceに拡張し画像、空間局在、制御試験、実測と模擬系列等も含めたが、3D画像・グラフ・テキスト・音響・広範な非産業用途のcanonical収録および探索飽和は未確認。",
       "knowledge_unit_refs": [
         "K0019",
         "K0020",
@@ -525,7 +803,12 @@
         "K0022",
         "K0023",
         "K0024",
-        "K0025"
+        "K0025",
+        "K0030",
+        "K0031",
+        "K0038",
+        "K0039",
+        "K0040"
       ]
     },
     {
@@ -564,11 +847,14 @@
     },
     {
       "uncertainty_id": "U0006",
-      "description": "打ち切り・左切断の区別は扱われるが、介入・競合故障をどのように形式化するか、対象事象の重症度・頻度の一般的分類は追加検討が必要。",
+      "description": "左切断・右打ち切り、観測された故障事象数、特定母集団のAFRを区別する。一般の発生率や重症度の分布、競合イベント・複数故障の関係は未確立。",
       "knowledge_unit_refs": [
         "K0007",
         "K0027",
-        "K0028"
+        "K0028",
+        "K0033",
+        "K0038",
+        "K0039"
       ]
     },
     {
@@ -580,6 +866,26 @@
         "K0023",
         "K0024",
         "K0025"
+      ]
+    },
+    {
+      "uncertainty_id": "U0008",
+      "description": "航空機の個々の警告から行動可能通知への集約は課題として報告されるが、具体的な集約規則、単位、許容負荷・介入効果は未確定。",
+      "knowledge_unit_refs": [
+        "K0032",
+        "K0015",
+        "K0026",
+        "K0041"
+      ]
+    },
+    {
+      "uncertainty_id": "U0009",
+      "description": "人工欠陥、シミュレーション、模擬故障のデータでの評価が実稼働環境の発生率・性能を再現するかは別途検証を要する。",
+      "knowledge_unit_refs": [
+        "K0030",
+        "K0038",
+        "K0040",
+        "K0043"
       ]
     }
   ]
