@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_manifest",
+  "investigation_id": "INV-000045",
+  "review_seq": 2,
+  "target": {
+    "commit_sha": "224bd4033f11b2a094145fa70ccb3a0cddf368d5",
+    "artifact_blob_shas": {
+      "00_context": "fe78ff9e72984db707391a6671f192595567481b",
+      "10_evidence": "eab41d07d2293f3978ec21202b2e26d767aefa19",
+      "20_synthesis": "f4d9bf165a86d5e295341601d18ff43773c556cd",
+      "30_analysis": "59d3cbc0086a4d3a766433d8c84ca28f9245b7cb"
+    }
+  },
+  "reviewed_at": "2026-11-25T04:25:34.031243+00:00",
+  "layer_files": {
+    "00_context": "review_00_000002.json",
+    "10_evidence": "review_10_000002.json",
+    "20_synthesis": "review_20_000002.json",
+    "30_analysis": "review_30_000002.json"
+  },
+  "verdict": "FINDINGS"
+}

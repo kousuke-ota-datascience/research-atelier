@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000045",
+  "review_seq": 2,
+  "layer": "30_analysis",
+  "review_kind": "20_synthesis_plus_00_context_to_30_analysis",
+  "target_blob_sha": "59d3cbc0086a4d3a766433d8c84ca28f9245b7cb",
+  "assessment": "Exploratory profileと9領域の分類・C/A/P/U判定規則・主記録先/相互参照を確認。F004の相対的重要度と概念上適用可能性・定義上固有性の区別は明示され、F005の警報閾値・リードタイム・予後不確実性の重複処理も改善。網羅性・経験的頻度・実証済み効果を主張せず、探索方法・終了条件・未解決領域を明記。F001/F002は主たる修正内容がAnalysisに反映済み。画像局在等の欠落は10_evidence Findingとして扱う。独立に以下の残存する推論上の区別を指摘する。",
+  "findings": [
+    {
+      "severity": "Minor",
+      "target": "J0002 / D02.3 事象頻度 vs 観測された事象数",
+      "evidence": [
+        "J0002は事象頻度・予兆には根拠があると記載。参照K0028は故障事象数と打ち切り程度をモデル選定・評価の条件とする。K0021は特定の実運用ディスクの観察結果。",
+        "J0005/D05.3はイベント事象数を観測・データ属性として記録し、J0010は経験的出現頻度を未確定とする。"
+      ],
+      "impact": "発生率・時間当たり頻度という現象属性と、観測期間・標本サイズ・打ち切りに依存する観測事象数というデータ属性を混同する可能性がある。",
+      "repair_direction": {
+        "mode": "same_investigation",
+        "affected_layer": "30_analysis",
+        "instruction": "現象の発生頻度/率と観測された事象数を明示的に区別し、前者を支持するKと適用条件を特定する。支持が不足すれば候補・未確立として扱う。"
+      },
+      "finding_id": "F004"
+    }
+  ],
+  "verdict": "FINDINGS"
+}

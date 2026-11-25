@@ -1,0 +1,45 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000045",
+  "review_seq": 2,
+  "layer": "10_evidence",
+  "review_kind": "source_evidence_note_to_10_evidence",
+  "target_blob_sha": "eab41d07d2293f3978ec21202b2e26d767aefa19",
+  "assessment": "14 Source・29 Evidenceを確認。前回から7 Source・15 Evidence追加。既存5 Noteの照合結果と追加7 Noteの個別照合を使用。F001の運用制約・評価limitationはE0015/E0016/E0027、F002の出力・観測条件はE0017/E0018/E0026/E0028/E0029で大幅に回復。追加資料の原著abstract・出版社索引・著者機関資料とNoteを照合し、LOF、KPI、SMART、5G、金融口座、航空機、半導体の主張は概ね整合する。MetroPTの1HzとFMEA/FMECAは出版社公開索引で再確認。ISOは公開範囲のみ、複数論文の本文全体や運用成果は独立確認していない。F003は対象・用途の対比が改善したが、既知の画像検知資料が未captureで具体的属性の欠落が残る。また新規事例のsource selectionに以下の欠落がある。",
+  "findings": [
+    {
+      "severity": "Moderate",
+      "target": "F003再評価 / 10_evidence sources / spatial anomaly localization",
+      "evidence": [
+        "00_context: 特定設備・業界・手法に限定しない網羅的探索。",
+        "30_analysis limitations: MVTec ADはNotionにcaptureしたがexact Source ID未取得のためcanonical Evidence未使用。",
+        "Bergmann et al. CVPR 2019 https://openaccess.thecvf.com/content_CVPR_2019/html/Bergmann_MVTec_AD_--_A_Comprehensive_Real-World_Dataset_for_Unsupervised_Anomaly_CVPR_2019_paper.html ; IJCV 2021 https://doi.org/10.1007/s11263-020-01400-4: 画像単位分類とpixel単位局在・segmentation、空間的正解アノテーションを区別。",
+        "E0019は一般多次元標本のLOFであり、空間的局在・正解領域の事例を代替しない。J0003/J0007/J0009の粒度には空間領域が明示されない。"
+      ],
+      "impact": "単なる網羅性未証明ではなく、既知の直接関連Sourceの未収録により、空間的局在と画像/領域単位の正解・出力・評価という具体的なファクターが欠落する。",
+      "repair_direction": {
+        "mode": "same_investigation",
+        "affected_layer": "10_evidence",
+        "instruction": "MVTec ADのcanonical Source登録・ID解決を正規経路で行い、画像全体と領域/pixel単位、正常のみの学習データと異常ラベル付き評価データの区別をcaptureする。追加探索の範囲を更新し、一般化を限定する。"
+      },
+      "finding_id": "F001"
+    },
+    {
+      "severity": "Minor",
+      "target": "E0024 / SRC-000247: operational alert aggregation",
+      "evidence": [
+        "Wang et al. 2023 https://doi.org/10.36001/phmap.2023.v4i1.3684 Abstract: prognostic alertの開発経験において故障同定によるラベル作成、データ品質、個々のalertをactionable alertへ集約する課題を明示。",
+        "E0024/K0024は故障事前警告・保全計画・配備経験のみをcapture。D08.1/8.2は通知先・許容負荷を扱うが、通知の集約単位と規則が明示されない。"
+      ],
+      "impact": "生の検知・予測出力と実際に行動可能な通知の対応関係が分類上不明確となる。主分類を直ちに覆すものではない。",
+      "repair_direction": {
+        "mode": "same_investigation",
+        "affected_layer": "10_evidence",
+        "instruction": "既存航空機Sourceからalert aggregationとラベル同定の課題をcaptureし、通知の集約単位・方針を業務上の要求と区別して記述する。"
+      },
+      "finding_id": "F002"
+    }
+  ],
+  "verdict": "FINDINGS"
+}

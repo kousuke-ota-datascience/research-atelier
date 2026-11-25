@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000045",
+  "review_seq": 2,
+  "layer": "20_synthesis",
+  "review_kind": "10_evidence_to_20_synthesis",
+  "target_blob_sha": "f4d9bf165a86d5e295341601d18ff43773c556cd",
+  "assessment": "29 Knowledge Unit、16 Relation、7 UncertaintyをEvidenceに照合。F001/F002の追加内容・運用指針と実証の区別、左切断と右打ち切り、SMART否定的結果、各資料の適用境界を概ね維持。K0029等のcross-source対比は妥当。以下はEvidenceからのsupportを越える小さな追加限定であり、上流欠落とは別に記録する。",
+  "findings": [
+    {
+      "severity": "Minor",
+      "target": "K0016 qualifier: アーカイブされたスコアが不足",
+      "evidence": [
+        "E0016はPR/ROC、コストベース誤報評価、統計検定の未実施のみを記録。E0027はプロセス別コスト行列不足を記録。",
+        "K0016は両Evidenceに記載されないアーカイブ済みスコア不足を理由として追加している。"
+      ],
+      "impact": "理由のprovenanceが不完全。F1比較のlimitationそのものは支持される。",
+      "repair_direction": {
+        "mode": "same_investigation",
+        "affected_layer": "20_synthesis",
+        "instruction": "当該限定をEvidenceで支持される範囲に修正するか、理由の原典記述が必要なら10_evidenceで追加captureしてから再構築する。"
+      },
+      "finding_id": "F003"
+    }
+  ],
+  "verdict": "FINDINGS"
+}
