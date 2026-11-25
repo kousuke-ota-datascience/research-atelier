@@ -3,7 +3,7 @@
   "artifact_type": "10_evidence",
   "investigation_id": "INV-000045",
   "rq_id": "RQ-000044",
-  "snapshot_at": "2026-11-25T04:17:55Z",
+  "snapshot_at": "2026-11-25T04:18:12Z",
   "sources": [
     {
       "source_id": "SRC-000172",
@@ -341,8 +341,8 @@
     {
       "evidence_id": "E0018",
       "note_type": "Theory",
-      "content": "レビューは設備群の異質性（年齢・製造元等）とセンサー等による観測可能性をモデル選択上の論点として扱う。",
-      "source_locator": "§5.4 (author manuscript indexed text; full publisher access restricted)",
+      "content": "レビューは電力設備と地域熱供給設備でサンプリング構造、ノイズ、観測可能性が異なると述べ、設備群の異質性（年齢・製造元等）と共変量の利用可能性をモデル選択上の論点として扱う。",
+      "source_locator": "Data characteristics of power systems and DHNs; §5.4 (publisher indexed passage and author manuscript indexed passage)",
       "selection_reason": "F002: 対象群の差・観測可能性",
       "provenance": {
         "source_id": "SRC-000217",
@@ -461,11 +461,33 @@
     {
       "evidence_id": "E0027",
       "note_type": "Claim",
-      "content": "著者は予測構成の選択に際し誤報と見逃しによる損失の非対称性、安全上の制約を考慮する旨を議論している（Review 000001 F001の原文確認記録に基づく。今回の出版社直接再取得は制限あり）。定量的コスト評価の実証とは区別する。",
-      "source_locator": "§6.2, §7; previously inspected source passage recorded in review_10_000001.json F001",
-      "selection_reason": "F001: 運用損失・安全要求の候補、再取得制約を明示",
+      "content": "著者は、安全上重要な用途では閾値校正、コスト感応評価、人による確認を経た意思決定支援として用いることを推奨する。誤報と見逃しの運用上の帰結は通常非対称であり、アラーム負荷、見逃しコスト、プロセス別コスト行列を評価すべきと論じる。研究ではコスト行列が得られず、当該評価は未実施。",
+      "source_locator": "§6.2 Managerial Implications; §7 Conclusions (publisher indexed full section retrieved)",
+      "selection_reason": "F001: 運用損失・安全要求の候補、推奨と実証の区別",
       "provenance": {
         "source_id": "SRC-000218",
+        "evidence_note": null
+      }
+    },
+    {
+      "evidence_id": "E0028",
+      "note_type": "Theory",
+      "content": "稼働開始後にデジタル監視を導入する設備では左切断（観測開始時点まで生存した設備だけを観測）が生じる。レビューは予防交換で故障時刻が未観測となる右打ち切りと区別し、観測開始時点に応じたリスク集合や打ち切り対応評価の必要性を論じる。",
+      "source_locator": "Discussion of left truncation and preventive replacement; publisher indexed text",
+      "selection_reason": "観測対象群・観測開始・観測終了条件の区別",
+      "provenance": {
+        "source_id": "SRC-000217",
+        "evidence_note": null
+      }
+    },
+    {
+      "evidence_id": "E0029",
+      "note_type": "Claim",
+      "content": "レビューは故障事象数、打ち切りの程度、共変量の品質、欠測、不規則サンプリング、ラベル不確実性と時間整合性が生存モデル選択・評価に関係すると整理する。",
+      "source_locator": "Model choice and practical deployment discussion; publisher indexed text",
+      "selection_reason": "観測・ラベルの適用条件",
+      "provenance": {
+        "source_id": "SRC-000217",
         "evidence_note": null
       }
     }
