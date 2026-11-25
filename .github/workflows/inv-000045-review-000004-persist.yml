@@ -1,0 +1,60 @@
+name: INV-000045 canonical review 000004 persistence audit
+on:
+  pull_request:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: c804b97ad63eeb6d5b38a06ebf73d0a651015fc6
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install 'jsonschema>=4.18'
+      - name: Validate exact final target
+        env:
+          PYTHONPATH: src
+        run: python -m research_atelier.validation.validate_investigation INV-000045 --through 30
+      - name: Run canonical writer and history/projection helpers
+        env:
+          PYTHONPATH: src
+        run: |
+          python - <<'PY'
+          import json, subprocess
+          from pathlib import Path
+          from datetime import datetime, timezone
+          from dataclasses import asdict
+          from research_atelier.reviewing.review_writer import prepare_review_cycle, save_review_cycle, EXPECTED_ARTIFACTS
+          from research_atelier.reviewing.review_state import load_review_history, target_relation_from_blobs
+          from research_atelier.projection.review import plan_review_projection
+          from research_atelier.reviewing.reconcile import reconcile_payload
+          def git(*args):
+              return subprocess.check_output(["git",*args],text=True).strip()
+          p=Path("investigations/INV-000045")
+          target="c804b97ad63eeb6d5b38a06ebf73d0a651015fc6"
+          expected={"00_context":"fe78ff9e72984db707391a6671f192595567481b","10_evidence":"8f4bb782bf43da3c662878fc3455b28951d5d7e1","20_synthesis":"3f9052721291cacc36b1432b5d3f6fa4d82a9d19","30_analysis":"6eb58cfd73fe8d58bf8aa110c555aecfe2231f71"}
+          def blobs(ref): return {x:git("rev-parse",f"{ref}:{p}/{x}.json") for x in EXPECTED_ARTIFACTS}
+          assert git("rev-parse","HEAD")==target and blobs("HEAD")==expected
+          prepared=prepare_review_cycle("INV-000045",review_dir=p/"reviews",schema_path="schemas/v2",target_commit_sha=target,artifact_blob_shas=expected)
+          assert prepared.review_seq==4
+          layers=json.loads("{\"00_context\":{\"assessment\":\"Frozen Context blobはReview 000003と同一。RQ・Scope・境界・Exploratoryの整合性と適格性を再確認。Context-defining defectなし。\",\"findings\":[]},\"10_evidence\":{\"assessment\":\"25 Source・45 Evidenceのartifact blobはReview 000003と同一。前回の原典・Evidence Note照合結果を再利用し、追加変更がないことを確認。ISO規範本文、MetroPTの一部細部、アクセス制限のある原著全文・独立運用監査は引き続き未確認。既知の未探索領域は探索的候補同定のcoverage limitとして扱う。今回新たな意味論的欠陥を認めない。\",\"findings\":[]},\"20_synthesis\":{\"assessment\":\"43 Knowledge Unit・25 Relation・9 Uncertaintyのartifact blobはReview 000003と同一。既存Evidenceとの支持関係・限定条件および前回評価を維持。K0034は風車早期損傷検知と画像検査の比較であり、狭義の将来故障予測で正常のみ学習が実証されたとは述べない。新たなFindingなし。\",\"findings\":[]},\"30_analysis\":{\"assessment\":\"Review 000003 F001/F002のrepairを独立に確認。J0010/J0013の優先規則はタスク定義上の固有意味を先に判定し、同義の両タスク適用可能性をC、判定根拠不足をUとする。該当条件・値の未知・支持区分B/I/T/Qを分離し、D02.1–5、D03.5、D05.4、D08.5を条件付き共通として再判定。D04.3の未来シナリオは未来観測とは別でありU維持が合理的。D07.2の異常性の意味は粒度から分離。F001解消。D05.6・profile・limitations・J0013で正常のみ学習の実証を画像検査・風車早期損傷検知に限定し、検知による予後警告と未来故障直接予測を区別。F002解消。全39軸の記述・適用条件・C/A/P/U（34/1/3/1）・B/I/T/Q（8/26/4/1）・K参照を個別に評価し、対応するJudgmentとの記述・参照一致を確認。D03.2の正常/非故障、D05.4の観測境界、D08.5の介入影響等は概念上の同義適用としてIとし、直接実証と混同しない。Bの8軸は中核記述軸について両側の研究設定が支持し、下位属性値全ての実証とはしていない。D03.4/D06.3/D07.3は同一予測対象の意味・時間関係・出力の別側面で、共通軸への特殊化と明示されている。Exploratory profileは仮説・限界・代替分類を保持。網羅性、経験的頻度、独立判定者再現性、未探索モダリティ、直接実証の不足は未解決だが、候補分類の限定された結論と整合している。現行ターゲットに対し追加の修正を要する具体的意味論的欠陥を認めない。\",\"findings\":[]}}")
+          git("fetch","origin","main")
+          current=git("rev-parse","FETCH_HEAD")
+          assert current==target and blobs(current)==expected
+          save_review_cycle(prepared,reviewed_at=datetime.now(timezone.utc).isoformat(),layer_bodies=layers,current_target_commit_sha=current,current_artifact_blob_shas=blobs(current),review_dir=p/"reviews",schema_path="schemas/v2")
+          h=load_review_history("INV-000045",review_dir=p/"reviews",schema_path="schemas/v2")
+          assert not h.issues and len(h.records)==4
+          latest=h.records[-1]
+          assert latest["review_seq"]==4
+          for f in sorted((p/"reviews").glob("*000004.json")):
+              print("REVIEW_FILE "+json.dumps({"path":str(f),"content":f.read_text()},ensure_ascii=False))
+          print("REVIEW_HISTORY_PASS")
+          print("PROJECTION_PLAN "+json.dumps(asdict(plan_review_projection(latest,investigation_rows=[{"investigation_id":"INV-000045","url":"https://app.notion.com/p/423e5855be3981bf860dd41a5c62d8e4"}],existing_review_rows=[])),ensure_ascii=False))
+          print("RECONCILE_PLAN "+json.dumps(reconcile_payload({"context":json.loads((p/"00_context.json").read_text()),"current":{"review_status":"再レビュー待","latest_review_seq":3},"review":{"latest":latest,"issues":list(h.issues),"target_relation":target_relation_from_blobs(latest,blobs(current))}}),ensure_ascii=False))
+          
+          PY
