@@ -1,0 +1,60 @@
+name: INV-000045 canonical review 000003 persistence audit
+on:
+  pull_request:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: aaa945662d3ea641976659c4a36db14942128274
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install 'jsonschema>=4.18'
+      - name: Validate exact final target
+        env:
+          PYTHONPATH: src
+        run: python -m research_atelier.validation.validate_investigation INV-000045 --through 30
+      - name: Run canonical writer and history/projection helpers
+        env:
+          PYTHONPATH: src
+        run: |
+          python - <<'PY'
+          import json, subprocess
+          from pathlib import Path
+          from datetime import datetime, timezone
+          from dataclasses import asdict
+          from research_atelier.reviewing.review_writer import prepare_review_cycle, save_review_cycle, EXPECTED_ARTIFACTS
+          from research_atelier.reviewing.review_state import load_review_history, target_relation_from_blobs
+          from research_atelier.projection.review import plan_review_projection
+          from research_atelier.reviewing.reconcile import reconcile_payload
+          def git(*args):
+              return subprocess.check_output(["git",*args],text=True).strip()
+          p=Path("investigations/INV-000045")
+          target="aaa945662d3ea641976659c4a36db14942128274"
+          expected={"00_context":"fe78ff9e72984db707391a6671f192595567481b","10_evidence":"8f4bb782bf43da3c662878fc3455b28951d5d7e1","20_synthesis":"3f9052721291cacc36b1432b5d3f6fa4d82a9d19","30_analysis":"47c326f77b0cc272f32ec5599a1451ed38978646"}
+          def blobs(ref): return {x:git("rev-parse",f"{ref}:{p}/{x}.json") for x in EXPECTED_ARTIFACTS}
+          assert git("rev-parse","HEAD")==target and blobs("HEAD")==expected
+          prepared=prepare_review_cycle("INV-000045",review_dir=p/"reviews",schema_path="schemas/v2",target_commit_sha=target,artifact_blob_shas=expected)
+          assert prepared.review_seq==3
+          layers=json.loads("{\"00_context\":{\"assessment\":\"Frozen Contextは前回までと同一blob。RQ、Scope、Assumptions、Exploratoryの意味整合性は維持。新しいInvestigationを必要とするContext-defining defectなし。\",\"findings\":[]},\"10_evidence\":{\"assessment\":\"25 Source、45 Evidenceを確認。前回の14 Source・29 Evidenceはexactに不変で、過去の原典・12 distinct Evidence Note照合を再利用した。追加11 Sourceのcanonical revision metadataと16 Evidence（E0030–E0045）を確認。CVPR原著§3/4.3/4.4、USENIX原著§3.1/3.2、PHM Society abstract、Wiley原著abstract、UCC/IOP abstract、Nature Energy abstract、電力網原著公開索引、3W publisher/PMC索引、J-STAGE管路・鉄道abstract、OnePetro abstract索引、ACM EVTとNeurIPS TSB-AD abstractに照合。F001はE0030–32・E0041、F002はE0033、F004の上流根拠はE0034で回復。追加Evidenceの主要主張は確認範囲で忠実。ISO規範本文、MetroPTの一部細部、アクセス制限のある原著の全文・独立運用監査は未確認。3D/グラフ/テキスト/音響等の未収録と25件での探索終了は網羅性の限界として記録されており、今回の探索的候補分類に対して具体的な未収録属性が追加で立証されない限り、件数のみを理由にFindingとしない。\",\"findings\":[]},\"20_synthesis\":{\"assessment\":\"43 Knowledge Unit、25 Relation、9 Uncertaintyを確認。K0016のアーカイブ済みスコア不足という支持されない限定は除去され、E0027のコスト行列不足と未知を区別したため前回F003解消。K0030–43はE0030–45の主張・適用境界を概ね維持。R0017–25の時間・空間粒度、データ生成、通知集約、AFRと観測数、評価の区別は妥当。K0034は画像検査と風車早期損傷検知の共通性を述べ、単独の将来故障予測モデルの実証とは記載していない。Analysisにおけるその一般化は別に評価する。\",\"findings\":[]},\"30_analysis\":{\"assessment\":\"9領域39ファクターをD01–D09の個別記述、J0001–12、profile、limitations、K lineageと照合。前回F001（D03.1/D05.1/D07.1/D09.1–2の空間正解・出力・評価）、F002（D07.5とD08.1–2）、F003（K0016修正）、F004（D02.3とD05.2/3/5の発生率・事象数・生成構成の区別）は解消。D01母集団・D02現象・D03正解・D04文脈・D05観測・D06時間・D07出力・D08業務要求・D09評価の層別および主記録先の区別は探索的仮説として概ね妥当。網羅性・頻度・重要度・因果効果は未確立と明示。未探索モダリティを無限に追加することをPASS条件とはしない。独立評価で以下の分類規則の曖昧さと、反例の解釈範囲の問題を認める。\",\"findings\":[{\"severity\":\"Moderate\",\"target\":\"J0010 / C・U判定規則とD02.1–2, D05.4, D08.5\",\"evidence\":[\"J0010: Cは両タスクに概念上適用可能で必須ではない。一方Uは領域依存・条件付き又は固有性未確定と定義される。CとUの適用条件が重なり、優先規則がない。\",\"D02.1は故障を扱う場合には両タスクに適用できると明示してUとする。一方D01.1、D08.1などは対象領域に依存する設備・保全等の属性を含みながらCとする。D05.4も観測条件に依存し、必要性の不明をUの理由とするがCも必要性を要求しない。\",\"00_context significance: 共通・固有ファクターの同定。J0010の定義では条件付きの共通性と共通性が未確定であることを同じUに集約する。\"],\"impact\":\"同じ条件付き共通ファクターを異なるレビュアーがCまたはUに割り当て得る。RQの中核である共通性と固有性の区別に再現性上の欠陥が残る。\",\"repair_direction\":{\"mode\":\"same_investigation\",\"affected_layer\":\"30_analysis\",\"instruction\":\"C/A/P/Uを判定する優先規則を明示し、概念上の適用可能性と個別事例での該当条件、および根拠不足による未確定を分離する。D02.1等の条件付き共通属性を再判定し、D07.2の異常判定意味と粒度のような共通記述軸も混同しない。必要なら適用条件を別属性として記録する。\"}},{\"severity\":\"Minor\",\"target\":\"D05.6 / Working Answer 追加反例：正常のみの学習とタスク固有性\",\"evidence\":[\"E0035/K0034: 風車主軸受早期損傷検知で正常データのみの学習を使用。Wiley原著 https://doi.org/10.1002/ese3.1398 は健全データを用いた損傷検知と故障より数か月前の警告を報告する。\",\"K0034は画像異常検知に固有ではないとするが、D05.6は異常検知だけに固有ではないと一般化。J0010は複合パイプラインをサブタスクに分解すると定義する。\",\"早期損傷検知を予後警告に利用することは、独立した未来故障イベント・時刻の予測サブタスクが正常のみで学習されたことを直ちに証明しない。\"],\"impact\":\"正常のみの学習が保全・予後警告の文脈にも適用されるという支持と、狭義の故障予測サブタスクにも直接実証されたという支持の範囲が曖昧。D05.6を共通の候補軸とすること自体は妥当。\",\"repair_direction\":{\"mode\":\"same_investigation\",\"affected_layer\":\"30_analysis\",\"instruction\":\"正常のみの学習という設計が異常検知サブタスクを用いた予後警告にも現れるという限定を明示し、直接の将来故障予測への適用実証とは区別する。共通候補軸としての概念上の適用可能性と直接観察を分ける。\"}}]}}")
+          git("fetch","origin","main")
+          current=git("rev-parse","FETCH_HEAD")
+          assert current==target and blobs(current)==expected
+          manifest=save_review_cycle(prepared,reviewed_at=datetime.now(timezone.utc).isoformat(),layer_bodies=layers,current_target_commit_sha=current,current_artifact_blob_shas=blobs(current),review_dir=p/"reviews",schema_path="schemas/v2")
+          h=load_review_history("INV-000045",review_dir=p/"reviews",schema_path="schemas/v2")
+          assert not h.issues and len(h.records)==3
+          latest=h.records[-1]
+          assert latest["review_seq"]==3
+          for f in sorted((p/"reviews").glob("*000003.json")):
+              print("REVIEW_FILE "+json.dumps({"path":str(f),"content":f.read_text()},ensure_ascii=False))
+          print("REVIEW_HISTORY_PASS")
+          print("PROJECTION_PLAN "+json.dumps(asdict(plan_review_projection(latest,investigation_rows=[{"investigation_id":"INV-000045","url":"https://app.notion.com/p/423e5855be3981bf860dd41a5c62d8e4"}],existing_review_rows=[])),ensure_ascii=False))
+          print("RECONCILE_PLAN "+json.dumps(reconcile_payload({"context":json.loads((p/"00_context.json").read_text()),"current":{"review_status":"再レビュー待","latest_review_seq":2},"review":{"latest":latest,"issues":list(h.issues),"target_relation":target_relation_from_blobs(latest,blobs(current))}}),ensure_ascii=False))
+          
+          PY
