@@ -1,0 +1,42 @@
+name: INV-000045 review preflight
+on:
+  pull_request:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ github.event.pull_request.base.sha }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install 'jsonschema>=4.18'
+      - name: Validate exact current target
+        env:
+          PYTHONPATH: src
+        run: |
+          git rev-parse HEAD
+          python -m research_atelier.validation.validate_investigation INV-000045 --through 30
+      - name: Prepare canonical Review cycle
+        env:
+          PYTHONPATH: src
+        run: |
+          python - <<'PY'
+          import json, subprocess
+          from dataclasses import asdict
+          from pathlib import Path
+          from research_atelier.reviewing.review_writer import prepare_review_cycle, EXPECTED_ARTIFACTS
+          inv="INV-000045"
+          p=Path("investigations")/inv
+          def git(*args):
+              return subprocess.check_output(["git",*args],text=True).strip()
+          c=json.loads((p/"00_context.json").read_text())
+          assert c["context_state"]=="frozen" and c["question_type"] is not None and c["rq_id"]=="RQ-000044"
+          prepared=prepare_review_cycle(inv, review_dir=p/"reviews",schema_path="schemas/v2",target_commit_sha=git("rev-parse","HEAD"),artifact_blob_shas={x:git("rev-parse",f"HEAD:{p}/{x}.json") for x in EXPECTED_ARTIFACTS})
+          print("PREPARED_REVIEW",json.dumps(asdict(prepared),ensure_ascii=False))
+          PY
