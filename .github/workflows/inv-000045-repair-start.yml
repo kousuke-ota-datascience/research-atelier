@@ -1,0 +1,40 @@
+name: INV-000045 repair start
+on:
+  pull_request:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  reconcile:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ github.event.pull_request.base.sha }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install 'jsonschema>=4.18'
+      - name: Canonical repair started
+        env:
+          PYTHONPATH: src
+        run: |
+          python - <<'PY'
+          import json, subprocess
+          from pathlib import Path
+          from research_atelier.reviewing.review_state import load_review_history
+          from research_atelier.reviewing.reconcile import reconcile_payload
+          p=Path("investigations/INV-000045")
+          h=load_review_history("INV-000045",review_dir=p/"reviews",schema_path="schemas/v2")
+          assert not h.issues
+          latest=h.records[-1]
+          assert latest["review_seq"]==1 and latest["verdict"]=="FINDINGS"
+          target=latest["target"]
+          for a,b in target["artifact_blob_shas"].items():
+              assert subprocess.check_output(["git","rev-parse",f"HEAD:{p}/{a}.json"],text=True).strip()==b
+          subprocess.check_call(["git","merge-base","--is-ancestor",target["commit_sha"],"HEAD"])
+          result=reconcile_payload({"current":{"review_status":"要修正","latest_review_seq":1},"review":{"latest":latest,"issues":list(h.issues),"target_relation":"exact"},"context":json.loads((p/"00_context.json").read_text()),"events":{"repair_started":True}})
+          print("REPAIR_START",json.dumps(result,ensure_ascii=False))
+          assert result["outcome"]=="UPDATE" and result["changes"]=={"Review Status":"再作業中"}
+          PY
