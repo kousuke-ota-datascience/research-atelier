@@ -1,0 +1,24 @@
+name: Canonical new-freeze validator INV-000045
+on:
+  pull_request:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ github.event.pull_request.head.sha }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install 'jsonschema>=4.18'
+      - name: Canonical new-freeze validation
+        env:
+          PYTHONPATH: src
+        run: |
+          git rev-parse HEAD:investigations/INV-000045/00_context.json
+          python -m research_atelier.validation.validate_investigation INV-000045 --through 00 --new-freeze
