@@ -1,0 +1,243 @@
+{
+  "schema_version": "2.1.0",
+  "artifact_type": "10_evidence",
+  "investigation_id": "INV-000045",
+  "rq_id": "RQ-000044",
+  "snapshot_at": "2026-11-25T03:18:00Z",
+  "sources": [
+    {
+      "source_id": "SRC-000172",
+      "source_revision": {
+        "commit_sha": "16ae96649fb3fe789d24acdb250c14bdddabb362",
+        "blob_sha": "361e854c4ea221ce2cab11a8969040268e7667ec"
+      },
+      "accessed_at": "2026-11-25T03:16:51Z",
+      "notion_url": "https://app.notion.com/p/40fe5855be3981169042edc5796bd5e6"
+    },
+    {
+      "source_id": "SRC-000186",
+      "source_revision": {
+        "commit_sha": "16ae96649fb3fe789d24acdb250c14bdddabb362",
+        "blob_sha": "872db1b19d1957a9ec73148716fd8bc67c1a43cd"
+      },
+      "accessed_at": "2026-11-25T03:16:51Z",
+      "notion_url": "https://app.notion.com/p/40fe5855be39817db243e87aa06fde41"
+    },
+    {
+      "source_id": "SRC-000217",
+      "source_revision": {
+        "commit_sha": "16ae96649fb3fe789d24acdb250c14bdddabb362",
+        "blob_sha": "1b03a8141a5de6dc9a95f5af4828f5572243291c"
+      },
+      "accessed_at": "2026-11-25T03:16:51Z",
+      "notion_url": "https://app.notion.com/p/410e5855be3981ba8034fc1e2d4dda3b"
+    },
+    {
+      "source_id": "SRC-000218",
+      "source_revision": {
+        "commit_sha": "16ae96649fb3fe789d24acdb250c14bdddabb362",
+        "blob_sha": "9c8dca97a2fab5e67f52e18eb4cf48d253ca38fa"
+      },
+      "accessed_at": "2026-11-25T03:16:51Z",
+      "notion_url": "https://app.notion.com/p/410e5855be398145b3c1fd5419392217"
+    },
+    {
+      "source_id": "SRC-000229",
+      "source_revision": {
+        "commit_sha": "16ae96649fb3fe789d24acdb250c14bdddabb362",
+        "blob_sha": "c8030a7fd715f8d35088bec8e23488286fce1a69"
+      },
+      "accessed_at": "2026-11-25T03:16:51Z",
+      "notion_url": "https://app.notion.com/p/417e5855be398195b1d9c038fa4838f6"
+    },
+    {
+      "source_id": "SRC-000250",
+      "source_revision": {
+        "commit_sha": "16ae96649fb3fe789d24acdb250c14bdddabb362",
+        "blob_sha": "daff5f574353e9bf88a106b8536dfac2db6093d1"
+      },
+      "accessed_at": "2026-11-25T03:16:51Z",
+      "notion_url": "https://app.notion.com/p/417e5855be3981a0967ee1b6e1381916"
+    },
+    {
+      "source_id": "SRC-000177",
+      "source_revision": {
+        "commit_sha": "16ae96649fb3fe789d24acdb250c14bdddabb362",
+        "blob_sha": "e013a946084508be5348f989106a4baed397d7d2"
+      },
+      "accessed_at": "2026-11-25T03:16:51Z",
+      "notion_url": "https://app.notion.com/p/40fe5855be3981fda882d4f57db678d0"
+    }
+  ],
+  "evidence_items": [
+    {
+      "evidence_id": "E0001",
+      "note_type": "Definition",
+      "content": "時系列の異常は点、部分系列、系列全体に分類され、点・部分系列は単変量または多変量の異常を含む。局所的な参照範囲では異常でも系列全体では正常に見える場合がある。",
+      "source_locator": "Author manuscript arXiv:2002.04236 §2.2; https://ar5iv.labs.arxiv.org/html/2002.04236",
+      "selection_reason": "異常の粒度と正常性の文脈",
+      "provenance": {
+        "source_id": "SRC-000172",
+        "evidence_note": null
+      }
+    },
+    {
+      "evidence_id": "E0002",
+      "note_type": "Definition",
+      "content": "レビューでは外れ値が分析対象の有用なイベントである場合と、データ品質改善のため除去すべき不要なデータである場合を区別する。",
+      "source_locator": "Author manuscript §7 Conclusions; https://ar5iv.labs.arxiv.org/html/2002.04236",
+      "selection_reason": "対象異常と観測上の例外の区別",
+      "provenance": {
+        "source_id": "SRC-000172",
+        "evidence_note": null
+      }
+    },
+    {
+      "evidence_id": "E0003",
+      "note_type": "Method",
+      "content": "時系列検知では過去・現在・未来を使う推定と過去だけを使う予測による期待値の算出が区別される。ストリーミング用途では計算時間と未来情報の利用可否が制約となる。",
+      "source_locator": "Author manuscript §§3.1–3.2",
+      "selection_reason": "オンライン／オフラインと利用可能情報",
+      "provenance": {
+        "source_id": "SRC-000172",
+        "evidence_note": null
+      }
+    },
+    {
+      "evidence_id": "E0004",
+      "note_type": "Definition",
+      "content": "規格の公開序文は状態監視を正常状態からの逸脱の検知、故障と原因の診断、将来進展の予後推定、行動推奨、事後検証に区別する。",
+      "source_locator": "ISO 13381-1:2025 Introduction, p. v; ANSI public preview",
+      "selection_reason": "タスク目的の区別",
+      "provenance": {
+        "source_id": "SRC-000186",
+        "evidence_note": null
+      }
+    },
+    {
+      "evidence_id": "E0005",
+      "note_type": "Claim",
+      "content": "将来の故障進展の予測には想定故障モード、将来の稼働条件、両者の関係の理解が必要と説明される。過去・累積稼働、保全履歴、検査、故障までのデータ、運転・状態・性能パラメータの収集が必要となり得る。",
+      "source_locator": "ISO 13381-1:2025 Introduction, p. v; ANSI public preview",
+      "selection_reason": "故障特性と運転・保全履歴",
+      "provenance": {
+        "source_id": "SRC-000186",
+        "evidence_note": null
+      }
+    },
+    {
+      "evidence_id": "E0006",
+      "note_type": "Other",
+      "content": "公開目次は影響因子、警報・停止閾値、多パラメータ解析、開始条件、故障進展モデル、予後信頼度、既存・将来の故障モードと介入後予後を別項目として扱う。本文の規範的要求は未確認。",
+      "source_locator": "ISO 13381-1:2025 Contents, p. iii; ANSI public preview",
+      "selection_reason": "イベント閾値、介入、確信度の候補",
+      "provenance": {
+        "source_id": "SRC-000186",
+        "evidence_note": null
+      }
+    },
+    {
+      "evidence_id": "E0007",
+      "note_type": "Theory",
+      "content": "エネルギー設備の生存モデルのレビューは条件付き生存から所定期間内の故障確率を求め、時間依存の識別・Brier評価と打ち切り補正を整理する。予防的介入や観測期間の制限により寿命が部分観測になることを扱う。単一モデルの校正を実証する原著ではない。",
+      "source_locator": "Abstract; §§4.1.2, 4.6; Conclusions",
+      "selection_reason": "予測出力、打ち切り、介入、評価",
+      "provenance": {
+        "source_id": "SRC-000217",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/410e5855be39810e8bb4d9deb19fccbc",
+          "title": "EV-000342"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0008",
+      "note_type": "Result",
+      "content": "3種類の産業系列で過去観測窓CWと未来アラーム予測窓FWを組み合わせ、予測リードタイムとF1-macroが窓設定・プロセス特性に依存すると報告する。予測対象はアラームであり物理故障時刻ではない。",
+      "source_locator": "Abstract; §§3.1, 6, 7",
+      "selection_reason": "対象イベントと時間窓",
+      "provenance": {
+        "source_id": "SRC-000218",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/410e5855be3981ea9209dd7f919dbdcb",
+          "title": "EV-000343"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0009",
+      "note_type": "Data",
+      "content": "MetroPTは地下鉄車両のAPUから1 Hzでアナログ・デジタル・位置情報を収集する。FMEA/FMECAに基づきセンサーを選定し、保全記録で3件の故障を同定した。",
+      "source_locator": "Methods; Data Records; Technical Validation",
+      "selection_reason": "対象設備・観測・ラベル",
+      "provenance": {
+        "source_id": "SRC-000229",
+        "evidence_note": null
+      }
+    },
+    {
+      "evidence_id": "E0010",
+      "note_type": "Definition",
+      "content": "MetroPTでは負荷／無負荷／停止時のモーター電流が異なる。トンネル内でGPSが受信できない場合は信号値が0に設定される。",
+      "source_locator": "Methods: Analog sensors, Digital sensors; Data Records",
+      "selection_reason": "正常状態遷移と観測上の例外",
+      "provenance": {
+        "source_id": "SRC-000229",
+        "evidence_note": null
+      }
+    },
+    {
+      "evidence_id": "E0011",
+      "note_type": "Result",
+      "content": "エア漏れ故障の一例では警報発生後も運行が継続し、別の例では車両を運用から外した。油漏れでは運転士への油関連の警告がなかった。",
+      "source_locator": "Technical Validation: Reported failures 1–3",
+      "selection_reason": "故障・アラーム・停止の非同一性",
+      "provenance": {
+        "source_id": "SRC-000229",
+        "evidence_note": null
+      }
+    },
+    {
+      "evidence_id": "E0012",
+      "note_type": "Method",
+      "content": "評価では故障を開始・終了の区間とし、予測区間との重なりを評価する。運用不能になる2時間以上前の検知を要求し、故障部品の同定も課題とする。",
+      "source_locator": "Technical Validation: Evaluation protocol",
+      "selection_reason": "評価単位、出力、必要リードタイム",
+      "provenance": {
+        "source_id": "SRC-000229",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/417e5855be3981d5bc11ef9fc3ba0e3d",
+          "title": "EV-000364"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0013",
+      "note_type": "Result",
+      "content": "飲料工場の逆浸透設備の導入事例は、振動V-RMSの5分値の多期間予測、アラーム、周波数診断、保全管理システムへの連携を報告する。",
+      "source_locator": "Abstract",
+      "selection_reason": "意思決定・運用連携",
+      "provenance": {
+        "source_id": "SRC-000250",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/417e5855be398156a098fb330a249801",
+          "title": "EV-000388"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0014",
+      "note_type": "Limitation",
+      "content": "point adjustmentを用いた時系列異常検知の評価ではF1が過大になり、ランダムスコアでも高性能に見える場合があると理論・実験で示す。",
+      "source_locator": "AAAI Abstract",
+      "selection_reason": "イベント評価規則と測定上の偏り",
+      "provenance": {
+        "source_id": "SRC-000177",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/40fe5855be3981ecb9d6ede655fd5d10",
+          "title": "EV-000299"
+        }
+      }
+    }
+  ]
+}
