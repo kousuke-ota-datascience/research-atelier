@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000046",
+  "review_seq": 4,
+  "layer": "30_analysis",
+  "review_kind": "20_synthesis_plus_00_context_to_30_analysis",
+  "target_blob_sha": "f97d134d4638646a4de189ee81addb1e39d606d8",
+  "assessment": "Review 000003と同一artifact。前回の指定修正は全件解消済みで、完全適合0件の主結論を反証する根拠は確認されない。現Synthesisに対する独立したAnalysis defectは確認されない。限定したEvidence Findingをno-bypass ruleに従って修正後、関連軸のみ意味論的に再評価する。",
+  "findings": [],
+  "verdict": "PASS"
+}

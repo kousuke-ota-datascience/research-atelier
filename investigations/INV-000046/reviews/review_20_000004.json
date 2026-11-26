@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000046",
+  "review_seq": 4,
+  "layer": "20_synthesis",
+  "review_kind": "10_evidence_to_20_synthesis",
+  "target_blob_sha": "757e4301a0377288eb9a7afaabf3078920006754",
+  "assessment": "Review 000003と同一artifactであり、現選択Evidenceに対する独立したSynthesis defectは確認されない。限定したEvidence Findingの修正後のみdownstreamを再構築する。",
+  "findings": [],
+  "verdict": "PASS"
+}
