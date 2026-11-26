@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "Case assessments derived contract v1",
+  "title": "事例評価の派生成果物固有契約 v1",
   "type": "object",
   "properties": {
     "schema_version": {

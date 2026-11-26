@@ -3,21 +3,21 @@
   "artifact_type": "case_assessments_semantic_overlay",
   "investigation_id": "<INV-ID>",
   "rq_id": "<RQ-ID>",
-  "baseline_sha256": "<SHA256 of exact baseline bytes>",
+  "baseline_sha256": "<baselineの正確なファイルバイト列のSHA-256>",
   "entries": [
     {
       "case_id": "<Cxx>",
       "factor_id": "<Dxx.y>",
       "attributes": [
         {
-          "field": "<semantic attribute name>",
-          "value_text": "<literal substring>",
+          "field": "<意味論的な属性名>",
+          "value_text": "<原文と完全一致する部分文字列>",
           "unit": null,
-          "source_excerpt": "<exact excerpt from assessment_text>"
+          "source_excerpt": "<assessment_textの正確な原文抜粋>"
         }
       ],
       "limitations": [
-        "<exact excerpt from assessment_text>"
+        "<assessment_textの正確な原文抜粋>"
       ]
     }
   ]

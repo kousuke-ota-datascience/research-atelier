@@ -5,38 +5,38 @@
   "investigation_id": "<INV-ID>",
   "rq_id": "<RQ-ID>",
   "derived_from": {
-    "analysis_commit_sha": "<accepted commit>",
-    "analysis_blob_sha": "<analysis blob>",
+    "analysis_commit_sha": "<承認済みAnalysisのcommit SHA>",
+    "analysis_blob_sha": "<Analysisのblob SHA>",
     "artifact_blob_shas": {
-      "00_context": "<blob>",
-      "10_evidence": "<blob>",
-      "20_synthesis": "<blob>",
-      "30_analysis": "<blob>"
+      "00_context": "<blob SHA>",
+      "10_evidence": "<blob SHA>",
+      "20_synthesis": "<blob SHA>",
+      "30_analysis": "<blob SHA>"
     },
-    "review_seq": "<latest PASS sequence>",
-    "review_target_commit_sha": "<review target commit>",
-    "review_manifest_path": "<manifest path>",
-    "review_manifest_blob_sha": "<blob>",
-    "projection_log_blob_sha": "<blob>"
+    "review_seq": "<最新PASS Reviewの連番>",
+    "review_target_commit_sha": "<Review対象のcommit SHA>",
+    "review_manifest_path": "<Review manifestのパス>",
+    "review_manifest_blob_sha": "<blob SHA>",
+    "projection_log_blob_sha": "<blob SHA>"
   },
   "factor_framework": {
-    "rq_id": "<framework RQ-ID>",
-    "investigation_id": "<framework INV-ID>",
-    "analysis_commit_sha": "<framework commit>",
-    "analysis_blob_sha": "<framework blob>",
+    "rq_id": "<参照frameworkのRQ-ID>",
+    "investigation_id": "<参照frameworkのINV-ID>",
+    "analysis_commit_sha": "<参照frameworkのcommit SHA>",
+    "analysis_blob_sha": "<参照frameworkのblob SHA>",
     "factor_count": "<N>",
     "factor_definitions": [
       {
         "factor_id": "<Dxx.y>",
         "framework_class": "<C/A/P/U>",
-        "definition_text": "<exact framework definition>"
+        "definition_text": "<ファクター定義の原文>"
       }
     ]
   },
   "criteria_definitions": [
     {
       "criterion_id": "<R1–R4>",
-      "definition_text": "<exact criterion text>"
+      "definition_text": "<採択条件の原文>"
     }
   ],
   "summary": {
@@ -50,28 +50,28 @@
   "cases": [
     {
       "case_id": "<Cxx>",
-      "name": "<exact name>",
+      "name": "<事例名称の原文>",
       "source_refs": [
         "<SRC-ID>"
       ],
       "eligibility": "<full_match/near_match/excluded>",
-      "canonical_eligibility": "<original>",
+      "canonical_eligibility": "<判定の原文>",
       "exclusion_reason": null,
       "knowledge_unit_scope": [
         "<K-ID>"
       ],
-      "canonical_header": "<exact header>",
-      "canonical_scope_line": "<exact scope line>",
-      "analysis_line": "<1-based line>",
+      "canonical_header": "<見出し行の原文>",
+      "canonical_scope_line": "<根拠範囲行の原文>",
+      "analysis_line": "<1始まりの行番号>",
       "criteria_assessments": [
         {
           "criterion_id": "<R1–R4>",
           "status": "<confirmed/unconfirmed/not_met>",
-          "canonical_status": "<original>",
-          "assessment_text": "<exact text>",
+          "canonical_status": "<判定の原文>",
+          "assessment_text": "<判定文の原文>",
           "reference_role": "<basis/confirmation_scope>",
-          "canonical_line": "<exact line>",
-          "analysis_line": "<1-based line>",
+          "canonical_line": "<行全体の原文>",
+          "analysis_line": "<1始まりの行番号>",
           "knowledge_unit_refs": [
             "<K-ID>"
           ],
@@ -86,16 +86,16 @@
       "factor_assessments": [
         {
           "factor_id": "<Dxx.y>",
-          "factor_label": "<original label>",
-          "canonical_status": "<original status>",
+          "factor_label": "<ファクター名の原文>",
+          "canonical_status": "<判定ラベルの原文>",
           "applicability": "<applicable/undetermined/not_applicable/mixed>",
           "epistemic_status": "<reported/inference/undetermined/not_applicable/mixed>",
-          "value": "<exact assessment_text when applicable; else null>",
-          "assessment_text": "<exact text>",
+          "value": "<該当時はassessment_textの原文、それ以外はnull>",
+          "assessment_text": "<判定文の原文>",
           "limitations": null,
           "reference_role": "<basis/confirmation_scope>",
-          "canonical_line": "<exact line>",
-          "analysis_line": "<1-based line>",
+          "canonical_line": "<行全体の原文>",
+          "analysis_line": "<1始まりの行番号>",
           "knowledge_unit_refs": [
             "<K-ID>"
           ],

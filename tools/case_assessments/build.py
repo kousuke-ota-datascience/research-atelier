@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
-"""Lossless, review-gated projection of the case/factor assessment contract.
+"""事例・ファクター評価を原文保持型JSONへ決定論的に変換する。
 
-This is an optional utilization tool, not part of the canonical research chain.
-Run from a Git checkout with Python 3.10+, jsonschema and repository src.
+Review・Finalization済みの正本を入力とする任意の補助ツールであり、
+canonical research chainの一部ではない。
+Git checkout上でPython 3.10以上、jsonschema、リポジトリのsrcを使用する。
 """
 from __future__ import annotations
 
@@ -220,7 +221,7 @@ def build(inv):
     analysis = read_json(base / "30_analysis.json")
     require(all(x["investigation_id"] == inv and x["rq_id"] == context["rq_id"] for x in (context, evidence, synthesis, analysis)), "artifact identity mismatch")
     provenance = review_gate(inv, base, context)
-    # Canonical validator remains the workflow authority; do not reimplement it.
+    # 正本validatorの判定規則を再実装せず、既存の実装を利用する。
     subprocess.run([sys.executable, "-m", "research_atelier.validation.validate_investigation", inv, "--through", "30"], cwd=ROOT, env={**__import__("os").environ, "PYTHONPATH": str(ROOT / "src")}, check=True, stdout=sys.stderr)
     framework = load_framework(context)
     text = analysis["working_answer"]["text"]
@@ -261,15 +262,15 @@ def check_overlay(overlay, baseline, baseline_bytes):
                 require(item["unit"] in quote, f"{key}: unit not present in excerpt")
         for quote in entry["limitations"]:
             require(quote in row["assessment_text"], f"{key}: unsupported limitation")
-    # Excerpt validity is not semantic correctness. No automatic merge.
+    # 原文抜粋の一致は意味論的妥当性を保証しない。自動統合は行わない。
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("investigation_id")
-    parser.add_argument("--check", action="store_true", help="compare existing derivative against exact regeneration")
-    parser.add_argument("--overlay", type=Path, help="validate optional separate semantic overlay; implies --check")
-    parser.add_argument("--stdout", action="store_true", help="emit canonical generated JSON without writing")
+    parser.add_argument("--check", action="store_true", help="保存済みの派生成果物と再生成結果の完全一致を検証する")
+    parser.add_argument("--overlay", type=Path, help="任意の独立したsemantic overlayを検証する（--checkを含む）")
+    parser.add_argument("--stdout", action="store_true", help="ファイルに書き込まず、生成したJSONを標準出力に出力する")
     args = parser.parse_args()
     data = build(args.investigation_id)
     content = serialize(data)

@@ -1,20 +1,36 @@
-# Optional semantic normalization — case assessment overlay
+# 任意の意味論的正規化 — 事例評価のsemantic overlay
 
-## Inputs
-- Baseline JSON: {{CASE_ASSESSMENTS_JSON}}
-- SHA-256 of baseline bytes (computed by a script): {{BASELINE_SHA256}}
-- Target case/factor IDs (or explicit subset): {{TARGET_KEYS}}
-- Output template: semantic_overlay.template.json
-- Output schema: semantic_overlay.schema.json
+## 入力
 
-## Task
-Normalize only the requested already-reviewed assessment_text fields into a separate semantic overlay for downstream analysis. The baseline is immutable; this is a non-authoritative optional interpretation. Do not search sources, add new facts, reinterpret Evidence, improve judgments, or fill missing values. Do not alter applicability, epistemic_status, canonical_status, case eligibility, references, identifiers, or other baseline fields.
+- baseline JSON：{{CASE_ASSESSMENTS_JSON}}
+- baselineの正確なファイルバイト列のSHA-256（スクリプトで算出済み）：{{BASELINE_SHA256}}
+- 対象case ID・factor ID（明示した対象範囲）：{{TARGET_KEYS}}
+- 出力テンプレート：`semantic_overlay.template.json`
+- 出力schema：`semantic_overlay.schema.json`
 
-For each requested key:
-1. Read the fixed factor definition, assessment_text and canonical_status together.
-2. Separate explicit attributes from caveats; use narrowly named fields that retain task, scope, population, time basis, metric, and scenario distinctions. Use literal value_text, unit if literally stated (otherwise null), and an exact source_excerpt containing both the value and the unit. Use separate rows for observed vs estimated, pre vs post, or distinct subtasks. Do not calculate, convert units, infer denominators, make missing values false/zero, or translate a comparison into a new judgment.
-3. Preserve limitations verbatim in limitations. If a clause is ambiguous or partly unknown, keep its exact wording; omit any attribute whose meaning cannot be separated safely. For mixed tasks do not merge non-applicable and unknown subtasks. A number in confirmation_scope does not establish the unknown attribute; only extract an explicitly stated partial fact with its limitation. For non-applicable rows, generally leave attributes empty.
-4. Return only JSON matching semantic_overlay.schema.json; reuse the supplied ID and hash. Every value_text, source_excerpt, and limitation must be an exact substring of the relevant assessment_text. An empty entries array is valid when nothing can be safely normalized.
+## タスク
 
-## Acceptance
-Run build.py INV-ID --overlay <path>. The script checks identity, baseline hash, key uniqueness, excerpt containment and schema; this does not verify semantic correctness of field names or attribution. A separate human/semantic check is required before downstream use. Never merge the overlay into reviewed canonical artifacts or automatically replace the baseline.
+後続分析のために、指定されたReview済みの `assessment_text` のみを意味論的に正規化し、独立したsemantic overlayを生成せよ。baselineは変更不可であり、overlayは任意の非正本の解釈である。
+
+外部Sourceの探索、新たな事実の追加、Evidenceの再解釈、判定の変更、欠損値の補完を行ってはならない。`applicability`、`epistemic_status`、`canonical_status`、事例の採択判定、参照関係、IDおよびその他のbaselineフィールドを変更してはならない。
+
+## 処理手順
+
+指定されたcase ID・factor IDの組ごとに、以下を実行せよ。
+
+1. 固定ファクター定義、`assessment_text`、`canonical_status` を併せて確認する。
+2. 明示された属性と留保を分離する。タスク、適用範囲、対象集団、時間基準、指標、評価シナリオの区別を保持する具体的なフィールド名を用いる。`value_text` は原文の文字列、`unit` は単位が原文に明示される場合にその文字列（それ以外は `null`）、`source_excerpt` は値と単位を含む原文の正確な抜粋とする。実測と推定、導入前と導入後、異なるサブタスクは別々の属性として記録する。計算、単位変換、分母の推測、未知の値のfalse・0への置換、比較結果からの新たな判定は行わない。
+3. 限定条件を原文のまま `limitations` に保持する。曖昧または一部が未知の節は原文を保持し、安全に分離できない属性は抽出しない。混合判定では非該当と未知のサブタスクを統合しない。`confirmation_scope` に数値が存在しても未知の属性が確認されたとはみなさない。明示された部分的事実とその限定条件のみを抽出する。非該当の行では原則として `attributes` を空配列とする。
+4. `semantic_overlay.schema.json` に適合するJSONのみを返す。与えられたIDとハッシュをそのまま使用する。各 `value_text`、`source_excerpt`、`limitations` の要素は対応する `assessment_text` の完全一致する部分文字列でなければならない。安全に正規化できる情報がない場合は `entries` を空配列としてよい。
+
+## 受入条件
+
+以下のコマンドで検証する。
+
+```sh
+python tools/case_assessments/build.py INV-ID --overlay path/to/semantic_overlay.json
+```
+
+スクリプトはID、baselineのハッシュ、対象キーの一意性、原文抜粋の一致、schema適合性を確認する。ただし、属性名や値の帰属の意味論的妥当性はこの検証では保証されない。後続利用の前に別途人間またはsemantic reviewで確認すること。
+
+overlayをReview済みcanonical artifactsに統合してはならない。また、baselineを自動的に置き換えてはならない。

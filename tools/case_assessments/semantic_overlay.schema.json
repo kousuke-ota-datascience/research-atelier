@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "Optional semantic overlay (non-authoritative)",
+  "title": "任意の意味論的正規化overlay（非正本）",
   "type": "object",
   "properties": {
     "schema_version": {
