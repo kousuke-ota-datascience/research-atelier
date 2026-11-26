@@ -18,6 +18,9 @@ jobs:
       - name: Test both contracts and generate derivative
         run: |
           set -euo pipefail
+          git checkout --detach origin/main
+          test "$(git rev-parse HEAD:investigations/INV-000047/derived/case_assessments.json)" = f1605592ea6b77f809150ba01258412c5edb359f
+          test "$(git rev-parse HEAD:investigations/INV-000047/30_analysis.json)" = 6486b4a5775229feab2cd7b97a85548da1466073
           python -m unittest discover -s tools/case_assessments -p 'test*.py' -v
           python tools/case_assessments/build.py INV-000046 --check
           if [ -f investigations/INV-000047/derived/case_assessments.json ]; then
@@ -34,6 +37,4 @@ jobs:
           print('DERIVATIVE_SUMMARY='+json.dumps(obj['summary'],ensure_ascii=False))
           print('DERIVATIVE_SHA256='+hashlib.sha256(data).hexdigest())
           encoded=data.decode('utf-8')
-          for i in range(0,len(encoded),3000):
-              print(f'DERIVATIVE_CHUNK_{i//3000:04d}='+json.dumps(encoded[i:i+3000],ensure_ascii=False))
           PY
