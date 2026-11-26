@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000046",
+  "review_seq": 2,
+  "layer": "20_synthesis",
+  "review_kind": "10_evidence_to_20_synthesis",
+  "target_blob_sha": "87a67e7a896ec0136e65629ea35a67913f6743a6",
+  "assessment": "前回F008はK0033で健全データ学習を明示しK0034で推論を分離、解消。主要追加情報はK0001–K0038に統合されている。ただしE0068の時間原点・基本事象累積確率がK0036等に伝達されていない。",
+  "findings": [
+    {
+      "target": "C10 / E0068 → K0024,K0036,K0038",
+      "evidence": [
+        "E0068末尾：直前の機械故障からの稼働時間と基本事象の累積確率で劣化を扱う。",
+        "K0036はラベル・除外・金型単位・異質性を保持するが時間原点と基本事象確率を保持しない。K0024は上位事象確率閾値のみ。"
+      ],
+      "impact": "AnalysisでC10 D06.1/D06.3/D07.3の既知部分（累積時間原点とリスク表現）を検討できない。未来ホライズン不明と時間関係全体不明を分けるための根拠が失われる。",
+      "severity": "Moderate",
+      "repair_direction": {
+        "mode": "same_investigation",
+        "affected_layer": "20_synthesis",
+        "instruction": "E0068の既存命題を保持し、追加Evidenceを統合してBEとTE、経過稼働時間と未来条件付き確率を区別する。30を再構築する。"
+      },
+      "finding_id": "F003"
+    }
+  ],
+  "verdict": "FINDINGS"
+}

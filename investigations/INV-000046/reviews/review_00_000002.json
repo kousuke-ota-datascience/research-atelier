@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000046",
+  "review_seq": 2,
+  "layer": "00_context",
+  "review_kind": "context_semantic_validity",
+  "target_blob_sha": "db2072fbec2345a24b54dbcd069c846158fae5cb",
+  "assessment": "Review 000001からfrozen Contextのblobは不変。RQ-000045、Exploratory、cutoff、固定39軸、同一用途の4条件は整合。Contextを変える必要なし。",
+  "findings": [],
+  "verdict": "PASS"
+}

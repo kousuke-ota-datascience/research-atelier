@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000046",
+  "review_seq": 2,
+  "layer": "10_evidence",
+  "review_kind": "source_evidence_note_to_10_evidence",
+  "target_blob_sha": "c526ddc25db920815be7f0b18ad466204420f06d",
+  "assessment": "前回F001–F007の再確認：E0043–E0068および訂正E0025で主要な欠落を補足。変更27 Evidence Noteの内容・locator・Source・Note Type一致確認。残る旧41 Evidenceは前回対象と同一。前回F001/F002/F003/F005/F006の主要修正を確認。F004/F007は主要な数値等が補足されたが、原典に明示された予測・評価仕様の重要部分がなお欠落。今回QuantzigとOLIの公式本文を直接取得できた。C3.aiは公式代替PDF。NiX/Omronの一部旧記載は今回取得範囲に再現されず、前回の取得範囲に依存する。",
+  "findings": [
+    {
+      "target": "Review 000001 F004 residual / C07 SRC-000250 / E0054–E0057",
+      "evidence": [
+        "https://www.iieta.org/journals/jesa/paper/10.18280/jesa.590321 §3.4–3.5 Table 7",
+        "E0054–E0057"
+      ],
+      "impact": "原典§3.4のpre-alarmは予測振動境界横断に加えfailure probabilityの持続的増加を記述し、確認窓の選択を誤警報と介入遅延のトレードオフとして説明する。E0054では前者の明示条件を『等』で省き、後者も保持しない。R1の未知判定、D07.3/D07.5/D08.2の意味・要求の評価が不十分になる。故障確率の定義・実装・校正が原典で確認できるとは限らない。",
+      "severity": "Moderate",
+      "repair_direction": {
+        "mode": "same_investigation",
+        "affected_layer": "10_evidence",
+        "instruction": "故障確率に関する原典の記述と実装・定義・検証の確認範囲を区別してEvidence化し、確認窓の設計理由、即時点検条件、保全ログによる評価の範囲を補足。20・30を再構築しR1等を再判定する。未確認の確率出力を実装済みと認定しない。"
+      },
+      "finding_id": "F001"
+    },
+    {
+      "target": "Review 000001 F007 residual / C10 SRC-000303 / E0038–E0040,E0064–E0068",
+      "evidence": [
+        "https://www.mdpi.com/2076-3417/13/12/7131 §4 Predictive Analytics、§5.1–5.2、§6 Table 3",
+        "§5.1はIsolation Forest、80%学習データ、5分刻みのBE CDF、直前の修理以降の累積稼働時間と発生済BEによる確率更新を記述。§5.2はTE=金型機械故障、学習時の保全コスト最小化、閾値0.50–1.00を0.01刻みで探索し、短い事後修理より予防介入が高コストになり得ることを説明。"
+      ],
+      "impact": "D03.4/D06.3/D07.2/D07.3/D08.3/D09.1/D09.4に直結する明示仕様が欠落。特に累積確率と判断時点以後の条件付き故障確率は異なる。履歴費用評価が学習・閾値選択と独立か未確認のままでは推定値の外的妥当性を評価できない。",
+      "severity": "Moderate",
+      "repair_direction": {
+        "mode": "same_investigation",
+        "affected_layer": "10_evidence",
+        "instruction": "既選択原典の該当箇所を追加抽出し、TEの意味、BE CDFの時間原点・更新則、IF学習条件、GFTの訓練目的・閾値探索と比較の独立性の確認範囲、介入費用の設計を記録。20・30で固定軸を再判定し、未来窓・条件付き故障確率を推測で補わない。"
+      },
+      "finding_id": "F002"
+    }
+  ],
+  "verdict": "FINDINGS"
+}

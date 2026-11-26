@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000046",
+  "review_seq": 2,
+  "layer": "30_analysis",
+  "review_kind": "20_synthesis_plus_00_context_to_30_analysis",
+  "target_blob_sha": "434c6073ac856141cb7c84cfaffda8bbd978912f",
+  "assessment": "前回F010はC08をB-1B SBA単体に限定し背景指標を分離、F011は全事例4条件別判定・条件別参照先・日報内稼働データ許容を明記、F012は先行8候補の対応と検索・終了理由・履歴欠落を明示して解消。F009は指摘の主要軸を修正したが、D06.2/D08.3などに残存。固定39軸で再比較し、完全適合0件の主結論は選択Evidenceの範囲で反証されないが、C07/C10の上流補足後に再判定が必要。",
+  "findings": [
+    {
+      "target": "Review 000001 F009 residual / C06,C07 D06.2; C04 D08.3",
+      "evidence": [
+        "固定INV-000045/30_analysis.json commit c804b97ad63eeb6d5b38a06ebf73d0a651015fc6 のD06.2（オンライン/オフライン・連続周期処理・実行周期）とD08.3（誤判定損失・安全制約）。",
+        "C06 D06.2は通知・作業依頼という機能の存在で該当とするが、K0016は実行タイミング・周期の仕様を伝達しない。C07 D06.2はベンチマーク1.20msと実プラント連携を根拠に該当とするが実行周期/オンライン性とは別属性。C04 D08.3は故障時の廃棄損失を見逃し損失として原典報告扱いするがK0013は誤判定との関係を報告していない。"
+      ],
+      "impact": "軸の属性値が未確認なのに該当・原典報告としたり、分析上の推論を原典記述として表示する。事例横断の比較可能性を損なう。",
+      "severity": "Moderate",
+      "repair_direction": {
+        "mode": "same_investigation",
+        "affected_layer": "30_analysis",
+        "instruction": "原典・Synthesisで確認できる実行時点・オンライン性・周期と単なる連携/計算時間を分け、該当判定の根拠を修正。故障損失から見逃し損失への解釈は推論として明記し非対称性未確認を保持。C07/C10は上流補足後に関連軸・4条件を再評価する。"
+      },
+      "finding_id": "F004"
+    }
+  ],
+  "verdict": "FINDINGS"
+}
