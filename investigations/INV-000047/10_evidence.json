@@ -1,0 +1,209 @@
+{
+  "schema_version": "2.1.0",
+  "artifact_type": "10_evidence",
+  "investigation_id": "INV-000047",
+  "rq_id": "RQ-000046",
+  "snapshot_at": "2026-11-26T07:01:29.285Z",
+  "sources": [
+    {
+      "source_id": "SRC-000305",
+      "source_revision": {
+        "commit_sha": "b90a486dcb86cc759fd5574fc9a85bcc3a66f7a7",
+        "blob_sha": "968def33e8e6f94c4c2a37c2bf44647a1a7faef0"
+      },
+      "accessed_at": "2026-11-26T06:59:00Z",
+      "notion_url": "https://app.notion.com/p/424e5855be3981dab4ffe20ee7f549fe"
+    },
+    {
+      "source_id": "SRC-000306",
+      "source_revision": {
+        "commit_sha": "dca87fd5b757b434c2069bc3f1a6c9431eabc1ba",
+        "blob_sha": "41ea1b59562cf6d8c9e9e2422dc1330003e06c08"
+      },
+      "accessed_at": "2026-11-26T06:59:00Z",
+      "notion_url": "https://app.notion.com/p/424e5855be3981128c4ae32e3aee9c8a"
+    },
+    {
+      "source_id": "SRC-000307",
+      "source_revision": {
+        "commit_sha": "67561c31c62830982396a7e579bb07a8f4f28549",
+        "blob_sha": "19ed927a2612839f4675bc27408435c6dbd89fe5"
+      },
+      "accessed_at": "2026-11-26T06:59:00Z",
+      "notion_url": "https://app.notion.com/p/424e5855be3981289f85ca862eda644c"
+    },
+    {
+      "source_id": "SRC-000308",
+      "source_revision": {
+        "commit_sha": "1e2701a73754bdca0ecfd6294f15a46c55e7c8fe",
+        "blob_sha": "ff67ed20ed4c132d058867cd65494e9e51f7423a"
+      },
+      "accessed_at": "2026-11-26T06:59:00Z",
+      "notion_url": "https://app.notion.com/p/424e5855be398189ba4ec5a62aca2b24"
+    },
+    {
+      "source_id": "SRC-000309",
+      "source_revision": {
+        "commit_sha": "0832cb7b73d534de5b00c938757e03338fa36798",
+        "blob_sha": "1580f13d27f04e1b4a0e08ea8b3bd8d86b2293a1"
+      },
+      "accessed_at": "2026-11-26T06:59:00Z",
+      "notion_url": "https://app.notion.com/p/424e5855be3981909fd2d45618b1e406"
+    },
+    {
+      "source_id": "SRC-000310",
+      "source_revision": {
+        "commit_sha": "f37113c694ac088eb947d412e4baa3240be601f3",
+        "blob_sha": "24bb323c12044fbe727d65e828772ca26282c4de"
+      },
+      "accessed_at": "2026-11-26T06:59:00Z",
+      "notion_url": "https://app.notion.com/p/424e5855be3981bfbabafa4cdcdfc2da"
+    },
+    {
+      "source_id": "SRC-000311",
+      "source_revision": {
+        "commit_sha": "86a0f4cd983e2d804e94927aef794ccae76b3251",
+        "blob_sha": "1676ab3e9fca46c15dc19a278ddae53063cf1a00"
+      },
+      "accessed_at": "2026-11-26T06:59:00Z",
+      "notion_url": "https://app.notion.com/p/424e5855be3981efa5ced7ad5ae14eab"
+    },
+    {
+      "source_id": "SRC-000312",
+      "source_revision": {
+        "commit_sha": "a49e8862db213d45c0a9585b8c19a00fc2e1d38e",
+        "blob_sha": "f924a7540923211c8145b6befdcf9982c8eb76d3"
+      },
+      "accessed_at": "2026-11-26T06:59:00Z",
+      "notion_url": "https://app.notion.com/p/424e5855be39813db27bc48b0f2c4023"
+    }
+  ],
+  "evidence_items": [
+    {
+      "evidence_id": "E0001",
+      "content": "2019年4月以前の1,197バッチ、約180万チップ、200工程の3,614製造パラメータを使用。電気検査歩留まりを目的変数とし、GBDTを957バッチで学習、240バッチで評価（学習内CVで調整）。TreeSHAPを用いた工程重要度で、イオン注入工程25（4.18）とエッチング工程166（2.30）を優先。歩留まり値は機密保護のため正規化。単変量の絶対Pearson相関が0.25超の変数は1つ。二つの工程の計測変数は直接操作できず、技術者は装置選択の変更を提案した。",
+      "source_locator": "Postprint §§4.2–4.5.1, Fig. 6, Table 3",
+      "selection_reason": "履歴学習と工程重要度の直接報告",
+      "note_type": "Method",
+      "provenance": {
+        "source_id": "SRC-000305",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/424e5855be39810ea938c6147ef5f616",
+          "title": "半導体：履歴データと要因ランキング"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0002",
+      "content": "24ウェハを6枚ずつ4群に分け、工程25と166の装置ルーティングを変更。他工程の装置を共通にした。正規化歩留まりは対照38.2、25のみ50.6、166のみ85.7、両方86。著者報告では歴史平均に対する歩留まり損失が21.7%低下。全学習標本での工程重要度は25が上位だが、実験での単独変更効果は166が大きかった。別製品では二つのエッチング工程への展開後、2020年2–6月と7–8月の前後比較で歩留まり損失51.3%低下を報告。",
+      "source_locator": "Postprint §§5.3–5.4, Table 5, post-experimental rollout",
+      "selection_reason": "実工程の介入設計・比較結果",
+      "note_type": "Result",
+      "provenance": {
+        "source_id": "SRC-000305",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/424e5855be39816cb452c4da1568419d",
+          "title": "半導体：実工程の2×2実験と展開"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0003",
+      "content": "ダクタイル鉄管の加賀屋工場の黒鉛球状化処理。約4.5万杯の履歴、組成および直前2回の操業等を含む64変数を用い、Mg歩留まりを勾配ブースティング・分位点損失で予測し添加量を自動決定。直前の処理結果の導入が予測精度向上に寄与したと著者は説明。各条件3か月～1年、約900～4,000杯。条件III（分位点0.10）では残留Mg下限外れ率が従来3.37%から2.21%、Mg使用量は従来比98.6%。条件Iは0.47%・102.4%、条件IIは2.34%・99.6%。下限外れ率は製品の機械的性質への不良リスク指標であり最終不良率ではない。条件IIIで自動操業継続。",
+      "source_locator": "クリモト技報 No.75 pp.7–12、§§3–7, Table 1",
+      "selection_reason": "品質リスク指標の自動改善と限界",
+      "note_type": "Result",
+      "provenance": {
+        "source_id": "SRC-000306",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/424e5855be39814d898afd78d83ad57f",
+          "title": "黒鉛球状化：学習モデルと実運用"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0004",
+      "content": "姫路工場のバッチ重合。PIMSの操業・品質情報と運転記録、同条件のロット比較、原料不純物の調査を利用。発熱量の特徴化、後半の攪拌動力との関連、発熱量を含む3変数によるステップワイズ回帰を報告。添加量調整手順と過去ロットとの比較表示を作成。顧客は品質・操業改善を述べ、年間数百万円の費用効果は見込みとして提示。",
+      "source_locator": "Process data analysis using machine learning / results",
+      "selection_reason": "化学プロセスでの要因探索と改善案",
+      "note_type": "Method",
+      "provenance": {
+        "source_id": "SRC-000307",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/424e5855be398179a663ce8974313588",
+          "title": "住友精化：重合工程の品質因子"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0005",
+      "content": "26バッチ、150のオフライン変数と15～20のインライン時系列を使用し、SAXとランダムフォレストでCQA逸脱を分析。工程の絞り込みとpH・3日目温度の組合せに関するルールを提示。著者は是正措置実施後の大規模製造における目的変数改善を報告。サンプル取扱・検査も変動要因として扱う。別のtitreモデルの変数重要度をCQAに転用しない。",
+      "source_locator": "CQA deviation case, data preprocessing, RF analysis and Fig. 7",
+      "selection_reason": "小標本・時系列を利用したCQA分析と是正措置",
+      "note_type": "Method",
+      "provenance": {
+        "source_id": "SRC-000308",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/424e5855be3981adb128f36c0662d22a",
+          "title": "バイオ医薬品：CQA要因分析"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0006",
+      "content": "過去データ、専門家による説明変数選択、モデル係数またはSHAPを使うRCAの一般的方法を説明。主要製品の欠陥事例では対策によって発生率を65%低減したと報告。個別製品、変数、モデル、比較期間は明示されない。別の重合工程では添加回数・バッチ時間削減を報告。",
+      "source_locator": "Conference abstract, root cause analysis example",
+      "selection_reason": "欠陥低減報告と個別モデル情報の不足",
+      "note_type": "Result",
+      "provenance": {
+        "source_id": "SRC-000309",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/424e5855be398194ad53d47690203e92",
+          "title": "DuPont：欠陥低減の報告"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0007",
+      "content": "製鋼、熱延、酸洗、冷延、焼鈍等を経るハイテン鋼の品質リスク要因を、dotDataによる自動特徴量設計で探索し相関を発見。顧客は歩留まりの改善を報告。具体的モデル、要因の影響量・方向、介入方法・比較条件、改善数値は当該ページでは開示されない。",
+      "source_locator": "導入背景・活用成果",
+      "selection_reason": "製鋼から焼鈍の相関探索と効果報告の限界",
+      "note_type": "Claim",
+      "provenance": {
+        "source_id": "SRC-000310",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/424e5855be398166b6d6eb80254c540f",
+          "title": "JFE：ハイテン鋼の品質リスク探索"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0008",
+      "content": "半導体製造装置の継続収集センサーデータを対象に、逐次的なランダムフォレストで歩留まり逸脱時期と重要センサーを特定する方法を提案。従来手動で特定した重要センサーに対応する結果を報告。要旨に実工程への介入結果は示されない。",
+      "source_locator": "Abstract (university research portal)",
+      "selection_reason": "逐次RFによる重要センサー抽出",
+      "note_type": "Method",
+      "provenance": {
+        "source_id": "SRC-000311",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/424e5855be3981468277e3c029ab8a7c",
+          "title": "半導体：センサーデータによる低歩留まり要因"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0009",
+      "content": "説明可能な予測モデルで合成の早い段階の対策を提案し、工程調査による確認、制御室画面への展開を報告。最悪のサイト状況との比較で廃棄20%削減、年25万ユーロ以上の節約を報告。履歴データ仕様、具体的因子と影響度、品質指標、介入の比較設計は非開示。",
+      "source_locator": "Customer case, solution / results",
+      "selection_reason": "合成工程での実装・廃棄指標と情報欠落",
+      "note_type": "Claim",
+      "provenance": {
+        "source_id": "SRC-000312",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/424e5855be398113b7cafe4e75f6b0ac",
+          "title": "化学合成：説明可能モデルと廃棄削減"
+        }
+      }
+    }
+  ]
+}
