@@ -30,7 +30,10 @@ Git checkout上でPython 3.10以上と `jsonschema` を使用する。リポジ�
 ```sh
 python tools/case_assessments/build.py INV-000046
 python tools/case_assessments/build.py INV-000046 --check
+# 生成
 python tools/case_assessments/build.py INV-000047
+
+# 再生成一致検証
 python tools/case_assessments/build.py INV-000047 --check
 ```
 
