@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000305",
+  "notion_url": "https://app.notion.com/p/424e5855be3981dab4ffe20ee7f549fe",
+  "title": "Explainable Artificial Intelligence to Improve Process Quality: Evidence from Semiconductor Manufacturing",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "Management Science",
+  "authors": "Senoner, Julian; Netland, Torbjørn; Feuerriegel, Stefan",
+  "year": 2022,
+  "url": "https://ethz.ch/content/dam/ethz/special-interest/mtec/pom-dam/documents/2021%20Senoner%20Netland%20Feuerriegel_Explainable_AI%20in%20manufacturing_postprint%20Management%20Science.pdf",
+  "doi": "10.1287/mnsc.2021.4190",
+  "version_or_edition": null,
+  "reliability_note": "査読論文の著者最終稿。実工程での要因実験と展開事例。"
+}
