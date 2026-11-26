@@ -17,5 +17,34 @@ jobs:
           python-version: '3.11'
       - run: python -m pip install 'jsonschema>=4.18'
       - run: |
-          git hash-object investigations/INV-000046/20_synthesis.json
-          PYTHONPATH=src python -m research_atelier.validation.validate_investigation INV-000046 --through 20
+          git hash-object investigations/INV-000046/30_analysis.json
+          PYTHONPATH=src python -m research_atelier.validation.validate_investigation INV-000046 --through 30
+          PYTHONPATH=src python - <<'PY'
+          import json, subprocess, re
+          from pathlib import Path
+          from research_atelier.reviewing.reconcile import reconcile_payload
+          b=Path('investigations/INV-000046')
+          c=json.loads((b/'00_context.json').read_text())
+          r=json.loads((b/'reviews/review-000001.json').read_text())
+          keys=['00_context','10_evidence','20_synthesis','30_analysis']
+          actual={k:subprocess.check_output(['git','hash-object',str(b/(k+'.json'))],text=True).strip() for k in keys}
+          print('BLOBS '+json.dumps(actual))
+          assert actual['00_context']==r['target']['artifact_blob_shas']['00_context']
+          assert all(actual[k]!=r['target']['artifact_blob_shas'][k] for k in keys[1:])
+          s=json.loads((b/'20_synthesis.json').read_text())
+          a=json.loads((b/'30_analysis.json').read_text())
+          text=a['working_answer']['text']
+          cases=re.split(r'(?m)^### C\d\d ',text)[1:]
+          assert len(cases)==11
+          expected={f'D0{i}.{k}' for i,n in enumerate([3,5,5,3,6,3,5,5,4],1) for k in range(1,n+1)}
+          known={x['knowledge_unit_id'] for x in s['knowledge_units']}
+          for case in cases:
+              axes=re.findall(r'(?m)^(D0[1-9]\.\d) ',case)
+              assert len(axes)==39 and set(axes)==expected
+              assert len(re.findall(r'(?m)^R[1-4]［',case))==4
+              assert set(re.findall(r'K\d{4}',case))<=known
+          print('ASSESSMENT_COUNTS cases=11 factors=429 inclusion=44')
+          p=reconcile_payload({'context':c,'current':{'review_status':'再作業中','latest_review_seq':1},'review':{'latest':r,'target_relation':'stale','issues':[]}})
+          print('RECONCILE '+json.dumps(p,ensure_ascii=False))
+          assert p['outcome']=='UPDATE' and p['changes']['Review Status']=='再レビュー待'
+          PY
