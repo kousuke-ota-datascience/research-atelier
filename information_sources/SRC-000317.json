@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000317",
+  "notion_url": "https://app.notion.com/p/424e5855be39813badd5d185ad0b9ef3",
+  "title": "先端技術導入促進事業 事例集 ケース2 AIを活用した研削技術の形式知化",
+  "source_type": "Report",
+  "journal_or_publisher": "長崎県",
+  "authors": null,
+  "year": 2022,
+  "url": "https://www.pref.nagasaki.lg.jp/uploads/2022/03/1648514347.pdf",
+  "doi": null,
+  "version_or_edition": null,
+  "reliability_note": "公的事業事例報告。期待値と実績、AI未実現を区別。"
+}

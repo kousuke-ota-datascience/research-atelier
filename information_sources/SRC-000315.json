@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000315",
+  "notion_url": "https://app.notion.com/p/424e5855be39812aac00c0caa35f1d87",
+  "title": "研削加工における工作物面性状監視システムの開発",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "JTEKT ENGINEERING JOURNAL",
+  "authors": null,
+  "year": 2024,
+  "url": "https://www.jtekt.co.jp/engineering-journal/assets/1021/1021_23.pdf",
+  "doi": null,
+  "version_or_edition": null,
+  "reliability_note": "開発者報告。加工後機上計測の検証結果と期待効果を区別。"
+}

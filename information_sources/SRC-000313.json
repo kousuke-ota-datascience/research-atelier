@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000313",
+  "notion_url": "https://app.notion.com/p/424e5855be3981419804ce20cbab471a",
+  "title": "富士通とSUBARU、エンジン部品研削加工工程の品質保証向上に向け高精度AIモデルを活用した実証実験を開始",
+  "source_type": "Web Page",
+  "journal_or_publisher": "富士通・SUBARU",
+  "authors": null,
+  "year": 2019,
+  "url": "https://info.archives.global.fujitsu/jp/news/2019/12/4.html",
+  "doi": null,
+  "version_or_edition": null,
+  "reliability_note": "共同発表。実証計画と実績を区別。"
+}
