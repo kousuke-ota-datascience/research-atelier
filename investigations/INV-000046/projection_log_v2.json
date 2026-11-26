@@ -4,8 +4,8 @@
   "target_rq_url": "https://app.notion.com/p/424e5855be3981b8b6f0f3e8cb0851cf",
   "rq_id": "RQ-000045",
   "source_investigation_id": "INV-000046",
-  "source_30_analysis_commit_sha": "b2538ade8d63ad43bbac806b895c6c1cdc9681bc",
-  "projection_timestamp": "2026-11-26T02:33:14.402885+00:00",
+  "source_30_analysis_commit_sha": "ec9b06880fce6fc4490efcd8541222b431c89ec4",
+  "projection_timestamp": "2026-11-26T05:56:00.371111+00:00",
   "projection_target": {
     "surface": "page_body",
     "section_heading": "# Working Answer"

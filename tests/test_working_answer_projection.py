@@ -173,6 +173,26 @@ class WorkingAnswerPatchTests(unittest.TestCase):
         readback = "# Working Answer\n## Answer\n```md\n<b>literal markdown</b>\n```"
         self.assertFalse(working_answer_section_matches(readback, analysis))
 
+    def test_notion_literal_dollar_and_bare_domain_roundtrip(self):
+        analysis = {"working_answer": {"text": 'Query "$230,000" and C3.ai. site:quantzig.com/case-studies/manufacturing-predictive-maintenance'}}
+        readback = (
+            '# Working Answer\n## Answer\nQuery "\\$230,000" and '
+            '[C3.ai](http://C3.ai). site:[quantzig.com/case-studies/manufacturing-predictive-maintenance]'
+            '(http://quantzig.com/case-studies/manufacturing-predictive-maintenance)'
+        )
+        self.assertEqual(working_answer_projection_state(readback, analysis), "CURRENT")
+        self.assertEqual(patch_working_answer_section(readback, analysis).action, "NOOP")
+        self.assertEqual(working_answer_projection_state(readback.replace("http://C3.ai", "http://other.ai"), analysis), "STALE")
+        self.assertEqual(working_answer_projection_state(readback.replace("230,000", "240,000"), analysis), "STALE")
+
+    def test_explicit_identity_link_remains_current(self):
+        analysis = {"working_answer": {"text": "[C3.ai](http://C3.ai)"}}
+        self.assertEqual(working_answer_projection_state(render_working_answer_section(analysis), analysis), "CURRENT")
+
+    def test_notion_literal_dollar_in_table_is_not_normalized(self):
+        analysis = {"working_answer": {"text": "| Cost |\n| --- |\n| $1 |"}}
+        self.assertFalse(working_answer_section_matches(render_working_answer_section(analysis).replace("$1", r"\$1"), analysis))
+
     def test_duplicate_target_heading_blocks_projection(self):
         body = "# Working Answer\nold one\n\n# Notes\nkeep\n\n# Working Answer\nold two"
         with self.assertRaises(DuplicateWorkingAnswerSectionError):
