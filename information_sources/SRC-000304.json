@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000304",
+  "notion_url": "https://app.notion.com/p/424e5855be398115b079fdca11098667",
+  "title": "JFEスチール IBM Watsonを活用し故障復旧時間を大幅に短縮",
+  "source_type": "Web Page",
+  "journal_or_publisher": "IBM Japan Newsroom",
+  "authors": "JFEスチール株式会社; 日本アイ・ビー・エム株式会社",
+  "year": 2019,
+  "url": "https://jp.newsroom.ibm.com/2019-03-07-JFE-IBM-Watson-recovery-time-hybrid-cloud",
+  "doi": null,
+  "version_or_edition": null,
+  "reliability_note": "共同プレスリリース。日報等を利用する故障発生後の復旧支援。未来故障予測との区別のため選択する。"
+}

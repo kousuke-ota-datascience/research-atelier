@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000300",
+  "notion_url": "https://app.notion.com/p/424e5855be39814dbff4cd76e6201385",
+  "title": "Enterprise AI for Aircraft Predictive Maintenance",
+  "source_type": "Report",
+  "journal_or_publisher": "C3.ai",
+  "authors": "C3.ai",
+  "year": 2023,
+  "url": "https://c3.ai/wp-content/uploads/2023/09/23_0911_C3_AI_CaseStudy_USAF_Sensor_Based_Algorithm.pdf",
+  "doi": null,
+  "version_or_edition": null,
+  "reliability_note": "技術提供企業の事例報告。SBAの正常センサー値推定・劣化検知と、PANDAの別の故障予測機能を区別する。全保全費実績は記載なし。"
+}

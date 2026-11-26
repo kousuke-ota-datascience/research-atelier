@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000301",
+  "notion_url": "https://app.notion.com/p/424e5855be398117a77edcd5b16cfaad",
+  "title": "C3.ai, Inc. — Predictive Maintenance",
+  "source_type": "Web Page",
+  "journal_or_publisher": "Defense Innovation Unit",
+  "authors": "Defense Innovation Unit",
+  "year": null,
+  "url": "https://www.diu.mil/solutions/portfolio/catalog/a0Tt0000009En6aEAC-a0ht000000AYgyGAAT",
+  "doi": null,
+  "version_or_edition": null,
+  "reliability_note": "政府機関による導入事例。2019年導入事業の報告であり、後年のB-1B SBAのみの成績に帰属させない。"
+}

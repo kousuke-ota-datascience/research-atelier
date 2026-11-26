@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000302",
+  "notion_url": "https://app.notion.com/p/424e5855be39816fabe6f525a2c6c8de",
+  "title": "Expert Predictive Maintenance Analytics to Cut Manufacturing Downtime",
+  "source_type": "Web Page",
+  "journal_or_publisher": "Quantzig",
+  "authors": "Quantzig",
+  "year": null,
+  "url": "https://www.quantzig.com/case-studies/manufacturing-predictive-maintenance",
+  "doi": null,
+  "version_or_edition": null,
+  "reliability_note": "匿名顧客に関する技術提供企業の事例。検索索引から原著ページの該当本文を取得したが直接openはキャッシュミス。公開日、費目、母数、独立検証は未確認。"
+}
