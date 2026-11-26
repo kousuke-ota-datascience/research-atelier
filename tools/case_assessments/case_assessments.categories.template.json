@@ -1,0 +1,120 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "case_assessments",
+  "authority": "derived",
+  "investigation_id": "<INV-ID>",
+  "rq_id": "<RQ-ID>",
+  "derived_from": {
+    "analysis_commit_sha": "<承認済みAnalysisのcommit SHA>",
+    "analysis_blob_sha": "<Analysisのblob SHA>",
+    "artifact_blob_shas": {
+      "00_context": "<blob SHA>",
+      "10_evidence": "<blob SHA>",
+      "20_synthesis": "<blob SHA>",
+      "30_analysis": "<blob SHA>"
+    },
+    "review_seq": "<最新PASS Reviewの連番>",
+    "review_target_commit_sha": "<Review対象のcommit SHA>",
+    "review_manifest_path": "<Review manifestのパス>",
+    "review_manifest_blob_sha": "<blob SHA>",
+    "projection_log_blob_sha": "<blob SHA>"
+  },
+  "factor_framework": {
+    "origin": "frozen_context_assumption",
+    "canonical_assumption": "<Contextの9カテゴリ定義原文>",
+    "factor_count": 9,
+    "factor_definitions": [
+      {
+        "factor_id": "<D01–D09>",
+        "factor_label": "<カテゴリ名>",
+        "definition_text": "<定義原文>",
+        "canonical_definition": "<定義節の原文>"
+      }
+    ]
+  },
+  "criteria_definitions": [
+    {
+      "criterion_id": "<R1–R4>",
+      "definition_text": "<採択条件の原文>",
+      "canonical_definition": "<Include原文>",
+      "include_index": "<1始まりのInclude配列位置>"
+    }
+  ],
+  "summary": {
+    "case_count": "<N>",
+    "factor_assessment_count": "<N×factor_count>",
+    "criterion_assessment_count": "<N×4>",
+    "eligibility_counts": {},
+    "criterion_status_counts": {},
+    "factor_rows_without_explicit_status": "<N×9>"
+  },
+  "cases": [
+    {
+      "case_id": "<Cxx>",
+      "name": "<事例名称の原文>",
+      "source_refs": [
+        "<SRC-ID>"
+      ],
+      "eligibility": "<full_match/factor_analysis/near_match/excluded>",
+      "canonical_eligibility": "<判定の原文>",
+      "knowledge_unit_scope": [
+        "<K-ID>"
+      ],
+      "canonical_header": "<見出し行の原文>",
+      "canonical_scope_line": "<根拠範囲行の原文>",
+      "analysis_line": "<1始まりの行番号>",
+      "criteria_assessments": [
+        {
+          "criterion_id": "<R1–R4>",
+          "status": "<confirmed/unconfirmed/not_met>",
+          "canonical_status": "<判定の原文>",
+          "assessment_text": null,
+          "reference_role": "case_scope",
+          "canonical_line": "<行全体の原文>",
+          "analysis_line": "<1始まりの行番号>",
+          "knowledge_unit_refs": [
+            "<K-ID>"
+          ],
+          "evidence_refs": [
+            "<E-ID>"
+          ],
+          "source_refs": [
+            "<SRC-ID>"
+          ]
+        }
+      ],
+      "factor_assessments": [
+        {
+          "factor_id": "<D01–D09>",
+          "factor_label": "<ファクター名の原文>",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "<判定文の原文>",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "<行全体の原文>",
+          "analysis_line": "<1始まりの行番号>",
+          "knowledge_unit_refs": [
+            "<K-ID>"
+          ],
+          "evidence_refs": [
+            "<E-ID>"
+          ],
+          "source_refs": [
+            "<SRC-ID>"
+          ]
+        }
+      ],
+      "assessment_reason": "<事例全体の判定理由原文>",
+      "canonical_reason_line": "<判定理由の行全体>",
+      "reason_analysis_line": "<行番号>",
+      "scope_analysis_line": "<行番号>",
+      "evidence_refs": [
+        "<E-ID>"
+      ]
+    }
+  ],
+  "contract": "manufacturing_quality_categories_v2"
+}
