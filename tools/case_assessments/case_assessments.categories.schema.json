@@ -1,0 +1,526 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "製造品質分析のカテゴリ記述型事例評価契約 v2",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "2.0.0"
+    },
+    "artifact_type": {
+      "const": "case_assessments"
+    },
+    "authority": {
+      "const": "derived"
+    },
+    "investigation_id": {
+      "type": "string",
+      "pattern": "^INV-[0-9]{6}$"
+    },
+    "rq_id": {
+      "type": "string",
+      "pattern": "^RQ-[0-9]{6}$"
+    },
+    "derived_from": {
+      "type": "object",
+      "properties": {
+        "analysis_commit_sha": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{40}$"
+        },
+        "analysis_blob_sha": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{40}$"
+        },
+        "artifact_blob_shas": {
+          "type": "object",
+          "properties": {
+            "00_context": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{40}$"
+            },
+            "10_evidence": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{40}$"
+            },
+            "20_synthesis": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{40}$"
+            },
+            "30_analysis": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{40}$"
+            }
+          },
+          "required": [
+            "00_context",
+            "10_evidence",
+            "20_synthesis",
+            "30_analysis"
+          ],
+          "additionalProperties": false
+        },
+        "review_seq": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "review_target_commit_sha": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{40}$"
+        },
+        "review_manifest_path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "review_manifest_blob_sha": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{40}$"
+        },
+        "projection_log_blob_sha": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{40}$"
+        }
+      },
+      "required": [
+        "analysis_commit_sha",
+        "analysis_blob_sha",
+        "artifact_blob_shas",
+        "review_seq",
+        "review_target_commit_sha",
+        "review_manifest_path",
+        "review_manifest_blob_sha",
+        "projection_log_blob_sha"
+      ],
+      "additionalProperties": false
+    },
+    "factor_framework": {
+      "type": "object",
+      "properties": {
+        "origin": {
+          "const": "frozen_context_assumption"
+        },
+        "canonical_assumption": {
+          "type": "string",
+          "minLength": 1
+        },
+        "factor_count": {
+          "const": 9
+        },
+        "factor_definitions": {
+          "type": "array",
+          "minItems": 9,
+          "maxItems": 9,
+          "items": {
+            "type": "object",
+            "properties": {
+              "factor_id": {
+                "type": "string",
+                "pattern": "^D0[1-9]$"
+              },
+              "factor_label": {
+                "type": "string",
+                "minLength": 1
+              },
+              "definition_text": {
+                "type": "string",
+                "minLength": 1
+              },
+              "canonical_definition": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "factor_id",
+              "factor_label",
+              "definition_text",
+              "canonical_definition"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "origin",
+        "canonical_assumption",
+        "factor_count",
+        "factor_definitions"
+      ],
+      "additionalProperties": false
+    },
+    "criteria_definitions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "criterion_id": {
+            "type": "string",
+            "pattern": "^R[1-4]$"
+          },
+          "definition_text": {
+            "type": "string",
+            "minLength": 1
+          },
+          "canonical_definition": {
+            "type": "string",
+            "minLength": 1
+          },
+          "include_index": {
+            "type": "integer",
+            "minimum": 1
+          }
+        },
+        "required": [
+          "criterion_id",
+          "definition_text",
+          "canonical_definition",
+          "include_index"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 4,
+      "maxItems": 4
+    },
+    "summary": {
+      "type": "object",
+      "properties": {
+        "case_count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "factor_assessment_count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "criterion_assessment_count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "eligibility_counts": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "criterion_status_counts": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "factor_rows_without_explicit_status": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "case_count",
+        "factor_assessment_count",
+        "criterion_assessment_count",
+        "eligibility_counts",
+        "factor_rows_without_explicit_status",
+        "criterion_status_counts"
+      ],
+      "additionalProperties": false
+    },
+    "cases": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "case_id": {
+            "type": "string",
+            "pattern": "^C[0-9]{2,}$"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source_refs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^SRC-[0-9]{6}$"
+            },
+            "uniqueItems": true,
+            "minItems": 1
+          },
+          "eligibility": {
+            "enum": [
+              "full_match",
+              "factor_analysis",
+              "near_match",
+              "excluded"
+            ]
+          },
+          "canonical_eligibility": {
+            "enum": [
+              "完全適合",
+              "要因分析",
+              "近接",
+              "除外"
+            ]
+          },
+          "knowledge_unit_scope": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^K[0-9]{4}$"
+            },
+            "uniqueItems": true,
+            "minItems": 1
+          },
+          "canonical_header": {
+            "type": "string",
+            "minLength": 1
+          },
+          "canonical_scope_line": {
+            "type": "string",
+            "minLength": 1
+          },
+          "analysis_line": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "criteria_assessments": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "criterion_id": {
+                  "type": "string",
+                  "pattern": "^R[1-4]$"
+                },
+                "status": {
+                  "enum": [
+                    "confirmed",
+                    "unconfirmed",
+                    "not_met"
+                  ]
+                },
+                "canonical_status": {
+                  "enum": [
+                    "確認済",
+                    "未確認",
+                    "不適合"
+                  ]
+                },
+                "assessment_text": {
+                  "type": "null"
+                },
+                "reference_role": {
+                  "const": "case_scope"
+                },
+                "canonical_line": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "analysis_line": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "knowledge_unit_refs": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "^K[0-9]{4}$"
+                  },
+                  "uniqueItems": true,
+                  "minItems": 1
+                },
+                "evidence_refs": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "^E[0-9]{4}$"
+                  },
+                  "uniqueItems": true,
+                  "minItems": 1
+                },
+                "source_refs": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "^SRC-[0-9]{6}$"
+                  },
+                  "uniqueItems": true,
+                  "minItems": 1
+                }
+              },
+              "required": [
+                "criterion_id",
+                "status",
+                "canonical_status",
+                "assessment_text",
+                "reference_role",
+                "canonical_line",
+                "analysis_line",
+                "knowledge_unit_refs",
+                "evidence_refs",
+                "source_refs"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 4,
+            "maxItems": 4
+          },
+          "factor_assessments": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "factor_id": {
+                  "type": "string",
+                  "pattern": "^D0[1-9]$"
+                },
+                "factor_label": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "canonical_status": {
+                  "type": "null"
+                },
+                "applicability": {
+                  "type": "null"
+                },
+                "epistemic_status": {
+                  "type": "null"
+                },
+                "value": {
+                  "type": "null"
+                },
+                "assessment_text": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "limitations": {
+                  "type": "null"
+                },
+                "reference_role": {
+                  "const": "category_scope"
+                },
+                "canonical_line": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "analysis_line": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "knowledge_unit_refs": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "^K[0-9]{4}$"
+                  },
+                  "uniqueItems": true,
+                  "minItems": 1
+                },
+                "evidence_refs": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "^E[0-9]{4}$"
+                  },
+                  "uniqueItems": true,
+                  "minItems": 1
+                },
+                "source_refs": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "^SRC-[0-9]{6}$"
+                  },
+                  "uniqueItems": true,
+                  "minItems": 1
+                }
+              },
+              "required": [
+                "factor_id",
+                "factor_label",
+                "canonical_status",
+                "applicability",
+                "epistemic_status",
+                "value",
+                "assessment_text",
+                "limitations",
+                "reference_role",
+                "canonical_line",
+                "analysis_line",
+                "knowledge_unit_refs",
+                "evidence_refs",
+                "source_refs"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 9,
+            "maxItems": 9
+          },
+          "assessment_reason": {
+            "type": "string",
+            "minLength": 1
+          },
+          "canonical_reason_line": {
+            "type": "string",
+            "minLength": 1
+          },
+          "reason_analysis_line": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "scope_analysis_line": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "evidence_refs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^E[0-9]{4}$"
+            },
+            "uniqueItems": true,
+            "minItems": 1
+          }
+        },
+        "required": [
+          "case_id",
+          "name",
+          "source_refs",
+          "eligibility",
+          "canonical_eligibility",
+          "knowledge_unit_scope",
+          "canonical_header",
+          "canonical_scope_line",
+          "analysis_line",
+          "criteria_assessments",
+          "factor_assessments",
+          "assessment_reason",
+          "canonical_reason_line",
+          "reason_analysis_line",
+          "scope_analysis_line",
+          "evidence_refs"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 1
+    },
+    "contract": {
+      "const": "manufacturing_quality_categories_v2"
+    }
+  },
+  "required": [
+    "schema_version",
+    "artifact_type",
+    "authority",
+    "contract",
+    "investigation_id",
+    "rq_id",
+    "derived_from",
+    "factor_framework",
+    "criteria_definitions",
+    "summary",
+    "cases"
+  ],
+  "additionalProperties": false
+}
