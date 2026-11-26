@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000307",
+  "notion_url": "https://app.notion.com/p/424e5855be3981289f85ca862eda644c",
+  "title": "High-quality Production with the Fusion of Process Knowledge and Data Analysis Technology - Process Data Analysis Using Machine Learning -",
+  "source_type": "Web Page",
+  "journal_or_publisher": "Yokogawa Electric",
+  "authors": null,
+  "year": null,
+  "url": "https://www.yokogawa.com/library/resources/references/successstory-sumitomoseika-chemicals-en/",
+  "doi": null,
+  "version_or_edition": null,
+  "reliability_note": "ベンダー顧客事例。改善量の実測は未確認。"
+}
