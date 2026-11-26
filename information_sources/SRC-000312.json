@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000312",
+  "notion_url": "https://app.notion.com/p/424e5855be39813db27bc48b0f2c4023",
+  "title": "Machine learning applied to chemical synthesis optimization",
+  "source_type": "Web Page",
+  "journal_or_publisher": "MP DATA",
+  "authors": null,
+  "year": null,
+  "url": "https://www.mpdata.fr/en/customer-cases/machine-learning-applied-to-chemical-synthesis-optimization/",
+  "doi": null,
+  "version_or_edition": null,
+  "reliability_note": "ベンダー事例。指標定義・比較設計・介入詳細が限定的。"
+}
