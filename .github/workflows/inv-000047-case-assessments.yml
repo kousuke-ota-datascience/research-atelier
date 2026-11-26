@@ -1,0 +1,35 @@
+name: INV-000047 derived case assessments validation
+on:
+  push:
+    branches: ['validation/inv-000047-case-assessments']
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install 'jsonschema>=4.18'
+      - name: Test both contracts and generate derivative
+        run: |
+          set -euo pipefail
+          python -m unittest discover -s tools/case_assessments -p 'test*.py' -v
+          python tools/case_assessments/build.py INV-000046 --check
+          python tools/case_assessments/build.py INV-000047
+          python tools/case_assessments/build.py INV-000047 --check
+          python - <<'PY'
+          import base64, gzip, hashlib, json
+          from pathlib import Path
+          data=Path('investigations/INV-000047/derived/case_assessments.json').read_bytes()
+          obj=json.loads(data)
+          print('DERIVATIVE_SUMMARY='+json.dumps(obj['summary'],ensure_ascii=False))
+          print('DERIVATIVE_SHA256='+hashlib.sha256(data).hexdigest())
+          encoded=base64.b64encode(gzip.compress(data,mtime=0)).decode('ascii')
+          for i in range(0,len(encoded),3000):
+              print(f'DERIVATIVE_CHUNK_{i//3000:04d}='+encoded[i:i+3000])
+          PY
