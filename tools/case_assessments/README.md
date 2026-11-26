@@ -38,13 +38,13 @@ python tools/case_assessments/build.py INV-000047 --check
 
 前提条件は、現行のcommit済みcanonical chainに対する最新のReviewがPASSであること、および同じAnalysis blobについて正本のprojection logがSUCCESSであること。既存のthrough-30 validatorとReview history helperを利用し、正本の判定規則は再実装しない。
 
-frozen Contextから参照frameworkのRQ / INV / commit / blobを取得し、固定ファクター定義と各事例の採択条件・判定を抽出する。入力形式の変化、ファクターの欠損・重複・順序不整合、参照不整合、Review対象の不一致、Finalizationの未完了を検出した場合は処理を停止する。生成器で入力を暗黙に修正して成功させてはならない。
+v1はfrozen Contextから参照frameworkのRQ / INV / commit / blobを取得し、固定ファクター定義と各事例の採択条件・判定を抽出する。v2はfrozen Context内のカテゴリ定義を使用する。入力形式の変化、ファクターの欠損・重複・順序不整合、参照不整合、Review対象の不一致、Finalizationの未完了を検出した場合は処理を停止する。生成器で入力を暗黙に修正して成功させてはならない。
 
 出力先は `investigations/<INV-ID>/derived/case_assessments.json` である。生成時刻に依存する値は追加せず、同じcommit済み入力から同一バイト列を生成する。事例数は入力から取得し、固定値としない。R1～R4の4条件は本事例比較固有の契約であり、異なる採択条件を用いる場合はadapterまたは契約versionを明示して対応する。
 
-`factor_framework` には参照元のファクター定義を原文のまま保存する。定義文に含まれるK参照はframework側のInvestigationに属し、事例側のK参照とは別の名前空間である。
+`factor_framework` には定義の原文を保持する。v1の定義文に含まれるK参照はframework側のInvestigationに属し、事例側のK参照とは別の名前空間である。v2は当該Contextの定義に従う。
 
-## フィールドの意味と保持規則
+## フィールドの意味と保持規則（v1。v2の差異は末尾を参照）
 
 - `canonical_line` と `analysis_line` は、Review済み `working_answer.text` の原文行と1始まりの行番号を表す。JSONファイル自体の行番号ではない。
 - `assessment_text` は部分的に確認できた事実、未知の情報、限定条件、留保を含む判定文全体を保持する。`value` は該当する行でのみこの文を格納し、それ以外は `null` とする。原文は削除しない。`limitations: null` は限定条件を別フィールドへ抽出していないことを意味し、限定条件が存在しないことを意味しない。
