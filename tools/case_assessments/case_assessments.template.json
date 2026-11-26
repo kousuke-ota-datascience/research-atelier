@@ -1,0 +1,112 @@
+{
+  "schema_version": "1.0.0",
+  "artifact_type": "case_assessments",
+  "authority": "derived",
+  "investigation_id": "<INV-ID>",
+  "rq_id": "<RQ-ID>",
+  "derived_from": {
+    "analysis_commit_sha": "<accepted commit>",
+    "analysis_blob_sha": "<analysis blob>",
+    "artifact_blob_shas": {
+      "00_context": "<blob>",
+      "10_evidence": "<blob>",
+      "20_synthesis": "<blob>",
+      "30_analysis": "<blob>"
+    },
+    "review_seq": "<latest PASS sequence>",
+    "review_target_commit_sha": "<review target commit>",
+    "review_manifest_path": "<manifest path>",
+    "review_manifest_blob_sha": "<blob>",
+    "projection_log_blob_sha": "<blob>"
+  },
+  "factor_framework": {
+    "rq_id": "<framework RQ-ID>",
+    "investigation_id": "<framework INV-ID>",
+    "analysis_commit_sha": "<framework commit>",
+    "analysis_blob_sha": "<framework blob>",
+    "factor_count": "<N>",
+    "factor_definitions": [
+      {
+        "factor_id": "<Dxx.y>",
+        "framework_class": "<C/A/P/U>",
+        "definition_text": "<exact framework definition>"
+      }
+    ]
+  },
+  "criteria_definitions": [
+    {
+      "criterion_id": "<R1–R4>",
+      "definition_text": "<exact criterion text>"
+    }
+  ],
+  "summary": {
+    "case_count": "<N>",
+    "factor_assessment_count": "<N×factor_count>",
+    "criterion_assessment_count": "<N×4>",
+    "eligibility_counts": {},
+    "factor_status_counts": {},
+    "criterion_status_counts": {}
+  },
+  "cases": [
+    {
+      "case_id": "<Cxx>",
+      "name": "<exact name>",
+      "source_refs": [
+        "<SRC-ID>"
+      ],
+      "eligibility": "<full_match/near_match/excluded>",
+      "canonical_eligibility": "<original>",
+      "exclusion_reason": null,
+      "knowledge_unit_scope": [
+        "<K-ID>"
+      ],
+      "canonical_header": "<exact header>",
+      "canonical_scope_line": "<exact scope line>",
+      "analysis_line": "<1-based line>",
+      "criteria_assessments": [
+        {
+          "criterion_id": "<R1–R4>",
+          "status": "<confirmed/unconfirmed/not_met>",
+          "canonical_status": "<original>",
+          "assessment_text": "<exact text>",
+          "reference_role": "<basis/confirmation_scope>",
+          "canonical_line": "<exact line>",
+          "analysis_line": "<1-based line>",
+          "knowledge_unit_refs": [
+            "<K-ID>"
+          ],
+          "evidence_refs": [
+            "<E-ID>"
+          ],
+          "source_refs": [
+            "<SRC-ID>"
+          ]
+        }
+      ],
+      "factor_assessments": [
+        {
+          "factor_id": "<Dxx.y>",
+          "factor_label": "<original label>",
+          "canonical_status": "<original status>",
+          "applicability": "<applicable/undetermined/not_applicable/mixed>",
+          "epistemic_status": "<reported/inference/undetermined/not_applicable/mixed>",
+          "value": "<exact assessment_text when applicable; else null>",
+          "assessment_text": "<exact text>",
+          "limitations": null,
+          "reference_role": "<basis/confirmation_scope>",
+          "canonical_line": "<exact line>",
+          "analysis_line": "<1-based line>",
+          "knowledge_unit_refs": [
+            "<K-ID>"
+          ],
+          "evidence_refs": [
+            "<E-ID>"
+          ],
+          "source_refs": [
+            "<SRC-ID>"
+          ]
+        }
+      ]
+    }
+  ]
+}
