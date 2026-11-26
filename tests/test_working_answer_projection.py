@@ -193,6 +193,37 @@ class WorkingAnswerPatchTests(unittest.TestCase):
         analysis = {"working_answer": {"text": "| Cost |\n| --- |\n| $1 |"}}
         self.assertFalse(working_answer_section_matches(render_working_answer_section(analysis).replace("$1", r"\$1"), analysis))
 
+    def test_render_surplus_plain_separator_is_presentation_only(self):
+        raw = "| A | B |\n| --- | --- | --- |\n| x | y |"
+        analysis = {"working_answer": {"text": raw}}
+        expected = "# Working Answer\n## Answer\n| A | B |\n| --- | --- |\n| x | y |"
+        self.assertEqual(render_working_answer_section(analysis), expected)
+        self.assertEqual(analysis["working_answer"]["text"], raw)
+        self.assertEqual(working_answer_projection_state(expected, analysis), "CURRENT")
+        self.assertEqual(working_answer_projection_state(expected.replace("| x | y |", "| x | z |"), analysis), "STALE")
+        self.assertEqual(working_answer_projection_state(expected.replace("| x | y |", "| x |"), analysis), "STALE")
+
+    def test_render_ambiguous_or_fenced_table_is_not_corrected(self):
+        for raw in (
+            "| A | B |\n| --- | --- | --- |\n| x | y | z |",
+            "| A | B |\n| --- | :---: | --- |\n| x | y |",
+            "| A | B |\n| --- | --- | --- |",
+            "```md\n| A | B |\n| --- | --- | --- |\n| x | y |\n```",
+            "~~~md\n| A | B |\n| --- | --- | --- |\n| x | y |\n~~~",
+        ):
+            self.assertEqual(render_working_answer_section({"working_answer": {"text": raw}}),
+                             "# Working Answer\n## Answer\n" + raw)
+
+    def test_notion_numeric_less_than_is_current_only_for_exact_prose(self):
+        analysis = {"working_answer": {"text": "Welch p<0.001"}}
+        readback = render_working_answer_section(analysis).replace("p<", r"p\<")
+        self.assertEqual(working_answer_projection_state(readback, analysis), "CURRENT")
+        self.assertEqual(working_answer_projection_state(readback.replace("0.001", "0.01"), analysis), "STALE")
+        for literal in ("| p<0.001 |", "```\np<0.001\n```", "`p<0.001`"):
+            a = {"working_answer": {"text": literal}}
+            self.assertEqual(working_answer_projection_state(
+                render_working_answer_section(a).replace("p<", r"p\<"), a), "STALE")
+
     def test_duplicate_target_heading_blocks_projection(self):
         body = "# Working Answer\nold one\n\n# Notes\nkeep\n\n# Working Answer\nold two"
         with self.assertRaises(DuplicateWorkingAnswerSectionError):
