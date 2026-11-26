@@ -1,0 +1,27 @@
+name: INV-000046 Working Answer rendering
+on:
+  pull_request:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: |
+          PYTHONPATH=src python - <<'PY'
+          import json
+          from pathlib import Path
+          from research_atelier.projection.working_answer import render_working_answer_section
+          a=json.loads(Path('investigations/INV-000046/30_analysis.json').read_text())
+          s=render_working_answer_section(a)
+          for n in range(0,len(s),1000):
+              print('RENDER_PART '+json.dumps(s[n:n+1000],ensure_ascii=False))
+          print('RENDER_LENGTH',len(s))
+          PY
