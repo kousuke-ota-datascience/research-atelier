@@ -1,0 +1,284 @@
+{
+  "schema_version": "2.1.0",
+  "artifact_type": "10_evidence",
+  "investigation_id": "INV-000048",
+  "rq_id": "RQ-000047",
+  "snapshot_at": "2026-11-26T13:09:21Z",
+  "sources": [
+    {
+      "source_id": "SRC-000313",
+      "source_revision": {
+        "commit_sha": "c42d75367ea01f2ecbbccbb7552c9c73f61952b2",
+        "blob_sha": "9785b2e5be8b2ed97b3bdac7343bac7748d9a2e9"
+      },
+      "accessed_at": "2026-11-26T13:09:21Z",
+      "notion_url": "https://app.notion.com/p/424e5855be3981419804ce20cbab471a"
+    },
+    {
+      "source_id": "SRC-000314",
+      "source_revision": {
+        "commit_sha": "c42d75367ea01f2ecbbccbb7552c9c73f61952b2",
+        "blob_sha": "8852b1053ce9430a1e56c7a5311a19a5fe6fb601"
+      },
+      "accessed_at": "2026-11-26T13:09:21Z",
+      "notion_url": "https://app.notion.com/p/424e5855be39811b8210e56416783ac5"
+    },
+    {
+      "source_id": "SRC-000315",
+      "source_revision": {
+        "commit_sha": "c42d75367ea01f2ecbbccbb7552c9c73f61952b2",
+        "blob_sha": "3809fde192993144c92a50b42710fa6fafc287e1"
+      },
+      "accessed_at": "2026-11-26T13:09:21Z",
+      "notion_url": "https://app.notion.com/p/424e5855be39812aac00c0caa35f1d87"
+    },
+    {
+      "source_id": "SRC-000316",
+      "source_revision": {
+        "commit_sha": "c42d75367ea01f2ecbbccbb7552c9c73f61952b2",
+        "blob_sha": "1679ed0002ce4e43e5e5443bd8d71fbd4c2abd42"
+      },
+      "accessed_at": "2026-11-26T13:09:21Z",
+      "notion_url": "https://app.notion.com/p/424e5855be39814091bbf42c01e7de13"
+    },
+    {
+      "source_id": "SRC-000317",
+      "source_revision": {
+        "commit_sha": "c42d75367ea01f2ecbbccbb7552c9c73f61952b2",
+        "blob_sha": "39ec846e1fa2a4161f6bf0df35edb01e57ef7cd2"
+      },
+      "accessed_at": "2026-11-26T13:09:21Z",
+      "notion_url": "https://app.notion.com/p/424e5855be39813badd5d185ad0b9ef3"
+    },
+    {
+      "source_id": "SRC-000318",
+      "source_revision": {
+        "commit_sha": "c42d75367ea01f2ecbbccbb7552c9c73f61952b2",
+        "blob_sha": "ffbdb579fb365af4d7c25f7bd20cf9b4c5a7df74"
+      },
+      "accessed_at": "2026-11-26T13:09:21Z",
+      "notion_url": "https://app.notion.com/p/424e5855be3981998197eb64fb477fc4"
+    },
+    {
+      "source_id": "SRC-000319",
+      "source_revision": {
+        "commit_sha": "c42d75367ea01f2ecbbccbb7552c9c73f61952b2",
+        "blob_sha": "21614e5a1d0a5096c28c41770b9d72af6f22f7ca"
+      },
+      "accessed_at": "2026-11-26T13:09:21Z",
+      "notion_url": "https://app.notion.com/p/424e5855be3981e3a6dde98b71f02843"
+    }
+  ],
+  "evidence_items": [
+    {
+      "evidence_id": "E0001",
+      "content": "大泉工場の量産カムシャフト研削工程で、設備の振動・主軸動力値と表面粗さ・表面形状などの品質データを学習に用い、加工中に各カムシャフトの良否を判定するRandom Forestモデルを共同開発した。実測品質との照合を行う実証を計画。",
+      "source_locator": "実証実験の概要（内容）、注6",
+      "selection_reason": "RQ-000047の研削品質・状態監視・介入の検証境界を記録",
+      "note_type": "Method",
+      "provenance": {
+        "source_id": "SRC-000313",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/424e5855be39816c9790dbe1283c7583",
+          "title": "SUBARU：振動・主軸動力による全数品質判定モデル"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0002",
+      "content": "品質基準を守りながら、定期ドレッシングを必要時の実施に変え、間隔を延ばせるか検証する計画を2019年12月に発表した。実際の間隔延伸量を報告した記述ではない。",
+      "source_locator": "実証実験の概要（内容）末尾",
+      "selection_reason": "RQ-000047の研削品質・状態監視・介入の検証境界を記録",
+      "note_type": "Claim",
+      "provenance": {
+        "source_id": "SRC-000313",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/424e5855be398159803ce338c5e58370",
+          "title": "SUBARU：必要時ドレッシングは検証計画"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0003",
+      "content": "2019年12月～2020年12月の量産実証、2020年8月～2021年12月の運用管理実証を経て、2022年1月末に大泉工場で本格稼働。全カムシャフトの振動・主軸動力をエッジ収集し、推測品質が基準範囲内か判定して設備側へフィードバックする。発表は高精度・リアルタイムの品質保証を報告するが、不良流出率・偽陰性率・母数・判定後の具体的排出動作は記載しない。",
+      "source_locator": "背景、導入したシステムの概要 1・2",
+      "selection_reason": "RQ-000047の研削品質・状態監視・介入の検証境界を記録",
+      "note_type": "Result",
+      "provenance": {
+        "source_id": "SRC-000314",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/424e5855be398125a520c82abdea5df8",
+          "title": "SUBARU：量産本格稼働と品質判定フィードバック"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0004",
+      "content": "設備経年劣化・環境変化によるモデル精度低下を課題とし、推論と検査結果を照合し、結果を蓄積・評価してチューニング時期を判断する運用管理機能を導入。必要に応じ再学習・エッジ再展開が可能。2022年の発表ではドレッシング間隔延伸の定量実績は記載されない。",
+      "source_locator": "背景、導入したシステムの概要 1(2)",
+      "selection_reason": "RQ-000047の研削品質・状態監視・介入の検証境界を記録",
+      "note_type": "Method",
+      "provenance": {
+        "source_id": "SRC-000314",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/424e5855be3981e3877fc6d2b1c68591",
+          "title": "SUBARU：モデルの経年変化と再学習管理"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0005",
+      "content": "円筒研削盤の定寸装置を転用し、加工後の工作物を回転・トラバースさせて変位と追加加速度センサーの振動を測る。低周波側からうねり、高周波側から細かい面性状を捉え、各マップの位相を合わせ合成。三次元面性状マップを構成する。研削中の接触振動による品質予測とは測定時点が異なる。",
+      "source_locator": "pp.116–118 §2.2, 図2・5",
+      "selection_reason": "RQ-000047の研削品質・状態監視・介入の検証境界を記録",
+      "note_type": "Method",
+      "provenance": {
+        "source_id": "SRC-000315",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/424e5855be3981cd9febc5c928e003bd",
+          "title": "JTEKT：加工後の面性状機上推定"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0006",
+      "content": "連続研削後の工作物の面性状変化を追跡し、マップから推定した粗さと実測粗さの相関係数は0.92。図4では差が0.05 µm以下と表示。測定・解析・数値化・結果表示のシステムを開発し、約10秒の機上測定、研削盤への情報フィードバックを報告。",
+      "source_locator": "pp.117–119 §2.3・3.1, 図3–6",
+      "selection_reason": "RQ-000047の研削品質・状態監視・介入の検証境界を記録",
+      "note_type": "Result",
+      "provenance": {
+        "source_id": "SRC-000315",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/424e5855be3981a29e65d4715c31c8a6",
+          "title": "JTEKT：粗さの実測比較と機上監視"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0007",
+      "content": "面性状の変化・上限を監視してツルーイング間隔を見直す活用法を提示。ドライブピニオン加工で検査工数・不良・砥石使用数減少を見込んだ年額効果を試算。自動ツルーイングは今後の展開。比較運用での実際の節約実績とは区別する。",
+      "source_locator": "pp.119–120 §3.2–3.3",
+      "selection_reason": "RQ-000047の研削品質・状態監視・介入の検証境界を記録",
+      "note_type": "Claim",
+      "provenance": {
+        "source_id": "SRC-000315",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/424e5855be39817c9292cab717695c95",
+          "title": "JTEKT：ツルーイング間隔・工具費削減は期待効果"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0008",
+      "content": "生産に近い条件で研削焼けを発生させた391実験。AE・主軸電流・動力信号の時間周波数変換等から878特徴を抽出し、遺伝的プログラミングで特徴選択器・分類器の組合せを探索。ナイタル腐食検査に基づく焼けラベルで学習・評価。",
+      "source_locator": "Methods, experimental setup, feature extraction, Abstract",
+      "selection_reason": "RQ-000047の研削品質・状態監視・介入の検証境界を記録",
+      "note_type": "Method",
+      "provenance": {
+        "source_id": "SRC-000316",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/424e5855be3981088b49d7fb6e9d395d",
+          "title": "Sauterら：研削焼けの多センサー特徴抽出"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0009",
+      "content": "二値分類で約99%、多クラスで98%超の精度を報告。SMOTEで少数クラスを増やし訓練390・テスト69となった評価設計。テスト側にも合成データがあるため、実生産の実不良品だけを用いた外部検証とは異なる。実際の流出率低下は報告されない。",
+      "source_locator": "Results, Fig.7, binary/multi-class classification",
+      "selection_reason": "RQ-000047の研削品質・状態監視・介入の検証境界を記録",
+      "note_type": "Result",
+      "provenance": {
+        "source_id": "SRC-000316",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/424e5855be3981f4b8b6d7ef13fbd94c",
+          "title": "Sauterら：研削焼け分類評価と検証境界"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0010",
+      "content": "超精密金型部品エジェクタピンの研削。砥石状態が悪化すると外観傷・寸法不良の要因になる。振動センサー・収集Box・PCを設置して振動の変化を可視化し、熟練者判断の形式知化を試みた。",
+      "source_locator": "事例2 pp.3–4 課題・課題解決の実証",
+      "selection_reason": "RQ-000047の研削品質・状態監視・介入の検証境界を記録",
+      "note_type": "Method",
+      "provenance": {
+        "source_id": "SRC-000317",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/424e5855be3981eab24fd14828e64c09",
+          "title": "湘南サンライズ工業：砥石の状態可視化"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0011",
+      "content": "振動の変化量が小さくAIモデル構築には至らなかった。一方、振動可視化で砥石状態を判断しやすくなり、1製品につき複数回行っていたドレス回数・加工時間の削減につながったと報告。生産効率約20%向上は見込みであり実測比較値ではない。",
+      "source_locator": "事例2 p.4 実施効果",
+      "selection_reason": "RQ-000047の研削品質・状態監視・介入の検証境界を記録",
+      "note_type": "Result",
+      "provenance": {
+        "source_id": "SRC-000317",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/424e5855be39817da8bfc5f76fca590b",
+          "title": "湘南サンライズ工業：AI未構築とドレス回数削減"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0012",
+      "content": "Supertech CNC平面研削盤のテールストッククイルに接線方向（Y軸）の加速度計を取り付け、160 kHzで採取。Mahr粗さ計のRa（0.06～0.14 µm）を参照値とし、4実験×20試行の80振動信号をスペクトログラム化・画像拡張してCNNで回帰。",
+      "source_locator": "著者原稿 Abstract、実験方法",
+      "selection_reason": "RQ-000047の研削品質・状態監視・介入の検証境界を記録",
+      "note_type": "Method",
+      "provenance": {
+        "source_id": "SRC-000318",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/424e5855be398141b9a4cb04575d7151",
+          "title": "Hanchateら：平面研削の振動・粗さ推定"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0013",
+      "content": "最高モデルは全体R²=0.95、訓練0.99、テスト0.81。LIMEで11.7～19.1 kHzの帯域を重要と評価し、30/20/10/5 kHz相当の帯域制限モデルも比較。著者は標本が少なく実世界で同程度の精度を保証できないと述べる。介入・流出・交換実績は報告されない。",
+      "source_locator": "著者原稿 Abstract, Figs.14–16, Conclusions",
+      "selection_reason": "RQ-000047の研削品質・状態監視・介入の検証境界を記録",
+      "note_type": "Result",
+      "provenance": {
+        "source_id": "SRC-000318",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/424e5855be3981b4af80ef3a23c5bf90",
+          "title": "Hanchateら：LIME周波数帯と回帰性能"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0014",
+      "content": "平面連続研削でAE時周波数表現を用い、砥粒状態の光学観察をラベルとしてResNetで切りくず除去・自生発刃・目詰まり・切れ刃鈍化の共存を分類。macro F1約0.80、AUC 0.73～0.81。WA46砥石・S45C工作物。",
+      "source_locator": "pp.3089–3124 Abstract, §3.3",
+      "selection_reason": "RQ-000047の研削品質・状態監視・介入の検証境界を記録",
+      "note_type": "Method",
+      "provenance": {
+        "source_id": "SRC-000319",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/424e5855be39818cb793e7fe4744d039",
+          "title": "Chaoら：AEマルチラベル砥石状態認識"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0015",
+      "content": "累積除去量0.6 mmごとにAEを採取し8区間（計4.8 mm）で各区間後のRaを測定。目詰まりと鈍化（自生発刃併発を含む）が5区間以上持続する場合、直ちにドレッシングを要するという基準を提案。実験では第7区間以降にRaが0.4 µmの目標範囲に回復しなくなったと報告。劣化判定・粗さとの関係の実験検証であり、基準に従って介入した群の比較・費用削減は示されない。閾値は条件に応じ再校正が必要。",
+      "source_locator": "§3.3.1–3.4, §4.2, §4.3",
+      "selection_reason": "RQ-000047の研削品質・状態監視・介入の検証境界を記録",
+      "note_type": "Result",
+      "provenance": {
+        "source_id": "SRC-000319",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/424e5855be3981dcbb96d6ef0e8a6f20",
+          "title": "Chaoら：連続劣化と粗さ限界によるドレッシング基準"
+        }
+      }
+    }
+  ]
+}

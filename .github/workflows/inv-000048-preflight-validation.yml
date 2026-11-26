@@ -1,22 +1,14 @@
-name: INV-000048 source validation
+name: INV-000048 evidence validation
 on: [pull_request]
 jobs:
   validate:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
       - run: pip install jsonschema
-      - run: |
-          python - <<'PY'
-          import json, pathlib, jsonschema
-          schema=json.loads(pathlib.Path('schemas/v2/information_source.schema.json').read_text())
-          for n in range(313,320):
-              p=pathlib.Path(f'information_sources/SRC-{n:06}.json')
-              data=json.loads(p.read_text())
-              jsonschema.Draft202012Validator(schema,format_checker=jsonschema.FormatChecker()).validate(data)
-              assert data['source_id']==p.stem
-              print('PASS', p)
-          PY
+      - run: PYTHONPATH=src python -m research_atelier.validation.validate_investigation INV-000048 --through 10
