@@ -1,0 +1,38 @@
+name: INV-000046 derived case assessments validation
+on:
+  pull_request:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ github.event.pull_request.head.sha }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install 'jsonschema>=4.18'
+      - run: python -m unittest discover -s tools/case_assessments -p 'test_*.py'
+      - run: |
+          python tools/case_assessments/build.py INV-000046
+          python tools/case_assessments/build.py INV-000046 --check
+          python - <<'PY'
+          import json, hashlib, base64
+          from pathlib import Path
+          p=Path('investigations/INV-000046/derived/case_assessments.json')
+          raw=p.read_bytes()
+          j=json.loads(raw)
+          assert j['summary']['case_count']==11
+          assert j['summary']['factor_assessment_count']==429
+          assert j['summary']['criterion_assessment_count']==44
+          assert j['summary']['eligibility_counts']=={'near_match':10,'excluded':1}
+          print('DERIVED_SHA256 '+hashlib.sha256(raw).hexdigest())
+          compact=json.dumps(j,ensure_ascii=False,separators=(',',':')).encode()
+          encoded=base64.b64encode(compact).decode()
+          for i in range(0,len(encoded),6000):
+              print('JSON_CHUNK '+encoded[i:i+6000])
+          PY
