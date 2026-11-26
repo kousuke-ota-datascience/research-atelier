@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000046",
+  "review_seq": 1,
+  "layer": "20_synthesis",
+  "review_kind": "10_evidence_to_20_synthesis",
+  "target_blob_sha": "ad9afcb33256fcaebb38867cc7672f6368c9c070",
+  "assessment": "26 Knowledge Unitと42 Evidenceの対応を照合。主要数値の対応は概ね成立するが、E0032の健全データ学習条件がKに十分伝達されず、30がEvidenceに直接依存する。上流Evidence補足後の再構築が必要。",
+  "findings": [
+    {
+      "target": "K0018–K0019 / E0032 / C08",
+      "evidence": [
+        "10_evidence E0032は健全データによる学習を記述。",
+        "20_synthesis K0018の健全時センサー値推定とK0019の統合条件は、学習データ選択を明示的には保持していない。",
+        "30_analysis C08 D03.2/D05.3は健全データ学習に言及。"
+      ],
+      "impact": "学習条件の意味がSynthesisで失われ、AnalysisがSynthesisのみで支持されない。",
+      "severity": "Moderate",
+      "repair_direction": {
+        "mode": "same_investigation",
+        "affected_layer": "20_synthesis",
+        "instruction": "健全データによる学習と推論時の逸脱判定を別命題としてKに保持し、原典で確認されたマスク処理・適用範囲は追加Evidence経由で統合する。"
+      },
+      "finding_id": "F008"
+    }
+  ],
+  "verdict": "FINDINGS"
+}

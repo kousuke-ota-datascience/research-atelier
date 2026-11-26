@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000046",
+  "review_seq": 1,
+  "layer": "00_context",
+  "review_kind": "context_semantic_validity",
+  "target_blob_sha": "db2072fbec2345a24b54dbcd069c846158fae5cb",
+  "assessment": "frozen ContextはRQ-000045、Exploratory、採択・除外条件、独立事例単位、固定39軸、cutoffと整合する。定期記録の役割を分離する定義も妥当。Context改変を要する欠陥なし。",
+  "findings": [],
+  "verdict": "PASS"
+}

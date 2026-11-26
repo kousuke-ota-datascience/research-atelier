@@ -1,0 +1,73 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000046",
+  "review_seq": 1,
+  "layer": "30_analysis",
+  "review_kind": "20_synthesis_plus_00_context_to_30_analysis",
+  "target_blob_sha": "24968939993ef821b892511896bed5c16b6c9c20",
+  "assessment": "全11事例×39軸を固定INV-000045定義と照合。完全適合0という結論は現Evidenceに照らして反証されないが、不存在を意味しない。軸の意味・事例単位・採択根拠・探索記録に欠陥があり、現版のまま承認不可。",
+  "findings": [
+    {
+      "target": "C02 D08.3 / C06 D06.2 / C07 D03.4 / C08 D05.6 / C10 D03.1",
+      "evidence": [
+        "INV-000045 30_analysis commit c804b97ad63eeb6d5b38a06ebf73d0a651015fc6 の39軸定義。",
+        "C02 排水量による影響度は誤判定の非対称コストを直接示さない。C06 シフト記録周期は推論周期と別。C07 未来振動予測は故障代理イベントの明示的定義と別。C08 健全学習の既知部分を未知扱い。C10 上位事象確率閾値は正解事象定義と別。"
+      ],
+      "impact": "該当・未知・非該当の意味が軸をまたいで混同され、事例横断比較の妥当性を損なう。",
+      "severity": "Moderate",
+      "repair_direction": {
+        "mode": "same_investigation",
+        "affected_layer": "30_analysis",
+        "instruction": "上流修正後、全429枠を固定定義に再照合し、対象イベントと警報閾値、入力記録周期と処理周期、損失とリスク影響度、学習と評価条件を区別。属性ごとの根拠・推論区分を整合させる。"
+      },
+      "finding_id": "F009"
+    },
+    {
+      "target": "C08 / case boundary / SRC-000300・SRC-000301",
+      "evidence": [
+        "C3.ai B-1B SBA事例とDIU 2019年のAir Force・Armyの集約成果は対象・時期・導入単位が異なる。",
+        "30_analysis C08は両者を単一事例として集計し、D08.5等に異なる対象の成果を併記する。"
+      ],
+      "impact": "同一ユースケースで採択条件が成立したか判別しにくく、事例数・成果比較に混入が生じる。",
+      "severity": "Moderate",
+      "repair_direction": {
+        "mode": "same_investigation",
+        "affected_layer": "30_analysis",
+        "instruction": "同一導入と確認できる範囲を明示し、別導入の集約成果は別事例又は背景情報として分離。事例数と39軸を再集計する。"
+      },
+      "finding_id": "F010"
+    },
+    {
+      "target": "Working Answer / 完全適合判定・最有力事例",
+      "evidence": [
+        "00_contextの4採択条件と同一ユースケース要件。",
+        "30_analysisは完全適合0、近接10、除外1とする一方、最有力の比較基準が明示されず、C06の記録利用とC01/C09の費用報告の優位性が異なる。"
+      ],
+      "impact": "選定結果の再現性が不足し、候補順位を過度に解釈する恐れ。",
+      "severity": "Moderate",
+      "repair_direction": {
+        "mode": "same_investigation",
+        "affected_layer": "30_analysis",
+        "instruction": "全事例について4条件別に確認済・不適合・未確認を根拠付きで明示。日報内の稼働データも定義上許容し、別センサー系統を新たな必須条件にしない。最有力の比較基準を示すか条件別の有力候補に変更する。"
+      },
+      "finding_id": "F011"
+    },
+    {
+      "target": "Working Answer / 探索経路・終了理由",
+      "evidence": [
+        "00_context Assumptionsは非systematic reviewであっても検索経路・終了理由・重要未確認事項の記録を要求。",
+        "30_analysisの検索語・候補概略だけでは先行8候補の照合結果と採否理由・探索終了の判断が追跡しにくい。"
+      ],
+      "impact": "完全適合0の探索範囲と打切りの意味を読者が検証できない。",
+      "severity": "Minor",
+      "repair_direction": {
+        "mode": "same_investigation",
+        "affected_layer": "30_analysis",
+        "instruction": "実際の検索経路、先行候補と最終事例の対応・除外理由、検索を終了した理由を記録。未保存の履歴は未保存と明示し、必要なら同一cutoff内で再探索してEvidenceから更新する。"
+      },
+      "finding_id": "F012"
+    }
+  ],
+  "verdict": "FINDINGS"
+}

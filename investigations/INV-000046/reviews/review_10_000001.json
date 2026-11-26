@@ -1,0 +1,119 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000046",
+  "review_seq": 1,
+  "layer": "10_evidence",
+  "review_kind": "source_evidence_note_to_10_evidence",
+  "target_blob_sha": "6dd7d7bebb45ded3a61f7013b5aee6d2cd417f87",
+  "assessment": "12 Source revisionのblob一致、42 Evidence Noteの対応内容・locator・Sourceを照合。原典再取得で39軸に直接関係する欠落を確認。原典の現在取得可能性は一部制約あり（NiX・Omronの一部は索引記載、C3.aiは同一文書の公式代替URL）。原典報告を独立検証済み実績と同一視しない。",
+  "findings": [
+    {
+      "target": "C01 / SRC-000298 / E0003–E0008",
+      "evidence": [
+        "原著会議論文 pp.178–180 §2–3 https://pdc-conference.grf.unizg.hr/wp-content/uploads/2025/09/BB_2025_PROCEEDINGS.pdf",
+        "基材反射によるインク乾燥・詰まり、遮光マスク導入、故障種別構成、特徴選択とtest datasetの記述。"
+      ],
+      "impact": "故障進展・介入・評価条件を未知扱いし、費用削減の競合説明を失う。",
+      "severity": "Moderate",
+      "repair_direction": {
+        "mode": "same_investigation",
+        "affected_layer": "10_evidence",
+        "instruction": "原典該当箇所をEvidence Note化し、集計対象・構成割合と発生率を区別。遮光措置と予測保全の寄与を分離できないことを明記して20・30を再構築する。"
+      },
+      "finding_id": "F001"
+    },
+    {
+      "target": "C02 / SRC-000293 / E0009–E0014",
+      "evidence": [
+        "国総研資料1303 第2章 pp.48–50 表2-5/6 https://www.nilim.go.jp/lab/bcg/siryou/tnn/tnn1303pdf/ks1303_06.pdf",
+        "付録 表1-3/4 https://www.nilim.go.jp/lab/bcg/siryou/tnn/tnn1303pdf/ks1303_12.pdf",
+        "引上げ点検による正解判定、非警報地点の確認、実出動していない事象を含む11件、実証194機場と費用比較348機場、費目別試算。"
+      ],
+      "impact": "正解定義・母数・比較可能性・実績と試算の境界が不十分。",
+      "severity": "Moderate",
+      "repair_direction": {
+        "mode": "same_investigation",
+        "affected_layer": "10_evidence",
+        "instruction": "判定方法・期間別混同行列・出動事象の算入条件・費用比較母集団と費目を記録し、実測削減と試算を厳格に分けて20・30を再構築する。"
+      },
+      "finding_id": "F002"
+    },
+    {
+      "target": "C06 / SRC-000299 / E0023–E0025",
+      "evidence": [
+        "iFactory公式事例 https://ifactoryapp.com/shift-logbook/case-study-oee-shift-logbook",
+        "シフト単位の記録、閾値警報、保全work order連携、12か月の結果・軸受故障件数・検出遅延。"
+      ],
+      "impact": "定期記録の意思決定利用と介入後評価が過小記述され、採択条件の比較を歪める。",
+      "severity": "Moderate",
+      "repair_direction": {
+        "mode": "same_investigation",
+        "affected_layer": "10_evidence",
+        "instruction": "記録・警報・保全指示の連鎖、故障件数・期間・費用内訳を原典に従い補足。ベンダー報告の限界、未来故障予測の明示性と総保全費の未確認事項を維持して20・30を再構築する。"
+      },
+      "finding_id": "F003"
+    },
+    {
+      "target": "C07 / SRC-000250 / E0001–E0002,E0026–E0029",
+      "evidence": [
+        "原著 §3.4–3.5 §4 表7/9/12 https://www.iieta.org/journals/jesa/paper/10.18280/jesa.590321",
+        "ISO20816-3に基づく閾値、反復確認条件、時系列分割、H240評価、実行資源、前後比較の統計評価。"
+      ],
+      "impact": "予測評価・警報運用・計算制約・比較妥当性に関する未知判定が過剰。",
+      "severity": "Moderate",
+      "repair_direction": {
+        "mode": "same_investigation",
+        "affected_layer": "10_evidence",
+        "instruction": "時系列分割、予測対象と代理性、警報条件、評価指標・資源・信頼区間を原典に従い記録。費用実績を示さない点は維持して20・30を再構築する。"
+      },
+      "finding_id": "F004"
+    },
+    {
+      "target": "C08 / SRC-000300 / E0030–E0033",
+      "evidence": [
+        "C3.ai USAF SBA pp.1–3 https://c3.ai/api/media/file/23_0911_C3_AI_CaseStudy_USAF_Sensor_Based_Algorithm-5.pdf",
+        "健全データ抽出のマスク処理、無効測定・欠測への対応、仮想センサー出力の集約、対象故障例。"
+      ],
+      "impact": "正常学習・データ品質・出力仕様が不十分で39軸の記述を制限。",
+      "severity": "Moderate",
+      "repair_direction": {
+        "mode": "same_investigation",
+        "affected_layer": "10_evidence",
+        "instruction": "PANDAとSBAを区別し、健全データの選択、無効測定、出力集約、B-1B固有の母数と全体実績を分けて記録。20・30を再構築する。"
+      },
+      "finding_id": "F005"
+    },
+    {
+      "target": "C09 / SRC-000302 / E0035–E0037",
+      "evidence": [
+        "Quantzig公式事例 Solution Implemented / Technologies Used https://www.quantzig.com/case-studies/manufacturing-predictive-maintenance",
+        "生存時間分析、故障確率・運用影響によるリスク順位、保全計画担当者、計算・統合環境、規模、緊急work order比率。"
+      ],
+      "impact": "モデル・意思決定主体・運用規模・比較条件が過小記述される。",
+      "severity": "Moderate",
+      "repair_direction": {
+        "mode": "same_investigation",
+        "affected_layer": "10_evidence",
+        "instruction": "実際に報告された手法・リスク順位・計画者・実行環境・成果指標を補足。日報利用の直接根拠、費用内訳・比較期間の不足は維持して20・30を再構築する。"
+      },
+      "finding_id": "F006"
+    },
+    {
+      "target": "C10 / SRC-000303 / E0038–E0040",
+      "evidence": [
+        "Nunesら原著 case study https://www.mdpi.com/2076-3417/13/12/7131",
+        "段取り替えの除外、MESに故障モード・保全行為の記録なし、実装段階はCM行為のみ、停止時間を基礎とする推定。"
+      ],
+      "impact": "対象事象・記録の欠如・実装段階・費用モデルの重要な限定が失われる。",
+      "severity": "Moderate",
+      "repair_direction": {
+        "mode": "same_investigation",
+        "affected_layer": "10_evidence",
+        "instruction": "除外規則、MES記録の明示的欠如、実施済みと提案段階の区別、停止時間に基づく推定を補足し、実測総保全費と混同せず20・30を再構築する。"
+      },
+      "finding_id": "F007"
+    }
+  ],
+  "verdict": "FINDINGS"
+}
