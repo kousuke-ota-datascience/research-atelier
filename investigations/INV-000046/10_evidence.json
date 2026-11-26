@@ -3,7 +3,7 @@
   "artifact_type": "10_evidence",
   "investigation_id": "INV-000046",
   "rq_id": "RQ-000045",
-  "snapshot_at": "2026-11-26T02:19:06.560Z",
+  "snapshot_at": "2026-11-26T02:28:00.199Z",
   "sources": [
     {
       "source_id": "SRC-000250",
@@ -67,6 +67,51 @@
       },
       "accessed_at": "2026-11-26T02:19:06.560Z",
       "notion_url": "https://app.notion.com/p/424e5855be39818fa4d6fc95dd18591c"
+    },
+    {
+      "source_id": "SRC-000300",
+      "source_revision": {
+        "commit_sha": "4ccdd6f27cc5a1a2049a00e8b2ceade231122c06",
+        "blob_sha": "8e7b859947019c75333dc816a8a69b246b81c4e0"
+      },
+      "accessed_at": "2026-11-26T02:28:00.199Z",
+      "notion_url": "https://app.notion.com/p/424e5855be39814dbff4cd76e6201385"
+    },
+    {
+      "source_id": "SRC-000301",
+      "source_revision": {
+        "commit_sha": "4ccdd6f27cc5a1a2049a00e8b2ceade231122c06",
+        "blob_sha": "82d9eaa2870cc998bc9228dbc2758c3fb486ffe0"
+      },
+      "accessed_at": "2026-11-26T02:28:00.199Z",
+      "notion_url": "https://app.notion.com/p/424e5855be398117a77edcd5b16cfaad"
+    },
+    {
+      "source_id": "SRC-000302",
+      "source_revision": {
+        "commit_sha": "4ccdd6f27cc5a1a2049a00e8b2ceade231122c06",
+        "blob_sha": "b0581200809b25ed331f45641eccd34a50e25857"
+      },
+      "accessed_at": "2026-11-26T02:28:00.199Z",
+      "notion_url": "https://app.notion.com/p/424e5855be39816fabe6f525a2c6c8de"
+    },
+    {
+      "source_id": "SRC-000303",
+      "source_revision": {
+        "commit_sha": "4ccdd6f27cc5a1a2049a00e8b2ceade231122c06",
+        "blob_sha": "e6bc36da5522f93ab46716e43bb82723d2f9511f"
+      },
+      "accessed_at": "2026-11-26T02:28:00.199Z",
+      "notion_url": "https://app.notion.com/p/424e5855be39814cb475e93db15059a5"
+    },
+    {
+      "source_id": "SRC-000304",
+      "source_revision": {
+        "commit_sha": "4ccdd6f27cc5a1a2049a00e8b2ceade231122c06",
+        "blob_sha": "80408ec332bff6bcebaf0309b15d82f4552a680d"
+      },
+      "accessed_at": "2026-11-26T02:28:00.199Z",
+      "notion_url": "https://app.notion.com/p/424e5855be398115b079fdca11098667"
     }
   ],
   "evidence_items": [
@@ -473,6 +518,188 @@
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/424e5855be3981188ea0de1acaadb4b8",
           "title": "EV-000488"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0030",
+      "content": "PANDAの過去の整備履歴を用いる部品故障予測と、SBAの健全時センサー値を他のセンサーから推定して実測値との差を検出する方法は区別される。",
+      "source_locator": "pp.1–2",
+      "note_type": "Method",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000300",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/424e5855be39814eb038d2e1d2499677",
+          "title": "EV-000489"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0031",
+      "content": "B-1B向けに5年分、5,000 sorties、750億行のデータを扱い、11故障モードに29モデルを構築したと報告される。",
+      "source_locator": "pp.2–3",
+      "note_type": "Data",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000300",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/424e5855be39813b961bd294cc7904c5",
+          "title": "EV-000490"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0032",
+      "content": "飛行・整備・補給データを統合する要件が示され、SBAは健全データを学習に用いる。飛行終了後にデータを処理し、アラートと根拠情報を整備担当者に提示する。",
+      "source_locator": "pp.2–3",
+      "note_type": "Method",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000300",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/424e5855be39819780c9d9d4d74e31a5",
+          "title": "EV-000491"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0033",
+      "content": "1,000超の部品を監視し、アラートのaccuracy 92%、データ抽出からアラート分析までの時間を最大85%短縮したと報告される。",
+      "source_locator": "pp.1, 3",
+      "note_type": "Result",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000300",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/424e5855be39811d82e9f1acff278bde",
+          "title": "EV-000492"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0034",
+      "content": "DIUは2019年の移行に関して、空軍の優先サブシステムの予定外整備40%減、陸軍の重大な飛行中故障24%減を報告している。運用性能データと整備記録を使い先行的な整備計画を立てる。",
+      "source_locator": "Solution overview / results",
+      "note_type": "Result",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000301",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/424e5855be3981098233fc142942508a",
+          "title": "EV-000493"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0035",
+      "content": "匿名の製造業顧客でSCADAセンサーデータ、CMMS整備履歴、ERP運用データを統合したとQuantzigが報告する。",
+      "source_locator": "Case study / solution (indexed publisher text)",
+      "note_type": "Data",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000302",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/424e5855be398162bf55cb2674bf426e",
+          "title": "EV-000494"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0036",
+      "content": "残存寿命を推定する機械学習モデルとリスクアラートを用い、先行的な修理・部品交換を行うと報告される。",
+      "source_locator": "Solution (indexed publisher text)",
+      "note_type": "Method",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000302",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/424e5855be3981e0ad29c6641b78c9e1",
+          "title": "EV-000495"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0037",
+      "content": "四半期整備費120万ドルから93.6万ドル（22%減）、月間停止時間28時間から15時間、OEE68%から83%、MTBF450時間から720時間と報告される。",
+      "source_locator": "Results (indexed publisher text)",
+      "note_type": "Result",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000302",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/424e5855be3981a0b662e0198cd642d8",
+          "title": "EV-000496"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0038",
+      "content": "OLIの射出成形金型に関し、故障の多い金型を1か月観測し、EUROMAP63経由で123パラメータを1Hzで取得、10変数を選択し5分集約する。ホッパー温湿度も測定する。",
+      "source_locator": "Case study / data acquisition (publisher indexed text)",
+      "note_type": "Data",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000303",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/424e5855be398153b69cc972b76a245f",
+          "title": "EV-000497"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0039",
+      "content": "エッジデバイスとMESの文脈情報を利用し、GFTと異常検知により劣化を扱い、上位事象の確率の閾値で予防的介入を提案する。",
+      "source_locator": "Methodology / case study (publisher indexed text)",
+      "note_type": "Method",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000303",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/424e5855be3981efb388c708ba8abbb7",
+          "title": "EV-000498"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0040",
+      "content": "履歴に基づく比較シナリオでは、予測保全による時間・費用の低減を事後保全比63.43%、最適化した周期保全比27.05%と推定している。",
+      "source_locator": "Table 3 / economic comparison (publisher indexed text)",
+      "note_type": "Result",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000303",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/424e5855be39810a9733d63589fd2fe5",
+          "title": "EV-000499"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0041",
+      "content": "JFEは2018年に6製鉄所・全ラインに故障復旧支援を展開し、故障発生後にモバイル端末で過去の故障報告・日報・マニュアル等を検索して復旧を支援する。",
+      "source_locator": "2019-03-07 press release / system overview",
+      "note_type": "Method",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000304",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/424e5855be39813ba1c5fbbc638b86a6",
+          "title": "EV-000500"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0042",
+      "content": "故障復旧時間の短縮が報告される。",
+      "source_locator": "2019-03-07 press release / results",
+      "note_type": "Result",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000304",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/424e5855be3981838c67d2ea26771898",
+          "title": "EV-000501"
         }
       }
     }
