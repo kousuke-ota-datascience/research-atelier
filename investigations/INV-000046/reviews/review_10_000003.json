@@ -1,0 +1,45 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000046",
+  "review_seq": 3,
+  "layer": "10_evidence",
+  "review_kind": "source_evidence_note_to_10_evidence",
+  "target_blob_sha": "28202e91ce76b67ff26b2173e9bc60cf2a71d831",
+  "assessment": "Review 000002 F001/F002の指定事項はE0069–E0076で解消。8件の新Evidence Noteについて内容・locator・Source・Note Type・titleの一致を確認。従来68 Evidenceは前回snapshotと同一。今回IIETAとMDPIの公式HTMLを直接取得し該当箇所を照合した。追加抽出はsource-faithfulと判断。ただし固定39軸に直接影響する以下の新規omissionを確認した。新規Source探索や全原典の再網羅抽出を要求するものではない。",
+  "findings": [
+    {
+      "target": "C07 / SRC-000250 / E0001,E0026,E0069–E0071 — health index と診断出力の欠落",
+      "evidence": [
+        "Embarki et al., DOI 10.18280/jesa.590321 §3.4 Table 7 https://www.iieta.org/journals/jesa/paper/10.18280/jesa.590321",
+        "Table 7: 振動・ピーク・温度の複合式によるcondition score 0–100、優先順位付け・ドリフト追跡・設備間比較への利用。確認警報後の特徴周波数のルール／classifierによるprobable fault class出力。",
+        "76 EvidenceのうちSRC-000250に属するE0001,E0002,E0026–E0029,E0053–E0057,E0069–E0071にはhealth indexの出力仕様と用途がない。"
+      ],
+      "impact": "D05.1/D07.1/D08.1に直接関係する実装済み別モジュールが欠落し、C07を振動系列予測・警報・診断だけの事例として比較することになる。故障確率の未確認を埋める根拠ではない。",
+      "severity": "Minor",
+      "repair_direction": {
+        "mode": "same_investigation",
+        "affected_layer": "10_evidence",
+        "instruction": "既選択原典§3.4 Table 7から健全度スコアの入力・値域・用途、診断の出力形式をEvidence化。式の重みや実際の意思決定効果が未確認なら明示。20/30で監視・予測・診断・優先順位付けを分離しD05.1/D07.1/D08.1を更新。R1の未確認を機械的に変更しない。"
+      },
+      "finding_id": "F001"
+    },
+    {
+      "target": "C10 / SRC-000303 / E0073–E0075 — GFT評価目的関数と実例の特徴量・重症度の欠落",
+      "evidence": [
+        "Nunes et al., DOI 10.3390/app13127131 §5.2 Eq.(1), §6 Figures 11–13 / Table 2–3 https://www.mdpi.com/2076-3417/13/12/7131",
+        "Eq.(1)は介入間隔ごとの停止時間比 ut_i/(wt_i+ut_i) の総和であり、全期間の総停止時間/総経過時間とは一般に異なる。E0074/K0044は単に金型不稼働割合と記載する。",
+        "§6では初回射出時間の非単調なセンサ系列とBE CDF、クッション位置・サイクル時間・射出開始位置を主要特徴量として報告。停止時間の長い4故障を回避するという履歴シナリオ結果と、短時間故障は回避しないとの記述。C10 D02.4/D02.5は未知、D05.1では具体的な主要変数が欠落。"
+      ],
+      "impact": "費用目的の意味と評価尺度を混同する余地が残る。事象重症度（業務上の停止時間）、故障前の観測変化、主要特徴量とGFTの意思決定特性を比較できない。63.43%は著者の履歴推定であり実測費用とはならない。",
+      "severity": "Moderate",
+      "repair_direction": {
+        "mode": "same_investigation",
+        "affected_layer": "10_evidence",
+        "instruction": "原典のEq.(1)をそのまま意味づけし、全期間不稼働率や実測金額との違いを明示。§6の主要変数、故障前の異常点の例、履歴での長短故障別の介入提案を抽出し、物理予兆の普遍的実証と業務的重大性を区別。学習と費用比較の独立性未確認を保持。20/30再構築時にD02.4/D02.5/D05.1/D07.1/D08.1/D09.4を再確認。"
+      },
+      "finding_id": "F002"
+    }
+  ],
+  "verdict": "FINDINGS"
+}

@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000046",
+  "review_seq": 3,
+  "layer": "20_synthesis",
+  "review_kind": "10_evidence_to_20_synthesis",
+  "target_blob_sha": "757e4301a0377288eb9a7afaabf3078920006754",
+  "assessment": "Review 000002 F003はK0036,K0042,K0044でE0068/E0072の時間原点、BE累積確率、TE意味を保持し解消。追加8 EvidenceがK0039–K0046等へ伝達され、故障確率の記載/実装、推論周期と取得周期、履歴推定と実績、学習/評価の独立性を区別する。現選択Evidenceからの独立したSynthesis defectは確認されない。10_evidenceの新規Findingはupstream修正後に再構築する。",
+  "findings": [],
+  "verdict": "PASS"
+}

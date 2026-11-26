@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000046",
+  "review_seq": 3,
+  "layer": "30_analysis",
+  "review_kind": "20_synthesis_plus_00_context_to_30_analysis",
+  "target_blob_sha": "f97d134d4638646a4de189ee81addb1e39d606d8",
+  "assessment": "Review 000002 F004はC06 D06.2を未知、C07 D06.2をオンライン状態監視・イベント駆動診断とGRU推論時点/周期の区別、C04 D08.3を明示的推論に修正し解消。C07/C10の4条件再判定、D03.4/D06.3/D07.3の予後意味の未確認、D09.4の履歴推定・評価独立性の留保を確認。主結論完全適合0は現選択Evidenceから反証されず、前回の他事例判定は差分上維持。追加原典情報はAnalysisへ直接補わず10_evidence findingとして扱う。現Synthesisに対する独立した下流defectは確認されない。",
+  "findings": [],
+  "verdict": "PASS"
+}
