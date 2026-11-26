@@ -1,6 +1,6 @@
-# 事例評価の派生成果物生成ツール（事例比較固有契約 v1）
+# 事例評価の派生成果物生成ツール（契約 v1 / v2）
 
-本ツールは、INV-000046で採用した事例・ファクター比較の固定契約に従い、Review済みの調査結果を再利用可能なJSONへ変換するための任意の補助ツールである。
+本ツールは、明示的に選択された調査固有の事例記述契約に従い、Review済みの調査結果を再利用可能なJSONへ変換するための任意の補助ツールである。
 
 **新たなcanonical artifactやWorkflow 00 / 10 / 20の完了条件を定義するものではない。** 異なる調査形式には、それぞれの契約またはadapterが必要となる。
 
@@ -30,6 +30,8 @@ Git checkout上でPython 3.10以上と `jsonschema` を使用する。リポジ�
 ```sh
 python tools/case_assessments/build.py INV-000046
 python tools/case_assessments/build.py INV-000046 --check
+python tools/case_assessments/build.py INV-000047
+python tools/case_assessments/build.py INV-000047 --check
 ```
 
 第1コマンドは生成、第2コマンドは保存済みJSONと再生成結果の完全一致を検証する。
@@ -63,3 +65,19 @@ python tools/case_assessments/build.py INV-000046 --overlay path/to/semantic_ove
 将来Working Answerの形式が本契約から外れた場合は、処理を停止し、テスト済みの決定論的adapterを追加するか、承認済みAnalysisから原文参照を保持した意味論的抽出を別途レビューする。LLMプロンプトでparserの失敗を暗黙に回避したり、正本を変更したりしてはならない。
 
 CSVはJSONからの派生projection（1事例×1ファクターを1行とする形式）であり、独立した正本ではない。
+
+
+## 製造品質分析のカテゴリ記述契約 v2
+
+INV-000047のようにfrozen Contextで「事例記述軸は本調査固有の次の9カテゴリとする。」を明示し、R1〜R4の定義とD01〜D09を持つ調査を対象とする。外部framework pinとの併存は拒否する。v1は従来どおり外部framework pinに従う。適合しない入力に対して自動推測によるfallbackを行わない。
+
+- `category_adapter.py`：Contextの採択条件とカテゴリ定義、Working Answerの事例節を厳密に抽出し、採択表と照合する。K参照の範囲表記を展開し、共通lineage関数でE・Sourceへ解決する。
+- `case_assessments.categories.schema.json`：v2の局所schema。契約名は `manufacturing_quality_categories_v2`。v1出力は変更しない。
+- `case_assessments.categories.template.json`：v2構造の例示（placeholderを含みそのままではschemaに適合しない）。
+- `test_category_adapter.py`：厳密抽出、参照・表・採択条件の矛盾拒否の単体テスト。
+
+v2では採択区分に `factor_analysis`（要因分析）を追加する。各採択条件の原文ラベルと正規化ラベルを記録するが、個別R条件ごとの根拠行は正本に存在しないため、共有するcase scopeを `reference_role: case_scope` として明示する。個別条件の `assessment_text` はnullとし、事例全体の判定理由は `assessment_reason` に原文のまま保存する。
+
+D01〜D09はカテゴリ内に複数の既知・未知・留保・推論を含む。v1の行単位判定を流用せず、`canonical_status`、`applicability`、`epistemic_status`、`value`、`limitations` はnullとする。これは未抽出・原文に明示されない構造化フィールドを意味し、個別属性の未知・非該当を意味しない。カテゴリ記述全体と原文行、行番号、K/E/Source参照を保存する。 `reference_role: category_scope` はカテゴリの原文参照範囲であり、個別属性すべての肯定的証拠ではない。
+
+後続の属性分離が必要なら共通のsemantic overlayを使う。D01〜D09を対象キーとして指定できるが、属性の意味論的判断は別途レビューを要する。v2の9カテゴリは検証済みの汎用taxonomyではない。
