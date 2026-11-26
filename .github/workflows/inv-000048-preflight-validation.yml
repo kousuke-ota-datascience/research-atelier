@@ -1,4 +1,4 @@
-name: INV-000048 synthesis validation
+name: INV-000048 analysis validation
 on: [pull_request]
 jobs:
   validate:
@@ -11,4 +11,4 @@ jobs:
         with:
           python-version: '3.11'
       - run: pip install jsonschema
-      - run: PYTHONPATH=src python -m research_atelier.validation.validate_investigation INV-000048 --through 20
+      - run: PYTHONPATH=src python -m research_atelier.validation.validate_investigation INV-000048 --through 30
