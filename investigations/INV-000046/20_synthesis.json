@@ -3,7 +3,7 @@
   "artifact_type": "20_synthesis",
   "investigation_id": "INV-000046",
   "rq_id": "RQ-000045",
-  "synthesized_at": "2026-11-26T02:20:15.363Z",
+  "synthesized_at": "2026-11-26T02:28:56.100Z",
   "knowledge_units": [
     {
       "knowledge_unit_id": "K0001",
@@ -186,6 +186,101 @@
       "qualifiers": [
         "狭義の保全費と損失の分離ができず独立検証なし。"
       ]
+    },
+    {
+      "knowledge_unit_id": "K0018",
+      "statement": "米空軍PANDAでは整備履歴から部品故障を予測する機能と、SBAで健全時のセンサー値を推定し実測との差を検出する機能を区別する。",
+      "evidence_refs": [
+        "E0030",
+        "E0032"
+      ],
+      "qualifiers": [
+        "SBAの逸脱検出だけから未来故障予測の精度を推定できない。日報の具体的入力利用も不明。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0019",
+      "statement": "B-1B向けに5年分、5,000 sorties、750億行、11故障モード、29モデルを扱い、飛行後にデータ処理して整備担当者にアラートを提示する。",
+      "evidence_refs": [
+        "E0031",
+        "E0032"
+      ],
+      "qualifiers": [
+        "飛行・整備・補給の統合要件は各データの予測入力としての実利用と同義ではない。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0020",
+      "statement": "C3.aiは1,000超の部品監視、アラートaccuracy 92%、データ抽出から分析までの時間最大85%短縮を報告。",
+      "evidence_refs": [
+        "E0033"
+      ],
+      "qualifiers": [
+        "予測ホライズン・故障予測精度・費用削減とは別の指標。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0021",
+      "statement": "DIUは2019年の移行に関して空軍優先サブシステムの予定外整備40%減、陸軍の重大な飛行中故障24%減を報告し、運用性能・整備記録を用いた整備計画を説明する。",
+      "evidence_refs": [
+        "E0034"
+      ],
+      "qualifiers": [
+        "B-1B SBAの効果として帰属させない。総保全費は不明。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0022",
+      "statement": "Quantzig匿名製造業事例ではSCADAセンサー・CMMS整備履歴・ERP運用データを統合し、RUL推定・リスクアラートで修理・部品交換を先行させたと報告する。",
+      "evidence_refs": [
+        "E0035",
+        "E0036"
+      ],
+      "qualifiers": [
+        "定期日報の利用・記録頻度、RULの予測定義やモデル評価は未確認。公開ページの索引本文に基づくベンダー報告。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0023",
+      "statement": "Quantzigは四半期整備費120万ドルから93.6万ドル（22%減）、月間停止時間28時間から15時間、OEE68%から83%、MTBF450時間から720時間と報告する。",
+      "evidence_refs": [
+        "E0037"
+      ],
+      "qualifiers": [
+        "費用内訳、母数、比較条件、独立検証なし。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0024",
+      "statement": "OLI射出成形金型では1か月、123パラメータを1Hzで取得、10変数選択・5分集約、ホッパー温湿度測定、MES文脈情報を用いる。GFTと異常検知によって上位事象確率の閾値で介入を提案する。",
+      "evidence_refs": [
+        "E0038",
+        "E0039"
+      ],
+      "qualifiers": [
+        "定期日報の利用・未来時点の定義・実際の介入実績は未確認。出版社索引本文に基づく。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0025",
+      "statement": "OLIの履歴シナリオ比較は事後保全比63.43%、最適周期保全比27.05%の時間・費用低減を推定する。",
+      "evidence_refs": [
+        "E0040"
+      ],
+      "qualifiers": [
+        "導入後実績ではない。"
+      ]
+    },
+    {
+      "knowledge_unit_id": "K0026",
+      "statement": "JFEは6製鉄所・全ラインで故障発生後に故障報告・日報・マニュアルを検索する復旧支援を導入し、復旧時間短縮を報告する。",
+      "evidence_refs": [
+        "E0041",
+        "E0042"
+      ],
+      "qualifiers": [
+        "未来故障予測・故障前保全ではなく、採択境界の反例。"
+      ]
     }
   ],
   "relations": [
@@ -228,6 +323,35 @@
         "K0017"
       ],
       "description": "シフト記録による保全計画と広義費用報告の関連。狭義保全費とは区別。"
+    },
+    {
+      "relation_id": "R0005",
+      "relation_type": "qualification",
+      "knowledge_unit_refs": [
+        "K0018",
+        "K0019",
+        "K0020",
+        "K0021"
+      ],
+      "description": "航空機のPANDA、SBA、DIU移行の対象・成果を区別する。"
+    },
+    {
+      "relation_id": "R0006",
+      "relation_type": "qualification",
+      "knowledge_unit_refs": [
+        "K0022",
+        "K0023"
+      ],
+      "description": "Quantzigの技術構成と費用報告。日報要件は未確認。"
+    },
+    {
+      "relation_id": "R0007",
+      "relation_type": "qualification",
+      "knowledge_unit_refs": [
+        "K0024",
+        "K0025"
+      ],
+      "description": "OLIの技術提案と履歴シナリオ推定を実績から区別する。"
     }
   ],
   "uncertainties": [
@@ -271,6 +395,30 @@
       "knowledge_unit_refs": [
         "K0016",
         "K0017"
+      ]
+    },
+    {
+      "uncertainty_id": "U0006",
+      "description": "航空機の予測モデルごとの記録利用・実績総保全費不明。",
+      "knowledge_unit_refs": [
+        "K0018",
+        "K0021"
+      ]
+    },
+    {
+      "uncertainty_id": "U0007",
+      "description": "Quantzigの日報利用、比較条件、費用内訳不明。",
+      "knowledge_unit_refs": [
+        "K0022",
+        "K0023"
+      ]
+    },
+    {
+      "uncertainty_id": "U0008",
+      "description": "OLIの日報利用、実運用の介入・保全費削減実績未確認。",
+      "knowledge_unit_refs": [
+        "K0024",
+        "K0025"
       ]
     }
   ]
