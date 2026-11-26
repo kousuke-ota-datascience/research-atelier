@@ -3,7 +3,7 @@
   "artifact_type": "10_evidence",
   "investigation_id": "INV-000046",
   "rq_id": "RQ-000045",
-  "snapshot_at": "2026-11-26T04:27:43.881Z",
+  "snapshot_at": "2026-11-26T05:26:02.141Z",
   "sources": [
     {
       "source_id": "SRC-000250",
@@ -11,7 +11,7 @@
         "commit_sha": "ba44c5d3d1caa65dd42e46b54ff781d0a7bc7378",
         "blob_sha": "daff5f574353e9bf88a106b8536dfac2db6093d1"
       },
-      "accessed_at": "2026-11-26T04:26:49.834Z",
+      "accessed_at": "2026-11-26T05:26:02.141Z",
       "notion_url": "https://app.notion.com/p/417e5855be3981a0967ee1b6e1381916"
     },
     {
@@ -101,7 +101,7 @@
         "commit_sha": "4ccdd6f27cc5a1a2049a00e8b2ceade231122c06",
         "blob_sha": "e6bc36da5522f93ab46716e43bb82723d2f9511f"
       },
-      "accessed_at": "2026-11-26T04:26:49.834Z",
+      "accessed_at": "2026-11-26T05:26:02.141Z",
       "notion_url": "https://app.notion.com/p/424e5855be39814cb475e93db15059a5"
     },
     {
@@ -1064,6 +1064,118 @@
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/424e5855be398164a220cb07b8af3676",
           "title": "EV-000527"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0069",
+      "content": "実測V-RMSがabnormalゾーンの境界を超えると即時点検を要求。pre-alarm条件には予測軌跡のfaulty-to-abnormal境界横断又は故障確率の持続的上昇が明記される。Table 7で明示された予測モジュール出力はGRUによる短期V-RMS軌跡であり、故障確率の算出モデル、対象イベント、時間窓、閾値、実装の個別実証、校正・検証は確認できない。",
+      "source_locator": "§3.4, Table 7",
+      "note_type": "Method",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000250",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/424e5855be3981bf8d1ffcd923e772de",
+          "title": "EV-000528"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0070",
+      "content": "警報確認は2～3回連続超過、復帰はreset閾値未満の3回連続。試運転時に単回超過は不要な警報を生じ、長い確認窓は介入を遅らせたため折衷した。確認警報後に短時間の高周波計測を起動しスペクトル診断する。数値の許容遅延・警報負荷上限は示されない。",
+      "source_locator": "§3.4; §4.2",
+      "note_type": "Method",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000250",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/424e5855be3981b59f9dd669e691fcff",
+          "title": "EV-000529"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0071",
+      "content": "オンライン状態監視と警報確認後の診断起動を報告。GRUの実稼働推論間隔は明記されない。保全ログから月間計画外停止、総停止、稼働率、計画外停止のない日の比率を評価。生成作業指示・応答時間記録・実施フィードバックも導入証跡として列挙されるが、定期記録が予測入力・教師ラベル・保全計画の判断材料として使われたことは確認できない。",
+      "source_locator": "§3.2–3.5, Tables 6–8; §4.2, Table 14",
+      "note_type": "Method",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000250",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/424e5855be3981b9ac3de9285516158a",
+          "title": "EV-000530"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0072",
+      "content": "基本事象BEは変数・特徴量ごとの異常点、上位事象TEは金型機械故障。BE発生までの時間は直前の機械故障・修理を基点とする稼働時間で、停止時間を除く。BE別CDFを5分刻みで求め、未発生なら経過稼働時間のCDF値、発生済なら学習分布の最大値へ更新する。金型交換時にはサイクル数とBE確率・履歴を引き継ぐ。",
+      "source_locator": "§5.1–5.2, Figures 5–6, Table 2（公開元索引本文）",
+      "note_type": "Definition",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000303",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/424e5855be39819b9027f3210e729f48",
+          "title": "EV-000531"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0073",
+      "content": "Isolation Forest（scikit-learn）でBEを抽出し、データセットの80%を学習に使用、contamination比は引用文献\\[54\\]の方法で設定。金型・材質・成形設定で正常値が異なるため単一正常プロファイルを置かず異常点を分離する。10変数の集約・特徴生成後に80種類のBE候補をGFT探索に利用。学習データの正常限定、時系列分割方法・独立評価の詳細は確認できない。",
+      "source_locator": "§5.1, §6（公開元索引本文）",
+      "note_type": "Method",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000303",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/424e5855be39811ba78dc9edbb117020",
+          "title": "EV-000532"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0074",
+      "content": "GFTはTEの確率pを出力し保全に伴う金型不稼働割合を費用指標として木構造を探索する。各木の介入閾値を0.50～1.00まで0.01刻みで最適化。閾値到達時に次の事後保全費を先行介入費へ置換する評価である。BEの累積確率からTEのリスクを表現するが、判断時点以降の固定期間・条件付き故障確率・RULの出力は明記されない。",
+      "source_locator": "§4 Predictive Analytics; §5.2 Eq. (1); §6（公開元索引本文）",
+      "note_type": "Method",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000303",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/424e5855be39813689edef4ccbf58c7e",
+          "title": "EV-000533"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0075",
+      "content": "学習履歴はCMのみ。短時間で修理できる故障では先行点検・保全の方が不稼働を増やし得る。長時間の故障停止では先行介入に便益があり得る。故障詳細・介入別費用はMESにないため予防介入時間をCM中央値247.5分と仮定し、履歴に基づきCM・最適PM・GFTを比較。木構造・閾値選択に使うデータと費用比較の独立性は確認できない。",
+      "source_locator": "§3; §5.2; §6 Table 3（公開元索引本文）",
+      "note_type": "Method",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000303",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/424e5855be3981068450ddec104560c8",
+          "title": "EV-000534"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0076",
+      "content": "クラウド上でMES文脈と稼働データを融合して学習し、金型別モデルをエッジ端末に配布。金型識別情報を予測直前に参照しモデルを選択する。リアルタイムの保全提案を設計するが、実稼働推論周期は明示されない。再学習はコスト増加時又は月次等の周期設定が可能と述べるが、実際の設定周期ではない。",
+      "source_locator": "§4 Predictive Analytics, Figure 4（公開元索引本文）",
+      "note_type": "Method",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000303",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/424e5855be3981e7a117c25492d1325d",
+          "title": "EV-000535"
         }
       }
     }
