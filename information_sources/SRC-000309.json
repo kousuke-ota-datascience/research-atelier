@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000309",
+  "notion_url": "https://app.notion.com/p/424e5855be3981909fd2d45618b1e406",
+  "title": "Data Science Applications for Process Improvement at Dupont",
+  "source_type": "Conference Paper",
+  "journal_or_publisher": "AIChE Annual Meeting",
+  "authors": "Andrews; Zhu; Hunt",
+  "year": 2023,
+  "url": "https://proceedings.aiche.org/conferences/aiche-annual-meeting/2023/proceeding/paper/305f-data-science-applications-process-improvement-dupont",
+  "doi": null,
+  "version_or_edition": null,
+  "reliability_note": "学会要旨。個別工程の詳細は限定的。"
+}
