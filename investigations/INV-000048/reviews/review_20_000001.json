@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000048",
+  "review_seq": 1,
+  "layer": "20_synthesis",
+  "review_kind": "10_evidence_to_20_synthesis",
+  "target_blob_sha": "4d82125c8e7ce668ec92af5b63dd0942b0ed3423",
+  "assessment": "8 Knowledge Unitと3 relationsは概ね参照Evidenceに忠実で、SUBARUの同一事例統合、計画/実績、異なる事例の成果、劣化分類/品質推定を分離している。E0009等の上流欠落の伝播はEvidence findingとして扱い重複計上しない。下流の個別事実に必要な追加lineageはF004のrepairに含める。10の修正後に再構築が必要。",
+  "findings": [],
+  "verdict": "PASS"
+}

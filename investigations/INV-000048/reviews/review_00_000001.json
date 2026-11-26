@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000048",
+  "review_seq": 1,
+  "layer": "00_context",
+  "review_kind": "context_semantic_validity",
+  "target_blob_sha": "fa5aaa6e0879038b9d5ca99a65235e124d5d8b97",
+  "assessment": "RQ-000047の探索目的、R1〜R3共通経路とA/B別の意思決定・成果、実事例と提案・実績の区別、固定10カテゴリ、証拠cutoffは整合する。加工後機上計測を含む解釈は境界に明記されていないが、実加工した工作物を測るケースを加工中センシングと区別して扱う限り許容可能。Context-defining changeは不要。",
+  "findings": [],
+  "verdict": "PASS"
+}

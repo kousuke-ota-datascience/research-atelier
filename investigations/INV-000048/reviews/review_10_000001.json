@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000048",
+  "review_seq": 1,
+  "layer": "10_evidence",
+  "review_kind": "source_evidence_note_to_10_evidence",
+  "target_blob_sha": "bb64582441bfa5b72b3fc71dd21200f16c148a9f",
+  "assessment": "7 Source revisionのcommit/blob一致と15 Evidence Noteの本文・Source relationの一致を確認。7原典の本文または抽出テキストを確認した。量産稼働と成果、実測と期待値、状態分類と介入の区別は概ね妥当。ただしC03/C05の検証設計、C06の判断則の評価に重要な欠落がある。PDF画像取得は失敗し図表は抽出テキストに依存。",
+  "findings": [
+    {
+      "severity": "Moderate",
+      "target": "E0009 → K0005 → C03 D10：二値／多クラス分類の評価条件",
+      "evidence": [
+        "SRC-000316 §5.2、Fig.7、Table 6: SMOTEは二値のno-burn class、訓練390・テスト69。https://link.springer.com/article/10.1007/s00170-021-06896-9",
+        "同§5.3、Table 7: 4クラス分類はリサンプリングなし。§5.2–5.3では100ランダム分割も評価。",
+        "E0009は二値・多クラスの精度を併記した直後にSMOTE条件を記し、適用対象を限定しない。K0005/C03 D10にも同じ曖昧さが伝播。00_context assumptions 5は検証分割と見逃し率の区別を要求。"
+      ],
+      "impact": "二値と多クラスで異なるテスト母集団を同じ条件と誤読し得るため、焼け判定性能・外部妥当性の評価を歪める。なお二値のno-burn側の合成標本は真の焼け見逃し率そのものとは異なる。",
+      "repair_direction": {
+        "mode": "same_investigation",
+        "affected_layer": "10_evidence",
+        "instruction": "二値と4クラスを分け、SMOTE適用class・訓練/テスト分割・指標と対象を明記する。原典の混同行列・焼けラベルから見逃し率を解釈できる場合は評価条件とともに記録し、実流出率と区別する。K0005とC03 D10・limitationsへ伝播させる。"
+      },
+      "finding_id": "F001"
+    },
+    {
+      "severity": "Moderate",
+      "target": "E0012/E0013 → K0007 → C05 D04/D06/D10：実験単位、検証分割と低サンプリング評価",
+      "evidence": [
+        "SRC-000318 著者原稿 実験方法・§4–5: 4 experiments conducted over four separate dates、各20 runs、80画像の64訓練・残り16をvalidation/testingに使用。https://www.osti.gov/servlets/purl/2418518",
+        "同原稿§4・Fig.15: 元の160 kHzデータのスペクトログラムを周波数方向で切り出して低いサンプリングレート相当を評価。30 kHz相当は全体R² 0.93。",
+        "E0012/E0013は日付単位、64/16分割、validationとtestingの区別・独立性、低レート相当評価の構成を落とす。C05 D04は4実験を4種の実験条件と断定するが同一性は示されない。00_context assumptions 5。"
+      ],
+      "impact": "独立した日・砥石・加工条件を跨ぐ検証と通常の画像分割を混同するリスクがある。低レート取得設計の再利用時に、実際の低レート収集の独立試験と切り出しによる仮想的評価を区別できない。",
+      "repair_direction": {
+        "mode": "same_investigation",
+        "affected_layer": "10_evidence",
+        "instruction": "原典の4日×20試行、64/16分割、validation/testingの扱いと日単位分離・モデル選択の独立性が未確認であることを明示する。画像拡張を実試行数増加と扱わず、低レート相当の周波数切り出しと実収集を区別し、全体R²とテストR²を分ける。C05 D04の4種条件断定を修正し、D05/D06/D10とlimitationsへ反映。"
+      },
+      "finding_id": "F002"
+    },
+    {
+      "severity": "Moderate",
+      "target": "E0015 → K0008 → C06 D09/D10：状態基準ドレッシング判断則のオフライン評価",
+      "evidence": [
+        "SRC-000319 §3.3–3.4、式(8)–(10)、Fig.17: 劣化index、移動窓、θ=0.5/0.6/0.7、W=3/5/7、同じ実験データ内の判断時点感度を評価し、変動は1区間以内と報告。https://sensors.myu-group.co.jp/sm_pdf/SM4491.pdf",
+        "原典§4.4: AEサンプリング200 kHz、自己発刃の高周波成分を捉えきれない可能性。",
+        "E0015は5区間持続のルールと条件依存性、実介入比較なしを記載する一方、同じ原典の§3.4をlocatorに含めながら判断の感度評価を落とす。C06 D09/D10にも評価結果なし。00_context assumptions 6は最適化の提案・オフライン評価・実介入の区別を要求。"
+      ],
+      "impact": "交換・ドレッシング時期の構築がRQの主目的の一つであり、閾値・観測窓の応答遅延と安定性の評価は判断設計の直接的な参照になる。単なる提案と同一データ内での評価済み基準を区別できない。実介入・経済最適化実証とみなしてはならない。",
+      "repair_direction": {
+        "mode": "same_investigation",
+        "affected_layer": "10_evidence",
+        "instruction": "§3.4の判断則、感度比較の条件・結果・同一データ内評価という限界をEvidenceとしてcaptureし、K0008とC06 D09/D10に伝播する。AEサンプリング条件と帯域制約をD05/D08に記録する。5区間ルールと感度分析用の指標を区別し、R4-B/R5-Bの実施成果判定をオフライン評価だけで引き上げない。"
+      },
+      "finding_id": "F003"
+    }
+  ],
+  "verdict": "FINDINGS"
+}

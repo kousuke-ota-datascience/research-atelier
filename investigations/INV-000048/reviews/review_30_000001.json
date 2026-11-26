@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000048",
+  "review_seq": 1,
+  "layer": "30_analysis",
+  "review_kind": "20_synthesis_plus_00_context_to_30_analysis",
+  "target_blob_sha": "9856b7926f06394e5c50cb556806bfac78d21c64",
+  "assessment": "R1〜R5の6件の判定、R5-A/R5-Bと実際の流出防止・最適化を分ける判断、探索集合内のみの0件、固定10カテゴリの構造は概ね妥当。C02を加工後機上計測として明示した点、C04を定性的B成果とした点、C06のR3未確認という保守的判定は合理的であり、それ自体をFindingとしない。ただし固定記述軸の事実記述に参照Knowledge Unitを越える例があり、no-bypassに抵触する。",
+  "findings": [
+    {
+      "severity": "Moderate",
+      "target": "30_analysis Working Answer：C02 D02/D03/D05/D09、C04 D01/D03、C05 D05/D06 の出典lineage",
+      "evidence": [
+        "C02 D02のツルーイング直後比較、D03のびびり度・警告値、D09の過去値・管理余裕はK0003/K0004に具体記載がない。E0005〜E0007にも一部の記述がない。SRC-000315 §3.1–3.2、図5–6には関連する表示情報がある。https://www.jtekt.co.jp/engineering-journal/assets/1021/1021_23.pdf",
+        "C04 D01の1本ずつ加工・D03の数ミクロン精度はK0006やE0010/E0011に明示されない。SRC-000317事例2。https://www.pref.nagasaki.lg.jp/uploads/2022/03/1648514347.pdf",
+        "C05 D05のテールストッククイル、D06の画像拡張はE0012にあるがK0007に明示されない。00_context assumptions 8では原典報告、分析上の推論、未知を区別する。Workflow 20 §5.4/§6 no-bypass。"
+      ],
+      "impact": "固定10カテゴリは将来の事例比較・ユースケース構築用の記述基盤であり、事実の具体性を増やすとき根拠がcanonical synthesisから追跡できなければ比較可能性と再利用性が損なわれる。原典に実際にある事実でもSynthesisを迂回して直接Analysisを正当化できない。",
+      "repair_direction": {
+        "mode": "same_investigation",
+        "affected_layer": "10_evidence",
+        "instruction": "必要な事実は原典→Evidence→Knowledge Unitに明示してから各D項目に参照させ、根拠のない属性は未知または明示した推論に戻す。既存EvidenceにあるがSynthesisにない事実も対応するKnowledge Unitへ反映する。全60カテゴリの事実記述を同じ基準で点検する。"
+      },
+      "finding_id": "F004"
+    }
+  ],
+  "verdict": "FINDINGS"
+}
