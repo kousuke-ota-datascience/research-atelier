@@ -59,6 +59,44 @@ def _string_items(items: Any, *, field: str) -> list[str]:
     return [_nonempty_text(item, field=f"{field}[{index}]") for index, item in enumerate(items)]
 
 
+def _render_plain_table_delimiters(text: str) -> str:
+    """Correct a surplus uniform GFM separator cell for presentation only.
+
+    Require a plain header, exactly one surplus unaligned delimiter, and
+    one or more consecutive data rows all matching the header width. Leave
+    ambiguous tables, escaped pipes, alignment syntax and code fences alone.
+    The accepted analysis itself is never mutated.
+    """
+    lines = text.split("\n")
+    in_fence = False
+    index = 0
+    while index < len(lines):
+        line = lines[index]
+        if line.strip().startswith("```") or line.strip().startswith("~~~"):
+            in_fence = not in_fence
+            index += 1
+            continue
+        if in_fence or not line.startswith("|") or (index and lines[index - 1].startswith("|")):
+            index += 1
+            continue
+        end = index + 1
+        while end < len(lines) and lines[end].startswith("|"):
+            end += 1
+        table = lines[index:end]
+        if len(table) >= 3 and all(row.endswith("|") and "\\" not in row and "`" not in row for row in table):
+            cells = [row.split("|")[1:-1] for row in table]
+            width = len(cells[0])
+            if (
+                width >= 2 and all(c.strip() for c in cells[0])
+                and len(cells[1]) == width + 1
+                and all(c.strip() == "---" for c in cells[1])
+                and all(len(row) == width for row in cells[2:])
+            ):
+                lines[index + 1] = "| " + " | ".join(["---"] * width) + " |"
+        index = end
+    return "\n".join(lines)
+
+
 def render_working_answer_section(analysis: Mapping[str, Any]) -> str:
     """Render accepted ``30_analysis`` into the canonical Notion body section.
 
@@ -87,7 +125,7 @@ def render_working_answer_section(analysis: Mapping[str, Any]) -> str:
     # Notion strips ordinary blank lines on write/read round trips. Keep the
     # canonical serialization as a block sequence without blank-line separators
     # so exact CURRENT/STALE comparison is stable after refetch.
-    blocks: list[str] = [WORKING_ANSWER_HEADING, "## Answer", answer_text]
+    blocks: list[str] = [WORKING_ANSWER_HEADING, "## Answer", _render_plain_table_delimiters(answer_text)]
 
     for title, items in (
         ("Key Judgments", judgments),
@@ -143,24 +181,9 @@ def _notion_sections_equal(readback: str, rendered: str) -> bool:
     if len(actual) != len(expected):
         return False
     in_fence = False
-    for index, (observed, wanted) in enumerate(zip(actual, expected)):
+    for observed, wanted in zip(actual, expected):
         fence = wanted.strip().startswith("```")
         if observed != wanted:
-            # Native Notion tables may serialize a GFM delimiter with a
-            # single hyphen per column. Preserve column count and alignment;
-            # never normalize cell content or fenced examples.
-            delimiter = r"\|(?:\s*:?-+:?\s*\|)+"
-            if (
-                not in_fence and not fence and index > 0
-                and expected[index - 1].startswith("|")
-                and actual[index - 1].startswith("|")
-                and (index < 2 or not expected[index - 2].startswith("|"))
-                and (index < 2 or not actual[index - 2].startswith("|"))
-                and re.fullmatch(delimiter, observed)
-                and re.fullmatch(delimiter, wanted)
-                and re.sub(r"-+", "-", observed) == re.sub(r"-+", "-", wanted)
-            ):
-                continue
             if in_fence or fence or wanted.lstrip().startswith("|") or "`" in wanted:
                 return False
             # Only a literal label linked to itself is an auto-link candidate.
@@ -173,8 +196,8 @@ def _notion_sections_equal(readback: str, rendered: str) -> bool:
             if observed != wanted:
                 observed = observed.replace(r"\$", "$")
             if observed != wanted:
-                # Notion escapes a literal numeric less-than comparison.
-                # Accept only when the complete line equals canonical text.
+                # Notion escapes literal numeric comparisons in prose.
+                # Require exact equality of the full line after unescaping.
                 observed = re.sub(r"\\<(?=\d)", "<", observed)
             if observed != wanted:
                 return False
