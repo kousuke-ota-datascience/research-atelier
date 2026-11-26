@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000319",
+  "notion_url": "https://app.notion.com/p/424e5855be3981e3a6dde98b71f02843",
+  "title": "Intelligent Determination of Optimal Grinding Wheel Dressing Timing Based on Acoustic Emission Signals",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "Sensors and Materials",
+  "authors": "Yin-Wei Chao; Chun-Yen Chen; Yue-Feng Lin; Ming-Yi Tsai; Kai-Jung Chen",
+  "year": 2026,
+  "url": "https://sensors.myu-group.co.jp/article.php?ss=6311",
+  "doi": "10.18494/SAM6311",
+  "version_or_edition": null,
+  "reliability_note": "実加工実験。AEによる砥石状態分類と品質測定、提案交換判断を区別。"
+}

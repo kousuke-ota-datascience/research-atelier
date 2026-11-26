@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000314",
+  "notion_url": "https://app.notion.com/p/424e5855be39811b8210e56416783ac5",
+  "title": "高精度AIモデルでエンジン部品研削加工工程の品質保証を実現 SUBARUの量産ラインで本格稼働開始",
+  "source_type": "Web Page",
+  "journal_or_publisher": "富士通・SUBARU",
+  "authors": null,
+  "year": 2022,
+  "url": "https://info.archives.global.fujitsu/jp/news/2022/02/9.html",
+  "doi": null,
+  "version_or_edition": null,
+  "reliability_note": "共同発表。導入企業による実績報告、定量的な誤判定率・ドレッシング成果は未開示。"
+}

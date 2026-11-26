@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000318",
+  "notion_url": "https://app.notion.com/p/424e5855be3981998197eb64fb477fc4",
+  "title": "Explainable AI (XAI)-driven vibration sensing scheme for surface quality monitoring in a smart surface grinding process",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "Journal of Manufacturing Processes",
+  "authors": "Abhishek Hanchate; Satish T.S. Bukkapatnam; Kye Hwan Lee; Anil Srivastava; Soundar Kumara",
+  "year": 2023,
+  "url": "https://www.osti.gov/servlets/purl/2418518",
+  "doi": "10.1016/j.jmapro.2023.05.016",
+  "version_or_edition": "著者原稿（Version of Record: Journal of Manufacturing Processes 99, 184–194）",
+  "reliability_note": "著者原稿。小標本で実験的検証、実運用成果なし。"
+}
