@@ -193,6 +193,26 @@ class WorkingAnswerPatchTests(unittest.TestCase):
         analysis = {"working_answer": {"text": "| Cost |\n| --- |\n| $1 |"}}
         self.assertFalse(working_answer_section_matches(render_working_answer_section(analysis).replace("$1", r"\$1"), analysis))
 
+    def test_notion_native_table_delimiter_width_is_current(self):
+        analysis = {"working_answer": {"text": "| A | B |\n| --- | :---: |\n| x | y |"}}
+        readback = render_working_answer_section(analysis).replace("| --- | :---: |", "| - | :-: |")
+        self.assertEqual(working_answer_projection_state(readback, analysis), "CURRENT")
+        self.assertEqual(patch_working_answer_section(readback, analysis).action, "NOOP")
+        for altered in (readback.replace("| x | y |", "| x | z |"),
+                        readback.replace("| - | :-: |", "| - | - |"),
+                        readback.replace("| - | :-: |", "| - |")):
+            self.assertEqual(working_answer_projection_state(altered, analysis), "STALE")
+
+    def test_notion_numeric_less_than_is_current_only_for_exact_prose(self):
+        analysis = {"working_answer": {"text": "Welch p<0.001"}}
+        readback = render_working_answer_section(analysis).replace("p<", r"p\<")
+        self.assertEqual(working_answer_projection_state(readback, analysis), "CURRENT")
+        self.assertEqual(working_answer_projection_state(readback.replace("0.001", "0.01"), analysis), "STALE")
+        for literal in ("| p<0.001 |", "```\np<0.001\n```", "`p<0.001`"):
+            a = {"working_answer": {"text": literal}}
+            self.assertEqual(working_answer_projection_state(
+                render_working_answer_section(a).replace("p<", r"p\<"), a), "STALE")
+
     def test_duplicate_target_heading_blocks_projection(self):
         body = "# Working Answer\nold one\n\n# Notes\nkeep\n\n# Working Answer\nold two"
         with self.assertRaises(DuplicateWorkingAnswerSectionError):
