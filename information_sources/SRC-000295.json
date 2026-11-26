@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000295",
+  "notion_url": "https://app.notion.com/p/424e5855be3981eaaba3de263980c6af",
+  "title": "クラウドやAI技術を活用した効率的なマンホールポンプ 管理技術",
+  "source_type": "Web Page",
+  "journal_or_publisher": "NiX JAPAN株式会社",
+  "authors": null,
+  "year": null,
+  "url": "https://nix-japan.co.jp/solution/cooperation-manhole",
+  "doi": null,
+  "version_or_edition": null,
+  "reliability_note": "実証参加企業の事業紹介。費用削減は実証目的として記述。"
+}

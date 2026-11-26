@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000297",
+  "notion_url": "https://app.notion.com/p/424e5855be398166ab4cd2f0067d934b",
+  "title": "故障予知保全による安定稼働",
+  "source_type": "Web Page",
+  "journal_or_publisher": "三菱電機",
+  "authors": null,
+  "year": 2013,
+  "url": "https://www.mitsubishielectric.co.jp/fa/our-stories/012/index.html",
+  "doi": null,
+  "version_or_edition": null,
+  "reliability_note": "技術提供企業による導入事例。詳細ページはログインが必要。"
+}

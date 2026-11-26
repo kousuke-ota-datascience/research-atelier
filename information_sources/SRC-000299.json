@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000299",
+  "notion_url": "https://app.notion.com/p/424e5855be39818fa4d6fc95dd18591c",
+  "title": "Case Study: How a Factory Increased OEE With Shift Logbook Software",
+  "source_type": "Web Page",
+  "journal_or_publisher": "iFactory",
+  "authors": "Daniel Carter",
+  "year": 2026,
+  "url": "https://ifactoryapp.com/shift-logbook/case-study-oee-shift-logbook",
+  "doi": null,
+  "version_or_edition": null,
+  "reliability_note": "2026-05-27公開の匿名顧客に関するベンダー報告。保全費に品質・配送関連損失を含む。独立検証なし。"
+}

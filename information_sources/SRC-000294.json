@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000294",
+  "notion_url": "https://app.notion.com/p/424e5855be39810b9e25e340163c0ed7",
+  "title": "マンホールポンプの劣化予測方法",
+  "source_type": "Other",
+  "journal_or_publisher": null,
+  "authors": null,
+  "year": 2024,
+  "url": "https://patents.google.com/patent/JP7431391B2/ja",
+  "doi": null,
+  "version_or_edition": "JP7431391B2",
+  "reliability_note": "特許明細書。実施例に記載の手法と実運用・経済効果の独立検証は別。"
+}
