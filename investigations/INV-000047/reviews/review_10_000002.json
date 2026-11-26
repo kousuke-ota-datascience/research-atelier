@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "investigation_id": "INV-000047",
+  "review_seq": 2,
+  "report_type": "semantic_review_layer",
+  "layer": "10_evidence",
+  "review_kind": "source_evidence_note_to_10_evidence",
+  "target_blob_sha": "aa51097ac982b1155aba82a47c768d56301a3c58",
+  "assessment": "8 Sourceの指定revisionのblob SHAと10 Evidence Noteの内容・locator・Source対応を確認。前回F001はE0001/E0002に装置別平均帰属、検定、装置選定と容量制約、歴史比較、専門家機序仮説を追加し原典§§4.5.2、5.1、5.4と整合。F002はE0005にCQA固有のTable 2性能・pH/温度SAX条件・NOR・sample handling診断を追加し、titreと混同しない。F003はE0003にτと表1の値、本文傾向と実測値の区別を追加。F004はE0009のnon-quality risk予測対象を明示。E0010はSRC-000305 §6の別製品への適用・二工程の特定・実対策・通常操業前後比較の報告を分離し、初期製品の数値を流用しない。修正対象の原典を再照合し、前回4件の解消を確認。残る未収集情報は採択・主要結論の支持を覆す欠陥とは判断しない。",
+  "findings": [],
+  "verdict": "PASS"
+}

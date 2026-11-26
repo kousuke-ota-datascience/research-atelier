@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "investigation_id": "INV-000047",
+  "review_seq": 2,
+  "report_type": "semantic_review_layer",
+  "layer": "00_context",
+  "review_kind": "context_semantic_validity",
+  "target_blob_sha": "2a872b9c22d39b4d83c203ec4b60cc2dbd499236",
+  "assessment": "前回と同一blobのfrozen Context。RQ-000046とExploratory設計、R1〜R4、D01〜D09、独立ユースケースの分析単位、原典報告と因果識別の区別は整合する。Context変更不要。",
+  "findings": [],
+  "verdict": "PASS"
+}

@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "investigation_id": "INV-000047",
+  "review_seq": 2,
+  "report_type": "semantic_review_layer",
+  "layer": "30_analysis",
+  "review_kind": "20_synthesis_plus_00_context_to_30_analysis",
+  "target_blob_sha": "6486b4a5775229feab2cd7b97a85548da1466073",
+  "assessment": "F006解消：C01と別製品C09は独立した適用対象・介入・評価設計であり、E0010→K0004の当該事例固有の根拠でR1〜R4を個別評価。初期実験の学習数・装置・介入数値を転用しない。C09の51.3%は通常操業の前後比較で、C01の実験との因果識別の差を明記。8資料・9ユースケース、完全適合2、要因分析3、近接4の集計と個別判定、D01〜D09、Judgment・Working Answer・profile・limitationsの整合を確認。C02の代理品質指標、C04の測定変動、ベンダー/要旨の開示不足を留保し、未確認を不適合や不存在としない。探索範囲を限定し、網羅性を主張しない。前回の6件は全て解消。現行Contextと問いに対し追加repairを要求する実質的欠陥を認めない。",
+  "findings": [],
+  "verdict": "PASS"
+}

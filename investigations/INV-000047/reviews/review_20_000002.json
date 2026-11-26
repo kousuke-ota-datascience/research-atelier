@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "investigation_id": "INV-000047",
+  "review_seq": 2,
+  "report_type": "semantic_review_layer",
+  "layer": "20_synthesis",
+  "review_kind": "10_evidence_to_20_synthesis",
+  "target_blob_sha": "24dec7ad7794e5c83197885b8c139578b7cc3da3",
+  "assessment": "F005解消：K0001は2019年4月以前、K0006は条件I〜IIIのτと観測値を継承。K0002/K0003/K0014に装置別帰属・比較・専門家機序の留保、K0008/K0009にCQAの性能・ルール・測定過程、K0013に品質不良リスク、K0004にE0010の独立事例を保持。主たるKnowledge UnitのEvidence support、歴史比較と実験の区別、関連と因果、測定過程、未知属性と比較設計のqualificationを確認。新たな実質的な意味論欠陥を認めない。",
+  "findings": [],
+  "verdict": "PASS"
+}
