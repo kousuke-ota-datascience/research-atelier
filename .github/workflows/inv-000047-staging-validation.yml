@@ -40,3 +40,22 @@ jobs:
               python -m research_atelier.validation.validate_investigation "$id" --through "$stage"
             fi
           done
+      - name: Validate promoted canonical chain and derive review request
+        env:
+          PYTHONPATH: src
+        run: |
+          set -euo pipefail
+          git checkout --detach origin/main
+          test "$(git rev-parse HEAD)" = f1917022ff128b87240d7e8a6d414f8f6dbfcb7c
+          test ! -d investigations/INV-000047/reviews
+          python -m research_atelier.validation.validate_investigation INV-000047 --through 30
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from research_atelier.reviewing.reconcile import reconcile_payload
+          context = json.loads(Path('investigations/INV-000047/00_context.json').read_text())
+          payload = {'current': {'review_status': '未', 'latest_review_seq': None}, 'context': context, 'review': {'latest': None, 'target_relation': 'missing', 'issues': []}, 'events': {'review_requested': True}}
+          result = reconcile_payload(payload)
+          print('RECONCILE_RESULT=' + json.dumps(result, ensure_ascii=False))
+          assert result['outcome'] == 'UPDATE' and not result['issues']
+          PY
