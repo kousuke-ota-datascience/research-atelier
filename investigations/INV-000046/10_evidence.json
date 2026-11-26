@@ -3,7 +3,7 @@
   "artifact_type": "10_evidence",
   "investigation_id": "INV-000046",
   "rq_id": "RQ-000045",
-  "snapshot_at": "2026-11-26T04:26:49.834Z",
+  "snapshot_at": "2026-11-26T04:27:43.881Z",
   "sources": [
     {
       "source_id": "SRC-000250",
@@ -453,7 +453,7 @@
     },
     {
       "evidence_id": "E0025",
-      "content": "年間保全関連支出を約50.4万ドルから28.6万ドルに減らした（43%減）と報告する。費用には品質保留・緊急配送関連の損失を含む。",
+      "content": "年間保全関連支出を約50.4万ドルから28.6万ドルに減らした（43%減）とベンダーが報告する。緊急部品割増、時間外対応労働、バッチ損失の削減を要因として挙げる。",
       "source_locator": "Case study, maintenance cost results",
       "note_type": "Result",
       "direct_quote": null,
@@ -1050,6 +1050,20 @@
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/424e5855be3981c0b343e893d79b027a",
           "title": "EV-000526"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0068",
+      "content": "稼働停止時間を前処理で除去し、金型劣化に無関係な成形機故障・段取り替え等に起因する異常を基本事象の集計から除外。金型ごとに異なる成形条件・材質や複数機械での使用を考慮し、直前の機械故障からの稼働時間と基本事象の累積確率で劣化を扱う。",
+      "source_locator": "§5.1, §6 (publisher indexed text)",
+      "note_type": "Method",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000303",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/424e5855be398164a220cb07b8af3676",
+          "title": "EV-000527"
         }
       }
     }
