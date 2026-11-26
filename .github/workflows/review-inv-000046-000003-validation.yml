@@ -1,0 +1,61 @@
+name: INV-000046 Review 000003 validation
+on:
+  push:
+    branches: [review-inv-000046-000003-validation]
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install jsonschema
+      - run: |
+          PYTHONPATH=src python - <<'PY'
+          from pathlib import Path
+          import json, subprocess
+          from datetime import datetime, timezone
+          from dataclasses import asdict
+          from research_atelier.reviewing.review_writer import prepare_review_cycle, save_review_cycle
+          from research_atelier.reviewing.review_state import load_review_history, target_relation_from_blobs
+          from research_atelier.projection.review import plan_review_projection, reconcile_latest_review_relation
+          from research_atelier.reviewing.reconcile import reconcile_payload
+          target = "3a76da4adbbf78af5a5f8c302d6d8281277afa1a"
+          inv = "INV-000046"
+          root = Path("investigations") / inv
+          review_dir = root / "reviews"
+          schema = Path("schemas/v2")
+          blobs = {"00_context":"db2072fbec2345a24b54dbcd069c846158fae5cb","10_evidence":"28202e91ce76b67ff26b2173e9bc60cf2a71d831","20_synthesis":"757e4301a0377288eb9a7afaabf3078920006754","30_analysis":"f97d134d4638646a4de189ee81addb1e39d606d8"}
+          def git(*args):
+              return subprocess.check_output(["git",*args],text=True).strip()
+          def current():
+              assert git("ls-remote","origin","refs/heads/main").split()[0] == target
+              actual = {k:git("hash-object",str(root / (k+".json"))) for k in blobs}
+              assert actual == blobs
+              return actual
+          current()
+          prepared = prepare_review_cycle(inv,review_dir=review_dir,schema_path=schema,target_commit_sha=target,artifact_blob_shas=blobs)
+          assert prepared.review_seq == 3
+          bodies = json.loads(r'''{"00_context":{"assessment":"frozen ContextのblobはReview 000001/000002から不変。RQ-000045、Exploratory、cutoff、固定39軸と同一ユースケースの4条件の整合を維持。修正不要。","findings":[]},"10_evidence":{"assessment":"Review 000002 F001/F002の指定事項はE0069–E0076で解消。8件の新Evidence Noteについて内容・locator・Source・Note Type・titleの一致を確認。従来68 Evidenceは前回snapshotと同一。今回IIETAとMDPIの公式HTMLを直接取得し該当箇所を照合した。追加抽出はsource-faithfulと判断。ただし固定39軸に直接影響する以下の新規omissionを確認した。新規Source探索や全原典の再網羅抽出を要求するものではない。","findings":[{"target":"C07 / SRC-000250 / E0001,E0026,E0069–E0071 — health index と診断出力の欠落","evidence":["Embarki et al., DOI 10.18280/jesa.590321 §3.4 Table 7 https://www.iieta.org/journals/jesa/paper/10.18280/jesa.590321","Table 7: 振動・ピーク・温度の複合式によるcondition score 0–100、優先順位付け・ドリフト追跡・設備間比較への利用。確認警報後の特徴周波数のルール／classifierによるprobable fault class出力。","76 EvidenceのうちSRC-000250に属するE0001,E0002,E0026–E0029,E0053–E0057,E0069–E0071にはhealth indexの出力仕様と用途がない。"],"impact":"D05.1/D07.1/D08.1に直接関係する実装済み別モジュールが欠落し、C07を振動系列予測・警報・診断だけの事例として比較することになる。故障確率の未確認を埋める根拠ではない。","severity":"Minor","repair_direction":{"mode":"same_investigation","affected_layer":"10_evidence","instruction":"既選択原典§3.4 Table 7から健全度スコアの入力・値域・用途、診断の出力形式をEvidence化。式の重みや実際の意思決定効果が未確認なら明示。20/30で監視・予測・診断・優先順位付けを分離しD05.1/D07.1/D08.1を更新。R1の未確認を機械的に変更しない。"}},{"target":"C10 / SRC-000303 / E0073–E0075 — GFT評価目的関数と実例の特徴量・重症度の欠落","evidence":["Nunes et al., DOI 10.3390/app13127131 §5.2 Eq.(1), §6 Figures 11–13 / Table 2–3 https://www.mdpi.com/2076-3417/13/12/7131","Eq.(1)は介入間隔ごとの停止時間比 ut_i/(wt_i+ut_i) の総和であり、全期間の総停止時間/総経過時間とは一般に異なる。E0074/K0044は単に金型不稼働割合と記載する。","§6では初回射出時間の非単調なセンサ系列とBE CDF、クッション位置・サイクル時間・射出開始位置を主要特徴量として報告。停止時間の長い4故障を回避するという履歴シナリオ結果と、短時間故障は回避しないとの記述。C10 D02.4/D02.5は未知、D05.1では具体的な主要変数が欠落。"],"impact":"費用目的の意味と評価尺度を混同する余地が残る。事象重症度（業務上の停止時間）、故障前の観測変化、主要特徴量とGFTの意思決定特性を比較できない。63.43%は著者の履歴推定であり実測費用とはならない。","severity":"Moderate","repair_direction":{"mode":"same_investigation","affected_layer":"10_evidence","instruction":"原典のEq.(1)をそのまま意味づけし、全期間不稼働率や実測金額との違いを明示。§6の主要変数、故障前の異常点の例、履歴での長短故障別の介入提案を抽出し、物理予兆の普遍的実証と業務的重大性を区別。学習と費用比較の独立性未確認を保持。20/30再構築時にD02.4/D02.5/D05.1/D07.1/D08.1/D09.4を再確認。"}}]},"20_synthesis":{"assessment":"Review 000002 F003はK0036,K0042,K0044でE0068/E0072の時間原点、BE累積確率、TE意味を保持し解消。追加8 EvidenceがK0039–K0046等へ伝達され、故障確率の記載/実装、推論周期と取得周期、履歴推定と実績、学習/評価の独立性を区別する。現選択Evidenceからの独立したSynthesis defectは確認されない。10_evidenceの新規Findingはupstream修正後に再構築する。","findings":[]},"30_analysis":{"assessment":"Review 000002 F004はC06 D06.2を未知、C07 D06.2をオンライン状態監視・イベント駆動診断とGRU推論時点/周期の区別、C04 D08.3を明示的推論に修正し解消。C07/C10の4条件再判定、D03.4/D06.3/D07.3の予後意味の未確認、D09.4の履歴推定・評価独立性の留保を確認。主結論完全適合0は現選択Evidenceから反証されず、前回の他事例判定は差分上維持。追加原典情報はAnalysisへ直接補わず10_evidence findingとして扱う。現Synthesisに対する独立した下流defectは確認されない。","findings":[]}}''')
+          save_review_cycle(prepared,reviewed_at=datetime.now(timezone.utc).isoformat(),layer_bodies=bodies,current_target_commit_sha=target,current_artifact_blob_shas=current(),review_dir=review_dir,schema_path=schema)
+          history = load_review_history(inv,review_dir=review_dir,schema_path=schema)
+          assert not history.issues and len(history.records)==3,history.issues
+          review=history.records[-1]
+          relation=target_relation_from_blobs(review,blobs)
+          assert relation=="exact",relation
+          plan=plan_review_projection(review,investigation_rows=[{"investigation_id":inv,"url":"https://app.notion.com/p/424e5855be398196b29fe6cf81690e9b"}],existing_review_rows=[],canonical_path=str(review_dir/"review-000003.json"))
+          recon=reconcile_payload({"current":{"review_status":"再レビュー待","latest_review_seq":2},"review":{"latest":review,"issues":list(history.issues),"target_relation":relation},"events":{"review_requested":True},"context":json.loads((root/"00_context.json").read_text())})
+          assert plan.outcome=="CREATE" and recon["outcome"]=="UPDATE",(plan,recon)
+          pointer=reconcile_latest_review_relation(current_latest_review_url="https://app.notion.com/p/424e5855be3981fca3f3cd94736a384c",latest_review_url="__CREATED_REVIEW_URL__",latest_review_exists=True)
+          for f in sorted(review_dir.glob("*000003.json")):
+              print("REVIEW_FILE:"+f.name+":"+json.dumps(f.read_text(),ensure_ascii=False))
+          print("REVIEW_PLAN:"+json.dumps(asdict(plan),ensure_ascii=False))
+          print("REVIEW_RECON:"+json.dumps(recon,ensure_ascii=False))
+          print("REVIEW_POINTER:"+json.dumps(pointer,ensure_ascii=False))
+          print("REVIEW_VALIDATED")
+          PY
