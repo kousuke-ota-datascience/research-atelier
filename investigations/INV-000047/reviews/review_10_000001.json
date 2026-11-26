@@ -1,0 +1,75 @@
+{
+  "schema_version": "1.0.0",
+  "investigation_id": "INV-000047",
+  "review_seq": 1,
+  "report_type": "semantic_review_layer",
+  "layer": "10_evidence",
+  "review_kind": "source_evidence_note_to_10_evidence",
+  "target_blob_sha": "ff64e2e0d2d0df0f7eb9a281153ec70dd03c8716",
+  "assessment": "9件のEvidence Noteとsnapshotの対応は確認した。主要な事例の採択根拠は概ね存在するが、原典に明示された要因の方向・影響度・品質モデル性能・目的変数等の重要な情報が取り込まれておらず、原典で確認できる情報を未収集のまま分析している。",
+  "findings": [
+    {
+      "finding_id": "F001",
+      "severity": "Moderate",
+      "target": "E0001/E0002（SRC-000305、C01）: 装置別寄与の方向・大きさおよび改善アクションの根拠の欠落",
+      "evidence": [
+        "Senoner et al., Using Explainable Artificial Intelligence to Improve Process Quality, §4.5.2 Table 4: 装置QI613/QI614/QI615の平均SHAP値は−13.40/−11.42/+2.40、QP211/QP212/QP232/QP233は−0.86/+1.57/−12.54/−13.48。装置群間差の検定とQI615・QP212の選択が記載される。",
+        "同原典 §5.4: 工程25の汚染・工程166の搬送時スクラッチという専門家の機序仮説および装置選択の説明がある。",
+        "E0001/E0002には工程レベル重要度、装置変更実験はあるが装置別SHAP値と機序仮説の記録がない。30_analysis C01 D05–D07には具体的方向・寄与・選定根拠の不足が残る。"
+      ],
+      "impact": "完全適合事例の中核である品質悪化要因、影響度、改善介入への変換過程が過度に粗くなり、RQへの直接的な回答とD05/D06/D07が弱くなる。",
+      "repair_direction": {
+        "mode": "same_investigation",
+        "affected_layer": "10_evidence",
+        "instruction": "SRC-000305の該当箇所から装置別SHAP寄与の方向・大きさ、装置選定理由と容量制約、専門家による機序仮説をEvidence Noteに捕捉する。SHAP値はモデル帰属であり因果効果でないこと、機序は仮説であることを明記し、Synthesis/Analysisを再構築する。"
+      }
+    },
+    {
+      "finding_id": "F002",
+      "severity": "Moderate",
+      "target": "E0005（SRC-000308、C04）: CQA診断モデルの性能、要因組合せ、測定・取扱いの根拠不足",
+      "evidence": [
+        "原典のCQAケース Table 2: cross-validated RMSE 0.41、R-squared 90.4の記載。",
+        "原典CQA分析のpH 6.1未満とDay 3 SAX d/fの組合せ、通常運転範囲（NOR）に関する工程専門家の留保、モデル予測と実測の不一致に関連したsample handling変更が記載される。",
+        "E0005及び30_analysis C04 D04/D05/D06/D09では具体的な性能・組合せ条件・診断根拠が十分反映されない。"
+      ],
+      "impact": "モデルの妥当性と要因の具体性、工程因子と測定過程の交絡・代替説明を評価できず、要因分析事例としての再利用性を損なう。",
+      "repair_direction": {
+        "mode": "same_investigation",
+        "affected_layer": "10_evidence",
+        "instruction": "CQAケース固有の性能・検証方法、要因の組合せとNOR、sample handling変更の診断上の位置付けを原典に即してEvidence Noteに追加する。モデル関連と因果確証を区別し、実工程介入を確認できない限りR4を格上げしない。"
+      }
+    },
+    {
+      "finding_id": "F003",
+      "severity": "Minor",
+      "target": "E0003（C02）: 分位点条件と原典内の傾向記述・実測値の不整合",
+      "evidence": [
+        "SRC-000306の条件II（τ=0.08）と条件III（τ=0.10）について、表の規格下限割れ割合は2.34%から2.21%に低下する。",
+        "原典の分位点変更に関する傾向説明と表の数値は単純な単調関係としては整合しない。E0003に条件IIのτおよび原典の記述と表の区別が欠け、30_analysisのanomalyではτ=0.08に言及している。"
+      ],
+      "impact": "条件選択と品質改善のトレードオフを検証する根拠が途切れ、原典の一般説明と観測値が混同されうる。",
+      "repair_direction": {
+        "mode": "same_investigation",
+        "affected_layer": "10_evidence",
+        "instruction": "分位点条件と表の実測値を対応付け、原典の傾向説明との不一致を別記する。単調関係や因果機序を断定せず、20_synthesis・30_analysisに伝達する。"
+      }
+    },
+    {
+      "finding_id": "F004",
+      "severity": "Minor",
+      "target": "E0009（SRC-000312、C08）: 予測目的変数の具体性不足",
+      "evidence": [
+        "SRC-000312は予測モデルの目的をnon-quality riskの予測と明示する。",
+        "E0009/K0013は説明可能な予測モデルや廃棄削減を記録するが、30_analysis C08 D02では目的変数を不明としながらR2を確認済みとしている。"
+      ],
+      "impact": "R2の根拠とD02の記述が不明瞭になり、既知の予測対象と未確認の具体的な品質指標を区別できない。",
+      "repair_direction": {
+        "mode": "same_investigation",
+        "affected_layer": "10_evidence",
+        "instruction": "原典に明記されたnon-quality riskを予測対象としてEvidence Noteへ記録し、具体的な品質ラベルや評価尺度が未開示である点と分離する。R2判定とD02を根拠に整合させ、廃棄削減の品質改善効果を過大解釈しない。"
+      }
+    }
+  ],
+  "verdict": "FINDINGS"
+}

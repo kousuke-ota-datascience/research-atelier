@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0.0",
+  "investigation_id": "INV-000047",
+  "review_seq": 1,
+  "report_type": "semantic_review_layer",
+  "layer": "20_synthesis",
+  "review_kind": "10_evidence_to_20_synthesis",
+  "target_blob_sha": "edcc38d9df2bdab569c5f2537f7e36cee2a3ccaf",
+  "assessment": "採択根拠の主要な対応は追跡可能である。一方、Evidenceの属性をSynthesisに保持せず下流の分析が利用しており、canonical chainの根拠継承に欠落がある。",
+  "findings": [
+    {
+      "finding_id": "F005",
+      "severity": "Minor",
+      "target": "K0001/K0006 → 30_analysis C01 D03/C02 D07: Evidenceに存在する分析使用属性の欠落",
+      "evidence": [
+        "E0001は2019年4月以前のデータを記録するがK0001にその時間境界がなく、C01 D03が使用する。",
+        "E0003は条件IIIのτ=0.10を記録するがK0006に当該設定がなく、C02 D07が使用する。条件IIのτ=0.08はF003のEvidence修正対象。"
+      ],
+      "impact": "分析上使用するデータ期間と運転条件をSynthesisのKnowledge Unitから追跡できず、再構築時に重要属性が失われうる。",
+      "repair_direction": {
+        "mode": "same_investigation",
+        "affected_layer": "20_synthesis",
+        "instruction": "Evidence修正後、分析で使用する時間境界・各分位点条件等を対応するKnowledge Unitに保持する。原典・EvidenceからAnalysisへの直接バイパスを避け、根拠のない補完は行わない。"
+      }
+    }
+  ],
+  "verdict": "FINDINGS"
+}

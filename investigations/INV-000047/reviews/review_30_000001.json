@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "investigation_id": "INV-000047",
+  "review_seq": 1,
+  "report_type": "semantic_review_layer",
+  "layer": "30_analysis",
+  "review_kind": "20_synthesis_plus_00_context_to_30_analysis",
+  "target_blob_sha": "eb680869c2969b9bd78d4a806a3fb41cdb287641",
+  "assessment": "RQに対する事例整理、R1〜R4及びD01〜D09、SHAP帰属と因果効果の区別は概ね妥当。完全適合件数の分析単位がfrozen Contextと十分整合しないため修正を要する。",
+  "findings": [
+    {
+      "finding_id": "F006",
+      "severity": "Moderate",
+      "target": "C01と別製品展開、Working Answerの事例数・完全適合数: 分析単位の不整合",
+      "evidence": [
+        "00_context Scopeは独立した製造品質分析ユースケースを分析単位とし、同一事例の複数Sourceを統合する。",
+        "SRC-000305 §6及びK0004には別製品への展開と51.3%の相対的歩留まり損失低減の報告がある。初期実験と別製品展開は別の製品・適用対象・検証設計である。",
+        "30_analysisは同じ研究プログラムであることを根拠としてC01に含め、Working Answerでは8研究・プログラムを8事例として集計する。"
+      ],
+      "impact": "同一論文・研究プログラムと独立ユースケースを混同すると、採択件数と完全適合率の解釈が変わる。別製品の結果も初期事例の実験と混同されうる。",
+      "repair_direction": {
+        "mode": "same_investigation",
+        "affected_layer": "30_analysis",
+        "instruction": "Contextのユースケース単位に従い別製品展開を独立評価し、R1〜R4の根拠を個別に判定する。同一ユースケースとして統合する場合はその同一性の実質的根拠を明記する。必要な根拠が欠けるならEvidence/Synthesisに戻り、件数とWorking Answerを整合させる。完全適合数を機械的に増やさない。"
+      }
+    }
+  ],
+  "verdict": "FINDINGS"
+}

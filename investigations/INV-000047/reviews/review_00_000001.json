@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "investigation_id": "INV-000047",
+  "review_seq": 1,
+  "report_type": "semantic_review_layer",
+  "layer": "00_context",
+  "review_kind": "context_semantic_validity",
+  "target_blob_sha": "2a872b9c22d39b4d83c203ec4b60cc2dbd499236",
+  "assessment": "RQ-000046とExploratory設計、R1〜R4の採択条件、D01〜D09の観測軸、モデル上の関連と因果効果の区別、独立ユースケースを分析単位とする条件に意味論的な矛盾は認めない。Contextの変更は不要。",
+  "findings": [],
+  "verdict": "PASS"
+}
