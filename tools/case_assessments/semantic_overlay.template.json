@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0.0",
+  "artifact_type": "case_assessments_semantic_overlay",
+  "investigation_id": "<INV-ID>",
+  "rq_id": "<RQ-ID>",
+  "baseline_sha256": "<SHA256 of exact baseline bytes>",
+  "entries": [
+    {
+      "case_id": "<Cxx>",
+      "factor_id": "<Dxx.y>",
+      "attributes": [
+        {
+          "field": "<semantic attribute name>",
+          "value_text": "<literal substring>",
+          "unit": null,
+          "source_excerpt": "<exact excerpt from assessment_text>"
+        }
+      ],
+      "limitations": [
+        "<exact excerpt from assessment_text>"
+      ]
+    }
+  ]
+}
