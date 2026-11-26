@@ -1,0 +1,2843 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "case_assessments",
+  "authority": "derived",
+  "contract": "manufacturing_quality_categories_v2",
+  "investigation_id": "INV-000047",
+  "rq_id": "RQ-000046",
+  "derived_from": {
+    "analysis_commit_sha": "b00c76ef854193500fb5d382217b4c38c94dc29c",
+    "analysis_blob_sha": "6486b4a5775229feab2cd7b97a85548da1466073",
+    "artifact_blob_shas": {
+      "00_context": "2a872b9c22d39b4d83c203ec4b60cc2dbd499236",
+      "10_evidence": "aa51097ac982b1155aba82a47c768d56301a3c58",
+      "20_synthesis": "24dec7ad7794e5c83197885b8c139578b7cc3da3",
+      "30_analysis": "6486b4a5775229feab2cd7b97a85548da1466073"
+    },
+    "review_seq": 2,
+    "review_target_commit_sha": "b00c76ef854193500fb5d382217b4c38c94dc29c",
+    "review_manifest_path": "investigations/INV-000047/reviews/review-000002.json",
+    "review_manifest_blob_sha": "42d2d69b16fbcab6d7335e2304690017d499bd1a",
+    "projection_log_blob_sha": "b3fbb52c821b3eb77509f4f2a1151517b2a1a89f"
+  },
+  "factor_framework": {
+    "origin": "frozen_context_assumption",
+    "canonical_assumption": "事例記述軸は本調査固有の次の9カテゴリとする。D01 製造プロセス（製品・工程・製造方式・設備境界・分析単位）、D02 品質（目的変数・不良種別・規格・変動・基準値）、D03 データ（入力変数・取得粒度・期間・標本数・ラベル・工程と製品の対応・欠測）、D04 モデル（モデル種別・前処理・特徴量・学習・評価分割）、D05 要因分析（手法・変数名・重要度・方向・効果量・非線形・交互作用）、D06 因果性と介入可能性（関連と因果識別・交絡・操作可能性・工程制約）、D07 工程改善（推奨・最適化・実介入内容・実施条件）、D08 運用（実装段階・意思決定主体・システム連携・運用規模）、D09 評価（モデル性能・要因分析検証・品質改善の比較設計・定量結果・経済効果・限界）。各カテゴリを記述し、原典で確認できない属性は未知、適用されない属性は非該当とする。これは実事例収集用の固定記述軸であり網羅的taxonomyの検証済み結果ではない。RQ-000044の39軸を転用しない。",
+    "factor_count": 9,
+    "factor_definitions": [
+      {
+        "factor_id": "D01",
+        "factor_label": "製造プロセス",
+        "definition_text": "製品・工程・製造方式・設備境界・分析単位",
+        "canonical_definition": "D01 製造プロセス（製品・工程・製造方式・設備境界・分析単位）"
+      },
+      {
+        "factor_id": "D02",
+        "factor_label": "品質",
+        "definition_text": "目的変数・不良種別・規格・変動・基準値",
+        "canonical_definition": "D02 品質（目的変数・不良種別・規格・変動・基準値）"
+      },
+      {
+        "factor_id": "D03",
+        "factor_label": "データ",
+        "definition_text": "入力変数・取得粒度・期間・標本数・ラベル・工程と製品の対応・欠測",
+        "canonical_definition": "D03 データ（入力変数・取得粒度・期間・標本数・ラベル・工程と製品の対応・欠測）"
+      },
+      {
+        "factor_id": "D04",
+        "factor_label": "モデル",
+        "definition_text": "モデル種別・前処理・特徴量・学習・評価分割",
+        "canonical_definition": "D04 モデル（モデル種別・前処理・特徴量・学習・評価分割）"
+      },
+      {
+        "factor_id": "D05",
+        "factor_label": "要因分析",
+        "definition_text": "手法・変数名・重要度・方向・効果量・非線形・交互作用",
+        "canonical_definition": "D05 要因分析（手法・変数名・重要度・方向・効果量・非線形・交互作用）"
+      },
+      {
+        "factor_id": "D06",
+        "factor_label": "因果性と介入可能性",
+        "definition_text": "関連と因果識別・交絡・操作可能性・工程制約",
+        "canonical_definition": "D06 因果性と介入可能性（関連と因果識別・交絡・操作可能性・工程制約）"
+      },
+      {
+        "factor_id": "D07",
+        "factor_label": "工程改善",
+        "definition_text": "推奨・最適化・実介入内容・実施条件",
+        "canonical_definition": "D07 工程改善（推奨・最適化・実介入内容・実施条件）"
+      },
+      {
+        "factor_id": "D08",
+        "factor_label": "運用",
+        "definition_text": "実装段階・意思決定主体・システム連携・運用規模",
+        "canonical_definition": "D08 運用（実装段階・意思決定主体・システム連携・運用規模）"
+      },
+      {
+        "factor_id": "D09",
+        "factor_label": "評価",
+        "definition_text": "モデル性能・要因分析検証・品質改善の比較設計・定量結果・経済効果・限界",
+        "canonical_definition": "D09 評価（モデル性能・要因分析検証・品質改善の比較設計・定量結果・経済効果・限界）"
+      }
+    ]
+  },
+  "criteria_definitions": [
+    {
+      "criterion_id": "R1",
+      "definition_text": "実際の製造工程に由来する過去の製造・品質関連データを利用している。",
+      "canonical_definition": "R1：実際の製造工程に由来する過去の製造・品質関連データを利用している。",
+      "include_index": 1
+    },
+    {
+      "criterion_id": "R2",
+      "definition_text": "機械学習等のデータ駆動型モデルを構築し、製造不良または品質特性との関係を学習している。品質モデルと要因分析に用いられる多変量統計モデルも候補とする。",
+      "canonical_definition": "R2：機械学習等のデータ駆動型モデルを構築し、製造不良または品質特性との関係を学習している。品質モデルと要因分析に用いられる多変量統計モデルも候補とする。",
+      "include_index": 2
+    },
+    {
+      "criterion_id": "R3",
+      "definition_text": "品質に影響する候補要因と、その重要度・影響方向・影響量等の少なくとも一つを分析している。予測上の関連と因果効果は区別する。",
+      "canonical_definition": "R3：品質に影響する候補要因と、その重要度・影響方向・影響量等の少なくとも一つを分析している。予測上の関連と因果効果は区別する。",
+      "include_index": 3
+    },
+    {
+      "criterion_id": "R4",
+      "definition_text": "分析結果に基づいて実工程に介入し、品質改善の実績が報告されている。介入実施と改善効果の確認は分けて記録する。",
+      "canonical_definition": "R4：分析結果に基づいて実工程に介入し、品質改善の実績が報告されている。介入実施と改善効果の確認は分けて記録する。",
+      "include_index": 4
+    }
+  ],
+  "summary": {
+    "case_count": 9,
+    "factor_assessment_count": 81,
+    "criterion_assessment_count": 36,
+    "eligibility_counts": {
+      "factor_analysis": 3,
+      "full_match": 2,
+      "near_match": 4
+    },
+    "factor_rows_without_explicit_status": 81,
+    "criterion_status_counts": {
+      "confirmed": 23,
+      "unconfirmed": 13
+    }
+  },
+  "cases": [
+    {
+      "case_id": "C01",
+      "name": "Hitachi ABB：高出力半導体の電気検査歩留まり",
+      "eligibility": "full_match",
+      "canonical_eligibility": "完全適合",
+      "assessment_reason": "同一製品の履歴学習、工程重要度、技術者による操作候補選定、比較実験が連結している。別製品への展開は別ユースケースC09に分離し、初期製品の採択根拠には用いない。",
+      "canonical_reason_line": "- 判定理由：同一製品の履歴学習、工程重要度、技術者による操作候補選定、比較実験が連結している。別製品への展開は別ユースケースC09に分離し、初期製品の採択根拠には用いない。",
+      "reason_analysis_line": 24,
+      "canonical_header": "### C01 Hitachi ABB：高出力半導体の電気検査歩留まり",
+      "canonical_scope_line": "- 採択区分：完全適合（K0001, K0002, K0003, K0014）",
+      "scope_analysis_line": 22,
+      "analysis_line": 21,
+      "knowledge_unit_scope": [
+        "K0001",
+        "K0002",
+        "K0003",
+        "K0014"
+      ],
+      "evidence_refs": [
+        "E0001",
+        "E0002"
+      ],
+      "source_refs": [
+        "SRC-000305"
+      ],
+      "criteria_assessments": [
+        {
+          "criterion_id": "R1",
+          "status": "confirmed",
+          "canonical_status": "確認済",
+          "assessment_text": null,
+          "reference_role": "case_scope",
+          "canonical_line": "- R1 確認済 / R2 確認済 / R3 確認済 / R4 確認済",
+          "analysis_line": 23,
+          "knowledge_unit_refs": [
+            "K0001",
+            "K0002",
+            "K0003",
+            "K0014"
+          ],
+          "evidence_refs": [
+            "E0001",
+            "E0002"
+          ],
+          "source_refs": [
+            "SRC-000305"
+          ]
+        },
+        {
+          "criterion_id": "R2",
+          "status": "confirmed",
+          "canonical_status": "確認済",
+          "assessment_text": null,
+          "reference_role": "case_scope",
+          "canonical_line": "- R1 確認済 / R2 確認済 / R3 確認済 / R4 確認済",
+          "analysis_line": 23,
+          "knowledge_unit_refs": [
+            "K0001",
+            "K0002",
+            "K0003",
+            "K0014"
+          ],
+          "evidence_refs": [
+            "E0001",
+            "E0002"
+          ],
+          "source_refs": [
+            "SRC-000305"
+          ]
+        },
+        {
+          "criterion_id": "R3",
+          "status": "confirmed",
+          "canonical_status": "確認済",
+          "assessment_text": null,
+          "reference_role": "case_scope",
+          "canonical_line": "- R1 確認済 / R2 確認済 / R3 確認済 / R4 確認済",
+          "analysis_line": 23,
+          "knowledge_unit_refs": [
+            "K0001",
+            "K0002",
+            "K0003",
+            "K0014"
+          ],
+          "evidence_refs": [
+            "E0001",
+            "E0002"
+          ],
+          "source_refs": [
+            "SRC-000305"
+          ]
+        },
+        {
+          "criterion_id": "R4",
+          "status": "confirmed",
+          "canonical_status": "確認済",
+          "assessment_text": null,
+          "reference_role": "case_scope",
+          "canonical_line": "- R1 確認済 / R2 確認済 / R3 確認済 / R4 確認済",
+          "analysis_line": 23,
+          "knowledge_unit_refs": [
+            "K0001",
+            "K0002",
+            "K0003",
+            "K0014"
+          ],
+          "evidence_refs": [
+            "E0001",
+            "E0002"
+          ],
+          "source_refs": [
+            "SRC-000305"
+          ]
+        }
+      ],
+      "factor_assessments": [
+        {
+          "factor_id": "D01",
+          "factor_label": "製造プロセス",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "トランジスタチップ、イオン注入・エッチング等200工程。履歴分析単位は製造バッチ、実験単位はウェハ群",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D01 製造プロセス：トランジスタチップ、イオン注入・エッチング等200工程。履歴分析単位は製造バッチ、実験単位はウェハ群（K0001–K0003）。",
+          "analysis_line": 26,
+          "knowledge_unit_refs": [
+            "K0001",
+            "K0002",
+            "K0003"
+          ],
+          "evidence_refs": [
+            "E0001",
+            "E0002"
+          ],
+          "source_refs": [
+            "SRC-000305"
+          ]
+        },
+        {
+          "factor_id": "D02",
+          "factor_label": "品質",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "目的変数は電気検査歩留まり。機密保護のため正規化値を報告。専門家は粒子汚染とウェハ表面スクラッチに伴うチップ損傷を機序候補として報告したが、個別の機序は未確証。規格値・絶対歩留まりは未知",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D02 品質：目的変数は電気検査歩留まり。機密保護のため正規化値を報告。専門家は粒子汚染とウェハ表面スクラッチに伴うチップ損傷を機序候補として報告したが、個別の機序は未確証。規格値・絶対歩留まりは未知（K0001,K0003,K0014）。",
+          "analysis_line": 27,
+          "knowledge_unit_refs": [
+            "K0001",
+            "K0003",
+            "K0014"
+          ],
+          "evidence_refs": [
+            "E0001",
+            "E0002"
+          ],
+          "source_refs": [
+            "SRC-000305"
+          ]
+        },
+        {
+          "factor_id": "D03",
+          "factor_label": "データ",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "1,197バッチ、約180万チップ、3,614製造パラメータ。2019年4月以前の履歴。計測値と工程対応あり。欠測処理等は未収集",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D03 データ：1,197バッチ、約180万チップ、3,614製造パラメータ。2019年4月以前の履歴。計測値と工程対応あり。欠測処理等は未収集（K0001）。",
+          "analysis_line": 28,
+          "knowledge_unit_refs": [
+            "K0001"
+          ],
+          "evidence_refs": [
+            "E0001"
+          ],
+          "source_refs": [
+            "SRC-000305"
+          ]
+        },
+        {
+          "factor_id": "D04",
+          "factor_label": "モデル",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "GBDT、学習957／holdout 240、学習内CV。詳細ハイパーパラメータ、予測精度の数値は本Evidenceに未収集",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D04 モデル：GBDT、学習957／holdout 240、学習内CV。詳細ハイパーパラメータ、予測精度の数値は本Evidenceに未収集（K0001）。",
+          "analysis_line": 29,
+          "knowledge_unit_refs": [
+            "K0001"
+          ],
+          "evidence_refs": [
+            "E0001"
+          ],
+          "source_refs": [
+            "SRC-000305"
+          ]
+        },
+        {
+          "factor_id": "D05",
+          "factor_label": "要因分析",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "TreeSHAPの工程重要度：イオン注入25=4.18、エッチング166=2.30。装置別平均特徴帰属（正規化歩留まり単位）は工程25 QI613 −13.40、QI614 −11.42、QI615 +2.40、工程166 QP211 −0.86、QP212 +1.57、QP232 −12.54、QP233 −13.48。装置群間Kruskal–Wallis検定は両工程p<0.001。単変量絶対相関0.25超は1変数。非線形モデルを利用し、装置別帰属の方向と大きさは確認済みだが因果効果・個別交互作用値ではない",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D05 要因分析：TreeSHAPの工程重要度：イオン注入25=4.18、エッチング166=2.30。装置別平均特徴帰属（正規化歩留まり単位）は工程25 QI613 −13.40、QI614 −11.42、QI615 +2.40、工程166 QP211 −0.86、QP212 +1.57、QP232 −12.54、QP233 −13.48。装置群間Kruskal–Wallis検定は両工程p<0.001。単変量絶対相関0.25超は1変数。非線形モデルを利用し、装置別帰属の方向と大きさは確認済みだが因果効果・個別交互作用値ではない（K0001,K0002）。",
+          "analysis_line": 30,
+          "knowledge_unit_refs": [
+            "K0001",
+            "K0002"
+          ],
+          "evidence_refs": [
+            "E0001"
+          ],
+          "source_refs": [
+            "SRC-000305"
+          ]
+        },
+        {
+          "factor_id": "D06",
+          "factor_label": "因果性と介入可能性",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "計測パラメータは直接操作不能。技術者が装置ルーティング変更を提案。SHAPはモデル寄与であり因果識別ではない。専門家の機序仮説は工程25のQI613/QI614での粒子汚染、工程166の特定装置型の搬送機構によるウェハ表面スクラッチ（4位置）。QI615は同程度の汚染を起こさずQP212は当該機械的問題を持たないとの専門家説明で、機序そのものの実験的確証とは区別する。会社は装置優先化による追加容量制約なしと確認した。比較実験は具体的なルーティング介入に対する局所的効果を支持。ウェハの独立性、群割付詳細、他製品への一般化は留保",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D06 因果性と介入可能性：計測パラメータは直接操作不能。技術者が装置ルーティング変更を提案。SHAPはモデル寄与であり因果識別ではない。専門家の機序仮説は工程25のQI613/QI614での粒子汚染、工程166の特定装置型の搬送機構によるウェハ表面スクラッチ（4位置）。QI615は同程度の汚染を起こさずQP212は当該機械的問題を持たないとの専門家説明で、機序そのものの実験的確証とは区別する。会社は装置優先化による追加容量制約なしと確認した。比較実験は具体的なルーティング介入に対する局所的効果を支持。ウェハの独立性、群割付詳細、他製品への一般化は留保（K0002,K0003,K0014）。",
+          "analysis_line": 31,
+          "knowledge_unit_refs": [
+            "K0002",
+            "K0003",
+            "K0014"
+          ],
+          "evidence_refs": [
+            "E0001",
+            "E0002"
+          ],
+          "source_refs": [
+            "SRC-000305"
+          ]
+        },
+        {
+          "factor_id": "D07",
+          "factor_label": "工程改善",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "装置帰属が正のQI615・QP212を選定。対照QI613/QP233からそれぞれ変更する2×2要因実験を実施。他工程は共通とした",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D07 工程改善：装置帰属が正のQI615・QP212を選定。対照QI613/QP233からそれぞれ変更する2×2要因実験を実施。他工程は共通とした（K0002,K0003）。",
+          "analysis_line": 32,
+          "knowledge_unit_refs": [
+            "K0002",
+            "K0003"
+          ],
+          "evidence_refs": [
+            "E0001",
+            "E0002"
+          ],
+          "source_refs": [
+            "SRC-000305"
+          ]
+        },
+        {
+          "factor_id": "D08",
+          "factor_label": "運用",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "技術者と品質管理による装置選択。実験は24ウェハ・4群。会社は追加容量制約がないことを確認。長期監視やIT接続仕様は未知",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D08 運用：技術者と品質管理による装置選択。実験は24ウェハ・4群。会社は追加容量制約がないことを確認。長期監視やIT接続仕様は未知（K0002,K0003）。",
+          "analysis_line": 33,
+          "knowledge_unit_refs": [
+            "K0002",
+            "K0003"
+          ],
+          "evidence_refs": [
+            "E0001",
+            "E0002"
+          ],
+          "source_refs": [
+            "SRC-000305"
+          ]
+        },
+        {
+          "factor_id": "D09",
+          "factor_label": "評価",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "holdout歴史比較で両優先装置使用群とその他の平均差22.7正規化単位（Welch p<0.001、他工程非統制）。実験の正規化歩留まりは対照38.2、25のみ50.6、166のみ85.7、両方86.0。対照との差は+47.8正規化単位（実歩留まりpercentage pointではない）。歴史平均比の歩留まり損失21.7%減（会社報告）。重要度25>166だが単独介入効果は逆で、著者は低性能装置の使用頻度の差を理由とする。両変更効果は非加算的。経済効果・一般化は未知",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D09 評価：holdout歴史比較で両優先装置使用群とその他の平均差22.7正規化単位（Welch p<0.001、他工程非統制）。実験の正規化歩留まりは対照38.2、25のみ50.6、166のみ85.7、両方86.0。対照との差は+47.8正規化単位（実歩留まりpercentage pointではない）。歴史平均比の歩留まり損失21.7%減（会社報告）。重要度25>166だが単独介入効果は逆で、著者は低性能装置の使用頻度の差を理由とする。両変更効果は非加算的。経済効果・一般化は未知（K0002,K0003）。",
+          "analysis_line": 34,
+          "knowledge_unit_refs": [
+            "K0002",
+            "K0003"
+          ],
+          "evidence_refs": [
+            "E0001",
+            "E0002"
+          ],
+          "source_refs": [
+            "SRC-000305"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "C02",
+      "name": "栗本鐵工所：黒鉛球状化の残留Mg制御",
+      "eligibility": "near_match",
+      "canonical_eligibility": "近接",
+      "assessment_reason": "モデル予測による実工程改善は確認できるが、直近履歴の予測性能寄与の説明は品質悪化要因そのもののモデル由来の重要度・方向・効果量とは異なる。品質リスク代理指標としてR4を確認し、最終不良率とは区別する。",
+      "canonical_reason_line": "- 判定理由：モデル予測による実工程改善は確認できるが、直近履歴の予測性能寄与の説明は品質悪化要因そのもののモデル由来の重要度・方向・効果量とは異なる。品質リスク代理指標としてR4を確認し、最終不良率とは区別する。",
+      "reason_analysis_line": 39,
+      "canonical_header": "### C02 栗本鐵工所：黒鉛球状化の残留Mg制御",
+      "canonical_scope_line": "- 採択区分：近接（K0005, K0006）",
+      "scope_analysis_line": 37,
+      "analysis_line": 36,
+      "knowledge_unit_scope": [
+        "K0005",
+        "K0006"
+      ],
+      "evidence_refs": [
+        "E0003"
+      ],
+      "source_refs": [
+        "SRC-000306"
+      ],
+      "criteria_assessments": [
+        {
+          "criterion_id": "R1",
+          "status": "confirmed",
+          "canonical_status": "確認済",
+          "assessment_text": null,
+          "reference_role": "case_scope",
+          "canonical_line": "- R1 確認済 / R2 確認済 / R3 未確認 / R4 確認済",
+          "analysis_line": 38,
+          "knowledge_unit_refs": [
+            "K0005",
+            "K0006"
+          ],
+          "evidence_refs": [
+            "E0003"
+          ],
+          "source_refs": [
+            "SRC-000306"
+          ]
+        },
+        {
+          "criterion_id": "R2",
+          "status": "confirmed",
+          "canonical_status": "確認済",
+          "assessment_text": null,
+          "reference_role": "case_scope",
+          "canonical_line": "- R1 確認済 / R2 確認済 / R3 未確認 / R4 確認済",
+          "analysis_line": 38,
+          "knowledge_unit_refs": [
+            "K0005",
+            "K0006"
+          ],
+          "evidence_refs": [
+            "E0003"
+          ],
+          "source_refs": [
+            "SRC-000306"
+          ]
+        },
+        {
+          "criterion_id": "R3",
+          "status": "unconfirmed",
+          "canonical_status": "未確認",
+          "assessment_text": null,
+          "reference_role": "case_scope",
+          "canonical_line": "- R1 確認済 / R2 確認済 / R3 未確認 / R4 確認済",
+          "analysis_line": 38,
+          "knowledge_unit_refs": [
+            "K0005",
+            "K0006"
+          ],
+          "evidence_refs": [
+            "E0003"
+          ],
+          "source_refs": [
+            "SRC-000306"
+          ]
+        },
+        {
+          "criterion_id": "R4",
+          "status": "confirmed",
+          "canonical_status": "確認済",
+          "assessment_text": null,
+          "reference_role": "case_scope",
+          "canonical_line": "- R1 確認済 / R2 確認済 / R3 未確認 / R4 確認済",
+          "analysis_line": 38,
+          "knowledge_unit_refs": [
+            "K0005",
+            "K0006"
+          ],
+          "evidence_refs": [
+            "E0003"
+          ],
+          "source_refs": [
+            "SRC-000306"
+          ]
+        }
+      ],
+      "factor_assessments": [
+        {
+          "factor_id": "D01",
+          "factor_label": "製造プロセス",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "ダクタイル鉄管加賀屋工場の黒鉛球状化処理。処理杯単位",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D01 製造プロセス：ダクタイル鉄管加賀屋工場の黒鉛球状化処理。処理杯単位（K0005）。",
+          "analysis_line": 41,
+          "knowledge_unit_refs": [
+            "K0005"
+          ],
+          "evidence_refs": [
+            "E0003"
+          ],
+          "source_refs": [
+            "SRC-000306"
+          ]
+        },
+        {
+          "factor_id": "D02",
+          "factor_label": "品質",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "目的変数はMg歩留まり。評価は処理後残留Mgの下限外れ率。製品不良率ではない。規格数値・最終検査結果は未知",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D02 品質：目的変数はMg歩留まり。評価は処理後残留Mgの下限外れ率。製品不良率ではない。規格数値・最終検査結果は未知（K0005,K0006）。",
+          "analysis_line": 42,
+          "knowledge_unit_refs": [
+            "K0005",
+            "K0006"
+          ],
+          "evidence_refs": [
+            "E0003"
+          ],
+          "source_refs": [
+            "SRC-000306"
+          ]
+        },
+        {
+          "factor_id": "D03",
+          "factor_label": "データ",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "約4.5万杯、64変数。組成・直前2回の処理等。収集期間、欠測、工程対応の細部は未知",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D03 データ：約4.5万杯、64変数。組成・直前2回の処理等。収集期間、欠測、工程対応の細部は未知（K0005）。",
+          "analysis_line": 43,
+          "knowledge_unit_refs": [
+            "K0005"
+          ],
+          "evidence_refs": [
+            "E0003"
+          ],
+          "source_refs": [
+            "SRC-000306"
+          ]
+        },
+        {
+          "factor_id": "D04",
+          "factor_label": "モデル",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "勾配ブースティング・分位点回帰。学習分割・予測精度数値は未収集",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D04 モデル：勾配ブースティング・分位点回帰。学習分割・予測精度数値は未収集（K0005）。",
+          "analysis_line": 44,
+          "knowledge_unit_refs": [
+            "K0005"
+          ],
+          "evidence_refs": [
+            "E0003"
+          ],
+          "source_refs": [
+            "SRC-000306"
+          ]
+        },
+        {
+          "factor_id": "D05",
+          "factor_label": "要因分析",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "直近処理履歴を組み込むと予測精度向上に寄与したとの著者説明。品質変数への個別重要度・方向・効果量・交互作用は未確認",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D05 要因分析：直近処理履歴を組み込むと予測精度向上に寄与したとの著者説明。品質変数への個別重要度・方向・効果量・交互作用は未確認（K0005）。",
+          "analysis_line": 45,
+          "knowledge_unit_refs": [
+            "K0005"
+          ],
+          "evidence_refs": [
+            "E0003"
+          ],
+          "source_refs": [
+            "SRC-000306"
+          ]
+        },
+        {
+          "factor_id": "D06",
+          "factor_label": "因果性と介入可能性",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "Mg添加量は操作対象。下限外れリスクと材料量のトレードオフ。履歴変数は予測情報で因果介入候補と同義でない。比較条件の同等性不明",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D06 因果性と介入可能性：Mg添加量は操作対象。下限外れリスクと材料量のトレードオフ。履歴変数は予測情報で因果介入候補と同義でない。比較条件の同等性不明（K0005,K0006）。",
+          "analysis_line": 46,
+          "knowledge_unit_refs": [
+            "K0005",
+            "K0006"
+          ],
+          "evidence_refs": [
+            "E0003"
+          ],
+          "source_refs": [
+            "SRC-000306"
+          ]
+        },
+        {
+          "factor_id": "D07",
+          "factor_label": "工程改善",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "分位点予測から添加量自動決定。条件I τ=0.05、II τ=0.08、III τ=0.10を比較し、条件IIIを継続",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D07 工程改善：分位点予測から添加量自動決定。条件I τ=0.05、II τ=0.08、III τ=0.10を比較し、条件IIIを継続（K0005,K0006）。",
+          "analysis_line": 47,
+          "knowledge_unit_refs": [
+            "K0005",
+            "K0006"
+          ],
+          "evidence_refs": [
+            "E0003"
+          ],
+          "source_refs": [
+            "SRC-000306"
+          ]
+        },
+        {
+          "factor_id": "D08",
+          "factor_label": "運用",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "実工程の各条件3か月〜1年・900〜4,000杯、条件IIIで自動操業継続。監視・例外処理・システム構成細部は未知",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D08 運用：実工程の各条件3か月〜1年・900〜4,000杯、条件IIIで自動操業継続。監視・例外処理・システム構成細部は未知（K0006）。",
+          "analysis_line": 48,
+          "knowledge_unit_refs": [
+            "K0006"
+          ],
+          "evidence_refs": [
+            "E0003"
+          ],
+          "source_refs": [
+            "SRC-000306"
+          ]
+        },
+        {
+          "factor_id": "D09",
+          "factor_label": "評価",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "下限外れ率3.37%→2.21%（−1.16 percentage point）、Mg使用比98.6%。条件I（τ=0.05）0.47%・102.4%、II（τ=0.08）2.34%・99.6%、III（τ=0.10）2.21%・98.6%。本文はτ増加で下限外れ率が悪化しMg使用量が低下すると説明するが、表1ではII→IIIの下限外れ率は低下しており、単純な単調関係とは一致しない。Mg使用量は順次低下。比較は過去人手実績で群同等性は未確認。単調な因果関係は断定しない。最終製品不良率・金額効果は未知",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D09 評価：下限外れ率3.37%→2.21%（−1.16 percentage point）、Mg使用比98.6%。条件I（τ=0.05）0.47%・102.4%、II（τ=0.08）2.34%・99.6%、III（τ=0.10）2.21%・98.6%。本文はτ増加で下限外れ率が悪化しMg使用量が低下すると説明するが、表1ではII→IIIの下限外れ率は低下しており、単純な単調関係とは一致しない。Mg使用量は順次低下。比較は過去人手実績で群同等性は未確認。単調な因果関係は断定しない。最終製品不良率・金額効果は未知（K0006）。",
+          "analysis_line": 49,
+          "knowledge_unit_refs": [
+            "K0006"
+          ],
+          "evidence_refs": [
+            "E0003"
+          ],
+          "source_refs": [
+            "SRC-000306"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "C03",
+      "name": "住友精化：バッチ重合の反応進行・品質変動",
+      "eligibility": "factor_analysis",
+      "canonical_eligibility": "要因分析",
+      "assessment_reason": "品質回帰と関連因子抽出を確認。添加量調整手順と表示は報告されたが、実工程における変更と効果の対応する実測比較が未確認。",
+      "canonical_reason_line": "- 判定理由：品質回帰と関連因子抽出を確認。添加量調整手順と表示は報告されたが、実工程における変更と効果の対応する実測比較が未確認。",
+      "reason_analysis_line": 54,
+      "canonical_header": "### C03 住友精化：バッチ重合の反応進行・品質変動",
+      "canonical_scope_line": "- 採択区分：要因分析（K0007）",
+      "scope_analysis_line": 52,
+      "analysis_line": 51,
+      "knowledge_unit_scope": [
+        "K0007"
+      ],
+      "evidence_refs": [
+        "E0004"
+      ],
+      "source_refs": [
+        "SRC-000307"
+      ],
+      "criteria_assessments": [
+        {
+          "criterion_id": "R1",
+          "status": "confirmed",
+          "canonical_status": "確認済",
+          "assessment_text": null,
+          "reference_role": "case_scope",
+          "canonical_line": "- R1 確認済 / R2 確認済 / R3 確認済 / R4 未確認",
+          "analysis_line": 53,
+          "knowledge_unit_refs": [
+            "K0007"
+          ],
+          "evidence_refs": [
+            "E0004"
+          ],
+          "source_refs": [
+            "SRC-000307"
+          ]
+        },
+        {
+          "criterion_id": "R2",
+          "status": "confirmed",
+          "canonical_status": "確認済",
+          "assessment_text": null,
+          "reference_role": "case_scope",
+          "canonical_line": "- R1 確認済 / R2 確認済 / R3 確認済 / R4 未確認",
+          "analysis_line": 53,
+          "knowledge_unit_refs": [
+            "K0007"
+          ],
+          "evidence_refs": [
+            "E0004"
+          ],
+          "source_refs": [
+            "SRC-000307"
+          ]
+        },
+        {
+          "criterion_id": "R3",
+          "status": "confirmed",
+          "canonical_status": "確認済",
+          "assessment_text": null,
+          "reference_role": "case_scope",
+          "canonical_line": "- R1 確認済 / R2 確認済 / R3 確認済 / R4 未確認",
+          "analysis_line": 53,
+          "knowledge_unit_refs": [
+            "K0007"
+          ],
+          "evidence_refs": [
+            "E0004"
+          ],
+          "source_refs": [
+            "SRC-000307"
+          ]
+        },
+        {
+          "criterion_id": "R4",
+          "status": "unconfirmed",
+          "canonical_status": "未確認",
+          "assessment_text": null,
+          "reference_role": "case_scope",
+          "canonical_line": "- R1 確認済 / R2 確認済 / R3 確認済 / R4 未確認",
+          "analysis_line": 53,
+          "knowledge_unit_refs": [
+            "K0007"
+          ],
+          "evidence_refs": [
+            "E0004"
+          ],
+          "source_refs": [
+            "SRC-000307"
+          ]
+        }
+      ],
+      "factor_assessments": [
+        {
+          "factor_id": "D01",
+          "factor_label": "製造プロセス",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "姫路工場バッチ重合、ロットを分析単位とする工程比較",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D01 製造プロセス：姫路工場バッチ重合、ロットを分析単位とする工程比較（K0007）。",
+          "analysis_line": 56,
+          "knowledge_unit_refs": [
+            "K0007"
+          ],
+          "evidence_refs": [
+            "E0004"
+          ],
+          "source_refs": [
+            "SRC-000307"
+          ]
+        },
+        {
+          "factor_id": "D02",
+          "factor_label": "品質",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "製品品質値・品質変動。具体物性・規格・不良率は未知",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D02 品質：製品品質値・品質変動。具体物性・規格・不良率は未知（K0007）。",
+          "analysis_line": 57,
+          "knowledge_unit_refs": [
+            "K0007"
+          ],
+          "evidence_refs": [
+            "E0004"
+          ],
+          "source_refs": [
+            "SRC-000307"
+          ]
+        },
+        {
+          "factor_id": "D03",
+          "factor_label": "データ",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "PIMSの操業・品質、運転記録、同条件ロット、原料不純物調査。期間・ロット数・欠測は未知",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D03 データ：PIMSの操業・品質、運転記録、同条件ロット、原料不純物調査。期間・ロット数・欠測は未知（K0007）。",
+          "analysis_line": 58,
+          "knowledge_unit_refs": [
+            "K0007"
+          ],
+          "evidence_refs": [
+            "E0004"
+          ],
+          "source_refs": [
+            "SRC-000307"
+          ]
+        },
+        {
+          "factor_id": "D04",
+          "factor_label": "モデル",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "発熱量等の工程特徴量と3変数のステップワイズ回帰。評価分割・誤差数値は未知",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D04 モデル：発熱量等の工程特徴量と3変数のステップワイズ回帰。評価分割・誤差数値は未知（K0007）。",
+          "analysis_line": 59,
+          "knowledge_unit_refs": [
+            "K0007"
+          ],
+          "evidence_refs": [
+            "E0004"
+          ],
+          "source_refs": [
+            "SRC-000307"
+          ]
+        },
+        {
+          "factor_id": "D05",
+          "factor_label": "要因分析",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "発熱量と後半攪拌動力の関連、品質回帰で選択した3説明変数。具体係数、他2変数名、効果量は未知",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D05 要因分析：発熱量と後半攪拌動力の関連、品質回帰で選択した3説明変数。具体係数、他2変数名、効果量は未知（K0007）。",
+          "analysis_line": 60,
+          "knowledge_unit_refs": [
+            "K0007"
+          ],
+          "evidence_refs": [
+            "E0004"
+          ],
+          "source_refs": [
+            "SRC-000307"
+          ]
+        },
+        {
+          "factor_id": "D06",
+          "factor_label": "因果性と介入可能性",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "工程知識で関連を解釈し添加量を操作候補とした。回帰選択は因果識別ではない。交絡調整・介入割付の詳細は未知",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D06 因果性と介入可能性：工程知識で関連を解釈し添加量を操作候補とした。回帰選択は因果識別ではない。交絡調整・介入割付の詳細は未知（K0007）。",
+          "analysis_line": 61,
+          "knowledge_unit_refs": [
+            "K0007"
+          ],
+          "evidence_refs": [
+            "E0004"
+          ],
+          "source_refs": [
+            "SRC-000307"
+          ]
+        },
+        {
+          "factor_id": "D07",
+          "factor_label": "工程改善",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "抽出特徴に応じた添加量調整手順と過去ロット比較表示を作成。個別の実介入量・条件は未知",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D07 工程改善：抽出特徴に応じた添加量調整手順と過去ロット比較表示を作成。個別の実介入量・条件は未知（K0007）。",
+          "analysis_line": 62,
+          "knowledge_unit_refs": [
+            "K0007"
+          ],
+          "evidence_refs": [
+            "E0004"
+          ],
+          "source_refs": [
+            "SRC-000307"
+          ]
+        },
+        {
+          "factor_id": "D08",
+          "factor_label": "運用",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "現場作業者の判断支援を意図する表示。運用開始時期・実装範囲は未知",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D08 運用：現場作業者の判断支援を意図する表示。運用開始時期・実装範囲は未知（K0007）。",
+          "analysis_line": 63,
+          "knowledge_unit_refs": [
+            "K0007"
+          ],
+          "evidence_refs": [
+            "E0004"
+          ],
+          "source_refs": [
+            "SRC-000307"
+          ]
+        },
+        {
+          "factor_id": "D09",
+          "factor_label": "評価",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "顧客が品質・操業改善を述べる。予測性能・品質改善量・比較期間は未知。年間数百万円は期待値で実測経済効果ではない",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D09 評価：顧客が品質・操業改善を述べる。予測性能・品質改善量・比較期間は未知。年間数百万円は期待値で実測経済効果ではない（K0007）。",
+          "analysis_line": 64,
+          "knowledge_unit_refs": [
+            "K0007"
+          ],
+          "evidence_refs": [
+            "E0004"
+          ],
+          "source_refs": [
+            "SRC-000307"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "C04",
+      "name": "バイオ医薬品：細胞培養のCQA逸脱",
+      "eligibility": "factor_analysis",
+      "canonical_eligibility": "要因分析",
+      "assessment_reason": "実製造データで品質モデルと候補因子を分析し、是正措置後の改善も報告された。製造条件変更とサンプル取扱・検査の改善が分離できないためR4を保守的に未確認。",
+      "canonical_reason_line": "- 判定理由：実製造データで品質モデルと候補因子を分析し、是正措置後の改善も報告された。製造条件変更とサンプル取扱・検査の改善が分離できないためR4を保守的に未確認。",
+      "reason_analysis_line": 69,
+      "canonical_header": "### C04 バイオ医薬品：細胞培養のCQA逸脱",
+      "canonical_scope_line": "- 採択区分：要因分析（K0008, K0009）",
+      "scope_analysis_line": 67,
+      "analysis_line": 66,
+      "knowledge_unit_scope": [
+        "K0008",
+        "K0009"
+      ],
+      "evidence_refs": [
+        "E0005"
+      ],
+      "source_refs": [
+        "SRC-000308"
+      ],
+      "criteria_assessments": [
+        {
+          "criterion_id": "R1",
+          "status": "confirmed",
+          "canonical_status": "確認済",
+          "assessment_text": null,
+          "reference_role": "case_scope",
+          "canonical_line": "- R1 確認済 / R2 確認済 / R3 確認済 / R4 未確認",
+          "analysis_line": 68,
+          "knowledge_unit_refs": [
+            "K0008",
+            "K0009"
+          ],
+          "evidence_refs": [
+            "E0005"
+          ],
+          "source_refs": [
+            "SRC-000308"
+          ]
+        },
+        {
+          "criterion_id": "R2",
+          "status": "confirmed",
+          "canonical_status": "確認済",
+          "assessment_text": null,
+          "reference_role": "case_scope",
+          "canonical_line": "- R1 確認済 / R2 確認済 / R3 確認済 / R4 未確認",
+          "analysis_line": 68,
+          "knowledge_unit_refs": [
+            "K0008",
+            "K0009"
+          ],
+          "evidence_refs": [
+            "E0005"
+          ],
+          "source_refs": [
+            "SRC-000308"
+          ]
+        },
+        {
+          "criterion_id": "R3",
+          "status": "confirmed",
+          "canonical_status": "確認済",
+          "assessment_text": null,
+          "reference_role": "case_scope",
+          "canonical_line": "- R1 確認済 / R2 確認済 / R3 確認済 / R4 未確認",
+          "analysis_line": 68,
+          "knowledge_unit_refs": [
+            "K0008",
+            "K0009"
+          ],
+          "evidence_refs": [
+            "E0005"
+          ],
+          "source_refs": [
+            "SRC-000308"
+          ]
+        },
+        {
+          "criterion_id": "R4",
+          "status": "unconfirmed",
+          "canonical_status": "未確認",
+          "assessment_text": null,
+          "reference_role": "case_scope",
+          "canonical_line": "- R1 確認済 / R2 確認済 / R3 確認済 / R4 未確認",
+          "analysis_line": 68,
+          "knowledge_unit_refs": [
+            "K0008",
+            "K0009"
+          ],
+          "evidence_refs": [
+            "E0005"
+          ],
+          "source_refs": [
+            "SRC-000308"
+          ]
+        }
+      ],
+      "factor_assessments": [
+        {
+          "factor_id": "D01",
+          "factor_label": "製造プロセス",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "細胞培養製品の大規模製造、バッチ分析",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D01 製造プロセス：細胞培養製品の大規模製造、バッチ分析（K0008,K0009）。",
+          "analysis_line": 71,
+          "knowledge_unit_refs": [
+            "K0008",
+            "K0009"
+          ],
+          "evidence_refs": [
+            "E0005"
+          ],
+          "source_refs": [
+            "SRC-000308"
+          ]
+        },
+        {
+          "factor_id": "D02",
+          "factor_label": "品質",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "CQA逸脱。具体属性名、規格、基準不良率は未知",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D02 品質：CQA逸脱。具体属性名、規格、基準不良率は未知（K0008）。",
+          "analysis_line": 72,
+          "knowledge_unit_refs": [
+            "K0008"
+          ],
+          "evidence_refs": [
+            "E0005"
+          ],
+          "source_refs": [
+            "SRC-000308"
+          ]
+        },
+        {
+          "factor_id": "D03",
+          "factor_label": "データ",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "26バッチ、約150オフライン変数、15〜20インライン時系列。pH・温度。期間・欠測・品質ラベル詳細は未知",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D03 データ：26バッチ、約150オフライン変数、15〜20インライン時系列。pH・温度。期間・欠測・品質ラベル詳細は未知（K0008）。",
+          "analysis_line": 73,
+          "knowledge_unit_refs": [
+            "K0008"
+          ],
+          "evidence_refs": [
+            "E0005"
+          ],
+          "source_refs": [
+            "SRC-000308"
+          ]
+        },
+        {
+          "factor_id": "D04",
+          "factor_label": "モデル",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "SAXによる時系列特徴化とRandom Forest。方法として反復交差検証を提示し、CQAモデルの交差検証性能はRMSE 0.41、Model R-squared 90.4（Table 2原表表記。尺度の明示がなく0–1尺度の90.4とは解釈しない）。具体的なfold数等は未確認。別のtitreモデルを混同しない",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D04 モデル：SAXによる時系列特徴化とRandom Forest。方法として反復交差検証を提示し、CQAモデルの交差検証性能はRMSE 0.41、Model R-squared 90.4（Table 2原表表記。尺度の明示がなく0–1尺度の90.4とは解釈しない）。具体的なfold数等は未確認。別のtitreモデルを混同しない（K0008）。",
+          "analysis_line": 74,
+          "knowledge_unit_refs": [
+            "K0008"
+          ],
+          "evidence_refs": [
+            "E0005"
+          ],
+          "source_refs": [
+            "SRC-000308"
+          ]
+        },
+        {
+          "factor_id": "D05",
+          "factor_label": "要因分析",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "20工程中6工程で観測変動85%を説明との報告。pH 6.1未満かつDay 3温度SAX subsequence 21がdまたはfの条件が好ましいCQA値と関連。関連条件であって因果効果ではない。個別変数の寄与値・SAX記号の実温度への換算値は未確認",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D05 要因分析：20工程中6工程で観測変動85%を説明との報告。pH 6.1未満かつDay 3温度SAX subsequence 21がdまたはfの条件が好ましいCQA値と関連。関連条件であって因果効果ではない。個別変数の寄与値・SAX記号の実温度への換算値は未確認（K0008）。",
+          "analysis_line": 75,
+          "knowledge_unit_refs": [
+            "K0008"
+          ],
+          "evidence_refs": [
+            "E0005"
+          ],
+          "source_refs": [
+            "SRC-000308"
+          ]
+        },
+        {
+          "factor_id": "D06",
+          "factor_label": "因果性と介入可能性",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "通常運転範囲（NOR）外の設定推奨を科学者が懸念し、学習データはNOR内でも個別確認が必要と著者は述べる。予測・実測の乖離を契機にCause and Effect会議を行い、サンプル取扱方法の変更による測定結果上昇を一因と特定した。モデル関連・測定過程診断と製造因子の因果確証は異なる。是正措置を各変動源へ割り当てた比較は未確認",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D06 因果性と介入可能性：通常運転範囲（NOR）外の設定推奨を科学者が懸念し、学習データはNOR内でも個別確認が必要と著者は述べる。予測・実測の乖離を契機にCause and Effect会議を行い、サンプル取扱方法の変更による測定結果上昇を一因と特定した。モデル関連・測定過程診断と製造因子の因果確証は異なる。是正措置を各変動源へ割り当てた比較は未確認（K0008,K0009）。",
+          "analysis_line": 76,
+          "knowledge_unit_refs": [
+            "K0008",
+            "K0009"
+          ],
+          "evidence_refs": [
+            "E0005"
+          ],
+          "source_refs": [
+            "SRC-000308"
+          ]
+        },
+        {
+          "factor_id": "D07",
+          "factor_label": "工程改善",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "著者は是正措置実施と大規模製造での目的変数改善を報告。具体的な製造条件変更・検査変更の内訳は未知",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D07 工程改善：著者は是正措置実施と大規模製造での目的変数改善を報告。具体的な製造条件変更・検査変更の内訳は未知（K0009）。",
+          "analysis_line": 77,
+          "knowledge_unit_refs": [
+            "K0009"
+          ],
+          "evidence_refs": [
+            "E0005"
+          ],
+          "source_refs": [
+            "SRC-000308"
+          ]
+        },
+        {
+          "factor_id": "D08",
+          "factor_label": "運用",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "実製造の問題解決に適用。担当者、システム連携・継続範囲は未知",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D08 運用：実製造の問題解決に適用。担当者、システム連携・継続範囲は未知（K0009）。",
+          "analysis_line": 78,
+          "knowledge_unit_refs": [
+            "K0009"
+          ],
+          "evidence_refs": [
+            "E0005"
+          ],
+          "source_refs": [
+            "SRC-000308"
+          ]
+        },
+        {
+          "factor_id": "D09",
+          "factor_label": "評価",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "CQA交差検証RMSE 0.41、R-squared 90.4（尺度未明示の原表表記）。最初の15バッチと22・24バッチで予測・実測が近く、別期間の乖離が工程外変動の診断につながった。目標変数の改善は著者報告。製造条件変更に固有の改善量・母数・対照・比較期間・経済効果は未知",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D09 評価：CQA交差検証RMSE 0.41、R-squared 90.4（尺度未明示の原表表記）。最初の15バッチと22・24バッチで予測・実測が近く、別期間の乖離が工程外変動の診断につながった。目標変数の改善は著者報告。製造条件変更に固有の改善量・母数・対照・比較期間・経済効果は未知（K0008,K0009）。",
+          "analysis_line": 79,
+          "knowledge_unit_refs": [
+            "K0008",
+            "K0009"
+          ],
+          "evidence_refs": [
+            "E0005"
+          ],
+          "source_refs": [
+            "SRC-000308"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "C05",
+      "name": "DuPont：主要製品の欠陥発生率低減",
+      "eligibility": "near_match",
+      "canonical_eligibility": "近接",
+      "assessment_reason": "欠陥発生率低減を報告するが、学会要旨の一般的RCA手法を個別欠陥事例の実データ・モデル・因子に結び付ける情報が不足。プロセス製造の具体工程も未確認。",
+      "canonical_reason_line": "- 判定理由：欠陥発生率低減を報告するが、学会要旨の一般的RCA手法を個別欠陥事例の実データ・モデル・因子に結び付ける情報が不足。プロセス製造の具体工程も未確認。",
+      "reason_analysis_line": 84,
+      "canonical_header": "### C05 DuPont：主要製品の欠陥発生率低減",
+      "canonical_scope_line": "- 採択区分：近接（K0010）",
+      "scope_analysis_line": 82,
+      "analysis_line": 81,
+      "knowledge_unit_scope": [
+        "K0010"
+      ],
+      "evidence_refs": [
+        "E0006"
+      ],
+      "source_refs": [
+        "SRC-000309"
+      ],
+      "criteria_assessments": [
+        {
+          "criterion_id": "R1",
+          "status": "unconfirmed",
+          "canonical_status": "未確認",
+          "assessment_text": null,
+          "reference_role": "case_scope",
+          "canonical_line": "- R1 未確認 / R2 未確認 / R3 未確認 / R4 確認済",
+          "analysis_line": 83,
+          "knowledge_unit_refs": [
+            "K0010"
+          ],
+          "evidence_refs": [
+            "E0006"
+          ],
+          "source_refs": [
+            "SRC-000309"
+          ]
+        },
+        {
+          "criterion_id": "R2",
+          "status": "unconfirmed",
+          "canonical_status": "未確認",
+          "assessment_text": null,
+          "reference_role": "case_scope",
+          "canonical_line": "- R1 未確認 / R2 未確認 / R3 未確認 / R4 確認済",
+          "analysis_line": 83,
+          "knowledge_unit_refs": [
+            "K0010"
+          ],
+          "evidence_refs": [
+            "E0006"
+          ],
+          "source_refs": [
+            "SRC-000309"
+          ]
+        },
+        {
+          "criterion_id": "R3",
+          "status": "unconfirmed",
+          "canonical_status": "未確認",
+          "assessment_text": null,
+          "reference_role": "case_scope",
+          "canonical_line": "- R1 未確認 / R2 未確認 / R3 未確認 / R4 確認済",
+          "analysis_line": 83,
+          "knowledge_unit_refs": [
+            "K0010"
+          ],
+          "evidence_refs": [
+            "E0006"
+          ],
+          "source_refs": [
+            "SRC-000309"
+          ]
+        },
+        {
+          "criterion_id": "R4",
+          "status": "confirmed",
+          "canonical_status": "確認済",
+          "assessment_text": null,
+          "reference_role": "case_scope",
+          "canonical_line": "- R1 未確認 / R2 未確認 / R3 未確認 / R4 確認済",
+          "analysis_line": 83,
+          "knowledge_unit_refs": [
+            "K0010"
+          ],
+          "evidence_refs": [
+            "E0006"
+          ],
+          "source_refs": [
+            "SRC-000309"
+          ]
+        }
+      ],
+      "factor_assessments": [
+        {
+          "factor_id": "D01",
+          "factor_label": "製造プロセス",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "主要製品、具体的製品・工程・製造方式・単位は未知。別の重合事例と同一視しない",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D01 製造プロセス：主要製品、具体的製品・工程・製造方式・単位は未知。別の重合事例と同一視しない（K0010）。",
+          "analysis_line": 86,
+          "knowledge_unit_refs": [
+            "K0010"
+          ],
+          "evidence_refs": [
+            "E0006"
+          ],
+          "source_refs": [
+            "SRC-000309"
+          ]
+        },
+        {
+          "factor_id": "D02",
+          "factor_label": "品質",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "欠陥発生率。欠陥定義・ベースライン・規格は未知",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D02 品質：欠陥発生率。欠陥定義・ベースライン・規格は未知（K0010）。",
+          "analysis_line": 87,
+          "knowledge_unit_refs": [
+            "K0010"
+          ],
+          "evidence_refs": [
+            "E0006"
+          ],
+          "source_refs": [
+            "SRC-000309"
+          ]
+        },
+        {
+          "factor_id": "D03",
+          "factor_label": "データ",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "一般的RCAでは過去データ・専門家選定を説明。個別データ項目・標本・期間は未知",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D03 データ：一般的RCAでは過去データ・専門家選定を説明。個別データ項目・標本・期間は未知（K0010）。",
+          "analysis_line": 88,
+          "knowledge_unit_refs": [
+            "K0010"
+          ],
+          "evidence_refs": [
+            "E0006"
+          ],
+          "source_refs": [
+            "SRC-000309"
+          ]
+        },
+        {
+          "factor_id": "D04",
+          "factor_label": "モデル",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "一般的方法のモデル係数またはSHAP。個別採用モデル・分割は未知",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D04 モデル：一般的方法のモデル係数またはSHAP。個別採用モデル・分割は未知（K0010）。",
+          "analysis_line": 89,
+          "knowledge_unit_refs": [
+            "K0010"
+          ],
+          "evidence_refs": [
+            "E0006"
+          ],
+          "source_refs": [
+            "SRC-000309"
+          ]
+        },
+        {
+          "factor_id": "D05",
+          "factor_label": "要因分析",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "一般的な要因分析手順の報告。個別因子名・重要度・方向・量は未知",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D05 要因分析：一般的な要因分析手順の報告。個別因子名・重要度・方向・量は未知（K0010）。",
+          "analysis_line": 90,
+          "knowledge_unit_refs": [
+            "K0010"
+          ],
+          "evidence_refs": [
+            "E0006"
+          ],
+          "source_refs": [
+            "SRC-000309"
+          ]
+        },
+        {
+          "factor_id": "D06",
+          "factor_label": "因果性と介入可能性",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "介入対象・操作可能性・交絡対策は未知",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D06 因果性と介入可能性：介入対象・操作可能性・交絡対策は未知（K0010）。",
+          "analysis_line": 91,
+          "knowledge_unit_refs": [
+            "K0010"
+          ],
+          "evidence_refs": [
+            "E0006"
+          ],
+          "source_refs": [
+            "SRC-000309"
+          ]
+        },
+        {
+          "factor_id": "D07",
+          "factor_label": "工程改善",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "主要製品の欠陥対策と低減を報告。具体内容は未知",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D07 工程改善：主要製品の欠陥対策と低減を報告。具体内容は未知（K0010）。",
+          "analysis_line": 92,
+          "knowledge_unit_refs": [
+            "K0010"
+          ],
+          "evidence_refs": [
+            "E0006"
+          ],
+          "source_refs": [
+            "SRC-000309"
+          ]
+        },
+        {
+          "factor_id": "D08",
+          "factor_label": "運用",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "実施を著者が報告するが、担当者・システム・期間は未知",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D08 運用：実施を著者が報告するが、担当者・システム・期間は未知（K0010）。",
+          "analysis_line": 93,
+          "knowledge_unit_refs": [
+            "K0010"
+          ],
+          "evidence_refs": [
+            "E0006"
+          ],
+          "source_refs": [
+            "SRC-000309"
+          ]
+        },
+        {
+          "factor_id": "D09",
+          "factor_label": "評価",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "欠陥発生率65%低減との要旨報告。分母・比較期間・絶対率・経済効果・比較設計は未知",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D09 評価：欠陥発生率65%低減との要旨報告。分母・比較期間・絶対率・経済効果・比較設計は未知（K0010）。",
+          "analysis_line": 94,
+          "knowledge_unit_refs": [
+            "K0010"
+          ],
+          "evidence_refs": [
+            "E0006"
+          ],
+          "source_refs": [
+            "SRC-000309"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "C06",
+      "name": "JFEスチール：ハイテン鋼製造の品質リスク探索",
+      "eligibility": "near_match",
+      "canonical_eligibility": "近接",
+      "assessment_reason": "実多工程データの相関探索と歩留まり改善の顧客報告はあるが、品質学習モデル・具体的要因影響・介入と効果の詳細を確認できない。",
+      "canonical_reason_line": "- 判定理由：実多工程データの相関探索と歩留まり改善の顧客報告はあるが、品質学習モデル・具体的要因影響・介入と効果の詳細を確認できない。",
+      "reason_analysis_line": 99,
+      "canonical_header": "### C06 JFEスチール：ハイテン鋼製造の品質リスク探索",
+      "canonical_scope_line": "- 採択区分：近接（K0011）",
+      "scope_analysis_line": 97,
+      "analysis_line": 96,
+      "knowledge_unit_scope": [
+        "K0011"
+      ],
+      "evidence_refs": [
+        "E0007"
+      ],
+      "source_refs": [
+        "SRC-000310"
+      ],
+      "criteria_assessments": [
+        {
+          "criterion_id": "R1",
+          "status": "confirmed",
+          "canonical_status": "確認済",
+          "assessment_text": null,
+          "reference_role": "case_scope",
+          "canonical_line": "- R1 確認済 / R2 未確認 / R3 未確認 / R4 未確認",
+          "analysis_line": 98,
+          "knowledge_unit_refs": [
+            "K0011"
+          ],
+          "evidence_refs": [
+            "E0007"
+          ],
+          "source_refs": [
+            "SRC-000310"
+          ]
+        },
+        {
+          "criterion_id": "R2",
+          "status": "unconfirmed",
+          "canonical_status": "未確認",
+          "assessment_text": null,
+          "reference_role": "case_scope",
+          "canonical_line": "- R1 確認済 / R2 未確認 / R3 未確認 / R4 未確認",
+          "analysis_line": 98,
+          "knowledge_unit_refs": [
+            "K0011"
+          ],
+          "evidence_refs": [
+            "E0007"
+          ],
+          "source_refs": [
+            "SRC-000310"
+          ]
+        },
+        {
+          "criterion_id": "R3",
+          "status": "unconfirmed",
+          "canonical_status": "未確認",
+          "assessment_text": null,
+          "reference_role": "case_scope",
+          "canonical_line": "- R1 確認済 / R2 未確認 / R3 未確認 / R4 未確認",
+          "analysis_line": 98,
+          "knowledge_unit_refs": [
+            "K0011"
+          ],
+          "evidence_refs": [
+            "E0007"
+          ],
+          "source_refs": [
+            "SRC-000310"
+          ]
+        },
+        {
+          "criterion_id": "R4",
+          "status": "unconfirmed",
+          "canonical_status": "未確認",
+          "assessment_text": null,
+          "reference_role": "case_scope",
+          "canonical_line": "- R1 確認済 / R2 未確認 / R3 未確認 / R4 未確認",
+          "analysis_line": 98,
+          "knowledge_unit_refs": [
+            "K0011"
+          ],
+          "evidence_refs": [
+            "E0007"
+          ],
+          "source_refs": [
+            "SRC-000310"
+          ]
+        }
+      ],
+      "factor_assessments": [
+        {
+          "factor_id": "D01",
+          "factor_label": "製造プロセス",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "ハイテン鋼、製鋼・熱延・酸洗・冷延・焼鈍等の多工程。分析単位は未知",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D01 製造プロセス：ハイテン鋼、製鋼・熱延・酸洗・冷延・焼鈍等の多工程。分析単位は未知（K0011）。",
+          "analysis_line": 101,
+          "knowledge_unit_refs": [
+            "K0011"
+          ],
+          "evidence_refs": [
+            "E0007"
+          ],
+          "source_refs": [
+            "SRC-000310"
+          ]
+        },
+        {
+          "factor_id": "D02",
+          "factor_label": "品質",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "品質リスクと歩留まり。欠陥種別・基準・絶対値は未知",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D02 品質：品質リスクと歩留まり。欠陥種別・基準・絶対値は未知（K0011）。",
+          "analysis_line": 102,
+          "knowledge_unit_refs": [
+            "K0011"
+          ],
+          "evidence_refs": [
+            "E0007"
+          ],
+          "source_refs": [
+            "SRC-000310"
+          ]
+        },
+        {
+          "factor_id": "D03",
+          "factor_label": "データ",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "多工程データ、自動特徴量設計。具体的な変数、トレーサビリティ・期間・母数・欠測は未知",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D03 データ：多工程データ、自動特徴量設計。具体的な変数、トレーサビリティ・期間・母数・欠測は未知（K0011）。",
+          "analysis_line": 103,
+          "knowledge_unit_refs": [
+            "K0011"
+          ],
+          "evidence_refs": [
+            "E0007"
+          ],
+          "source_refs": [
+            "SRC-000310"
+          ]
+        },
+        {
+          "factor_id": "D04",
+          "factor_label": "モデル",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "自動特徴量設計による相関探索。個別品質モデル・分割は未知",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D04 モデル：自動特徴量設計による相関探索。個別品質モデル・分割は未知（K0011）。",
+          "analysis_line": 104,
+          "knowledge_unit_refs": [
+            "K0011"
+          ],
+          "evidence_refs": [
+            "E0007"
+          ],
+          "source_refs": [
+            "SRC-000310"
+          ]
+        },
+        {
+          "factor_id": "D05",
+          "factor_label": "要因分析",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "相関発見を報告。具体因子名・重要度・方向・量は未知",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D05 要因分析：相関発見を報告。具体因子名・重要度・方向・量は未知（K0011）。",
+          "analysis_line": 105,
+          "knowledge_unit_refs": [
+            "K0011"
+          ],
+          "evidence_refs": [
+            "E0007"
+          ],
+          "source_refs": [
+            "SRC-000310"
+          ]
+        },
+        {
+          "factor_id": "D06",
+          "factor_label": "因果性と介入可能性",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "相関から因果は識別できない。操作候補、交絡・制約は未知",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D06 因果性と介入可能性：相関から因果は識別できない。操作候補、交絡・制約は未知（K0011）。",
+          "analysis_line": 106,
+          "knowledge_unit_refs": [
+            "K0011"
+          ],
+          "evidence_refs": [
+            "E0007"
+          ],
+          "source_refs": [
+            "SRC-000310"
+          ]
+        },
+        {
+          "factor_id": "D07",
+          "factor_label": "工程改善",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "歩留まり改善を報告するが具体的工程変更・比較設計は未知",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D07 工程改善：歩留まり改善を報告するが具体的工程変更・比較設計は未知（K0011）。",
+          "analysis_line": 107,
+          "knowledge_unit_refs": [
+            "K0011"
+          ],
+          "evidence_refs": [
+            "E0007"
+          ],
+          "source_refs": [
+            "SRC-000310"
+          ]
+        },
+        {
+          "factor_id": "D08",
+          "factor_label": "運用",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "顧客事例として導入報告。連携・継続運用規模は未知",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D08 運用：顧客事例として導入報告。連携・継続運用規模は未知（K0011）。",
+          "analysis_line": 108,
+          "knowledge_unit_refs": [
+            "K0011"
+          ],
+          "evidence_refs": [
+            "E0007"
+          ],
+          "source_refs": [
+            "SRC-000310"
+          ]
+        },
+        {
+          "factor_id": "D09",
+          "factor_label": "評価",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "歩留まり改善の定性的報告。改善量・実測期間・分母・経済効果は未知",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D09 評価：歩留まり改善の定性的報告。改善量・実測期間・分母・経済効果は未知（K0011）。",
+          "analysis_line": 109,
+          "knowledge_unit_refs": [
+            "K0011"
+          ],
+          "evidence_refs": [
+            "E0007"
+          ],
+          "source_refs": [
+            "SRC-000310"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "C07",
+      "name": "韓国半導体：低歩留まり逸脱のセンサー診断",
+      "eligibility": "factor_analysis",
+      "canonical_eligibility": "要因分析",
+      "assessment_reason": "実データの逐次Random Forestと重要センサーの選択は確認。重要度は選択という定性的な分析で、数値は未確認。介入実績は要旨から確認できない。",
+      "canonical_reason_line": "- 判定理由：実データの逐次Random Forestと重要センサーの選択は確認。重要度は選択という定性的な分析で、数値は未確認。介入実績は要旨から確認できない。",
+      "reason_analysis_line": 114,
+      "canonical_header": "### C07 韓国半導体：低歩留まり逸脱のセンサー診断",
+      "canonical_scope_line": "- 採択区分：要因分析（K0012）",
+      "scope_analysis_line": 112,
+      "analysis_line": 111,
+      "knowledge_unit_scope": [
+        "K0012"
+      ],
+      "evidence_refs": [
+        "E0008"
+      ],
+      "source_refs": [
+        "SRC-000311"
+      ],
+      "criteria_assessments": [
+        {
+          "criterion_id": "R1",
+          "status": "confirmed",
+          "canonical_status": "確認済",
+          "assessment_text": null,
+          "reference_role": "case_scope",
+          "canonical_line": "- R1 確認済 / R2 確認済 / R3 確認済 / R4 未確認",
+          "analysis_line": 113,
+          "knowledge_unit_refs": [
+            "K0012"
+          ],
+          "evidence_refs": [
+            "E0008"
+          ],
+          "source_refs": [
+            "SRC-000311"
+          ]
+        },
+        {
+          "criterion_id": "R2",
+          "status": "confirmed",
+          "canonical_status": "確認済",
+          "assessment_text": null,
+          "reference_role": "case_scope",
+          "canonical_line": "- R1 確認済 / R2 確認済 / R3 確認済 / R4 未確認",
+          "analysis_line": 113,
+          "knowledge_unit_refs": [
+            "K0012"
+          ],
+          "evidence_refs": [
+            "E0008"
+          ],
+          "source_refs": [
+            "SRC-000311"
+          ]
+        },
+        {
+          "criterion_id": "R3",
+          "status": "confirmed",
+          "canonical_status": "確認済",
+          "assessment_text": null,
+          "reference_role": "case_scope",
+          "canonical_line": "- R1 確認済 / R2 確認済 / R3 確認済 / R4 未確認",
+          "analysis_line": 113,
+          "knowledge_unit_refs": [
+            "K0012"
+          ],
+          "evidence_refs": [
+            "E0008"
+          ],
+          "source_refs": [
+            "SRC-000311"
+          ]
+        },
+        {
+          "criterion_id": "R4",
+          "status": "unconfirmed",
+          "canonical_status": "未確認",
+          "assessment_text": null,
+          "reference_role": "case_scope",
+          "canonical_line": "- R1 確認済 / R2 確認済 / R3 確認済 / R4 未確認",
+          "analysis_line": 113,
+          "knowledge_unit_refs": [
+            "K0012"
+          ],
+          "evidence_refs": [
+            "E0008"
+          ],
+          "source_refs": [
+            "SRC-000311"
+          ]
+        }
+      ],
+      "factor_assessments": [
+        {
+          "factor_id": "D01",
+          "factor_label": "製造プロセス",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "韓国半導体製造装置。具体製品・製造工程・分析単位は要旨では未知",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D01 製造プロセス：韓国半導体製造装置。具体製品・製造工程・分析単位は要旨では未知（K0012）。",
+          "analysis_line": 116,
+          "knowledge_unit_refs": [
+            "K0012"
+          ],
+          "evidence_refs": [
+            "E0008"
+          ],
+          "source_refs": [
+            "SRC-000311"
+          ]
+        },
+        {
+          "factor_id": "D02",
+          "factor_label": "品質",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "低歩留まり逸脱。規格・基準・数値は未知",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D02 品質：低歩留まり逸脱。規格・基準・数値は未知（K0012）。",
+          "analysis_line": 117,
+          "knowledge_unit_refs": [
+            "K0012"
+          ],
+          "evidence_refs": [
+            "E0008"
+          ],
+          "source_refs": [
+            "SRC-000311"
+          ]
+        },
+        {
+          "factor_id": "D03",
+          "factor_label": "データ",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "装置の連続収集センサーデータ。変数名・頻度・期間・母数・欠測は未知",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D03 データ：装置の連続収集センサーデータ。変数名・頻度・期間・母数・欠測は未知（K0012）。",
+          "analysis_line": 118,
+          "knowledge_unit_refs": [
+            "K0012"
+          ],
+          "evidence_refs": [
+            "E0008"
+          ],
+          "source_refs": [
+            "SRC-000311"
+          ]
+        },
+        {
+          "factor_id": "D04",
+          "factor_label": "モデル",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "逐次Random Forestによる逸脱時期とセンサー特定。詳細分割・モデル性能は未知",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D04 モデル：逐次Random Forestによる逸脱時期とセンサー特定。詳細分割・モデル性能は未知（K0012）。",
+          "analysis_line": 119,
+          "knowledge_unit_refs": [
+            "K0012"
+          ],
+          "evidence_refs": [
+            "E0008"
+          ],
+          "source_refs": [
+            "SRC-000311"
+          ]
+        },
+        {
+          "factor_id": "D05",
+          "factor_label": "要因分析",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "重要センサーの抽出、技術者の手動調査結果との対応。具体名・定量重要度・影響方向・量は未知",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D05 要因分析：重要センサーの抽出、技術者の手動調査結果との対応。具体名・定量重要度・影響方向・量は未知（K0012）。",
+          "analysis_line": 120,
+          "knowledge_unit_refs": [
+            "K0012"
+          ],
+          "evidence_refs": [
+            "E0008"
+          ],
+          "source_refs": [
+            "SRC-000311"
+          ]
+        },
+        {
+          "factor_id": "D06",
+          "factor_label": "因果性と介入可能性",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "診断・関連特定であり実介入による因果識別は未確認。操作可能性・交絡・制約も未知",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D06 因果性と介入可能性：診断・関連特定であり実介入による因果識別は未確認。操作可能性・交絡・制約も未知（K0012）。",
+          "analysis_line": 121,
+          "knowledge_unit_refs": [
+            "K0012"
+          ],
+          "evidence_refs": [
+            "E0008"
+          ],
+          "source_refs": [
+            "SRC-000311"
+          ]
+        },
+        {
+          "factor_id": "D07",
+          "factor_label": "工程改善",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "診断プロセスを提案。実製造条件変更は未知",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D07 工程改善：診断プロセスを提案。実製造条件変更は未知（K0012）。",
+          "analysis_line": 122,
+          "knowledge_unit_refs": [
+            "K0012"
+          ],
+          "evidence_refs": [
+            "E0008"
+          ],
+          "source_refs": [
+            "SRC-000311"
+          ]
+        },
+        {
+          "factor_id": "D08",
+          "factor_label": "運用",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "実世界データで実証。技術者の調査を支援する用途。継続実装・連携は未知",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D08 運用：実世界データで実証。技術者の調査を支援する用途。継続実装・連携は未知（K0012）。",
+          "analysis_line": 123,
+          "knowledge_unit_refs": [
+            "K0012"
+          ],
+          "evidence_refs": [
+            "E0008"
+          ],
+          "source_refs": [
+            "SRC-000311"
+          ]
+        },
+        {
+          "factor_id": "D09",
+          "factor_label": "評価",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "技術者の手動特定結果に対応する診断。実歩留まり改善・対照・期間・経済効果は未知。全文未確認",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D09 評価：技術者の手動特定結果に対応する診断。実歩留まり改善・対照・期間・経済効果は未知。全文未確認（K0012）。",
+          "analysis_line": 124,
+          "knowledge_unit_refs": [
+            "K0012"
+          ],
+          "evidence_refs": [
+            "E0008"
+          ],
+          "source_refs": [
+            "SRC-000311"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "C08",
+      "name": "化学合成：説明可能予測による廃棄削減",
+      "eligibility": "near_match",
+      "canonical_eligibility": "近接",
+      "assessment_reason": "品質不良リスクの予測モデルを明示するためR2は確認済。廃棄削減報告はあるが、履歴データ仕様、個別因子分析、介入と品質改善の対応が不明。廃棄と品質不良の同一視を避ける。",
+      "canonical_reason_line": "- 判定理由：品質不良リスクの予測モデルを明示するためR2は確認済。廃棄削減報告はあるが、履歴データ仕様、個別因子分析、介入と品質改善の対応が不明。廃棄と品質不良の同一視を避ける。",
+      "reason_analysis_line": 129,
+      "canonical_header": "### C08 化学合成：説明可能予測による廃棄削減",
+      "canonical_scope_line": "- 採択区分：近接（K0013）",
+      "scope_analysis_line": 127,
+      "analysis_line": 126,
+      "knowledge_unit_scope": [
+        "K0013"
+      ],
+      "evidence_refs": [
+        "E0009"
+      ],
+      "source_refs": [
+        "SRC-000312"
+      ],
+      "criteria_assessments": [
+        {
+          "criterion_id": "R1",
+          "status": "unconfirmed",
+          "canonical_status": "未確認",
+          "assessment_text": null,
+          "reference_role": "case_scope",
+          "canonical_line": "- R1 未確認 / R2 確認済 / R3 未確認 / R4 未確認",
+          "analysis_line": 128,
+          "knowledge_unit_refs": [
+            "K0013"
+          ],
+          "evidence_refs": [
+            "E0009"
+          ],
+          "source_refs": [
+            "SRC-000312"
+          ]
+        },
+        {
+          "criterion_id": "R2",
+          "status": "confirmed",
+          "canonical_status": "確認済",
+          "assessment_text": null,
+          "reference_role": "case_scope",
+          "canonical_line": "- R1 未確認 / R2 確認済 / R3 未確認 / R4 未確認",
+          "analysis_line": 128,
+          "knowledge_unit_refs": [
+            "K0013"
+          ],
+          "evidence_refs": [
+            "E0009"
+          ],
+          "source_refs": [
+            "SRC-000312"
+          ]
+        },
+        {
+          "criterion_id": "R3",
+          "status": "unconfirmed",
+          "canonical_status": "未確認",
+          "assessment_text": null,
+          "reference_role": "case_scope",
+          "canonical_line": "- R1 未確認 / R2 確認済 / R3 未確認 / R4 未確認",
+          "analysis_line": 128,
+          "knowledge_unit_refs": [
+            "K0013"
+          ],
+          "evidence_refs": [
+            "E0009"
+          ],
+          "source_refs": [
+            "SRC-000312"
+          ]
+        },
+        {
+          "criterion_id": "R4",
+          "status": "unconfirmed",
+          "canonical_status": "未確認",
+          "assessment_text": null,
+          "reference_role": "case_scope",
+          "canonical_line": "- R1 未確認 / R2 確認済 / R3 未確認 / R4 未確認",
+          "analysis_line": 128,
+          "knowledge_unit_refs": [
+            "K0013"
+          ],
+          "evidence_refs": [
+            "E0009"
+          ],
+          "source_refs": [
+            "SRC-000312"
+          ]
+        }
+      ],
+      "factor_assessments": [
+        {
+          "factor_id": "D01",
+          "factor_label": "製造プロセス",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "化学合成、具体製品・工程・製造方式・単位は未知",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D01 製造プロセス：化学合成、具体製品・工程・製造方式・単位は未知（K0013）。",
+          "analysis_line": 131,
+          "knowledge_unit_refs": [
+            "K0013"
+          ],
+          "evidence_refs": [
+            "E0009"
+          ],
+          "source_refs": [
+            "SRC-000312"
+          ]
+        },
+        {
+          "factor_id": "D02",
+          "factor_label": "品質",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "モデルの予測対象は品質不良リスク（non-quality risk）。具体的な品質ラベル・評価尺度・品質規格、廃棄と不良の対応は未知",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D02 品質：モデルの予測対象は品質不良リスク（non-quality risk）。具体的な品質ラベル・評価尺度・品質規格、廃棄と不良の対応は未知（K0013）。",
+          "analysis_line": 132,
+          "knowledge_unit_refs": [
+            "K0013"
+          ],
+          "evidence_refs": [
+            "E0009"
+          ],
+          "source_refs": [
+            "SRC-000312"
+          ]
+        },
+        {
+          "factor_id": "D03",
+          "factor_label": "データ",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "履歴データ使用・変数・収集粒度・期間・標本数は未知",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D03 データ：履歴データ使用・変数・収集粒度・期間・標本数は未知（K0013）。",
+          "analysis_line": 133,
+          "knowledge_unit_refs": [
+            "K0013"
+          ],
+          "evidence_refs": [
+            "E0009"
+          ],
+          "source_refs": [
+            "SRC-000312"
+          ]
+        },
+        {
+          "factor_id": "D04",
+          "factor_label": "モデル",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "品質不良リスクを予測する説明可能なモデル。アルゴリズム・前処理・分割は未知",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D04 モデル：品質不良リスクを予測する説明可能なモデル。アルゴリズム・前処理・分割は未知（K0013）。",
+          "analysis_line": 134,
+          "knowledge_unit_refs": [
+            "K0013"
+          ],
+          "evidence_refs": [
+            "E0009"
+          ],
+          "source_refs": [
+            "SRC-000312"
+          ]
+        },
+        {
+          "factor_id": "D05",
+          "factor_label": "要因分析",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "説明可能性と工程調査を報告。具体因子名、重要度・方向・影響量は未知",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D05 要因分析：説明可能性と工程調査を報告。具体因子名、重要度・方向・影響量は未知（K0013）。",
+          "analysis_line": 135,
+          "knowledge_unit_refs": [
+            "K0013"
+          ],
+          "evidence_refs": [
+            "E0009"
+          ],
+          "source_refs": [
+            "SRC-000312"
+          ]
+        },
+        {
+          "factor_id": "D06",
+          "factor_label": "因果性と介入可能性",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "工程調査での確認を報告するが、因果識別・操作可能性・制約・交絡は未知",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D06 因果性と介入可能性：工程調査での確認を報告するが、因果識別・操作可能性・制約・交絡は未知（K0013）。",
+          "analysis_line": 136,
+          "knowledge_unit_refs": [
+            "K0013"
+          ],
+          "evidence_refs": [
+            "E0009"
+          ],
+          "source_refs": [
+            "SRC-000312"
+          ]
+        },
+        {
+          "factor_id": "D07",
+          "factor_label": "工程改善",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "合成早期の対策提案。実施条件・介入内容・介入と効果の対応は未知",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D07 工程改善：合成早期の対策提案。実施条件・介入内容・介入と効果の対応は未知（K0013）。",
+          "analysis_line": 137,
+          "knowledge_unit_refs": [
+            "K0013"
+          ],
+          "evidence_refs": [
+            "E0009"
+          ],
+          "source_refs": [
+            "SRC-000312"
+          ]
+        },
+        {
+          "factor_id": "D08",
+          "factor_label": "運用",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "制御室画面への展開。運用規模・期間・例外処理は未知",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D08 運用：制御室画面への展開。運用規模・期間・例外処理は未知（K0013）。",
+          "analysis_line": 138,
+          "knowledge_unit_refs": [
+            "K0013"
+          ],
+          "evidence_refs": [
+            "E0009"
+          ],
+          "source_refs": [
+            "SRC-000312"
+          ]
+        },
+        {
+          "factor_id": "D09",
+          "factor_label": "評価",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "最悪サイト状況との比較で廃棄20%減、年25万ユーロ以上節約をベンダー報告。基準、母数、期間、金額の算定法、品質への効果は未知",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D09 評価：最悪サイト状況との比較で廃棄20%減、年25万ユーロ以上節約をベンダー報告。基準、母数、期間、金額の算定法、品質への効果は未知（K0013）。",
+          "analysis_line": 139,
+          "knowledge_unit_refs": [
+            "K0013"
+          ],
+          "evidence_refs": [
+            "E0009"
+          ],
+          "source_refs": [
+            "SRC-000312"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "C09",
+      "name": "Hitachi ABB：別製品への品質管理展開",
+      "eligibility": "full_match",
+      "canonical_eligibility": "完全適合",
+      "assessment_reason": "R1は別製品の実測製品・工程データに過去観測を用いる意思決定モデルを適用した報告、R2はその製品に対する歩留まりのモデル適用、R3は歩留まり変動に大きく寄与する二つのエッチング工程の特定と負の関連、R4は技術者による二つの対策の実装と通常操業での前後改善報告に基づく。C01と製品・適用対象・評価設計が異なるため独立評価する。詳細なデータや介入仕様が未開示であること、前後比較の交絡を残すことは、報告の存在を採択基準とするR4の確認とは別である。",
+      "canonical_reason_line": "- 判定理由：R1は別製品の実測製品・工程データに過去観測を用いる意思決定モデルを適用した報告、R2はその製品に対する歩留まりのモデル適用、R3は歩留まり変動に大きく寄与する二つのエッチング工程の特定と負の関連、R4は技術者による二つの対策の実装と通常操業での前後改善報告に基づく。C01と製品・適用対象・評価設計が異なるため独立評価する。詳細なデータや介入仕様が未開示であること、前後比較の交絡を残すことは、報告の存在を採択基準とするR4の確認とは別である。",
+      "reason_analysis_line": 144,
+      "canonical_header": "### C09 Hitachi ABB：別製品への品質管理展開",
+      "canonical_scope_line": "- 採択区分：完全適合（K0004）",
+      "scope_analysis_line": 142,
+      "analysis_line": 141,
+      "knowledge_unit_scope": [
+        "K0004"
+      ],
+      "evidence_refs": [
+        "E0010"
+      ],
+      "source_refs": [
+        "SRC-000305"
+      ],
+      "criteria_assessments": [
+        {
+          "criterion_id": "R1",
+          "status": "confirmed",
+          "canonical_status": "確認済",
+          "assessment_text": null,
+          "reference_role": "case_scope",
+          "canonical_line": "- R1 確認済 / R2 確認済 / R3 確認済 / R4 確認済",
+          "analysis_line": 143,
+          "knowledge_unit_refs": [
+            "K0004"
+          ],
+          "evidence_refs": [
+            "E0010"
+          ],
+          "source_refs": [
+            "SRC-000305"
+          ]
+        },
+        {
+          "criterion_id": "R2",
+          "status": "confirmed",
+          "canonical_status": "確認済",
+          "assessment_text": null,
+          "reference_role": "case_scope",
+          "canonical_line": "- R1 確認済 / R2 確認済 / R3 確認済 / R4 確認済",
+          "analysis_line": 143,
+          "knowledge_unit_refs": [
+            "K0004"
+          ],
+          "evidence_refs": [
+            "E0010"
+          ],
+          "source_refs": [
+            "SRC-000305"
+          ]
+        },
+        {
+          "criterion_id": "R3",
+          "status": "confirmed",
+          "canonical_status": "確認済",
+          "assessment_text": null,
+          "reference_role": "case_scope",
+          "canonical_line": "- R1 確認済 / R2 確認済 / R3 確認済 / R4 確認済",
+          "analysis_line": 143,
+          "knowledge_unit_refs": [
+            "K0004"
+          ],
+          "evidence_refs": [
+            "E0010"
+          ],
+          "source_refs": [
+            "SRC-000305"
+          ]
+        },
+        {
+          "criterion_id": "R4",
+          "status": "confirmed",
+          "canonical_status": "確認済",
+          "assessment_text": null,
+          "reference_role": "case_scope",
+          "canonical_line": "- R1 確認済 / R2 確認済 / R3 確認済 / R4 確認済",
+          "analysis_line": 143,
+          "knowledge_unit_refs": [
+            "K0004"
+          ],
+          "evidence_refs": [
+            "E0010"
+          ],
+          "source_refs": [
+            "SRC-000305"
+          ]
+        }
+      ],
+      "factor_assessments": [
+        {
+          "factor_id": "D01",
+          "factor_label": "製造プロセス",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "初期実験と異なる低歩留まりトランジスタチップ製品、二つのエッチング工程。工程番号・設備境界・モデルの厳密な観測単位は未知",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D01 製造プロセス：初期実験と異なる低歩留まりトランジスタチップ製品、二つのエッチング工程。工程番号・設備境界・モデルの厳密な観測単位は未知（K0004）。",
+          "analysis_line": 146,
+          "knowledge_unit_refs": [
+            "K0004"
+          ],
+          "evidence_refs": [
+            "E0010"
+          ],
+          "source_refs": [
+            "SRC-000305"
+          ]
+        },
+        {
+          "factor_id": "D02",
+          "factor_label": "品質",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "歩留まりの平均と変動、歩留まり損失。具体的不良種別・規格・絶対歩留まりは未知",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D02 品質：歩留まりの平均と変動、歩留まり損失。具体的不良種別・規格・絶対歩留まりは未知（K0004）。",
+          "analysis_line": 147,
+          "knowledge_unit_refs": [
+            "K0004"
+          ],
+          "evidence_refs": [
+            "E0010"
+          ],
+          "source_refs": [
+            "SRC-000305"
+          ]
+        },
+        {
+          "factor_id": "D03",
+          "factor_label": "データ",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "新しい製品・工程の計測値を使用。過去観測を用いるモデルだが学習期間・標本数・変数数・欠測処理は未知。初期製品の標本数を転用しない",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D03 データ：新しい製品・工程の計測値を使用。過去観測を用いるモデルだが学習期間・標本数・変数数・欠測処理は未知。初期製品の標本数を転用しない（K0004）。",
+          "analysis_line": 148,
+          "knowledge_unit_refs": [
+            "K0004"
+          ],
+          "evidence_refs": [
+            "E0010"
+          ],
+          "source_refs": [
+            "SRC-000305"
+          ]
+        },
+        {
+          "factor_id": "D04",
+          "factor_label": "モデル",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "同じ意思決定モデルを当該製品に適用。別製品固有の学習・モデル仕様・評価分割は未知。二次項・交互作用付きlassoは全係数ゼロと著者報告",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D04 モデル：同じ意思決定モデルを当該製品に適用。別製品固有の学習・モデル仕様・評価分割は未知。二次項・交互作用付きlassoは全係数ゼロと著者報告（K0004）。",
+          "analysis_line": 149,
+          "knowledge_unit_refs": [
+            "K0004"
+          ],
+          "evidence_refs": [
+            "E0010"
+          ],
+          "source_refs": [
+            "SRC-000305"
+          ]
+        },
+        {
+          "factor_id": "D05",
+          "factor_label": "要因分析",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "歩留まり変動に大きな推定寄与を示す二つのエッチング工程を特定。負の歩留まり関連を対象とする。工程番号・装置名・定量寄与値は未知",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D05 要因分析：歩留まり変動に大きな推定寄与を示す二つのエッチング工程を特定。負の歩留まり関連を対象とする。工程番号・装置名・定量寄与値は未知（K0004）。",
+          "analysis_line": 150,
+          "knowledge_unit_refs": [
+            "K0004"
+          ],
+          "evidence_refs": [
+            "E0010"
+          ],
+          "source_refs": [
+            "SRC-000305"
+          ]
+        },
+        {
+          "factor_id": "D06",
+          "factor_label": "因果性と介入可能性",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "技術者が関連結果を受けて改善策を実装した。関連はモデル上の推定で、通常操業の前後比較では対照群・交絡調整が報告されない。介入効果の因果識別は留保",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D06 因果性と介入可能性：技術者が関連結果を受けて改善策を実装した。関連はモデル上の推定で、通常操業の前後比較では対照群・交絡調整が報告されない。介入効果の因果識別は留保（K0004）。",
+          "analysis_line": 151,
+          "knowledge_unit_refs": [
+            "K0004"
+          ],
+          "evidence_refs": [
+            "E0010"
+          ],
+          "source_refs": [
+            "SRC-000305"
+          ]
+        },
+        {
+          "factor_id": "D07",
+          "factor_label": "工程改善",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "二つのエッチング工程の負の関連を対象に二つの対策を実施。具体的な設定値・装置変更等の内容は未開示",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D07 工程改善：二つのエッチング工程の負の関連を対象に二つの対策を実施。具体的な設定値・装置変更等の内容は未開示（K0004）。",
+          "analysis_line": 152,
+          "knowledge_unit_refs": [
+            "K0004"
+          ],
+          "evidence_refs": [
+            "E0010"
+          ],
+          "source_refs": [
+            "SRC-000305"
+          ]
+        },
+        {
+          "factor_id": "D08",
+          "factor_label": "運用",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "意思決定モデルの結果を受け、技術者が実際の通常操業に対策を展開。研究期間中改善が維持された。IT連携仕様・具体的運用母数は未知",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D08 運用：意思決定モデルの結果を受け、技術者が実際の通常操業に対策を展開。研究期間中改善が維持された。IT連携仕様・具体的運用母数は未知（K0004）。",
+          "analysis_line": 153,
+          "knowledge_unit_refs": [
+            "K0004"
+          ],
+          "evidence_refs": [
+            "E0010"
+          ],
+          "source_refs": [
+            "SRC-000305"
+          ]
+        },
+        {
+          "factor_id": "D09",
+          "factor_label": "評価",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "2020年2–6月（前）と7–8月（後）の歩留まり分布比較で平均上昇・変動縮小、歩留まり損失51.3%減（p<0.001）。従来の相関・専門知識に基づく方法では両工程を特定できなかったと著者報告。モデル予測性能・分母・経済効果・対照群・交絡調整は未知。初期実験の21.7%とは異なる対象と比較設計",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D09 評価：2020年2–6月（前）と7–8月（後）の歩留まり分布比較で平均上昇・変動縮小、歩留まり損失51.3%減（p<0.001）。従来の相関・専門知識に基づく方法では両工程を特定できなかったと著者報告。モデル予測性能・分母・経済効果・対照群・交絡調整は未知。初期実験の21.7%とは異なる対象と比較設計（K0004）。",
+          "analysis_line": 154,
+          "knowledge_unit_refs": [
+            "K0004"
+          ],
+          "evidence_refs": [
+            "E0010"
+          ],
+          "source_refs": [
+            "SRC-000305"
+          ]
+        }
+      ]
+    }
+  ]
+}
