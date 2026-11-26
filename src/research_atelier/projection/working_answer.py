@@ -143,9 +143,22 @@ def _notion_sections_equal(readback: str, rendered: str) -> bool:
     if len(actual) != len(expected):
         return False
     in_fence = False
-    for observed, wanted in zip(actual, expected):
+    for index, (observed, wanted) in enumerate(zip(actual, expected)):
         fence = wanted.strip().startswith("```")
         if observed != wanted:
+            # Native Notion tables may serialize a GFM delimiter with a
+            # single hyphen per column. Preserve column count and alignment;
+            # never normalize cell content or fenced examples.
+            delimiter = r"\|(?:\s*:?-+:?\s*\|)+"
+            if (
+                not in_fence and not fence and index > 0
+                and expected[index - 1].startswith("|")
+                and actual[index - 1].startswith("|")
+                and re.fullmatch(delimiter, observed)
+                and re.fullmatch(delimiter, wanted)
+                and re.sub(r"-+", "-", observed) == re.sub(r"-+", "-", wanted)
+            ):
+                continue
             if in_fence or fence or wanted.lstrip().startswith("|") or "`" in wanted:
                 return False
             # Only a literal label linked to itself is an auto-link candidate.
@@ -157,6 +170,10 @@ def _notion_sections_equal(readback: str, rendered: str) -> bool:
             observed = re.sub(r"\[([A-Za-z0-9.-]+\.[A-Za-z]{2,}(?:/[A-Za-z0-9._~/%+-]+)?)\]\((http://[^()\s]+)\)", plain_autolink, observed)
             if observed != wanted:
                 observed = observed.replace(r"\$", "$")
+            if observed != wanted:
+                # Notion escapes a literal numeric less-than comparison.
+                # Accept only when the complete line equals canonical text.
+                observed = re.sub(r"\\<(?=\d)", "<", observed)
             if observed != wanted:
                 return False
         if fence:
