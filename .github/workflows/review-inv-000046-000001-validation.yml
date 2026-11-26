@@ -1,0 +1,61 @@
+name: INV-000046 Review 000001 validation
+on:
+  push:
+    branches: [review-inv-000046-000001-validation]
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install jsonschema
+      - run: |
+          PYTHONPATH=src python - <<'PY'
+          from pathlib import Path
+          import json, subprocess
+          from datetime import datetime, timezone
+          from dataclasses import asdict
+          from research_atelier.reviewing.review_writer import prepare_review_cycle, save_review_cycle
+          from research_atelier.reviewing.review_state import load_review_history, target_relation_from_blobs
+          from research_atelier.projection.review import plan_review_projection, reconcile_latest_review_relation
+          from research_atelier.reviewing.reconcile import reconcile_payload
+          target = "05edea502ce1c1d6ea81079ab3b06f080ec4a8f8"
+          inv = "INV-000046"
+          root = Path("investigations") / inv
+          review_dir = root / "reviews"
+          schema = Path("schemas/v2")
+          blobs = {"00_context":"db2072fbec2345a24b54dbcd069c846158fae5cb","10_evidence":"6dd7d7bebb45ded3a61f7013b5aee6d2cd417f87","20_synthesis":"ad9afcb33256fcaebb38867cc7672f6368c9c070","30_analysis":"24968939993ef821b892511896bed5c16b6c9c20"}
+          def git(*args):
+              return subprocess.check_output(["git",*args],text=True).strip()
+          def current():
+              assert git("ls-remote","origin","refs/heads/main").split()[0] == target
+              actual = {k:git("hash-object",str(root / (k+".json"))) for k in blobs}
+              assert actual == blobs
+              return actual
+          current()
+          prepared = prepare_review_cycle(inv,review_dir=review_dir,schema_path=schema,target_commit_sha=target,artifact_blob_shas=blobs)
+          assert prepared.review_seq == 1
+          bodies = json.loads(r'''{"00_context":{"assessment":"frozen ContextはRQ-000045、Exploratory、採択・除外条件、独立事例単位、固定39軸、cutoffと整合する。定期記録の役割を分離する定義も妥当。Context改変を要する欠陥なし。","findings":[]},"10_evidence":{"assessment":"12 Source revisionのblob一致、42 Evidence Noteの対応内容・locator・Sourceを照合。原典再取得で39軸に直接関係する欠落を確認。原典の現在取得可能性は一部制約あり（NiX・Omronの一部は索引記載、C3.aiは同一文書の公式代替URL）。原典報告を独立検証済み実績と同一視しない。","findings":[{"target":"C01 / SRC-000298 / E0003–E0008","evidence":["原著会議論文 pp.178–180 §2–3 https://pdc-conference.grf.unizg.hr/wp-content/uploads/2025/09/BB_2025_PROCEEDINGS.pdf","基材反射によるインク乾燥・詰まり、遮光マスク導入、故障種別構成、特徴選択とtest datasetの記述。"],"impact":"故障進展・介入・評価条件を未知扱いし、費用削減の競合説明を失う。","severity":"Moderate","repair_direction":{"mode":"same_investigation","affected_layer":"10_evidence","instruction":"原典該当箇所をEvidence Note化し、集計対象・構成割合と発生率を区別。遮光措置と予測保全の寄与を分離できないことを明記して20・30を再構築する。"}},{"target":"C02 / SRC-000293 / E0009–E0014","evidence":["国総研資料1303 第2章 pp.48–50 表2-5/6 https://www.nilim.go.jp/lab/bcg/siryou/tnn/tnn1303pdf/ks1303_06.pdf","付録 表1-3/4 https://www.nilim.go.jp/lab/bcg/siryou/tnn/tnn1303pdf/ks1303_12.pdf","引上げ点検による正解判定、非警報地点の確認、実出動していない事象を含む11件、実証194機場と費用比較348機場、費目別試算。"],"impact":"正解定義・母数・比較可能性・実績と試算の境界が不十分。","severity":"Moderate","repair_direction":{"mode":"same_investigation","affected_layer":"10_evidence","instruction":"判定方法・期間別混同行列・出動事象の算入条件・費用比較母集団と費目を記録し、実測削減と試算を厳格に分けて20・30を再構築する。"}},{"target":"C06 / SRC-000299 / E0023–E0025","evidence":["iFactory公式事例 https://ifactoryapp.com/shift-logbook/case-study-oee-shift-logbook","シフト単位の記録、閾値警報、保全work order連携、12か月の結果・軸受故障件数・検出遅延。"],"impact":"定期記録の意思決定利用と介入後評価が過小記述され、採択条件の比較を歪める。","severity":"Moderate","repair_direction":{"mode":"same_investigation","affected_layer":"10_evidence","instruction":"記録・警報・保全指示の連鎖、故障件数・期間・費用内訳を原典に従い補足。ベンダー報告の限界、未来故障予測の明示性と総保全費の未確認事項を維持して20・30を再構築する。"}},{"target":"C07 / SRC-000250 / E0001–E0002,E0026–E0029","evidence":["原著 §3.4–3.5 §4 表7/9/12 https://www.iieta.org/journals/jesa/paper/10.18280/jesa.590321","ISO20816-3に基づく閾値、反復確認条件、時系列分割、H240評価、実行資源、前後比較の統計評価。"],"impact":"予測評価・警報運用・計算制約・比較妥当性に関する未知判定が過剰。","severity":"Moderate","repair_direction":{"mode":"same_investigation","affected_layer":"10_evidence","instruction":"時系列分割、予測対象と代理性、警報条件、評価指標・資源・信頼区間を原典に従い記録。費用実績を示さない点は維持して20・30を再構築する。"}},{"target":"C08 / SRC-000300 / E0030–E0033","evidence":["C3.ai USAF SBA pp.1–3 https://c3.ai/api/media/file/23_0911_C3_AI_CaseStudy_USAF_Sensor_Based_Algorithm-5.pdf","健全データ抽出のマスク処理、無効測定・欠測への対応、仮想センサー出力の集約、対象故障例。"],"impact":"正常学習・データ品質・出力仕様が不十分で39軸の記述を制限。","severity":"Moderate","repair_direction":{"mode":"same_investigation","affected_layer":"10_evidence","instruction":"PANDAとSBAを区別し、健全データの選択、無効測定、出力集約、B-1B固有の母数と全体実績を分けて記録。20・30を再構築する。"}},{"target":"C09 / SRC-000302 / E0035–E0037","evidence":["Quantzig公式事例 Solution Implemented / Technologies Used https://www.quantzig.com/case-studies/manufacturing-predictive-maintenance","生存時間分析、故障確率・運用影響によるリスク順位、保全計画担当者、計算・統合環境、規模、緊急work order比率。"],"impact":"モデル・意思決定主体・運用規模・比較条件が過小記述される。","severity":"Moderate","repair_direction":{"mode":"same_investigation","affected_layer":"10_evidence","instruction":"実際に報告された手法・リスク順位・計画者・実行環境・成果指標を補足。日報利用の直接根拠、費用内訳・比較期間の不足は維持して20・30を再構築する。"}},{"target":"C10 / SRC-000303 / E0038–E0040","evidence":["Nunesら原著 case study https://www.mdpi.com/2076-3417/13/12/7131","段取り替えの除外、MESに故障モード・保全行為の記録なし、実装段階はCM行為のみ、停止時間を基礎とする推定。"],"impact":"対象事象・記録の欠如・実装段階・費用モデルの重要な限定が失われる。","severity":"Moderate","repair_direction":{"mode":"same_investigation","affected_layer":"10_evidence","instruction":"除外規則、MES記録の明示的欠如、実施済みと提案段階の区別、停止時間に基づく推定を補足し、実測総保全費と混同せず20・30を再構築する。"}}]},"20_synthesis":{"assessment":"26 Knowledge Unitと42 Evidenceの対応を照合。主要数値の対応は概ね成立するが、E0032の健全データ学習条件がKに十分伝達されず、30がEvidenceに直接依存する。上流Evidence補足後の再構築が必要。","findings":[{"target":"K0018–K0019 / E0032 / C08","evidence":["10_evidence E0032は健全データによる学習を記述。","20_synthesis K0018の健全時センサー値推定とK0019の統合条件は、学習データ選択を明示的には保持していない。","30_analysis C08 D03.2/D05.3は健全データ学習に言及。"],"impact":"学習条件の意味がSynthesisで失われ、AnalysisがSynthesisのみで支持されない。","severity":"Moderate","repair_direction":{"mode":"same_investigation","affected_layer":"20_synthesis","instruction":"健全データによる学習と推論時の逸脱判定を別命題としてKに保持し、原典で確認されたマスク処理・適用範囲は追加Evidence経由で統合する。"}}]},"30_analysis":{"assessment":"全11事例×39軸を固定INV-000045定義と照合。完全適合0という結論は現Evidenceに照らして反証されないが、不存在を意味しない。軸の意味・事例単位・採択根拠・探索記録に欠陥があり、現版のまま承認不可。","findings":[{"target":"C02 D08.3 / C06 D06.2 / C07 D03.4 / C08 D05.6 / C10 D03.1","evidence":["INV-000045 30_analysis commit c804b97ad63eeb6d5b38a06ebf73d0a651015fc6 の39軸定義。","C02 排水量による影響度は誤判定の非対称コストを直接示さない。C06 シフト記録周期は推論周期と別。C07 未来振動予測は故障代理イベントの明示的定義と別。C08 健全学習の既知部分を未知扱い。C10 上位事象確率閾値は正解事象定義と別。"],"impact":"該当・未知・非該当の意味が軸をまたいで混同され、事例横断比較の妥当性を損なう。","severity":"Moderate","repair_direction":{"mode":"same_investigation","affected_layer":"30_analysis","instruction":"上流修正後、全429枠を固定定義に再照合し、対象イベントと警報閾値、入力記録周期と処理周期、損失とリスク影響度、学習と評価条件を区別。属性ごとの根拠・推論区分を整合させる。"}},{"target":"C08 / case boundary / SRC-000300・SRC-000301","evidence":["C3.ai B-1B SBA事例とDIU 2019年のAir Force・Armyの集約成果は対象・時期・導入単位が異なる。","30_analysis C08は両者を単一事例として集計し、D08.5等に異なる対象の成果を併記する。"],"impact":"同一ユースケースで採択条件が成立したか判別しにくく、事例数・成果比較に混入が生じる。","severity":"Moderate","repair_direction":{"mode":"same_investigation","affected_layer":"30_analysis","instruction":"同一導入と確認できる範囲を明示し、別導入の集約成果は別事例又は背景情報として分離。事例数と39軸を再集計する。"}},{"target":"Working Answer / 完全適合判定・最有力事例","evidence":["00_contextの4採択条件と同一ユースケース要件。","30_analysisは完全適合0、近接10、除外1とする一方、最有力の比較基準が明示されず、C06の記録利用とC01/C09の費用報告の優位性が異なる。"],"impact":"選定結果の再現性が不足し、候補順位を過度に解釈する恐れ。","severity":"Moderate","repair_direction":{"mode":"same_investigation","affected_layer":"30_analysis","instruction":"全事例について4条件別に確認済・不適合・未確認を根拠付きで明示。日報内の稼働データも定義上許容し、別センサー系統を新たな必須条件にしない。最有力の比較基準を示すか条件別の有力候補に変更する。"}},{"target":"Working Answer / 探索経路・終了理由","evidence":["00_context Assumptionsは非systematic reviewであっても検索経路・終了理由・重要未確認事項の記録を要求。","30_analysisの検索語・候補概略だけでは先行8候補の照合結果と採否理由・探索終了の判断が追跡しにくい。"],"impact":"完全適合0の探索範囲と打切りの意味を読者が検証できない。","severity":"Minor","repair_direction":{"mode":"same_investigation","affected_layer":"30_analysis","instruction":"実際の検索経路、先行候補と最終事例の対応・除外理由、検索を終了した理由を記録。未保存の履歴は未保存と明示し、必要なら同一cutoff内で再探索してEvidenceから更新する。"}}]}}''')
+          save_review_cycle(prepared,reviewed_at=datetime.now(timezone.utc).isoformat(),layer_bodies=bodies,current_target_commit_sha=target,current_artifact_blob_shas=current(),review_dir=review_dir,schema_path=schema)
+          history = load_review_history(inv,review_dir=review_dir,schema_path=schema)
+          assert not history.issues and len(history.records)==1,history.issues
+          review=history.records[-1]
+          relation=target_relation_from_blobs(review,blobs)
+          assert relation=="exact",relation
+          plan=plan_review_projection(review,investigation_rows=[{"investigation_id":inv,"url":"https://app.notion.com/p/424e5855be398196b29fe6cf81690e9b"}],existing_review_rows=[],canonical_path=str(review_dir/"review-000001.json"))
+          recon=reconcile_payload({"current":{"review_status":"未","latest_review_seq":None},"review":{"latest":review,"issues":list(history.issues),"target_relation":relation},"events":{"review_requested":True},"context":json.loads((root/"00_context.json").read_text())})
+          assert plan.outcome=="CREATE" and recon["outcome"]=="UPDATE",(plan,recon)
+          pointer=reconcile_latest_review_relation(current_latest_review_url=None,latest_review_url="__CREATED_REVIEW_URL__",latest_review_exists=True)
+          for f in sorted(review_dir.glob("*.json")):
+              print("REVIEW_FILE:"+f.name+":"+json.dumps(f.read_text(),ensure_ascii=False))
+          print("REVIEW_PLAN:"+json.dumps(asdict(plan),ensure_ascii=False))
+          print("REVIEW_RECON:"+json.dumps(recon,ensure_ascii=False))
+          print("REVIEW_POINTER:"+json.dumps(pointer,ensure_ascii=False))
+          print("REVIEW_VALIDATED")
+          PY
