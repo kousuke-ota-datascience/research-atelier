@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000303",
+  "notion_url": "https://app.notion.com/p/424e5855be39814cb475e93db15059a5",
+  "title": "Using Intelligent Edge Devices for Predictive Maintenance on Injection Molds",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "Applied Sciences, 13(12), 7131",
+  "authors": "P. Nunes; E. Rocha; J. P. Santos",
+  "year": 2023,
+  "url": "https://www.mdpi.com/2076-3417/13/12/7131",
+  "doi": "10.3390/app13127131",
+  "version_or_edition": null,
+  "reliability_note": "査読原著。出版社ページの索引本文から方法と結果を確認、直接openは429。コスト減は推定で実測ではない。"
+}
