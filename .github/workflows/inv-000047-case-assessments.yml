@@ -23,13 +23,13 @@ jobs:
           python tools/case_assessments/build.py INV-000047
           python tools/case_assessments/build.py INV-000047 --check
           python - <<'PY'
-          import base64, gzip, hashlib, json
+          import hashlib, json
           from pathlib import Path
           data=Path('investigations/INV-000047/derived/case_assessments.json').read_bytes()
           obj=json.loads(data)
           print('DERIVATIVE_SUMMARY='+json.dumps(obj['summary'],ensure_ascii=False))
           print('DERIVATIVE_SHA256='+hashlib.sha256(data).hexdigest())
-          encoded=base64.b64encode(gzip.compress(data,mtime=0)).decode('ascii')
+          encoded=data.decode('utf-8')
           for i in range(0,len(encoded),3000):
-              print(f'DERIVATIVE_CHUNK_{i//3000:04d}='+encoded[i:i+3000])
+              print(f'DERIVATIVE_CHUNK_{i//3000:04d}='+json.dumps(encoded[i:i+3000],ensure_ascii=False))
           PY
