@@ -17,20 +17,5 @@ jobs:
           python-version: '3.11'
       - run: python -m pip install 'jsonschema>=4.18'
       - run: |
-          PYTHONPATH=src python - <<'PY'
-          import json, subprocess
-          from pathlib import Path
-          from research_atelier.orchestration.investigation_allocation import decide_investigation_allocation_payload
-          from research_atelier.reviewing.reconcile import reconcile_payload
-          b=Path('investigations/INV-000046/')
-          c=json.loads((b/'00_context.json').read_text())
-          r=json.loads((b/'reviews/review-000004.json').read_text())
-          assert r['verdict']=='FINDINGS'
-          assert all(subprocess.check_output(['git','hash-object',str(b/(k+'.json'))],text=True).strip()==v for k,v in r['target']['artifact_blob_shas'].items())
-          a=decide_investigation_allocation_payload({'intent':'repair','existing':{'investigation_id':'INV-000046','context':c},'requested_context':c,'evidence_population_changed':False})
-          print('ALLOCATION '+json.dumps(a,ensure_ascii=False))
-          assert a['decision']=='reuse_existing'
-          p=reconcile_payload({'context':c,'current':{'review_status':'要修正','latest_review_seq':4},'review':{'latest':r,'target_relation':'exact','issues':[]},'events':{'repair_started':True}})
-          print('RECONCILE '+json.dumps(p,ensure_ascii=False))
-          assert p['outcome']=='UPDATE' and p['changes']['Review Status']=='再作業中'
-          PY
+          git hash-object investigations/INV-000046/10_evidence.json
+          PYTHONPATH=src python -m research_atelier.validation.validate_investigation INV-000046 --through 10
