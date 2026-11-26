@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000046",
+  "review_seq": 5,
+  "layer": "30_analysis",
+  "review_kind": "20_synthesis_plus_00_context_to_30_analysis",
+  "target_blob_sha": "2306a8b52416dda5a531dae6b1d0e98ee755ee8c",
+  "assessment": "Review 000004 F001解消。C10 R4/D02.4/D07.5/D08.1/D09.1/D09.4およびJ0010は修正Kに支持され、原典本文と表の不整合から単純な停止時間閾値規則を認定しない。重症度予測の独立実証・実際の予防保全・実績総保全費とは区別。全11事例各39軸・4条件の記述を維持し、その他の事例の判定は前回から不変。完全適合0件・近接10件・除外1件という限定された探索結果、条件別参照先、非網羅性の留保を維持。変更差分と関連原典を中心に再Reviewし、研究目的・比較妥当性に実質的影響のある新規semantic defectは確認されない。",
+  "findings": [],
+  "verdict": "PASS"
+}

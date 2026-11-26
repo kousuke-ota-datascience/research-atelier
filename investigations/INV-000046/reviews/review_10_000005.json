@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000046",
+  "review_seq": 5,
+  "layer": "10_evidence",
+  "review_kind": "source_evidence_note_to_10_evidence",
+  "target_blob_sha": "3da9111e5a059467a66babe98f78b469a6012ec7",
+  "assessment": "Review 000004 F001解消。E0074/E0075の修正をNunes et al. DOI 10.3390/app13127131 §5.2 Eq.(1), §6 Table 3の公式HTMLで確認。介入間隔別停止時間比の総和と全期間不稼働率を区別できる定義、先行介入247.5分仮定、長時間停止4故障と短時間停止5故障の扱い、390分の故障6が未置換である原典本文・表の不整合を保持。履歴推定と実績、独立評価の未確認を保持。変更2 Evidence Noteの意味・locator・Source・Note Type・titleは一致（E0074のNotion取得時のunderscore Markdown escapeを除く）。Source revisionは全12件不変、SRC-000303 accessed_atのみ変更。旧74 Evidenceは前回対象と同一で過去の照合結果を利用。重要な新規欠陥は確認されない。Review 000004で撤回した情報追加要求を復活させない。",
+  "findings": [],
+  "verdict": "PASS"
+}

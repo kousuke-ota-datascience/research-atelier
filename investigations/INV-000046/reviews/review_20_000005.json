@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000046",
+  "review_seq": 5,
+  "layer": "20_synthesis",
+  "review_kind": "10_evidence_to_20_synthesis",
+  "target_blob_sha": "f1e64fdbbfef85afc7887c5e388bc537bc85037b",
+  "assessment": "E0074/E0075からK0025/K0038/K0044/K0045への伝達を確認。目的関数の式と定義、全期間比との差は分析上の帰結、停止時間の業務的重症度、Table 3の反例、実測費用でないこと、評価独立性未確認を保持する。変更以外の42 Kは前回と同一。重要な支持境界・限定条件の消失なし。",
+  "findings": [],
+  "verdict": "PASS"
+}
