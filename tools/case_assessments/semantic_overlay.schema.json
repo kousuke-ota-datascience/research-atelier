@@ -32,7 +32,7 @@
           },
           "factor_id": {
             "type": "string",
-            "pattern": "^D[0-9]{2}\\.[0-9]+$"
+            "pattern": "^D[0-9]{2}(\\.[0-9]+)?$"
           },
           "attributes": {
             "type": "array",
