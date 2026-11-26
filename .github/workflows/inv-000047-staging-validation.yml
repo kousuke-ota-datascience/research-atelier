@@ -24,6 +24,10 @@ jobs:
           PYTHONPATH: src
         run: |
           set -euo pipefail
+          for n in 305 306 307 308 309 310 311 312; do
+            sid=$(printf 'SRC-%06d' "$n")
+            python -m research_atelier.validation.validate_information_source "$sid"
+          done
           id=INV-000047
           python -m research_atelier.validation.validate_investigation "$id" --through 00 --new-freeze
           for stage in 10 20 30; do
