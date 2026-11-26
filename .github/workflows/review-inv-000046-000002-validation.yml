@@ -1,0 +1,61 @@
+name: INV-000046 Review 000002 validation
+on:
+  push:
+    branches: [review-inv-000046-000002-validation]
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install jsonschema
+      - run: |
+          PYTHONPATH=src python - <<'PY'
+          from pathlib import Path
+          import json, subprocess
+          from datetime import datetime, timezone
+          from dataclasses import asdict
+          from research_atelier.reviewing.review_writer import prepare_review_cycle, save_review_cycle
+          from research_atelier.reviewing.review_state import load_review_history, target_relation_from_blobs
+          from research_atelier.projection.review import plan_review_projection, reconcile_latest_review_relation
+          from research_atelier.reviewing.reconcile import reconcile_payload
+          target = "68066a5bfe85278025957acf46f20bcf3655a621"
+          inv = "INV-000046"
+          root = Path("investigations") / inv
+          review_dir = root / "reviews"
+          schema = Path("schemas/v2")
+          blobs = {"00_context":"db2072fbec2345a24b54dbcd069c846158fae5cb","10_evidence":"c526ddc25db920815be7f0b18ad466204420f06d","20_synthesis":"87a67e7a896ec0136e65629ea35a67913f6743a6","30_analysis":"434c6073ac856141cb7c84cfaffda8bbd978912f"}
+          def git(*args):
+              return subprocess.check_output(["git",*args],text=True).strip()
+          def current():
+              assert git("ls-remote","origin","refs/heads/main").split()[0] == target
+              actual = {k:git("hash-object",str(root / (k+".json"))) for k in blobs}
+              assert actual == blobs
+              return actual
+          current()
+          prepared = prepare_review_cycle(inv,review_dir=review_dir,schema_path=schema,target_commit_sha=target,artifact_blob_shas=blobs)
+          assert prepared.review_seq == 2
+          bodies = json.loads(r'''{"00_context":{"assessment":"Review 000001からfrozen Contextのblobは不変。RQ-000045、Exploratory、cutoff、固定39軸、同一用途の4条件は整合。Contextを変える必要なし。","findings":[]},"10_evidence":{"assessment":"前回F001–F007の再確認：E0043–E0068および訂正E0025で主要な欠落を補足。変更27 Evidence Noteの内容・locator・Source・Note Type一致確認。残る旧41 Evidenceは前回対象と同一。前回F001/F002/F003/F005/F006の主要修正を確認。F004/F007は主要な数値等が補足されたが、原典に明示された予測・評価仕様の重要部分がなお欠落。今回QuantzigとOLIの公式本文を直接取得できた。C3.aiは公式代替PDF。NiX/Omronの一部旧記載は今回取得範囲に再現されず、前回の取得範囲に依存する。","findings":[{"target":"Review 000001 F004 residual / C07 SRC-000250 / E0054–E0057","evidence":["https://www.iieta.org/journals/jesa/paper/10.18280/jesa.590321 §3.4–3.5 Table 7","E0054–E0057"],"impact":"原典§3.4のpre-alarmは予測振動境界横断に加えfailure probabilityの持続的増加を記述し、確認窓の選択を誤警報と介入遅延のトレードオフとして説明する。E0054では前者の明示条件を『等』で省き、後者も保持しない。R1の未知判定、D07.3/D07.5/D08.2の意味・要求の評価が不十分になる。故障確率の定義・実装・校正が原典で確認できるとは限らない。","severity":"Moderate","repair_direction":{"mode":"same_investigation","affected_layer":"10_evidence","instruction":"故障確率に関する原典の記述と実装・定義・検証の確認範囲を区別してEvidence化し、確認窓の設計理由、即時点検条件、保全ログによる評価の範囲を補足。20・30を再構築しR1等を再判定する。未確認の確率出力を実装済みと認定しない。"}},{"target":"Review 000001 F007 residual / C10 SRC-000303 / E0038–E0040,E0064–E0068","evidence":["https://www.mdpi.com/2076-3417/13/12/7131 §4 Predictive Analytics、§5.1–5.2、§6 Table 3","§5.1はIsolation Forest、80%学習データ、5分刻みのBE CDF、直前の修理以降の累積稼働時間と発生済BEによる確率更新を記述。§5.2はTE=金型機械故障、学習時の保全コスト最小化、閾値0.50–1.00を0.01刻みで探索し、短い事後修理より予防介入が高コストになり得ることを説明。"],"impact":"D03.4/D06.3/D07.2/D07.3/D08.3/D09.1/D09.4に直結する明示仕様が欠落。特に累積確率と判断時点以後の条件付き故障確率は異なる。履歴費用評価が学習・閾値選択と独立か未確認のままでは推定値の外的妥当性を評価できない。","severity":"Moderate","repair_direction":{"mode":"same_investigation","affected_layer":"10_evidence","instruction":"既選択原典の該当箇所を追加抽出し、TEの意味、BE CDFの時間原点・更新則、IF学習条件、GFTの訓練目的・閾値探索と比較の独立性の確認範囲、介入費用の設計を記録。20・30で固定軸を再判定し、未来窓・条件付き故障確率を推測で補わない。"}}]},"20_synthesis":{"assessment":"前回F008はK0033で健全データ学習を明示しK0034で推論を分離、解消。主要追加情報はK0001–K0038に統合されている。ただしE0068の時間原点・基本事象累積確率がK0036等に伝達されていない。","findings":[{"target":"C10 / E0068 → K0024,K0036,K0038","evidence":["E0068末尾：直前の機械故障からの稼働時間と基本事象の累積確率で劣化を扱う。","K0036はラベル・除外・金型単位・異質性を保持するが時間原点と基本事象確率を保持しない。K0024は上位事象確率閾値のみ。"],"impact":"AnalysisでC10 D06.1/D06.3/D07.3の既知部分（累積時間原点とリスク表現）を検討できない。未来ホライズン不明と時間関係全体不明を分けるための根拠が失われる。","severity":"Moderate","repair_direction":{"mode":"same_investigation","affected_layer":"20_synthesis","instruction":"E0068の既存命題を保持し、追加Evidenceを統合してBEとTE、経過稼働時間と未来条件付き確率を区別する。30を再構築する。"}}]},"30_analysis":{"assessment":"前回F010はC08をB-1B SBA単体に限定し背景指標を分離、F011は全事例4条件別判定・条件別参照先・日報内稼働データ許容を明記、F012は先行8候補の対応と検索・終了理由・履歴欠落を明示して解消。F009は指摘の主要軸を修正したが、D06.2/D08.3などに残存。固定39軸で再比較し、完全適合0件の主結論は選択Evidenceの範囲で反証されないが、C07/C10の上流補足後に再判定が必要。","findings":[{"target":"Review 000001 F009 residual / C06,C07 D06.2; C04 D08.3","evidence":["固定INV-000045/30_analysis.json commit c804b97ad63eeb6d5b38a06ebf73d0a651015fc6 のD06.2（オンライン/オフライン・連続周期処理・実行周期）とD08.3（誤判定損失・安全制約）。","C06 D06.2は通知・作業依頼という機能の存在で該当とするが、K0016は実行タイミング・周期の仕様を伝達しない。C07 D06.2はベンチマーク1.20msと実プラント連携を根拠に該当とするが実行周期/オンライン性とは別属性。C04 D08.3は故障時の廃棄損失を見逃し損失として原典報告扱いするがK0013は誤判定との関係を報告していない。"],"impact":"軸の属性値が未確認なのに該当・原典報告としたり、分析上の推論を原典記述として表示する。事例横断の比較可能性を損なう。","severity":"Moderate","repair_direction":{"mode":"same_investigation","affected_layer":"30_analysis","instruction":"原典・Synthesisで確認できる実行時点・オンライン性・周期と単なる連携/計算時間を分け、該当判定の根拠を修正。故障損失から見逃し損失への解釈は推論として明記し非対称性未確認を保持。C07/C10は上流補足後に関連軸・4条件を再評価する。"}}]}}''')
+          save_review_cycle(prepared,reviewed_at=datetime.now(timezone.utc).isoformat(),layer_bodies=bodies,current_target_commit_sha=target,current_artifact_blob_shas=current(),review_dir=review_dir,schema_path=schema)
+          history = load_review_history(inv,review_dir=review_dir,schema_path=schema)
+          assert not history.issues and len(history.records)==2,history.issues
+          review=history.records[-1]
+          relation=target_relation_from_blobs(review,blobs)
+          assert relation=="exact",relation
+          plan=plan_review_projection(review,investigation_rows=[{"investigation_id":inv,"url":"https://app.notion.com/p/424e5855be398196b29fe6cf81690e9b"}],existing_review_rows=[],canonical_path=str(review_dir/"review-000002.json"))
+          recon=reconcile_payload({"current":{"review_status":"再レビュー待","latest_review_seq":1},"review":{"latest":review,"issues":list(history.issues),"target_relation":relation},"events":{"review_requested":True},"context":json.loads((root/"00_context.json").read_text())})
+          assert plan.outcome=="CREATE" and recon["outcome"]=="UPDATE",(plan,recon)
+          pointer=reconcile_latest_review_relation(current_latest_review_url="https://app.notion.com/p/424e5855be3981e7b486e6c24cf621a9",latest_review_url="__CREATED_REVIEW_URL__",latest_review_exists=True)
+          for f in sorted(review_dir.glob("*000002.json")):
+              print("REVIEW_FILE:"+f.name+":"+json.dumps(f.read_text(),ensure_ascii=False))
+          print("REVIEW_PLAN:"+json.dumps(asdict(plan),ensure_ascii=False))
+          print("REVIEW_RECON:"+json.dumps(recon,ensure_ascii=False))
+          print("REVIEW_POINTER:"+json.dumps(pointer,ensure_ascii=False))
+          print("REVIEW_VALIDATED")
+          PY
