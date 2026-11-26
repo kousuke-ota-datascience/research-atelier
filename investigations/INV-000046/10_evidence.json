@@ -3,7 +3,7 @@
   "artifact_type": "10_evidence",
   "investigation_id": "INV-000046",
   "rq_id": "RQ-000045",
-  "snapshot_at": "2026-11-26T02:28:00.199Z",
+  "snapshot_at": "2026-11-26T04:27:43.881Z",
   "sources": [
     {
       "source_id": "SRC-000250",
@@ -11,7 +11,7 @@
         "commit_sha": "ba44c5d3d1caa65dd42e46b54ff781d0a7bc7378",
         "blob_sha": "daff5f574353e9bf88a106b8536dfac2db6093d1"
       },
-      "accessed_at": "2026-11-26T02:19:06.560Z",
+      "accessed_at": "2026-11-26T04:26:49.834Z",
       "notion_url": "https://app.notion.com/p/417e5855be3981a0967ee1b6e1381916"
     },
     {
@@ -20,7 +20,7 @@
         "commit_sha": "ba44c5d3d1caa65dd42e46b54ff781d0a7bc7378",
         "blob_sha": "4f4c5387a78c66ead9ef435e32ff10ea05c9ac87"
       },
-      "accessed_at": "2026-11-26T02:19:06.560Z",
+      "accessed_at": "2026-11-26T04:26:49.834Z",
       "notion_url": "https://app.notion.com/p/424e5855be3981c8bf8afeea886aa430"
     },
     {
@@ -56,7 +56,7 @@
         "commit_sha": "ba44c5d3d1caa65dd42e46b54ff781d0a7bc7378",
         "blob_sha": "e72aa9d47b141335b15efcb357df4445c9d07656"
       },
-      "accessed_at": "2026-11-26T02:19:06.560Z",
+      "accessed_at": "2026-11-26T04:26:49.834Z",
       "notion_url": "https://app.notion.com/p/424e5855be3981479d3cde61fd61969d"
     },
     {
@@ -65,7 +65,7 @@
         "commit_sha": "ba44c5d3d1caa65dd42e46b54ff781d0a7bc7378",
         "blob_sha": "47f9f5af5b5ca2e50174f29099e7f47580a7ba82"
       },
-      "accessed_at": "2026-11-26T02:19:06.560Z",
+      "accessed_at": "2026-11-26T04:26:49.834Z",
       "notion_url": "https://app.notion.com/p/424e5855be39818fa4d6fc95dd18591c"
     },
     {
@@ -74,7 +74,7 @@
         "commit_sha": "4ccdd6f27cc5a1a2049a00e8b2ceade231122c06",
         "blob_sha": "8e7b859947019c75333dc816a8a69b246b81c4e0"
       },
-      "accessed_at": "2026-11-26T02:28:00.199Z",
+      "accessed_at": "2026-11-26T04:26:49.834Z",
       "notion_url": "https://app.notion.com/p/424e5855be39814dbff4cd76e6201385"
     },
     {
@@ -92,7 +92,7 @@
         "commit_sha": "4ccdd6f27cc5a1a2049a00e8b2ceade231122c06",
         "blob_sha": "b0581200809b25ed331f45641eccd34a50e25857"
       },
-      "accessed_at": "2026-11-26T02:28:00.199Z",
+      "accessed_at": "2026-11-26T04:26:49.834Z",
       "notion_url": "https://app.notion.com/p/424e5855be39816fabe6f525a2c6c8de"
     },
     {
@@ -101,7 +101,7 @@
         "commit_sha": "4ccdd6f27cc5a1a2049a00e8b2ceade231122c06",
         "blob_sha": "e6bc36da5522f93ab46716e43bb82723d2f9511f"
       },
-      "accessed_at": "2026-11-26T02:28:00.199Z",
+      "accessed_at": "2026-11-26T04:26:49.834Z",
       "notion_url": "https://app.notion.com/p/424e5855be39814cb475e93db15059a5"
     },
     {
@@ -453,7 +453,7 @@
     },
     {
       "evidence_id": "E0025",
-      "content": "年間保全関連支出を約50.4万ドルから28.6万ドルに減らした（43%減）と報告する。費用には品質保留・緊急配送関連の損失を含む。",
+      "content": "年間保全関連支出を約50.4万ドルから28.6万ドルに減らした（43%減）とベンダーが報告する。緊急部品割増、時間外対応労働、バッチ損失の削減を要因として挙げる。",
       "source_locator": "Case study, maintenance cost results",
       "note_type": "Result",
       "direct_quote": null,
@@ -700,6 +700,370 @@
         "evidence_note": {
           "notion_url": "https://app.notion.com/p/424e5855be3981838c67d2ea26771898",
           "title": "EV-000501"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0043",
+      "content": "100件のサービス報告の集計でヘッド詰まり15%、フィルタ詰まり12%、エンコーダ損傷10%、印刷ずれ9%、インク系への空気混入8%を報告。機種別38%は図2の故障構成割合で、稼働時間を分母とする率は示されていない。",
+      "source_locator": "p.179, §3",
+      "note_type": "Data",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000298",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/424e5855be3981b68886ef184109b888",
+          "title": "EV-000502"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0044",
+      "content": "特徴選択対象にインク詰まりの頻度、フィルタ閉塞、温度変動、ヘッドエラーを挙げ、test datasetで精度・適合率・再現率を評価したと記述する。",
+      "source_locator": "p.179, §2–3",
+      "note_type": "Method",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000298",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/424e5855be398177a2d8c7173fb98aae",
+          "title": "EV-000503"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0045",
+      "content": "反射性基材によるUV反射がインク乾燥を促しヘッド詰まりに寄与すると述べ、ノズル内乾燥防止のため暗色の印刷マスクを導入した。",
+      "source_locator": "p.179, §3",
+      "note_type": "Method",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000298",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/424e5855be3981c48af1cfad9956dfda",
+          "title": "EV-000504"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0046",
+      "content": "警報地点ではポンプを引き上げ異物詰まり・エアロック等を点検しTP/FPを判定。非警報地点でも一度引上げ点検しFN/TNを集計した。期間①はTP31、FN11、FP10、TN479。期間②は通知設定変更・現場確認要否の判断フローを導入しTP8、FN0、FP0、TN14。",
+      "source_locator": "資料編 pp.4–5, 表1-3・1-4",
+      "note_type": "Method",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000293",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/424e5855be3981ceb3bbffaccd24f1f2",
+          "title": "EV-000505"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0047",
+      "content": "194機場の緊急出動関連11件には、現場確認で異物詰まり等を認めたが実際の緊急出動に至らなかった事象も算入した。多くは確認時点で運転に影響しない詰まり。0.43年を25件/年に換算し従来154件/年と比較した。",
+      "source_locator": "資料編 pp.3–5, 表1-2・1-3",
+      "note_type": "Result",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000293",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/424e5855be3981e1b3b2e0800990e37f",
+          "title": "EV-000506"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0048",
+      "content": "費用比較の従来母集団は3自治体348機場、緊急出動170回（令和元年度）。年額（万円）で委託費3,595→3,124、修繕4,414→4,356、通信1,128→390、合計9,137→7,870と導入時を評価。自治体別12%、8%、26%、平均15%。",
+      "source_locator": "第2章 p.50, 表2-6",
+      "note_type": "Result",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000293",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/424e5855be398182b3f4e039502443db",
+          "title": "EV-000507"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0049",
+      "content": "通常点検の頻度は週1回から4か月に1回。異常運転時間低減は通常点検で発見した場合とAIによる早期対処の場合の差分を仮定して算出した。",
+      "source_locator": "資料編 pp.5–6, 図1-1",
+      "note_type": "Method",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000293",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/424e5855be3981fc9c2ce73d923a2785",
+          "title": "EV-000508"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0050",
+      "content": "3交替の計測値・設備状態・保全行為等を時刻付きの構造化シフト記録として集約し、閾値超過を担当者に通知。保全が必要とマークされた記録からシフト文脈を添えてwork order requestを自動生成する。",
+      "source_locator": "§03 Solution, §04 Days 53–60",
+      "note_type": "Method",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000299",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/424e5855be39818a9bb1c6d397de3a2c",
+          "title": "EV-000509"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0051",
+      "content": "ベンダーは導入前後で焙煎機軸受故障約18→2件/年、計画外停止11.3→2.1時間/週、異常検出の遅れ2–5シフト→同一シフト、稼働率約83→97%、報告完了率約55%→98%と報告する。",
+      "source_locator": "§05 Results, 12-month comparison table",
+      "note_type": "Result",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000299",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/424e5855be398190b2cbcdc78f529661",
+          "title": "EV-000510"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0052",
+      "content": "年額50.4→28.6万ドルという保全支出減は緊急部品割増・事後対応の時間外労働・バッチ損失の削減によると説明。在庫保有費約3.1万ドル/年減と品質損失14.88万ドル/年減も別に記述される。費用の重複有無・全内訳は開示されていない。",
+      "source_locator": "§07 Business impact, Maintenance Cost Structure",
+      "note_type": "Result",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000299",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/424e5855be3981f7961fdc463bd8af59",
+          "title": "EV-000511"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0053",
+      "content": "保全・洗浄による非代表期間を除外し、通信欠落・異常信号を処理。標準化パラメータは学習データのみから推定。共通の時系列train/validation/test順序と学習内expanding-window validationを用い、検証性能でハイパーパラメータを選択した。",
+      "source_locator": "§3.3–3.4, Table 7",
+      "note_type": "Method",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000250",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/424e5855be3981888213dd8273c0d585",
+          "title": "EV-000512"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0054",
+      "content": "ISO 20816-3:2022の振動重大度ゾーンを実測・予測V-RMSに適用。予測軌跡のfaulty-to-abnormal境界横断等でpre-alarm、2–3回連続超過で確認、3回連続でreset閾値未満なら正常復帰。確認後にスペクトル診断を起動する。",
+      "source_locator": "§3.4, Table 7",
+      "note_type": "Method",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000250",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/424e5855be39814f8609f4ad8bfb8a44",
+          "title": "EV-000513"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0055",
+      "content": "GRUのH240でFNR 0.08、FPR 0.06、MaxでFNR 0.05、FPR 0.09。ベンチマーク構成で推論1.20ms、メモリ78KB。これらは振動予測および閾値に関する評価値である。",
+      "source_locator": "§4.1, Table 9",
+      "note_type": "Result",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000250",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/424e5855be3981c5be87fa1346845908",
+          "title": "EV-000514"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0056",
+      "content": "高圧ポンプの振動上昇→反復pre-alarm→確認警報→スペクトル診断・点検→軸受関連の介入→正常又は許容域へ回復という事例を記述。診断性能は故障種類別にTable 11で報告（集計100、加重平均accuracy92.1%、early detection86.4%、FPR4.1%）。",
+      "source_locator": "§4.2, representative maintenance episode and Table 11",
+      "note_type": "Result",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000250",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/424e5855be398185ab86f3db0d065e78",
+          "title": "EV-000515"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0057",
+      "content": "2025年1–5月75/103日、6–12月120/142日が計画外停止なし。差11.7pp、p=0.025、RR1.16\\[1.01,1.33\\]。月間停止のMann–Whitney p=0.00535、ITS水準変化−44.4時間/月、傾き−5.96時間/月。単一サイトの前後比較で季節・計画・学習・並行保全等を統制していない。",
+      "source_locator": "§3.5, §4.3, Tables 12–14; §5 limitations",
+      "note_type": "Result",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000250",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/424e5855be3981b1a802cc7671ef645a",
+          "title": "EV-000516"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0058",
+      "content": "仮想センサーの学習前に各センサーの重要性、欠測・無効測定を確認し、劣化疑いのあるデータをマスクする。健全データのみで学習する。",
+      "source_locator": "p.3, Approach; publisher alternate URL query utmMedium=cpc",
+      "note_type": "Method",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000300",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/424e5855be39818a9715dc8c64bfb79d",
+          "title": "EV-000517"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0059",
+      "content": "周囲のセンサー値から健全時の対象センサー値を推定し、実測との差で状態を評価。追加MLにより仮想センサー出力を集約して警報を発する。システムレベルの症状と部品レベルの問題を区別する。",
+      "source_locator": "p.3, Approach",
+      "note_type": "Method",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000300",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/424e5855be3981118bbaea610b747498",
+          "title": "EV-000518"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0060",
+      "content": "B-1Bの5,000飛行分・750億行、11故障モード29モデルは機種固有の記述。冒頭Resultsの監視1,000超部品、数百の故障検知、採点警報92%・時間最大85%減についてB-1Bのみの分母は明示されない。",
+      "source_locator": "pp.1–2, Results / Project Highlights",
+      "note_type": "Data",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000300",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/424e5855be398140a3eac3988de65756",
+          "title": "EV-000519"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0061",
+      "content": "生存時間分析・ランダムフォレストを含むモデルでRUL推定し、故障確率と運用影響から動的リスク順位を付与。保全計画者向けBI画面に優先警報と推奨保全を提示する。",
+      "source_locator": "Solution Implemented (publisher indexed text)",
+      "note_type": "Method",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000302",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/424e5855be3981ae830ee6c7ee9ce20d",
+          "title": "EV-000520"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0062",
+      "content": "数百台の機械のテラバイト規模データをSparkで統合・前処理し、Python/Scikit-learnによる試作、XGBoostによる本番モデル、InfluxDB、Azure系データ基盤とPower BIを記述する。",
+      "source_locator": "Technologies Used (publisher indexed text)",
+      "note_type": "Data",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000302",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/424e5855be3981f8a004f0849d5d832c",
+          "title": "EV-000521"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0063",
+      "content": "緊急work orderの比率82%→25%と報告する。FAQでoperator logs等の低頻度データの一般的な利用可能性を述べるが、当該顧客での日報利用を直接記述するものではない。",
+      "source_locator": "Results and Impact (publisher indexed text)",
+      "note_type": "Result",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000302",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/424e5855be39813aa072e52b03d36627",
+          "title": "EV-000522"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0064",
+      "content": "MES文脈とセンサーデータを結合し、正常0、金型機械故障1、その他IMM不調はエラーコードとしてラベル化。金型交換時に対象金型IDを切り替え専用モデルを使う。",
+      "source_locator": "Predictive Analytics, case study (publisher indexed text)",
+      "note_type": "Method",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000303",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/424e5855be39814c9b03fbe565b4bd75",
+          "title": "EV-000523"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0065",
+      "content": "実装時点で企業が実施していたのは事後保全(CM)のみで、故障モードおよび具体的復旧行為の情報はMESに記録されていなかった。",
+      "source_locator": "Case study / GFT optimization (publisher indexed text)",
+      "note_type": "Data",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000303",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/424e5855be39815d93d6d54b5b7de40e",
+          "title": "EV-000524"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0066",
+      "content": "停止時間を費用の指標とし、予防介入に要する停止時間を過去1か月のCM停止時間中央値247.5分と仮定。故障間稼働55–3030分、修理停止5–3915分の履歴に対してGFTの提案を比較した。",
+      "source_locator": "Table 3 / GFT cost optimization (publisher indexed text)",
+      "note_type": "Method",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000303",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/424e5855be398178ad5ff0e11f03f8bb",
+          "title": "EV-000525"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0067",
+      "content": "Raspberry Pi 4、Docker、MQTT broker、InfluxDBを用い、5分窓の最大・最小・平均・標準偏差および窓間差を算出。1か月データの生976.16MBに対し集約1.93MB。追加温湿度センサーは品質目的であり金型健全性評価には使用していない。",
+      "source_locator": "Predictive Analytics / Conclusions (publisher indexed text)",
+      "note_type": "Data",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000303",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/424e5855be3981c0b343e893d79b027a",
+          "title": "EV-000526"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0068",
+      "content": "稼働停止時間を前処理で除去し、金型劣化に無関係な成形機故障・段取り替え等に起因する異常を基本事象の集計から除外。金型ごとに異なる成形条件・材質や複数機械での使用を考慮し、直前の機械故障からの稼働時間と基本事象の累積確率で劣化を扱う。",
+      "source_locator": "§5.1, §6 (publisher indexed text)",
+      "note_type": "Method",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000303",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/424e5855be398164a220cb07b8af3676",
+          "title": "EV-000527"
         }
       }
     }
