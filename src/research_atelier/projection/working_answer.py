@@ -130,6 +130,40 @@ def _notion_block_sequence(markdown: str, *, notion_readback: bool = False) -> s
     return "\n".join(lines).rstrip()
 
 
+def _notion_sections_equal(readback: str, rendered: str) -> bool:
+    """Compare block text, allowing narrow Notion-only prose serialization.
+
+    Notion escapes literal dollar signs and automatically links bare domains.
+    Accept these representations only when the normalized line is exactly the
+    expected canonical line. Never normalize inside fenced code or table rows.
+    Explicit links with a different destination remain semantic differences.
+    """
+    actual = _notion_block_sequence(readback, notion_readback=True).splitlines()
+    expected = _notion_block_sequence(rendered).splitlines()
+    if len(actual) != len(expected):
+        return False
+    in_fence = False
+    for observed, wanted in zip(actual, expected):
+        fence = wanted.strip().startswith("```")
+        if observed != wanted:
+            if in_fence or fence or wanted.lstrip().startswith("|") or "`" in wanted:
+                return False
+            # Only a literal label linked to itself is an auto-link candidate.
+            # Keep explicit canonical Markdown links unchanged where possible.
+            def plain_autolink(match: re.Match[str]) -> str:
+                label, url = match.groups()
+                return label if url == "http://" + label and match.group(0) not in wanted else match.group(0)
+
+            observed = re.sub(r"\[([A-Za-z0-9.-]+\.[A-Za-z]{2,}(?:/[A-Za-z0-9._~/%+-]+)?)\]\((http://[^()\s]+)\)", plain_autolink, observed)
+            if observed != wanted:
+                observed = observed.replace(r"\$", "$")
+            if observed != wanted:
+                return False
+        if fence:
+            in_fence = not in_fence
+    return True
+
+
 def _top_level_heading_positions(markdown: str) -> tuple[list[int], list[int]]:
     """Return (all H1 line indices, target H1 line indices), ignoring code fences."""
 
@@ -193,7 +227,7 @@ def patch_working_answer_section(page_markdown: str, analysis: Mapping[str, Any]
     lines = body.splitlines()
     start, end = bounds
     current = "\n".join(lines[start:end]).rstrip()
-    if _notion_block_sequence(current, notion_readback=True) == _notion_block_sequence(rendered):
+    if _notion_sections_equal(current, rendered):
         return PatchResult(markdown=body, action="NOOP")
 
     replacement_lines = rendered.splitlines()
@@ -212,7 +246,7 @@ def working_answer_section_matches(page_markdown: str, analysis: Mapping[str, An
     lines = page_markdown.splitlines()
     start, end = bounds
     current = "\n".join(lines[start:end]).rstrip()
-    return _notion_block_sequence(current, notion_readback=True) == _notion_block_sequence(render_working_answer_section(analysis))
+    return _notion_sections_equal(current, render_working_answer_section(analysis))
 
 
 def working_answer_projection_state(page_markdown: str, analysis: Mapping[str, Any]) -> str:
