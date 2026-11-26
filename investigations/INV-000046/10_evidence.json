@@ -1,0 +1,480 @@
+{
+  "schema_version": "2.1.0",
+  "artifact_type": "10_evidence",
+  "investigation_id": "INV-000046",
+  "rq_id": "RQ-000045",
+  "snapshot_at": "2026-11-26T02:19:06.560Z",
+  "sources": [
+    {
+      "source_id": "SRC-000250",
+      "source_revision": {
+        "commit_sha": "ba44c5d3d1caa65dd42e46b54ff781d0a7bc7378",
+        "blob_sha": "daff5f574353e9bf88a106b8536dfac2db6093d1"
+      },
+      "accessed_at": "2026-11-26T02:19:06.560Z",
+      "notion_url": "https://app.notion.com/p/417e5855be3981a0967ee1b6e1381916"
+    },
+    {
+      "source_id": "SRC-000293",
+      "source_revision": {
+        "commit_sha": "ba44c5d3d1caa65dd42e46b54ff781d0a7bc7378",
+        "blob_sha": "4f4c5387a78c66ead9ef435e32ff10ea05c9ac87"
+      },
+      "accessed_at": "2026-11-26T02:19:06.560Z",
+      "notion_url": "https://app.notion.com/p/424e5855be3981c8bf8afeea886aa430"
+    },
+    {
+      "source_id": "SRC-000295",
+      "source_revision": {
+        "commit_sha": "ba44c5d3d1caa65dd42e46b54ff781d0a7bc7378",
+        "blob_sha": "5a052cac7ff81108329e57be0dec7e3ee546b1f1"
+      },
+      "accessed_at": "2026-11-26T02:19:06.560Z",
+      "notion_url": "https://app.notion.com/p/424e5855be3981eaaba3de263980c6af"
+    },
+    {
+      "source_id": "SRC-000296",
+      "source_revision": {
+        "commit_sha": "ba44c5d3d1caa65dd42e46b54ff781d0a7bc7378",
+        "blob_sha": "21aa935098fc1c2efbe355cb6e11b7465f55ae9b"
+      },
+      "accessed_at": "2026-11-26T02:19:06.560Z",
+      "notion_url": "https://app.notion.com/p/424e5855be398198bb0feb5f053587f1"
+    },
+    {
+      "source_id": "SRC-000297",
+      "source_revision": {
+        "commit_sha": "ba44c5d3d1caa65dd42e46b54ff781d0a7bc7378",
+        "blob_sha": "be538938558a0521276279dfada2d4dc84ae4d23"
+      },
+      "accessed_at": "2026-11-26T02:19:06.560Z",
+      "notion_url": "https://app.notion.com/p/424e5855be398166ab4cd2f0067d934b"
+    },
+    {
+      "source_id": "SRC-000298",
+      "source_revision": {
+        "commit_sha": "ba44c5d3d1caa65dd42e46b54ff781d0a7bc7378",
+        "blob_sha": "e72aa9d47b141335b15efcb357df4445c9d07656"
+      },
+      "accessed_at": "2026-11-26T02:19:06.560Z",
+      "notion_url": "https://app.notion.com/p/424e5855be3981479d3cde61fd61969d"
+    },
+    {
+      "source_id": "SRC-000299",
+      "source_revision": {
+        "commit_sha": "ba44c5d3d1caa65dd42e46b54ff781d0a7bc7378",
+        "blob_sha": "47f9f5af5b5ca2e50174f29099e7f47580a7ba82"
+      },
+      "accessed_at": "2026-11-26T02:19:06.560Z",
+      "notion_url": "https://app.notion.com/p/424e5855be39818fa4d6fc95dd18591c"
+    }
+  ],
+  "evidence_items": [
+    {
+      "evidence_id": "E0001",
+      "content": "飲料工場の逆浸透装置における予知保全事例では、振動V-RMSの5分値の多期間予測、アラーム、周波数診断、保全管理システムへの連携を実プラントへ統合したと報告する。",
+      "source_locator": "Abstract",
+      "note_type": "Result",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000250",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/417e5855be398156a098fb330a249801",
+          "title": "EV-000388"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0002",
+      "content": "同逆浸透設備事例は2025年の運用前後で故障なし日の割合が72.8%から84.5%へ増えたと報告するが、比較は観察的な前後比較である。",
+      "source_locator": "§4.3 Operational impact",
+      "note_type": "Result",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000250",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/417e5855be39819abec4f592faac2ec8",
+          "title": "EV-000389"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0003",
+      "content": "研究は3機種のデジタル印刷設備に関する100件のサービス報告を分析し、報告中の故障構成比が最も高いLEF2-200（38%）を対象に選んだ。",
+      "source_locator": "pp.177–178, §2",
+      "note_type": "Data",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000298",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/424e5855be3981ac9e89dada8e1015cb",
+          "title": "EV-000462"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0004",
+      "content": "データ収集には機械センサーと運転員の記録を利用し、振動、温度、電気負荷等を扱ったと著者は報告する。",
+      "source_locator": "p.178, §2",
+      "note_type": "Data",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000298",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/424e5855be3981e68750c1eee6d8fb31",
+          "title": "EV-000463"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0005",
+      "content": "探索的データ分析、特徴選択、決定木やロジスティック回帰等の教師あり手法、精度・適合率・再現率による評価を方法として記述している。",
+      "source_locator": "pp.178–179, §2",
+      "note_type": "Method",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000298",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/424e5855be3981d58e72d336d3f0a5cb",
+          "title": "EV-000464"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0006",
+      "content": "LEF2-200ではインク流量、基材反射率、周囲温度を継続監視し、臨界閾値への接近を知らせる警報により予防的清掃・交換を実施したと報告する。",
+      "source_locator": "p.179, §3",
+      "note_type": "Method",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000298",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/424e5855be398136a79be07b8d58048c",
+          "title": "EV-000465"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0007",
+      "content": "予知保全導入前後の比較として、総保全費28%減、計画外停止時間35%減を著者が報告する。",
+      "source_locator": "p.179, §3",
+      "note_type": "Result",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000298",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/424e5855be3981a2acc3c73afd197ad5",
+          "title": "EV-000466"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0008",
+      "content": "著者はヘッド詰まり40%減と稼働可能性12%改善を報告し、2か月で少なくとも5件の重大故障を防止したと述べる。",
+      "source_locator": "pp.179–180, §3",
+      "note_type": "Result",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000298",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/424e5855be39813b9cf3de2b2e102396",
+          "title": "EV-000467"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0009",
+      "content": "河内長野市80、今治市82、赤磐市32の計194マンホールポンプ機場が実証対象。",
+      "source_locator": "資料編 §1.2 表1-1・1-2 p.3",
+      "note_type": "Data",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000293",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/424e5855be39811595dddc3ae1db50f3",
+          "title": "EV-000468"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0010",
+      "content": "直近24時間のポンプ運転時間・回数を日単位で学習した正常範囲と比較し、異常をWeb・メール通知する。システムは日報・月報も扱う。",
+      "source_locator": "第2章 §6 pp.13–16、図2-2",
+      "note_type": "Method",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000293",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/424e5855be3981129378ee47811ab39b",
+          "title": "EV-000469"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0011",
+      "content": "点検記録・台帳から経過年数、劣化項目等による故障リスクと、排水量・稼働等による影響度を評価して更新優先順位を設定する。",
+      "source_locator": "第2章 §9 pp.33–35",
+      "note_type": "Method",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000293",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/424e5855be3981b5b24be318389f6e0d",
+          "title": "EV-000470"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0012",
+      "content": "実証期間の緊急出動関連11件を年換算25件とし、従来154件との比較で83%削減と評価した。",
+      "source_locator": "資料編 §1.2 表1-1・1-2 p.3",
+      "note_type": "Result",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000293",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/424e5855be39818caec0d90c47385d2a",
+          "title": "EV-000471"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0013",
+      "content": "異常検知の集計はTP31、FN11、FP10、TN479で、検知率73.8%、正解率約96%と報告されている。",
+      "source_locator": "資料編 表1-3 p.4",
+      "note_type": "Result",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000293",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/424e5855be3981b8b125df38e250894e",
+          "title": "EV-000472"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0014",
+      "content": "異常運転検知の導入による費用を、従来費と緊急出動削減等に基づいて3自治体で試算し、合計9,137万円/年から7,870万円/年、自治体別削減率の平均約15%と評価している。",
+      "source_locator": "第2章 表2-6 p.50",
+      "note_type": "Result",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000293",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/424e5855be398177b084ca3eb8bb769c",
+          "title": "EV-000473"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0015",
+      "content": "富山市の実証は維持管理情報とIoTデータのクラウド蓄積、AIによる異常検知・劣化予測を組み合わせ、ライフサイクルコスト低減を目指す。",
+      "source_locator": "事業内容",
+      "note_type": "Method",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000295",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/424e5855be3981dca633d962ff5b99f5",
+          "title": "EV-000474"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0016",
+      "content": "市内約360機場のうち67機場にIoT機器を設置したと実証参加企業が報告する。",
+      "source_locator": "事業内容",
+      "note_type": "Data",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000295",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/424e5855be398164a848cdd0e1669022",
+          "title": "EV-000475"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0017",
+      "content": "半導体成膜設備の真空ポンプに反応生成物が堆積し、突発停止は製造中のウエハー廃棄につながると説明している。",
+      "source_locator": "事例本文",
+      "note_type": "Data",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000296",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/424e5855be39818e97d6c3a2ed4ca1b5",
+          "title": "EV-000476"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0018",
+      "content": "振動を常時監視して特徴量をリアルタイム取得し、熟練者の知見を用いてセンサー位置や閾値を検討したと報告する。",
+      "source_locator": "事例本文",
+      "note_type": "Method",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000296",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/424e5855be398162b08ef7fb0b41f9a0",
+          "title": "EV-000477"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0019",
+      "content": "保全周期を30%以上延長し、突発故障ゼロ、オーバーホール費抑制によるメンテナンスコスト15%以上削減と自社工場事例で報告している。",
+      "source_locator": "事例本文・導入効果",
+      "note_type": "Result",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000296",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/424e5855be398165b028e99d4dd22b20",
+          "title": "EV-000478"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0020",
+      "content": "20年以上の保全記録が存在し、設備ごとの使用年数等も異なると担当者が説明する。",
+      "source_locator": "事例本文",
+      "note_type": "Data",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000296",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/424e5855be398195bccae0579f4088eb",
+          "title": "EV-000479"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0021",
+      "content": "ドライポンプのモーター電流を監視し、軽微な故障段階で対応することにより重大故障前の計画保全につなげたと説明する。",
+      "source_locator": "導入事例本文",
+      "note_type": "Method",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000297",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/424e5855be39819c92a0c0003f72d71b",
+          "title": "EV-000480"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0022",
+      "content": "メンテナンスコスト40%削減を技術提供企業が報告する。",
+      "source_locator": "導入事例本文",
+      "note_type": "Result",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000297",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/424e5855be39819b8711e937152b3fc0",
+          "title": "EV-000481"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0023",
+      "content": "匿名のコーヒー焙煎工場は焙煎機4、グラインダー8、包装ライン3を3交替で稼働し、シフト記録にドラム温度、軸受振動、電流、処理量、状態観察等を記録する。",
+      "source_locator": "Case study, facility and shift logbook sections",
+      "note_type": "Data",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000299",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/424e5855be3981c29e6ecc4227ec136f",
+          "title": "EV-000482"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0024",
+      "content": "連続する3回の軸受記録から閾値到達前の傾向を検出し、55日目の警報から軸受交換を計画したとベンダーが報告する。",
+      "source_locator": "Case study, early detection example",
+      "note_type": "Method",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000299",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/424e5855be398197a965e28dbc66557c",
+          "title": "EV-000483"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0025",
+      "content": "年間保全関連支出を約50.4万ドルから28.6万ドルに減らした（43%減）と報告する。費用には品質保留・緊急配送関連の損失を含む。",
+      "source_locator": "Case study, maintenance cost results",
+      "note_type": "Result",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000299",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/424e5855be3981ca8598c5c48c010cc2",
+          "title": "EV-000484"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0026",
+      "content": "逆浸透装置の振動・温度観測を用い、5分値のV-RMSをGRUで多期間予測する。異常閾値の予測到達等で事前警報し、周波数診断とCMMS作業指示につなげる。",
+      "source_locator": "§2–3, Methods",
+      "note_type": "Method",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000250",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/424e5855be39811e9b76e9312d996e68",
+          "title": "EV-000485"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0027",
+      "content": "振動予測のテストRMSE 0.096 mm/s、MAE 0.074 mm/s、R² 0.874を報告する。240分先でのR²は0.775。",
+      "source_locator": "§4, prediction evaluation",
+      "note_type": "Result",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000250",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/424e5855be398107b05ac188a9a78024",
+          "title": "EV-000486"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0028",
+      "content": "日次記録から計画外停止がゼロの日を集計し、導入前103日と導入後142日を比較する。",
+      "source_locator": "§4.3, operational impact",
+      "note_type": "Method",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000250",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/424e5855be398190b7aafdd27b556c4b",
+          "title": "EV-000487"
+        }
+      }
+    },
+    {
+      "evidence_id": "E0029",
+      "content": "実際の費用単価は非公開で、回避された生産損失はパラメトリックに評価されている。経済性評価は今後の課題とされる。",
+      "source_locator": "§4.3–5, economic evaluation",
+      "note_type": "Limitation",
+      "direct_quote": null,
+      "provenance": {
+        "source_id": "SRC-000250",
+        "evidence_note": {
+          "notion_url": "https://app.notion.com/p/424e5855be3981188ea0de1acaadb4b8",
+          "title": "EV-000488"
+        }
+      }
+    }
+  ]
+}
