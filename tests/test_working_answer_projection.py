@@ -203,6 +203,12 @@ class WorkingAnswerPatchTests(unittest.TestCase):
                         readback.replace("| - | :-: |", "| - |")):
             self.assertEqual(working_answer_projection_state(altered, analysis), "STALE")
 
+    def test_hyphen_only_data_cell_changes_are_stale(self):
+        analysis = {"working_answer": {"text": "| A |\n| --- |\n| --- |"}}
+        rendered = render_working_answer_section(analysis)
+        readback = rendered.rsplit("| --- |", 1)[0] + "| - |"
+        self.assertEqual(working_answer_projection_state(readback, analysis), "STALE")
+
     def test_notion_numeric_less_than_is_current_only_for_exact_prose(self):
         analysis = {"working_answer": {"text": "Welch p<0.001"}}
         readback = render_working_answer_section(analysis).replace("p<", r"p\<")
