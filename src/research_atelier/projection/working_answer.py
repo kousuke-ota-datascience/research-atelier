@@ -154,6 +154,8 @@ def _notion_sections_equal(readback: str, rendered: str) -> bool:
                 not in_fence and not fence and index > 0
                 and expected[index - 1].startswith("|")
                 and actual[index - 1].startswith("|")
+                and (index < 2 or not expected[index - 2].startswith("|"))
+                and (index < 2 or not actual[index - 2].startswith("|"))
                 and re.fullmatch(delimiter, observed)
                 and re.fullmatch(delimiter, wanted)
                 and re.sub(r"-+", "-", observed) == re.sub(r"-+", "-", wanted)
