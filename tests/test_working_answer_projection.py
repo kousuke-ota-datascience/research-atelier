@@ -193,21 +193,26 @@ class WorkingAnswerPatchTests(unittest.TestCase):
         analysis = {"working_answer": {"text": "| Cost |\n| --- |\n| $1 |"}}
         self.assertFalse(working_answer_section_matches(render_working_answer_section(analysis).replace("$1", r"\$1"), analysis))
 
-    def test_notion_native_table_delimiter_width_is_current(self):
-        analysis = {"working_answer": {"text": "| A | B |\n| --- | :---: |\n| x | y |"}}
-        readback = render_working_answer_section(analysis).replace("| --- | :---: |", "| - | :-: |")
-        self.assertEqual(working_answer_projection_state(readback, analysis), "CURRENT")
-        self.assertEqual(patch_working_answer_section(readback, analysis).action, "NOOP")
-        for altered in (readback.replace("| x | y |", "| x | z |"),
-                        readback.replace("| - | :-: |", "| - | - |"),
-                        readback.replace("| - | :-: |", "| - |")):
-            self.assertEqual(working_answer_projection_state(altered, analysis), "STALE")
+    def test_render_surplus_plain_separator_is_presentation_only(self):
+        raw = "| A | B |\n| --- | --- | --- |\n| x | y |"
+        analysis = {"working_answer": {"text": raw}}
+        expected = "# Working Answer\n## Answer\n| A | B |\n| --- | --- |\n| x | y |"
+        self.assertEqual(render_working_answer_section(analysis), expected)
+        self.assertEqual(analysis["working_answer"]["text"], raw)
+        self.assertEqual(working_answer_projection_state(expected, analysis), "CURRENT")
+        self.assertEqual(working_answer_projection_state(expected.replace("| x | y |", "| x | z |"), analysis), "STALE")
+        self.assertEqual(working_answer_projection_state(expected.replace("| x | y |", "| x |"), analysis), "STALE")
 
-    def test_hyphen_only_data_cell_changes_are_stale(self):
-        analysis = {"working_answer": {"text": "| A |\n| --- |\n| --- |"}}
-        rendered = render_working_answer_section(analysis)
-        readback = rendered.rsplit("| --- |", 1)[0] + "| - |"
-        self.assertEqual(working_answer_projection_state(readback, analysis), "STALE")
+    def test_render_ambiguous_or_fenced_table_is_not_corrected(self):
+        for raw in (
+            "| A | B |\n| --- | --- | --- |\n| x | y | z |",
+            "| A | B |\n| --- | :---: | --- |\n| x | y |",
+            "| A | B |\n| --- | --- | --- |",
+            "```md\n| A | B |\n| --- | --- | --- |\n| x | y |\n```",
+            "~~~md\n| A | B |\n| --- | --- | --- |\n| x | y |\n~~~",
+        ):
+            self.assertEqual(render_working_answer_section({"working_answer": {"text": raw}}),
+                             "# Working Answer\n## Answer\n" + raw)
 
     def test_notion_numeric_less_than_is_current_only_for_exact_prose(self):
         analysis = {"working_answer": {"text": "Welch p<0.001"}}
