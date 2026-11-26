@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000306",
+  "notion_url": "https://app.notion.com/p/424e5855be3981128c4ae32e3aee9c8a",
+  "title": "黒鉛球状化処理工程自動化AIの開発",
+  "source_type": "Report",
+  "journal_or_publisher": "クリモト技報 No.75",
+  "authors": "小川耕平; 澤田健二; 上杉徳照",
+  "year": 2026,
+  "url": "https://corp.kurimoto.co.jp/assets/pdf/technology/report/kurimoto_giho_no75_02.pdf",
+  "doi": null,
+  "version_or_edition": null,
+  "reliability_note": "実工程の技術報告。非ランダム化比較。"
+}
