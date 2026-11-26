@@ -20,6 +20,11 @@ jobs:
           PYTHONPATH: src
         run: |
           set -euo pipefail
+          git checkout --detach origin/main
+          test "$(git rev-parse HEAD:investigations/INV-000047/00_context.json)" = 2a872b9c22d39b4d83c203ec4b60cc2dbd499236
+          test "$(git rev-parse HEAD:investigations/INV-000047/10_evidence.json)" = aa51097ac982b1155aba82a47c768d56301a3c58
+          test "$(git rev-parse HEAD:investigations/INV-000047/20_synthesis.json)" = 24dec7ad7794e5c83197885b8c139578b7cc3da3
+          test "$(git rev-parse HEAD:investigations/INV-000047/30_analysis.json)" = 6486b4a5775229feab2cd7b97a85548da1466073
           for stage in 00 10 20 30; do
             python -m research_atelier.validation.validate_investigation INV-000047 --through "$stage"
           done
