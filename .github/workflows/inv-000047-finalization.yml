@@ -38,3 +38,25 @@ jobs:
           assert working_answer_projection_state(body,a)=='MISSING' and patch.action=='CREATE'
           print('RENDER_JSON='+json.dumps(patch.markdown,ensure_ascii=False))
           PY
+      - name: Test projection serialization and verify exact readback
+        env:
+          PYTHONPATH: src
+        run: |
+          set -euo pipefail
+          python -m unittest discover -s tests -p test_working_answer_projection.py -v
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from jsonschema import Draft202012Validator, FormatChecker
+          from research_atelier.projection.working_answer import working_answer_projection_state, build_projection_log_v2
+          p=Path('investigations/INV-000047')
+          a=json.loads((p/'30_analysis.json').read_text())
+          c=json.loads((p/'00_context.json').read_text())
+          data=json.loads(Path('validation/inv-000047-projection-readback.json').read_text())
+          state=working_answer_projection_state(data['body'],a)
+          print('PROJECTION_STATE='+state)
+          assert state=='CURRENT'
+          record=build_projection_log_v2(target_rq_url=c['question']['notion_url'],rq_id=c['rq_id'],source_investigation_id=c['investigation_id'],source_30_analysis_commit_sha='b00c76ef854193500fb5d382217b4c38c94dc29c',projection_timestamp=data['projection_timestamp'],result='SUCCESS',note='Native Notion table and numeric comparison serialization verified against accepted analysis.')
+          Draft202012Validator(json.loads(Path('schemas/v2/projection_log.schema.json').read_text()),format_checker=FormatChecker()).validate(record)
+          print('PROJECTION_LOG_JSON='+json.dumps(record,ensure_ascii=False))
+          PY
