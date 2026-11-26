@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000298",
+  "notion_url": "https://app.notion.com/p/424e5855be3981479d3cde61fd61969d",
+  "title": "Assessing the Cost-Effectiveness of Predictive Maintenance for Graphic Machinery",
+  "source_type": "Conference Paper",
+  "journal_or_publisher": "Proceedings 28th International Conference on Printing, Design and Graphic Communication",
+  "authors": "Nikolina Remić; Dubravko Banić; Iva Šarčević",
+  "year": 2025,
+  "url": "https://pdc-conference.grf.unizg.hr/wp-content/uploads/2025/09/BB_2025_PROCEEDINGS.pdf",
+  "doi": null,
+  "version_or_edition": null,
+  "reliability_note": "原著会議論文 pp.177–181。導入前後の削減率を報告するが、予測ホライズン・費目・比較期間・モデル評価値の開示は限定的。"
+}

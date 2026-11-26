@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000293",
+  "notion_url": "https://app.notion.com/p/424e5855be3981c8bf8afeea886aa430",
+  "title": "B-DASHプロジェクト No.40 IoTとAIを活用した効率的予防保全型マンホールポンプ維持管理技術の技術導入ガイドライン（案）",
+  "source_type": "Report",
+  "journal_or_publisher": "国土技術政策総合研究所",
+  "authors": "岡安祐司、吉田敏章、安田将広、濵田知幸",
+  "year": 2025,
+  "url": "https://www.nilim.go.jp/lab/bcg/siryou/tnn/tnn1303.htm",
+  "doi": null,
+  "version_or_edition": "国総研資料 第1303号",
+  "reliability_note": "公的技術ガイドライン、実証結果を含む。富山市の別のB-DASH事業と区別。実績と推計の費用評価を区別する。"
+}

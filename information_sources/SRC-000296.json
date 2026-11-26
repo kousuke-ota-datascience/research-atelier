@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000296",
+  "notion_url": "https://app.notion.com/p/424e5855be398198bb0feb5f053587f1",
+  "title": "真空ポンプの異常予兆をタイムリーに捉えて突発故障ゼロ。メンテナンスコスト15%削減",
+  "source_type": "Web Page",
+  "journal_or_publisher": "オムロン",
+  "authors": null,
+  "year": null,
+  "url": "https://www.fa.omron.co.jp/solution/case/our_007/",
+  "doi": null,
+  "version_or_edition": null,
+  "reliability_note": "自社工場の事例紹介、2020年10月取材。費用評価の詳細と観測期間が限定的。"
+}
