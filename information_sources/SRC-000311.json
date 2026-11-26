@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000311",
+  "notion_url": "https://app.notion.com/p/424e5855be3981efa5ced7ad5ae14eab",
+  "title": "A sensor data mining process for identifying root causes associated with yield excursions in semiconductor manufacturing",
+  "source_type": "Journal Article",
+  "journal_or_publisher": "Data Technologies and Applications",
+  "authors": "Kim; An; Cho; Cho; Lee",
+  "year": 2023,
+  "url": "https://snu.elsevierpure.com/en/publications/a-sensor-data-mining-process-for-identifying-root-causes-associat/",
+  "doi": "10.1108/DTA-08-2022-0341",
+  "version_or_edition": null,
+  "reliability_note": "大学研究情報の論文要旨。全文未確認。"
+}
