@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "artifact_type": "information_source",
+  "source_id": "SRC-000310",
+  "notion_url": "https://app.notion.com/p/424e5855be3981bfbabafa4cdcdfc2da",
+  "title": "dotDataによる品質リスク要因探索でハイテン鋼製造の歩留まり改善を実現",
+  "source_type": "Web Page",
+  "journal_or_publisher": "dotData",
+  "authors": null,
+  "year": null,
+  "url": "https://jp.dotdata.com/resources/case-study/jfe-steel-yield-improvement/",
+  "doi": null,
+  "version_or_edition": null,
+  "reliability_note": "顧客事例。モデル仕様・介入詳細・改善量は未開示。"
+}
