@@ -1,4 +1,4 @@
-# 事例評価の派生成果物生成ツール（契約 v1 / v2）
+# 事例評価の派生成果物生成ツール（契約 v1 / v2 / v3）
 
 本ツールは、明示的に選択された調査固有の事例記述契約に従い、Review済みの調査結果を再利用可能なJSONへ変換するための任意の補助ツールである。
 
@@ -84,3 +84,22 @@ v2では採択区分に `factor_analysis`（要因分析）を追加する。各
 D01〜D09はカテゴリ内に複数の既知・未知・留保・推論を含む。v1の行単位判定を流用せず、`canonical_status`、`applicability`、`epistemic_status`、`value`、`limitations` はnullとする。これは未抽出・原文に明示されない構造化フィールドを意味し、個別属性の未知・非該当を意味しない。カテゴリ記述全体と原文行、行番号、K/E/Source参照を保存する。 `reference_role: category_scope` はカテゴリの原文参照範囲であり、個別属性すべての肯定的証拠ではない。
 
 後続の属性分離が必要なら共通のsemantic overlayを使う。D01〜D09を対象キーとして指定できるが、属性の意味論的判断は別途レビューを要する。v2の9カテゴリは検証済みの汎用taxonomyではない。
+
+
+## 研削品質保証・状態基準保全のカテゴリ記述契約 v3
+
+INV-000048のfrozen Contextにある「固定記述軸は合意済みの10カテゴリとする。」を契約選択の起点とする。D01〜D10とR1〜R3、R4-A/R5-A、R4-B/R5-Bの7条件を原文のまま抽出し、個別事例と表の判定を照合する。外部framework pinやv2契約との併存を拒否する。事例数は入力由来。
+
+```sh
+# 生成
+python tools/case_assessments/build.py INV-000048
+
+# 再生成一致検証
+python tools/case_assessments/build.py INV-000048 --check
+```
+
+- `grinding_adapter.py`：共通review_gate・lineageを使用する厳密抽出adapter。2経路と共通条件の整合を確認する。近接/除外の意味論的区分は正本に従い、生成器で再判定しない。
+- `case_assessments.grinding.schema.json`：局所schema（3.0.0、`grinding_quality_cbm_categories_v3`）。
+- `case_assessments.grinding.template.json`：出力形の例示。placeholderを含むためそのままではschemaに適合しない。
+
+v2と同じくRの根拠はcase scope、Dの根拠はcategory scopeを示す。カテゴリ全体に単一の認識状態・適用可否を割り当てずnullを保持する。採択区分の原文補足はeligibility_detailに保存する。条件定義の順はContext、判定の順はAnalysisに従う（条件IDで結合）。個別属性の意味論的抽出は別工程であり、baselineの自動補完をしない。v1/v2を変更せず再生成一致を回帰確認する。

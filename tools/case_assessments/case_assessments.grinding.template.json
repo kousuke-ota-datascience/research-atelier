@@ -1,0 +1,81 @@
+{
+  "schema_version": "3.0.0",
+  "artifact_type": "case_assessments",
+  "authority": "derived",
+  "contract": "grinding_quality_cbm_categories_v3",
+  "investigation_id": "<INV-ID>",
+  "rq_id": "<RQ-ID>",
+  "derived_from": "<review_gateの出力>",
+  "factor_framework": "<frozen ContextのD01–D10定義>",
+  "criteria_definitions": "<frozen Contextの7条件>",
+  "summary": "<決定論的集計>",
+  "cases": [
+    {
+      "case_id": "C01",
+      "name": "<事例名>",
+      "eligibility": "quality_estimation",
+      "canonical_eligibility": "品質推定事例",
+      "eligibility_detail": "<原文補足>",
+      "knowledge_unit_scope": [
+        "K0001"
+      ],
+      "source_refs": [
+        "SRC-000000"
+      ],
+      "evidence_refs": [
+        "E0001"
+      ],
+      "canonical_header": "<原文見出し>",
+      "canonical_scope_line": "<原文採択区分>",
+      "analysis_line": 1,
+      "scope_analysis_line": 2,
+      "assessment_reason": "<原文判定理由>",
+      "canonical_reason_line": "<原文行>",
+      "reason_analysis_line": 4,
+      "criteria_assessments": [
+        {
+          "criterion_id": "R1",
+          "status": "confirmed",
+          "canonical_status": "確認済",
+          "assessment_text": null,
+          "reference_role": "case_scope",
+          "canonical_line": "<原文R判定行>",
+          "analysis_line": 3,
+          "knowledge_unit_refs": [
+            "K0001"
+          ],
+          "evidence_refs": [
+            "E0001"
+          ],
+          "source_refs": [
+            "SRC-000000"
+          ]
+        }
+      ],
+      "factor_assessments": [
+        {
+          "factor_id": "D01",
+          "factor_label": "<定義に一致するラベル>",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "<カテゴリ原文>",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "<原文行>",
+          "analysis_line": 5,
+          "knowledge_unit_refs": [
+            "K0001"
+          ],
+          "evidence_refs": [
+            "E0001"
+          ],
+          "source_refs": [
+            "SRC-000000"
+          ]
+        }
+      ]
+    }
+  ]
+}

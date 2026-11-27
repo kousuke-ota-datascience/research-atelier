@@ -224,9 +224,18 @@ def build(inv):
     # 正本validatorの判定規則を再実装せず、既存の実装を利用する。
     subprocess.run([sys.executable, "-m", "research_atelier.validation.validate_investigation", inv, "--through", "30"], cwd=ROOT, env={**__import__("os").environ, "PYTHONPATH": str(ROOT / "src")}, check=True, stdout=sys.stderr)
     from category_adapter import PREFIX, build_category_contract
+    from grinding_adapter import PREFIX as GRINDING_PREFIX, build_grinding_contract
     category_contract = [x for x in context["assumptions"] if x.startswith(PREFIX)]
+    grinding_contract = [x for x in context["assumptions"] if x.startswith(GRINDING_PREFIX)]
     external_contract = [x for x in context["assumptions"] if FRAMEWORK_PIN.fullmatch(x)]
-    require(not (category_contract and external_contract), "ambiguous case contract")
+    require(sum(bool(x) for x in (category_contract, grinding_contract, external_contract)) == 1, "missing or ambiguous case contract")
+    if grinding_contract:
+        data = build_grinding_contract(context, analysis, provenance,
+            unique_index(synthesis["knowledge_units"], "knowledge_unit_id"),
+            unique_index(evidence["evidence_items"], "evidence_id"),
+            unique_index(evidence["sources"], "source_id"), require=require, lineage=lineage)
+        Draft202012Validator(read_json(HERE / "case_assessments.grinding.schema.json")).validate(data)
+        return data
     if category_contract:
         data = build_category_contract(context, analysis, provenance,
             unique_index(synthesis["knowledge_units"], "knowledge_unit_id"),
