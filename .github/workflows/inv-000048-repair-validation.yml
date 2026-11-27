@@ -6,9 +6,35 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
+          ref: 64a030a9321f0c14a9b6fec2a99bac4066f908f7
           fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
       - run: pip install jsonschema
       - run: PYTHONPATH=src python -m research_atelier.validation.validate_investigation INV-000048 --through 30
+      - name: Reconcile repaired canonical chain
+        env:
+          PYTHONPATH: src
+        run: |
+          python - <<'PY'
+          import json, pathlib, subprocess
+          from research_atelier.reviewing.reconcile import reconcile_payload
+          from research_atelier.reviewing.review_state import load_review_history, target_relation_from_blobs
+          p=pathlib.Path("investigations/INV-000048")
+          h=load_review_history("INV-000048",review_dir=p/"reviews",schema_path="schemas/v2/review_manifest.schema.json")
+          assert not h.issues, h.issues
+          m=h.latest
+          assert m["review_seq"]==1 and m["verdict"]=="FINDINGS"
+          subprocess.run(["git","merge-base","--is-ancestor",m["target"]["commit_sha"],"HEAD"],check=True)
+          shas={a:subprocess.check_output(["git","hash-object",str(p/(a+".json"))],text=True).strip() for a in m["target"]["artifact_blob_shas"]}
+          assert shas["00_context"]==m["target"]["artifact_blob_shas"]["00_context"]
+          assert all(shas[a]!=m["target"]["artifact_blob_shas"][a] for a in ("10_evidence","20_synthesis","30_analysis"))
+          for rp in (p/"reviews").glob("*.json"):
+              assert subprocess.check_output(["git","show","ad259688d2b87a8afef968654b6fec03d6b869cd:"+str(rp)])==rp.read_bytes()
+          rel=target_relation_from_blobs(m,shas)
+          assert rel=="stale"
+          r=reconcile_payload({"context":json.loads((p/"00_context.json").read_text()),"current":{"review_status":"再作業中","latest_review_seq":1},"review":{"latest":m,"target_relation":rel,"issues":list(h.issues)}})
+          print(json.dumps({"target_relation":rel,"review_history_unchanged":True,"blobs":shas,"reconcile":r},ensure_ascii=False))
+          assert r["outcome"]=="UPDATE" and r["changes"]=={"Review Status":"再レビュー待"}
+          PY
