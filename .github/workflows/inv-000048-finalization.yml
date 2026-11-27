@@ -5,10 +5,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
       - run: pip install jsonschema
+      - run: python -m unittest discover -s tools/case_assessments -p 'test_*.py'
+      - run: python tools/case_assessments/build.py INV-000046 --check
+      - run: python tools/case_assessments/build.py INV-000047 --check
       - name: Verify Notion readback and build log
         env:
           PYTHONPATH: src
