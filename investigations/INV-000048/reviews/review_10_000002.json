@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000048",
+  "review_seq": 2,
+  "layer": "10_evidence",
+  "review_kind": "source_evidence_note_to_10_evidence",
+  "target_blob_sha": "9c24369d6e01234e670bfcfba7c5d19bb2207a7b",
+  "assessment": "Review 000001 F001〜F003の修正を確認。E0008/E0009は正常Aに対する分割前SMOTEの二値評価と非リサンプリングの4クラス評価、85:15分割・10-fold CV・100ランダム分割、偽陰性率の未確認を明示（SRC-000316 §4.5、§5.2–5.3で再確認）。E0012/E0013は4日×20実試行、64/16画像分割、独立性の未確認、元スペクトログラムの周波数切り出し評価と実再収集の相違を明示。原稿PDFの直接取得は再レビューでもタイムアウトし、出版社版の検索抜粋と前回確認記録を区別して評価した。E0014/E0015は200 kHz帯域制約、劣化index・移動平均・Ra条件、θ/W感度分析と元の5区間持続ルールの区別、同一データ内評価の限界を明記（SRC-000319 §3.3–3.4抽出本文で再確認）。F004に関連するE0005–E0007、E0010等も補完。15 Evidence Noteの本文・locator・Source relationはsnapshotと一致、7 Source revisionは前回確認済みのものと同一。C02図4の差の単位とC03混同行列の数値は画像再取得不能の制約が残るが、暫定読取・未確認として限定され、採択や主要結論を支える確定値として使用されていない。既存Findingを解消し、追加のmaterial findingなし。",
+  "findings": [],
+  "verdict": "PASS"
+}

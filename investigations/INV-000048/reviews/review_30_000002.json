@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000048",
+  "review_seq": 2,
+  "layer": "30_analysis",
+  "review_kind": "20_synthesis_plus_00_context_to_30_analysis",
+  "target_blob_sha": "053dd4fd95b211f04080313549521cceb0947b63",
+  "assessment": "Working Answer全6事例のR判定とD01–D10を確認。F001〜F003の修正がC03 D03/D05/D08/D10、C05 D04–D10、C06 D05–D10およびlimitations・構築示唆に反映された。F004で指摘したC02の操作盤・比較表示・面性状項目、C04の加工単位・精度要求、C05の設置位置・画像拡張の記述は対応KUに裏付けられる。共通経路と介入成果の区別、C04の定性的B成果、C06のR3未確認・実介入未確認を維持し、採択集合内の品質推定4件・近接2件、統合型等0件を不存在の証明へ一般化していない。独立外部検証・実流出率・実介入比較・経済最適化・未取得図表等の限界を明示。新たなmaterial findingなし。",
+  "findings": [],
+  "verdict": "PASS"
+}

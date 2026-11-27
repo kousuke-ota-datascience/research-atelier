@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000048",
+  "review_seq": 2,
+  "layer": "20_synthesis",
+  "review_kind": "10_evidence_to_20_synthesis",
+  "target_blob_sha": "6e2b2a4e851050bf95931173cf1b3925f5568513",
+  "assessment": "10_evidenceの修正はK0003〜K0008に適切に伝播。K0005は二値と4クラスの母集団、精度と見逃し率、分割前SMOTEの独立性リスクを区別し、漏洩の確証とはしていない。K0007は実試行数と画像拡張、全体R²とテストR²、帯域切り出しと実収集を分離。K0008は元の5区間ルール、Raを含む代替定式化と同一データ内感度評価を区別し、実介入・経済成果へ拡張しない。K0003/K0004/K0006/K0007の個別事実補完によりF004の下流lineageを支持。関係と不確実性も保持。新たなunsupported propositionをmaterial findingとする根拠なし。",
+  "findings": [],
+  "verdict": "PASS"
+}

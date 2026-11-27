@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "semantic_review_layer",
+  "investigation_id": "INV-000048",
+  "review_seq": 2,
+  "layer": "00_context",
+  "review_kind": "context_semantic_validity",
+  "target_blob_sha": "fa5aaa6e0879038b9d5ca99a65235e124d5d8b97",
+  "assessment": "Frozen 00_contextのblobはReview 000001と同一。ExploratoryのRQ、R1〜R3共通条件とA/B個別経路、意思決定と成果の分離、固定10カテゴリは引き続き整合。C02を加工後機上計測として区別して採択する解釈も維持可能。Context-defining change不要。",
+  "findings": [],
+  "verdict": "PASS"
+}
