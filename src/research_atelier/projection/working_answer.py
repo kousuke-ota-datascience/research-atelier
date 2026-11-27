@@ -60,9 +60,9 @@ def _string_items(items: Any, *, field: str) -> list[str]:
 
 
 def _render_plain_table_delimiters(text: str) -> str:
-    """Correct a surplus uniform GFM separator cell for presentation only.
+    """Normalize plain GFM delimiter spacing and a surplus cell for presentation only.
 
-    Require a plain header, exactly one surplus unaligned delimiter, and
+    Require a plain header, a correctly sized or one-surplus unaligned delimiter, and
     one or more consecutive data rows all matching the header width. Leave
     ambiguous tables, escaped pipes, alignment syntax and code fences alone.
     The accepted analysis itself is never mutated.
@@ -88,7 +88,7 @@ def _render_plain_table_delimiters(text: str) -> str:
             width = len(cells[0])
             if (
                 width >= 2 and all(c.strip() for c in cells[0])
-                and len(cells[1]) == width + 1
+                and len(cells[1]) in {width, width + 1}
                 and all(c.strip() == "---" for c in cells[1])
                 and all(len(row) == width for row in cells[2:])
             ):
