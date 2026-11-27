@@ -1,0 +1,2604 @@
+{
+  "schema_version": "3.0.0",
+  "artifact_type": "case_assessments",
+  "authority": "derived",
+  "contract": "grinding_quality_cbm_categories_v3",
+  "investigation_id": "INV-000048",
+  "rq_id": "RQ-000047",
+  "derived_from": {
+    "analysis_commit_sha": "64a030a9321f0c14a9b6fec2a99bac4066f908f7",
+    "analysis_blob_sha": "053dd4fd95b211f04080313549521cceb0947b63",
+    "artifact_blob_shas": {
+      "00_context": "fa5aaa6e0879038b9d5ca99a65235e124d5d8b97",
+      "10_evidence": "9c24369d6e01234e670bfcfba7c5d19bb2207a7b",
+      "20_synthesis": "6e2b2a4e851050bf95931173cf1b3925f5568513",
+      "30_analysis": "053dd4fd95b211f04080313549521cceb0947b63"
+    },
+    "review_seq": 2,
+    "review_target_commit_sha": "64a030a9321f0c14a9b6fec2a99bac4066f908f7",
+    "review_manifest_path": "investigations/INV-000048/reviews/review-000002.json",
+    "review_manifest_blob_sha": "a74b8cb13f22d8d4e52da01711030dba05574ab1",
+    "projection_log_blob_sha": "4e0113151a282f1930fb1989b73103929a69727f"
+  },
+  "factor_framework": {
+    "origin": "frozen_context_assumption",
+    "canonical_assumption": "固定記述軸は合意済みの10カテゴリとする。D01 加工対象・設備境界（研削方式、設備構成、砥石、被削材、個体差）。D02 劣化・物理現象（劣化モード、発生機構、進展過程、物理的予兆、品質への影響）。D03 品質・対象イベント（品質特性、規格、正常・異常の定義、不良モード、使用限界、代理イベント）。D04 加工・使用条件（加工速度、切込み量、負荷、累積加工量、環境条件、将来使用条件）。D05 データ・観測可能性（センサー、設置位置、測定軸、サンプリング、品質ラベル、摩耗ラベル、欠測・打切り）。D06 信号処理・特徴抽出（時間領域、周波数領域、時間周波数領域、ICA等の信号分離、特徴選択）。D07 時間構造（判断時点、観測窓、推定周期、オンライン性、予測ホライズン）。D08 推定・予測モデル（品質推定、異常検知、劣化状態推定、将来品質予測、RUL、不確実性）。D09 意思決定・介入（品質判定、追加検査、流出防止、交換・ドレッシング、リードタイム、損失関数、運用制約）。D10 評価・経済性（推定性能、見逃し率、過検知率、寿命推定誤差、介入効果、消耗品費、品質損失）。各事例に全10カテゴリを記述し、原典報告・分析上の推論・未知・非該当を区別する。マイナーファクターは記述の指針であり、全項目に値があることは要求しない。網羅的taxonomyの検証済み結果ではない。",
+    "factor_count": 10,
+    "factor_definitions": [
+      {
+        "factor_id": "D01",
+        "factor_label": "加工対象・設備境界",
+        "definition_text": "研削方式、設備構成、砥石、被削材、個体差",
+        "canonical_definition": "D01 加工対象・設備境界（研削方式、設備構成、砥石、被削材、個体差）"
+      },
+      {
+        "factor_id": "D02",
+        "factor_label": "劣化・物理現象",
+        "definition_text": "劣化モード、発生機構、進展過程、物理的予兆、品質への影響",
+        "canonical_definition": "D02 劣化・物理現象（劣化モード、発生機構、進展過程、物理的予兆、品質への影響）"
+      },
+      {
+        "factor_id": "D03",
+        "factor_label": "品質・対象イベント",
+        "definition_text": "品質特性、規格、正常・異常の定義、不良モード、使用限界、代理イベント",
+        "canonical_definition": "D03 品質・対象イベント（品質特性、規格、正常・異常の定義、不良モード、使用限界、代理イベント）"
+      },
+      {
+        "factor_id": "D04",
+        "factor_label": "加工・使用条件",
+        "definition_text": "加工速度、切込み量、負荷、累積加工量、環境条件、将来使用条件",
+        "canonical_definition": "D04 加工・使用条件（加工速度、切込み量、負荷、累積加工量、環境条件、将来使用条件）"
+      },
+      {
+        "factor_id": "D05",
+        "factor_label": "データ・観測可能性",
+        "definition_text": "センサー、設置位置、測定軸、サンプリング、品質ラベル、摩耗ラベル、欠測・打切り",
+        "canonical_definition": "D05 データ・観測可能性（センサー、設置位置、測定軸、サンプリング、品質ラベル、摩耗ラベル、欠測・打切り）"
+      },
+      {
+        "factor_id": "D06",
+        "factor_label": "信号処理・特徴抽出",
+        "definition_text": "時間領域、周波数領域、時間周波数領域、ICA等の信号分離、特徴選択",
+        "canonical_definition": "D06 信号処理・特徴抽出（時間領域、周波数領域、時間周波数領域、ICA等の信号分離、特徴選択）"
+      },
+      {
+        "factor_id": "D07",
+        "factor_label": "時間構造",
+        "definition_text": "判断時点、観測窓、推定周期、オンライン性、予測ホライズン",
+        "canonical_definition": "D07 時間構造（判断時点、観測窓、推定周期、オンライン性、予測ホライズン）"
+      },
+      {
+        "factor_id": "D08",
+        "factor_label": "推定・予測モデル",
+        "definition_text": "品質推定、異常検知、劣化状態推定、将来品質予測、RUL、不確実性",
+        "canonical_definition": "D08 推定・予測モデル（品質推定、異常検知、劣化状態推定、将来品質予測、RUL、不確実性）"
+      },
+      {
+        "factor_id": "D09",
+        "factor_label": "意思決定・介入",
+        "definition_text": "品質判定、追加検査、流出防止、交換・ドレッシング、リードタイム、損失関数、運用制約",
+        "canonical_definition": "D09 意思決定・介入（品質判定、追加検査、流出防止、交換・ドレッシング、リードタイム、損失関数、運用制約）"
+      },
+      {
+        "factor_id": "D10",
+        "factor_label": "評価・経済性",
+        "definition_text": "推定性能、見逃し率、過検知率、寿命推定誤差、介入効果、消耗品費、品質損失",
+        "canonical_definition": "D10 評価・経済性（推定性能、見逃し率、過検知率、寿命推定誤差、介入効果、消耗品費、品質損失）"
+      }
+    ]
+  },
+  "criteria_definitions": [
+    {
+      "criterion_id": "R1",
+      "definition_text": "実際の研削加工から取得したセンサーデータを使用している。実験室の実加工も含むが、実生産と区別する。",
+      "canonical_definition": "R1：実際の研削加工から取得したセンサーデータを使用している。実験室の実加工も含むが、実生産と区別する。",
+      "include_index": 1
+    },
+    {
+      "criterion_id": "R2",
+      "definition_text": "基本統計量、周波数解析、ICA等の信号処理、統計モデル、機械学習等により加工品質または劣化状態を推定している。単純な閾値・回帰等も含む。",
+      "canonical_definition": "R2：基本統計量、周波数解析、ICA等の信号処理、統計モデル、機械学習等により加工品質または劣化状態を推定している。単純な閾値・回帰等も含む。",
+      "include_index": 2
+    },
+    {
+      "criterion_id": "R3",
+      "definition_text": "加工品質の推定結果を実測品質または独立した妥当性のある品質参照判定と照合して評価している。品質代理指標は実品質との対応を明示し、単なる加工状態・摩耗推定と区別する。",
+      "canonical_definition": "R3：加工品質の推定結果を実測品質または独立した妥当性のある品質参照判定と照合して評価している。品質代理指標は実品質との対応を明示し、単なる加工状態・摩耗推定と区別する。",
+      "include_index": 3
+    },
+    {
+      "criterion_id": "R4-A",
+      "definition_text": "品質推定結果に基づく不良判定、追加検査、隔離、排出、加工停止等の流出防止の意思決定を実施している。",
+      "canonical_definition": "R4-A：品質推定結果に基づく不良判定、追加検査、隔離、排出、加工停止等の流出防止の意思決定を実施している。",
+      "include_index": 4
+    },
+    {
+      "criterion_id": "R4-B",
+      "definition_text": "品質または消耗品の劣化状態を根拠に、品質への影響を考慮した交換・ドレッシング判断を実施している。現在状態閾値による判断と将来予測による判断を区別する。",
+      "canonical_definition": "R4-B：品質または消耗品の劣化状態を根拠に、品質への影響を考慮した交換・ドレッシング判断を実施している。現在状態閾値による判断と将来予測による判断を区別する。",
+      "include_index": 5
+    },
+    {
+      "criterion_id": "R5-A",
+      "definition_text": "R4-Aの介入に関し、実際の不良見逃し・流出防止等の成果を比較または実測により評価している。",
+      "canonical_definition": "R5-A：R4-Aの介入に関し、実際の不良見逃し・流出防止等の成果を比較または実測により評価している。",
+      "include_index": 6
+    },
+    {
+      "criterion_id": "R5-B",
+      "definition_text": "R4-Bの介入に関し、実際の品質維持、消耗品寿命、交換頻度、停止時間、費用等の成果を評価している。最適化の成立は別途判定する。",
+      "canonical_definition": "R5-B：R4-Bの介入に関し、実際の品質維持、消耗品寿命、交換頻度、停止時間、費用等の成果を評価している。最適化の成立は別途判定する。",
+      "include_index": 7
+    }
+  ],
+  "summary": {
+    "case_count": 6,
+    "factor_assessment_count": 60,
+    "criterion_assessment_count": 42,
+    "eligibility_counts": {
+      "near_match": 2,
+      "quality_estimation": 4
+    },
+    "factor_rows_without_explicit_status": 60,
+    "criterion_status_counts": {
+      "confirmed": 18,
+      "unconfirmed": 24
+    }
+  },
+  "cases": [
+    {
+      "case_id": "C01",
+      "name": "SUBARU・富士通：量産カムシャフト品質判定",
+      "eligibility": "quality_estimation",
+      "canonical_eligibility": "品質推定事例",
+      "eligibility_detail": "量産実装・A意思決定確認済",
+      "assessment_reason": "全数良否判定と設備フィードバックは本格稼働。実測検査との照合・高精度との報告はあるが、不良の見逃し・流出成果の比較または実測値を確認できない。必要時ドレッシングは2019年の検証計画で、実施・成果の確認とは異なる。",
+      "canonical_reason_line": "- 判定理由（分析上の推論）：全数良否判定と設備フィードバックは本格稼働。実測検査との照合・高精度との報告はあるが、不良の見逃し・流出成果の比較または実測値を確認できない。必要時ドレッシングは2019年の検証計画で、実施・成果の確認とは異なる。",
+      "reason_analysis_line": 18,
+      "canonical_header": "### C01 SUBARU・富士通：量産カムシャフト品質判定",
+      "canonical_scope_line": "- 採択区分：品質推定事例（量産実装・A意思決定確認済）（K0001, K0002）",
+      "scope_analysis_line": 16,
+      "analysis_line": 15,
+      "knowledge_unit_scope": [
+        "K0001",
+        "K0002"
+      ],
+      "evidence_refs": [
+        "E0001",
+        "E0002",
+        "E0003",
+        "E0004"
+      ],
+      "source_refs": [
+        "SRC-000313",
+        "SRC-000314"
+      ],
+      "criteria_assessments": [
+        {
+          "criterion_id": "R1",
+          "status": "confirmed",
+          "canonical_status": "確認済",
+          "assessment_text": null,
+          "reference_role": "case_scope",
+          "canonical_line": "- R1 確認済 / R2 確認済 / R3 確認済 / R4-A 確認済 / R5-A 未確認 / R4-B 未確認 / R5-B 未確認",
+          "analysis_line": 17,
+          "knowledge_unit_refs": [
+            "K0001",
+            "K0002"
+          ],
+          "evidence_refs": [
+            "E0001",
+            "E0002",
+            "E0003",
+            "E0004"
+          ],
+          "source_refs": [
+            "SRC-000313",
+            "SRC-000314"
+          ]
+        },
+        {
+          "criterion_id": "R2",
+          "status": "confirmed",
+          "canonical_status": "確認済",
+          "assessment_text": null,
+          "reference_role": "case_scope",
+          "canonical_line": "- R1 確認済 / R2 確認済 / R3 確認済 / R4-A 確認済 / R5-A 未確認 / R4-B 未確認 / R5-B 未確認",
+          "analysis_line": 17,
+          "knowledge_unit_refs": [
+            "K0001",
+            "K0002"
+          ],
+          "evidence_refs": [
+            "E0001",
+            "E0002",
+            "E0003",
+            "E0004"
+          ],
+          "source_refs": [
+            "SRC-000313",
+            "SRC-000314"
+          ]
+        },
+        {
+          "criterion_id": "R3",
+          "status": "confirmed",
+          "canonical_status": "確認済",
+          "assessment_text": null,
+          "reference_role": "case_scope",
+          "canonical_line": "- R1 確認済 / R2 確認済 / R3 確認済 / R4-A 確認済 / R5-A 未確認 / R4-B 未確認 / R5-B 未確認",
+          "analysis_line": 17,
+          "knowledge_unit_refs": [
+            "K0001",
+            "K0002"
+          ],
+          "evidence_refs": [
+            "E0001",
+            "E0002",
+            "E0003",
+            "E0004"
+          ],
+          "source_refs": [
+            "SRC-000313",
+            "SRC-000314"
+          ]
+        },
+        {
+          "criterion_id": "R4-A",
+          "status": "confirmed",
+          "canonical_status": "確認済",
+          "assessment_text": null,
+          "reference_role": "case_scope",
+          "canonical_line": "- R1 確認済 / R2 確認済 / R3 確認済 / R4-A 確認済 / R5-A 未確認 / R4-B 未確認 / R5-B 未確認",
+          "analysis_line": 17,
+          "knowledge_unit_refs": [
+            "K0001",
+            "K0002"
+          ],
+          "evidence_refs": [
+            "E0001",
+            "E0002",
+            "E0003",
+            "E0004"
+          ],
+          "source_refs": [
+            "SRC-000313",
+            "SRC-000314"
+          ]
+        },
+        {
+          "criterion_id": "R5-A",
+          "status": "unconfirmed",
+          "canonical_status": "未確認",
+          "assessment_text": null,
+          "reference_role": "case_scope",
+          "canonical_line": "- R1 確認済 / R2 確認済 / R3 確認済 / R4-A 確認済 / R5-A 未確認 / R4-B 未確認 / R5-B 未確認",
+          "analysis_line": 17,
+          "knowledge_unit_refs": [
+            "K0001",
+            "K0002"
+          ],
+          "evidence_refs": [
+            "E0001",
+            "E0002",
+            "E0003",
+            "E0004"
+          ],
+          "source_refs": [
+            "SRC-000313",
+            "SRC-000314"
+          ]
+        },
+        {
+          "criterion_id": "R4-B",
+          "status": "unconfirmed",
+          "canonical_status": "未確認",
+          "assessment_text": null,
+          "reference_role": "case_scope",
+          "canonical_line": "- R1 確認済 / R2 確認済 / R3 確認済 / R4-A 確認済 / R5-A 未確認 / R4-B 未確認 / R5-B 未確認",
+          "analysis_line": 17,
+          "knowledge_unit_refs": [
+            "K0001",
+            "K0002"
+          ],
+          "evidence_refs": [
+            "E0001",
+            "E0002",
+            "E0003",
+            "E0004"
+          ],
+          "source_refs": [
+            "SRC-000313",
+            "SRC-000314"
+          ]
+        },
+        {
+          "criterion_id": "R5-B",
+          "status": "unconfirmed",
+          "canonical_status": "未確認",
+          "assessment_text": null,
+          "reference_role": "case_scope",
+          "canonical_line": "- R1 確認済 / R2 確認済 / R3 確認済 / R4-A 確認済 / R5-A 未確認 / R4-B 未確認 / R5-B 未確認",
+          "analysis_line": 17,
+          "knowledge_unit_refs": [
+            "K0001",
+            "K0002"
+          ],
+          "evidence_refs": [
+            "E0001",
+            "E0002",
+            "E0003",
+            "E0004"
+          ],
+          "source_refs": [
+            "SRC-000313",
+            "SRC-000314"
+          ]
+        }
+      ],
+      "factor_assessments": [
+        {
+          "factor_id": "D01",
+          "factor_label": "加工対象・設備境界",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "大泉工場の量産カムシャフト研削。分析単位は個々のカムシャフト。設備型式・砥石・材料・個体差は未知。",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D01 加工対象・設備境界：大泉工場の量産カムシャフト研削。分析単位は個々のカムシャフト。設備型式・砥石・材料・個体差は未知。（K0001, K0002）",
+          "analysis_line": 20,
+          "knowledge_unit_refs": [
+            "K0001",
+            "K0002"
+          ],
+          "evidence_refs": [
+            "E0001",
+            "E0002",
+            "E0003",
+            "E0004"
+          ],
+          "source_refs": [
+            "SRC-000313",
+            "SRC-000314"
+          ]
+        },
+        {
+          "factor_id": "D02",
+          "factor_label": "劣化・物理現象",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "設備経年劣化と環境変化によるモデル精度低下を課題とする。砥石の物理的劣化モード・進展・使用限界は未知。",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D02 劣化・物理現象：設備経年劣化と環境変化によるモデル精度低下を課題とする。砥石の物理的劣化モード・進展・使用限界は未知。（K0001, K0002）",
+          "analysis_line": 21,
+          "knowledge_unit_refs": [
+            "K0001",
+            "K0002"
+          ],
+          "evidence_refs": [
+            "E0001",
+            "E0002",
+            "E0003",
+            "E0004"
+          ],
+          "source_refs": [
+            "SRC-000313",
+            "SRC-000314"
+          ]
+        },
+        {
+          "factor_id": "D03",
+          "factor_label": "品質・対象イベント",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "表面粗さ・表面形状等の検査値と品質基準内外の判定。個別の規格値・不良モード別定義・参照検査の詳細は未知。",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D03 品質・対象イベント：表面粗さ・表面形状等の検査値と品質基準内外の判定。個別の規格値・不良モード別定義・参照検査の詳細は未知。（K0001, K0002）",
+          "analysis_line": 22,
+          "knowledge_unit_refs": [
+            "K0001",
+            "K0002"
+          ],
+          "evidence_refs": [
+            "E0001",
+            "E0002",
+            "E0003",
+            "E0004"
+          ],
+          "source_refs": [
+            "SRC-000313",
+            "SRC-000314"
+          ]
+        },
+        {
+          "factor_id": "D04",
+          "factor_label": "加工・使用条件",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "量産工程での運用。加工速度・切込み・負荷・累積加工量・砥石履歴・環境条件の具体値は未知。",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D04 加工・使用条件：量産工程での運用。加工速度・切込み・負荷・累積加工量・砥石履歴・環境条件の具体値は未知。（K0001, K0002）",
+          "analysis_line": 23,
+          "knowledge_unit_refs": [
+            "K0001",
+            "K0002"
+          ],
+          "evidence_refs": [
+            "E0001",
+            "E0002",
+            "E0003",
+            "E0004"
+          ],
+          "source_refs": [
+            "SRC-000313",
+            "SRC-000314"
+          ]
+        },
+        {
+          "factor_id": "D05",
+          "factor_label": "データ・観測可能性",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "設備振動・主軸動力と検査結果。エッジ収集。センサー位置・軸・周波数・母数・欠測・ラベル分布は未知。",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D05 データ・観測可能性：設備振動・主軸動力と検査結果。エッジ収集。センサー位置・軸・周波数・母数・欠測・ラベル分布は未知。（K0001, K0002）",
+          "analysis_line": 24,
+          "knowledge_unit_refs": [
+            "K0001",
+            "K0002"
+          ],
+          "evidence_refs": [
+            "E0001",
+            "E0002",
+            "E0003",
+            "E0004"
+          ],
+          "source_refs": [
+            "SRC-000313",
+            "SRC-000314"
+          ]
+        },
+        {
+          "factor_id": "D06",
+          "factor_label": "信号処理・特徴抽出",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "振動・動力をモデル学習に用いる。具体的な時間領域統計量、周波数解析、ICA、前処理は未知。",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D06 信号処理・特徴抽出：振動・動力をモデル学習に用いる。具体的な時間領域統計量、周波数解析、ICA、前処理は未知。（K0001, K0002）",
+          "analysis_line": 25,
+          "knowledge_unit_refs": [
+            "K0001",
+            "K0002"
+          ],
+          "evidence_refs": [
+            "E0001",
+            "E0002",
+            "E0003",
+            "E0004"
+          ],
+          "source_refs": [
+            "SRC-000313",
+            "SRC-000314"
+          ]
+        },
+        {
+          "factor_id": "D07",
+          "factor_label": "時間構造",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "加工中に各カムシャフトをリアルタイム判定すると報告。観測窓・判定レイテンシ数値・将来予測ホライズンは未知。",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D07 時間構造：加工中に各カムシャフトをリアルタイム判定すると報告。観測窓・判定レイテンシ数値・将来予測ホライズンは未知。（K0001, K0002）",
+          "analysis_line": 26,
+          "knowledge_unit_refs": [
+            "K0001",
+            "K0002"
+          ],
+          "evidence_refs": [
+            "E0001",
+            "E0002",
+            "E0003",
+            "E0004"
+          ],
+          "source_refs": [
+            "SRC-000313",
+            "SRC-000314"
+          ]
+        },
+        {
+          "factor_id": "D08",
+          "factor_label": "推定・予測モデル",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "Random Forestによる品質良否判定。推論と検査結果の照合、評価蓄積、チューニング時期判断、再学習・エッジ再展開の運用管理。検証分割・校正・砥石RULは未知。",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D08 推定・予測モデル：Random Forestによる品質良否判定。推論と検査結果の照合、評価蓄積、チューニング時期判断、再学習・エッジ再展開の運用管理。検証分割・校正・砥石RULは未知。（K0001, K0002）",
+          "analysis_line": 27,
+          "knowledge_unit_refs": [
+            "K0001",
+            "K0002"
+          ],
+          "evidence_refs": [
+            "E0001",
+            "E0002",
+            "E0003",
+            "E0004"
+          ],
+          "source_refs": [
+            "SRC-000313",
+            "SRC-000314"
+          ]
+        },
+        {
+          "factor_id": "D09",
+          "factor_label": "意思決定・介入",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "品質基準内外を設備へフィードバックする量産システムを実装。隔離・排出等の具体的動作は未知。必要時ドレッシングは2019年の検証計画で、実際の状態基準への移行は未確認。",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D09 意思決定・介入：品質基準内外を設備へフィードバックする量産システムを実装。隔離・排出等の具体的動作は未知。必要時ドレッシングは2019年の検証計画で、実際の状態基準への移行は未確認。（K0001, K0002）",
+          "analysis_line": 28,
+          "knowledge_unit_refs": [
+            "K0001",
+            "K0002"
+          ],
+          "evidence_refs": [
+            "E0001",
+            "E0002",
+            "E0003",
+            "E0004"
+          ],
+          "source_refs": [
+            "SRC-000313",
+            "SRC-000314"
+          ]
+        },
+        {
+          "factor_id": "D10",
+          "factor_label": "評価・経済性",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "2019/12–2020/12量産実証、2020/8–2021/12運用管理実証、2022/1末本格稼働。高精度との当事者報告。偽陰性率・過検知率・出荷不良分母・実流出率・改善比較・ドレッシング間隔・費用実績は未知。",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D10 評価・経済性：2019/12–2020/12量産実証、2020/8–2021/12運用管理実証、2022/1末本格稼働。高精度との当事者報告。偽陰性率・過検知率・出荷不良分母・実流出率・改善比較・ドレッシング間隔・費用実績は未知。（K0001, K0002）",
+          "analysis_line": 29,
+          "knowledge_unit_refs": [
+            "K0001",
+            "K0002"
+          ],
+          "evidence_refs": [
+            "E0001",
+            "E0002",
+            "E0003",
+            "E0004"
+          ],
+          "source_refs": [
+            "SRC-000313",
+            "SRC-000314"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "C02",
+      "name": "ジェイテクト：加工後機上の面性状監視",
+      "eligibility": "quality_estimation",
+      "canonical_eligibility": "品質推定事例",
+      "eligibility_detail": "機上測定システム開発・介入構想",
+      "assessment_reason": "実際に研削した工作物の加工後機上センサー信号なのでR1対象に含むが、加工中の研削接触振動とは区別する。推定性能は実測比較あり。監視・警告値表示を実際の流出阻止または状態基準介入の実績とはみなさない。",
+      "canonical_reason_line": "- 判定理由（分析上の推論）：実際に研削した工作物の加工後機上センサー信号なのでR1対象に含むが、加工中の研削接触振動とは区別する。推定性能は実測比較あり。監視・警告値表示を実際の流出阻止または状態基準介入の実績とはみなさない。",
+      "reason_analysis_line": 34,
+      "canonical_header": "### C02 ジェイテクト：加工後機上の面性状監視",
+      "canonical_scope_line": "- 採択区分：品質推定事例（機上測定システム開発・介入構想）（K0003, K0004）",
+      "scope_analysis_line": 32,
+      "analysis_line": 31,
+      "knowledge_unit_scope": [
+        "K0003",
+        "K0004"
+      ],
+      "evidence_refs": [
+        "E0005",
+        "E0006",
+        "E0007"
+      ],
+      "source_refs": [
+        "SRC-000315"
+      ],
+      "criteria_assessments": [
+        {
+          "criterion_id": "R1",
+          "status": "confirmed",
+          "canonical_status": "確認済",
+          "assessment_text": null,
+          "reference_role": "case_scope",
+          "canonical_line": "- R1 確認済 / R2 確認済 / R3 確認済 / R4-A 未確認 / R5-A 未確認 / R4-B 未確認 / R5-B 未確認",
+          "analysis_line": 33,
+          "knowledge_unit_refs": [
+            "K0003",
+            "K0004"
+          ],
+          "evidence_refs": [
+            "E0005",
+            "E0006",
+            "E0007"
+          ],
+          "source_refs": [
+            "SRC-000315"
+          ]
+        },
+        {
+          "criterion_id": "R2",
+          "status": "confirmed",
+          "canonical_status": "確認済",
+          "assessment_text": null,
+          "reference_role": "case_scope",
+          "canonical_line": "- R1 確認済 / R2 確認済 / R3 確認済 / R4-A 未確認 / R5-A 未確認 / R4-B 未確認 / R5-B 未確認",
+          "analysis_line": 33,
+          "knowledge_unit_refs": [
+            "K0003",
+            "K0004"
+          ],
+          "evidence_refs": [
+            "E0005",
+            "E0006",
+            "E0007"
+          ],
+          "source_refs": [
+            "SRC-000315"
+          ]
+        },
+        {
+          "criterion_id": "R3",
+          "status": "confirmed",
+          "canonical_status": "確認済",
+          "assessment_text": null,
+          "reference_role": "case_scope",
+          "canonical_line": "- R1 確認済 / R2 確認済 / R3 確認済 / R4-A 未確認 / R5-A 未確認 / R4-B 未確認 / R5-B 未確認",
+          "analysis_line": 33,
+          "knowledge_unit_refs": [
+            "K0003",
+            "K0004"
+          ],
+          "evidence_refs": [
+            "E0005",
+            "E0006",
+            "E0007"
+          ],
+          "source_refs": [
+            "SRC-000315"
+          ]
+        },
+        {
+          "criterion_id": "R4-A",
+          "status": "unconfirmed",
+          "canonical_status": "未確認",
+          "assessment_text": null,
+          "reference_role": "case_scope",
+          "canonical_line": "- R1 確認済 / R2 確認済 / R3 確認済 / R4-A 未確認 / R5-A 未確認 / R4-B 未確認 / R5-B 未確認",
+          "analysis_line": 33,
+          "knowledge_unit_refs": [
+            "K0003",
+            "K0004"
+          ],
+          "evidence_refs": [
+            "E0005",
+            "E0006",
+            "E0007"
+          ],
+          "source_refs": [
+            "SRC-000315"
+          ]
+        },
+        {
+          "criterion_id": "R5-A",
+          "status": "unconfirmed",
+          "canonical_status": "未確認",
+          "assessment_text": null,
+          "reference_role": "case_scope",
+          "canonical_line": "- R1 確認済 / R2 確認済 / R3 確認済 / R4-A 未確認 / R5-A 未確認 / R4-B 未確認 / R5-B 未確認",
+          "analysis_line": 33,
+          "knowledge_unit_refs": [
+            "K0003",
+            "K0004"
+          ],
+          "evidence_refs": [
+            "E0005",
+            "E0006",
+            "E0007"
+          ],
+          "source_refs": [
+            "SRC-000315"
+          ]
+        },
+        {
+          "criterion_id": "R4-B",
+          "status": "unconfirmed",
+          "canonical_status": "未確認",
+          "assessment_text": null,
+          "reference_role": "case_scope",
+          "canonical_line": "- R1 確認済 / R2 確認済 / R3 確認済 / R4-A 未確認 / R5-A 未確認 / R4-B 未確認 / R5-B 未確認",
+          "analysis_line": 33,
+          "knowledge_unit_refs": [
+            "K0003",
+            "K0004"
+          ],
+          "evidence_refs": [
+            "E0005",
+            "E0006",
+            "E0007"
+          ],
+          "source_refs": [
+            "SRC-000315"
+          ]
+        },
+        {
+          "criterion_id": "R5-B",
+          "status": "unconfirmed",
+          "canonical_status": "未確認",
+          "assessment_text": null,
+          "reference_role": "case_scope",
+          "canonical_line": "- R1 確認済 / R2 確認済 / R3 確認済 / R4-A 未確認 / R5-A 未確認 / R4-B 未確認 / R5-B 未確認",
+          "analysis_line": 33,
+          "knowledge_unit_refs": [
+            "K0003",
+            "K0004"
+          ],
+          "evidence_refs": [
+            "E0005",
+            "E0006",
+            "E0007"
+          ],
+          "source_refs": [
+            "SRC-000315"
+          ]
+        }
+      ],
+      "factor_assessments": [
+        {
+          "factor_id": "D01",
+          "factor_label": "加工対象・設備境界",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "円筒研削盤・定寸装置・追加加速度計・工作物。ドライブピニオン加工への活用例。設備型式・砥石仕様・材料・個体差は未知。",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D01 加工対象・設備境界：円筒研削盤・定寸装置・追加加速度計・工作物。ドライブピニオン加工への活用例。設備型式・砥石仕様・材料・個体差は未知。（K0003, K0004）",
+          "analysis_line": 36,
+          "knowledge_unit_refs": [
+            "K0003",
+            "K0004"
+          ],
+          "evidence_refs": [
+            "E0005",
+            "E0006",
+            "E0007"
+          ],
+          "source_refs": [
+            "SRC-000315"
+          ]
+        },
+        {
+          "factor_id": "D02",
+          "factor_label": "劣化・物理現象",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "図3はツルーイング直後の少除去量と除去量増加後を比較し後者で面性状が粗くなると報告。摩耗量の直接計測、劣化モードの個別識別、因果機構は未知。",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D02 劣化・物理現象：図3はツルーイング直後の少除去量と除去量増加後を比較し後者で面性状が粗くなると報告。摩耗量の直接計測、劣化モードの個別識別、因果機構は未知。（K0003, K0004）",
+          "analysis_line": 37,
+          "knowledge_unit_refs": [
+            "K0003",
+            "K0004"
+          ],
+          "evidence_refs": [
+            "E0005",
+            "E0006",
+            "E0007"
+          ],
+          "source_refs": [
+            "SRC-000315"
+          ]
+        },
+        {
+          "factor_id": "D03",
+          "factor_label": "品質・対象イベント",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "三次元面性状マップ・推定Ra・びびり度・うねり高さ（図5表示例）。上限・警告値（図6）。個別品質規格の数値・不良ラベルは未知。",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D03 品質・対象イベント：三次元面性状マップ・推定Ra・びびり度・うねり高さ（図5表示例）。上限・警告値（図6）。個別品質規格の数値・不良ラベルは未知。（K0003, K0004）",
+          "analysis_line": 38,
+          "knowledge_unit_refs": [
+            "K0003",
+            "K0004"
+          ],
+          "evidence_refs": [
+            "E0005",
+            "E0006",
+            "E0007"
+          ],
+          "source_refs": [
+            "SRC-000315"
+          ]
+        },
+        {
+          "factor_id": "D04",
+          "factor_label": "加工・使用条件",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "連続研削後、工作物を回転・トラバースさせて計測。除去量増加に伴う面性状を比較。速度・切込み・材料・校正範囲は未知。",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D04 加工・使用条件：連続研削後、工作物を回転・トラバースさせて計測。除去量増加に伴う面性状を比較。速度・切込み・材料・校正範囲は未知。（K0003, K0004）",
+          "analysis_line": 39,
+          "knowledge_unit_refs": [
+            "K0003",
+            "K0004"
+          ],
+          "evidence_refs": [
+            "E0005",
+            "E0006",
+            "E0007"
+          ],
+          "source_refs": [
+            "SRC-000315"
+          ]
+        },
+        {
+          "factor_id": "D05",
+          "factor_label": "データ・観測可能性",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "定寸装置の変位と先端の追加加速度計の振動をエッジコンピューターへ収集。粗さ実測値を比較。サンプリング周波数・軸・欠測・独立評価母数は未知。",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D05 データ・観測可能性：定寸装置の変位と先端の追加加速度計の振動をエッジコンピューターへ収集。粗さ実測値を比較。サンプリング周波数・軸・欠測・独立評価母数は未知。（K0003, K0004）",
+          "analysis_line": 40,
+          "knowledge_unit_refs": [
+            "K0003",
+            "K0004"
+          ],
+          "evidence_refs": [
+            "E0005",
+            "E0006",
+            "E0007"
+          ],
+          "source_refs": [
+            "SRC-000315"
+          ]
+        },
+        {
+          "factor_id": "D06",
+          "factor_label": "信号処理・特徴抽出",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "低周波のうねり、高周波の微細面性状の各マップを位相整合・合成。三次元マップから粗さ曲線を算出。ICA利用は未確認。",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D06 信号処理・特徴抽出：低周波のうねり、高周波の微細面性状の各マップを位相整合・合成。三次元マップから粗さ曲線を算出。ICA利用は未確認。（K0003, K0004）",
+          "analysis_line": 41,
+          "knowledge_unit_refs": [
+            "K0003",
+            "K0004"
+          ],
+          "evidence_refs": [
+            "E0005",
+            "E0006",
+            "E0007"
+          ],
+          "source_refs": [
+            "SRC-000315"
+          ]
+        },
+        {
+          "factor_id": "D07",
+          "factor_label": "時間構造",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "加工後の機上測定・解析・数値化・表示が約10秒。加工ごとの粗さ自動プロットと長期トレンド分析。加工中センシングによる予測ではない。将来ホライズンは未確認。",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D07 時間構造：加工後の機上測定・解析・数値化・表示が約10秒。加工ごとの粗さ自動プロットと長期トレンド分析。加工中センシングによる予測ではない。将来ホライズンは未確認。（K0003, K0004）",
+          "analysis_line": 42,
+          "knowledge_unit_refs": [
+            "K0003",
+            "K0004"
+          ],
+          "evidence_refs": [
+            "E0005",
+            "E0006",
+            "E0007"
+          ],
+          "source_refs": [
+            "SRC-000315"
+          ]
+        },
+        {
+          "factor_id": "D08",
+          "factor_label": "推定・予測モデル",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "信号処理による面性状・粗さ推定。学習型ML・劣化推定モデル・RUL・不確実性評価は未確認。",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D08 推定・予測モデル：信号処理による面性状・粗さ推定。学習型ML・劣化推定モデル・RUL・不確実性評価は未確認。（K0003, K0004）",
+          "analysis_line": 43,
+          "knowledge_unit_refs": [
+            "K0003",
+            "K0004"
+          ],
+          "evidence_refs": [
+            "E0005",
+            "E0006",
+            "E0007"
+          ],
+          "source_refs": [
+            "SRC-000315"
+          ]
+        },
+        {
+          "factor_id": "D09",
+          "factor_label": "意思決定・介入",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "操作盤に現在の面性状マップ・数値と選択した過去値（ツルーイング直後等）を表示し、粗さ推移・上限値・警告値から管理余裕を確認。ツルーイング間隔管理の活用構想、自動ツルーイングは今後。実介入・隔離の成果は未確認。",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D09 意思決定・介入：操作盤に現在の面性状マップ・数値と選択した過去値（ツルーイング直後等）を表示し、粗さ推移・上限値・警告値から管理余裕を確認。ツルーイング間隔管理の活用構想、自動ツルーイングは今後。実介入・隔離の成果は未確認。（K0003, K0004）",
+          "analysis_line": 44,
+          "knowledge_unit_refs": [
+            "K0003",
+            "K0004"
+          ],
+          "evidence_refs": [
+            "E0005",
+            "E0006",
+            "E0007"
+          ],
+          "source_refs": [
+            "SRC-000315"
+          ]
+        },
+        {
+          "factor_id": "D10",
+          "factor_label": "評価・経済性",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "粗さ推定と実測の相関0.92。図4の差0.05以下は抽出図中文字でµm相当、本文抽出はmmと異なるため単位は暫定読取（画像確認不能）。検査工数・不良・砥石使用数の削減は試算。見逃し率・実介入効果・比較母数・実測費用は未知。",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D10 評価・経済性：粗さ推定と実測の相関0.92。図4の差0.05以下は抽出図中文字でµm相当、本文抽出はmmと異なるため単位は暫定読取（画像確認不能）。検査工数・不良・砥石使用数の削減は試算。見逃し率・実介入効果・比較母数・実測費用は未知。（K0003, K0004）",
+          "analysis_line": 45,
+          "knowledge_unit_refs": [
+            "K0003",
+            "K0004"
+          ],
+          "evidence_refs": [
+            "E0005",
+            "E0006",
+            "E0007"
+          ],
+          "source_refs": [
+            "SRC-000315"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "C03",
+      "name": "Sauter et al.：研削焼けの多センサー分類",
+      "eligibility": "quality_estimation",
+      "canonical_eligibility": "品質推定事例",
+      "eligibility_detail": "実加工データ・オフライン検証",
+      "assessment_reason": "研削焼けの実測ラベルを使った分類性能を報告するが、実際の不良隔離・流出防止や砥石保全介入は確認できない。",
+      "canonical_reason_line": "- 判定理由（分析上の推論）：研削焼けの実測ラベルを使った分類性能を報告するが、実際の不良隔離・流出防止や砥石保全介入は確認できない。",
+      "reason_analysis_line": 50,
+      "canonical_header": "### C03 Sauter et al.：研削焼けの多センサー分類",
+      "canonical_scope_line": "- 採択区分：品質推定事例（実加工データ・オフライン検証）（K0005）",
+      "scope_analysis_line": 48,
+      "analysis_line": 47,
+      "knowledge_unit_scope": [
+        "K0005"
+      ],
+      "evidence_refs": [
+        "E0008",
+        "E0009"
+      ],
+      "source_refs": [
+        "SRC-000316"
+      ],
+      "criteria_assessments": [
+        {
+          "criterion_id": "R1",
+          "status": "confirmed",
+          "canonical_status": "確認済",
+          "assessment_text": null,
+          "reference_role": "case_scope",
+          "canonical_line": "- R1 確認済 / R2 確認済 / R3 確認済 / R4-A 未確認 / R5-A 未確認 / R4-B 未確認 / R5-B 未確認",
+          "analysis_line": 49,
+          "knowledge_unit_refs": [
+            "K0005"
+          ],
+          "evidence_refs": [
+            "E0008",
+            "E0009"
+          ],
+          "source_refs": [
+            "SRC-000316"
+          ]
+        },
+        {
+          "criterion_id": "R2",
+          "status": "confirmed",
+          "canonical_status": "確認済",
+          "assessment_text": null,
+          "reference_role": "case_scope",
+          "canonical_line": "- R1 確認済 / R2 確認済 / R3 確認済 / R4-A 未確認 / R5-A 未確認 / R4-B 未確認 / R5-B 未確認",
+          "analysis_line": 49,
+          "knowledge_unit_refs": [
+            "K0005"
+          ],
+          "evidence_refs": [
+            "E0008",
+            "E0009"
+          ],
+          "source_refs": [
+            "SRC-000316"
+          ]
+        },
+        {
+          "criterion_id": "R3",
+          "status": "confirmed",
+          "canonical_status": "確認済",
+          "assessment_text": null,
+          "reference_role": "case_scope",
+          "canonical_line": "- R1 確認済 / R2 確認済 / R3 確認済 / R4-A 未確認 / R5-A 未確認 / R4-B 未確認 / R5-B 未確認",
+          "analysis_line": 49,
+          "knowledge_unit_refs": [
+            "K0005"
+          ],
+          "evidence_refs": [
+            "E0008",
+            "E0009"
+          ],
+          "source_refs": [
+            "SRC-000316"
+          ]
+        },
+        {
+          "criterion_id": "R4-A",
+          "status": "unconfirmed",
+          "canonical_status": "未確認",
+          "assessment_text": null,
+          "reference_role": "case_scope",
+          "canonical_line": "- R1 確認済 / R2 確認済 / R3 確認済 / R4-A 未確認 / R5-A 未確認 / R4-B 未確認 / R5-B 未確認",
+          "analysis_line": 49,
+          "knowledge_unit_refs": [
+            "K0005"
+          ],
+          "evidence_refs": [
+            "E0008",
+            "E0009"
+          ],
+          "source_refs": [
+            "SRC-000316"
+          ]
+        },
+        {
+          "criterion_id": "R5-A",
+          "status": "unconfirmed",
+          "canonical_status": "未確認",
+          "assessment_text": null,
+          "reference_role": "case_scope",
+          "canonical_line": "- R1 確認済 / R2 確認済 / R3 確認済 / R4-A 未確認 / R5-A 未確認 / R4-B 未確認 / R5-B 未確認",
+          "analysis_line": 49,
+          "knowledge_unit_refs": [
+            "K0005"
+          ],
+          "evidence_refs": [
+            "E0008",
+            "E0009"
+          ],
+          "source_refs": [
+            "SRC-000316"
+          ]
+        },
+        {
+          "criterion_id": "R4-B",
+          "status": "unconfirmed",
+          "canonical_status": "未確認",
+          "assessment_text": null,
+          "reference_role": "case_scope",
+          "canonical_line": "- R1 確認済 / R2 確認済 / R3 確認済 / R4-A 未確認 / R5-A 未確認 / R4-B 未確認 / R5-B 未確認",
+          "analysis_line": 49,
+          "knowledge_unit_refs": [
+            "K0005"
+          ],
+          "evidence_refs": [
+            "E0008",
+            "E0009"
+          ],
+          "source_refs": [
+            "SRC-000316"
+          ]
+        },
+        {
+          "criterion_id": "R5-B",
+          "status": "unconfirmed",
+          "canonical_status": "未確認",
+          "assessment_text": null,
+          "reference_role": "case_scope",
+          "canonical_line": "- R1 確認済 / R2 確認済 / R3 確認済 / R4-A 未確認 / R5-A 未確認 / R4-B 未確認 / R5-B 未確認",
+          "analysis_line": 49,
+          "knowledge_unit_refs": [
+            "K0005"
+          ],
+          "evidence_refs": [
+            "E0008",
+            "E0009"
+          ],
+          "source_refs": [
+            "SRC-000316"
+          ]
+        }
+      ],
+      "factor_assessments": [
+        {
+          "factor_id": "D01",
+          "factor_label": "加工対象・設備境界",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "生産に近い条件で391実加工実験。設備・工作物・砥石の詳細仕様は選択Evidenceに未収集。",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D01 加工対象・設備境界：生産に近い条件で391実加工実験。設備・工作物・砥石の詳細仕様は選択Evidenceに未収集。（K0005）",
+          "analysis_line": 52,
+          "knowledge_unit_refs": [
+            "K0005"
+          ],
+          "evidence_refs": [
+            "E0008",
+            "E0009"
+          ],
+          "source_refs": [
+            "SRC-000316"
+          ]
+        },
+        {
+          "factor_id": "D02",
+          "factor_label": "劣化・物理現象",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "研削焼けを発生させた実験。分析上、焼けと砥石劣化は同一の対象イベントではない。砥石の寿命・交換限界は未知。",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D02 劣化・物理現象：研削焼けを発生させた実験。分析上、焼けと砥石劣化は同一の対象イベントではない。砥石の寿命・交換限界は未知。（K0005）",
+          "analysis_line": 53,
+          "knowledge_unit_refs": [
+            "K0005"
+          ],
+          "evidence_refs": [
+            "E0008",
+            "E0009"
+          ],
+          "source_refs": [
+            "SRC-000316"
+          ]
+        },
+        {
+          "factor_id": "D03",
+          "factor_label": "品質・対象イベント",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "ナイタル腐食によるISO14104の4ラベル：A=焼けなし、B=軽度、D=重度、E=再硬化。二値ではAとB/D/Eを区別。量産品質規格・検査誤差は未知。",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D03 品質・対象イベント：ナイタル腐食によるISO14104の4ラベル：A=焼けなし、B=軽度、D=重度、E=再硬化。二値ではAとB/D/Eを区別。量産品質規格・検査誤差は未知。（K0005）",
+          "analysis_line": 54,
+          "knowledge_unit_refs": [
+            "K0005"
+          ],
+          "evidence_refs": [
+            "E0008",
+            "E0009"
+          ],
+          "source_refs": [
+            "SRC-000316"
+          ]
+        },
+        {
+          "factor_id": "D04",
+          "factor_label": "加工・使用条件",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "生産に近い実加工で焼けを発生。具体加工条件・累積除去量・砥石寿命との関係は選択Evidenceに未収集。",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D04 加工・使用条件：生産に近い実加工で焼けを発生。具体加工条件・累積除去量・砥石寿命との関係は選択Evidenceに未収集。（K0005）",
+          "analysis_line": 55,
+          "knowledge_unit_refs": [
+            "K0005"
+          ],
+          "evidence_refs": [
+            "E0008",
+            "E0009"
+          ],
+          "source_refs": [
+            "SRC-000316"
+          ]
+        },
+        {
+          "factor_id": "D05",
+          "factor_label": "データ・観測可能性",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "AE（テールストック・スピンドル中心）、主軸電流・動力、ナイタル腐食ラベル。391実験、878特徴。動力1特徴は電流subsetに含む。サンプリング数値・欠測は未知。",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D05 データ・観測可能性：AE（テールストック・スピンドル中心）、主軸電流・動力、ナイタル腐食ラベル。391実験、878特徴。動力1特徴は電流subsetに含む。サンプリング数値・欠測は未知。（K0005）",
+          "analysis_line": 56,
+          "knowledge_unit_refs": [
+            "K0005"
+          ],
+          "evidence_refs": [
+            "E0008",
+            "E0009"
+          ],
+          "source_refs": [
+            "SRC-000316"
+          ]
+        },
+        {
+          "factor_id": "D06",
+          "factor_label": "信号処理・特徴抽出",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "時周波数変換等による特徴抽出と遺伝的プログラミングによる特徴選択器・分類器の探索。全センサー二値モデルは87特徴のkNN。ICA利用は当該実験で未確認。",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D06 信号処理・特徴抽出：時周波数変換等による特徴抽出と遺伝的プログラミングによる特徴選択器・分類器の探索。全センサー二値モデルは87特徴のkNN。ICA利用は当該実験で未確認。（K0005）",
+          "analysis_line": 57,
+          "knowledge_unit_refs": [
+            "K0005"
+          ],
+          "evidence_refs": [
+            "E0008",
+            "E0009"
+          ],
+          "source_refs": [
+            "SRC-000316"
+          ]
+        },
+        {
+          "factor_id": "D07",
+          "factor_label": "時間構造",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "研削中の信号から工作物の焼けを判定する技術。実運用時のレイテンシ・オンライン制約・予測ホライズン・RULは未知。",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D07 時間構造：研削中の信号から工作物の焼けを判定する技術。実運用時のレイテンシ・オンライン制約・予測ホライズン・RULは未知。（K0005）",
+          "analysis_line": 58,
+          "knowledge_unit_refs": [
+            "K0005"
+          ],
+          "evidence_refs": [
+            "E0008",
+            "E0009"
+          ],
+          "source_refs": [
+            "SRC-000316"
+          ]
+        },
+        {
+          "factor_id": "D08",
+          "factor_label": "推定・予測モデル",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "二値および4クラス分類。全センサーkNN。訓練データ10-fold CVによるpipeline選択、評価はD10。不確実性校正は未知。",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D08 推定・予測モデル：二値および4クラス分類。全センサーkNN。訓練データ10-fold CVによるpipeline選択、評価はD10。不確実性校正は未知。（K0005）",
+          "analysis_line": 59,
+          "knowledge_unit_refs": [
+            "K0005"
+          ],
+          "evidence_refs": [
+            "E0008",
+            "E0009"
+          ],
+          "source_refs": [
+            "SRC-000316"
+          ]
+        },
+        {
+          "factor_id": "D09",
+          "factor_label": "意思決定・介入",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "実加工の信号による焼け検知の検証。実際の追加検査・隔離・排出・停止・砥石交換・ドレッシングへの接続は未確認。",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D09 意思決定・介入：実加工の信号による焼け検知の検証。実際の追加検査・隔離・排出・停止・砥石交換・ドレッシングへの接続は未確認。（K0005）",
+          "analysis_line": 60,
+          "knowledge_unit_refs": [
+            "K0005"
+          ],
+          "evidence_refs": [
+            "E0008",
+            "E0009"
+          ],
+          "source_refs": [
+            "SRC-000316"
+          ]
+        },
+        {
+          "factor_id": "D10",
+          "factor_label": "評価・経済性",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "ランダム85:15分割、訓練10-fold CV。二値は正常Aに分割前SMOTE、訓練390/テスト69、全センサー87特徴kNN平均accuracy 99%超（各subsetのaccuracy/balanced accuracy 94%超）。4クラスA/B/D/Eはリサンプリングなし、全センサーkNN約98%（要旨98%超）。両課題で固定random stateの混同行列と100ランダム分割のCV/test分布を評価。混同行列の数値画像未取得のためFN/(TP+FN)は未確認。正常クラス合成と真の焼け見逃し率を区別する。分割前SMOTEによる独立性低下はリスクであり漏洩を確認したわけではない。実生産外部検証、流出防止・介入実績・費用は未確認。",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D10 評価・経済性：ランダム85:15分割、訓練10-fold CV。二値は正常Aに分割前SMOTE、訓練390/テスト69、全センサー87特徴kNN平均accuracy 99%超（各subsetのaccuracy/balanced accuracy 94%超）。4クラスA/B/D/Eはリサンプリングなし、全センサーkNN約98%（要旨98%超）。両課題で固定random stateの混同行列と100ランダム分割のCV/test分布を評価。混同行列の数値画像未取得のためFN/(TP+FN)は未確認。正常クラス合成と真の焼け見逃し率を区別する。分割前SMOTEによる独立性低下はリスクであり漏洩を確認したわけではない。実生産外部検証、流出防止・介入実績・費用は未確認。（K0005）",
+          "analysis_line": 61,
+          "knowledge_unit_refs": [
+            "K0005"
+          ],
+          "evidence_refs": [
+            "E0008",
+            "E0009"
+          ],
+          "source_refs": [
+            "SRC-000316"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "C04",
+      "name": "湘南サンライズ工業：砥石状態の振動可視化",
+      "eligibility": "near_match",
+      "canonical_eligibility": "近接事例",
+      "eligibility_detail": "R4-B/R5-Bの定性的成果確認済",
+      "assessment_reason": "振動可視化により作業者が砥石状態を判断しドレス回数・加工時間を削減したと報告。品質への影響を課題とするが、信号処理・推定モデルと品質参照との照合は未確認で共通経路を満たさない。R5-Bは定性的実績の存在のみを確認し、改善量・最適化実証とは区別。",
+      "canonical_reason_line": "- 判定理由（分析上の推論）：振動可視化により作業者が砥石状態を判断しドレス回数・加工時間を削減したと報告。品質への影響を課題とするが、信号処理・推定モデルと品質参照との照合は未確認で共通経路を満たさない。R5-Bは定性的実績の存在のみを確認し、改善量・最適化実証とは区別。",
+      "reason_analysis_line": 66,
+      "canonical_header": "### C04 湘南サンライズ工業：砥石状態の振動可視化",
+      "canonical_scope_line": "- 採択区分：近接事例（R4-B/R5-Bの定性的成果確認済）（K0006）",
+      "scope_analysis_line": 64,
+      "analysis_line": 63,
+      "knowledge_unit_scope": [
+        "K0006"
+      ],
+      "evidence_refs": [
+        "E0010",
+        "E0011"
+      ],
+      "source_refs": [
+        "SRC-000317"
+      ],
+      "criteria_assessments": [
+        {
+          "criterion_id": "R1",
+          "status": "confirmed",
+          "canonical_status": "確認済",
+          "assessment_text": null,
+          "reference_role": "case_scope",
+          "canonical_line": "- R1 確認済 / R2 未確認 / R3 未確認 / R4-A 未確認 / R5-A 未確認 / R4-B 確認済 / R5-B 確認済",
+          "analysis_line": 65,
+          "knowledge_unit_refs": [
+            "K0006"
+          ],
+          "evidence_refs": [
+            "E0010",
+            "E0011"
+          ],
+          "source_refs": [
+            "SRC-000317"
+          ]
+        },
+        {
+          "criterion_id": "R2",
+          "status": "unconfirmed",
+          "canonical_status": "未確認",
+          "assessment_text": null,
+          "reference_role": "case_scope",
+          "canonical_line": "- R1 確認済 / R2 未確認 / R3 未確認 / R4-A 未確認 / R5-A 未確認 / R4-B 確認済 / R5-B 確認済",
+          "analysis_line": 65,
+          "knowledge_unit_refs": [
+            "K0006"
+          ],
+          "evidence_refs": [
+            "E0010",
+            "E0011"
+          ],
+          "source_refs": [
+            "SRC-000317"
+          ]
+        },
+        {
+          "criterion_id": "R3",
+          "status": "unconfirmed",
+          "canonical_status": "未確認",
+          "assessment_text": null,
+          "reference_role": "case_scope",
+          "canonical_line": "- R1 確認済 / R2 未確認 / R3 未確認 / R4-A 未確認 / R5-A 未確認 / R4-B 確認済 / R5-B 確認済",
+          "analysis_line": 65,
+          "knowledge_unit_refs": [
+            "K0006"
+          ],
+          "evidence_refs": [
+            "E0010",
+            "E0011"
+          ],
+          "source_refs": [
+            "SRC-000317"
+          ]
+        },
+        {
+          "criterion_id": "R4-A",
+          "status": "unconfirmed",
+          "canonical_status": "未確認",
+          "assessment_text": null,
+          "reference_role": "case_scope",
+          "canonical_line": "- R1 確認済 / R2 未確認 / R3 未確認 / R4-A 未確認 / R5-A 未確認 / R4-B 確認済 / R5-B 確認済",
+          "analysis_line": 65,
+          "knowledge_unit_refs": [
+            "K0006"
+          ],
+          "evidence_refs": [
+            "E0010",
+            "E0011"
+          ],
+          "source_refs": [
+            "SRC-000317"
+          ]
+        },
+        {
+          "criterion_id": "R5-A",
+          "status": "unconfirmed",
+          "canonical_status": "未確認",
+          "assessment_text": null,
+          "reference_role": "case_scope",
+          "canonical_line": "- R1 確認済 / R2 未確認 / R3 未確認 / R4-A 未確認 / R5-A 未確認 / R4-B 確認済 / R5-B 確認済",
+          "analysis_line": 65,
+          "knowledge_unit_refs": [
+            "K0006"
+          ],
+          "evidence_refs": [
+            "E0010",
+            "E0011"
+          ],
+          "source_refs": [
+            "SRC-000317"
+          ]
+        },
+        {
+          "criterion_id": "R4-B",
+          "status": "confirmed",
+          "canonical_status": "確認済",
+          "assessment_text": null,
+          "reference_role": "case_scope",
+          "canonical_line": "- R1 確認済 / R2 未確認 / R3 未確認 / R4-A 未確認 / R5-A 未確認 / R4-B 確認済 / R5-B 確認済",
+          "analysis_line": 65,
+          "knowledge_unit_refs": [
+            "K0006"
+          ],
+          "evidence_refs": [
+            "E0010",
+            "E0011"
+          ],
+          "source_refs": [
+            "SRC-000317"
+          ]
+        },
+        {
+          "criterion_id": "R5-B",
+          "status": "confirmed",
+          "canonical_status": "確認済",
+          "assessment_text": null,
+          "reference_role": "case_scope",
+          "canonical_line": "- R1 確認済 / R2 未確認 / R3 未確認 / R4-A 未確認 / R5-A 未確認 / R4-B 確認済 / R5-B 確認済",
+          "analysis_line": 65,
+          "knowledge_unit_refs": [
+            "K0006"
+          ],
+          "evidence_refs": [
+            "E0010",
+            "E0011"
+          ],
+          "source_refs": [
+            "SRC-000317"
+          ]
+        }
+      ],
+      "factor_assessments": [
+        {
+          "factor_id": "D01",
+          "factor_label": "加工対象・設備境界",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "湘南サンライズ工業の超精密金型用エジェクタピン。熟練者が1本ずつ研削。設備・砥石・材料の詳細仕様は未知。",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D01 加工対象・設備境界：湘南サンライズ工業の超精密金型用エジェクタピン。熟練者が1本ずつ研削。設備・砥石・材料の詳細仕様は未知。（K0006）",
+          "analysis_line": 68,
+          "knowledge_unit_refs": [
+            "K0006"
+          ],
+          "evidence_refs": [
+            "E0010",
+            "E0011"
+          ],
+          "source_refs": [
+            "SRC-000317"
+          ]
+        },
+        {
+          "factor_id": "D02",
+          "factor_label": "劣化・物理現象",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "県報告は砥石状態悪化が外観傷・寸法不良の要因と説明。具体的摩耗モード、劣化計測・進展則は未知。",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D02 劣化・物理現象：県報告は砥石状態悪化が外観傷・寸法不良の要因と説明。具体的摩耗モード、劣化計測・進展則は未知。（K0006）",
+          "analysis_line": 69,
+          "knowledge_unit_refs": [
+            "K0006"
+          ],
+          "evidence_refs": [
+            "E0010",
+            "E0011"
+          ],
+          "source_refs": [
+            "SRC-000317"
+          ]
+        },
+        {
+          "factor_id": "D03",
+          "factor_label": "品質・対象イベント",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "数µm単位の精度が要求される製品。合格品出来高の低さ、外観傷・寸法不良が課題。具体規格値、品質測定結果・判定性能は未知。",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D03 品質・対象イベント：数µm単位の精度が要求される製品。合格品出来高の低さ、外観傷・寸法不良が課題。具体規格値、品質測定結果・判定性能は未知。（K0006）",
+          "analysis_line": 70,
+          "knowledge_unit_refs": [
+            "K0006"
+          ],
+          "evidence_refs": [
+            "E0010",
+            "E0011"
+          ],
+          "source_refs": [
+            "SRC-000317"
+          ]
+        },
+        {
+          "factor_id": "D04",
+          "factor_label": "加工・使用条件",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "熟練者が研削。従来は1製品につき複数回ドレス。速度・切込み・負荷・累積加工量は未知。",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D04 加工・使用条件：熟練者が研削。従来は1製品につき複数回ドレス。速度・切込み・負荷・累積加工量は未知。（K0006）",
+          "analysis_line": 71,
+          "knowledge_unit_refs": [
+            "K0006"
+          ],
+          "evidence_refs": [
+            "E0010",
+            "E0011"
+          ],
+          "source_refs": [
+            "SRC-000317"
+          ]
+        },
+        {
+          "factor_id": "D05",
+          "factor_label": "データ・観測可能性",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "振動センサー・収集Box・PCで状態変化を可視化。振動変化量が小さいとの報告。位置・軸・サンプリング・品質ラベル・標本数・欠測は未知。",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D05 データ・観測可能性：振動センサー・収集Box・PCで状態変化を可視化。振動変化量が小さいとの報告。位置・軸・サンプリング・品質ラベル・標本数・欠測は未知。（K0006）",
+          "analysis_line": 72,
+          "knowledge_unit_refs": [
+            "K0006"
+          ],
+          "evidence_refs": [
+            "E0010",
+            "E0011"
+          ],
+          "source_refs": [
+            "SRC-000317"
+          ]
+        },
+        {
+          "factor_id": "D06",
+          "factor_label": "信号処理・特徴抽出",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "振動変化の可視化。定量的特徴抽出・FFT・ICA・閾値は未確認。",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D06 信号処理・特徴抽出：振動変化の可視化。定量的特徴抽出・FFT・ICA・閾値は未確認。（K0006）",
+          "analysis_line": 73,
+          "knowledge_unit_refs": [
+            "K0006"
+          ],
+          "evidence_refs": [
+            "E0010",
+            "E0011"
+          ],
+          "source_refs": [
+            "SRC-000317"
+          ]
+        },
+        {
+          "factor_id": "D07",
+          "factor_label": "時間構造",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "砥石状態変化の人による判断支援。観測窓・判断周期・実行時点・将来予測の詳細は未知。",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D07 時間構造：砥石状態変化の人による判断支援。観測窓・判断周期・実行時点・将来予測の詳細は未知。（K0006）",
+          "analysis_line": 74,
+          "knowledge_unit_refs": [
+            "K0006"
+          ],
+          "evidence_refs": [
+            "E0010",
+            "E0011"
+          ],
+          "source_refs": [
+            "SRC-000317"
+          ]
+        },
+        {
+          "factor_id": "D08",
+          "factor_label": "推定・予測モデル",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "振動変化が小さくAIモデル構築には至らず。人の判断を支援。定量的推定性能・RULは未確認。",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D08 推定・予測モデル：振動変化が小さくAIモデル構築には至らず。人の判断を支援。定量的推定性能・RULは未確認。（K0006）",
+          "analysis_line": 75,
+          "knowledge_unit_refs": [
+            "K0006"
+          ],
+          "evidence_refs": [
+            "E0010",
+            "E0011"
+          ],
+          "source_refs": [
+            "SRC-000317"
+          ]
+        },
+        {
+          "factor_id": "D09",
+          "factor_label": "意思決定・介入",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "振動可視化に基づく状態判断によりドレス回数削減・加工時間短縮につながったとの県報告。具体判断閾値・運用制約・最適化比較・砥石交換実績は未知。",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D09 意思決定・介入：振動可視化に基づく状態判断によりドレス回数削減・加工時間短縮につながったとの県報告。具体判断閾値・運用制約・最適化比較・砥石交換実績は未知。（K0006）",
+          "analysis_line": 76,
+          "knowledge_unit_refs": [
+            "K0006"
+          ],
+          "evidence_refs": [
+            "E0010",
+            "E0011"
+          ],
+          "source_refs": [
+            "SRC-000317"
+          ]
+        },
+        {
+          "factor_id": "D10",
+          "factor_label": "評価・経済性",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "ドレス回数・加工時間の減少は定性的報告。生産効率約20%向上は見込み。実測回数・時間・品質維持・比較設計・母数・経済性は未知。",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D10 評価・経済性：ドレス回数・加工時間の減少は定性的報告。生産効率約20%向上は見込み。実測回数・時間・品質維持・比較設計・母数・経済性は未知。（K0006）",
+          "analysis_line": 77,
+          "knowledge_unit_refs": [
+            "K0006"
+          ],
+          "evidence_refs": [
+            "E0010",
+            "E0011"
+          ],
+          "source_refs": [
+            "SRC-000317"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "C05",
+      "name": "Hanchate et al.：振動の周波数特徴と粗さ推定",
+      "eligibility": "quality_estimation",
+      "canonical_eligibility": "品質推定事例",
+      "eligibility_detail": "実験・オフライン評価",
+      "assessment_reason": "実加工振動から実測Raを回帰し、LIMEで重要帯域を検討した。出荷判定や砥石交換に用いた実績ではない。",
+      "canonical_reason_line": "- 判定理由（分析上の推論）：実加工振動から実測Raを回帰し、LIMEで重要帯域を検討した。出荷判定や砥石交換に用いた実績ではない。",
+      "reason_analysis_line": 82,
+      "canonical_header": "### C05 Hanchate et al.：振動の周波数特徴と粗さ推定",
+      "canonical_scope_line": "- 採択区分：品質推定事例（実験・オフライン評価）（K0007）",
+      "scope_analysis_line": 80,
+      "analysis_line": 79,
+      "knowledge_unit_scope": [
+        "K0007"
+      ],
+      "evidence_refs": [
+        "E0012",
+        "E0013"
+      ],
+      "source_refs": [
+        "SRC-000318"
+      ],
+      "criteria_assessments": [
+        {
+          "criterion_id": "R1",
+          "status": "confirmed",
+          "canonical_status": "確認済",
+          "assessment_text": null,
+          "reference_role": "case_scope",
+          "canonical_line": "- R1 確認済 / R2 確認済 / R3 確認済 / R4-A 未確認 / R5-A 未確認 / R4-B 未確認 / R5-B 未確認",
+          "analysis_line": 81,
+          "knowledge_unit_refs": [
+            "K0007"
+          ],
+          "evidence_refs": [
+            "E0012",
+            "E0013"
+          ],
+          "source_refs": [
+            "SRC-000318"
+          ]
+        },
+        {
+          "criterion_id": "R2",
+          "status": "confirmed",
+          "canonical_status": "確認済",
+          "assessment_text": null,
+          "reference_role": "case_scope",
+          "canonical_line": "- R1 確認済 / R2 確認済 / R3 確認済 / R4-A 未確認 / R5-A 未確認 / R4-B 未確認 / R5-B 未確認",
+          "analysis_line": 81,
+          "knowledge_unit_refs": [
+            "K0007"
+          ],
+          "evidence_refs": [
+            "E0012",
+            "E0013"
+          ],
+          "source_refs": [
+            "SRC-000318"
+          ]
+        },
+        {
+          "criterion_id": "R3",
+          "status": "confirmed",
+          "canonical_status": "確認済",
+          "assessment_text": null,
+          "reference_role": "case_scope",
+          "canonical_line": "- R1 確認済 / R2 確認済 / R3 確認済 / R4-A 未確認 / R5-A 未確認 / R4-B 未確認 / R5-B 未確認",
+          "analysis_line": 81,
+          "knowledge_unit_refs": [
+            "K0007"
+          ],
+          "evidence_refs": [
+            "E0012",
+            "E0013"
+          ],
+          "source_refs": [
+            "SRC-000318"
+          ]
+        },
+        {
+          "criterion_id": "R4-A",
+          "status": "unconfirmed",
+          "canonical_status": "未確認",
+          "assessment_text": null,
+          "reference_role": "case_scope",
+          "canonical_line": "- R1 確認済 / R2 確認済 / R3 確認済 / R4-A 未確認 / R5-A 未確認 / R4-B 未確認 / R5-B 未確認",
+          "analysis_line": 81,
+          "knowledge_unit_refs": [
+            "K0007"
+          ],
+          "evidence_refs": [
+            "E0012",
+            "E0013"
+          ],
+          "source_refs": [
+            "SRC-000318"
+          ]
+        },
+        {
+          "criterion_id": "R5-A",
+          "status": "unconfirmed",
+          "canonical_status": "未確認",
+          "assessment_text": null,
+          "reference_role": "case_scope",
+          "canonical_line": "- R1 確認済 / R2 確認済 / R3 確認済 / R4-A 未確認 / R5-A 未確認 / R4-B 未確認 / R5-B 未確認",
+          "analysis_line": 81,
+          "knowledge_unit_refs": [
+            "K0007"
+          ],
+          "evidence_refs": [
+            "E0012",
+            "E0013"
+          ],
+          "source_refs": [
+            "SRC-000318"
+          ]
+        },
+        {
+          "criterion_id": "R4-B",
+          "status": "unconfirmed",
+          "canonical_status": "未確認",
+          "assessment_text": null,
+          "reference_role": "case_scope",
+          "canonical_line": "- R1 確認済 / R2 確認済 / R3 確認済 / R4-A 未確認 / R5-A 未確認 / R4-B 未確認 / R5-B 未確認",
+          "analysis_line": 81,
+          "knowledge_unit_refs": [
+            "K0007"
+          ],
+          "evidence_refs": [
+            "E0012",
+            "E0013"
+          ],
+          "source_refs": [
+            "SRC-000318"
+          ]
+        },
+        {
+          "criterion_id": "R5-B",
+          "status": "unconfirmed",
+          "canonical_status": "未確認",
+          "assessment_text": null,
+          "reference_role": "case_scope",
+          "canonical_line": "- R1 確認済 / R2 確認済 / R3 確認済 / R4-A 未確認 / R5-A 未確認 / R4-B 未確認 / R5-B 未確認",
+          "analysis_line": 81,
+          "knowledge_unit_refs": [
+            "K0007"
+          ],
+          "evidence_refs": [
+            "E0012",
+            "E0013"
+          ],
+          "source_refs": [
+            "SRC-000318"
+          ]
+        }
+      ],
+      "factor_assessments": [
+        {
+          "factor_id": "D01",
+          "factor_label": "加工対象・設備境界",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "Supertech CNC精密平面研削盤。アルミナ・ビトリファイド砥石、P20鋼28–37 HRC。異なる4日×20試行。設備・砥石の個体差は未知。",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D01 加工対象・設備境界：Supertech CNC精密平面研削盤。アルミナ・ビトリファイド砥石、P20鋼28–37 HRC。異なる4日×20試行。設備・砥石の個体差は未知。（K0007）",
+          "analysis_line": 84,
+          "knowledge_unit_refs": [
+            "K0007"
+          ],
+          "evidence_refs": [
+            "E0012",
+            "E0013"
+          ],
+          "source_refs": [
+            "SRC-000318"
+          ]
+        },
+        {
+          "factor_id": "D02",
+          "factor_label": "劣化・物理現象",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "本事例は粗さ推定であり砥石劣化・摩耗量・進展を直接推定していない。劣化状態・使用限界の情報は未知。",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D02 劣化・物理現象：本事例は粗さ推定であり砥石劣化・摩耗量・進展を直接推定していない。劣化状態・使用限界の情報は未知。（K0007）",
+          "analysis_line": 85,
+          "knowledge_unit_refs": [
+            "K0007"
+          ],
+          "evidence_refs": [
+            "E0012",
+            "E0013"
+          ],
+          "source_refs": [
+            "SRC-000318"
+          ]
+        },
+        {
+          "factor_id": "D03",
+          "factor_label": "品質・対象イベント",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "各研削パスでMahr粗さ計によるRa 0.06～0.14 µmを参照。品質規格、不良限界・測定不確かさは未知。",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D03 品質・対象イベント：各研削パスでMahr粗さ計によるRa 0.06～0.14 µmを参照。品質規格、不良限界・測定不確かさは未知。（K0007）",
+          "analysis_line": 86,
+          "knowledge_unit_refs": [
+            "K0007"
+          ],
+          "evidence_refs": [
+            "E0012",
+            "E0013"
+          ],
+          "source_refs": [
+            "SRC-000318"
+          ]
+        },
+        {
+          "factor_id": "D04",
+          "factor_label": "加工・使用条件",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "異なる4日で各20試行、80実試行。同一のサンプリング・conditioning設定、砥石速度20.3 m/s。4日を4種の加工条件と断定しない。切込み・加工条件間差の詳細は未収集。",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D04 加工・使用条件：異なる4日で各20試行、80実試行。同一のサンプリング・conditioning設定、砥石速度20.3 m/s。4日を4種の加工条件と断定しない。切込み・加工条件間差の詳細は未収集。（K0007）",
+          "analysis_line": 87,
+          "knowledge_unit_refs": [
+            "K0007"
+          ],
+          "evidence_refs": [
+            "E0012",
+            "E0013"
+          ],
+          "source_refs": [
+            "SRC-000318"
+          ]
+        },
+        {
+          "factor_id": "D05",
+          "factor_label": "データ・観測可能性",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "テールストッククイルに取り付けた接線方向Y軸加速度計で160 kHz収集、各run約6.5秒、80実試行・各研削パスの実測Ra。64画像を訓練、16画像をvalidation/testing（出版社版はtesting、原稿は独立Reviewer確認）。日・砥石単位の分離、拡張前分割、validation/testing・モデル選択の独立性は未確認。欠測等未知。",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D05 データ・観測可能性：テールストッククイルに取り付けた接線方向Y軸加速度計で160 kHz収集、各run約6.5秒、80実試行・各研削パスの実測Ra。64画像を訓練、16画像をvalidation/testing（出版社版はtesting、原稿は独立Reviewer確認）。日・砥石単位の分離、拡張前分割、validation/testing・モデル選択の独立性は未確認。欠測等未知。（K0007）",
+          "analysis_line": 88,
+          "knowledge_unit_refs": [
+            "K0007"
+          ],
+          "evidence_refs": [
+            "E0012",
+            "E0013"
+          ],
+          "source_refs": [
+            "SRC-000318"
+          ]
+        },
+        {
+          "factor_id": "D06",
+          "factor_label": "信号処理・特徴抽出",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "スペクトログラム・画像拡張をCNNに入力（画像拡張は実試行追加ではない）。LIMEで11.7～19.1 kHzをモデル重要帯域と評価。元160 kHzのスペクトログラムから周波数方向に切り出し30/20/10/5 kHz相当のCNNを評価。実低レート再収集による独立試験とは異なる。ICA利用は未確認。",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D06 信号処理・特徴抽出：スペクトログラム・画像拡張をCNNに入力（画像拡張は実試行追加ではない）。LIMEで11.7～19.1 kHzをモデル重要帯域と評価。元160 kHzのスペクトログラムから周波数方向に切り出し30/20/10/5 kHz相当のCNNを評価。実低レート再収集による独立試験とは異なる。ICA利用は未確認。（K0007）",
+          "analysis_line": 89,
+          "knowledge_unit_refs": [
+            "K0007"
+          ],
+          "evidence_refs": [
+            "E0012",
+            "E0013"
+          ],
+          "source_refs": [
+            "SRC-000318"
+          ]
+        },
+        {
+          "factor_id": "D07",
+          "factor_label": "時間構造",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "研削パスごとの振動と粗さを対応させる。約6.5秒/run。実運用判定周期・レイテンシ・予測ホライズンは未知。",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D07 時間構造：研削パスごとの振動と粗さを対応させる。約6.5秒/run。実運用判定周期・レイテンシ・予測ホライズンは未知。（K0007）",
+          "analysis_line": 90,
+          "knowledge_unit_refs": [
+            "K0007"
+          ],
+          "evidence_refs": [
+            "E0012",
+            "E0013"
+          ],
+          "source_refs": [
+            "SRC-000318"
+          ]
+        },
+        {
+          "factor_id": "D08",
+          "factor_label": "推定・予測モデル",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "CNN回帰、LIMEによるモデル説明。LIME寄与は物理因果を証明しない。独立したモデル選択・校正やRULは未確認。",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D08 推定・予測モデル：CNN回帰、LIMEによるモデル説明。LIME寄与は物理因果を証明しない。独立したモデル選択・校正やRULは未確認。（K0007）",
+          "analysis_line": 91,
+          "knowledge_unit_refs": [
+            "K0007"
+          ],
+          "evidence_refs": [
+            "E0012",
+            "E0013"
+          ],
+          "source_refs": [
+            "SRC-000318"
+          ]
+        },
+        {
+          "factor_id": "D09",
+          "factor_label": "意思決定・介入",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "粗さ推定・センサー帯域設計の検討。追加検査・隔離・排出・停止・ドレッシング判断を実施した報告なし。",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D09 意思決定・介入：粗さ推定・センサー帯域設計の検討。追加検査・隔離・排出・停止・ドレッシング判断を実施した報告なし。（K0007）",
+          "analysis_line": 92,
+          "knowledge_unit_refs": [
+            "K0007"
+          ],
+          "evidence_refs": [
+            "E0012",
+            "E0013"
+          ],
+          "source_refs": [
+            "SRC-000318"
+          ]
+        },
+        {
+          "factor_id": "D10",
+          "factor_label": "評価・経済性",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "160 kHzモデル全体R² 0.95、訓練0.99、テスト0.81。30 kHz相当の周波数切り出し評価は全体R² 0.93であり独立テストR²とは異なる。小標本、日・砥石を跨ぐ評価、画像拡張の分割・validation/testing独立性が未確認。量産外部妥当性・見逃し率・流出・経済成果は未知。原稿PDF直接再取得は失敗、検索抽出・出版社版・Reviewer確認の区別はK0007参照。",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D10 評価・経済性：160 kHzモデル全体R² 0.95、訓練0.99、テスト0.81。30 kHz相当の周波数切り出し評価は全体R² 0.93であり独立テストR²とは異なる。小標本、日・砥石を跨ぐ評価、画像拡張の分割・validation/testing独立性が未確認。量産外部妥当性・見逃し率・流出・経済成果は未知。原稿PDF直接再取得は失敗、検索抽出・出版社版・Reviewer確認の区別はK0007参照。（K0007）",
+          "analysis_line": 93,
+          "knowledge_unit_refs": [
+            "K0007"
+          ],
+          "evidence_refs": [
+            "E0012",
+            "E0013"
+          ],
+          "source_refs": [
+            "SRC-000318"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "C06",
+      "name": "Chao et al.：AE分類によるドレッシング基準",
+      "eligibility": "near_match",
+      "canonical_eligibility": "近接事例",
+      "eligibility_detail": "劣化・品質限界の関連を実験で検証",
+      "assessment_reason": "砥石状態のマルチラベル推定と実測Raの時間的対応は確認。品質を直接推定した値・品質代理指標としての独立した判定性能は示されないためR3を保守的に未確認。5区間持続ルールは連続実験に基づく提案で、閾値・移動窓の同一データ内感度分析も行われているが、実介入・成果比較は未確認。",
+      "canonical_reason_line": "- 判定理由（分析上の推論）：砥石状態のマルチラベル推定と実測Raの時間的対応は確認。品質を直接推定した値・品質代理指標としての独立した判定性能は示されないためR3を保守的に未確認。5区間持続ルールは連続実験に基づく提案で、閾値・移動窓の同一データ内感度分析も行われているが、実介入・成果比較は未確認。",
+      "reason_analysis_line": 98,
+      "canonical_header": "### C06 Chao et al.：AE分類によるドレッシング基準",
+      "canonical_scope_line": "- 採択区分：近接事例（劣化・品質限界の関連を実験で検証）（K0008）",
+      "scope_analysis_line": 96,
+      "analysis_line": 95,
+      "knowledge_unit_scope": [
+        "K0008"
+      ],
+      "evidence_refs": [
+        "E0014",
+        "E0015"
+      ],
+      "source_refs": [
+        "SRC-000319"
+      ],
+      "criteria_assessments": [
+        {
+          "criterion_id": "R1",
+          "status": "confirmed",
+          "canonical_status": "確認済",
+          "assessment_text": null,
+          "reference_role": "case_scope",
+          "canonical_line": "- R1 確認済 / R2 確認済 / R3 未確認 / R4-A 未確認 / R5-A 未確認 / R4-B 未確認 / R5-B 未確認",
+          "analysis_line": 97,
+          "knowledge_unit_refs": [
+            "K0008"
+          ],
+          "evidence_refs": [
+            "E0014",
+            "E0015"
+          ],
+          "source_refs": [
+            "SRC-000319"
+          ]
+        },
+        {
+          "criterion_id": "R2",
+          "status": "confirmed",
+          "canonical_status": "確認済",
+          "assessment_text": null,
+          "reference_role": "case_scope",
+          "canonical_line": "- R1 確認済 / R2 確認済 / R3 未確認 / R4-A 未確認 / R5-A 未確認 / R4-B 未確認 / R5-B 未確認",
+          "analysis_line": 97,
+          "knowledge_unit_refs": [
+            "K0008"
+          ],
+          "evidence_refs": [
+            "E0014",
+            "E0015"
+          ],
+          "source_refs": [
+            "SRC-000319"
+          ]
+        },
+        {
+          "criterion_id": "R3",
+          "status": "unconfirmed",
+          "canonical_status": "未確認",
+          "assessment_text": null,
+          "reference_role": "case_scope",
+          "canonical_line": "- R1 確認済 / R2 確認済 / R3 未確認 / R4-A 未確認 / R5-A 未確認 / R4-B 未確認 / R5-B 未確認",
+          "analysis_line": 97,
+          "knowledge_unit_refs": [
+            "K0008"
+          ],
+          "evidence_refs": [
+            "E0014",
+            "E0015"
+          ],
+          "source_refs": [
+            "SRC-000319"
+          ]
+        },
+        {
+          "criterion_id": "R4-A",
+          "status": "unconfirmed",
+          "canonical_status": "未確認",
+          "assessment_text": null,
+          "reference_role": "case_scope",
+          "canonical_line": "- R1 確認済 / R2 確認済 / R3 未確認 / R4-A 未確認 / R5-A 未確認 / R4-B 未確認 / R5-B 未確認",
+          "analysis_line": 97,
+          "knowledge_unit_refs": [
+            "K0008"
+          ],
+          "evidence_refs": [
+            "E0014",
+            "E0015"
+          ],
+          "source_refs": [
+            "SRC-000319"
+          ]
+        },
+        {
+          "criterion_id": "R5-A",
+          "status": "unconfirmed",
+          "canonical_status": "未確認",
+          "assessment_text": null,
+          "reference_role": "case_scope",
+          "canonical_line": "- R1 確認済 / R2 確認済 / R3 未確認 / R4-A 未確認 / R5-A 未確認 / R4-B 未確認 / R5-B 未確認",
+          "analysis_line": 97,
+          "knowledge_unit_refs": [
+            "K0008"
+          ],
+          "evidence_refs": [
+            "E0014",
+            "E0015"
+          ],
+          "source_refs": [
+            "SRC-000319"
+          ]
+        },
+        {
+          "criterion_id": "R4-B",
+          "status": "unconfirmed",
+          "canonical_status": "未確認",
+          "assessment_text": null,
+          "reference_role": "case_scope",
+          "canonical_line": "- R1 確認済 / R2 確認済 / R3 未確認 / R4-A 未確認 / R5-A 未確認 / R4-B 未確認 / R5-B 未確認",
+          "analysis_line": 97,
+          "knowledge_unit_refs": [
+            "K0008"
+          ],
+          "evidence_refs": [
+            "E0014",
+            "E0015"
+          ],
+          "source_refs": [
+            "SRC-000319"
+          ]
+        },
+        {
+          "criterion_id": "R5-B",
+          "status": "unconfirmed",
+          "canonical_status": "未確認",
+          "assessment_text": null,
+          "reference_role": "case_scope",
+          "canonical_line": "- R1 確認済 / R2 確認済 / R3 未確認 / R4-A 未確認 / R5-A 未確認 / R4-B 未確認 / R5-B 未確認",
+          "analysis_line": 97,
+          "knowledge_unit_refs": [
+            "K0008"
+          ],
+          "evidence_refs": [
+            "E0014",
+            "E0015"
+          ],
+          "source_refs": [
+            "SRC-000319"
+          ]
+        }
+      ],
+      "factor_assessments": [
+        {
+          "factor_id": "D01",
+          "factor_label": "加工対象・設備境界",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "WA46砥石・S45C工作物の平面連続研削実験。設備・砥石個体差は未知。",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D01 加工対象・設備境界：WA46砥石・S45C工作物の平面連続研削実験。設備・砥石個体差は未知。（K0008）",
+          "analysis_line": 100,
+          "knowledge_unit_refs": [
+            "K0008"
+          ],
+          "evidence_refs": [
+            "E0014",
+            "E0015"
+          ],
+          "source_refs": [
+            "SRC-000319"
+          ]
+        },
+        {
+          "factor_id": "D02",
+          "factor_label": "劣化・物理現象",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "切りくず除去、自生発刃、目詰まり、鈍化の共存を扱う。目詰まり・鈍化の持続とRaの回復不能を対応づける。砥粒破砕による高周波成分と自生発刃検知性能の関連は著者仮説。",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D02 劣化・物理現象：切りくず除去、自生発刃、目詰まり、鈍化の共存を扱う。目詰まり・鈍化の持続とRaの回復不能を対応づける。砥粒破砕による高周波成分と自生発刃検知性能の関連は著者仮説。（K0008）",
+          "analysis_line": 101,
+          "knowledge_unit_refs": [
+            "K0008"
+          ],
+          "evidence_refs": [
+            "E0014",
+            "E0015"
+          ],
+          "source_refs": [
+            "SRC-000319"
+          ]
+        },
+        {
+          "factor_id": "D03",
+          "factor_label": "品質・対象イベント",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "砥粒光学観察の物理状態ラベル、各区間後の実測Ra、0.4 µmの目標境界。顧客品質規格との一致・不良ラベルとの対応は未確認。",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D03 品質・対象イベント：砥粒光学観察の物理状態ラベル、各区間後の実測Ra、0.4 µmの目標境界。顧客品質規格との一致・不良ラベルとの対応は未確認。（K0008）",
+          "analysis_line": 102,
+          "knowledge_unit_refs": [
+            "K0008"
+          ],
+          "evidence_refs": [
+            "E0014",
+            "E0015"
+          ],
+          "source_refs": [
+            "SRC-000319"
+          ]
+        },
+        {
+          "factor_id": "D04",
+          "factor_label": "加工・使用条件",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "累積除去量0.6 mmごとの8区間、総4.8 mm。具体速度・切込み・環境条件は未収集。",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D04 加工・使用条件：累積除去量0.6 mmごとの8区間、総4.8 mm。具体速度・切込み・環境条件は未収集。（K0008）",
+          "analysis_line": 103,
+          "knowledge_unit_refs": [
+            "K0008"
+          ],
+          "evidence_refs": [
+            "E0014",
+            "E0015"
+          ],
+          "source_refs": [
+            "SRC-000319"
+          ]
+        },
+        {
+          "factor_id": "D05",
+          "factor_label": "データ・観測可能性",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "AEサンプリング200 kHz（RMSEによる信号安定性評価で選定）。接触区間960セグメント、砥粒光学観察、区間後の実測Ra。自生発刃の砥粒破砕高周波成分が収集帯域を超える可能性。センサー位置・欠測等は未収集。",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D05 データ・観測可能性：AEサンプリング200 kHz（RMSEによる信号安定性評価で選定）。接触区間960セグメント、砥粒光学観察、区間後の実測Ra。自生発刃の砥粒破砕高周波成分が収集帯域を超える可能性。センサー位置・欠測等は未収集。（K0008）",
+          "analysis_line": 104,
+          "knowledge_unit_refs": [
+            "K0008"
+          ],
+          "evidence_refs": [
+            "E0014",
+            "E0015"
+          ],
+          "source_refs": [
+            "SRC-000319"
+          ]
+        },
+        {
+          "factor_id": "D06",
+          "factor_label": "信号処理・特徴抽出",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "AE接触区間を切り出しSTFT・正規化・画像化。区間別の状態推定結果を集計し、劣化indexを移動平均で評価。ICA利用は未確認。",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D06 信号処理・特徴抽出：AE接触区間を切り出しSTFT・正規化・画像化。区間別の状態推定結果を集計し、劣化indexを移動平均で評価。ICA利用は未確認。（K0008）",
+          "analysis_line": 105,
+          "knowledge_unit_refs": [
+            "K0008"
+          ],
+          "evidence_refs": [
+            "E0014",
+            "E0015"
+          ],
+          "source_refs": [
+            "SRC-000319"
+          ]
+        },
+        {
+          "factor_id": "D07",
+          "factor_label": "時間構造",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "0.6 mmごとの連続8区間。第7区間以降Raが目標範囲に回復しないとの報告。元の判断則は劣化の5区間以上連続、感度分析はW=3/5/7。将来限界到達時点・RULの定量予測は未確認。",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D07 時間構造：0.6 mmごとの連続8区間。第7区間以降Raが目標範囲に回復しないとの報告。元の判断則は劣化の5区間以上連続、感度分析はW=3/5/7。将来限界到達時点・RULの定量予測は未確認。（K0008）",
+          "analysis_line": 106,
+          "knowledge_unit_refs": [
+            "K0008"
+          ],
+          "evidence_refs": [
+            "E0014",
+            "E0015"
+          ],
+          "source_refs": [
+            "SRC-000319"
+          ]
+        },
+        {
+          "factor_id": "D08",
+          "factor_label": "推定・予測モデル",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "光学観察ラベルを用いたResNetの4物理状態マルチラベル分類。自生発刃で相対的に低いAUCの一因としてAE帯域制約の可能性を著者が指摘。Ra直接推定の性能・品質代理判定の独立検証・RULは未確認。",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D08 推定・予測モデル：光学観察ラベルを用いたResNetの4物理状態マルチラベル分類。自生発刃で相対的に低いAUCの一因としてAE帯域制約の可能性を著者が指摘。Ra直接推定の性能・品質代理判定の独立検証・RULは未確認。（K0008）",
+          "analysis_line": 107,
+          "knowledge_unit_refs": [
+            "K0008"
+          ],
+          "evidence_refs": [
+            "E0014",
+            "E0015"
+          ],
+          "source_refs": [
+            "SRC-000319"
+          ]
+        },
+        {
+          "factor_id": "D09",
+          "factor_label": "意思決定・介入",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "元のルール：目詰まりと鈍化（自生発刃併発含む）の5区間以上持続で即ドレッシングを提案。式(8)–(10)では両者の出現比率和D(t)のW区間移動平均>θかつRa>0.4 µm。後者は感度分析用の代替的定式化で元の5区間ルールを置き換えない。別データ・実介入・交換時期最適化の比較は未確認。",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D09 意思決定・介入：元のルール：目詰まりと鈍化（自生発刃併発含む）の5区間以上持続で即ドレッシングを提案。式(8)–(10)では両者の出現比率和D(t)のW区間移動平均>θかつRa>0.4 µm。後者は感度分析用の代替的定式化で元の5区間ルールを置き換えない。別データ・実介入・交換時期最適化の比較は未確認。（K0008）",
+          "analysis_line": 108,
+          "knowledge_unit_refs": [
+            "K0008"
+          ],
+          "evidence_refs": [
+            "E0014",
+            "E0015"
+          ],
+          "source_refs": [
+            "SRC-000319"
+          ]
+        },
+        {
+          "factor_id": "D10",
+          "factor_label": "評価・経済性",
+          "canonical_status": null,
+          "applicability": null,
+          "epistemic_status": null,
+          "value": null,
+          "assessment_text": "macro F1約0.80・AUC 0.73～0.81は砥石状態分類。第7区間以降のRa回復不能は連続研削実験。同一データ内の判断時点感度（θ=0.5/0.6/0.7、W=3/5/7）は高θ・大Wで遅延、大Wで安定、小Wで速いが短期変動に敏感、低θで過剰ドレスリスク。トリガー変動は1区間以内との著者報告。独立した外部検証・実介入比較ではなく、品質維持・交換頻度・費用最適化の成果は未確認。",
+          "limitations": null,
+          "reference_role": "category_scope",
+          "canonical_line": "- D10 評価・経済性：macro F1約0.80・AUC 0.73～0.81は砥石状態分類。第7区間以降のRa回復不能は連続研削実験。同一データ内の判断時点感度（θ=0.5/0.6/0.7、W=3/5/7）は高θ・大Wで遅延、大Wで安定、小Wで速いが短期変動に敏感、低θで過剰ドレスリスク。トリガー変動は1区間以内との著者報告。独立した外部検証・実介入比較ではなく、品質維持・交換頻度・費用最適化の成果は未確認。（K0008）",
+          "analysis_line": 109,
+          "knowledge_unit_refs": [
+            "K0008"
+          ],
+          "evidence_refs": [
+            "E0014",
+            "E0015"
+          ],
+          "source_refs": [
+            "SRC-000319"
+          ]
+        }
+      ]
+    }
+  ]
+}
