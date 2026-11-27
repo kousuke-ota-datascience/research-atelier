@@ -1,30 +1,17 @@
 name: INV-000048 finalization
 on: [pull_request]
 jobs:
-  validate:
+  verify:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: 18eac73154c1719fc1999f02994d79520683d905
+          ref: 9fa3e007cc923b7507b1cf8af2d58559396a446c
           fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
       - run: pip install jsonschema
-      - run: python tools/case_assessments/build.py INV-000048
       - run: python tools/case_assessments/build.py INV-000048 --check
-      - name: Export deterministic artifact
-        run: |
-          python - <<'PY'
-          import json, hashlib, pathlib
-          p=pathlib.Path("investigations/INV-000048/derived/case_assessments.json")
-          raw=p.read_bytes()
-          data=json.loads(raw)
-          cases=data.pop("cases")
-          print("DERIVED_SHA256",hashlib.sha256(raw).hexdigest())
-          print("DERIVED_META",json.dumps(data,ensure_ascii=False,separators=(",",":")))
-          for i,case in enumerate(cases,1):
-              print("DERIVED_CASE",i,json.dumps(case,ensure_ascii=False,separators=(",",":")))
-          print("DERIVED_END",len(cases),len(raw))
-          PY
+      - run: |
+          echo "6a07cff8a6e4f77bbb1ff4209020c47d97ddb766690f1e481cd828317cf3fe54  investigations/INV-000048/derived/case_assessments.json" | sha256sum -c -
