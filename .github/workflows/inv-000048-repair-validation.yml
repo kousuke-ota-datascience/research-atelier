@@ -1,0 +1,28 @@
+name: INV-000048 repair validation
+on: [pull_request]
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install jsonschema
+      - name: Reconcile repair start
+        env:
+          PYTHONPATH: src
+        run: |
+          python - <<'PY'
+          import json, pathlib, subprocess
+          from research_atelier.reviewing.reconcile import reconcile_payload
+          p=pathlib.Path("investigations/INV-000048")
+          m=json.loads((p/"reviews/review-000001.json").read_text())
+          for a,sha in m["target"]["artifact_blob_shas"].items():
+              assert subprocess.check_output(["git","hash-object",str(p/(a+".json"))],text=True).strip()==sha
+          r=reconcile_payload({"context":json.loads((p/"00_context.json").read_text()),"current":{"review_status":"要修正","latest_review_seq":1},"review":{"latest":m,"target_relation":"exact","issues":[]},"events":{"repair_started":True}})
+          print(json.dumps(r,ensure_ascii=False))
+          assert r["outcome"]=="UPDATE" and r["changes"]=={"Review Status":"再作業中"}
+          PY
