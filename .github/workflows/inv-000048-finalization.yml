@@ -1,0 +1,35 @@
+name: INV-000048 finalization
+on: [pull_request]
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install jsonschema
+      - run: PYTHONPATH=src python -m research_atelier.validation.validate_investigation INV-000048 --through 30
+      - name: Render accepted Working Answer
+        env:
+          PYTHONPATH: src
+        run: |
+          python - <<'PY'
+          import json,pathlib,subprocess,hashlib
+          from research_atelier.reviewing.review_state import load_review_history,target_relation_from_blobs
+          from research_atelier.projection.working_answer import patch_working_answer_section
+          p=pathlib.Path("investigations/INV-000048")
+          h=load_review_history("INV-000048",review_dir=p/"reviews",schema_path="schemas/v2")
+          assert not h.issues and h.latest["review_seq"]==2 and h.latest["verdict"]=="PASS"
+          shas={a:subprocess.check_output(["git","hash-object",str(p/(a+".json"))],text=True).strip() for a in h.latest["target"]["artifact_blob_shas"]}
+          assert target_relation_from_blobs(h.latest,shas)=="exact"
+          a=json.loads((p/"30_analysis.json").read_text())
+          r=patch_working_answer_section("",a)
+          assert r.action=="CREATE"
+          print("RENDER_SHA256",hashlib.sha256(r.markdown.encode()).hexdigest())
+          print("RENDER_START")
+          print(r.markdown)
+          print("RENDER_END")
+          PY
